@@ -1,0 +1,11 @@
+{
+  "condition_id": "natural_city_ordered",
+  "condition_family": "natural",
+  "temporal_policy": "ordered",
+  "semantic_load": "high",
+  "deterministic": false,
+  "source_kind": "external_frames",
+  "comparison_role": "semantic_natural_control",
+  "description": "Template condition for an ordered city or street frame sequence with visible real-world objects."
+}
+

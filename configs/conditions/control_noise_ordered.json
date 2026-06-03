@@ -1,0 +1,11 @@
+{
+  "condition_id": "control_noise_ordered",
+  "condition_family": "control",
+  "temporal_policy": "ordered",
+  "semantic_load": "none",
+  "deterministic": true,
+  "source_kind": "external_frames",
+  "comparison_role": "low_level_visual_control",
+  "description": "Template condition for deterministic noise or phase-scrambled frames."
+}
+

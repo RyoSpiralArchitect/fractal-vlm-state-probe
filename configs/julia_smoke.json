@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "kind": "julia",
+  "width": 320,
+  "height": 240,
+  "total_frames": 12,
+  "fps": 1.0,
+  "center_start": [0.0, 0.0],
+  "center_end": [0.0, 0.0],
+  "scale_start": 3.0,
+  "scale_end": 0.8,
+  "julia_c": [-0.7269, 0.1889],
+  "max_iter": 160,
+  "color_seed": 29,
+  "stimulus_condition": {
+    "condition_id": "julia_zoom_b",
+    "condition_family": "fractal",
+    "temporal_policy": "ordered",
+    "semantic_load": "low",
+    "deterministic": true,
+    "source_kind": "generated",
+    "comparison_role": "secondary_fractal",
+    "description": "Deterministic Julia stream used to separate fractal-family effects from one Mandelbrot path."
+  }
+}

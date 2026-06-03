@@ -1,0 +1,11 @@
+{
+  "condition_id": "natural_cat_ordered",
+  "condition_family": "natural",
+  "temporal_policy": "ordered",
+  "semantic_load": "high",
+  "deterministic": false,
+  "source_kind": "external_frames",
+  "comparison_role": "semantic_biological_control",
+  "description": "Template condition for an ordered cat or animal frame sequence with strong semantic content."
+}
+

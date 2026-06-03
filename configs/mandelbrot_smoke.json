@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "kind": "mandelbrot",
+  "width": 320,
+  "height": 240,
+  "total_frames": 12,
+  "fps": 1.0,
+  "center_start": [-0.7435, 0.1314],
+  "center_end": [-0.743643887037151, 0.13182590420533],
+  "scale_start": 2.8,
+  "scale_end": 0.03,
+  "max_iter": 160,
+  "color_seed": 17,
+  "stimulus_condition": {
+    "condition_id": "mandelbrot_zoom_a",
+    "condition_family": "fractal",
+    "temporal_policy": "ordered",
+    "semantic_load": "low",
+    "deterministic": true,
+    "source_kind": "generated",
+    "comparison_role": "primary_fractal",
+    "description": "Deterministic Mandelbrot zoom path used as the first primary fractal stream."
+  }
+}

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fractal-vlm-state-probe"
+version = "0.1.0"
+description = "Deterministic fractal visual streams for probing context-conditioned VLM behavior."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pillow>=10",
+]
+
+[project.optional-dependencies]
+hf = [
+  "torch>=2",
+  "transformers>=4.50",
+]
+mlx = [
+  "mlx",
+  "mlx-vlm",
+]
+dev = [
+  "pytest>=8",
+]
+
+[project.scripts]
+generate-fractal-frames = "fractal_vlm_state_probe.cli.generate_fractal_frames:main"
+run-mlx-stream-probe = "fractal_vlm_state_probe.cli.run_mlx_stream_probe:main"
+run-hf-stream-probe = "fractal_vlm_state_probe.cli.run_hf_stream_probe:main"
+build-external-frame-manifest = "fractal_vlm_state_probe.cli.build_external_frame_manifest:main"
+list-provider-capabilities = "fractal_vlm_state_probe.cli.list_provider_capabilities:main"
+summarize-run = "fractal_vlm_state_probe.cli.summarize_run:main"
+run-julia-smoke = "fractal_vlm_state_probe.cli.run_julia_smoke:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,11 @@
+{
+  "condition_id": "geometric_ordered",
+  "condition_family": "geometric",
+  "temporal_policy": "ordered",
+  "semantic_load": "low",
+  "deterministic": true,
+  "source_kind": "external_frames",
+  "comparison_role": "non_fractal_geometry_control",
+  "description": "Template condition for ordered non-fractal geometry such as Lissajous, spiral, Voronoi, or kaleidoscope frames."
+}
+

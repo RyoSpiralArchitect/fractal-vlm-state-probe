@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local experiment outputs can be large and machine-specific.
+runs/
+artifacts/
+fractal_frames/
+*.mp4
+*.mov
