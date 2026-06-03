@@ -17,6 +17,7 @@ def main() -> None:
     parser.add_argument("--max-new-tokens", type=int, default=2)
     parser.add_argument("--probe-max-new-tokens", type=int, default=64)
     parser.add_argument("--temperature", type=float, default=0.0)
+    parser.add_argument("--seed", type=int, default=None)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument(
         "--probe-cache-policy",
@@ -60,6 +61,7 @@ def main() -> None:
             max_new_tokens=args.max_new_tokens,
             probe_max_new_tokens=args.probe_max_new_tokens,
             temperature=args.temperature,
+            seed=args.seed,
             dry_run=args.dry_run,
             probe_cache_policy=args.probe_cache_policy,
             trace_every=args.trace_every,

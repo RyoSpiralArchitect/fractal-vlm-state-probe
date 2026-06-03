@@ -20,17 +20,39 @@ tensor/cache traces.
 ## Research Shape
 
 The first program compares stimulus conditions within the same model, not
-providers against each other. That keeps the early question sharp:
+providers against each other. But the first question is even simpler than
+"which fractal is different?":
 
-1. Fractal A vs the same fractal shuffled or repeated.
-2. Fractal A vs Fractal B.
-3. Fractal streams vs non-fractal geometry.
-4. Fractal streams vs natural texture or landscape sequences.
-5. Fractal streams vs semantic-rich video such as streets, rooms, or animals.
+> Does sustained visual streaming change the later non-visual probe at all,
+> beyond ordinary transcript length and cache growth?
+
+That makes the early ladder:
+
+1. Probe-only baseline.
+2. Text-only stream with the same timecodes and synchronization prompt.
+3. Blank, static, repeated, or shuffled visual controls.
+4. Fractal A vs the same fractal repeated or shuffled.
+5. Fractal A vs Fractal B.
+6. Fractal streams vs non-fractal geometry.
+7. Fractal streams vs natural texture or landscape sequences.
+8. Fractal streams vs semantic-rich video such as streets, rooms, or animals.
 
 Every condition is represented as a manifest with frame timestamps, relative
 paths, hashes, and `stimulus_condition` metadata. Runs then use the same model,
 probe, frame count, cache policy, and timing where possible.
+
+## Current Pilot Reading
+
+In the first seeded Mandelbrot-vs-Julia smoke comparison, the before/mid/after
+creative probe stayed inside the same broad generative attractor and the paired
+Mandelbrot/Julia probe text matched exactly. At the same time, the probe wording
+shifted across phases within each run, and sampled source-cache summaries showed
+nonzero deltas after visual streaming.
+
+That is not evidence that one fractal family has a stable effect. It is a more
+modest and more useful signal: the apparatus can capture cases where surface
+text remains similar while the traced context state moves. The next priority is
+therefore `Null vs Stream`, before stronger fractal-family claims.
 
 ## Infrastructure Tiers
 
@@ -61,6 +83,9 @@ first logprob-focused pass unless a selected model exposes the needed signal.
 - Use isolated probe branches by default so before/mid/after probes do not
   contaminate the main stream cache/history.
 - Record probe outputs, generation metrics, and sampled KV-cache summaries.
+- Seed MLX/HF smoke runs for reproducible paired comparisons.
+- Compare paired run JSONs with probe text, frame artifacts, stream-cache
+  deltas, and probe-source-cache deltas.
 - Provide provider capability scaffolding for T1/T2/T3 adapters.
 
 ## Quickstart
@@ -93,6 +118,7 @@ python3 scripts/run_mlx_stream_probe.py \
   --probe-cache-policy isolated \
   --cache-summary-every 10 \
   --cache-summary-max-layers 4 \
+  --seed 20260604 \
   --output runs/smoke/mandelbrot_a_mlx.json
 ```
 
@@ -108,6 +134,7 @@ python3 scripts/run_hf_stream_probe.py \
   --probe-cache-policy isolated \
   --trace-every 10 \
   --trace-max-layers 4 \
+  --seed 20260604 \
   --output runs/smoke/mandelbrot_a_hf.json
 ```
 
@@ -141,6 +168,16 @@ To generate Julia frames and immediately run the same MLX smoke probe:
 
 ```bash
 python3 scripts/run_julia_smoke.py --overwrite --run-mlx
+```
+
+To compare matched Mandelbrot and Julia run JSONs:
+
+```bash
+python3 scripts/compare_runs.py \
+  runs/compare_seed_20260604/mandelbrot_mlx.json \
+  runs/compare_seed_20260604/julia_mlx.json \
+  --output-md runs/compare_seed_20260604/mandelbrot_vs_julia.md \
+  --output-json runs/compare_seed_20260604/mandelbrot_vs_julia.json
 ```
 
 ## Documentation

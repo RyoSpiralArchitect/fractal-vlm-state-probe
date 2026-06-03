@@ -34,6 +34,7 @@ build-external-frame-manifest = "fractal_vlm_state_probe.cli.build_external_fram
 list-provider-capabilities = "fractal_vlm_state_probe.cli.list_provider_capabilities:main"
 summarize-run = "fractal_vlm_state_probe.cli.summarize_run:main"
 run-julia-smoke = "fractal_vlm_state_probe.cli.run_julia_smoke:main"
+compare-runs = "fractal_vlm_state_probe.cli.compare_runs:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

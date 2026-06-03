@@ -20,6 +20,7 @@ def main() -> None:
     parser.add_argument("--max-tokens", type=int, default=2)
     parser.add_argument("--probe-max-tokens", type=int, default=48)
     parser.add_argument("--cache-summary-max-layers", type=int, default=4)
+    parser.add_argument("--seed", type=int, default=None)
     args = parser.parse_args()
 
     stimulus_dir = args.output_root / "stimulus"
@@ -39,6 +40,7 @@ def main() -> None:
                 max_tokens=args.max_tokens,
                 probe_max_tokens=args.probe_max_tokens,
                 cache_summary_max_layers=args.cache_summary_max_layers,
+                seed=args.seed,
             )
         )
         print(

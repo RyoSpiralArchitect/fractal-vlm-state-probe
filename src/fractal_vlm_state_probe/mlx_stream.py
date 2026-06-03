@@ -11,6 +11,7 @@ from typing import Any, Literal
 from .frame_artifacts import prepare_frame_artifacts
 from .prompts import DEFAULT_PROBES, SYNC_PROMPT, SYSTEM_PROMPT
 from .providers import get_capabilities
+from .seeding import set_global_seed
 from .stimulus import validate_manifest, write_json
 from .timecode import format_timecode
 from .trace import select_layer_indices, select_sequence_positions
@@ -35,9 +36,11 @@ class StreamRunConfig:
     cache_summary_max_layers: int | None = 4
     adapter_id: str = "mlx_vlm"
     include_frame_artifacts: bool = True
+    seed: int | None = None
 
 
 def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
+    seed_record = set_global_seed(config.seed, include_mlx=True)
     manifest = _load_manifest(config.manifest_path)
     issues = validate_manifest(config.manifest_path)
     if issues:
@@ -55,6 +58,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
         "adapter_capabilities": get_capabilities(config.adapter_id).to_dict(),
         "manifest_path": str(config.manifest_path),
         "dry_run": config.dry_run,
+        "reproducibility": seed_record,
         "context_policy": {
             "frame_delivery": "one frame path per stream turn",
             "history": "explicit chat transcript stack",

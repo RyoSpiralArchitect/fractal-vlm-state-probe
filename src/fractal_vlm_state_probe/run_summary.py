@@ -17,6 +17,7 @@ def summarize_run(data: dict[str, Any]) -> str:
     capabilities = data.get("adapter_capabilities") or {}
     context = data.get("context_policy") or {}
     schedule = data.get("probe_schedule") or {}
+    reproducibility = data.get("reproducibility") or {}
     stream_events = data.get("stream_events") or []
     probes = data.get("probes") or {}
 
@@ -39,6 +40,7 @@ def summarize_run(data: dict[str, Any]) -> str:
         f"{context.get('probe_cache_policy', '<unknown>')} | "
         f"mid after position {schedule.get('mid_probe_after_position', '<none>')}"
     )
+    lines.append(f"Seed: {reproducibility.get('seed')}")
     lines.append("")
 
     lines.append("Stream events:")
