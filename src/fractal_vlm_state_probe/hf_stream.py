@@ -8,7 +8,14 @@ from typing import Any, Literal
 
 from PIL import Image
 
-from .frame_artifacts import prepare_frame_artifacts
+from .delivery import (
+    FrameDelivery,
+    StimulusDeliveryMode,
+    delivery_prompt_prefix,
+    frame_artifact_list,
+    prepare_frame_deliveries,
+    stimulus_delivery_record,
+)
 from .mlx_stream import (
     ProbeCachePolicy,
     _dry_probe_records,
@@ -49,6 +56,8 @@ class HFStreamRunConfig:
     adapter_id: str = "hf_transformers"
     include_frame_artifacts: bool = True
     seed: int | None = None
+    delivery_mode: StimulusDeliveryMode = "visual_stream"
+    blank_rgb: tuple[int, int, int] = (0, 0, 0)
 
 
 def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
@@ -58,10 +67,19 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
     if issues:
         raise ValueError("manifest validation failed: " + "; ".join(issues))
 
-    frames = _select_frames(
+    source_frames = _select_frames(
         manifest["frames"],
         frame_stride=config.frame_stride,
         max_frames=config.max_frames,
+    )
+    frames = [] if config.delivery_mode == "probe_only" else source_frames
+    frame_deliveries = prepare_frame_deliveries(
+        output_path=config.output_path,
+        manifest_base=config.manifest_path.parent,
+        frames=frames,
+        mode=config.delivery_mode,
+        include_frame_artifacts=config.include_frame_artifacts,
+        blank_rgb=config.blank_rgb,
     )
     result: dict[str, Any] = {
         "schema_version": 1,
@@ -72,7 +90,7 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
         "dry_run": config.dry_run,
         "reproducibility": seed_record,
         "context_policy": {
-            "frame_delivery": "one frame path per stream turn",
+            "frame_delivery": config.delivery_mode,
             "history": "full transcript replay",
             "probe_cache_policy": config.probe_cache_policy,
             "probe_history_policy": _probe_history_policy(config.probe_cache_policy),
@@ -91,7 +109,13 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
             "config_sha256": manifest.get("stimulus_config_sha256"),
             "frame_count_available": len(manifest.get("frames", [])),
             "frame_count_selected": len(frames),
+            "source_frame_count_selected": len(source_frames),
         },
+        "stimulus_delivery": stimulus_delivery_record(
+            mode=config.delivery_mode,
+            include_frame_artifacts=config.include_frame_artifacts,
+            blank_rgb=config.blank_rgb,
+        ),
         "probe_schedule": {
             "mid_probe_after_position": _mid_probe_after_position(len(frames)),
             "position_is_zero_based": True,
@@ -99,19 +123,17 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
         "probes": {},
         "stream_events": [],
     }
-    frame_artifacts = prepare_frame_artifacts(
-        output_path=config.output_path,
-        manifest_base=config.manifest_path.parent,
-        frames=frames,
-        enabled=config.include_frame_artifacts,
-    )
-    result["frame_artifacts"] = list(frame_artifacts.values())
+    result["frame_artifacts"] = frame_artifact_list(frame_deliveries)
 
     if config.dry_run:
         result["probes"]["before"] = _dry_probe_records("before")
         for frame in frames:
-            event = _planned_frame_event(frame)
-            event["frame_artifact"] = frame_artifacts.get(int(frame["index"]))
+            delivery = frame_deliveries[int(frame["index"])]
+            event = _planned_frame_event(
+                frame,
+                delivery=delivery,
+                output_base=config.output_path.parent,
+            )
             result["stream_events"].append(event)
         result["probes"]["mid"] = _dry_probe_records("mid")
         result["probes"]["after"] = _dry_probe_records("after")
@@ -137,14 +159,14 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
     for position, frame in enumerate(frames):
         event = _run_frame_turn(
             frame=frame,
-            manifest_base=config.manifest_path.parent,
             history=history,
+            delivery=frame_deliveries[int(frame["index"])],
+            output_base=config.output_path.parent,
             runtime=runtime,
             max_new_tokens=config.max_new_tokens,
             temperature=config.temperature,
             capture_trace=_should_summarize_cache(position, len(frames), config.trace_every),
             trace_max_layers=config.trace_max_layers,
-            frame_artifact=frame_artifacts.get(int(frame["index"])),
         )
         result["stream_events"].append(event)
 
@@ -178,28 +200,23 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
 def _run_frame_turn(
     *,
     frame: dict[str, Any],
-    manifest_base: Path,
     history: list[dict[str, str]],
+    delivery: FrameDelivery,
+    output_base: Path,
     runtime: dict[str, Any],
     max_new_tokens: int,
     temperature: float,
     capture_trace: bool,
     trace_max_layers: int | None,
-    frame_artifact: dict[str, Any] | None,
 ) -> dict[str, Any]:
     timecode = format_timecode(float(frame["t_seconds"]))
-    prompt = (
-        f"This is frame {frame['index']:06d} at {timecode} "
-        f"({frame['t_seconds']:.3f} seconds) in the deterministic visual stream.\n"
-        f"{SYNC_PROMPT}"
-    )
-    frame_path = manifest_base / frame["path"]
+    prompt = f"{delivery_prompt_prefix(frame, delivery.mode, timecode)}\n{SYNC_PROMPT}"
     started = time.perf_counter()
     turn = _run_hf_turn(
         runtime=runtime,
         history=history,
         prompt=prompt,
-        image_path=frame_path,
+        image_path=delivery.image_path,
         max_new_tokens=max_new_tokens,
         temperature=temperature,
         capture_trace=capture_trace,
@@ -215,8 +232,9 @@ def _run_frame_turn(
         "t_seconds": frame["t_seconds"],
         "timecode": timecode,
         "frame_path": frame["path"],
-        "frame_artifact": frame_artifact,
+        "frame_artifact": delivery.frame_artifact,
         "frame_sha256": frame["sha256"],
+        "delivery": delivery.to_event_record(output_base),
         "prompt": prompt,
         "assistant_text": turn["assistant_text"],
         "generation": turn["generation"],

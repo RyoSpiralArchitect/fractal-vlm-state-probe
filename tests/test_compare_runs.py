@@ -12,8 +12,10 @@ def test_compare_runs_marks_matched_context() -> None:
         "adapter_capabilities": {"adapter_id": "mlx_vlm"},
         "reproducibility": {"seed": 7},
         "context_policy": {"probe_cache_policy": "isolated"},
+        "stimulus_delivery": {"mode": "visual_stream"},
         "stimulus": {
             "frame_count_selected": 2,
+            "source_frame_count_selected": 2,
             "condition": {"condition_id": "left", "condition_family": "fractal"},
         },
         "probes": {
@@ -34,8 +36,10 @@ def test_compare_runs_marks_matched_context() -> None:
         **base,
         "stimulus": {
             "frame_count_selected": 2,
+            "source_frame_count_selected": 2,
             "condition": {"condition_id": "right", "condition_family": "fractal"},
         },
+        "stimulus_delivery": {"mode": "text_only_stream"},
         "probes": {
             "before": [
                 {
@@ -52,12 +56,16 @@ def test_compare_runs_marks_matched_context() -> None:
     }
     comparison = compare_runs(base, right)
     assert comparison["matched_context"]["same_seed"]
+    assert not comparison["matched_context"]["same_delivery_mode"]
+    assert not comparison["probe_comparison"][0]["same_text"]
     assert comparison["stream_cache_comparison"][0]["cache_stat_delta"]["max_abs_l2_delta"] == 4.5
     assert comparison["probe_source_cache_comparison"][0]["source_cache_delta"]["max_abs_l2_delta"] == 4.5
     markdown = format_comparison_markdown(comparison)
     assert "left text" in markdown
     assert "right text" in markdown
     assert "max_abs_l2=4.5" in markdown
+    assert "visual_stream" in markdown
+    assert "text_only_stream" in markdown
 
 
 def _cache_summary(*, keys_l2: float, values_l2: float) -> dict:

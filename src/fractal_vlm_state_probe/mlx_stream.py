@@ -8,7 +8,14 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Literal
 
-from .frame_artifacts import prepare_frame_artifacts
+from .delivery import (
+    FrameDelivery,
+    StimulusDeliveryMode,
+    delivery_prompt_prefix,
+    frame_artifact_list,
+    prepare_frame_deliveries,
+    stimulus_delivery_record,
+)
 from .prompts import DEFAULT_PROBES, SYNC_PROMPT, SYSTEM_PROMPT
 from .providers import get_capabilities
 from .seeding import set_global_seed
@@ -37,6 +44,8 @@ class StreamRunConfig:
     adapter_id: str = "mlx_vlm"
     include_frame_artifacts: bool = True
     seed: int | None = None
+    delivery_mode: StimulusDeliveryMode = "visual_stream"
+    blank_rgb: tuple[int, int, int] = (0, 0, 0)
 
 
 def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
@@ -46,10 +55,19 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
     if issues:
         raise ValueError("manifest validation failed: " + "; ".join(issues))
 
-    frames = _select_frames(
+    source_frames = _select_frames(
         manifest["frames"],
         frame_stride=config.frame_stride,
         max_frames=config.max_frames,
+    )
+    frames = [] if config.delivery_mode == "probe_only" else source_frames
+    frame_deliveries = prepare_frame_deliveries(
+        output_path=config.output_path,
+        manifest_base=config.manifest_path.parent,
+        frames=frames,
+        mode=config.delivery_mode,
+        include_frame_artifacts=config.include_frame_artifacts,
+        blank_rgb=config.blank_rgb,
     )
     result: dict[str, Any] = {
         "schema_version": 1,
@@ -60,7 +78,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
         "dry_run": config.dry_run,
         "reproducibility": seed_record,
         "context_policy": {
-            "frame_delivery": "one frame path per stream turn",
+            "frame_delivery": config.delivery_mode,
             "history": "explicit chat transcript stack",
             "prompt_cache_state_requested": config.use_prompt_cache_state,
             "probe_cache_policy": config.probe_cache_policy,
@@ -80,17 +98,17 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
             "config_sha256": manifest.get("stimulus_config_sha256"),
             "frame_count_available": len(manifest.get("frames", [])),
             "frame_count_selected": len(frames),
+            "source_frame_count_selected": len(source_frames),
         },
+        "stimulus_delivery": stimulus_delivery_record(
+            mode=config.delivery_mode,
+            include_frame_artifacts=config.include_frame_artifacts,
+            blank_rgb=config.blank_rgb,
+        ),
         "probes": {},
         "stream_events": [],
     }
-    frame_artifacts = prepare_frame_artifacts(
-        output_path=config.output_path,
-        manifest_base=config.manifest_path.parent,
-        frames=frames,
-        enabled=config.include_frame_artifacts,
-    )
-    result["frame_artifacts"] = list(frame_artifacts.values())
+    result["frame_artifacts"] = frame_artifact_list(frame_deliveries)
     result["probe_schedule"] = {
         "mid_probe_after_position": _mid_probe_after_position(len(frames)),
         "position_is_zero_based": True,
@@ -99,8 +117,12 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
     if config.dry_run:
         result["probes"]["before"] = _dry_probe_records("before")
         for frame in frames:
-            event = _planned_frame_event(frame)
-            event["frame_artifact"] = frame_artifacts.get(int(frame["index"]))
+            delivery = frame_deliveries[int(frame["index"])]
+            event = _planned_frame_event(
+                frame,
+                delivery=delivery,
+                output_base=config.output_path.parent,
+            )
             result["stream_events"].append(event)
         result["probes"]["mid"] = _dry_probe_records("mid")
         result["probes"]["after"] = _dry_probe_records("after")
@@ -138,8 +160,9 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
     for position, frame in enumerate(frames):
         event = _run_frame_turn(
             frame=frame,
-            manifest_base=config.manifest_path.parent,
             history=history,
+            delivery=frame_deliveries[int(frame["index"])],
+            output_base=config.output_path.parent,
             model=model,
             processor=processor,
             model_config=model_config,
@@ -154,7 +177,6 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
                 config.cache_summary_every,
             ),
             cache_summary_max_layers=config.cache_summary_max_layers,
-            frame_artifact=frame_artifacts.get(int(frame["index"])),
         )
         result["stream_events"].append(event)
 
@@ -198,8 +220,9 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
 def _run_frame_turn(
     *,
     frame: dict[str, Any],
-    manifest_base: Path,
     history: list[dict[str, str]],
+    delivery: FrameDelivery,
+    output_base: Path,
     model: Any,
     processor: Any,
     model_config: Any,
@@ -210,29 +233,24 @@ def _run_frame_turn(
     temperature: float,
     capture_cache_summary: bool,
     cache_summary_max_layers: int | None,
-    frame_artifact: dict[str, Any] | None,
 ) -> dict[str, Any]:
     timecode = format_timecode(float(frame["t_seconds"]))
-    prompt = (
-        f"This is frame {frame['index']:06d} at {timecode} "
-        f"({frame['t_seconds']:.3f} seconds) in the deterministic visual stream.\n"
-        f"{SYNC_PROMPT}"
-    )
+    prompt = f"{delivery_prompt_prefix(frame, delivery.mode, timecode)}\n{SYNC_PROMPT}"
     messages = history + [{"role": "user", "content": prompt}]
     formatted_prompt = apply_chat_template(
         processor,
         model_config,
         messages,
-        num_images=1,
+        num_images=delivery.num_images,
     )
-    frame_path = manifest_base / frame["path"]
+    image_arg = str(delivery.image_path) if delivery.image_path is not None else None
     started = time.perf_counter()
     generation = _collect_stream(
         stream_generate(
             model,
             processor,
             formatted_prompt,
-            image=str(frame_path),
+            image=image_arg,
             max_tokens=max_tokens,
             temperature=temperature,
             prompt_cache_state=prompt_cache_state,
@@ -248,8 +266,9 @@ def _run_frame_turn(
         "t_seconds": frame["t_seconds"],
         "timecode": timecode,
         "frame_path": frame["path"],
-        "frame_artifact": frame_artifact,
+        "frame_artifact": delivery.frame_artifact,
         "frame_sha256": frame["sha256"],
+        "delivery": delivery.to_event_record(output_base),
         "prompt": prompt,
         "assistant_text": generation["text"],
         "generation": generation["summary"],
@@ -569,17 +588,25 @@ def _probe_history_policy(probe_cache_policy: ProbeCachePolicy) -> str:
     return "probe turns are run as branch reads and do not mutate stream history"
 
 
-def _planned_frame_event(frame: dict[str, Any]) -> dict[str, Any]:
+def _planned_frame_event(
+    frame: dict[str, Any],
+    *,
+    delivery: FrameDelivery | None = None,
+    output_base: Path | None = None,
+) -> dict[str, Any]:
+    timecode = format_timecode(float(frame["t_seconds"]))
+    mode = delivery.mode if delivery is not None else "visual_stream"
     return {
         "frame_index": frame["index"],
         "t_seconds": frame["t_seconds"],
-        "timecode": format_timecode(float(frame["t_seconds"])),
+        "timecode": timecode,
         "frame_path": frame["path"],
+        "frame_artifact": delivery.frame_artifact if delivery is not None else None,
         "frame_sha256": frame["sha256"],
-        "planned_prompt": (
-            f"This is frame {frame['index']:06d} at "
-            f"{format_timecode(float(frame['t_seconds']))}. {SYNC_PROMPT}"
-        ),
+        "delivery": delivery.to_event_record(output_base or Path("."))
+        if delivery is not None
+        else None,
+        "planned_prompt": f"{delivery_prompt_prefix(frame, mode, timecode)}\n{SYNC_PROMPT}",
     }
 
 

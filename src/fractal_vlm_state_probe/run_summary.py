@@ -18,6 +18,7 @@ def summarize_run(data: dict[str, Any]) -> str:
     context = data.get("context_policy") or {}
     schedule = data.get("probe_schedule") or {}
     reproducibility = data.get("reproducibility") or {}
+    delivery = data.get("stimulus_delivery") or {}
     stream_events = data.get("stream_events") or []
     probes = data.get("probes") or {}
 
@@ -35,6 +36,7 @@ def summarize_run(data: dict[str, Any]) -> str:
         f"{stimulus.get('frame_count_selected', len(stream_events))}/"
         f"{stimulus.get('frame_count_available', '?')} selected"
     )
+    lines.append(f"Delivery mode: {delivery.get('mode', context.get('frame_delivery', '<unknown>'))}")
     lines.append(
         "Probe policy: "
         f"{context.get('probe_cache_policy', '<unknown>')} | "
@@ -47,11 +49,13 @@ def summarize_run(data: dict[str, Any]) -> str:
     for event in stream_events:
         generation = event.get("generation") or {}
         cache = event.get("cache_summary")
+        event_delivery = event.get("delivery") or {}
         lines.append(
             f"- frame {event.get('frame_index')} @ {event.get('timecode')}: "
             f"{_one_line(event.get('assistant_text'))!r}, "
             f"gen_tokens={generation.get('generation_tokens')}, "
-            f"cache_captured={bool(cache)}"
+            f"cache_captured={bool(cache)}, "
+            f"delivery={event_delivery.get('input_kind', '<unknown>')}"
         )
         artifact = event.get("frame_artifact")
         if artifact:

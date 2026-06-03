@@ -36,6 +36,7 @@ def test_hf_stream_dry_run_records_adapter_and_condition(tmp_path: Path) -> None
     )
     assert result["adapter_capabilities"]["adapter_id"] == "hf_transformers"
     assert result["reproducibility"]["seed"] == 123
+    assert result["stimulus_delivery"]["mode"] == "visual_stream"
     assert result["stimulus"]["condition"]["condition_family"] == "fractal"
     assert len(result["stream_events"]) == 2
     assert len(result["frame_artifacts"]) == 2

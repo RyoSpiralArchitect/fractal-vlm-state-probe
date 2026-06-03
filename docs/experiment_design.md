@@ -9,12 +9,17 @@ traces shift in condition-specific ways?
 The first comparison is not between providers. It is within a single model under
 matched stimulus conditions.
 
+The first control question is also not "which fractal differs?" It is whether a
+stream of frame-indexed context changes later probes beyond a clean probe-only
+baseline.
+
 ## Unit Of Analysis
 
 Each run binds together:
 
 - one model or provider adapter,
 - one stimulus manifest,
+- one stimulus delivery mode,
 - one probe set,
 - one probe cache policy,
 - one frame sampling policy,
@@ -22,6 +27,19 @@ Each run binds together:
 
 The manifest is part of the measurement. A run without frame hashes, timestamps,
 and condition metadata is not considered analysis-ready.
+
+## Delivery Modes
+
+The same manifest can be delivered in multiple ways:
+
+- `probe_only`: no stream turns; clean before/after probes only.
+- `text_only_stream`: same frame index and timecode schedule, no image.
+- `blank_visual_stream`: generated blank images at the manifest frame
+  dimensions.
+- `visual_stream`: the manifest frames are delivered to the VLM.
+
+These modes make Null-vs-Stream comparisons possible before interpreting
+Mandelbrot-vs-Julia or other stimulus-family differences.
 
 ## Phase Schedule
 
@@ -91,6 +109,7 @@ Use language like:
 - The condition metadata identifies family, temporal policy, semantic load, and
   source kind.
 - The run output records adapter capabilities.
+- The run output records stimulus delivery mode.
 - The probe cache policy is explicit.
 - The mid-point schedule is explicit.
 - The report separates observations from interpretations.

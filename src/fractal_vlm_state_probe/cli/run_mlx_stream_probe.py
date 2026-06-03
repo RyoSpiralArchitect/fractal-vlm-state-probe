@@ -17,6 +17,18 @@ def main() -> None:
     parser.add_argument("--probe-max-tokens", type=int, default=64)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--seed", type=int, default=None)
+    parser.add_argument(
+        "--delivery-mode",
+        choices=["visual_stream", "text_only_stream", "blank_visual_stream", "probe_only"],
+        default="visual_stream",
+        help="Control whether stream turns deliver real frames, text-only controls, blank images, or no stream turns.",
+    )
+    parser.add_argument(
+        "--blank-rgb",
+        type=_parse_rgb,
+        default=(0, 0, 0),
+        help="RGB triple for --delivery-mode blank_visual_stream, for example 0,0,0.",
+    )
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument(
         "--probe-cache-policy",
@@ -62,6 +74,8 @@ def main() -> None:
             probe_max_tokens=args.probe_max_tokens,
             temperature=args.temperature,
             seed=args.seed,
+            delivery_mode=args.delivery_mode,
+            blank_rgb=args.blank_rgb,
             dry_run=args.dry_run,
             use_prompt_cache_state=not args.no_prompt_cache_state,
             probe_cache_policy=args.probe_cache_policy,
@@ -74,6 +88,16 @@ def main() -> None:
     )
     selected = result["stimulus"]["frame_count_selected"]
     print(f"wrote stream probe result for {selected} selected frames to {args.output}")
+
+
+def _parse_rgb(value: str) -> tuple[int, int, int]:
+    try:
+        parts = [int(part.strip()) for part in value.split(",")]
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("--blank-rgb must contain integers") from exc
+    if len(parts) != 3 or any(part < 0 or part > 255 for part in parts):
+        raise argparse.ArgumentTypeError("--blank-rgb must be three integers in 0..255")
+    return parts[0], parts[1], parts[2]
 
 
 if __name__ == "__main__":

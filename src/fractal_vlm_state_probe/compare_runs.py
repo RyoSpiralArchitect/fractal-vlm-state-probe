@@ -49,6 +49,7 @@ def format_comparison_markdown(comparison: dict[str, Any]) -> str:
         f"- Right: `{right['condition_id']}` ({right['source_path']})",
         f"- Model: `{left['model']}` / `{right['model']}`",
         f"- Seed: `{left.get('seed')}` / `{right.get('seed')}`",
+        f"- Delivery: `{left.get('delivery_mode')}` / `{right.get('delivery_mode')}`",
         "",
         "## Matched Context",
         "",
@@ -62,6 +63,7 @@ def format_comparison_markdown(comparison: dict[str, Any]) -> str:
         lines.append("")
         lines.append(f"- Left tokens: `{record['left_generation_tokens']}`")
         lines.append(f"- Right tokens: `{record['right_generation_tokens']}`")
+        lines.append(f"- Same text: `{record['same_text']}`")
         lines.append("")
         lines.append("Left:")
         lines.append("")
@@ -131,6 +133,7 @@ def _run_header(run: dict[str, Any]) -> dict[str, Any]:
     stimulus = run.get("stimulus") or {}
     condition = stimulus.get("condition") or {}
     reproducibility = run.get("reproducibility") or {}
+    delivery = run.get("stimulus_delivery") or {}
     return {
         "source_path": run.get("_source_path"),
         "run_kind": run.get("run_kind"),
@@ -139,7 +142,9 @@ def _run_header(run: dict[str, Any]) -> dict[str, Any]:
         "condition_id": condition.get("condition_id"),
         "condition_family": condition.get("condition_family"),
         "frame_count_selected": stimulus.get("frame_count_selected"),
+        "source_frame_count_selected": stimulus.get("source_frame_count_selected"),
         "seed": reproducibility.get("seed"),
+        "delivery_mode": delivery.get("mode") or (run.get("context_policy") or {}).get("frame_delivery"),
     }
 
 
@@ -148,7 +153,10 @@ def _matched_context(left: dict[str, Any], right: dict[str, Any]) -> dict[str, b
         "same_model": _run_header(left)["model"] == _run_header(right)["model"],
         "same_adapter": _run_header(left)["adapter_id"] == _run_header(right)["adapter_id"],
         "same_frame_count": _run_header(left)["frame_count_selected"] == _run_header(right)["frame_count_selected"],
+        "same_source_frame_count": _run_header(left).get("source_frame_count_selected")
+        == _run_header(right).get("source_frame_count_selected"),
         "same_seed": _run_header(left).get("seed") == _run_header(right).get("seed"),
+        "same_delivery_mode": _run_header(left).get("delivery_mode") == _run_header(right).get("delivery_mode"),
         "same_probe_policy": (left.get("context_policy") or {}).get("probe_cache_policy")
         == (right.get("context_policy") or {}).get("probe_cache_policy"),
     }
@@ -170,6 +178,8 @@ def _compare_probes(left: dict[str, Any], right: dict[str, Any]) -> list[dict[st
                     "probe_id": probe_id,
                     "left_text": _one_line(left_record.get("assistant_text")),
                     "right_text": _one_line(right_record.get("assistant_text")),
+                    "same_text": _one_line(left_record.get("assistant_text"))
+                    == _one_line(right_record.get("assistant_text")),
                     "left_generation_tokens": (left_record.get("generation") or {}).get("generation_tokens"),
                     "right_generation_tokens": (right_record.get("generation") or {}).get("generation_tokens"),
                 }

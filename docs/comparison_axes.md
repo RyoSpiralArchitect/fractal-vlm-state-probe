@@ -6,25 +6,37 @@ while the visual stream changes.
 
 ## Stimulus Ladder
 
-1. **Fractal ordered vs fractal shuffled**
+1. **Probe-only vs stream**
+   Tests whether any frame-indexed stream context changes later probes beyond a
+   clean baseline.
+
+2. **Text-only stream vs visual stream**
+   Tests whether the shift is explainable by transcript length, timecodes, and
+   synchronization text without image tokens.
+
+3. **Blank visual stream vs visual stream**
+   Tests whether generic image-token/cache growth differs from structured
+   visual content.
+
+4. **Fractal ordered vs fractal shuffled**
    Tests temporal order while preserving frame content.
 
-2. **Fractal ordered vs static repeat**
+5. **Fractal ordered vs static repeat**
    Tests evolving context against repeated exposure to the same visual object.
 
-3. **Fractal A vs Fractal B**
+6. **Fractal A vs Fractal B**
    Tests whether an effect is tied to a particular equation, zoom path, or color
    field rather than "fractal" as a broad label.
 
-4. **Fractal vs non-fractal geometry**
+7. **Fractal vs non-fractal geometry**
    Uses low-semantic visual structure such as Lissajous curves, spirals,
    kaleidoscopes, Voronoi fields, or cellular automata.
 
-5. **Fractal vs natural texture or landscape**
+8. **Fractal vs natural texture or landscape**
    Introduces real-world image statistics without necessarily adding strong
    object narratives.
 
-6. **Fractal vs semantic-rich video**
+9. **Fractal vs semantic-rich video**
    Uses cats, streets, rooms, faces-with-care, vehicles, or other recognizable
    scenes. This is useful but interpretively noisy because semantic content can
    dominate the probe.
@@ -71,4 +83,3 @@ source, extraction settings, frame hashes, and any cropping or resizing choices.
 Start with the least semantic comparisons first. A fractal-vs-cat result may be
 interesting, but it does not isolate fractal structure. A fractal-vs-geometric
 or ordered-vs-shuffled result is usually more interpretable.
-

@@ -122,6 +122,43 @@ python3 scripts/run_mlx_stream_probe.py \
   --output runs/smoke/mandelbrot_a_mlx.json
 ```
 
+To run the first Null-vs-Stream ladder from the same manifest, keep the seed,
+probe, frame count, and model fixed while changing only `--delivery-mode`:
+
+```bash
+python3 scripts/run_mlx_stream_probe.py \
+  --manifest runs/smoke/mandelbrot_a/manifest.json \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --delivery-mode probe_only \
+  --max-frames 4 \
+  --seed 20260604 \
+  --output runs/null_vs_stream/probe_only.json
+
+python3 scripts/run_mlx_stream_probe.py \
+  --manifest runs/smoke/mandelbrot_a/manifest.json \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --delivery-mode text_only_stream \
+  --max-frames 4 \
+  --seed 20260604 \
+  --output runs/null_vs_stream/text_only.json
+
+python3 scripts/run_mlx_stream_probe.py \
+  --manifest runs/smoke/mandelbrot_a/manifest.json \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --delivery-mode blank_visual_stream \
+  --max-frames 4 \
+  --seed 20260604 \
+  --output runs/null_vs_stream/blank_visual.json
+
+python3 scripts/run_mlx_stream_probe.py \
+  --manifest runs/smoke/mandelbrot_a/manifest.json \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --delivery-mode visual_stream \
+  --max-frames 4 \
+  --seed 20260604 \
+  --output runs/null_vs_stream/visual.json
+```
+
 With Hugging Face Transformers:
 
 ```bash
@@ -134,6 +171,7 @@ python3 scripts/run_hf_stream_probe.py \
   --probe-cache-policy isolated \
   --trace-every 10 \
   --trace-max-layers 4 \
+  --delivery-mode visual_stream \
   --seed 20260604 \
   --output runs/smoke/mandelbrot_a_hf.json
 ```
@@ -180,12 +218,17 @@ python3 scripts/compare_runs.py \
   --output-json runs/compare_seed_20260604/mandelbrot_vs_julia.json
 ```
 
+The same comparison command can compare `probe_only` vs `visual_stream`, or
+`text_only_stream` vs `visual_stream`, to keep the first claim boundary focused
+on Null-vs-Stream before fractal-family effects.
+
 ## Documentation
 
 - [Experiment Design](docs/experiment_design.md)
 - [Comparison Axes](docs/comparison_axes.md)
 - [Provider Tiers](docs/provider_tiers.md)
 - [Roadmap](docs/roadmap.md)
+- [Research Note 0002: Null vs Stream Smoke](docs/research_notes/0002_null_vs_stream_smoke.md)
 
 ## Claim Boundary
 
