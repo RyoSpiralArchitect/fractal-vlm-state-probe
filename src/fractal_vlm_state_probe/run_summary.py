@@ -48,6 +48,8 @@ def summarize_run(data: dict[str, Any]) -> str:
         f"mid after position {schedule.get('mid_probe_after_position', '<none>')}"
     )
     lines.append(f"Seed: {reproducibility.get('seed')}")
+    if "probe_seed" in reproducibility:
+        lines.append(f"Probe seed: {reproducibility.get('probe_seed')}")
     lines.append("")
 
     lines.append("Stream events:")

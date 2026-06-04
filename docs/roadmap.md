@@ -63,6 +63,16 @@ Status: design-ready after Phase 2/3 adapters.
 
 Status: first nearest-centroid cache-summary classifier implemented.
 
+## Phase 4.55: Paired Stochastic Probes
+
+- Keep stream generation deterministic while sampling probes.
+- Apply matched probe seed series across conditions.
+- Compare `mid` and `after` distributions after subtracting `before` variance.
+- Start with lexical distance, then add embeddings, semantic word categories,
+  and cache-summary classifier reads on the same runs.
+
+Status: first MLX batch runner and lexical summary implemented.
+
 ## Phase 4.6: Low-Level Visual Controls
 
 - Static repeat, shuffled order, reversed order.

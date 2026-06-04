@@ -83,6 +83,19 @@ Prefer matched:
 When a natural-video condition cannot be deterministic, preserve provenance:
 source, extraction settings, frame hashes, and any cropping or resizing choices.
 
+## Stochastic Probe Pairing
+
+When probe sampling is enabled, do not compare unpaired open-ended text as if it
+were a condition effect. Prefer:
+
+- fixed deterministic stream generation,
+- matched probe seed series across conditions,
+- phase-level probe seed resets for `before`, `mid`, and `after`,
+- distributional summaries after subtracting the `before` distance.
+
+This keeps the interesting surface-text mobility while making sampling variance
+visible instead of quietly folding it into the condition read.
+
 ## Interpretation Order
 
 Start with the least semantic comparisons first. A fractal-vs-cat result may be

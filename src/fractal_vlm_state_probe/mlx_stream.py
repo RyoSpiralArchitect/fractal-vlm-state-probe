@@ -45,12 +45,14 @@ class StreamRunConfig:
     adapter_id: str = "mlx_vlm"
     include_frame_artifacts: bool = True
     seed: int | None = None
+    probe_seed: int | None = None
     delivery_mode: StimulusDeliveryMode = "visual_stream"
     blank_rgb: tuple[int, int, int] = (0, 0, 0)
 
 
 def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
     seed_record = set_global_seed(config.seed, include_mlx=True)
+    probe_phase_seeds = _probe_phase_seeds(config.probe_seed)
     manifest = _load_manifest(config.manifest_path)
     issues = validate_manifest(config.manifest_path)
     if issues:
@@ -77,12 +79,17 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
         "adapter_capabilities": get_capabilities(config.adapter_id).to_dict(),
         "manifest_path": str(config.manifest_path),
         "dry_run": config.dry_run,
-        "reproducibility": seed_record,
+        "reproducibility": {
+            **seed_record,
+            "probe_seed": config.probe_seed,
+            "probe_phase_seeds": probe_phase_seeds,
+        },
         "context_policy": {
             "frame_delivery": config.delivery_mode,
             "history": "explicit chat transcript stack",
             "stream_temperature": config.temperature,
             "probe_temperature": _probe_temperature(config),
+            "probe_seed_policy": _probe_seed_policy(config.probe_seed),
             "prompt_cache_state_requested": config.use_prompt_cache_state,
             "probe_cache_policy": config.probe_cache_policy,
             "probe_history_policy": _probe_history_policy(config.probe_cache_policy),
@@ -157,6 +164,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
         prompt_cache_state_source=None,
         probe_cache_policy="no_cache",
         cache_summary_max_layers=config.cache_summary_max_layers,
+        probe_seed=probe_phase_seeds["before"],
     )
 
     mid_index = _mid_probe_after_position(len(frames))
@@ -198,6 +206,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
                 prompt_cache_state_source=prompt_cache_state,
                 probe_cache_policy=config.probe_cache_policy,
                 cache_summary_max_layers=config.cache_summary_max_layers,
+                probe_seed=probe_phase_seeds["mid"],
             )
 
     result["probes"]["after"] = _run_probe_batch(
@@ -214,6 +223,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
         prompt_cache_state_source=prompt_cache_state,
         probe_cache_policy=config.probe_cache_policy,
         cache_summary_max_layers=config.cache_summary_max_layers,
+        probe_seed=probe_phase_seeds["after"],
     )
 
     write_json(config.output_path, result)
@@ -222,6 +232,18 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
 
 def _probe_temperature(config: StreamRunConfig) -> float:
     return config.temperature if config.probe_temperature is None else config.probe_temperature
+
+
+def _probe_phase_seeds(base_seed: int | None) -> dict[str, int | None]:
+    if base_seed is None:
+        return {"before": None, "mid": None, "after": None}
+    return {"before": base_seed, "mid": base_seed + 1, "after": base_seed + 2}
+
+
+def _probe_seed_policy(base_seed: int | None) -> str:
+    if base_seed is None:
+        return "probe sampling uses the active global RNG state"
+    return "probe RNG is reset per phase from probe_seed, probe_seed+1, and probe_seed+2"
 
 
 def _run_frame_turn(
@@ -305,8 +327,10 @@ def _run_probe_batch(
     prompt_cache_state_source: Any,
     probe_cache_policy: ProbeCachePolicy,
     cache_summary_max_layers: int | None,
+    probe_seed: int | None,
 ) -> list[dict[str, Any]]:
     records = []
+    probe_seed_record = set_global_seed(probe_seed, include_mlx=True)
     for probe in probes:
         source_cache_summary = summarize_prompt_cache_state(
             prompt_cache_state_source,
@@ -343,6 +367,8 @@ def _run_probe_batch(
                 "prompt": prompt,
                 "assistant_text": generation["text"],
                 "generation": generation["summary"],
+                "probe_seed": probe_seed,
+                "probe_seed_record": probe_seed_record,
                 "wall_s": time.perf_counter() - started,
                 "cache_branch_status": cache_branch_status,
                 "source_cache_summary_before_probe": source_cache_summary,

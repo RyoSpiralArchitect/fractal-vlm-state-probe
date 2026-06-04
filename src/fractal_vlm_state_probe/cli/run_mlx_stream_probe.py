@@ -24,6 +24,12 @@ def main() -> None:
     )
     parser.add_argument("--seed", type=int, default=None)
     parser.add_argument(
+        "--probe-seed",
+        type=int,
+        default=None,
+        help="Optional base seed reset before probe phases. Uses seed, seed+1, seed+2 for before/mid/after.",
+    )
+    parser.add_argument(
         "--delivery-mode",
         choices=["visual_stream", "text_only_stream", "blank_visual_stream", "probe_only"],
         default="visual_stream",
@@ -81,6 +87,7 @@ def main() -> None:
             temperature=args.temperature,
             probe_temperature=args.probe_temperature,
             seed=args.seed,
+            probe_seed=args.probe_seed,
             delivery_mode=args.delivery_mode,
             blank_rgb=args.blank_rgb,
             dry_run=args.dry_run,

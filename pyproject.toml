@@ -33,6 +33,7 @@ generate-control-frames = "fractal_vlm_state_probe.cli.generate_control_frames:m
 run-mlx-stream-probe = "fractal_vlm_state_probe.cli.run_mlx_stream_probe:main"
 run-hf-stream-probe = "fractal_vlm_state_probe.cli.run_hf_stream_probe:main"
 run-mlx-null-fractal-batch = "fractal_vlm_state_probe.cli.run_mlx_null_fractal_batch:main"
+run-mlx-paired-stochastic-probe-batch = "fractal_vlm_state_probe.cli.run_mlx_paired_stochastic_probe_batch:main"
 build-external-frame-manifest = "fractal_vlm_state_probe.cli.build_external_frame_manifest:main"
 list-provider-capabilities = "fractal_vlm_state_probe.cli.list_provider_capabilities:main"
 summarize-run = "fractal_vlm_state_probe.cli.summarize_run:main"

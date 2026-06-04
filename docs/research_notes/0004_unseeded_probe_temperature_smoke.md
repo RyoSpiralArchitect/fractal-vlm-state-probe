@@ -38,6 +38,10 @@ condition comparison. A stronger stochastic design needs repeated sampled probes
 per condition, plus either matched RNG seeds for comparable probe draws or a
 distributional analysis over many samples.
 
+This smoke motivates a paired stochastic-probe design: keep the visual stream
+deterministic, sample multiple probes from matched RNG seeds per condition, and
+analyze condition-level distributions after subtracting before-probe variance.
+
 ## Local Artifacts
 
 - `runs/unseeded_output_smoke/null_blank_probe_temp_0_7.json`

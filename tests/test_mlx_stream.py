@@ -6,6 +6,7 @@ from fractal_vlm_state_probe.fractals import FractalSpec
 from fractal_vlm_state_probe.mlx_stream import (
     StreamRunConfig,
     _mid_probe_after_position,
+    _probe_phase_seeds,
     _should_summarize_cache,
     run_stream_probe,
 )
@@ -28,6 +29,11 @@ def test_should_summarize_cache_keeps_key_positions() -> None:
     assert not _should_summarize_cache(0, frame_count=12, every=0)
 
 
+def test_probe_phase_seeds_are_phase_stable() -> None:
+    assert _probe_phase_seeds(None) == {"before": None, "mid": None, "after": None}
+    assert _probe_phase_seeds(10) == {"before": 10, "mid": 11, "after": 12}
+
+
 def test_mlx_dry_run_records_text_only_delivery(tmp_path: Path) -> None:
     manifest_path = _render_test_manifest(tmp_path / "stimulus")
     output_path = tmp_path / "text_only.json"
@@ -39,11 +45,14 @@ def test_mlx_dry_run_records_text_only_delivery(tmp_path: Path) -> None:
             dry_run=True,
             delivery_mode="text_only_stream",
             probe_temperature=0.7,
+            probe_seed=21,
             max_frames=2,
         )
     )
     assert result["stimulus_delivery"]["mode"] == "text_only_stream"
     assert result["context_policy"]["probe_temperature"] == 0.7
+    assert result["reproducibility"]["probe_seed"] == 21
+    assert result["reproducibility"]["probe_phase_seeds"]["after"] == 23
     assert result["stream_events"][0]["delivery"]["num_images"] == 0
     assert "No image is attached" in result["stream_events"][0]["planned_prompt"]
     assert result["frame_artifacts"] == []

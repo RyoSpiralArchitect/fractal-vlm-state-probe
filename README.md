@@ -89,6 +89,8 @@ first logprob-focused pass unless a selected model exposes the needed signal.
   contaminate the main stream cache/history.
 - Record probe outputs, generation metrics, and sampled KV-cache summaries.
 - Seed MLX/HF smoke runs for reproducible paired comparisons.
+- Run paired stochastic-probe MLX batches where stream generation stays greedy
+  but probe sampling is repeated across matched probe seeds.
 - Compare paired run JSONs with probe text, frame artifacts, stream-cache
   deltas, and probe-source-cache deltas.
 - Train a small nearest-centroid classifier on saved cache-summary features to
@@ -288,6 +290,21 @@ python3 scripts/run_mlx_stream_probe.py \
   --output runs/unseeded_output_smoke/julia_probe_temp_0_7.json
 ```
 
+To move from unpaired sampled text toward a paired stochastic design:
+
+```bash
+python3 scripts/run_mlx_paired_stochastic_probe_batch.py \
+  --output-root runs/paired_stochastic_probe_smoke \
+  --probe-seeds 0 1 2 \
+  --frames 12 \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --temperature 0 \
+  --probe-temperature 0.7 \
+  --probe-max-tokens 80 \
+  --probe-cache-policy isolated \
+  --overwrite
+```
+
 ## Documentation
 
 - [Experiment Design](docs/experiment_design.md)
@@ -298,6 +315,8 @@ python3 scripts/run_mlx_stream_probe.py \
 - [Research Note 0002: Null vs Stream Smoke](docs/research_notes/0002_null_vs_stream_smoke.md)
 - [Research Note 0003: Cache Summary Condition Classifier](docs/research_notes/0003_cache_summary_condition_classifier.md)
 - [Research Note 0004: Unseeded Probe-Temperature Smoke](docs/research_notes/0004_unseeded_probe_temperature_smoke.md)
+- [Research Note 0005: Paired Stochastic Probe Design](docs/research_notes/0005_paired_stochastic_probe_design.md)
+- [Research Note 0006: Paired Stochastic Probe Smoke](docs/research_notes/0006_paired_stochastic_probe_smoke.md)
 
 ## Claim Boundary
 
