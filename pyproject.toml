@@ -29,6 +29,7 @@ dev = [
 [project.scripts]
 generate-fractal-frames = "fractal_vlm_state_probe.cli.generate_fractal_frames:main"
 generate-blank-frames = "fractal_vlm_state_probe.cli.generate_blank_frames:main"
+generate-control-frames = "fractal_vlm_state_probe.cli.generate_control_frames:main"
 run-mlx-stream-probe = "fractal_vlm_state_probe.cli.run_mlx_stream_probe:main"
 run-hf-stream-probe = "fractal_vlm_state_probe.cli.run_hf_stream_probe:main"
 run-mlx-null-fractal-batch = "fractal_vlm_state_probe.cli.run_mlx_null_fractal_batch:main"

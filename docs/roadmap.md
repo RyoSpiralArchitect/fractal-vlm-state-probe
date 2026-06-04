@@ -67,13 +67,14 @@ Status: first nearest-centroid cache-summary classifier implemented.
 
 - Static repeat, shuffled order, reversed order.
 - Phase-scrambled Mandelbrot and Julia.
-- Histogram-matched visual controls.
 - Voronoi, tiling, checkerboard, quasicrystal, random dot, blue-noise, and
   white-noise generators.
+- Histogram-matched visual controls.
 - Feature extraction for image statistics such as brightness, contrast, edge
   density, spectrum, entropy, periodicity, and symmetry.
 
-Status: planned next.
+Status: first generator suite implemented. Histogram matching and image-statistic
+reports are next.
 
 ## Phase 5: Research Report
 

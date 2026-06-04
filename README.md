@@ -72,6 +72,11 @@ first logprob-focused pass unless a selected model exposes the needed signal.
 ## Current Capabilities
 
 - Generate deterministic Mandelbrot and Julia frame streams.
+- Generate deterministic visual controls: blank, white/blue noise, random dots,
+  checkerboards, square/triangle/hex tilings, Voronoi fields, and
+  quasicrystal-like patterns.
+- Transform existing manifests into phase-scrambled, static-repeat, shuffled,
+  and reversed-order controls.
 - Attach condition metadata for fractal, geometry, natural, and control
   comparisons.
 - Build manifests for external frame directories, so natural videos can be
@@ -199,6 +204,27 @@ python3 scripts/build_external_frame_manifest.py \
   --output runs/stimuli/natural_city/manifest.json
 ```
 
+To generate low-level visual controls:
+
+```bash
+python3 scripts/generate_control_frames.py \
+  --kind voronoi \
+  --output runs/controls/voronoi_seed_7 \
+  --width 320 \
+  --height 240 \
+  --total-frames 50 \
+  --fps 1 \
+  --seed 7 \
+  --overwrite
+
+python3 scripts/generate_control_frames.py \
+  --kind phase_scrambled \
+  --source-manifest runs/smoke/mandelbrot_a/manifest.json \
+  --output runs/controls/mandelbrot_phase_scrambled_seed_7 \
+  --seed 7 \
+  --overwrite
+```
+
 To create the first Julia comparison stimulus:
 
 ```bash
@@ -266,6 +292,7 @@ python3 scripts/run_mlx_stream_probe.py \
 
 - [Experiment Design](docs/experiment_design.md)
 - [Comparison Axes](docs/comparison_axes.md)
+- [Control Stimuli](docs/control_stimuli.md)
 - [Provider Tiers](docs/provider_tiers.md)
 - [Roadmap](docs/roadmap.md)
 - [Research Note 0002: Null vs Stream Smoke](docs/research_notes/0002_null_vs_stream_smoke.md)

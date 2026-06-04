@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Any, Literal
 
 ConditionFamily = Literal["fractal", "geometric", "natural", "control"]
-TemporalPolicy = Literal["ordered", "shuffled", "static_repeat", "text_only"]
+TemporalPolicy = Literal["ordered", "shuffled", "reversed", "static_repeat", "text_only"]
 SemanticLoad = Literal["none", "low", "medium", "high"]
 SourceKind = Literal["generated", "external_frames", "external_video", "text_only"]
 
@@ -52,7 +52,13 @@ class StimulusCondition:
             raise ValueError("condition_id must not be empty")
         if self.condition_family not in ("fractal", "geometric", "natural", "control"):
             raise ValueError(f"unsupported condition_family: {self.condition_family}")
-        if self.temporal_policy not in ("ordered", "shuffled", "static_repeat", "text_only"):
+        if self.temporal_policy not in (
+            "ordered",
+            "shuffled",
+            "reversed",
+            "static_repeat",
+            "text_only",
+        ):
             raise ValueError(f"unsupported temporal_policy: {self.temporal_policy}")
         if self.semantic_load not in ("none", "low", "medium", "high"):
             raise ValueError(f"unsupported semantic_load: {self.semantic_load}")
@@ -101,4 +107,3 @@ def condition_from_config(
     if not isinstance(raw, dict):
         raise ValueError("stimulus_condition must be an object")
     return StimulusCondition.from_dict(raw)
-

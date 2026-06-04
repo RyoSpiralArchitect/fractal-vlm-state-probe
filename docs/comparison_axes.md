@@ -30,13 +30,18 @@ while the visual stream changes.
 
 7. **Fractal vs non-fractal geometry**
    Uses low-semantic visual structure such as Lissajous curves, spirals,
-   kaleidoscopes, Voronoi fields, or cellular automata.
+   kaleidoscopes, Voronoi fields, tilings, quasicrystals, or cellular automata.
 
-8. **Fractal vs natural texture or landscape**
+8. **Fractal vs low-level controls**
+   Uses phase scrambling, white noise, blue noise, random dots, static repeat,
+   shuffled order, and reversed order to test whether lower-level image
+   statistics or temporal structure can explain the measured trace separation.
+
+9. **Fractal vs natural texture or landscape**
    Introduces real-world image statistics without necessarily adding strong
    object narratives.
 
-9. **Fractal vs semantic-rich video**
+10. **Fractal vs semantic-rich video**
    Uses cats, streets, rooms, faces-with-care, vehicles, or other recognizable
    scenes. This is useful but interpretively noisy because semantic content can
    dominate the probe.
