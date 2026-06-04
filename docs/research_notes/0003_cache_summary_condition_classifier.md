@@ -72,3 +72,8 @@ tool reads summary statistics, not full hidden-state or KV tensors.
 - `runs/null_fractal_50_seed_batch/cache_classifier.md`
 - `runs/null_fractal_50_seed_batch/cache_classifier.json`
 - `runs/null_fractal_50_seed_batch/analysis_summary.md`
+
+## Tracked Examples
+
+- [Cache classifier JSON](../../examples/research_notes/0003_cache_summary_classifier/cache_classifier.json)
+- [Batch summary JSON](../../examples/research_notes/0003_cache_summary_classifier/batch_summary.json)

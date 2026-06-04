@@ -312,6 +312,7 @@ python3 scripts/run_mlx_paired_stochastic_probe_batch.py \
 - [Control Stimuli](docs/control_stimuli.md)
 - [Provider Tiers](docs/provider_tiers.md)
 - [Roadmap](docs/roadmap.md)
+- [Examples](examples/README.md)
 - [Research Note 0002: Null vs Stream Smoke](docs/research_notes/0002_null_vs_stream_smoke.md)
 - [Research Note 0003: Cache Summary Condition Classifier](docs/research_notes/0003_cache_summary_condition_classifier.md)
 - [Research Note 0004: Unseeded Probe-Temperature Smoke](docs/research_notes/0004_unseeded_probe_temperature_smoke.md)

@@ -90,3 +90,7 @@ After this note, the Julia generation and MLX smoke path was also exercised with
 12-token probe budget, so it is a wiring check rather than a comparison result.
 The important point is that `julia_zoom_b` now has the same manifest/run shape as
 `mandelbrot_zoom_a`.
+
+## Tracked Example
+
+- [Mandelbrot vs Julia paired comparison JSON](../../examples/research_notes/0001_mandelbrot_julia_smoke/mandelbrot_vs_julia.json)

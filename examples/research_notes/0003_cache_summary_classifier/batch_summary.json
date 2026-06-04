@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "batch_kind": "mlx_null_fractal_seed_batch",
+  "model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+  "seeds": [
+    20260604,
+    20260605,
+    20260606
+  ],
+  "frames": 50,
+  "conditions": {
+    "null_blank": "runs/null_fractal_50_seed_batch/stimuli/null_blank/manifest.json",
+    "mandelbrot": "runs/null_fractal_50_seed_batch/stimuli/mandelbrot/manifest.json",
+    "julia": "runs/null_fractal_50_seed_batch/stimuli/julia/manifest.json"
+  },
+  "records": [
+    {
+      "seed": 20260604,
+      "runs": {
+        "null_blank": "runs/null_fractal_50_seed_batch/seed_20260604/null_blank_mlx.json",
+        "mandelbrot": "runs/null_fractal_50_seed_batch/seed_20260604/mandelbrot_mlx.json",
+        "julia": "runs/null_fractal_50_seed_batch/seed_20260604/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/null_fractal_50_seed_batch/seed_20260604/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/null_fractal_50_seed_batch/seed_20260604/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/null_fractal_50_seed_batch/seed_20260604/comparisons/null_vs_julia.md",
+          "json": "runs/null_fractal_50_seed_batch/seed_20260604/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/null_fractal_50_seed_batch/seed_20260604/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/null_fractal_50_seed_batch/seed_20260604/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "seed": 20260605,
+      "runs": {
+        "null_blank": "runs/null_fractal_50_seed_batch/seed_20260605/null_blank_mlx.json",
+        "mandelbrot": "runs/null_fractal_50_seed_batch/seed_20260605/mandelbrot_mlx.json",
+        "julia": "runs/null_fractal_50_seed_batch/seed_20260605/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/null_fractal_50_seed_batch/seed_20260605/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/null_fractal_50_seed_batch/seed_20260605/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/null_fractal_50_seed_batch/seed_20260605/comparisons/null_vs_julia.md",
+          "json": "runs/null_fractal_50_seed_batch/seed_20260605/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/null_fractal_50_seed_batch/seed_20260605/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/null_fractal_50_seed_batch/seed_20260605/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "seed": 20260606,
+      "runs": {
+        "null_blank": "runs/null_fractal_50_seed_batch/seed_20260606/null_blank_mlx.json",
+        "mandelbrot": "runs/null_fractal_50_seed_batch/seed_20260606/mandelbrot_mlx.json",
+        "julia": "runs/null_fractal_50_seed_batch/seed_20260606/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/null_fractal_50_seed_batch/seed_20260606/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/null_fractal_50_seed_batch/seed_20260606/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/null_fractal_50_seed_batch/seed_20260606/comparisons/null_vs_julia.md",
+          "json": "runs/null_fractal_50_seed_batch/seed_20260606/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/null_fractal_50_seed_batch/seed_20260606/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/null_fractal_50_seed_batch/seed_20260606/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    }
+  ]
+}

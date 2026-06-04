@@ -1,0 +1,889 @@
+{
+  "schema_version": 1,
+  "comparison_kind": "paired_run_comparison",
+  "left": {
+    "source_path": "runs/unseeded_output_smoke/mandelbrot_probe_temp_0_7.json",
+    "run_kind": "fractal_vlm_stream_probe",
+    "model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+    "adapter_id": "mlx_vlm",
+    "condition_id": "mandelbrot_zoom_a",
+    "condition_family": "fractal",
+    "frame_count_selected": 12,
+    "source_frame_count_selected": 12,
+    "seed": null,
+    "delivery_mode": "visual_stream"
+  },
+  "right": {
+    "source_path": "runs/unseeded_output_smoke/julia_probe_temp_0_7.json",
+    "run_kind": "fractal_vlm_stream_probe",
+    "model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+    "adapter_id": "mlx_vlm",
+    "condition_id": "julia_zoom_b",
+    "condition_family": "fractal",
+    "frame_count_selected": 12,
+    "source_frame_count_selected": 12,
+    "seed": null,
+    "delivery_mode": "visual_stream"
+  },
+  "matched_context": {
+    "same_model": true,
+    "same_adapter": true,
+    "same_frame_count": true,
+    "same_source_frame_count": true,
+    "same_seed": true,
+    "same_delivery_mode": true,
+    "same_probe_policy": true
+  },
+  "probe_comparison": [
+    {
+      "phase": "before",
+      "probe_id": "blue_silence_poem",
+      "left_text": "In twilight's hush, where shadows play, The color blue, a silent way, A hue that whispers secrets untold, A mystery that speaks in cold. Like ice, it holds its breath in vain, A frozen moment, all in vain, A blue silence, in the mind's deep, A place where thoughts are left in sleep. It",
+      "right_text": "In an ocean of blue, a whisper takes flight, A gentle ripple on the surface, a distant sigh, Echoes of the past, a fleeting glimpse of the sea, A silent tale, a story waiting to be. The depths below, a mystery in blue, A world unseen, where secrets dwell, A world of wonder, where the light does play",
+      "same_text": false,
+      "left_generation_tokens": 80,
+      "right_generation_tokens": 80
+    },
+    {
+      "phase": "mid",
+      "probe_id": "blue_silence_poem",
+      "left_text": "In twilight's hush, where shadows dance, A cool blue silence whispers, a silent grace. It's not the voice of thunder's loud roar, Nor the rush of river's flow, but a stiller score. Like a painting's canvas, serene and bright, It's a moment's pause, a heart's sweet light. A moment's peace",
+      "right_text": "In the ocean's heart, a wave's embrace A canvas painted by time and space A hue of blue, a whisper of the night A symphony of light, a harmony of sight The world outside is but a distant roar A fleeting moment, a fleeting hour Yet in this blue silence, I find my peace A world of wonder, a world of release",
+      "same_text": false,
+      "left_generation_tokens": 80,
+      "right_generation_tokens": 80
+    },
+    {
+      "phase": "after",
+      "probe_id": "blue_silence_poem",
+      "left_text": "In twilight's hush, where shadows play, A world of blue silence reigns. The canvas of the sky, a deep blue shade, A canvas of dreams, where nothing's made. The stars, like diamonds, shine so bright, A twinkling display, in the endless night. A tapestry of wonder, in the sea, Where secrets whisper, to the",
+      "right_text": "In realms of sight, where colour reigns, A canvas vast, of hues unreal, A canvas vast, where colours reign, A canvas vast, where colours are the gain. Shades of blue, like azure skies, Purple hues, like amethyst's sighs, Green whispers, like the leaves in breeze, Silver sparkles, like moon",
+      "same_text": false,
+      "left_generation_tokens": 80,
+      "right_generation_tokens": 80
+    }
+  ],
+  "stream_cache_comparison": [
+    {
+      "frame_index": 0,
+      "left_token_count": 186,
+      "right_token_count": 186,
+      "left_frame_artifact": "mandelbrot_probe_temp_0_7.json.frames/frame_000000.png",
+      "right_frame_artifact": "julia_probe_temp_0_7.json.frames/frame_000000.png",
+      "cache_stat_delta": {
+        "available": true,
+        "left_available": true,
+        "right_available": true,
+        "left_token_count": 186,
+        "right_token_count": 186,
+        "token_count_delta": 0.0,
+        "comparable_layers": [
+          0,
+          8,
+          15,
+          23
+        ],
+        "stat_fields": [
+          "mean",
+          "variance",
+          "std",
+          "abs_mean",
+          "l2_norm"
+        ],
+        "max_abs_l2_delta": 10.06884765625,
+        "mean_abs_l2_delta": 4.19553017616272,
+        "max_abs_variance_delta": 0.05364704132080078,
+        "top_l2_deltas": [
+          {
+            "layer_index": 15,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1182.1317138671875,
+            "right": 1192.2005615234375,
+            "delta": 10.06884765625,
+            "abs_delta": 10.06884765625
+          },
+          {
+            "layer_index": 23,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1422.7689208984375,
+            "right": 1432.6187744140625,
+            "delta": 9.849853515625,
+            "abs_delta": 9.849853515625
+          },
+          {
+            "layer_index": 0,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 798.4098510742188,
+            "right": 804.6784057617188,
+            "delta": 6.2685546875,
+            "abs_delta": 6.2685546875
+          },
+          {
+            "layer_index": 8,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1262.746337890625,
+            "right": 1265.368408203125,
+            "delta": 2.6220703125,
+            "abs_delta": 2.6220703125
+          },
+          {
+            "layer_index": 8,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 378.4040222167969,
+            "right": 376.0276794433594,
+            "delta": -2.3763427734375,
+            "abs_delta": 2.3763427734375
+          }
+        ],
+        "top_stat_deltas": [
+          {
+            "layer_index": 15,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1182.1317138671875,
+            "right": 1192.2005615234375,
+            "delta": 10.06884765625,
+            "abs_delta": 10.06884765625
+          },
+          {
+            "layer_index": 23,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1422.7689208984375,
+            "right": 1432.6187744140625,
+            "delta": 9.849853515625,
+            "abs_delta": 9.849853515625
+          },
+          {
+            "layer_index": 0,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 798.4098510742188,
+            "right": 804.6784057617188,
+            "delta": 6.2685546875,
+            "abs_delta": 6.2685546875
+          },
+          {
+            "layer_index": 8,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1262.746337890625,
+            "right": 1265.368408203125,
+            "delta": 2.6220703125,
+            "abs_delta": 2.6220703125
+          },
+          {
+            "layer_index": 8,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 378.4040222167969,
+            "right": 376.0276794433594,
+            "delta": -2.3763427734375,
+            "abs_delta": 2.3763427734375
+          }
+        ]
+      }
+    },
+    {
+      "frame_index": 1,
+      "left_token_count": null,
+      "right_token_count": null,
+      "left_frame_artifact": "mandelbrot_probe_temp_0_7.json.frames/frame_000001.png",
+      "right_frame_artifact": "julia_probe_temp_0_7.json.frames/frame_000001.png",
+      "cache_stat_delta": null
+    },
+    {
+      "frame_index": 2,
+      "left_token_count": null,
+      "right_token_count": null,
+      "left_frame_artifact": "mandelbrot_probe_temp_0_7.json.frames/frame_000002.png",
+      "right_frame_artifact": "julia_probe_temp_0_7.json.frames/frame_000002.png",
+      "cache_stat_delta": null
+    },
+    {
+      "frame_index": 3,
+      "left_token_count": null,
+      "right_token_count": null,
+      "left_frame_artifact": "mandelbrot_probe_temp_0_7.json.frames/frame_000003.png",
+      "right_frame_artifact": "julia_probe_temp_0_7.json.frames/frame_000003.png",
+      "cache_stat_delta": null
+    },
+    {
+      "frame_index": 4,
+      "left_token_count": null,
+      "right_token_count": null,
+      "left_frame_artifact": "mandelbrot_probe_temp_0_7.json.frames/frame_000004.png",
+      "right_frame_artifact": "julia_probe_temp_0_7.json.frames/frame_000004.png",
+      "cache_stat_delta": null
+    },
+    {
+      "frame_index": 5,
+      "left_token_count": 511,
+      "right_token_count": 511,
+      "left_frame_artifact": "mandelbrot_probe_temp_0_7.json.frames/frame_000005.png",
+      "right_frame_artifact": "julia_probe_temp_0_7.json.frames/frame_000005.png",
+      "cache_stat_delta": {
+        "available": true,
+        "left_available": true,
+        "right_available": true,
+        "left_token_count": 511,
+        "right_token_count": 511,
+        "token_count_delta": 0.0,
+        "comparable_layers": [
+          0,
+          8,
+          15,
+          23
+        ],
+        "stat_fields": [
+          "mean",
+          "variance",
+          "std",
+          "abs_mean",
+          "l2_norm"
+        ],
+        "max_abs_l2_delta": 6.754150390625,
+        "mean_abs_l2_delta": 2.949097156524658,
+        "max_abs_variance_delta": 0.026085376739501953,
+        "top_l2_deltas": [
+          {
+            "layer_index": 15,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2203.573974609375,
+            "right": 2210.328125,
+            "delta": 6.754150390625,
+            "abs_delta": 6.754150390625
+          },
+          {
+            "layer_index": 23,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2536.508544921875,
+            "right": 2541.7568359375,
+            "delta": 5.248291015625,
+            "abs_delta": 5.248291015625
+          },
+          {
+            "layer_index": 8,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2174.164794921875,
+            "right": 2178.291015625,
+            "delta": 4.126220703125,
+            "abs_delta": 4.126220703125
+          },
+          {
+            "layer_index": 23,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1486.7781982421875,
+            "right": 1482.9603271484375,
+            "delta": -3.81787109375,
+            "abs_delta": 3.81787109375
+          },
+          {
+            "layer_index": 0,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1352.1800537109375,
+            "right": 1354.5836181640625,
+            "delta": 2.403564453125,
+            "abs_delta": 2.403564453125
+          }
+        ],
+        "top_stat_deltas": [
+          {
+            "layer_index": 15,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2203.573974609375,
+            "right": 2210.328125,
+            "delta": 6.754150390625,
+            "abs_delta": 6.754150390625
+          },
+          {
+            "layer_index": 23,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2536.508544921875,
+            "right": 2541.7568359375,
+            "delta": 5.248291015625,
+            "abs_delta": 5.248291015625
+          },
+          {
+            "layer_index": 8,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2174.164794921875,
+            "right": 2178.291015625,
+            "delta": 4.126220703125,
+            "abs_delta": 4.126220703125
+          },
+          {
+            "layer_index": 23,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1486.7781982421875,
+            "right": 1482.9603271484375,
+            "delta": -3.81787109375,
+            "abs_delta": 3.81787109375
+          },
+          {
+            "layer_index": 0,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1352.1800537109375,
+            "right": 1354.5836181640625,
+            "delta": 2.403564453125,
+            "abs_delta": 2.403564453125
+          }
+        ]
+      }
+    },
+    {
+      "frame_index": 6,
+      "left_token_count": null,
+      "right_token_count": null,
+      "left_frame_artifact": "mandelbrot_probe_temp_0_7.json.frames/frame_000006.png",
+      "right_frame_artifact": "julia_probe_temp_0_7.json.frames/frame_000006.png",
+      "cache_stat_delta": null
+    },
+    {
+      "frame_index": 7,
+      "left_token_count": null,
+      "right_token_count": null,
+      "left_frame_artifact": "mandelbrot_probe_temp_0_7.json.frames/frame_000007.png",
+      "right_frame_artifact": "julia_probe_temp_0_7.json.frames/frame_000007.png",
+      "cache_stat_delta": null
+    },
+    {
+      "frame_index": 8,
+      "left_token_count": null,
+      "right_token_count": null,
+      "left_frame_artifact": "mandelbrot_probe_temp_0_7.json.frames/frame_000008.png",
+      "right_frame_artifact": "julia_probe_temp_0_7.json.frames/frame_000008.png",
+      "cache_stat_delta": null
+    },
+    {
+      "frame_index": 9,
+      "left_token_count": null,
+      "right_token_count": null,
+      "left_frame_artifact": "mandelbrot_probe_temp_0_7.json.frames/frame_000009.png",
+      "right_frame_artifact": "julia_probe_temp_0_7.json.frames/frame_000009.png",
+      "cache_stat_delta": null
+    },
+    {
+      "frame_index": 10,
+      "left_token_count": 837,
+      "right_token_count": 837,
+      "left_frame_artifact": "mandelbrot_probe_temp_0_7.json.frames/frame_000010.png",
+      "right_frame_artifact": "julia_probe_temp_0_7.json.frames/frame_000010.png",
+      "cache_stat_delta": {
+        "available": true,
+        "left_available": true,
+        "right_available": true,
+        "left_token_count": 837,
+        "right_token_count": 837,
+        "token_count_delta": 0.0,
+        "comparable_layers": [
+          0,
+          8,
+          15,
+          23
+        ],
+        "stat_fields": [
+          "mean",
+          "variance",
+          "std",
+          "abs_mean",
+          "l2_norm"
+        ],
+        "max_abs_l2_delta": 9.916748046875,
+        "mean_abs_l2_delta": 2.827951431274414,
+        "max_abs_variance_delta": 0.0310211181640625,
+        "top_l2_deltas": [
+          {
+            "layer_index": 8,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2822.54443359375,
+            "right": 2832.461181640625,
+            "delta": 9.916748046875,
+            "abs_delta": 9.916748046875
+          },
+          {
+            "layer_index": 15,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2909.58837890625,
+            "right": 2915.731201171875,
+            "delta": 6.142822265625,
+            "abs_delta": 6.142822265625
+          },
+          {
+            "layer_index": 15,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1088.3233642578125,
+            "right": 1090.7755126953125,
+            "delta": 2.4521484375,
+            "abs_delta": 2.4521484375
+          },
+          {
+            "layer_index": 0,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1736.5611572265625,
+            "right": 1738.7138671875,
+            "delta": 2.1527099609375,
+            "abs_delta": 2.1527099609375
+          },
+          {
+            "layer_index": 23,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1896.6707763671875,
+            "right": 1897.575927734375,
+            "delta": 0.9051513671875,
+            "abs_delta": 0.9051513671875
+          }
+        ],
+        "top_stat_deltas": [
+          {
+            "layer_index": 8,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2822.54443359375,
+            "right": 2832.461181640625,
+            "delta": 9.916748046875,
+            "abs_delta": 9.916748046875
+          },
+          {
+            "layer_index": 15,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2909.58837890625,
+            "right": 2915.731201171875,
+            "delta": 6.142822265625,
+            "abs_delta": 6.142822265625
+          },
+          {
+            "layer_index": 15,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1088.3233642578125,
+            "right": 1090.7755126953125,
+            "delta": 2.4521484375,
+            "abs_delta": 2.4521484375
+          },
+          {
+            "layer_index": 0,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1736.5611572265625,
+            "right": 1738.7138671875,
+            "delta": 2.1527099609375,
+            "abs_delta": 2.1527099609375
+          },
+          {
+            "layer_index": 23,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1896.6707763671875,
+            "right": 1897.575927734375,
+            "delta": 0.9051513671875,
+            "abs_delta": 0.9051513671875
+          }
+        ]
+      }
+    },
+    {
+      "frame_index": 11,
+      "left_token_count": 903,
+      "right_token_count": 903,
+      "left_frame_artifact": "mandelbrot_probe_temp_0_7.json.frames/frame_000011.png",
+      "right_frame_artifact": "julia_probe_temp_0_7.json.frames/frame_000011.png",
+      "cache_stat_delta": {
+        "available": true,
+        "left_available": true,
+        "right_available": true,
+        "left_token_count": 903,
+        "right_token_count": 903,
+        "token_count_delta": 0.0,
+        "comparable_layers": [
+          0,
+          8,
+          15,
+          23
+        ],
+        "stat_fields": [
+          "mean",
+          "variance",
+          "std",
+          "abs_mean",
+          "l2_norm"
+        ],
+        "max_abs_l2_delta": 11.46728515625,
+        "mean_abs_l2_delta": 3.844348907470703,
+        "max_abs_variance_delta": 0.03477001190185547,
+        "top_l2_deltas": [
+          {
+            "layer_index": 8,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2937.142578125,
+            "right": 2948.60986328125,
+            "delta": 11.46728515625,
+            "abs_delta": 11.46728515625
+          },
+          {
+            "layer_index": 15,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 3031.73291015625,
+            "right": 3038.123779296875,
+            "delta": 6.390869140625,
+            "abs_delta": 6.390869140625
+          },
+          {
+            "layer_index": 23,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1968.0625,
+            "right": 1972.180908203125,
+            "delta": 4.118408203125,
+            "abs_delta": 4.118408203125
+          },
+          {
+            "layer_index": 15,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1128.336669921875,
+            "right": 1132.236572265625,
+            "delta": 3.89990234375,
+            "abs_delta": 3.89990234375
+          },
+          {
+            "layer_index": 0,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1804.2213134765625,
+            "right": 1807.45654296875,
+            "delta": 3.2352294921875,
+            "abs_delta": 3.2352294921875
+          }
+        ],
+        "top_stat_deltas": [
+          {
+            "layer_index": 8,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2937.142578125,
+            "right": 2948.60986328125,
+            "delta": 11.46728515625,
+            "abs_delta": 11.46728515625
+          },
+          {
+            "layer_index": 15,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 3031.73291015625,
+            "right": 3038.123779296875,
+            "delta": 6.390869140625,
+            "abs_delta": 6.390869140625
+          },
+          {
+            "layer_index": 23,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1968.0625,
+            "right": 1972.180908203125,
+            "delta": 4.118408203125,
+            "abs_delta": 4.118408203125
+          },
+          {
+            "layer_index": 15,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1128.336669921875,
+            "right": 1132.236572265625,
+            "delta": 3.89990234375,
+            "abs_delta": 3.89990234375
+          },
+          {
+            "layer_index": 0,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1804.2213134765625,
+            "right": 1807.45654296875,
+            "delta": 3.2352294921875,
+            "abs_delta": 3.2352294921875
+          }
+        ]
+      }
+    }
+  ],
+  "probe_source_cache_comparison": [
+    {
+      "phase": "before",
+      "probe_id": "blue_silence_poem",
+      "left_token_count": null,
+      "right_token_count": null,
+      "source_cache_delta": null
+    },
+    {
+      "phase": "mid",
+      "probe_id": "blue_silence_poem",
+      "left_token_count": 511,
+      "right_token_count": 511,
+      "source_cache_delta": {
+        "available": true,
+        "left_available": true,
+        "right_available": true,
+        "left_token_count": 511,
+        "right_token_count": 511,
+        "token_count_delta": 0.0,
+        "comparable_layers": [
+          0,
+          8,
+          15,
+          23
+        ],
+        "stat_fields": [
+          "mean",
+          "variance",
+          "std",
+          "abs_mean",
+          "l2_norm"
+        ],
+        "max_abs_l2_delta": 6.754150390625,
+        "mean_abs_l2_delta": 2.949097156524658,
+        "max_abs_variance_delta": 0.026085376739501953,
+        "top_l2_deltas": [
+          {
+            "layer_index": 15,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2203.573974609375,
+            "right": 2210.328125,
+            "delta": 6.754150390625,
+            "abs_delta": 6.754150390625
+          },
+          {
+            "layer_index": 23,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2536.508544921875,
+            "right": 2541.7568359375,
+            "delta": 5.248291015625,
+            "abs_delta": 5.248291015625
+          },
+          {
+            "layer_index": 8,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2174.164794921875,
+            "right": 2178.291015625,
+            "delta": 4.126220703125,
+            "abs_delta": 4.126220703125
+          },
+          {
+            "layer_index": 23,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1486.7781982421875,
+            "right": 1482.9603271484375,
+            "delta": -3.81787109375,
+            "abs_delta": 3.81787109375
+          },
+          {
+            "layer_index": 0,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1352.1800537109375,
+            "right": 1354.5836181640625,
+            "delta": 2.403564453125,
+            "abs_delta": 2.403564453125
+          }
+        ],
+        "top_stat_deltas": [
+          {
+            "layer_index": 15,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2203.573974609375,
+            "right": 2210.328125,
+            "delta": 6.754150390625,
+            "abs_delta": 6.754150390625
+          },
+          {
+            "layer_index": 23,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2536.508544921875,
+            "right": 2541.7568359375,
+            "delta": 5.248291015625,
+            "abs_delta": 5.248291015625
+          },
+          {
+            "layer_index": 8,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2174.164794921875,
+            "right": 2178.291015625,
+            "delta": 4.126220703125,
+            "abs_delta": 4.126220703125
+          },
+          {
+            "layer_index": 23,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1486.7781982421875,
+            "right": 1482.9603271484375,
+            "delta": -3.81787109375,
+            "abs_delta": 3.81787109375
+          },
+          {
+            "layer_index": 0,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1352.1800537109375,
+            "right": 1354.5836181640625,
+            "delta": 2.403564453125,
+            "abs_delta": 2.403564453125
+          }
+        ]
+      }
+    },
+    {
+      "phase": "after",
+      "probe_id": "blue_silence_poem",
+      "left_token_count": 903,
+      "right_token_count": 903,
+      "source_cache_delta": {
+        "available": true,
+        "left_available": true,
+        "right_available": true,
+        "left_token_count": 903,
+        "right_token_count": 903,
+        "token_count_delta": 0.0,
+        "comparable_layers": [
+          0,
+          8,
+          15,
+          23
+        ],
+        "stat_fields": [
+          "mean",
+          "variance",
+          "std",
+          "abs_mean",
+          "l2_norm"
+        ],
+        "max_abs_l2_delta": 11.46728515625,
+        "mean_abs_l2_delta": 3.844348907470703,
+        "max_abs_variance_delta": 0.03477001190185547,
+        "top_l2_deltas": [
+          {
+            "layer_index": 8,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2937.142578125,
+            "right": 2948.60986328125,
+            "delta": 11.46728515625,
+            "abs_delta": 11.46728515625
+          },
+          {
+            "layer_index": 15,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 3031.73291015625,
+            "right": 3038.123779296875,
+            "delta": 6.390869140625,
+            "abs_delta": 6.390869140625
+          },
+          {
+            "layer_index": 23,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1968.0625,
+            "right": 1972.180908203125,
+            "delta": 4.118408203125,
+            "abs_delta": 4.118408203125
+          },
+          {
+            "layer_index": 15,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1128.336669921875,
+            "right": 1132.236572265625,
+            "delta": 3.89990234375,
+            "abs_delta": 3.89990234375
+          },
+          {
+            "layer_index": 0,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1804.2213134765625,
+            "right": 1807.45654296875,
+            "delta": 3.2352294921875,
+            "abs_delta": 3.2352294921875
+          }
+        ],
+        "top_stat_deltas": [
+          {
+            "layer_index": 8,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 2937.142578125,
+            "right": 2948.60986328125,
+            "delta": 11.46728515625,
+            "abs_delta": 11.46728515625
+          },
+          {
+            "layer_index": 15,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 3031.73291015625,
+            "right": 3038.123779296875,
+            "delta": 6.390869140625,
+            "abs_delta": 6.390869140625
+          },
+          {
+            "layer_index": 23,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1968.0625,
+            "right": 1972.180908203125,
+            "delta": 4.118408203125,
+            "abs_delta": 4.118408203125
+          },
+          {
+            "layer_index": 15,
+            "tensor": "values",
+            "field": "l2_norm",
+            "left": 1128.336669921875,
+            "right": 1132.236572265625,
+            "delta": 3.89990234375,
+            "abs_delta": 3.89990234375
+          },
+          {
+            "layer_index": 0,
+            "tensor": "keys",
+            "field": "l2_norm",
+            "left": 1804.2213134765625,
+            "right": 1807.45654296875,
+            "delta": 3.2352294921875,
+            "abs_delta": 3.2352294921875
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -71,3 +71,9 @@ conditions.
 - `runs/null_vs_stream_seed_20260604/probe_only_vs_visual.md`
 - `runs/null_vs_stream_seed_20260604/text_only_vs_visual.md`
 - `runs/null_vs_stream_seed_20260604/blank_visual_vs_visual.md`
+
+## Tracked Examples
+
+- [Probe-only vs visual JSON](../../examples/research_notes/0002_null_vs_stream/probe_only_vs_visual.json)
+- [Text-only vs visual JSON](../../examples/research_notes/0002_null_vs_stream/text_only_vs_visual.json)
+- [Blank visual vs visual JSON](../../examples/research_notes/0002_null_vs_stream/blank_visual_vs_visual.json)

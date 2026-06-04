@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "comparison_kind": "paired_run_comparison",
+  "left": {
+    "source_path": "runs/null_vs_stream_seed_20260604/probe_only_mlx.json",
+    "run_kind": "fractal_vlm_stream_probe",
+    "model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+    "adapter_id": "mlx_vlm",
+    "condition_id": "mandelbrot_zoom_a",
+    "condition_family": "fractal",
+    "frame_count_selected": 0,
+    "source_frame_count_selected": 4,
+    "seed": 20260604,
+    "delivery_mode": "probe_only"
+  },
+  "right": {
+    "source_path": "runs/null_vs_stream_seed_20260604/visual_mlx.json",
+    "run_kind": "fractal_vlm_stream_probe",
+    "model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+    "adapter_id": "mlx_vlm",
+    "condition_id": "mandelbrot_zoom_a",
+    "condition_family": "fractal",
+    "frame_count_selected": 4,
+    "source_frame_count_selected": 4,
+    "seed": 20260604,
+    "delivery_mode": "visual_stream"
+  },
+  "matched_context": {
+    "same_model": true,
+    "same_adapter": true,
+    "same_frame_count": false,
+    "same_source_frame_count": true,
+    "same_seed": true,
+    "same_delivery_mode": false,
+    "same_probe_policy": true
+  },
+  "probe_comparison": [
+    {
+      "phase": "before",
+      "probe_id": "blue_silence_poem",
+      "left_text": "In the heart of the night, where stars do shine, A blue silence whispers, a gentle rhyme. The world is hushed, the city sleeps, As the moon's silver glow, a gentle heats.",
+      "right_text": "In the heart of the night, where stars do shine, A blue silence whispers, a gentle rhyme. The world is hushed, the city sleeps, As the moon's silver glow, a gentle heats.",
+      "same_text": true,
+      "left_generation_tokens": 48,
+      "right_generation_tokens": 48
+    },
+    {
+      "phase": "after",
+      "probe_id": "blue_silence_poem",
+      "left_text": "In the heart of the night, where stars do shine, A blue silence whispers, a gentle rhyme. The world is hushed, the city sleeps, As the moon's silver glow, a gentle heats.",
+      "right_text": "In the heart of the night, where stars do shine, A blue silence whispers, in the mind's design. A canvas of dreams, where thoughts take flight, A world of blue, where shadows take flight.",
+      "same_text": false,
+      "left_generation_tokens": 48,
+      "right_generation_tokens": 48
+    }
+  ],
+  "stream_cache_comparison": [],
+  "probe_source_cache_comparison": [
+    {
+      "phase": "before",
+      "probe_id": "blue_silence_poem",
+      "left_token_count": null,
+      "right_token_count": null,
+      "source_cache_delta": null
+    },
+    {
+      "phase": "after",
+      "probe_id": "blue_silence_poem",
+      "left_token_count": null,
+      "right_token_count": 381,
+      "source_cache_delta": null
+    }
+  ]
+}

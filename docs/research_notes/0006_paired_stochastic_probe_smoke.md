@@ -73,3 +73,8 @@ signal remains clearer in the trace summary than in open-ended surface text.
 - `runs/paired_stochastic_probe_smoke/paired_stochastic_analysis.json`
 - `runs/paired_stochastic_probe_smoke/paired_stochastic_batch_summary.md`
 - `runs/paired_stochastic_probe_smoke/paired_stochastic_batch_summary.json`
+
+## Tracked Examples
+
+- [Paired stochastic analysis JSON](../../examples/research_notes/0006_paired_stochastic_probe/paired_stochastic_analysis.json)
+- [Paired stochastic batch summary JSON](../../examples/research_notes/0006_paired_stochastic_probe/paired_stochastic_batch_summary.json)

@@ -50,3 +50,9 @@ analyze condition-level distributions after subtracting before-probe variance.
 - `runs/unseeded_output_smoke/null_vs_mandelbrot.md`
 - `runs/unseeded_output_smoke/null_vs_julia.md`
 - `runs/unseeded_output_smoke/mandelbrot_vs_julia.md`
+
+## Tracked Examples
+
+- [Null vs Mandelbrot JSON](../../examples/research_notes/0004_unseeded_probe_temperature/null_vs_mandelbrot.json)
+- [Null vs Julia JSON](../../examples/research_notes/0004_unseeded_probe_temperature/null_vs_julia.json)
+- [Mandelbrot vs Julia JSON](../../examples/research_notes/0004_unseeded_probe_temperature/mandelbrot_vs_julia.json)

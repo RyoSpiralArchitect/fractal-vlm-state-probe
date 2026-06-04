@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "cache_summary_condition_classifier",
+  "record_count": 9,
+  "feature_count": 360,
+  "labels": {
+    "blank_visual_null": 3,
+    "julia_zoom_b": 3,
+    "mandelbrot_zoom_a": 3
+  },
+  "seeds": [
+    20260604,
+    20260605,
+    20260606
+  ],
+  "records": [
+    {
+      "path": "runs/null_fractal_50_seed_batch/seed_20260604/julia_mlx.json",
+      "label": "julia_zoom_b",
+      "seed": 20260604,
+      "run_id": "julia",
+      "feature_count": 360,
+      "feature_hash": "650dd3070138dafe"
+    },
+    {
+      "path": "runs/null_fractal_50_seed_batch/seed_20260604/mandelbrot_mlx.json",
+      "label": "mandelbrot_zoom_a",
+      "seed": 20260604,
+      "run_id": "mandelbrot",
+      "feature_count": 360,
+      "feature_hash": "d23f4a6590b19d94"
+    },
+    {
+      "path": "runs/null_fractal_50_seed_batch/seed_20260604/null_blank_mlx.json",
+      "label": "blank_visual_null",
+      "seed": 20260604,
+      "run_id": "null_blank",
+      "feature_count": 360,
+      "feature_hash": "3afb56d058b94430"
+    },
+    {
+      "path": "runs/null_fractal_50_seed_batch/seed_20260605/julia_mlx.json",
+      "label": "julia_zoom_b",
+      "seed": 20260605,
+      "run_id": "julia",
+      "feature_count": 360,
+      "feature_hash": "650dd3070138dafe"
+    },
+    {
+      "path": "runs/null_fractal_50_seed_batch/seed_20260605/mandelbrot_mlx.json",
+      "label": "mandelbrot_zoom_a",
+      "seed": 20260605,
+      "run_id": "mandelbrot",
+      "feature_count": 360,
+      "feature_hash": "d23f4a6590b19d94"
+    },
+    {
+      "path": "runs/null_fractal_50_seed_batch/seed_20260605/null_blank_mlx.json",
+      "label": "blank_visual_null",
+      "seed": 20260605,
+      "run_id": "null_blank",
+      "feature_count": 360,
+      "feature_hash": "3afb56d058b94430"
+    },
+    {
+      "path": "runs/null_fractal_50_seed_batch/seed_20260606/julia_mlx.json",
+      "label": "julia_zoom_b",
+      "seed": 20260606,
+      "run_id": "julia",
+      "feature_count": 360,
+      "feature_hash": "650dd3070138dafe"
+    },
+    {
+      "path": "runs/null_fractal_50_seed_batch/seed_20260606/mandelbrot_mlx.json",
+      "label": "mandelbrot_zoom_a",
+      "seed": 20260606,
+      "run_id": "mandelbrot",
+      "feature_count": 360,
+      "feature_hash": "d23f4a6590b19d94"
+    },
+    {
+      "path": "runs/null_fractal_50_seed_batch/seed_20260606/null_blank_mlx.json",
+      "label": "blank_visual_null",
+      "seed": 20260606,
+      "run_id": "null_blank",
+      "feature_count": 360,
+      "feature_hash": "3afb56d058b94430"
+    }
+  ],
+  "duplicate_feature_groups": [
+    {
+      "label": "blank_visual_null",
+      "feature_hash": "3afb56d058b94430",
+      "count": 3,
+      "seeds": [
+        20260604,
+        20260605,
+        20260606
+      ],
+      "paths": [
+        "runs/null_fractal_50_seed_batch/seed_20260604/null_blank_mlx.json",
+        "runs/null_fractal_50_seed_batch/seed_20260605/null_blank_mlx.json",
+        "runs/null_fractal_50_seed_batch/seed_20260606/null_blank_mlx.json"
+      ]
+    },
+    {
+      "label": "julia_zoom_b",
+      "feature_hash": "650dd3070138dafe",
+      "count": 3,
+      "seeds": [
+        20260604,
+        20260605,
+        20260606
+      ],
+      "paths": [
+        "runs/null_fractal_50_seed_batch/seed_20260604/julia_mlx.json",
+        "runs/null_fractal_50_seed_batch/seed_20260605/julia_mlx.json",
+        "runs/null_fractal_50_seed_batch/seed_20260606/julia_mlx.json"
+      ]
+    },
+    {
+      "label": "mandelbrot_zoom_a",
+      "feature_hash": "d23f4a6590b19d94",
+      "count": 3,
+      "seeds": [
+        20260604,
+        20260605,
+        20260606
+      ],
+      "paths": [
+        "runs/null_fractal_50_seed_batch/seed_20260604/mandelbrot_mlx.json",
+        "runs/null_fractal_50_seed_batch/seed_20260605/mandelbrot_mlx.json",
+        "runs/null_fractal_50_seed_batch/seed_20260606/mandelbrot_mlx.json"
+      ]
+    }
+  ],
+  "nearest_centroid_leave_one_out": {
+    "available": true,
+    "accuracy": 1.0,
+    "correct": 9,
+    "total": 9,
+    "predictions": [
+      {
+        "index": 0,
+        "actual": "julia_zoom_b",
+        "predicted": "julia_zoom_b"
+      },
+      {
+        "index": 1,
+        "actual": "mandelbrot_zoom_a",
+        "predicted": "mandelbrot_zoom_a"
+      },
+      {
+        "index": 2,
+        "actual": "blank_visual_null",
+        "predicted": "blank_visual_null"
+      },
+      {
+        "index": 3,
+        "actual": "julia_zoom_b",
+        "predicted": "julia_zoom_b"
+      },
+      {
+        "index": 4,
+        "actual": "mandelbrot_zoom_a",
+        "predicted": "mandelbrot_zoom_a"
+      },
+      {
+        "index": 5,
+        "actual": "blank_visual_null",
+        "predicted": "blank_visual_null"
+      },
+      {
+        "index": 6,
+        "actual": "julia_zoom_b",
+        "predicted": "julia_zoom_b"
+      },
+      {
+        "index": 7,
+        "actual": "mandelbrot_zoom_a",
+        "predicted": "mandelbrot_zoom_a"
+      },
+      {
+        "index": 8,
+        "actual": "blank_visual_null",
+        "predicted": "blank_visual_null"
+      }
+    ],
+    "confusion": {
+      "blank_visual_null": {
+        "blank_visual_null": 3,
+        "julia_zoom_b": 0,
+        "mandelbrot_zoom_a": 0
+      },
+      "julia_zoom_b": {
+        "blank_visual_null": 0,
+        "julia_zoom_b": 3,
+        "mandelbrot_zoom_a": 0
+      },
+      "mandelbrot_zoom_a": {
+        "blank_visual_null": 0,
+        "julia_zoom_b": 0,
+        "mandelbrot_zoom_a": 3
+      }
+    }
+  },
+  "nearest_centroid_leave_one_seed_out": {
+    "available": true,
+    "accuracy": 1.0,
+    "correct": 9,
+    "total": 9,
+    "predictions": [
+      {
+        "index": 0,
+        "seed": 20260604,
+        "actual": "julia_zoom_b",
+        "predicted": "julia_zoom_b"
+      },
+      {
+        "index": 1,
+        "seed": 20260604,
+        "actual": "mandelbrot_zoom_a",
+        "predicted": "mandelbrot_zoom_a"
+      },
+      {
+        "index": 2,
+        "seed": 20260604,
+        "actual": "blank_visual_null",
+        "predicted": "blank_visual_null"
+      },
+      {
+        "index": 3,
+        "seed": 20260605,
+        "actual": "julia_zoom_b",
+        "predicted": "julia_zoom_b"
+      },
+      {
+        "index": 4,
+        "seed": 20260605,
+        "actual": "mandelbrot_zoom_a",
+        "predicted": "mandelbrot_zoom_a"
+      },
+      {
+        "index": 5,
+        "seed": 20260605,
+        "actual": "blank_visual_null",
+        "predicted": "blank_visual_null"
+      },
+      {
+        "index": 6,
+        "seed": 20260606,
+        "actual": "julia_zoom_b",
+        "predicted": "julia_zoom_b"
+      },
+      {
+        "index": 7,
+        "seed": 20260606,
+        "actual": "mandelbrot_zoom_a",
+        "predicted": "mandelbrot_zoom_a"
+      },
+      {
+        "index": 8,
+        "seed": 20260606,
+        "actual": "blank_visual_null",
+        "predicted": "blank_visual_null"
+      }
+    ],
+    "confusion": {
+      "blank_visual_null": {
+        "blank_visual_null": 3,
+        "julia_zoom_b": 0,
+        "mandelbrot_zoom_a": 0
+      },
+      "julia_zoom_b": {
+        "blank_visual_null": 0,
+        "julia_zoom_b": 3,
+        "mandelbrot_zoom_a": 0
+      },
+      "mandelbrot_zoom_a": {
+        "blank_visual_null": 0,
+        "julia_zoom_b": 0,
+        "mandelbrot_zoom_a": 3
+      }
+    }
+  },
+  "centroid_distances": [
+    {
+      "left": "blank_visual_null",
+      "right": "julia_zoom_b",
+      "distance": 36.21283584351599
+    },
+    {
+      "left": "blank_visual_null",
+      "right": "mandelbrot_zoom_a",
+      "distance": 28.11870444794373
+    },
+    {
+      "left": "julia_zoom_b",
+      "right": "mandelbrot_zoom_a",
+      "distance": 33.73379581872982
+    }
+  ],
+  "interpretation_notes": [
+    "This classifier uses saved cache-summary statistics, not raw hidden states or raw KV tensors.",
+    "Perfect classification on deterministic duplicate seeds is reproducibility evidence, not independent stochastic replication.",
+    "A positive result means condition information is present in the measured summary features."
+  ]
+}
