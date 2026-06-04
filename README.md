@@ -222,6 +222,20 @@ The same comparison command can compare `probe_only` vs `visual_stream`, or
 `text_only_stream` vs `visual_stream`, to keep the first claim boundary focused
 on Null-vs-Stream before fractal-family effects.
 
+To run the first seeded 50-frame null/fractal batch, use one generated blank
+visual null plus Mandelbrot and Julia, three seeds each:
+
+```bash
+python3 scripts/run_mlx_null_fractal_batch.py \
+  --output-root runs/null_fractal_50_seed_batch \
+  --seeds 20260604 20260605 20260606 \
+  --frames 50 \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --cache-summary-every 10 \
+  --cache-summary-max-layers 4 \
+  --overwrite
+```
+
 ## Documentation
 
 - [Experiment Design](docs/experiment_design.md)
