@@ -36,6 +36,7 @@ class StreamRunConfig:
     max_tokens: int = 2
     probe_max_tokens: int = 64
     temperature: float = 0.0
+    probe_temperature: float | None = None
     dry_run: bool = False
     use_prompt_cache_state: bool = True
     probe_cache_policy: ProbeCachePolicy = "isolated"
@@ -80,6 +81,8 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
         "context_policy": {
             "frame_delivery": config.delivery_mode,
             "history": "explicit chat transcript stack",
+            "stream_temperature": config.temperature,
+            "probe_temperature": _probe_temperature(config),
             "prompt_cache_state_requested": config.use_prompt_cache_state,
             "probe_cache_policy": config.probe_cache_policy,
             "probe_history_policy": _probe_history_policy(config.probe_cache_policy),
@@ -150,7 +153,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
         stream_generate=stream_generate,
         apply_chat_template=apply_chat_template,
         max_tokens=config.probe_max_tokens,
-        temperature=config.temperature,
+        temperature=_probe_temperature(config),
         prompt_cache_state_source=None,
         probe_cache_policy="no_cache",
         cache_summary_max_layers=config.cache_summary_max_layers,
@@ -191,7 +194,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
                 stream_generate=stream_generate,
                 apply_chat_template=apply_chat_template,
                 max_tokens=config.probe_max_tokens,
-                temperature=config.temperature,
+                temperature=_probe_temperature(config),
                 prompt_cache_state_source=prompt_cache_state,
                 probe_cache_policy=config.probe_cache_policy,
                 cache_summary_max_layers=config.cache_summary_max_layers,
@@ -207,7 +210,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
         stream_generate=stream_generate,
         apply_chat_template=apply_chat_template,
         max_tokens=config.probe_max_tokens,
-        temperature=config.temperature,
+        temperature=_probe_temperature(config),
         prompt_cache_state_source=prompt_cache_state,
         probe_cache_policy=config.probe_cache_policy,
         cache_summary_max_layers=config.cache_summary_max_layers,
@@ -215,6 +218,10 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
 
     write_json(config.output_path, result)
     return result
+
+
+def _probe_temperature(config: StreamRunConfig) -> float:
+    return config.temperature if config.probe_temperature is None else config.probe_temperature
 
 
 def _run_frame_turn(

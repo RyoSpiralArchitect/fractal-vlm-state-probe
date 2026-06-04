@@ -45,6 +45,7 @@ class HFStreamRunConfig:
     max_new_tokens: int = 2
     probe_max_new_tokens: int = 64
     temperature: float = 0.0
+    probe_temperature: float | None = None
     dry_run: bool = False
     probe_cache_policy: ProbeCachePolicy = "isolated"
     trace_every: int = 10
@@ -92,6 +93,8 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
         "context_policy": {
             "frame_delivery": config.delivery_mode,
             "history": "full transcript replay",
+            "stream_temperature": config.temperature,
+            "probe_temperature": _probe_temperature(config),
             "probe_cache_policy": config.probe_cache_policy,
             "probe_history_policy": _probe_history_policy(config.probe_cache_policy),
             "mid_probe_policy": "after half of the selected frame stream has been consumed",
@@ -150,7 +153,7 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
         phase="before",
         runtime=runtime,
         max_new_tokens=config.probe_max_new_tokens,
-        temperature=config.temperature,
+        temperature=_probe_temperature(config),
         trace_max_layers=config.trace_max_layers,
         append_to_history=False,
     )
@@ -177,7 +180,7 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
                 phase="mid",
                 runtime=runtime,
                 max_new_tokens=config.probe_max_new_tokens,
-                temperature=config.temperature,
+                temperature=_probe_temperature(config),
                 trace_max_layers=config.trace_max_layers,
                 append_to_history=config.probe_cache_policy == "shared_append",
             )
@@ -188,13 +191,17 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
         phase="after",
         runtime=runtime,
         max_new_tokens=config.probe_max_new_tokens,
-        temperature=config.temperature,
+        temperature=_probe_temperature(config),
         trace_max_layers=config.trace_max_layers,
         append_to_history=config.probe_cache_policy == "shared_append",
     )
 
     write_json(config.output_path, result)
     return result
+
+
+def _probe_temperature(config: HFStreamRunConfig) -> float:
+    return config.temperature if config.probe_temperature is None else config.probe_temperature
 
 
 def _run_frame_turn(

@@ -38,6 +38,11 @@ def summarize_run(data: dict[str, Any]) -> str:
     )
     lines.append(f"Delivery mode: {delivery.get('mode', context.get('frame_delivery', '<unknown>'))}")
     lines.append(
+        "Temperature: "
+        f"stream={context.get('stream_temperature', '<unknown>')} "
+        f"probe={context.get('probe_temperature', '<unknown>')}"
+    )
+    lines.append(
         "Probe policy: "
         f"{context.get('probe_cache_policy', '<unknown>')} | "
         f"mid after position {schedule.get('mid_probe_after_position', '<none>')}"

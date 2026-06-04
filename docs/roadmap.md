@@ -41,6 +41,7 @@ Status: planned.
 
 Run matched conditions inside the same model:
 
+- blank visual null,
 - Mandelbrot ordered,
 - Mandelbrot shuffled,
 - Julia ordered,
@@ -50,6 +51,29 @@ Run matched conditions inside the same model:
 - deterministic noise.
 
 Status: design-ready after Phase 2/3 adapters.
+
+## Phase 4.5: Trace Separability
+
+- Extract cache-summary feature matrices from completed runs.
+- Run simple condition classifiers such as nearest centroid, kNN, or logistic
+  regression.
+- Report duplicate seeds and deterministic repeat caveats explicitly.
+- Use classifiers to decide which visual controls deserve deeper raw-trace
+  instrumentation.
+
+Status: first nearest-centroid cache-summary classifier implemented.
+
+## Phase 4.6: Low-Level Visual Controls
+
+- Static repeat, shuffled order, reversed order.
+- Phase-scrambled Mandelbrot and Julia.
+- Histogram-matched visual controls.
+- Voronoi, tiling, checkerboard, quasicrystal, random dot, blue-noise, and
+  white-noise generators.
+- Feature extraction for image statistics such as brightness, contrast, edge
+  density, spectrum, entropy, periodicity, and symmetry.
+
+Status: planned next.
 
 ## Phase 5: Research Report
 

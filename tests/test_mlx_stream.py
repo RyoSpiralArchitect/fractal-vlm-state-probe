@@ -38,10 +38,12 @@ def test_mlx_dry_run_records_text_only_delivery(tmp_path: Path) -> None:
             model_id="example/model",
             dry_run=True,
             delivery_mode="text_only_stream",
+            probe_temperature=0.7,
             max_frames=2,
         )
     )
     assert result["stimulus_delivery"]["mode"] == "text_only_stream"
+    assert result["context_policy"]["probe_temperature"] == 0.7
     assert result["stream_events"][0]["delivery"]["num_images"] == 0
     assert "No image is attached" in result["stream_events"][0]["planned_prompt"]
     assert result["frame_artifacts"] == []

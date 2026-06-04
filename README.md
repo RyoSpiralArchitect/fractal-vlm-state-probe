@@ -86,6 +86,9 @@ first logprob-focused pass unless a selected model exposes the needed signal.
 - Seed MLX/HF smoke runs for reproducible paired comparisons.
 - Compare paired run JSONs with probe text, frame artifacts, stream-cache
   deltas, and probe-source-cache deltas.
+- Train a small nearest-centroid classifier on saved cache-summary features to
+  test whether measured traces retain condition information when probe text is
+  unchanged.
 - Provide provider capability scaffolding for T1/T2/T3 adapters.
 
 ## Quickstart
@@ -236,6 +239,29 @@ python3 scripts/run_mlx_null_fractal_batch.py \
   --overwrite
 ```
 
+To test whether saved cache-summary features separate those conditions:
+
+```bash
+python3 scripts/analyze_cache_classifier.py \
+  --batch-root runs/null_fractal_50_seed_batch \
+  --output-md runs/null_fractal_50_seed_batch/cache_classifier.md \
+  --output-json runs/null_fractal_50_seed_batch/cache_classifier.json
+```
+
+For an unseeded output-drift smoke, keep stream turns greedy while sampling only
+the probes:
+
+```bash
+python3 scripts/run_mlx_stream_probe.py \
+  --manifest runs/null_fractal_50_seed_batch/stimuli/julia/manifest.json \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --max-frames 12 \
+  --temperature 0 \
+  --probe-temperature 0.7 \
+  --probe-max-tokens 80 \
+  --output runs/unseeded_output_smoke/julia_probe_temp_0_7.json
+```
+
 ## Documentation
 
 - [Experiment Design](docs/experiment_design.md)
@@ -243,6 +269,8 @@ python3 scripts/run_mlx_null_fractal_batch.py \
 - [Provider Tiers](docs/provider_tiers.md)
 - [Roadmap](docs/roadmap.md)
 - [Research Note 0002: Null vs Stream Smoke](docs/research_notes/0002_null_vs_stream_smoke.md)
+- [Research Note 0003: Cache Summary Condition Classifier](docs/research_notes/0003_cache_summary_condition_classifier.md)
+- [Research Note 0004: Unseeded Probe-Temperature Smoke](docs/research_notes/0004_unseeded_probe_temperature_smoke.md)
 
 ## Claim Boundary
 

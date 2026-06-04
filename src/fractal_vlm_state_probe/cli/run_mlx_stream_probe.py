@@ -16,6 +16,12 @@ def main() -> None:
     parser.add_argument("--max-tokens", type=int, default=2)
     parser.add_argument("--probe-max-tokens", type=int, default=64)
     parser.add_argument("--temperature", type=float, default=0.0)
+    parser.add_argument(
+        "--probe-temperature",
+        type=float,
+        default=None,
+        help="Temperature for before/mid/after probes. Defaults to --temperature.",
+    )
     parser.add_argument("--seed", type=int, default=None)
     parser.add_argument(
         "--delivery-mode",
@@ -73,6 +79,7 @@ def main() -> None:
             max_tokens=args.max_tokens,
             probe_max_tokens=args.probe_max_tokens,
             temperature=args.temperature,
+            probe_temperature=args.probe_temperature,
             seed=args.seed,
             delivery_mode=args.delivery_mode,
             blank_rgb=args.blank_rgb,
