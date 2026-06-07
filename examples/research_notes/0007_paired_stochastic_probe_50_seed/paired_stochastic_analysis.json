@@ -1,0 +1,513 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "paired_stochastic_probe_batch",
+  "probe_seed_count": 50,
+  "condition_keys": [
+    "julia",
+    "mandelbrot",
+    "null_blank"
+  ],
+  "before_alignment": {
+    "seed_count": 50,
+    "all_conditions_same_count": 50,
+    "records": [
+      {
+        "probe_seed": 0,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 1,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 2,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 3,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 4,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 5,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 6,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 7,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 8,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 9,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 10,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 11,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 12,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 13,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 14,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 15,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 16,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 17,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 18,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 19,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 20,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 21,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 22,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 23,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 24,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 25,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 26,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 27,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 28,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 29,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 30,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 31,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 32,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 33,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 34,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 35,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 36,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 37,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 38,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 39,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 40,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 41,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 42,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 43,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 44,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 45,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 46,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 47,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 48,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      },
+      {
+        "probe_seed": 49,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      }
+    ]
+  },
+  "condition_phase_drift": [
+    {
+      "condition_key": "julia",
+      "phase": "mid",
+      "sample_count": 50,
+      "mean_distance_from_before": 0.8257666305717732,
+      "std_distance_from_before": 0.04653080281449351
+    },
+    {
+      "condition_key": "julia",
+      "phase": "after",
+      "sample_count": 50,
+      "mean_distance_from_before": 0.8268228640809826,
+      "std_distance_from_before": 0.046222812654017585
+    },
+    {
+      "condition_key": "mandelbrot",
+      "phase": "mid",
+      "sample_count": 50,
+      "mean_distance_from_before": 0.8257666305717732,
+      "std_distance_from_before": 0.04653080281449351
+    },
+    {
+      "condition_key": "mandelbrot",
+      "phase": "after",
+      "sample_count": 50,
+      "mean_distance_from_before": 0.8268228640809826,
+      "std_distance_from_before": 0.046222812654017585
+    },
+    {
+      "condition_key": "null_blank",
+      "phase": "mid",
+      "sample_count": 50,
+      "mean_distance_from_before": 0.8257666305717732,
+      "std_distance_from_before": 0.04653080281449351
+    },
+    {
+      "condition_key": "null_blank",
+      "phase": "after",
+      "sample_count": 50,
+      "mean_distance_from_before": 0.8268228640809826,
+      "std_distance_from_before": 0.046222812654017585
+    }
+  ],
+  "pairwise_phase_distances": [
+    {
+      "left": "julia",
+      "right": "mandelbrot",
+      "phase": "before",
+      "sample_count": 50,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia",
+      "right": "mandelbrot",
+      "phase": "mid",
+      "sample_count": 50,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia",
+      "right": "mandelbrot",
+      "phase": "after",
+      "sample_count": 50,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia",
+      "right": "null_blank",
+      "phase": "before",
+      "sample_count": 50,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia",
+      "right": "null_blank",
+      "phase": "mid",
+      "sample_count": 50,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia",
+      "right": "null_blank",
+      "phase": "after",
+      "sample_count": 50,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot",
+      "right": "null_blank",
+      "phase": "before",
+      "sample_count": 50,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "mandelbrot",
+      "right": "null_blank",
+      "phase": "mid",
+      "sample_count": 50,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot",
+      "right": "null_blank",
+      "phase": "after",
+      "sample_count": 50,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    }
+  ],
+  "pairwise_cache_distances": [
+    {
+      "comparison_id": "mandelbrot_vs_julia",
+      "phase": "after",
+      "sample_count": 50,
+      "mean_max_abs_l2_delta": 9.083984375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.999112129211426,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_vs_julia",
+      "phase": "mid",
+      "sample_count": 50,
+      "mean_max_abs_l2_delta": 11.4066162109375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.6454153060913086,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "null_vs_julia",
+      "phase": "after",
+      "sample_count": 50,
+      "mean_max_abs_l2_delta": 9.310791015625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.9582862854003906,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "null_vs_julia",
+      "phase": "mid",
+      "sample_count": 50,
+      "mean_max_abs_l2_delta": 11.9696044921875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.8699116706848145,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "null_vs_mandelbrot",
+      "phase": "after",
+      "sample_count": 50,
+      "mean_max_abs_l2_delta": 3.2193603515625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.4370355606079102,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "null_vs_mandelbrot",
+      "phase": "mid",
+      "sample_count": 50,
+      "mean_max_abs_l2_delta": 1.45654296875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 0.5430235862731934,
+      "std_mean_abs_l2_delta": 0.0
+    }
+  ],
+  "interpretation_notes": [
+    "This summary uses surface lexical distances only; it is not an embedding-level semantic analysis.",
+    "Phase distances are paired by probe seed and report mid/after distances after subtracting before-phase distance.",
+    "The stream can remain deterministic while probe sampling is varied through matched probe seeds."
+  ]
+}

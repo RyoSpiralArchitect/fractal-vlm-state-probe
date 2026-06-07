@@ -1,0 +1,1219 @@
+{
+  "schema_version": 1,
+  "batch_kind": "mlx_paired_stochastic_probe_batch",
+  "model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+  "stream_seed": 20260604,
+  "probe_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "frames": 12,
+  "stream_temperature": 0.0,
+  "probe_temperature": 0.7,
+  "probe_seed_policy": "same base probe seed is applied to all conditions; MLX run resets before/mid/after to seed, seed+1, seed+2",
+  "conditions": {
+    "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/stimuli/null_blank/manifest.json",
+    "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/stimuli/mandelbrot/manifest.json",
+    "julia": "runs/paired_stochastic_probe_50_seed_smoke/stimuli/julia/manifest.json"
+  },
+  "records": [
+    {
+      "probe_seed": 0,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_0/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_0/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_0/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_0/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_0/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_0/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_0/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_0/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_0/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 1,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_1/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_1/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_1/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_1/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_1/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_1/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_1/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_1/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_1/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 2,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_2/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_2/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_2/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_2/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_2/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_2/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_2/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_2/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_2/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 3,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_3/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_3/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_3/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_3/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_3/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_3/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_3/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_3/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_3/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 4,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_4/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_4/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_4/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_4/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_4/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_4/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_4/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_4/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_4/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 5,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_5/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_5/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_5/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_5/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_5/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_5/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_5/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_5/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_5/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 6,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_6/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_6/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_6/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_6/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_6/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_6/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_6/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_6/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_6/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 7,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_7/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_7/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_7/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_7/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_7/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_7/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_7/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_7/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_7/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 8,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_8/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_8/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_8/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_8/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_8/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_8/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_8/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_8/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_8/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 9,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_9/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_9/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_9/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_9/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_9/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_9/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_9/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_9/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_9/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 10,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_10/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_10/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_10/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_10/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_10/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_10/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_10/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_10/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_10/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 11,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_11/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_11/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_11/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_11/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_11/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_11/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_11/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_11/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_11/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 12,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_12/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_12/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_12/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_12/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_12/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_12/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_12/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_12/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_12/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 13,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_13/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_13/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_13/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_13/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_13/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_13/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_13/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_13/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_13/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 14,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_14/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_14/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_14/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_14/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_14/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_14/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_14/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_14/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_14/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 15,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_15/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_15/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_15/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_15/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_15/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_15/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_15/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_15/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_15/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 16,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_16/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_16/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_16/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_16/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_16/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_16/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_16/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_16/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_16/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 17,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_17/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_17/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_17/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_17/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_17/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_17/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_17/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_17/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_17/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 18,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_18/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_18/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_18/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_18/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_18/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_18/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_18/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_18/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_18/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 19,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_19/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_19/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_19/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_19/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_19/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_19/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_19/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_19/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_19/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 20,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_20/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_20/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_20/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_20/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_20/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_20/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_20/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_20/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_20/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 21,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_21/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_21/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_21/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_21/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_21/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_21/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_21/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_21/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_21/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 22,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_22/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_22/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_22/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_22/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_22/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_22/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_22/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_22/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_22/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 23,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_23/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_23/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_23/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_23/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_23/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_23/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_23/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_23/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_23/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 24,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_24/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_24/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_24/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_24/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_24/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_24/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_24/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_24/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_24/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 25,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_25/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_25/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_25/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_25/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_25/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_25/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_25/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_25/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_25/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 26,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_26/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_26/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_26/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_26/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_26/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_26/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_26/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_26/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_26/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 27,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_27/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_27/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_27/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_27/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_27/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_27/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_27/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_27/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_27/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 28,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_28/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_28/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_28/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_28/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_28/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_28/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_28/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_28/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_28/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 29,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_29/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_29/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_29/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_29/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_29/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_29/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_29/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_29/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_29/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 30,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_30/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_30/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_30/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_30/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_30/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_30/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_30/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_30/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_30/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 31,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_31/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_31/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_31/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_31/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_31/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_31/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_31/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_31/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_31/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 32,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_32/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_32/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_32/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_32/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_32/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_32/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_32/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_32/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_32/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 33,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_33/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_33/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_33/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_33/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_33/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_33/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_33/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_33/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_33/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 34,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_34/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_34/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_34/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_34/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_34/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_34/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_34/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_34/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_34/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 35,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_35/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_35/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_35/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_35/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_35/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_35/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_35/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_35/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_35/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 36,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_36/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_36/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_36/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_36/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_36/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_36/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_36/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_36/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_36/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 37,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_37/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_37/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_37/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_37/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_37/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_37/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_37/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_37/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_37/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 38,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_38/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_38/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_38/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_38/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_38/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_38/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_38/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_38/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_38/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 39,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_39/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_39/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_39/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_39/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_39/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_39/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_39/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_39/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_39/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 40,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_40/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_40/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_40/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_40/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_40/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_40/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_40/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_40/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_40/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 41,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_41/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_41/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_41/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_41/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_41/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_41/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_41/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_41/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_41/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 42,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_42/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_42/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_42/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_42/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_42/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_42/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_42/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_42/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_42/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 43,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_43/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_43/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_43/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_43/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_43/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_43/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_43/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_43/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_43/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 44,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_44/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_44/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_44/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_44/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_44/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_44/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_44/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_44/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_44/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 45,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_45/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_45/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_45/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_45/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_45/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_45/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_45/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_45/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_45/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 46,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_46/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_46/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_46/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_46/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_46/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_46/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_46/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_46/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_46/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 47,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_47/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_47/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_47/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_47/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_47/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_47/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_47/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_47/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_47/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 48,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_48/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_48/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_48/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_48/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_48/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_48/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_48/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_48/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_48/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    },
+    {
+      "probe_seed": 49,
+      "stream_seed": 20260604,
+      "runs": {
+        "null_blank": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_49/null_blank_mlx.json",
+        "mandelbrot": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_49/mandelbrot_mlx.json",
+        "julia": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_49/julia_mlx.json"
+      },
+      "comparisons": {
+        "null_vs_mandelbrot": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_49/comparisons/null_vs_mandelbrot.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_49/comparisons/null_vs_mandelbrot.json"
+        },
+        "null_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_49/comparisons/null_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_49/comparisons/null_vs_julia.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_49/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/paired_stochastic_probe_50_seed_smoke/probe_seed_49/comparisons/mandelbrot_vs_julia.json"
+        }
+      }
+    }
+  ]
+}

@@ -54,6 +54,18 @@ modest and more useful signal: the apparatus can capture cases where surface
 text remains similar while the traced context state moves. The next priority is
 therefore `Null vs Stream`, before stronger fractal-family claims.
 
+## Current Restart Point
+
+For a fresh read, start with `docs/experiment_design.md`, then
+`docs/research_notes/0002_null_vs_stream_smoke.md`, then
+`docs/research_notes/0006_paired_stochastic_probe_smoke.md`, then
+`docs/research_notes/0007_paired_stochastic_probe_50_seed.md`.
+
+The next live run should keep probe sampling seeds matched while adding stronger
+visual controls and independent stream variants. Surface text mobility,
+forced-choice/logprob tilt, and trace-summary separation should be reported
+separately.
+
 ## Infrastructure Tiers
 
 - **T1 Local Internal Trace**: MLX-VLM now, Hugging Face Transformers next.
@@ -318,6 +330,7 @@ python3 scripts/run_mlx_paired_stochastic_probe_batch.py \
 - [Research Note 0004: Unseeded Probe-Temperature Smoke](docs/research_notes/0004_unseeded_probe_temperature_smoke.md)
 - [Research Note 0005: Paired Stochastic Probe Design](docs/research_notes/0005_paired_stochastic_probe_design.md)
 - [Research Note 0006: Paired Stochastic Probe Smoke](docs/research_notes/0006_paired_stochastic_probe_smoke.md)
+- [Research Note 0007: Paired Stochastic Probe 50-Seed Smoke](docs/research_notes/0007_paired_stochastic_probe_50_seed.md)
 
 ## Claim Boundary
 
