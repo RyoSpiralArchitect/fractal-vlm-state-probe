@@ -59,12 +59,19 @@ therefore `Null vs Stream`, before stronger fractal-family claims.
 For a fresh read, start with `docs/experiment_design.md`, then
 `docs/research_notes/0002_null_vs_stream_smoke.md`, then
 `docs/research_notes/0006_paired_stochastic_probe_smoke.md`, then
-`docs/research_notes/0007_paired_stochastic_probe_50_seed.md`.
+`docs/research_notes/0007_paired_stochastic_probe_50_seed.md`, then
+`docs/research_notes/0008_pattern_probe_smoke.md`, then
+`docs/research_notes/0009_stimulus_seed_8_variant_smoke.md`, then
+`docs/research_notes/0010_phase_scramble_image_stats.md`, then
+`docs/research_notes/0011_quantile_matched_phase_scramble.md`, then
+`docs/research_notes/0012_frequency_ablation_smoke.md`, then
+`docs/research_notes/0013_frequency_cutoff_sweep.md`.
 
-The next live run should keep probe sampling seeds matched while adding stronger
-visual controls and independent stream variants. Surface text mobility,
-forced-choice/logprob tilt, and trace-summary separation should be reported
-separately.
+The next live run should compare original streams against plain
+phase-scrambled, RGB-quantile, and luminance-rank matched phase controls, then
+repeat transformed controls across multiple transform seeds and FFT cutoffs.
+Surface text mobility, forced-choice/logprob tilt, image-stat deltas, and
+trace-summary separation should be reported separately.
 
 ## Infrastructure Tiers
 
@@ -87,7 +94,10 @@ first logprob-focused pass unless a selected model exposes the needed signal.
 - Generate deterministic visual controls: blank, white/blue noise, random dots,
   checkerboards, square/triangle/hex tilings, Voronoi fields, and
   quasicrystal-like patterns.
-- Transform existing manifests into phase-scrambled, static-repeat, shuffled,
+- Run paired stochastic-probe batches over selected fractal, geometric, and
+  low-level control patterns.
+- Transform existing manifests into phase-scrambled, quantile-matched
+  phase-scrambled, low/high-pass frequency ablations, static-repeat, shuffled,
   and reversed-order controls.
 - Attach condition metadata for fractal, geometry, natural, and control
   comparisons.
@@ -237,6 +247,13 @@ python3 scripts/generate_control_frames.py \
   --output runs/controls/mandelbrot_phase_scrambled_seed_7 \
   --seed 7 \
   --overwrite
+
+python3 scripts/generate_control_frames.py \
+  --kind phase_scrambled_luminance_quantile_matched \
+  --source-manifest runs/smoke/mandelbrot_a/manifest.json \
+  --output runs/controls/mandelbrot_phase_luminance_quantile_seed_7 \
+  --seed 7 \
+  --overwrite
 ```
 
 To create the first Julia comparison stimulus:
@@ -317,6 +334,39 @@ python3 scripts/run_mlx_paired_stochastic_probe_batch.py \
   --overwrite
 ```
 
+To move into non-fractal pattern controls with the same paired probe design:
+
+```bash
+python3 scripts/run_mlx_pattern_probe_batch.py \
+  --output-root runs/pattern_probe_smoke \
+  --conditions null_blank mandelbrot julia checkerboard voronoi quasicrystal white_noise blue_noise \
+  --probe-seeds 0 1 2 \
+  --frames 12 \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --temperature 0 \
+  --probe-temperature 0.7 \
+  --probe-max-tokens 80 \
+  --probe-cache-policy isolated \
+  --overwrite
+```
+
+To run the same paired probe design over arbitrary existing manifests:
+
+```bash
+python3 scripts/run_mlx_manifest_probe_batch.py \
+  --output-root runs/frequency_cutoff_sweep_probe_seed_0 \
+  --manifest mandelbrot_low_018=runs/frequency_ablation_smoke/mandelbrot_low_pass_luminance_quantile_matched_cutoff_018/manifest.json \
+  --manifest mandelbrot_high_018=runs/frequency_ablation_smoke/mandelbrot_high_pass_luminance_quantile_matched_cutoff_018/manifest.json \
+  --manifest julia_low_018=runs/frequency_ablation_smoke/julia_low_pass_luminance_quantile_matched_cutoff_018/manifest.json \
+  --manifest julia_high_018=runs/frequency_ablation_smoke/julia_high_pass_luminance_quantile_matched_cutoff_018/manifest.json \
+  --probe-seeds 0 \
+  --max-frames 12 \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --temperature 0 \
+  --probe-temperature 0.7 \
+  --probe-cache-policy isolated
+```
+
 ## Documentation
 
 - [Experiment Design](docs/experiment_design.md)
@@ -330,7 +380,13 @@ python3 scripts/run_mlx_paired_stochastic_probe_batch.py \
 - [Research Note 0004: Unseeded Probe-Temperature Smoke](docs/research_notes/0004_unseeded_probe_temperature_smoke.md)
 - [Research Note 0005: Paired Stochastic Probe Design](docs/research_notes/0005_paired_stochastic_probe_design.md)
 - [Research Note 0006: Paired Stochastic Probe Smoke](docs/research_notes/0006_paired_stochastic_probe_smoke.md)
-- [Research Note 0007: Paired Stochastic Probe 50-Seed Smoke](docs/research_notes/0007_paired_stochastic_probe_50_seed.md)
+- [Research Note 0007: Paired Stochastic Probe 50-Seed Batch](docs/research_notes/0007_paired_stochastic_probe_50_seed.md)
+- [Research Note 0008: Pattern Probe Smoke](docs/research_notes/0008_pattern_probe_smoke.md)
+- [Research Note 0009: Stimulus Seed 8 Variant Smoke](docs/research_notes/0009_stimulus_seed_8_variant_smoke.md)
+- [Research Note 0010: Phase Scramble and Image Statistics Smoke](docs/research_notes/0010_phase_scramble_image_stats.md)
+- [Research Note 0011: Quantile-Matched Phase Scramble Controls](docs/research_notes/0011_quantile_matched_phase_scramble.md)
+- [Research Note 0012: Frequency Ablation Smoke](docs/research_notes/0012_frequency_ablation_smoke.md)
+- [Research Note 0013: Frequency Cutoff Sweep](docs/research_notes/0013_frequency_cutoff_sweep.md)
 
 ## Claim Boundary
 

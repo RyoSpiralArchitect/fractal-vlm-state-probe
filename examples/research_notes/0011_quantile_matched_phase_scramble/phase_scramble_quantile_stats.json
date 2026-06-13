@@ -1,0 +1,1390 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "image_statistics_batch",
+  "created_at_utc": "2026-06-07T15:28:03Z",
+  "manifest_count": 8,
+  "records": [
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_image_statistics",
+      "created_at_utc": "2026-06-07T15:28:02Z",
+      "manifest_path": "runs/pattern_probe_smoke/stimuli/mandelbrot/manifest.json",
+      "manifest_sha256": "ed563018b89ae37d9adb8b3ee6e134f9605b15572e85e5635b9a0e0cd3bb7352",
+      "condition": {
+        "condition_id": "mandelbrot_zoom_a",
+        "condition_family": "fractal",
+        "temporal_policy": "ordered",
+        "semantic_load": "low",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "primary_fractal",
+        "description": "Deterministic Mandelbrot zoom path used as the first primary fractal stream."
+      },
+      "stimulus_config_sha256": "9b7210ab7ac573bec11da3bcc586fbf6bfa0e51d32349ec4fe566f8731ed367f",
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "luminance_mean": {
+          "mean": 0.23608537881093408,
+          "std": 0.13340327851868314,
+          "min": 0.10727143177083333,
+          "max": 0.5608454121732026
+        },
+        "luminance_std": {
+          "mean": 0.23832788361819468,
+          "std": 0.03185469579228616,
+          "min": 0.19859997886700834,
+          "max": 0.30206939663937465
+        },
+        "luminance_entropy_bits": {
+          "mean": 2.9776912550253676,
+          "std": 0.8239248376181812,
+          "min": 1.7977920739172657,
+          "max": 3.961300750156803
+        },
+        "edge_density": {
+          "mean": 0.05732964409722222,
+          "std": 0.02541278383281438,
+          "min": 0.025768229166666667,
+          "max": 0.1023828125
+        },
+        "edge_strength_mean": {
+          "mean": 0.01672720134375679,
+          "std": 0.007019139868717233,
+          "min": 0.008134614338338534,
+          "max": 0.0296093814841948
+        },
+        "spectral_centroid": {
+          "mean": 0.04446985776076127,
+          "std": 0.022152922903491287,
+          "min": 0.018331942285188012,
+          "max": 0.08527840984931138
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.04820348199671828,
+          "std": 0.03438269112441981,
+          "min": 0.009686220201766356,
+          "max": 0.11038143006728804
+        },
+        "colorfulness": {
+          "mean": 0.34352575633231947,
+          "std": 0.06140858314393004,
+          "min": 0.25330933480154555,
+          "max": 0.4349900126180184
+        },
+        "mean_abs_luminance_delta_from_previous": {
+          "mean": 0.07578005205269607,
+          "std": 0.03697237455227566,
+          "min": 0.0306041952001634,
+          "max": 0.1387360834763072
+        },
+        "rgb_mean": {
+          "channels": [
+            {
+              "mean": 0.329189797794238,
+              "std": 0.15128747435044426,
+              "min": 0.1554568525327035,
+              "max": 0.6400439644606684
+            },
+            {
+              "mean": 0.21611982570812427,
+              "std": 0.14266179227736417,
+              "min": 0.09199693627451376,
+              "max": 0.5777515318626945
+            },
+            {
+              "mean": 0.15970538024238276,
+              "std": 0.06271040989107184,
+              "min": 0.08906622753264443,
+              "max": 0.28286417483672316
+            }
+          ]
+        },
+        "rgb_std": {
+          "channels": [
+            {
+              "mean": 0.3579791198037556,
+              "std": 0.04719570041567346,
+              "min": 0.2625623941592105,
+              "max": 0.4225406868133905
+            },
+            {
+              "mean": 0.22296397175357097,
+              "std": 0.04149952476960642,
+              "min": 0.17847844461931478,
+              "max": 0.3035162378892401
+            },
+            {
+              "mean": 0.19067858929556322,
+              "std": 0.055143966134384485,
+              "min": 0.08786732176168946,
+              "max": 0.2630669840771677
+            }
+          ]
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_image_statistics",
+      "created_at_utc": "2026-06-07T15:28:03Z",
+      "manifest_path": "runs/pattern_probe_smoke/stimuli/julia/manifest.json",
+      "manifest_sha256": "50639d146c95d2f73b29fcf7ddbe3b3f086f70f09aafa121bec7413c3035eeb8",
+      "condition": {
+        "condition_id": "julia_zoom_b",
+        "condition_family": "fractal",
+        "temporal_policy": "ordered",
+        "semantic_load": "low",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "secondary_fractal",
+        "description": "Deterministic Julia stream used to separate fractal-family effects from one Mandelbrot path."
+      },
+      "stimulus_config_sha256": "0d19d60c0bb66183d537f50dcd5700034e2cfa1a481d5b30b9295f990252889d",
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "luminance_mean": {
+          "mean": 0.2511983860362201,
+          "std": 0.008458421457994749,
+          "min": 0.23662209464869277,
+          "max": 0.2611336267156863
+        },
+        "luminance_std": {
+          "mean": 0.18380620729033584,
+          "std": 0.045350089610818434,
+          "min": 0.10589355691968048,
+          "max": 0.23876789094273376
+        },
+        "luminance_entropy_bits": {
+          "mean": 3.4558347637202265,
+          "std": 0.9358660845126114,
+          "min": 1.67322458601523,
+          "max": 4.310118986522428
+        },
+        "edge_density": {
+          "mean": 0.2782855902777778,
+          "std": 0.08871030574833082,
+          "min": 0.11549479166666667,
+          "max": 0.369375
+        },
+        "edge_strength_mean": {
+          "mean": 0.07733030202738984,
+          "std": 0.025286924772808063,
+          "min": 0.03139870075542146,
+          "max": 0.10381140805476541
+        },
+        "spectral_centroid": {
+          "mean": 0.32070240470522254,
+          "std": 0.05856475032155661,
+          "min": 0.22182263083416465,
+          "max": 0.40258686768044344
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.4284138728012525,
+          "std": 0.0956117837513954,
+          "min": 0.2708982225043102,
+          "max": 0.5624211424033483
+        },
+        "colorfulness": {
+          "mean": 0.5669634053274536,
+          "std": 0.05239919909968815,
+          "min": 0.46980925780981997,
+          "max": 0.6246139767663494
+        },
+        "mean_abs_luminance_delta_from_previous": {
+          "mean": 0.12782126799985144,
+          "std": 0.04432137003195748,
+          "min": 0.05074974428104574,
+          "max": 0.1749962034109477
+        },
+        "rgb_mean": {
+          "channels": [
+            {
+              "mean": 0.5006444035948955,
+              "std": 0.15571589377625383,
+              "min": 0.2915054125820394,
+              "max": 0.7395062295747475
+            },
+            {
+              "mean": 0.18632749523434103,
+              "std": 0.03160821183579719,
+              "min": 0.13512448937903057,
+              "max": 0.22372354983683843
+            },
+            {
+              "mean": 0.15927924155777914,
+              "std": 0.036071214452767765,
+              "min": 0.10074193218949903,
+              "max": 0.2027833946078618
+            }
+          ]
+        },
+        "rgb_std": {
+          "channels": [
+            {
+              "mean": 0.333013135515197,
+              "std": 0.03179845508323644,
+              "min": 0.2598102918955267,
+              "max": 0.3658799253260774
+            },
+            {
+              "mean": 0.22255727527369643,
+              "std": 0.04976713832237888,
+              "min": 0.13436019685468648,
+              "max": 0.2800308435880507
+            },
+            {
+              "mean": 0.2023926250615964,
+              "std": 0.04296871511812169,
+              "min": 0.12519463815230072,
+              "max": 0.2507184172741311
+            }
+          ]
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_image_statistics",
+      "created_at_utc": "2026-06-07T15:28:03Z",
+      "manifest_path": "runs/phase_scramble_smoke/mandelbrot_phase_scrambled_seed_7/manifest.json",
+      "manifest_sha256": "7a523647eaf426634d2830e03764630ba5058b65dd5b18ba2b0be8bf0ff2a9f5",
+      "condition": {
+        "condition_id": "mandelbrot_zoom_a_phase_scrambled",
+        "condition_family": "control",
+        "temporal_policy": "ordered",
+        "semantic_load": "none",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "phase_scrambled_visual_control",
+        "description": "Phase-scrambled transform of mandelbrot_zoom_a; approximate spectrum-preserving low-level control."
+      },
+      "stimulus_config_sha256": "2845bebc4ab6a33ad5f099a96260475cf998a14b9c0e3903bb8d97e566526e1a",
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "luminance_mean": {
+          "mean": 0.263232142578125,
+          "std": 0.11946221033736648,
+          "min": 0.1464277179738562,
+          "max": 0.5558993692708333
+        },
+        "luminance_std": {
+          "mean": 0.1555314819708911,
+          "std": 0.035818669051046324,
+          "min": 0.10286939432098073,
+          "max": 0.22750318449798318
+        },
+        "luminance_entropy_bits": {
+          "mean": 7.094930147504638,
+          "std": 0.3915328147103191,
+          "min": 6.540890602106885,
+          "max": 7.749702433917188
+        },
+        "edge_density": {
+          "mean": 0.02429144965277778,
+          "std": 0.031779293728840106,
+          "min": 0.00010416666666666667,
+          "max": 0.09604166666666666
+        },
+        "edge_strength_mean": {
+          "mean": 0.04367699146124529,
+          "std": 0.011651678930647372,
+          "min": 0.030215661483556595,
+          "max": 0.0655594836624343
+        },
+        "spectral_centroid": {
+          "mean": 0.06800313079453967,
+          "std": 0.03350514132187747,
+          "min": 0.024373157264606,
+          "max": 0.12836672141471345
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.08252997073256217,
+          "std": 0.05009683364968965,
+          "min": 0.016602288357986158,
+          "max": 0.16902238937899874
+        },
+        "colorfulness": {
+          "mean": 0.45964599794806765,
+          "std": 0.07842818851091785,
+          "min": 0.3471737269364477,
+          "max": 0.571547068731736
+        },
+        "mean_abs_luminance_delta_from_previous": {
+          "mean": 0.19645834951166072,
+          "std": 0.06801464743559676,
+          "min": 0.10718243318014704,
+          "max": 0.33786791302083335
+        },
+        "rgb_mean": {
+          "channels": [
+            {
+              "mean": 0.3684767965345974,
+              "std": 0.12587080602247783,
+              "min": 0.21991176470587434,
+              "max": 0.6264613970587607
+            },
+            {
+              "mean": 0.24021666921979187,
+              "std": 0.13229901396723828,
+              "min": 0.12377256944445149,
+              "max": 0.5749425551470216
+            },
+            {
+              "mean": 0.1813159807325948,
+              "std": 0.05993594606371975,
+              "min": 0.11461662581694677,
+              "max": 0.2971231107026822
+            }
+          ]
+        },
+        "rgb_std": {
+          "channels": [
+            {
+              "mean": 0.2812390011194314,
+              "std": 0.04444968602102472,
+              "min": 0.2228288559096529,
+              "max": 0.3455439357737156
+            },
+            {
+              "mean": 0.1860906921246731,
+              "std": 0.04648718149608341,
+              "min": 0.13432492533631757,
+              "max": 0.27749468114068343
+            },
+            {
+              "mean": 0.15753553907245413,
+              "std": 0.04861008325224304,
+              "min": 0.08504065158415233,
+              "max": 0.23778928311401012
+            }
+          ]
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_image_statistics",
+      "created_at_utc": "2026-06-07T15:28:03Z",
+      "manifest_path": "runs/phase_scramble_smoke/julia_phase_scrambled_seed_7/manifest.json",
+      "manifest_sha256": "a85ae5f521dcffc7a32b7d328b327d304faab11a45165cec3407772b7c31003f",
+      "condition": {
+        "condition_id": "julia_zoom_b_phase_scrambled",
+        "condition_family": "control",
+        "temporal_policy": "ordered",
+        "semantic_load": "none",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "phase_scrambled_visual_control",
+        "description": "Phase-scrambled transform of julia_zoom_b; approximate spectrum-preserving low-level control."
+      },
+      "stimulus_config_sha256": "b4cec7c1771cd47475d726cf58f41d27157b0da1046b6c72016e831bfdb70574",
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "luminance_mean": {
+          "mean": 0.2701946134854984,
+          "std": 0.0037703011650722196,
+          "min": 0.26416635469771244,
+          "max": 0.2781335625
+        },
+        "luminance_std": {
+          "mean": 0.14579041497096365,
+          "std": 0.026674191368191314,
+          "min": 0.0955693241064358,
+          "max": 0.17430182042162362
+        },
+        "luminance_entropy_bits": {
+          "mean": 7.1446446685161975,
+          "std": 0.2407315545529619,
+          "min": 6.627864185345795,
+          "max": 7.359625223536792
+        },
+        "edge_density": {
+          "mean": 0.3002571614583333,
+          "std": 0.10824848877613252,
+          "min": 0.08235677083333333,
+          "max": 0.4034765625
+        },
+        "edge_strength_mean": {
+          "mean": 0.09653943704376981,
+          "std": 0.015288780859450351,
+          "min": 0.06594449885026708,
+          "max": 0.11173218261884202
+        },
+        "spectral_centroid": {
+          "mean": 0.27235658600833484,
+          "std": 0.02277845291072526,
+          "min": 0.22635219297990672,
+          "max": 0.3007786248498733
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.3582369980266275,
+          "std": 0.040713221993744116,
+          "min": 0.27642878266358784,
+          "max": 0.4128019869395218
+        },
+        "colorfulness": {
+          "mean": 0.5170885445114095,
+          "std": 0.023947716959628555,
+          "min": 0.47907166374803484,
+          "max": 0.5551892724977406
+        },
+        "mean_abs_luminance_delta_from_previous": {
+          "mean": 0.16711744535149287,
+          "std": 0.028978888266826274,
+          "min": 0.1117071977124183,
+          "max": 0.20201391519607842
+        },
+        "rgb_mean": {
+          "channels": [
+            {
+              "mean": 0.5027801138684521,
+              "std": 0.13504342027938257,
+              "min": 0.32308282271245503,
+              "max": 0.717017565359365
+            },
+            {
+              "mean": 0.20989463337422623,
+              "std": 0.039072949228625434,
+              "min": 0.14469735498365946,
+              "max": 0.2554697201797838
+            },
+            {
+              "mean": 0.18264431423613944,
+              "std": 0.040844232444972,
+              "min": 0.11413950163394042,
+              "max": 0.23097155841508826
+            }
+          ]
+        },
+        "rgb_std": {
+          "channels": [
+            {
+              "mean": 0.2840483868001505,
+              "std": 0.02515457145145369,
+              "min": 0.2277488950661038,
+              "max": 0.3174310016847336
+            },
+            {
+              "mean": 0.1842309502929338,
+              "std": 0.03901102869124342,
+              "min": 0.11585230901669245,
+              "max": 0.23006574760944307
+            },
+            {
+              "mean": 0.1654843830818621,
+              "std": 0.03570555817969339,
+              "min": 0.10259822074067752,
+              "max": 0.2061202708381505
+            }
+          ]
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_image_statistics",
+      "created_at_utc": "2026-06-07T15:28:03Z",
+      "manifest_path": "runs/phase_scramble_quantile_smoke/mandelbrot_phase_quantile_seed_7/manifest.json",
+      "manifest_sha256": "6f6a375898a026284c2981ae22ff0526b11f35190e5915c0ba042424181dc5f6",
+      "condition": {
+        "condition_id": "mandelbrot_zoom_a_phase_scrambled_quantile_matched",
+        "condition_family": "control",
+        "temporal_policy": "ordered",
+        "semantic_load": "none",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "phase_scrambled_quantile_matched_visual_control",
+        "description": "Phase-scrambled transform of mandelbrot_zoom_a with per-channel quantile matching to the source frame."
+      },
+      "stimulus_config_sha256": "cfa0b3de6ad1b1e9f0dbe4ba36a1be2e2f41319effc305c2308730a91975ecbc",
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "luminance_mean": {
+          "mean": 0.23608537881093408,
+          "std": 0.13340327851868314,
+          "min": 0.10727143177083333,
+          "max": 0.5608454121732026
+        },
+        "luminance_std": {
+          "mean": 0.1860198546220236,
+          "std": 0.031607525572895,
+          "min": 0.14183832311929365,
+          "max": 0.2520472410757464
+        },
+        "luminance_entropy_bits": {
+          "mean": 5.231289067063542,
+          "std": 0.8847999258982676,
+          "min": 3.943371744388322,
+          "max": 6.373160745157834
+        },
+        "edge_density": {
+          "mean": 0.1746310763888889,
+          "std": 0.061919667715784416,
+          "min": 0.06666666666666667,
+          "max": 0.27498697916666665
+        },
+        "edge_strength_mean": {
+          "mean": 0.054636959321375626,
+          "std": 0.013383834985460705,
+          "min": 0.03035039033489377,
+          "max": 0.07466072302539617
+        },
+        "spectral_centroid": {
+          "mean": 0.11205053982969725,
+          "std": 0.040539405996755706,
+          "min": 0.0502673989971833,
+          "max": 0.210496640754495
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.1438103892770541,
+          "std": 0.06088653406093489,
+          "min": 0.05408351901399185,
+          "max": 0.2861680904195404
+        },
+        "colorfulness": {
+          "mean": 0.5556999196408569,
+          "std": 0.06618001777223644,
+          "min": 0.4571241931762748,
+          "max": 0.6588105410596476
+        },
+        "mean_abs_luminance_delta_from_previous": {
+          "mean": 0.2210712021789587,
+          "std": 0.07370767136385868,
+          "min": 0.1280929674223856,
+          "max": 0.3769914035334967
+        },
+        "rgb_mean": {
+          "channels": [
+            {
+              "mean": 0.32918979779427826,
+              "std": 0.15128747435024936,
+              "min": 0.15545685253273575,
+              "max": 0.640043964460466
+            },
+            {
+              "mean": 0.21611982570816604,
+              "std": 0.14266179227735631,
+              "min": 0.09199693627449204,
+              "max": 0.5777515318627463
+            },
+            {
+              "mean": 0.1597053802423874,
+              "std": 0.06271040989108427,
+              "min": 0.0890662275326498,
+              "max": 0.2828641748367832
+            }
+          ]
+        },
+        "rgb_std": {
+          "channels": [
+            {
+              "mean": 0.3579791198037694,
+              "std": 0.0471957004156235,
+              "min": 0.2625623941592235,
+              "max": 0.4225406868134486
+            },
+            {
+              "mean": 0.22296397175356994,
+              "std": 0.04149952476962269,
+              "min": 0.17847844461920176,
+              "max": 0.30351623788928545
+            },
+            {
+              "mean": 0.1906785892955718,
+              "std": 0.05514396613438672,
+              "min": 0.0878673217617122,
+              "max": 0.26306698407713613
+            }
+          ]
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_image_statistics",
+      "created_at_utc": "2026-06-07T15:28:03Z",
+      "manifest_path": "runs/phase_scramble_quantile_smoke/julia_phase_quantile_seed_7/manifest.json",
+      "manifest_sha256": "190775e93f995c63fcdb2302bd9cf52100a0a1e0a40ad3d1f11cd39dc786727d",
+      "condition": {
+        "condition_id": "julia_zoom_b_phase_scrambled_quantile_matched",
+        "condition_family": "control",
+        "temporal_policy": "ordered",
+        "semantic_load": "none",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "phase_scrambled_quantile_matched_visual_control",
+        "description": "Phase-scrambled transform of julia_zoom_b with per-channel quantile matching to the source frame."
+      },
+      "stimulus_config_sha256": "5112f62f54c24359486985c80fb7492e4ecd74aa970bc390ad926aed8cd4f847",
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "luminance_mean": {
+          "mean": 0.2511983860362201,
+          "std": 0.00845842145799475,
+          "min": 0.23662209464869283,
+          "max": 0.2611336267156863
+        },
+        "luminance_std": {
+          "mean": 0.17517810959561123,
+          "std": 0.03459617008454998,
+          "min": 0.11062271749985518,
+          "max": 0.2117942935903357
+        },
+        "luminance_entropy_bits": {
+          "mean": 6.253035244492838,
+          "std": 0.944845608825363,
+          "min": 4.211415458127734,
+          "max": 7.025375165028922
+        },
+        "edge_density": {
+          "mean": 0.34415364583333335,
+          "std": 0.10088573820970671,
+          "min": 0.1566796875,
+          "max": 0.4480208333333333
+        },
+        "edge_strength_mean": {
+          "mean": 0.10880403242527618,
+          "std": 0.024974037354440568,
+          "min": 0.06030770677946915,
+          "max": 0.1336920998292208
+        },
+        "spectral_centroid": {
+          "mean": 0.32643403165825446,
+          "std": 0.03909480996146097,
+          "min": 0.259915344706793,
+          "max": 0.39718958679339805
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.44571528011633815,
+          "std": 0.06939307770912248,
+          "min": 0.3302624912457142,
+          "max": 0.5680160669361308
+        },
+        "colorfulness": {
+          "mean": 0.6023544407540834,
+          "std": 0.02551687682946641,
+          "min": 0.5576945957101612,
+          "max": 0.6418695522159393
+        },
+        "mean_abs_luminance_delta_from_previous": {
+          "mean": 0.1816087364416221,
+          "std": 0.04680743677903327,
+          "min": 0.09205394066584967,
+          "max": 0.23429084144199347
+        },
+        "rgb_mean": {
+          "channels": [
+            {
+              "mean": 0.5006444035947715,
+              "std": 0.15571589377621278,
+              "min": 0.29150541258189244,
+              "max": 0.7395062295745883
+            },
+            {
+              "mean": 0.18632749523433864,
+              "std": 0.031608211835796776,
+              "min": 0.1351244893790354,
+              "max": 0.22372354983682036
+            },
+            {
+              "mean": 0.15927924155774867,
+              "std": 0.0360712144527799,
+              "min": 0.10074193218949404,
+              "max": 0.2027833946078588
+            }
+          ]
+        },
+        "rgb_std": {
+          "channels": [
+            {
+              "mean": 0.3330131355151612,
+              "std": 0.03179845508328914,
+              "min": 0.25981029189541643,
+              "max": 0.3658799253260475
+            },
+            {
+              "mean": 0.22255727527370398,
+              "std": 0.049767138322391075,
+              "min": 0.1343601968546789,
+              "max": 0.280030843588072
+            },
+            {
+              "mean": 0.20239262506157574,
+              "std": 0.042968715118125424,
+              "min": 0.12519463815221177,
+              "max": 0.2507184172741277
+            }
+          ]
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_image_statistics",
+      "created_at_utc": "2026-06-07T15:28:03Z",
+      "manifest_path": "runs/phase_scramble_luminance_quantile_smoke/mandelbrot_phase_luminance_quantile_seed_7/manifest.json",
+      "manifest_sha256": "6efb586d182b953f7ce24810079dfeb414d5ab6019df31e5a631ba7e7f6c4610",
+      "condition": {
+        "condition_id": "mandelbrot_zoom_a_phase_scrambled_luminance_quantile_matched",
+        "condition_family": "control",
+        "temporal_policy": "ordered",
+        "semantic_load": "none",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "phase_scrambled_luminance_quantile_matched_visual_control",
+        "description": "Phase-scrambled transform of mandelbrot_zoom_a with source RGB pixels reassigned by luminance quantile rank."
+      },
+      "stimulus_config_sha256": "924509c697cefe0a1185264705a087df659547e4fecf3ba91560bd50c70bf168",
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "luminance_mean": {
+          "mean": 0.23608537881093408,
+          "std": 0.13340327851868314,
+          "min": 0.10727143177083333,
+          "max": 0.5608454121732026
+        },
+        "luminance_std": {
+          "mean": 0.23832788361819468,
+          "std": 0.03185469579228616,
+          "min": 0.19859997886700834,
+          "max": 0.30206939663937465
+        },
+        "luminance_entropy_bits": {
+          "mean": 2.9776912550253676,
+          "std": 0.8239248376181812,
+          "min": 1.7977920739172657,
+          "max": 3.961300750156803
+        },
+        "edge_density": {
+          "mean": 0.20434678819444443,
+          "std": 0.06994806105293012,
+          "min": 0.086953125,
+          "max": 0.299453125
+        },
+        "edge_strength_mean": {
+          "mean": 0.056153785458565926,
+          "std": 0.016457506887109757,
+          "min": 0.028935892829243363,
+          "max": 0.0794229063433411
+        },
+        "spectral_centroid": {
+          "mean": 0.11956100511326458,
+          "std": 0.04370696651755094,
+          "min": 0.051368173990045146,
+          "max": 0.21903784221726147
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.1569141371463814,
+          "std": 0.06678862837014979,
+          "min": 0.05635405700023651,
+          "max": 0.3033401882937622
+        },
+        "colorfulness": {
+          "mean": 0.34352575633231947,
+          "std": 0.06140858314393004,
+          "min": 0.25330933480154555,
+          "max": 0.4349900126180184
+        },
+        "mean_abs_luminance_delta_from_previous": {
+          "mean": 0.2592860189867424,
+          "std": 0.10011422504007012,
+          "min": 0.13270093982843137,
+          "max": 0.4559121383986928
+        },
+        "rgb_mean": {
+          "channels": [
+            {
+              "mean": 0.3291897977943538,
+              "std": 0.1512874743502558,
+              "min": 0.15545685253307057,
+              "max": 0.6400439644607179
+            },
+            {
+              "mean": 0.21611982570816354,
+              "std": 0.14266179227736012,
+              "min": 0.09199693627449318,
+              "max": 0.5777515318627583
+            },
+            {
+              "mean": 0.15970538024238679,
+              "std": 0.06271040989107837,
+              "min": 0.08906622753264681,
+              "max": 0.28286417483676746
+            }
+          ]
+        },
+        "rgb_std": {
+          "channels": [
+            {
+              "mean": 0.35797911980375896,
+              "std": 0.04719570041563553,
+              "min": 0.2625623941592752,
+              "max": 0.4225406868135593
+            },
+            {
+              "mean": 0.22296397175357827,
+              "std": 0.04149952476962273,
+              "min": 0.17847844461920034,
+              "max": 0.30351623788929777
+            },
+            {
+              "mean": 0.1906785892955697,
+              "std": 0.05514396613438065,
+              "min": 0.08786732176169389,
+              "max": 0.26306698407714507
+            }
+          ]
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_image_statistics",
+      "created_at_utc": "2026-06-07T15:28:03Z",
+      "manifest_path": "runs/phase_scramble_luminance_quantile_smoke/julia_phase_luminance_quantile_seed_7/manifest.json",
+      "manifest_sha256": "7f45ec7cc7ff2f577a0a5d158cad1a8cee43daaf08d3ec7c0aba6334d9f76c16",
+      "condition": {
+        "condition_id": "julia_zoom_b_phase_scrambled_luminance_quantile_matched",
+        "condition_family": "control",
+        "temporal_policy": "ordered",
+        "semantic_load": "none",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "phase_scrambled_luminance_quantile_matched_visual_control",
+        "description": "Phase-scrambled transform of julia_zoom_b with source RGB pixels reassigned by luminance quantile rank."
+      },
+      "stimulus_config_sha256": "c96d420b8951f2a977010f2e7a7aa387fd090395a41b225f76a6e6ece8e1a5c9",
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "luminance_mean": {
+          "mean": 0.2511983860362201,
+          "std": 0.008458421457994744,
+          "min": 0.23662209464869283,
+          "max": 0.2611336267156863
+        },
+        "luminance_std": {
+          "mean": 0.18380620729033584,
+          "std": 0.045350089610818434,
+          "min": 0.10589355691968047,
+          "max": 0.23876789094273376
+        },
+        "luminance_entropy_bits": {
+          "mean": 3.4558347637202265,
+          "std": 0.9358660845126114,
+          "min": 1.67322458601523,
+          "max": 4.310118986522428
+        },
+        "edge_density": {
+          "mean": 0.5827289496527778,
+          "std": 0.1319344468060118,
+          "min": 0.31647135416666666,
+          "max": 0.7034505208333334
+        },
+        "edge_strength_mean": {
+          "mean": 0.1152517872362761,
+          "std": 0.03186900145686271,
+          "min": 0.055757393324601306,
+          "max": 0.14794166287457503
+        },
+        "spectral_centroid": {
+          "mean": 0.31462467127455457,
+          "std": 0.03825919647422591,
+          "min": 0.2562539711973394,
+          "max": 0.3895621071358681
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.4278476687290853,
+          "std": 0.06883872783198101,
+          "min": 0.32391801634218875,
+          "max": 0.5577267071071187
+        },
+        "colorfulness": {
+          "mean": 0.5669634053274536,
+          "std": 0.05239919909968815,
+          "min": 0.46980925780981997,
+          "max": 0.6246139767663494
+        },
+        "mean_abs_luminance_delta_from_previous": {
+          "mean": 0.19050491816696374,
+          "std": 0.06204266496898433,
+          "min": 0.08242139601715687,
+          "max": 0.26529405524918304
+        },
+        "rgb_mean": {
+          "channels": [
+            {
+              "mean": 0.5006444035947565,
+              "std": 0.15571589377620373,
+              "min": 0.29150541258195156,
+              "max": 0.7395062295745809
+            },
+            {
+              "mean": 0.18632749523434342,
+              "std": 0.03160821183579385,
+              "min": 0.13512448937904598,
+              "max": 0.22372354983680404
+            },
+            {
+              "mean": 0.1592792415577546,
+              "std": 0.036071214452775675,
+              "min": 0.10074193218949345,
+              "max": 0.20278339460784578
+            }
+          ]
+        },
+        "rgb_std": {
+          "channels": [
+            {
+              "mean": 0.33301313551516387,
+              "std": 0.03179845508326732,
+              "min": 0.25981029189544896,
+              "max": 0.3658799253260453
+            },
+            {
+              "mean": 0.22255727527370495,
+              "std": 0.04976713832239048,
+              "min": 0.13436019685468797,
+              "max": 0.28003084358808933
+            },
+            {
+              "mean": 0.20239262506158748,
+              "std": 0.042968715118132925,
+              "min": 0.12519463815218104,
+              "max": 0.2507184172741358
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "pairwise_deltas": [
+    {
+      "left_condition_id": "mandelbrot_zoom_a",
+      "right_condition_id": "julia_zoom_b",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.015113007225285996,
+        "luminance_std": 0.05452167632785884,
+        "luminance_entropy_bits": 0.4781435086948589,
+        "edge_density": 0.22095594618055556,
+        "edge_strength_mean": 0.06060310068363305,
+        "spectral_centroid": 0.27623254694446125,
+        "high_frequency_energy_ratio": 0.3802103908045342,
+        "colorfulness": 0.22343764899513413,
+        "mean_abs_luminance_delta_from_previous": 0.05204121594715537
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a",
+      "right_condition_id": "mandelbrot_zoom_a_phase_scrambled",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.027146763767190912,
+        "luminance_std": 0.08279640164730359,
+        "luminance_entropy_bits": 4.1172388924792696,
+        "edge_density": 0.033038194444444446,
+        "edge_strength_mean": 0.0269497901174885,
+        "spectral_centroid": 0.023533273033778397,
+        "high_frequency_energy_ratio": 0.034326488735843895,
+        "colorfulness": 0.11612024161574819,
+        "mean_abs_luminance_delta_from_previous": 0.12067829745896465
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a",
+      "right_condition_id": "julia_zoom_b_phase_scrambled",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.03410923467456431,
+        "luminance_std": 0.09253746864723103,
+        "luminance_entropy_bits": 4.16695341349083,
+        "edge_density": 0.2429275173611111,
+        "edge_strength_mean": 0.07981223570001303,
+        "spectral_centroid": 0.22788672824757358,
+        "high_frequency_energy_ratio": 0.31003351602990925,
+        "colorfulness": 0.17356278817909004,
+        "mean_abs_luminance_delta_from_previous": 0.0913373932987968
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a",
+      "right_condition_id": "mandelbrot_zoom_a_phase_scrambled_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.0,
+        "luminance_std": 0.05230802899617107,
+        "luminance_entropy_bits": 2.253597812038174,
+        "edge_density": 0.11730143229166667,
+        "edge_strength_mean": 0.037909757977618835,
+        "spectral_centroid": 0.06758068206893597,
+        "high_frequency_energy_ratio": 0.09560690728033583,
+        "colorfulness": 0.2121741633085374,
+        "mean_abs_luminance_delta_from_previous": 0.14529115012626265
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a",
+      "right_condition_id": "julia_zoom_b_phase_scrambled_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.015113007225285996,
+        "luminance_std": 0.06314977402258345,
+        "luminance_entropy_bits": 3.2753439894674705,
+        "edge_density": 0.2868240017361111,
+        "edge_strength_mean": 0.0920768310815194,
+        "spectral_centroid": 0.2819641738974932,
+        "high_frequency_energy_ratio": 0.3975117981196199,
+        "colorfulness": 0.25882868442176393,
+        "mean_abs_luminance_delta_from_previous": 0.10582868438892602
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a",
+      "right_condition_id": "mandelbrot_zoom_a_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.0,
+        "luminance_std": 0.0,
+        "luminance_entropy_bits": 0.0,
+        "edge_density": 0.14701714409722222,
+        "edge_strength_mean": 0.039426584114809135,
+        "spectral_centroid": 0.0750911473525033,
+        "high_frequency_energy_ratio": 0.1087106551496631,
+        "colorfulness": 0.0,
+        "mean_abs_luminance_delta_from_previous": 0.18350596693404636
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a",
+      "right_condition_id": "julia_zoom_b_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.015113007225285996,
+        "luminance_std": 0.05452167632785884,
+        "luminance_entropy_bits": 0.4781435086948589,
+        "edge_density": 0.5253993055555556,
+        "edge_strength_mean": 0.0985245858925193,
+        "spectral_centroid": 0.2701548135137933,
+        "high_frequency_energy_ratio": 0.37964418673236705,
+        "colorfulness": 0.22343764899513413,
+        "mean_abs_luminance_delta_from_previous": 0.11472486611426767
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_b",
+      "right_condition_id": "mandelbrot_zoom_a_phase_scrambled",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.012033756541904916,
+        "luminance_std": 0.02827472531944475,
+        "luminance_entropy_bits": 3.639095383784411,
+        "edge_density": 0.253994140625,
+        "edge_strength_mean": 0.033653310566144554,
+        "spectral_centroid": 0.25269927391068286,
+        "high_frequency_energy_ratio": 0.3458839020686903,
+        "colorfulness": 0.10731740737938594,
+        "mean_abs_luminance_delta_from_previous": 0.06863708151180928
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_b",
+      "right_condition_id": "julia_zoom_b_phase_scrambled",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.018996227449278313,
+        "luminance_std": 0.03801579231937219,
+        "luminance_entropy_bits": 3.688809904795971,
+        "edge_density": 0.021971571180555538,
+        "edge_strength_mean": 0.01920913501637997,
+        "spectral_centroid": 0.0483458186968877,
+        "high_frequency_energy_ratio": 0.07017687477462498,
+        "colorfulness": 0.049874860816044086,
+        "mean_abs_luminance_delta_from_previous": 0.039296177351641426
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_b",
+      "right_condition_id": "mandelbrot_zoom_a_phase_scrambled_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.015113007225285996,
+        "luminance_std": 0.0022136473316877736,
+        "luminance_entropy_bits": 1.7754543033433152,
+        "edge_density": 0.10365451388888888,
+        "edge_strength_mean": 0.022693342706014218,
+        "spectral_centroid": 0.20865186487552528,
+        "high_frequency_energy_ratio": 0.2846034835241984,
+        "colorfulness": 0.011263485686596741,
+        "mean_abs_luminance_delta_from_previous": 0.09324993417910726
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_b",
+      "right_condition_id": "julia_zoom_b_phase_scrambled_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.0,
+        "luminance_std": 0.008628097694724612,
+        "luminance_entropy_bits": 2.7972004807726116,
+        "edge_density": 0.06586805555555558,
+        "edge_strength_mean": 0.03147373039788634,
+        "spectral_centroid": 0.005731626953031921,
+        "high_frequency_energy_ratio": 0.01730140731508567,
+        "colorfulness": 0.0353910354266298,
+        "mean_abs_luminance_delta_from_previous": 0.05378746844177065
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_b",
+      "right_condition_id": "mandelbrot_zoom_a_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.015113007225285996,
+        "luminance_std": 0.05452167632785884,
+        "luminance_entropy_bits": 0.4781435086948589,
+        "edge_density": 0.07393880208333334,
+        "edge_strength_mean": 0.021176516568823918,
+        "spectral_centroid": 0.20114139959195798,
+        "high_frequency_energy_ratio": 0.27149973565487107,
+        "colorfulness": 0.22343764899513413,
+        "mean_abs_luminance_delta_from_previous": 0.13146475098689098
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_b",
+      "right_condition_id": "julia_zoom_b_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.0,
+        "luminance_std": 0.0,
+        "luminance_entropy_bits": 0.0,
+        "edge_density": 0.304443359375,
+        "edge_strength_mean": 0.03792148520888626,
+        "spectral_centroid": 0.006077733430667975,
+        "high_frequency_energy_ratio": 0.0005662040721671757,
+        "colorfulness": 0.0,
+        "mean_abs_luminance_delta_from_previous": 0.0626836501671123
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a_phase_scrambled",
+      "right_condition_id": "julia_zoom_b_phase_scrambled",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.006962470907373397,
+        "luminance_std": 0.009741066999927439,
+        "luminance_entropy_bits": 0.04971452101155993,
+        "edge_density": 0.2759657118055555,
+        "edge_strength_mean": 0.05286244558252452,
+        "spectral_centroid": 0.20435345521379517,
+        "high_frequency_energy_ratio": 0.2757070272940653,
+        "colorfulness": 0.057442546563341856,
+        "mean_abs_luminance_delta_from_previous": 0.029340904160167852
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a_phase_scrambled",
+      "right_condition_id": "mandelbrot_zoom_a_phase_scrambled_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.027146763767190912,
+        "luminance_std": 0.030488372651132523,
+        "luminance_entropy_bits": 1.8636410804410959,
+        "edge_density": 0.15033962673611112,
+        "edge_strength_mean": 0.010959967860130336,
+        "spectral_centroid": 0.04404740903515758,
+        "high_frequency_energy_ratio": 0.06128041854449194,
+        "colorfulness": 0.0960539216927892,
+        "mean_abs_luminance_delta_from_previous": 0.024612852667297985
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a_phase_scrambled",
+      "right_condition_id": "julia_zoom_b_phase_scrambled_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.012033756541904916,
+        "luminance_std": 0.019646627624720137,
+        "luminance_entropy_bits": 0.8418949030117995,
+        "edge_density": 0.31986219618055556,
+        "edge_strength_mean": 0.0651270409640309,
+        "spectral_centroid": 0.2584309008637148,
+        "high_frequency_energy_ratio": 0.36318530938377597,
+        "colorfulness": 0.14270844280601575,
+        "mean_abs_luminance_delta_from_previous": 0.014849613070038625
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a_phase_scrambled",
+      "right_condition_id": "mandelbrot_zoom_a_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.027146763767190912,
+        "luminance_std": 0.08279640164730359,
+        "luminance_entropy_bits": 4.1172388924792696,
+        "edge_density": 0.18005533854166667,
+        "edge_strength_mean": 0.012476793997320636,
+        "spectral_centroid": 0.05155787431872491,
+        "high_frequency_energy_ratio": 0.07438416641381922,
+        "colorfulness": 0.11612024161574819,
+        "mean_abs_luminance_delta_from_previous": 0.0628276694750817
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a_phase_scrambled",
+      "right_condition_id": "julia_zoom_b_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.012033756541904916,
+        "luminance_std": 0.02827472531944475,
+        "luminance_entropy_bits": 3.639095383784411,
+        "edge_density": 0.5584375,
+        "edge_strength_mean": 0.07157479577503081,
+        "spectral_centroid": 0.2466215404800149,
+        "high_frequency_energy_ratio": 0.3453176979965231,
+        "colorfulness": 0.10731740737938594,
+        "mean_abs_luminance_delta_from_previous": 0.0059534313446969744
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_b_phase_scrambled",
+      "right_condition_id": "mandelbrot_zoom_a_phase_scrambled_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.03410923467456431,
+        "luminance_std": 0.04022943965105996,
+        "luminance_entropy_bits": 1.9133556014526558,
+        "edge_density": 0.12562608506944442,
+        "edge_strength_mean": 0.04190247772239419,
+        "spectral_centroid": 0.16030604617863758,
+        "high_frequency_energy_ratio": 0.2144266087495734,
+        "colorfulness": 0.038611375129447345,
+        "mean_abs_luminance_delta_from_previous": 0.05395375682746584
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_b_phase_scrambled",
+      "right_condition_id": "julia_zoom_b_phase_scrambled_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.018996227449278313,
+        "luminance_std": 0.029387694624647576,
+        "luminance_entropy_bits": 0.8916094240233594,
+        "edge_density": 0.043896484375000044,
+        "edge_strength_mean": 0.012264595381506371,
+        "spectral_centroid": 0.05407744564991962,
+        "high_frequency_energy_ratio": 0.08747828208971065,
+        "colorfulness": 0.08526589624267389,
+        "mean_abs_luminance_delta_from_previous": 0.014491291090129227
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_b_phase_scrambled",
+      "right_condition_id": "mandelbrot_zoom_a_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.03410923467456431,
+        "luminance_std": 0.09253746864723103,
+        "luminance_entropy_bits": 4.16695341349083,
+        "edge_density": 0.09591037326388888,
+        "edge_strength_mean": 0.04038565158520389,
+        "spectral_centroid": 0.15279558089507028,
+        "high_frequency_energy_ratio": 0.20132286088024612,
+        "colorfulness": 0.17356278817909004,
+        "mean_abs_luminance_delta_from_previous": 0.09216857363524955
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_b_phase_scrambled",
+      "right_condition_id": "julia_zoom_b_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.018996227449278313,
+        "luminance_std": 0.03801579231937219,
+        "luminance_entropy_bits": 3.688809904795971,
+        "edge_density": 0.28247178819444446,
+        "edge_strength_mean": 0.01871235019250629,
+        "spectral_centroid": 0.042268085266219724,
+        "high_frequency_energy_ratio": 0.0696106707024578,
+        "colorfulness": 0.049874860816044086,
+        "mean_abs_luminance_delta_from_previous": 0.023387472815470878
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a_phase_scrambled_quantile_matched",
+      "right_condition_id": "julia_zoom_b_phase_scrambled_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.015113007225285996,
+        "luminance_std": 0.010841745026412386,
+        "luminance_entropy_bits": 1.0217461774292964,
+        "edge_density": 0.16952256944444447,
+        "edge_strength_mean": 0.05416707310390056,
+        "spectral_centroid": 0.2143834918285572,
+        "high_frequency_energy_ratio": 0.30190489083928407,
+        "colorfulness": 0.046654521113226544,
+        "mean_abs_luminance_delta_from_previous": 0.03946246573733661
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a_phase_scrambled_quantile_matched",
+      "right_condition_id": "mandelbrot_zoom_a_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.0,
+        "luminance_std": 0.05230802899617107,
+        "luminance_entropy_bits": 2.253597812038174,
+        "edge_density": 0.029715711805555545,
+        "edge_strength_mean": 0.0015168261371902997,
+        "spectral_centroid": 0.00751046528356733,
+        "high_frequency_energy_ratio": 0.013103747869327276,
+        "colorfulness": 0.2121741633085374,
+        "mean_abs_luminance_delta_from_previous": 0.038214816807783714
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a_phase_scrambled_quantile_matched",
+      "right_condition_id": "julia_zoom_b_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.015113007225285996,
+        "luminance_std": 0.0022136473316877736,
+        "luminance_entropy_bits": 1.7754543033433152,
+        "edge_density": 0.4080978732638889,
+        "edge_strength_mean": 0.06061482791490048,
+        "spectral_centroid": 0.2025741314448573,
+        "high_frequency_energy_ratio": 0.28403727945203117,
+        "colorfulness": 0.011263485686596741,
+        "mean_abs_luminance_delta_from_previous": 0.03056628401199496
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_b_phase_scrambled_quantile_matched",
+      "right_condition_id": "mandelbrot_zoom_a_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.015113007225285996,
+        "luminance_std": 0.06314977402258345,
+        "luminance_entropy_bits": 3.2753439894674705,
+        "edge_density": 0.13980685763888892,
+        "edge_strength_mean": 0.05265024696671026,
+        "spectral_centroid": 0.2068730265449899,
+        "high_frequency_energy_ratio": 0.28880114296995674,
+        "colorfulness": 0.25882868442176393,
+        "mean_abs_luminance_delta_from_previous": 0.07767728254512032
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_b_phase_scrambled_quantile_matched",
+      "right_condition_id": "julia_zoom_b_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.0,
+        "luminance_std": 0.008628097694724612,
+        "luminance_entropy_bits": 2.7972004807726116,
+        "edge_density": 0.23857530381944442,
+        "edge_strength_mean": 0.00644775481099992,
+        "spectral_centroid": 0.011809360383699896,
+        "high_frequency_energy_ratio": 0.017867611387252846,
+        "colorfulness": 0.0353910354266298,
+        "mean_abs_luminance_delta_from_previous": 0.00889618172534165
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_a_phase_scrambled_luminance_quantile_matched",
+      "right_condition_id": "julia_zoom_b_phase_scrambled_luminance_quantile_matched",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.015113007225285996,
+        "luminance_std": 0.05452167632785884,
+        "luminance_entropy_bits": 0.4781435086948589,
+        "edge_density": 0.37838216145833337,
+        "edge_strength_mean": 0.05909800177771018,
+        "spectral_centroid": 0.19506366616129,
+        "high_frequency_energy_ratio": 0.27093353158270395,
+        "colorfulness": 0.22343764899513413,
+        "mean_abs_luminance_delta_from_previous": 0.06878110081977867
+      }
+    }
+  ]
+}

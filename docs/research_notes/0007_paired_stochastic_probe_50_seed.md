@@ -1,10 +1,10 @@
-# Paired Stochastic Probe 50-Seed Smoke
+# Paired Stochastic Probe 50-Seed Batch
 
-Date: 2026-06-07
+Date: 2026-06-13
 
 ## Setup
 
-- Source batch: `runs/paired_stochastic_probe_50_seed_smoke`
+- Source batch: `runs/paired_stochastic_probe_50_seed_batch`
 - Conditions: `null_blank`, `mandelbrot`, `julia`
 - Probe seeds: `0..49`
 - Frames per run: `12`
@@ -58,7 +58,7 @@ fifty independent source-cache replications.
 
 ## First Reading
 
-This run strengthens the narrow reading from Note 0006:
+This batch strengthens the narrow reading from Note 0006:
 
 > Under matched stochastic probe seeds, open-ended sampled surface text follows
 > the paired probe RNG and phase policy rather than the visual condition in this
@@ -105,10 +105,10 @@ The next design should separate three sources of variation:
 
 ## Local Artifacts
 
-- `runs/paired_stochastic_probe_50_seed_smoke/paired_stochastic_analysis.md`
-- `runs/paired_stochastic_probe_50_seed_smoke/paired_stochastic_analysis.json`
-- `runs/paired_stochastic_probe_50_seed_smoke/paired_stochastic_batch_summary.md`
-- `runs/paired_stochastic_probe_50_seed_smoke/paired_stochastic_batch_summary.json`
+- `runs/paired_stochastic_probe_50_seed_batch/paired_stochastic_analysis.md`
+- `runs/paired_stochastic_probe_50_seed_batch/paired_stochastic_analysis.json`
+- `runs/paired_stochastic_probe_50_seed_batch/paired_stochastic_batch_summary.md`
+- `runs/paired_stochastic_probe_50_seed_batch/paired_stochastic_batch_summary.json`
 
 ## Tracked Examples
 

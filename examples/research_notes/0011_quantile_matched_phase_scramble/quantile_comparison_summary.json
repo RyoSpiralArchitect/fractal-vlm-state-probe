@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "left": "mandelbrot",
+      "right": "mandelbrot_phase",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 8.408935546875,
+      "mid_mean_l2": 3.42122220993042,
+      "after_max_l2": 7.90478515625,
+      "after_mean_l2": 2.776156425476074,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "mandelbrot",
+      "right": "mandelbrot_rgb_quantile",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 11.346923828125,
+      "mid_mean_l2": 4.953662395477295,
+      "after_max_l2": 11.1253662109375,
+      "after_mean_l2": 4.552603721618652,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "mandelbrot",
+      "right": "mandelbrot_luminance_quantile",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 17.5838623046875,
+      "mid_mean_l2": 5.356545448303223,
+      "after_max_l2": 10.0413818359375,
+      "after_mean_l2": 5.494800567626953,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "julia",
+      "right": "julia_phase",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 13.6646728515625,
+      "mid_mean_l2": 2.9506893157958984,
+      "after_max_l2": 11.486572265625,
+      "after_mean_l2": 1.7460556030273438,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "julia",
+      "right": "julia_rgb_quantile",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 8.9569091796875,
+      "mid_mean_l2": 3.195845127105713,
+      "after_max_l2": 8.7686767578125,
+      "after_mean_l2": 1.6665048599243164,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "julia",
+      "right": "julia_luminance_quantile",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 6.237548828125,
+      "mid_mean_l2": 2.5239667892456055,
+      "after_max_l2": 6.447998046875,
+      "after_mean_l2": 1.4237709045410156,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "mandelbrot_phase",
+      "right": "julia_phase",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 3.1702880859375,
+      "mid_mean_l2": 1.643907070159912,
+      "after_max_l2": 3.9796142578125,
+      "after_mean_l2": 0.9582996368408203,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "mandelbrot_rgb_quantile",
+      "right": "julia_rgb_quantile",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 4.5933837890625,
+      "mid_mean_l2": 1.6838130950927734,
+      "after_max_l2": 3.5611572265625,
+      "after_mean_l2": 1.3864507675170898,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "mandelbrot_luminance_quantile",
+      "right": "julia_luminance_quantile",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 12.414794921875,
+      "mid_mean_l2": 3.9150705337524414,
+      "after_max_l2": 8.6380615234375,
+      "after_mean_l2": 1.9843263626098633,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "julia_phase",
+      "right": "julia_rgb_quantile",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 4.707763671875,
+      "mid_mean_l2": 2.8882527351379395,
+      "after_max_l2": 2.7178955078125,
+      "after_mean_l2": 0.8341455459594727,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "julia_phase",
+      "right": "julia_luminance_quantile",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 7.4271240234375,
+      "mid_mean_l2": 2.743687629699707,
+      "after_max_l2": 5.03857421875,
+      "after_mean_l2": 1.4882011413574219,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "julia_rgb_quantile",
+      "right": "julia_luminance_quantile",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 5.23681640625,
+      "mid_mean_l2": 2.0248379707336426,
+      "after_max_l2": 2.3206787109375,
+      "after_mean_l2": 0.9776029586791992,
+      "same_probe_text_all_phases": true
+    }
+  ],
+  "analysis_kind": "quantile_phase_scramble_comparison_summary"
+}

@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "frequency_ablation_comparison_summary",
+  "records": [
+    {
+      "left": "mandelbrot",
+      "right": "mandelbrot_phase_lq",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 17.5838623046875,
+      "mid_mean_l2": 5.356545448303223,
+      "after_max_l2": 10.0413818359375,
+      "after_mean_l2": 5.494800567626953,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "mandelbrot",
+      "right": "mandelbrot_low_lq",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 5.38818359375,
+      "mid_mean_l2": 2.2648725509643555,
+      "after_max_l2": 11.0234375,
+      "after_mean_l2": 5.3905439376831055,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "mandelbrot",
+      "right": "mandelbrot_high_lq",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 10.1396484375,
+      "mid_mean_l2": 5.320090293884277,
+      "after_max_l2": 7.2958984375,
+      "after_mean_l2": 2.663494110107422,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "mandelbrot_low_lq",
+      "right": "mandelbrot_high_lq",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 11.8089599609375,
+      "mid_mean_l2": 4.448970794677734,
+      "after_max_l2": 11.11328125,
+      "after_mean_l2": 3.6015024185180664,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "julia",
+      "right": "julia_phase_lq",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 6.237548828125,
+      "mid_mean_l2": 2.5239667892456055,
+      "after_max_l2": 6.447998046875,
+      "after_mean_l2": 1.4237709045410156,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "julia",
+      "right": "julia_low_lq",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 12.0711669921875,
+      "mid_mean_l2": 2.630263328552246,
+      "after_max_l2": 7.7137451171875,
+      "after_mean_l2": 2.0050888061523438,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "julia",
+      "right": "julia_high_lq",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 4.5086669921875,
+      "mid_mean_l2": 2.1215133666992188,
+      "after_max_l2": 8.3404541015625,
+      "after_mean_l2": 2.1324682235717773,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "julia_low_lq",
+      "right": "julia_high_lq",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 8.81396484375,
+      "mid_mean_l2": 2.72646427154541,
+      "after_max_l2": 2.0927734375,
+      "after_mean_l2": 0.7499990463256836,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "mandelbrot_phase_lq",
+      "right": "julia_phase_lq",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 12.414794921875,
+      "mid_mean_l2": 3.9150705337524414,
+      "after_max_l2": 8.6380615234375,
+      "after_mean_l2": 1.9843263626098633,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "mandelbrot_low_lq",
+      "right": "julia_low_lq",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 8.664794921875,
+      "mid_mean_l2": 3.2655210494995117,
+      "after_max_l2": 11.40869140625,
+      "after_mean_l2": 3.703042984008789,
+      "same_probe_text_all_phases": true
+    },
+    {
+      "left": "mandelbrot_high_lq",
+      "right": "julia_high_lq",
+      "before_max_l2": null,
+      "before_mean_l2": null,
+      "mid_max_l2": 2.487548828125,
+      "mid_mean_l2": 1.0732269287109375,
+      "after_max_l2": 3.4444580078125,
+      "after_mean_l2": 1.2599258422851562,
+      "same_probe_text_all_phases": true
+    }
+  ]
+}

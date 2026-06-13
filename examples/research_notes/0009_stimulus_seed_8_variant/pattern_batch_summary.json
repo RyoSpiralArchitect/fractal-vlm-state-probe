@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "batch_kind": "mlx_pattern_paired_stochastic_probe_batch",
+  "model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+  "stream_seed": 20260604,
+  "stimulus_seed": 8,
+  "probe_seeds": [
+    0
+  ],
+  "frames": 12,
+  "stream_temperature": 0.0,
+  "probe_temperature": 0.7,
+  "probe_seed_policy": "same base probe seed is applied to all conditions; MLX run resets before/mid/after to seed, seed+1, seed+2",
+  "conditions": {
+    "null_blank": "runs/pattern_geometry_variants_seed_8/stimuli/null_blank/manifest.json",
+    "mandelbrot": "runs/pattern_geometry_variants_seed_8/stimuli/mandelbrot/manifest.json",
+    "julia": "runs/pattern_geometry_variants_seed_8/stimuli/julia/manifest.json",
+    "checkerboard": "runs/pattern_geometry_variants_seed_8/stimuli/checkerboard/manifest.json",
+    "voronoi": "runs/pattern_geometry_variants_seed_8/stimuli/voronoi/manifest.json",
+    "quasicrystal": "runs/pattern_geometry_variants_seed_8/stimuli/quasicrystal/manifest.json"
+  },
+  "records": [
+    {
+      "probe_seed": 0,
+      "stream_seed": 20260604,
+      "stimulus_seed": 8,
+      "runs": {
+        "null_blank": "runs/pattern_geometry_variants_seed_8/probe_seed_0/null_blank_mlx.json",
+        "mandelbrot": "runs/pattern_geometry_variants_seed_8/probe_seed_0/mandelbrot_mlx.json",
+        "julia": "runs/pattern_geometry_variants_seed_8/probe_seed_0/julia_mlx.json",
+        "checkerboard": "runs/pattern_geometry_variants_seed_8/probe_seed_0/checkerboard_mlx.json",
+        "voronoi": "runs/pattern_geometry_variants_seed_8/probe_seed_0/voronoi_mlx.json",
+        "quasicrystal": "runs/pattern_geometry_variants_seed_8/probe_seed_0/quasicrystal_mlx.json"
+      },
+      "comparisons": {
+        "null_blank_vs_mandelbrot": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/null_blank_vs_mandelbrot.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/null_blank_vs_mandelbrot.json"
+        },
+        "null_blank_vs_julia": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/null_blank_vs_julia.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/null_blank_vs_julia.json"
+        },
+        "null_blank_vs_checkerboard": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/null_blank_vs_checkerboard.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/null_blank_vs_checkerboard.json"
+        },
+        "null_blank_vs_voronoi": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/null_blank_vs_voronoi.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/null_blank_vs_voronoi.json"
+        },
+        "null_blank_vs_quasicrystal": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/null_blank_vs_quasicrystal.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/null_blank_vs_quasicrystal.json"
+        },
+        "mandelbrot_vs_julia": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/mandelbrot_vs_julia.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/mandelbrot_vs_julia.json"
+        },
+        "mandelbrot_vs_checkerboard": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/mandelbrot_vs_checkerboard.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/mandelbrot_vs_checkerboard.json"
+        },
+        "mandelbrot_vs_voronoi": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/mandelbrot_vs_voronoi.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/mandelbrot_vs_voronoi.json"
+        },
+        "mandelbrot_vs_quasicrystal": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/mandelbrot_vs_quasicrystal.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/mandelbrot_vs_quasicrystal.json"
+        },
+        "julia_vs_checkerboard": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/julia_vs_checkerboard.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/julia_vs_checkerboard.json"
+        },
+        "julia_vs_voronoi": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/julia_vs_voronoi.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/julia_vs_voronoi.json"
+        },
+        "julia_vs_quasicrystal": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/julia_vs_quasicrystal.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/julia_vs_quasicrystal.json"
+        },
+        "checkerboard_vs_voronoi": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/checkerboard_vs_voronoi.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/checkerboard_vs_voronoi.json"
+        },
+        "checkerboard_vs_quasicrystal": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/checkerboard_vs_quasicrystal.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/checkerboard_vs_quasicrystal.json"
+        },
+        "voronoi_vs_quasicrystal": {
+          "markdown": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/voronoi_vs_quasicrystal.md",
+          "json": "runs/pattern_geometry_variants_seed_8/probe_seed_0/comparisons/voronoi_vs_quasicrystal.json"
+        }
+      }
+    }
+  ]
+}

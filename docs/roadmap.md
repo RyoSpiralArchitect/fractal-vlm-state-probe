@@ -77,14 +77,21 @@ Status: first MLX batch runner and lexical summary implemented.
 
 - Static repeat, shuffled order, reversed order.
 - Phase-scrambled Mandelbrot and Julia.
+- RGB-quantile and luminance-rank matched phase-scrambled Mandelbrot and Julia.
+- Low-pass and high-pass frequency ablations, including luminance-rank matched
+  variants.
+- Arbitrary manifest batch runner for transformed-control sweeps.
 - Voronoi, tiling, checkerboard, quasicrystal, random dot, blue-noise, and
   white-noise generators.
 - Histogram-matched visual controls.
 - Feature extraction for image statistics such as brightness, contrast, edge
   density, spectrum, entropy, periodicity, and symmetry.
 
-Status: first generator suite implemented. Histogram matching and image-statistic
-reports are next.
+Status: first generator suite, paired pattern batch runner, image-statistic
+reporter, RGB quantile-matched phase-scramble control, luminance-rank matched
+phase-scramble control, low/high-pass frequency controls, and arbitrary
+manifest batch runner implemented. Independent stream variants and transform
+seed/cutoff aggregation are next.
 
 ## Phase 5: Research Report
 

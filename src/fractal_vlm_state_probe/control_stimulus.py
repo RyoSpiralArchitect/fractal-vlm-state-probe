@@ -27,6 +27,12 @@ GeneratedControlKind = Literal[
 ]
 TransformControlKind = Literal[
     "phase_scrambled",
+    "phase_scrambled_quantile_matched",
+    "phase_scrambled_luminance_quantile_matched",
+    "low_pass",
+    "high_pass",
+    "low_pass_luminance_quantile_matched",
+    "high_pass_luminance_quantile_matched",
     "static_repeat",
     "shuffled",
     "reversed",
@@ -46,10 +52,18 @@ GENERATED_CONTROL_KINDS: tuple[str, ...] = (
 )
 TRANSFORM_CONTROL_KINDS: tuple[str, ...] = (
     "phase_scrambled",
+    "phase_scrambled_quantile_matched",
+    "phase_scrambled_luminance_quantile_matched",
+    "low_pass",
+    "high_pass",
+    "low_pass_luminance_quantile_matched",
+    "high_pass_luminance_quantile_matched",
     "static_repeat",
     "shuffled",
     "reversed",
 )
+
+DEFAULT_FREQUENCY_CUTOFF = 0.18
 
 
 @dataclass(frozen=True)
@@ -169,6 +183,7 @@ def render_manifest_transform(
     seed: int = 0,
     source_frame_index: int = 0,
     max_frames: int | None = None,
+    frequency_cutoff: float = DEFAULT_FREQUENCY_CUTOFF,
     condition_id: str | None = None,
     overwrite: bool = False,
 ) -> dict[str, Any]:
@@ -176,6 +191,8 @@ def render_manifest_transform(
         raise ValueError(f"unsupported transform control kind: {transform_kind}")
     if max_frames is not None and max_frames < 1:
         raise ValueError("max_frames must be positive")
+    if not 0.0 < frequency_cutoff < 1.0:
+        raise ValueError("frequency_cutoff must be in (0, 1)")
 
     with source_manifest_path.open("r", encoding="utf-8") as handle:
         source_manifest = json.load(handle)
@@ -210,8 +227,30 @@ def render_manifest_transform(
         with Image.open(source_path) as image:
             array = np.asarray(image.convert("RGB"))
 
-        if transform_kind == "phase_scrambled":
-            array = phase_scramble_rgb(array, seed=seed + output_index)
+        if transform_kind in (
+            "phase_scrambled",
+            "phase_scrambled_quantile_matched",
+            "phase_scrambled_luminance_quantile_matched",
+        ):
+            scrambled = phase_scramble_rgb(array, seed=seed + output_index)
+            if transform_kind == "phase_scrambled_quantile_matched":
+                array = quantile_match_rgb(scrambled, reference=array)
+            elif transform_kind == "phase_scrambled_luminance_quantile_matched":
+                array = luminance_quantile_match_rgb(scrambled, reference=array)
+            else:
+                array = scrambled
+        elif transform_kind in (
+            "low_pass",
+            "high_pass",
+            "low_pass_luminance_quantile_matched",
+            "high_pass_luminance_quantile_matched",
+        ):
+            mode = "low_pass" if transform_kind.startswith("low_pass") else "high_pass"
+            filtered = frequency_filter_rgb(array, mode=mode, cutoff=frequency_cutoff)
+            if transform_kind.endswith("_luminance_quantile_matched"):
+                array = luminance_quantile_match_rgb(filtered, reference=array)
+            else:
+                array = filtered
 
         Image.fromarray(array).save(output_frame_path)
         frame_record = _frame_record(
@@ -236,6 +275,7 @@ def render_manifest_transform(
         "source_condition": source_manifest.get("stimulus_condition"),
         "source_frame_index": source_frame_index,
         "max_frames": max_frames,
+        "frequency_cutoff": frequency_cutoff,
         "stimulus_condition": condition.to_dict(),
     }
     manifest = _manifest(
@@ -293,6 +333,52 @@ def phase_scramble_rgb(array: np.ndarray, *, seed: int) -> np.ndarray:
     return np.clip(output, 0, 255).astype(np.uint8)
 
 
+def quantile_match_rgb(array: np.ndarray, *, reference: np.ndarray) -> np.ndarray:
+    if array.shape != reference.shape or array.ndim != 3 or array.shape[2] != 3:
+        raise ValueError("quantile_match_rgb expects RGB arrays with matching shapes")
+    output = np.empty_like(array)
+    for channel in range(3):
+        output[:, :, channel] = _quantile_match_channel(
+            array[:, :, channel],
+            reference[:, :, channel],
+        )
+    return output
+
+
+def luminance_quantile_match_rgb(array: np.ndarray, *, reference: np.ndarray) -> np.ndarray:
+    if array.shape != reference.shape or array.ndim != 3 or array.shape[2] != 3:
+        raise ValueError("luminance_quantile_match_rgb expects RGB arrays with matching shapes")
+    target_order = np.argsort(_luminance_key(array).reshape(-1), kind="mergesort")
+    reference_order = np.argsort(_luminance_key(reference).reshape(-1), kind="mergesort")
+    reference_pixels = reference.reshape(-1, 3)
+    output = np.empty_like(reference_pixels)
+    output[target_order] = reference_pixels[reference_order]
+    return output.reshape(reference.shape)
+
+
+def frequency_filter_rgb(
+    array: np.ndarray,
+    *,
+    mode: Literal["low_pass", "high_pass"],
+    cutoff: float = DEFAULT_FREQUENCY_CUTOFF,
+) -> np.ndarray:
+    if array.ndim != 3 or array.shape[2] != 3:
+        raise ValueError("frequency_filter_rgb expects an RGB array")
+    if mode not in ("low_pass", "high_pass"):
+        raise ValueError(f"unsupported frequency filter mode: {mode}")
+    if not 0.0 < cutoff < 1.0:
+        raise ValueError("cutoff must be in (0, 1)")
+
+    output = np.empty_like(array, dtype=np.float64)
+    mask = _frequency_mask(array.shape[:2], mode=mode, cutoff=cutoff)
+    for channel in range(3):
+        source = array[:, :, channel].astype(np.float64)
+        spectrum = np.fft.rfft2(source)
+        filtered = np.fft.irfft2(spectrum * mask, s=source.shape)
+        output[:, :, channel] = _match_mean_std(filtered, source)
+    return np.clip(output, 0, 255).astype(np.uint8)
+
+
 def _generated_condition(spec: GeneratedControlSpec) -> StimulusCondition:
     if spec.kind == "blank":
         return StimulusCondition(
@@ -334,16 +420,62 @@ def _transform_condition(
     raw_source = source_manifest.get("stimulus_condition") or {}
     source = StimulusCondition.from_dict(raw_source)
     source_id = source.condition_id
-    if transform_kind == "phase_scrambled":
+    if transform_kind in (
+        "phase_scrambled",
+        "phase_scrambled_quantile_matched",
+        "phase_scrambled_luminance_quantile_matched",
+        "low_pass",
+        "high_pass",
+        "low_pass_luminance_quantile_matched",
+        "high_pass_luminance_quantile_matched",
+    ):
+        metadata = {
+            "phase_scrambled": (
+                "phase_scrambled",
+                "phase_scrambled_visual_control",
+                f"Phase-scrambled transform of {source_id}; approximate spectrum-preserving low-level control.",
+            ),
+            "phase_scrambled_quantile_matched": (
+                "phase_scrambled_quantile_matched",
+                "phase_scrambled_quantile_matched_visual_control",
+                f"Phase-scrambled transform of {source_id} with per-channel quantile matching to the source frame.",
+            ),
+            "phase_scrambled_luminance_quantile_matched": (
+                "phase_scrambled_luminance_quantile_matched",
+                "phase_scrambled_luminance_quantile_matched_visual_control",
+                f"Phase-scrambled transform of {source_id} with source RGB pixels reassigned by luminance quantile rank.",
+            ),
+            "low_pass": (
+                "low_pass",
+                "low_pass_frequency_control",
+                f"Low-pass frequency transform of {source_id}; preserves coarse structure while suppressing local detail.",
+            ),
+            "high_pass": (
+                "high_pass",
+                "high_pass_frequency_control",
+                f"High-pass frequency transform of {source_id}; preserves local detail while suppressing coarse structure.",
+            ),
+            "low_pass_luminance_quantile_matched": (
+                "low_pass_luminance_quantile_matched",
+                "low_pass_luminance_quantile_matched_frequency_control",
+                f"Low-pass frequency transform of {source_id} with source RGB pixels reassigned by luminance quantile rank.",
+            ),
+            "high_pass_luminance_quantile_matched": (
+                "high_pass_luminance_quantile_matched",
+                "high_pass_luminance_quantile_matched_frequency_control",
+                f"High-pass frequency transform of {source_id} with source RGB pixels reassigned by luminance quantile rank.",
+            ),
+        }
+        suffix, role, description = metadata[transform_kind]
         return StimulusCondition(
-            condition_id=condition_id or f"{source_id}_phase_scrambled",
+            condition_id=condition_id or f"{source_id}_{suffix}",
             condition_family="control",
             temporal_policy="ordered",
             semantic_load="none",
             deterministic=True,
             source_kind="generated",
-            comparison_role="phase_scrambled_visual_control",
-            description=f"Phase-scrambled transform of {source_id}; approximate spectrum-preserving low-level control.",
+            comparison_role=role,
+            description=description,
         )
     temporal_policy = {
         "static_repeat": "static_repeat",
@@ -546,6 +678,39 @@ def _match_mean_std(array: np.ndarray, reference: np.ndarray) -> np.ndarray:
     if std < 1e-12:
         return np.full_like(array, float(reference.mean()))
     return (array - float(array.mean())) / std * ref_std + float(reference.mean())
+
+
+def _quantile_match_channel(array: np.ndarray, reference: np.ndarray) -> np.ndarray:
+    flat = array.reshape(-1)
+    sorted_reference = np.sort(reference.reshape(-1))
+    order = np.argsort(flat, kind="mergesort")
+    output = np.empty_like(flat)
+    output[order] = sorted_reference
+    return output.reshape(array.shape)
+
+
+def _luminance_key(array: np.ndarray) -> np.ndarray:
+    values = array.astype(np.float64)
+    return values[:, :, 0] * 0.2126 + values[:, :, 1] * 0.7152 + values[:, :, 2] * 0.0722
+
+
+def _frequency_mask(
+    shape: tuple[int, int],
+    *,
+    mode: Literal["low_pass", "high_pass"],
+    cutoff: float,
+) -> np.ndarray:
+    height, width = shape
+    fy = np.fft.fftfreq(height)[:, None]
+    fx = np.fft.rfftfreq(width)[None, :]
+    radius = np.sqrt(fx * fx + fy * fy)
+    max_radius = float(radius.max()) or 1.0
+    normalized_radius = radius / max_radius
+    if mode == "low_pass":
+        return (normalized_radius <= cutoff).astype(np.float64)
+    mask = (normalized_radius >= cutoff).astype(np.float64)
+    mask[0, 0] = 0.0
+    return mask
 
 
 def _scalar_palette(values: np.ndarray, seed: int) -> np.ndarray:

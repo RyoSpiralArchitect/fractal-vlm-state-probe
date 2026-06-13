@@ -30,6 +30,12 @@ def main() -> None:
     parser.add_argument("--condition-id", default=None)
     parser.add_argument("--source-frame-index", type=int, default=0)
     parser.add_argument("--max-frames", type=int, default=None)
+    parser.add_argument(
+        "--frequency-cutoff",
+        type=float,
+        default=0.18,
+        help="Normalized radial FFT cutoff for low/high-pass transform controls.",
+    )
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
 
@@ -62,6 +68,7 @@ def main() -> None:
             seed=args.seed,
             source_frame_index=args.source_frame_index,
             max_frames=args.max_frames,
+            frequency_cutoff=args.frequency_cutoff,
             condition_id=args.condition_id,
             overwrite=args.overwrite,
         )

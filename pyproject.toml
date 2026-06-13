@@ -34,12 +34,15 @@ run-mlx-stream-probe = "fractal_vlm_state_probe.cli.run_mlx_stream_probe:main"
 run-hf-stream-probe = "fractal_vlm_state_probe.cli.run_hf_stream_probe:main"
 run-mlx-null-fractal-batch = "fractal_vlm_state_probe.cli.run_mlx_null_fractal_batch:main"
 run-mlx-paired-stochastic-probe-batch = "fractal_vlm_state_probe.cli.run_mlx_paired_stochastic_probe_batch:main"
+run-mlx-pattern-probe-batch = "fractal_vlm_state_probe.cli.run_mlx_pattern_probe_batch:main"
+run-mlx-manifest-probe-batch = "fractal_vlm_state_probe.cli.run_mlx_manifest_probe_batch:main"
 build-external-frame-manifest = "fractal_vlm_state_probe.cli.build_external_frame_manifest:main"
 list-provider-capabilities = "fractal_vlm_state_probe.cli.list_provider_capabilities:main"
 summarize-run = "fractal_vlm_state_probe.cli.summarize_run:main"
 run-julia-smoke = "fractal_vlm_state_probe.cli.run_julia_smoke:main"
 compare-runs = "fractal_vlm_state_probe.cli.compare_runs:main"
 analyze-cache-classifier = "fractal_vlm_state_probe.cli.analyze_cache_classifier:main"
+analyze-image-stats = "fractal_vlm_state_probe.cli.analyze_image_stats:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

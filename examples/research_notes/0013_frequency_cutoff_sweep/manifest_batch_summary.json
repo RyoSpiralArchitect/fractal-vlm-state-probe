@@ -1,0 +1,538 @@
+{
+  "schema_version": 1,
+  "batch_kind": "mlx_manifest_paired_stochastic_probe_batch",
+  "model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+  "stream_seed": 20260604,
+  "probe_seeds": [
+    0
+  ],
+  "max_frames": 12,
+  "frame_stride": 1,
+  "stream_temperature": 0.0,
+  "probe_temperature": 0.7,
+  "probe_seed_policy": "same base probe seed is applied to all conditions; MLX run resets before/mid/after to seed, seed+1, seed+2",
+  "conditions": {
+    "mandelbrot_low_010": "runs/frequency_cutoff_sweep/stimuli/mandelbrot_low_lq_cutoff_010/manifest.json",
+    "mandelbrot_high_010": "runs/frequency_cutoff_sweep/stimuli/mandelbrot_high_lq_cutoff_010/manifest.json",
+    "julia_low_010": "runs/frequency_cutoff_sweep/stimuli/julia_low_lq_cutoff_010/manifest.json",
+    "julia_high_010": "runs/frequency_cutoff_sweep/stimuli/julia_high_lq_cutoff_010/manifest.json",
+    "mandelbrot_low_018": "runs/frequency_cutoff_sweep/stimuli/mandelbrot_low_lq_cutoff_018/manifest.json",
+    "mandelbrot_high_018": "runs/frequency_cutoff_sweep/stimuli/mandelbrot_high_lq_cutoff_018/manifest.json",
+    "julia_low_018": "runs/frequency_cutoff_sweep/stimuli/julia_low_lq_cutoff_018/manifest.json",
+    "julia_high_018": "runs/frequency_cutoff_sweep/stimuli/julia_high_lq_cutoff_018/manifest.json",
+    "mandelbrot_low_028": "runs/frequency_cutoff_sweep/stimuli/mandelbrot_low_lq_cutoff_028/manifest.json",
+    "mandelbrot_high_028": "runs/frequency_cutoff_sweep/stimuli/mandelbrot_high_lq_cutoff_028/manifest.json",
+    "julia_low_028": "runs/frequency_cutoff_sweep/stimuli/julia_low_lq_cutoff_028/manifest.json",
+    "julia_high_028": "runs/frequency_cutoff_sweep/stimuli/julia_high_lq_cutoff_028/manifest.json",
+    "mandelbrot_low_040": "runs/frequency_cutoff_sweep/stimuli/mandelbrot_low_lq_cutoff_040/manifest.json",
+    "mandelbrot_high_040": "runs/frequency_cutoff_sweep/stimuli/mandelbrot_high_lq_cutoff_040/manifest.json",
+    "julia_low_040": "runs/frequency_cutoff_sweep/stimuli/julia_low_lq_cutoff_040/manifest.json",
+    "julia_high_040": "runs/frequency_cutoff_sweep/stimuli/julia_high_lq_cutoff_040/manifest.json"
+  },
+  "records": [
+    {
+      "probe_seed": 0,
+      "stream_seed": 20260604,
+      "runs": {
+        "mandelbrot_low_010": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/mandelbrot_low_010_mlx.json",
+        "mandelbrot_high_010": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/mandelbrot_high_010_mlx.json",
+        "julia_low_010": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/julia_low_010_mlx.json",
+        "julia_high_010": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/julia_high_010_mlx.json",
+        "mandelbrot_low_018": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/mandelbrot_low_018_mlx.json",
+        "mandelbrot_high_018": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/mandelbrot_high_018_mlx.json",
+        "julia_low_018": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/julia_low_018_mlx.json",
+        "julia_high_018": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/julia_high_018_mlx.json",
+        "mandelbrot_low_028": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/mandelbrot_low_028_mlx.json",
+        "mandelbrot_high_028": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/mandelbrot_high_028_mlx.json",
+        "julia_low_028": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/julia_low_028_mlx.json",
+        "julia_high_028": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/julia_high_028_mlx.json",
+        "mandelbrot_low_040": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/mandelbrot_low_040_mlx.json",
+        "mandelbrot_high_040": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/mandelbrot_high_040_mlx.json",
+        "julia_low_040": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/julia_low_040_mlx.json",
+        "julia_high_040": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/julia_high_040_mlx.json"
+      },
+      "comparisons": {
+        "mandelbrot_low_010_vs_mandelbrot_high_010": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_high_010.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_high_010.json"
+        },
+        "mandelbrot_low_010_vs_julia_low_010": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_low_010.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_low_010.json"
+        },
+        "mandelbrot_low_010_vs_julia_high_010": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_high_010.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_high_010.json"
+        },
+        "mandelbrot_low_010_vs_mandelbrot_low_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_low_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_low_018.json"
+        },
+        "mandelbrot_low_010_vs_mandelbrot_high_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_high_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_high_018.json"
+        },
+        "mandelbrot_low_010_vs_julia_low_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_low_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_low_018.json"
+        },
+        "mandelbrot_low_010_vs_julia_high_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_high_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_high_018.json"
+        },
+        "mandelbrot_low_010_vs_mandelbrot_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_low_028.json"
+        },
+        "mandelbrot_low_010_vs_mandelbrot_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_high_028.json"
+        },
+        "mandelbrot_low_010_vs_julia_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_low_028.json"
+        },
+        "mandelbrot_low_010_vs_julia_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_high_028.json"
+        },
+        "mandelbrot_low_010_vs_mandelbrot_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_low_040.json"
+        },
+        "mandelbrot_low_010_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_mandelbrot_high_040.json"
+        },
+        "mandelbrot_low_010_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_low_040.json"
+        },
+        "mandelbrot_low_010_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_010_vs_julia_high_040.json"
+        },
+        "mandelbrot_high_010_vs_julia_low_010": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_low_010.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_low_010.json"
+        },
+        "mandelbrot_high_010_vs_julia_high_010": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_high_010.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_high_010.json"
+        },
+        "mandelbrot_high_010_vs_mandelbrot_low_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_mandelbrot_low_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_mandelbrot_low_018.json"
+        },
+        "mandelbrot_high_010_vs_mandelbrot_high_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_mandelbrot_high_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_mandelbrot_high_018.json"
+        },
+        "mandelbrot_high_010_vs_julia_low_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_low_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_low_018.json"
+        },
+        "mandelbrot_high_010_vs_julia_high_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_high_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_high_018.json"
+        },
+        "mandelbrot_high_010_vs_mandelbrot_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_mandelbrot_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_mandelbrot_low_028.json"
+        },
+        "mandelbrot_high_010_vs_mandelbrot_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_mandelbrot_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_mandelbrot_high_028.json"
+        },
+        "mandelbrot_high_010_vs_julia_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_low_028.json"
+        },
+        "mandelbrot_high_010_vs_julia_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_high_028.json"
+        },
+        "mandelbrot_high_010_vs_mandelbrot_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_mandelbrot_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_mandelbrot_low_040.json"
+        },
+        "mandelbrot_high_010_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_mandelbrot_high_040.json"
+        },
+        "mandelbrot_high_010_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_low_040.json"
+        },
+        "mandelbrot_high_010_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_010_vs_julia_high_040.json"
+        },
+        "julia_low_010_vs_julia_high_010": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_high_010.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_high_010.json"
+        },
+        "julia_low_010_vs_mandelbrot_low_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_mandelbrot_low_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_mandelbrot_low_018.json"
+        },
+        "julia_low_010_vs_mandelbrot_high_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_mandelbrot_high_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_mandelbrot_high_018.json"
+        },
+        "julia_low_010_vs_julia_low_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_low_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_low_018.json"
+        },
+        "julia_low_010_vs_julia_high_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_high_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_high_018.json"
+        },
+        "julia_low_010_vs_mandelbrot_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_mandelbrot_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_mandelbrot_low_028.json"
+        },
+        "julia_low_010_vs_mandelbrot_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_mandelbrot_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_mandelbrot_high_028.json"
+        },
+        "julia_low_010_vs_julia_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_low_028.json"
+        },
+        "julia_low_010_vs_julia_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_high_028.json"
+        },
+        "julia_low_010_vs_mandelbrot_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_mandelbrot_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_mandelbrot_low_040.json"
+        },
+        "julia_low_010_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_mandelbrot_high_040.json"
+        },
+        "julia_low_010_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_low_040.json"
+        },
+        "julia_low_010_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_010_vs_julia_high_040.json"
+        },
+        "julia_high_010_vs_mandelbrot_low_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_mandelbrot_low_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_mandelbrot_low_018.json"
+        },
+        "julia_high_010_vs_mandelbrot_high_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_mandelbrot_high_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_mandelbrot_high_018.json"
+        },
+        "julia_high_010_vs_julia_low_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_julia_low_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_julia_low_018.json"
+        },
+        "julia_high_010_vs_julia_high_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_julia_high_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_julia_high_018.json"
+        },
+        "julia_high_010_vs_mandelbrot_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_mandelbrot_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_mandelbrot_low_028.json"
+        },
+        "julia_high_010_vs_mandelbrot_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_mandelbrot_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_mandelbrot_high_028.json"
+        },
+        "julia_high_010_vs_julia_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_julia_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_julia_low_028.json"
+        },
+        "julia_high_010_vs_julia_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_julia_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_julia_high_028.json"
+        },
+        "julia_high_010_vs_mandelbrot_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_mandelbrot_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_mandelbrot_low_040.json"
+        },
+        "julia_high_010_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_mandelbrot_high_040.json"
+        },
+        "julia_high_010_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_julia_low_040.json"
+        },
+        "julia_high_010_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_010_vs_julia_high_040.json"
+        },
+        "mandelbrot_low_018_vs_mandelbrot_high_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_mandelbrot_high_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_mandelbrot_high_018.json"
+        },
+        "mandelbrot_low_018_vs_julia_low_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_julia_low_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_julia_low_018.json"
+        },
+        "mandelbrot_low_018_vs_julia_high_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_julia_high_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_julia_high_018.json"
+        },
+        "mandelbrot_low_018_vs_mandelbrot_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_mandelbrot_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_mandelbrot_low_028.json"
+        },
+        "mandelbrot_low_018_vs_mandelbrot_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_mandelbrot_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_mandelbrot_high_028.json"
+        },
+        "mandelbrot_low_018_vs_julia_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_julia_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_julia_low_028.json"
+        },
+        "mandelbrot_low_018_vs_julia_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_julia_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_julia_high_028.json"
+        },
+        "mandelbrot_low_018_vs_mandelbrot_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_mandelbrot_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_mandelbrot_low_040.json"
+        },
+        "mandelbrot_low_018_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_mandelbrot_high_040.json"
+        },
+        "mandelbrot_low_018_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_julia_low_040.json"
+        },
+        "mandelbrot_low_018_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_018_vs_julia_high_040.json"
+        },
+        "mandelbrot_high_018_vs_julia_low_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_julia_low_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_julia_low_018.json"
+        },
+        "mandelbrot_high_018_vs_julia_high_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_julia_high_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_julia_high_018.json"
+        },
+        "mandelbrot_high_018_vs_mandelbrot_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_mandelbrot_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_mandelbrot_low_028.json"
+        },
+        "mandelbrot_high_018_vs_mandelbrot_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_mandelbrot_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_mandelbrot_high_028.json"
+        },
+        "mandelbrot_high_018_vs_julia_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_julia_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_julia_low_028.json"
+        },
+        "mandelbrot_high_018_vs_julia_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_julia_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_julia_high_028.json"
+        },
+        "mandelbrot_high_018_vs_mandelbrot_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_mandelbrot_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_mandelbrot_low_040.json"
+        },
+        "mandelbrot_high_018_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_mandelbrot_high_040.json"
+        },
+        "mandelbrot_high_018_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_julia_low_040.json"
+        },
+        "mandelbrot_high_018_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_018_vs_julia_high_040.json"
+        },
+        "julia_low_018_vs_julia_high_018": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_julia_high_018.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_julia_high_018.json"
+        },
+        "julia_low_018_vs_mandelbrot_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_mandelbrot_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_mandelbrot_low_028.json"
+        },
+        "julia_low_018_vs_mandelbrot_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_mandelbrot_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_mandelbrot_high_028.json"
+        },
+        "julia_low_018_vs_julia_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_julia_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_julia_low_028.json"
+        },
+        "julia_low_018_vs_julia_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_julia_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_julia_high_028.json"
+        },
+        "julia_low_018_vs_mandelbrot_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_mandelbrot_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_mandelbrot_low_040.json"
+        },
+        "julia_low_018_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_mandelbrot_high_040.json"
+        },
+        "julia_low_018_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_julia_low_040.json"
+        },
+        "julia_low_018_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_018_vs_julia_high_040.json"
+        },
+        "julia_high_018_vs_mandelbrot_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_mandelbrot_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_mandelbrot_low_028.json"
+        },
+        "julia_high_018_vs_mandelbrot_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_mandelbrot_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_mandelbrot_high_028.json"
+        },
+        "julia_high_018_vs_julia_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_julia_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_julia_low_028.json"
+        },
+        "julia_high_018_vs_julia_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_julia_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_julia_high_028.json"
+        },
+        "julia_high_018_vs_mandelbrot_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_mandelbrot_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_mandelbrot_low_040.json"
+        },
+        "julia_high_018_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_mandelbrot_high_040.json"
+        },
+        "julia_high_018_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_julia_low_040.json"
+        },
+        "julia_high_018_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_018_vs_julia_high_040.json"
+        },
+        "mandelbrot_low_028_vs_mandelbrot_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_mandelbrot_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_mandelbrot_high_028.json"
+        },
+        "mandelbrot_low_028_vs_julia_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_julia_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_julia_low_028.json"
+        },
+        "mandelbrot_low_028_vs_julia_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_julia_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_julia_high_028.json"
+        },
+        "mandelbrot_low_028_vs_mandelbrot_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_mandelbrot_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_mandelbrot_low_040.json"
+        },
+        "mandelbrot_low_028_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_mandelbrot_high_040.json"
+        },
+        "mandelbrot_low_028_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_julia_low_040.json"
+        },
+        "mandelbrot_low_028_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_028_vs_julia_high_040.json"
+        },
+        "mandelbrot_high_028_vs_julia_low_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_028_vs_julia_low_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_028_vs_julia_low_028.json"
+        },
+        "mandelbrot_high_028_vs_julia_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_028_vs_julia_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_028_vs_julia_high_028.json"
+        },
+        "mandelbrot_high_028_vs_mandelbrot_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_028_vs_mandelbrot_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_028_vs_mandelbrot_low_040.json"
+        },
+        "mandelbrot_high_028_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_028_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_028_vs_mandelbrot_high_040.json"
+        },
+        "mandelbrot_high_028_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_028_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_028_vs_julia_low_040.json"
+        },
+        "mandelbrot_high_028_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_028_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_028_vs_julia_high_040.json"
+        },
+        "julia_low_028_vs_julia_high_028": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_028_vs_julia_high_028.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_028_vs_julia_high_028.json"
+        },
+        "julia_low_028_vs_mandelbrot_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_028_vs_mandelbrot_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_028_vs_mandelbrot_low_040.json"
+        },
+        "julia_low_028_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_028_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_028_vs_mandelbrot_high_040.json"
+        },
+        "julia_low_028_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_028_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_028_vs_julia_low_040.json"
+        },
+        "julia_low_028_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_028_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_028_vs_julia_high_040.json"
+        },
+        "julia_high_028_vs_mandelbrot_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_028_vs_mandelbrot_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_028_vs_mandelbrot_low_040.json"
+        },
+        "julia_high_028_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_028_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_028_vs_mandelbrot_high_040.json"
+        },
+        "julia_high_028_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_028_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_028_vs_julia_low_040.json"
+        },
+        "julia_high_028_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_028_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_high_028_vs_julia_high_040.json"
+        },
+        "mandelbrot_low_040_vs_mandelbrot_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_040_vs_mandelbrot_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_040_vs_mandelbrot_high_040.json"
+        },
+        "mandelbrot_low_040_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_040_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_040_vs_julia_low_040.json"
+        },
+        "mandelbrot_low_040_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_040_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_low_040_vs_julia_high_040.json"
+        },
+        "mandelbrot_high_040_vs_julia_low_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_040_vs_julia_low_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_040_vs_julia_low_040.json"
+        },
+        "mandelbrot_high_040_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_040_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/mandelbrot_high_040_vs_julia_high_040.json"
+        },
+        "julia_low_040_vs_julia_high_040": {
+          "markdown": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_040_vs_julia_high_040.md",
+          "json": "runs/frequency_cutoff_sweep_probe_seed_0/probe_seed_0/comparisons/julia_low_040_vs_julia_high_040.json"
+        }
+      }
+    }
+  ]
+}
