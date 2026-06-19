@@ -65,13 +65,17 @@ For a fresh read, start with `docs/experiment_design.md`, then
 `docs/research_notes/0010_phase_scramble_image_stats.md`, then
 `docs/research_notes/0011_quantile_matched_phase_scramble.md`, then
 `docs/research_notes/0012_frequency_ablation_smoke.md`, then
-`docs/research_notes/0013_frequency_cutoff_sweep.md`.
+`docs/research_notes/0013_frequency_cutoff_sweep.md`, then
+`docs/research_notes/0014_image_cache_correlation.md`, then
+`docs/research_notes/0015_source_variant_followups.md`, then
+`docs/research_notes/0016_five_step_instrumentation_kickoff.md`, then
+`docs/research_notes/0017_cross_palette_control_smoke.md`.
 
-The next live run should compare original streams against plain
-phase-scrambled, RGB-quantile, and luminance-rank matched phase controls, then
-repeat transformed controls across multiple transform seeds and FFT cutoffs.
-Surface text mobility, forced-choice/logprob tilt, image-stat deltas, and
-trace-summary separation should be reported separately.
+The next live run should compare original streams against cross-family palette
+controls, processor-space image statistics, and the existing raw image/cache
+correlation path. Surface text mobility, forced-choice/logprob tilt, image-stat
+deltas, processor-space deltas, and trace-summary separation should be reported
+separately.
 
 ## Infrastructure Tiers
 
@@ -99,6 +103,10 @@ first logprob-focused pass unless a selected model exposes the needed signal.
 - Transform existing manifests into phase-scrambled, quantile-matched
   phase-scrambled, low/high-pass frequency ablations, static-repeat, shuffled,
   and reversed-order controls.
+- Transform one manifest into the frame-aligned RGB pixel distribution of
+  another manifest for cross-family palette controls.
+- Analyze image statistics after a model processor converts frames into
+  `pixel_values`, including cycles-per-patch spectral summaries.
 - Attach condition metadata for fractal, geometry, natural, and control
   comparisons.
 - Build manifests for external frame directories, so natural videos can be
@@ -115,6 +123,8 @@ first logprob-focused pass unless a selected model exposes the needed signal.
   but probe sampling is repeated across matched probe seeds.
 - Compare paired run JSONs with probe text, frame artifacts, stream-cache
   deltas, and probe-source-cache deltas.
+- Compare saved HF first-step top-k logprobs for probe readout deltas when
+  generation score summaries are available.
 - Train a small nearest-centroid classifier on saved cache-summary features to
   test whether measured traces retain condition information when probe text is
   unchanged.
@@ -254,6 +264,28 @@ python3 scripts/generate_control_frames.py \
   --output runs/controls/mandelbrot_phase_luminance_quantile_seed_7 \
   --seed 7 \
   --overwrite
+
+python3 scripts/generate_control_frames.py \
+  --kind cross_palette_luminance_matched \
+  --source-manifest runs/source_variant_smoke/stimuli/julia_d/manifest.json \
+  --palette-manifest runs/source_variant_smoke/stimuli/mandelbrot_c/manifest.json \
+  --condition-id julia_d_spatial_mandelbrot_c_palette \
+  --output runs/controls/julia_d_spatial_mandelbrot_c_palette \
+  --max-frames 50 \
+  --overwrite
+```
+
+To audit what reaches the VLM after processor resize/normalization:
+
+```bash
+python3 scripts/analyze_processor_image_stats.py \
+  --manifest runs/source_variant_smoke/stimuli/mandelbrot_c/manifest.json \
+  --manifest runs/source_variant_smoke/stimuli/julia_d/manifest.json \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --patch-size 14 \
+  --max-frames 50 \
+  --output-json runs/processor_stats/mandelbrot_c_julia_d.json \
+  --output-md runs/processor_stats/mandelbrot_c_julia_d.md
 ```
 
 To create the first Julia comparison stimulus:
@@ -387,6 +419,10 @@ python3 scripts/run_mlx_manifest_probe_batch.py \
 - [Research Note 0011: Quantile-Matched Phase Scramble Controls](docs/research_notes/0011_quantile_matched_phase_scramble.md)
 - [Research Note 0012: Frequency Ablation Smoke](docs/research_notes/0012_frequency_ablation_smoke.md)
 - [Research Note 0013: Frequency Cutoff Sweep](docs/research_notes/0013_frequency_cutoff_sweep.md)
+- [Research Note 0014: Image-Stat / Cache-Distance Correlation](docs/research_notes/0014_image_cache_correlation.md)
+- [Research Note 0015: Source Variant Follow-Up Probes](docs/research_notes/0015_source_variant_followups.md)
+- [Research Note 0016: Five-Step Instrumentation Kickoff](docs/research_notes/0016_five_step_instrumentation_kickoff.md)
+- [Research Note 0017: Cross-Palette Control Smoke](docs/research_notes/0017_cross_palette_control_smoke.md)
 
 ## Claim Boundary
 

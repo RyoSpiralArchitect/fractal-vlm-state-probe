@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "kind": "julia",
+  "width": 320,
+  "height": 240,
+  "total_frames": 12,
+  "fps": 1.0,
+  "center_start": [0.0, 0.0],
+  "center_end": [0.0, 0.0],
+  "scale_start": 3.0,
+  "scale_end": 0.75,
+  "julia_c": [0.285, 0.01],
+  "max_iter": 160,
+  "color_seed": 43,
+  "stimulus_condition": {
+    "condition_id": "julia_zoom_d",
+    "condition_family": "fractal",
+    "temporal_policy": "ordered",
+    "semantic_load": "low",
+    "deterministic": true,
+    "source_kind": "generated",
+    "comparison_role": "source_variant",
+    "description": "Second deterministic Julia source variant for family-internal distance checks."
+  }
+}

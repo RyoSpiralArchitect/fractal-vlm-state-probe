@@ -1,0 +1,1336 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "image_cache_correlation",
+  "image_stats_paths": [
+    "runs/cross_palette_controls/cross_palette_image_stats.json"
+  ],
+  "cache_analysis_paths": [
+    "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json"
+  ],
+  "batch_summary_paths": [
+    "runs/cross_palette_controls/manifest_probe_seed_0/manifest_batch_summary.json"
+  ],
+  "min_samples": 3,
+  "image_delta_fields": [
+    "luminance_mean",
+    "luminance_std",
+    "luminance_entropy_bits",
+    "edge_density",
+    "edge_strength_mean",
+    "spectral_centroid",
+    "high_frequency_energy_ratio",
+    "colorfulness",
+    "mean_abs_luminance_delta_from_previous"
+  ],
+  "cache_metrics": [
+    "max_abs_l2_delta",
+    "mean_abs_l2_delta"
+  ],
+  "condition_aliases": {
+    "julia": "julia_zoom_d",
+    "julia_d": "julia_zoom_d",
+    "julia_d_spatial_mandelbrot_c_palette": "julia_d_spatial_mandelbrot_c_palette",
+    "julia_zoom_d": "julia_zoom_d",
+    "mandelbrot": "mandelbrot_zoom_c",
+    "mandelbrot_c": "mandelbrot_zoom_c",
+    "mandelbrot_c_spatial_julia_d_palette": "mandelbrot_c_spatial_julia_d_palette",
+    "mandelbrot_zoom_c": "mandelbrot_zoom_c"
+  },
+  "joined_row_count": 12,
+  "unmatched_cache_rows": [],
+  "joined_rows": [
+    {
+      "left": "julia_d",
+      "right": "julia_d_spatial_mandelbrot_c_palette",
+      "left_condition_id": "julia_zoom_d",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "phase": "after",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 4.370361328125,
+      "mean_abs_l2_delta": 1.5641937255859375,
+      "image_stat_deltas": {
+        "luminance_mean": 0.22830768775871452,
+        "luminance_std": 0.05953481545883364,
+        "luminance_entropy_bits": 0.36568185832836253,
+        "edge_density": 0.022994791666666667,
+        "edge_strength_mean": 0.010203543785217768,
+        "spectral_centroid": 0.04382748999634435,
+        "high_frequency_energy_ratio": 0.07031706375964576,
+        "colorfulness": 0.255140800718275,
+        "mean_abs_luminance_delta_from_previous": 0.021226793155822925
+      }
+    },
+    {
+      "left": "julia_d",
+      "right": "julia_d_spatial_mandelbrot_c_palette",
+      "left_condition_id": "julia_zoom_d",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "phase": "mid",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 4.69775390625,
+      "mean_abs_l2_delta": 1.6899232864379883,
+      "image_stat_deltas": {
+        "luminance_mean": 0.22830768775871452,
+        "luminance_std": 0.05953481545883364,
+        "luminance_entropy_bits": 0.36568185832836253,
+        "edge_density": 0.022994791666666667,
+        "edge_strength_mean": 0.010203543785217768,
+        "spectral_centroid": 0.04382748999634435,
+        "high_frequency_energy_ratio": 0.07031706375964576,
+        "colorfulness": 0.255140800718275,
+        "mean_abs_luminance_delta_from_previous": 0.021226793155822925
+      }
+    },
+    {
+      "left": "julia_d",
+      "right": "mandelbrot_c_spatial_julia_d_palette",
+      "left_condition_id": "julia_zoom_d",
+      "right_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "phase": "after",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 4.76513671875,
+      "mean_abs_l2_delta": 1.459242820739746,
+      "image_stat_deltas": {
+        "luminance_mean": 0.0,
+        "luminance_std": 0.0,
+        "luminance_entropy_bits": 0.0,
+        "edge_density": 0.08057617187499999,
+        "edge_strength_mean": 0.02091135495480963,
+        "spectral_centroid": 0.06107936537204518,
+        "high_frequency_energy_ratio": 0.07684421446125708,
+        "colorfulness": 0.0,
+        "mean_abs_luminance_delta_from_previous": 0.02408903950163399
+      }
+    },
+    {
+      "left": "julia_d",
+      "right": "mandelbrot_c_spatial_julia_d_palette",
+      "left_condition_id": "julia_zoom_d",
+      "right_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "phase": "mid",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 3.86566162109375,
+      "mean_abs_l2_delta": 1.9930367469787598,
+      "image_stat_deltas": {
+        "luminance_mean": 0.0,
+        "luminance_std": 0.0,
+        "luminance_entropy_bits": 0.0,
+        "edge_density": 0.08057617187499999,
+        "edge_strength_mean": 0.02091135495480963,
+        "spectral_centroid": 0.06107936537204518,
+        "high_frequency_energy_ratio": 0.07684421446125708,
+        "colorfulness": 0.0,
+        "mean_abs_luminance_delta_from_previous": 0.02408903950163399
+      }
+    },
+    {
+      "left": "mandelbrot_c_spatial_julia_d_palette",
+      "right": "julia_d_spatial_mandelbrot_c_palette",
+      "left_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "phase": "after",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 5.5194091796875,
+      "mean_abs_l2_delta": 1.5606088638305664,
+      "image_stat_deltas": {
+        "luminance_mean": 0.22830768775871452,
+        "luminance_std": 0.05953481545883364,
+        "luminance_entropy_bits": 0.36568185832836253,
+        "edge_density": 0.05758138020833333,
+        "edge_strength_mean": 0.010707811169591862,
+        "spectral_centroid": 0.10490685536838953,
+        "high_frequency_energy_ratio": 0.14716127822090286,
+        "colorfulness": 0.255140800718275,
+        "mean_abs_luminance_delta_from_previous": 0.002862246345811066
+      }
+    },
+    {
+      "left": "mandelbrot_c_spatial_julia_d_palette",
+      "right": "julia_d_spatial_mandelbrot_c_palette",
+      "left_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "phase": "mid",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 6.4366455078125,
+      "mean_abs_l2_delta": 2.1918816566467285,
+      "image_stat_deltas": {
+        "luminance_mean": 0.22830768775871452,
+        "luminance_std": 0.05953481545883364,
+        "luminance_entropy_bits": 0.36568185832836253,
+        "edge_density": 0.05758138020833333,
+        "edge_strength_mean": 0.010707811169591862,
+        "spectral_centroid": 0.10490685536838953,
+        "high_frequency_energy_ratio": 0.14716127822090286,
+        "colorfulness": 0.255140800718275,
+        "mean_abs_luminance_delta_from_previous": 0.002862246345811066
+      }
+    },
+    {
+      "left": "mandelbrot_c",
+      "right": "julia_d",
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "julia_zoom_d",
+      "phase": "after",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 6.807373046875,
+      "mean_abs_l2_delta": 2.7037057876586914,
+      "image_stat_deltas": {
+        "luminance_mean": 0.22830768775871463,
+        "luminance_std": 0.05953481545883364,
+        "luminance_entropy_bits": 0.36568185832836253,
+        "edge_density": 0.07556423611111111,
+        "edge_strength_mean": 0.018831175720785687,
+        "spectral_centroid": 0.010951277679315155,
+        "high_frequency_energy_ratio": 0.026001671167412754,
+        "colorfulness": 0.255140800718275,
+        "mean_abs_luminance_delta_from_previous": 0.031826687668969095
+      }
+    },
+    {
+      "left": "mandelbrot_c",
+      "right": "julia_d",
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "julia_zoom_d",
+      "phase": "mid",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 8.59881591796875,
+      "mean_abs_l2_delta": 4.775564193725586,
+      "image_stat_deltas": {
+        "luminance_mean": 0.22830768775871463,
+        "luminance_std": 0.05953481545883364,
+        "luminance_entropy_bits": 0.36568185832836253,
+        "edge_density": 0.07556423611111111,
+        "edge_strength_mean": 0.018831175720785687,
+        "spectral_centroid": 0.010951277679315155,
+        "high_frequency_energy_ratio": 0.026001671167412754,
+        "colorfulness": 0.255140800718275,
+        "mean_abs_luminance_delta_from_previous": 0.031826687668969095
+      }
+    },
+    {
+      "left": "mandelbrot_c",
+      "right": "julia_d_spatial_mandelbrot_c_palette",
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "phase": "after",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 4.19091796875,
+      "mean_abs_l2_delta": 1.973618507385254,
+      "image_stat_deltas": {
+        "luminance_mean": 1.1102230246251565e-16,
+        "luminance_std": 0.0,
+        "luminance_entropy_bits": 0.0,
+        "edge_density": 0.05256944444444444,
+        "edge_strength_mean": 0.008627631935567918,
+        "spectral_centroid": 0.05477876767565951,
+        "high_frequency_energy_ratio": 0.09631873492705852,
+        "colorfulness": 0.0,
+        "mean_abs_luminance_delta_from_previous": 0.01059989451314617
+      }
+    },
+    {
+      "left": "mandelbrot_c",
+      "right": "julia_d_spatial_mandelbrot_c_palette",
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "phase": "mid",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 6.867919921875,
+      "mean_abs_l2_delta": 4.051627159118652,
+      "image_stat_deltas": {
+        "luminance_mean": 1.1102230246251565e-16,
+        "luminance_std": 0.0,
+        "luminance_entropy_bits": 0.0,
+        "edge_density": 0.05256944444444444,
+        "edge_strength_mean": 0.008627631935567918,
+        "spectral_centroid": 0.05477876767565951,
+        "high_frequency_energy_ratio": 0.09631873492705852,
+        "colorfulness": 0.0,
+        "mean_abs_luminance_delta_from_previous": 0.01059989451314617
+      }
+    },
+    {
+      "left": "mandelbrot_c",
+      "right": "mandelbrot_c_spatial_julia_d_palette",
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "phase": "after",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 9.7103271484375,
+      "mean_abs_l2_delta": 2.6416797637939453,
+      "image_stat_deltas": {
+        "luminance_mean": 0.22830768775871463,
+        "luminance_std": 0.05953481545883364,
+        "luminance_entropy_bits": 0.36568185832836253,
+        "edge_density": 0.00501193576388889,
+        "edge_strength_mean": 0.002080179234023945,
+        "spectral_centroid": 0.05012808769273003,
+        "high_frequency_energy_ratio": 0.05084254329384433,
+        "colorfulness": 0.255140800718275,
+        "mean_abs_luminance_delta_from_previous": 0.007737648167335104
+      }
+    },
+    {
+      "left": "mandelbrot_c",
+      "right": "mandelbrot_c_spatial_julia_d_palette",
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "phase": "mid",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 10.2806396484375,
+      "mean_abs_l2_delta": 4.372798442840576,
+      "image_stat_deltas": {
+        "luminance_mean": 0.22830768775871463,
+        "luminance_std": 0.05953481545883364,
+        "luminance_entropy_bits": 0.36568185832836253,
+        "edge_density": 0.00501193576388889,
+        "edge_strength_mean": 0.002080179234023945,
+        "spectral_centroid": 0.05012808769273003,
+        "high_frequency_energy_ratio": 0.05084254329384433,
+        "colorfulness": 0.255140800718275,
+        "mean_abs_luminance_delta_from_previous": 0.007737648167335104
+      }
+    }
+  ],
+  "correlations": [
+    {
+      "phase": "all",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "luminance_mean",
+      "sample_count": 12,
+      "pearson": 0.47798287959791536,
+      "spearman": 0.7351337970142636
+    },
+    {
+      "phase": "all",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "luminance_std",
+      "sample_count": 12,
+      "pearson": 0.47798287959791497,
+      "spearman": 0.4608824008492703
+    },
+    {
+      "phase": "all",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "luminance_entropy_bits",
+      "sample_count": 12,
+      "pearson": 0.4779828795979149,
+      "spearman": 0.4608824008492703
+    },
+    {
+      "phase": "all",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "edge_density",
+      "sample_count": 12,
+      "pearson": -0.43223485601511935,
+      "spearman": -0.3533767463701097
+    },
+    {
+      "phase": "all",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "edge_strength_mean",
+      "sample_count": 12,
+      "pearson": -0.4827873975197699,
+      "spearman": -0.40991702578932726
+    },
+    {
+      "phase": "all",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "spectral_centroid",
+      "sample_count": 12,
+      "pearson": -0.25134962388287235,
+      "spearman": -0.28270139709608777
+    },
+    {
+      "phase": "all",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "high_frequency_energy_ratio",
+      "sample_count": 12,
+      "pearson": -0.40564026707515244,
+      "spearman": -0.43818716549893605
+    },
+    {
+      "phase": "all",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "colorfulness",
+      "sample_count": 12,
+      "pearson": 0.4779828795979149,
+      "spearman": 0.4608824008492703
+    },
+    {
+      "phase": "all",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "mean_abs_luminance_delta_from_previous",
+      "sample_count": 12,
+      "pearson": -0.19882129211181604,
+      "spearman": -0.21202604782206583
+    },
+    {
+      "phase": "all",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "luminance_mean",
+      "sample_count": 12,
+      "pearson": 0.13325682501875868,
+      "spearman": 0.5822841956548622
+    },
+    {
+      "phase": "all",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "luminance_std",
+      "sample_count": 12,
+      "pearson": 0.13325682501875824,
+      "spearman": 0.2048366225996757
+    },
+    {
+      "phase": "all",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "luminance_entropy_bits",
+      "sample_count": 12,
+      "pearson": 0.13325682501875824,
+      "spearman": 0.2048366225996757
+    },
+    {
+      "phase": "all",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "edge_density",
+      "sample_count": 12,
+      "pearson": -0.0910873619369186,
+      "spearman": -0.16962083825765267
+    },
+    {
+      "phase": "all",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "edge_strength_mean",
+      "sample_count": 12,
+      "pearson": -0.18054518348568604,
+      "spearman": -0.28270139709608777
+    },
+    {
+      "phase": "all",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "spectral_centroid",
+      "sample_count": 12,
+      "pearson": -0.4558054742367436,
+      "spearman": -0.45232223535374044
+    },
+    {
+      "phase": "all",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "high_frequency_energy_ratio",
+      "sample_count": 12,
+      "pearson": -0.4606667766806655,
+      "spearman": -0.508862514772958
+    },
+    {
+      "phase": "all",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "colorfulness",
+      "sample_count": 12,
+      "pearson": 0.13325682501875824,
+      "spearman": 0.2048366225996757
+    },
+    {
+      "phase": "all",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "mean_abs_luminance_delta_from_previous",
+      "sample_count": 12,
+      "pearson": 0.08370112299157056,
+      "spearman": 0.11308055883843511
+    },
+    {
+      "phase": "after",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "luminance_mean",
+      "sample_count": 6,
+      "pearson": 0.5224353633625048,
+      "spearman": 0.7650368522374495
+    },
+    {
+      "phase": "after",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "luminance_std",
+      "sample_count": 6,
+      "pearson": 0.5224353633625045,
+      "spearman": 0.6210590034081188
+    },
+    {
+      "phase": "after",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "luminance_entropy_bits",
+      "sample_count": 6,
+      "pearson": 0.5224353633625045,
+      "spearman": 0.6210590034081188
+    },
+    {
+      "phase": "after",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "edge_density",
+      "sample_count": 6,
+      "pearson": -0.4782672123067772,
+      "spearman": -0.08571428571428572
+    },
+    {
+      "phase": "after",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "edge_strength_mean",
+      "sample_count": 6,
+      "pearson": -0.44920027353605063,
+      "spearman": -0.02857142857142857
+    },
+    {
+      "phase": "after",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "spectral_centroid",
+      "sample_count": 6,
+      "pearson": -0.21008712738980123,
+      "spearman": -0.2
+    },
+    {
+      "phase": "after",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "high_frequency_energy_ratio",
+      "sample_count": 6,
+      "pearson": -0.4479419698678951,
+      "spearman": -0.5428571428571428
+    },
+    {
+      "phase": "after",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "colorfulness",
+      "sample_count": 6,
+      "pearson": 0.5224353633625045,
+      "spearman": 0.6210590034081188
+    },
+    {
+      "phase": "after",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "mean_abs_luminance_delta_from_previous",
+      "sample_count": 6,
+      "pearson": -0.17263220753019393,
+      "spearman": -0.08571428571428572
+    },
+    {
+      "phase": "after",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "luminance_mean",
+      "sample_count": 6,
+      "pearson": 0.36830359445976735,
+      "spearman": 0.7944613465542745
+    },
+    {
+      "phase": "after",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "luminance_std",
+      "sample_count": 6,
+      "pearson": 0.3683035944597669,
+      "spearman": 0.41403933560541256
+    },
+    {
+      "phase": "after",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "luminance_entropy_bits",
+      "sample_count": 6,
+      "pearson": 0.36830359445976685,
+      "spearman": 0.41403933560541256
+    },
+    {
+      "phase": "after",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "edge_density",
+      "sample_count": 6,
+      "pearson": -0.2293739855574848,
+      "spearman": -0.37142857142857144
+    },
+    {
+      "phase": "after",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "edge_strength_mean",
+      "sample_count": 6,
+      "pearson": -0.2536017907247988,
+      "spearman": -0.42857142857142855
+    },
+    {
+      "phase": "after",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "spectral_centroid",
+      "sample_count": 6,
+      "pearson": -0.6384502544467957,
+      "spearman": -0.7714285714285715
+    },
+    {
+      "phase": "after",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "high_frequency_energy_ratio",
+      "sample_count": 6,
+      "pearson": -0.6930783812641987,
+      "spearman": -0.7142857142857143
+    },
+    {
+      "phase": "after",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "colorfulness",
+      "sample_count": 6,
+      "pearson": 0.3683035944597669,
+      "spearman": 0.41403933560541256
+    },
+    {
+      "phase": "after",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "mean_abs_luminance_delta_from_previous",
+      "sample_count": 6,
+      "pearson": 0.16505356371970578,
+      "spearman": 0.2
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "luminance_mean",
+      "sample_count": 6,
+      "pearson": 0.4620180360695918,
+      "spearman": 0.7944613465542745
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "luminance_std",
+      "sample_count": 6,
+      "pearson": 0.46201803606959135,
+      "spearman": 0.41403933560541256
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "luminance_entropy_bits",
+      "sample_count": 6,
+      "pearson": 0.4620180360695913,
+      "spearman": 0.41403933560541256
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "edge_density",
+      "sample_count": 6,
+      "pearson": -0.4126692875824635,
+      "spearman": -0.4857142857142857
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "edge_strength_mean",
+      "sample_count": 6,
+      "pearson": -0.5356550346747786,
+      "spearman": -0.6
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "spectral_centroid",
+      "sample_count": 6,
+      "pearson": -0.2997740664775533,
+      "spearman": -0.42857142857142855
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "high_frequency_energy_ratio",
+      "sample_count": 6,
+      "pearson": -0.388068236938054,
+      "spearman": -0.4857142857142857
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "colorfulness",
+      "sample_count": 6,
+      "pearson": 0.46201803606959135,
+      "spearman": 0.41403933560541256
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "max_abs_l2_delta",
+      "image_delta_field": "mean_abs_luminance_delta_from_previous",
+      "sample_count": 6,
+      "pearson": -0.2314557744507155,
+      "spearman": -0.2
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "luminance_mean",
+      "sample_count": 6,
+      "pearson": 0.08889825110813387,
+      "spearman": 0.6473388749701496
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "luminance_std",
+      "sample_count": 6,
+      "pearson": 0.08889825110813339,
+      "spearman": 0.20701966780270628
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "luminance_entropy_bits",
+      "sample_count": 6,
+      "pearson": 0.08889825110813339,
+      "spearman": 0.20701966780270628
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "edge_density",
+      "sample_count": 6,
+      "pearson": -0.0699779306584714,
+      "spearman": -0.02857142857142857
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "edge_strength_mean",
+      "sample_count": 6,
+      "pearson": -0.22145821546216407,
+      "spearman": -0.2
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "spectral_centroid",
+      "sample_count": 6,
+      "pearson": -0.559833375829004,
+      "spearman": -0.37142857142857144
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "high_frequency_energy_ratio",
+      "sample_count": 6,
+      "pearson": -0.5461207173091903,
+      "spearman": -0.4857142857142857
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "colorfulness",
+      "sample_count": 6,
+      "pearson": 0.08889825110813335,
+      "spearman": 0.20701966780270628
+    },
+    {
+      "phase": "mid",
+      "cache_metric": "mean_abs_l2_delta",
+      "image_delta_field": "mean_abs_luminance_delta_from_previous",
+      "sample_count": 6,
+      "pearson": 0.08312318856394633,
+      "spearman": 0.08571428571428572
+    }
+  ],
+  "top_joined_by_cache_distance": [
+    {
+      "left": "mandelbrot_c",
+      "right": "mandelbrot_c_spatial_julia_d_palette",
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "phase": "mid",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 10.2806396484375,
+      "mean_abs_l2_delta": 4.372798442840576,
+      "top_image_deltas": [
+        {
+          "field": "luminance_entropy_bits",
+          "value": 0.36568185832836253
+        },
+        {
+          "field": "colorfulness",
+          "value": 0.255140800718275
+        },
+        {
+          "field": "luminance_mean",
+          "value": 0.22830768775871463
+        },
+        {
+          "field": "luminance_std",
+          "value": 0.05953481545883364
+        },
+        {
+          "field": "high_frequency_energy_ratio",
+          "value": 0.05084254329384433
+        },
+        {
+          "field": "spectral_centroid",
+          "value": 0.05012808769273003
+        },
+        {
+          "field": "mean_abs_luminance_delta_from_previous",
+          "value": 0.007737648167335104
+        },
+        {
+          "field": "edge_density",
+          "value": 0.00501193576388889
+        },
+        {
+          "field": "edge_strength_mean",
+          "value": 0.002080179234023945
+        }
+      ]
+    },
+    {
+      "left": "mandelbrot_c",
+      "right": "mandelbrot_c_spatial_julia_d_palette",
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "phase": "after",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 9.7103271484375,
+      "mean_abs_l2_delta": 2.6416797637939453,
+      "top_image_deltas": [
+        {
+          "field": "luminance_entropy_bits",
+          "value": 0.36568185832836253
+        },
+        {
+          "field": "colorfulness",
+          "value": 0.255140800718275
+        },
+        {
+          "field": "luminance_mean",
+          "value": 0.22830768775871463
+        },
+        {
+          "field": "luminance_std",
+          "value": 0.05953481545883364
+        },
+        {
+          "field": "high_frequency_energy_ratio",
+          "value": 0.05084254329384433
+        },
+        {
+          "field": "spectral_centroid",
+          "value": 0.05012808769273003
+        },
+        {
+          "field": "mean_abs_luminance_delta_from_previous",
+          "value": 0.007737648167335104
+        },
+        {
+          "field": "edge_density",
+          "value": 0.00501193576388889
+        },
+        {
+          "field": "edge_strength_mean",
+          "value": 0.002080179234023945
+        }
+      ]
+    },
+    {
+      "left": "mandelbrot_c",
+      "right": "julia_d",
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "julia_zoom_d",
+      "phase": "mid",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 8.59881591796875,
+      "mean_abs_l2_delta": 4.775564193725586,
+      "top_image_deltas": [
+        {
+          "field": "luminance_entropy_bits",
+          "value": 0.36568185832836253
+        },
+        {
+          "field": "colorfulness",
+          "value": 0.255140800718275
+        },
+        {
+          "field": "luminance_mean",
+          "value": 0.22830768775871463
+        },
+        {
+          "field": "edge_density",
+          "value": 0.07556423611111111
+        },
+        {
+          "field": "luminance_std",
+          "value": 0.05953481545883364
+        },
+        {
+          "field": "mean_abs_luminance_delta_from_previous",
+          "value": 0.031826687668969095
+        },
+        {
+          "field": "high_frequency_energy_ratio",
+          "value": 0.026001671167412754
+        },
+        {
+          "field": "edge_strength_mean",
+          "value": 0.018831175720785687
+        },
+        {
+          "field": "spectral_centroid",
+          "value": 0.010951277679315155
+        }
+      ]
+    },
+    {
+      "left": "mandelbrot_c",
+      "right": "julia_d_spatial_mandelbrot_c_palette",
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "phase": "mid",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 6.867919921875,
+      "mean_abs_l2_delta": 4.051627159118652,
+      "top_image_deltas": [
+        {
+          "field": "high_frequency_energy_ratio",
+          "value": 0.09631873492705852
+        },
+        {
+          "field": "spectral_centroid",
+          "value": 0.05477876767565951
+        },
+        {
+          "field": "edge_density",
+          "value": 0.05256944444444444
+        },
+        {
+          "field": "mean_abs_luminance_delta_from_previous",
+          "value": 0.01059989451314617
+        },
+        {
+          "field": "edge_strength_mean",
+          "value": 0.008627631935567918
+        },
+        {
+          "field": "luminance_mean",
+          "value": 1.1102230246251565e-16
+        },
+        {
+          "field": "luminance_std",
+          "value": 0.0
+        },
+        {
+          "field": "luminance_entropy_bits",
+          "value": 0.0
+        },
+        {
+          "field": "colorfulness",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "left": "mandelbrot_c",
+      "right": "julia_d",
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "julia_zoom_d",
+      "phase": "after",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 6.807373046875,
+      "mean_abs_l2_delta": 2.7037057876586914,
+      "top_image_deltas": [
+        {
+          "field": "luminance_entropy_bits",
+          "value": 0.36568185832836253
+        },
+        {
+          "field": "colorfulness",
+          "value": 0.255140800718275
+        },
+        {
+          "field": "luminance_mean",
+          "value": 0.22830768775871463
+        },
+        {
+          "field": "edge_density",
+          "value": 0.07556423611111111
+        },
+        {
+          "field": "luminance_std",
+          "value": 0.05953481545883364
+        },
+        {
+          "field": "mean_abs_luminance_delta_from_previous",
+          "value": 0.031826687668969095
+        },
+        {
+          "field": "high_frequency_energy_ratio",
+          "value": 0.026001671167412754
+        },
+        {
+          "field": "edge_strength_mean",
+          "value": 0.018831175720785687
+        },
+        {
+          "field": "spectral_centroid",
+          "value": 0.010951277679315155
+        }
+      ]
+    },
+    {
+      "left": "mandelbrot_c_spatial_julia_d_palette",
+      "right": "julia_d_spatial_mandelbrot_c_palette",
+      "left_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "phase": "mid",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 6.4366455078125,
+      "mean_abs_l2_delta": 2.1918816566467285,
+      "top_image_deltas": [
+        {
+          "field": "luminance_entropy_bits",
+          "value": 0.36568185832836253
+        },
+        {
+          "field": "colorfulness",
+          "value": 0.255140800718275
+        },
+        {
+          "field": "luminance_mean",
+          "value": 0.22830768775871452
+        },
+        {
+          "field": "high_frequency_energy_ratio",
+          "value": 0.14716127822090286
+        },
+        {
+          "field": "spectral_centroid",
+          "value": 0.10490685536838953
+        },
+        {
+          "field": "luminance_std",
+          "value": 0.05953481545883364
+        },
+        {
+          "field": "edge_density",
+          "value": 0.05758138020833333
+        },
+        {
+          "field": "edge_strength_mean",
+          "value": 0.010707811169591862
+        },
+        {
+          "field": "mean_abs_luminance_delta_from_previous",
+          "value": 0.002862246345811066
+        }
+      ]
+    },
+    {
+      "left": "mandelbrot_c_spatial_julia_d_palette",
+      "right": "julia_d_spatial_mandelbrot_c_palette",
+      "left_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "phase": "after",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 5.5194091796875,
+      "mean_abs_l2_delta": 1.5606088638305664,
+      "top_image_deltas": [
+        {
+          "field": "luminance_entropy_bits",
+          "value": 0.36568185832836253
+        },
+        {
+          "field": "colorfulness",
+          "value": 0.255140800718275
+        },
+        {
+          "field": "luminance_mean",
+          "value": 0.22830768775871452
+        },
+        {
+          "field": "high_frequency_energy_ratio",
+          "value": 0.14716127822090286
+        },
+        {
+          "field": "spectral_centroid",
+          "value": 0.10490685536838953
+        },
+        {
+          "field": "luminance_std",
+          "value": 0.05953481545883364
+        },
+        {
+          "field": "edge_density",
+          "value": 0.05758138020833333
+        },
+        {
+          "field": "edge_strength_mean",
+          "value": 0.010707811169591862
+        },
+        {
+          "field": "mean_abs_luminance_delta_from_previous",
+          "value": 0.002862246345811066
+        }
+      ]
+    },
+    {
+      "left": "julia_d",
+      "right": "mandelbrot_c_spatial_julia_d_palette",
+      "left_condition_id": "julia_zoom_d",
+      "right_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "phase": "after",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 4.76513671875,
+      "mean_abs_l2_delta": 1.459242820739746,
+      "top_image_deltas": [
+        {
+          "field": "edge_density",
+          "value": 0.08057617187499999
+        },
+        {
+          "field": "high_frequency_energy_ratio",
+          "value": 0.07684421446125708
+        },
+        {
+          "field": "spectral_centroid",
+          "value": 0.06107936537204518
+        },
+        {
+          "field": "mean_abs_luminance_delta_from_previous",
+          "value": 0.02408903950163399
+        },
+        {
+          "field": "edge_strength_mean",
+          "value": 0.02091135495480963
+        },
+        {
+          "field": "luminance_mean",
+          "value": 0.0
+        },
+        {
+          "field": "luminance_std",
+          "value": 0.0
+        },
+        {
+          "field": "luminance_entropy_bits",
+          "value": 0.0
+        },
+        {
+          "field": "colorfulness",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "left": "julia_d",
+      "right": "julia_d_spatial_mandelbrot_c_palette",
+      "left_condition_id": "julia_zoom_d",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "phase": "mid",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 4.69775390625,
+      "mean_abs_l2_delta": 1.6899232864379883,
+      "top_image_deltas": [
+        {
+          "field": "luminance_entropy_bits",
+          "value": 0.36568185832836253
+        },
+        {
+          "field": "colorfulness",
+          "value": 0.255140800718275
+        },
+        {
+          "field": "luminance_mean",
+          "value": 0.22830768775871452
+        },
+        {
+          "field": "high_frequency_energy_ratio",
+          "value": 0.07031706375964576
+        },
+        {
+          "field": "luminance_std",
+          "value": 0.05953481545883364
+        },
+        {
+          "field": "spectral_centroid",
+          "value": 0.04382748999634435
+        },
+        {
+          "field": "edge_density",
+          "value": 0.022994791666666667
+        },
+        {
+          "field": "mean_abs_luminance_delta_from_previous",
+          "value": 0.021226793155822925
+        },
+        {
+          "field": "edge_strength_mean",
+          "value": 0.010203543785217768
+        }
+      ]
+    },
+    {
+      "left": "julia_d",
+      "right": "julia_d_spatial_mandelbrot_c_palette",
+      "left_condition_id": "julia_zoom_d",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "phase": "after",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 4.370361328125,
+      "mean_abs_l2_delta": 1.5641937255859375,
+      "top_image_deltas": [
+        {
+          "field": "luminance_entropy_bits",
+          "value": 0.36568185832836253
+        },
+        {
+          "field": "colorfulness",
+          "value": 0.255140800718275
+        },
+        {
+          "field": "luminance_mean",
+          "value": 0.22830768775871452
+        },
+        {
+          "field": "high_frequency_energy_ratio",
+          "value": 0.07031706375964576
+        },
+        {
+          "field": "luminance_std",
+          "value": 0.05953481545883364
+        },
+        {
+          "field": "spectral_centroid",
+          "value": 0.04382748999634435
+        },
+        {
+          "field": "edge_density",
+          "value": 0.022994791666666667
+        },
+        {
+          "field": "mean_abs_luminance_delta_from_previous",
+          "value": 0.021226793155822925
+        },
+        {
+          "field": "edge_strength_mean",
+          "value": 0.010203543785217768
+        }
+      ]
+    },
+    {
+      "left": "mandelbrot_c",
+      "right": "julia_d_spatial_mandelbrot_c_palette",
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "phase": "after",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 4.19091796875,
+      "mean_abs_l2_delta": 1.973618507385254,
+      "top_image_deltas": [
+        {
+          "field": "high_frequency_energy_ratio",
+          "value": 0.09631873492705852
+        },
+        {
+          "field": "spectral_centroid",
+          "value": 0.05477876767565951
+        },
+        {
+          "field": "edge_density",
+          "value": 0.05256944444444444
+        },
+        {
+          "field": "mean_abs_luminance_delta_from_previous",
+          "value": 0.01059989451314617
+        },
+        {
+          "field": "edge_strength_mean",
+          "value": 0.008627631935567918
+        },
+        {
+          "field": "luminance_mean",
+          "value": 1.1102230246251565e-16
+        },
+        {
+          "field": "luminance_std",
+          "value": 0.0
+        },
+        {
+          "field": "luminance_entropy_bits",
+          "value": 0.0
+        },
+        {
+          "field": "colorfulness",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "left": "julia_d",
+      "right": "mandelbrot_c_spatial_julia_d_palette",
+      "left_condition_id": "julia_zoom_d",
+      "right_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "phase": "mid",
+      "comparison_kind": null,
+      "source_path": "runs/cross_palette_controls/manifest_probe_seed_0/paired_stochastic_analysis.json",
+      "max_abs_l2_delta": 3.86566162109375,
+      "mean_abs_l2_delta": 1.9930367469787598,
+      "top_image_deltas": [
+        {
+          "field": "edge_density",
+          "value": 0.08057617187499999
+        },
+        {
+          "field": "high_frequency_energy_ratio",
+          "value": 0.07684421446125708
+        },
+        {
+          "field": "spectral_centroid",
+          "value": 0.06107936537204518
+        },
+        {
+          "field": "mean_abs_luminance_delta_from_previous",
+          "value": 0.02408903950163399
+        },
+        {
+          "field": "edge_strength_mean",
+          "value": 0.02091135495480963
+        },
+        {
+          "field": "luminance_mean",
+          "value": 0.0
+        },
+        {
+          "field": "luminance_std",
+          "value": 0.0
+        },
+        {
+          "field": "luminance_entropy_bits",
+          "value": 0.0
+        },
+        {
+          "field": "colorfulness",
+          "value": 0.0
+        }
+      ]
+    }
+  ],
+  "interpretation_notes": [
+    "Correlation here is descriptive over saved pilot artifacts; it is not a causal estimate.",
+    "Rows join pairwise image-stat deltas to sampled source-cache summary distances.",
+    "Probe-seed repeats do not create independent source-cache replications when streams are deterministic and probes are isolated branch reads."
+  ]
+}

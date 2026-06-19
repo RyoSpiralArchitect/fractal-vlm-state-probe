@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "kind": "mandelbrot",
+  "width": 320,
+  "height": 240,
+  "total_frames": 12,
+  "fps": 1.0,
+  "center_start": [-0.16, 1.04],
+  "center_end": [-0.158, 1.031],
+  "scale_start": 2.4,
+  "scale_end": 0.05,
+  "max_iter": 160,
+  "color_seed": 37,
+  "stimulus_condition": {
+    "condition_id": "mandelbrot_zoom_c",
+    "condition_family": "fractal",
+    "temporal_policy": "ordered",
+    "semantic_load": "low",
+    "deterministic": true,
+    "source_kind": "generated",
+    "comparison_role": "source_variant",
+    "description": "Second deterministic Mandelbrot source variant for family-internal distance checks."
+  }
+}

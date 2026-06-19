@@ -84,14 +84,26 @@ Status: first MLX batch runner and lexical summary implemented.
 - Voronoi, tiling, checkerboard, quasicrystal, random dot, blue-noise, and
   white-noise generators.
 - Histogram-matched visual controls.
+- Cross-family palette controls that preserve one manifest's exact frame-level
+  RGB pixel multiset while using another manifest's luminance-rank spatial
+  ordering.
 - Feature extraction for image statistics such as brightness, contrast, edge
   density, spectrum, entropy, periodicity, and symmetry.
+- Processor-space image statistics computed after `pixel_values` conversion,
+  including architecture-aware cycles-per-patch spectral summaries.
 
 Status: first generator suite, paired pattern batch runner, image-statistic
 reporter, RGB quantile-matched phase-scramble control, luminance-rank matched
 phase-scramble control, low/high-pass frequency controls, and arbitrary
-manifest batch runner implemented. Independent stream variants and transform
-seed/cutoff aggregation are next.
+manifest batch runner implemented. The first image-stat/cache-distance
+correlation reporter is implemented. Independent stream variants, a
+forced-choice probe preset, and first sequence-position cache-delta reporting
+are implemented. Cross-family palette controls and processor-space image
+statistics are implemented. First-step top-k logprob readout comparison for
+saved HF runs is implemented. The first 12-frame cross-family palette-control
+smoke is documented. Transform seed/cutoff aggregation,
+full-vocabulary logprob/teacher-forced reads, and cache-swap intervention
+scaffolding are next.
 
 ## Phase 5: Research Report
 

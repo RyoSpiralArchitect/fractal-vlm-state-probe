@@ -15,3 +15,39 @@ DEFAULT_PROBES = [
         "prompt": "Write a single, abstract, creative poem titled 'Blue Silence'.",
     },
 ]
+
+FORCED_CHOICE_PROBES = [
+    {
+        "id": "forced_family_choice",
+        "prompt": (
+            "Forced choice. Based only on the current context, answer exactly one "
+            "letter: A for Mandelbrot-like zoom structure, B for Julia-like "
+            "filament structure, or C for unclear/neither. Output only A, B, or C."
+        ),
+    },
+    {
+        "id": "forced_frequency_choice",
+        "prompt": (
+            "Forced choice. Based only on the current context, answer exactly one "
+            "letter: L for coarse low-frequency layout, H for high-frequency edge "
+            "texture, or C for unclear/mixed. Output only L, H, or C."
+        ),
+    },
+]
+
+PROBE_PRESETS = {
+    "default": DEFAULT_PROBES,
+    "forced_choice": FORCED_CHOICE_PROBES,
+}
+
+
+def available_probe_presets() -> list[str]:
+    return sorted(PROBE_PRESETS)
+
+
+def resolve_probe_preset(name: str) -> list[dict[str, str]]:
+    try:
+        probes = PROBE_PRESETS[name]
+    except KeyError as exc:
+        raise ValueError(f"unknown probe preset: {name}") from exc
+    return [dict(probe) for probe in probes]

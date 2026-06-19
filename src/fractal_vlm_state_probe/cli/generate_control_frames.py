@@ -7,16 +7,29 @@ from fractal_vlm_state_probe.control_stimulus import (
     GENERATED_CONTROL_KINDS,
     TRANSFORM_CONTROL_KINDS,
     GeneratedControlSpec,
+    render_cross_palette_manifest_transform,
     render_generated_control_stimulus,
     render_manifest_transform,
 )
 
+CROSS_MANIFEST_CONTROL_KINDS = ("cross_palette_luminance_matched",)
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate deterministic visual control stimuli.")
-    parser.add_argument("--kind", required=True, choices=GENERATED_CONTROL_KINDS + TRANSFORM_CONTROL_KINDS)
+    parser.add_argument(
+        "--kind",
+        required=True,
+        choices=GENERATED_CONTROL_KINDS + TRANSFORM_CONTROL_KINDS + CROSS_MANIFEST_CONTROL_KINDS,
+    )
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--source-manifest", type=Path, default=None)
+    parser.add_argument(
+        "--palette-manifest",
+        type=Path,
+        default=None,
+        help="Frame-aligned manifest that supplies the output RGB pixel distribution.",
+    )
     parser.add_argument("--width", type=int, default=320)
     parser.add_argument("--height", type=int, default=240)
     parser.add_argument("--total-frames", type=int, default=50)
@@ -56,6 +69,19 @@ def main() -> None:
                 condition_id=args.condition_id,
             ),
             args.output,
+            overwrite=args.overwrite,
+        )
+    elif args.kind in CROSS_MANIFEST_CONTROL_KINDS:
+        if args.source_manifest is None:
+            parser.error("--source-manifest is required for cross-manifest controls")
+        if args.palette_manifest is None:
+            parser.error("--palette-manifest is required for cross-manifest controls")
+        manifest = render_cross_palette_manifest_transform(
+            args.output,
+            source_manifest_path=args.source_manifest,
+            palette_manifest_path=args.palette_manifest,
+            max_frames=args.max_frames,
+            condition_id=args.condition_id,
             overwrite=args.overwrite,
         )
     else:

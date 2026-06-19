@@ -8,6 +8,7 @@ from typing import Any
 from .stimulus import write_json
 
 _CACHE_STAT_FIELDS = ("mean", "variance", "std", "abs_mean", "l2_norm")
+_SEQUENCE_POSITION_STAT_FIELDS = ("mean", "variance", "abs_mean", "l2_norm")
 
 
 def load_run(path: Path) -> dict[str, Any]:
@@ -64,6 +65,13 @@ def format_comparison_markdown(comparison: dict[str, Any]) -> str:
         lines.append(f"- Left tokens: `{record['left_generation_tokens']}`")
         lines.append(f"- Right tokens: `{record['right_generation_tokens']}`")
         lines.append(f"- Same text: `{record['same_text']}`")
+        readout_delta = record.get("generation_readout_delta")
+        if readout_delta and readout_delta.get("available"):
+            lines.append(
+                "- First-step top-k readout: "
+                f"jaccard_distance=`{_format_optional_number(readout_delta.get('top_k_jaccard_distance'))}`, "
+                f"max_abs_shared_logprob_delta=`{_format_optional_number(readout_delta.get('max_abs_shared_logprob_delta'))}`"
+            )
         lines.append("")
         lines.append("Left:")
         lines.append("")
@@ -95,6 +103,14 @@ def format_comparison_markdown(comparison: dict[str, Any]) -> str:
                 f"left={top['left']:.6g} right={top['right']:.6g} "
                 f"abs_delta={top['abs_delta']:.6g}"
             )
+        if delta and delta.get("top_sequence_position_l2_deltas"):
+            top = delta["top_sequence_position_l2_deltas"][0]
+            lines.append(
+                "  "
+                f"top_sequence_l2_delta: layer {top['layer_index']} {top['tensor']} "
+                f"position {top['position']} left={top['left']:.6g} "
+                f"right={top['right']:.6g} abs_delta={top['abs_delta']:.6g}"
+            )
 
     lines.extend(["", "## Probe Source Cache Comparison", ""])
     for record in comparison["probe_source_cache_comparison"]:
@@ -113,6 +129,14 @@ def format_comparison_markdown(comparison: dict[str, Any]) -> str:
                 f"top_l2_delta: layer {top['layer_index']} {top['tensor']} "
                 f"left={top['left']:.6g} right={top['right']:.6g} "
                 f"abs_delta={top['abs_delta']:.6g}"
+            )
+        if delta and delta.get("top_sequence_position_l2_deltas"):
+            top = delta["top_sequence_position_l2_deltas"][0]
+            lines.append(
+                "  "
+                f"top_sequence_l2_delta: layer {top['layer_index']} {top['tensor']} "
+                f"position {top['position']} left={top['left']:.6g} "
+                f"right={top['right']:.6g} abs_delta={top['abs_delta']:.6g}"
             )
 
     lines.extend(
@@ -182,6 +206,10 @@ def _compare_probes(left: dict[str, Any], right: dict[str, Any]) -> list[dict[st
                     == _one_line(right_record.get("assistant_text")),
                     "left_generation_tokens": (left_record.get("generation") or {}).get("generation_tokens"),
                     "right_generation_tokens": (right_record.get("generation") or {}).get("generation_tokens"),
+                    "generation_readout_delta": _compare_generation_readout(
+                        left_record.get("generation"),
+                        right_record.get("generation"),
+                    ),
                 }
             )
     return records
@@ -241,6 +269,7 @@ def _compare_cache_summary(
     left_layers = {layer.get("layer_index"): layer for layer in left_summary.get("layers", [])}
     right_layers = {layer.get("layer_index"): layer for layer in right_summary.get("layers", [])}
     deltas = []
+    sequence_position_deltas = []
     for layer_index in sorted(set(left_layers) & set(right_layers)):
         left_layer = left_layers[layer_index]
         right_layer = right_layers[layer_index]
@@ -261,9 +290,20 @@ def _compare_cache_summary(
                         **delta,
                     }
                 )
+            sequence_position_deltas.extend(
+                _compare_sequence_position_stats(
+                    layer_index=layer_index,
+                    tensor_name=tensor_name,
+                    left_tensor=left_tensor,
+                    right_tensor=right_tensor,
+                )
+            )
 
     l2_deltas = [record for record in deltas if record["field"] == "l2_norm"]
     variance_deltas = [record for record in deltas if record["field"] == "variance"]
+    sequence_l2_deltas = [
+        record for record in sequence_position_deltas if record["field"] == "l2_norm"
+    ]
     return {
         "available": bool(deltas),
         "left_available": left_summary.get("available"),
@@ -279,9 +319,147 @@ def _compare_cache_summary(
         "max_abs_l2_delta": _max_abs_delta(l2_deltas),
         "mean_abs_l2_delta": _mean_abs_delta(l2_deltas),
         "max_abs_variance_delta": _max_abs_delta(variance_deltas),
+        "sequence_position_stat_fields": list(_SEQUENCE_POSITION_STAT_FIELDS),
+        "max_abs_sequence_position_l2_delta": _max_abs_delta(sequence_l2_deltas),
+        "mean_abs_sequence_position_l2_delta": _mean_abs_delta(sequence_l2_deltas),
         "top_l2_deltas": _top_abs_deltas(l2_deltas),
         "top_stat_deltas": _top_abs_deltas(deltas),
+        "top_sequence_position_l2_deltas": _top_abs_deltas(sequence_l2_deltas),
+        "top_sequence_position_stat_deltas": _top_abs_deltas(sequence_position_deltas),
     }
+
+
+def _compare_sequence_position_stats(
+    *,
+    layer_index: int,
+    tensor_name: str,
+    left_tensor: dict[str, Any],
+    right_tensor: dict[str, Any],
+) -> list[dict[str, Any]]:
+    left_positions = {
+        record.get("position"): record
+        for record in left_tensor.get("sequence_position_stats", [])
+    }
+    right_positions = {
+        record.get("position"): record
+        for record in right_tensor.get("sequence_position_stats", [])
+    }
+    records = []
+    for position in sorted(set(left_positions) & set(right_positions)):
+        if position is None:
+            continue
+        left_record = left_positions[position]
+        right_record = right_positions[position]
+        for field in _SEQUENCE_POSITION_STAT_FIELDS:
+            delta = _numeric_delta(left_record.get(field), right_record.get(field))
+            if delta is None:
+                continue
+            records.append(
+                {
+                    "layer_index": layer_index,
+                    "tensor": tensor_name,
+                    "position": int(position),
+                    "field": field,
+                    **delta,
+                }
+            )
+    return records
+
+
+def _compare_generation_readout(
+    left_generation: dict[str, Any] | None,
+    right_generation: dict[str, Any] | None,
+) -> dict[str, Any] | None:
+    left_step = _generation_step(left_generation, 0)
+    right_step = _generation_step(right_generation, 0)
+    if not left_step or not right_step:
+        return None
+
+    left_top = _top_logprob_map(left_step)
+    right_top = _top_logprob_map(right_step)
+    if not left_top or not right_top:
+        return None
+
+    left_ids = set(left_top)
+    right_ids = set(right_top)
+    union = left_ids | right_ids
+    intersection = left_ids & right_ids
+    jaccard = len(intersection) / len(union) if union else None
+    shared_deltas = []
+    for token_id in sorted(intersection):
+        delta = _numeric_delta(left_top[token_id]["logprob"], right_top[token_id]["logprob"])
+        if delta is None:
+            continue
+        shared_deltas.append(
+            {
+                "token_id": token_id,
+                "left_token": left_top[token_id].get("token"),
+                "right_token": right_top[token_id].get("token"),
+                **delta,
+            }
+        )
+
+    left_top1 = _first_top_logprob(left_step)
+    right_top1 = _first_top_logprob(right_step)
+    return {
+        "available": True,
+        "metric_scope": "first_generation_step_top_k_logprobs",
+        "left_top_k": len(left_ids),
+        "right_top_k": len(right_ids),
+        "shared_top_k": len(intersection),
+        "top_k_jaccard": jaccard,
+        "top_k_jaccard_distance": None if jaccard is None else 1.0 - jaccard,
+        "left_top1": left_top1,
+        "right_top1": right_top1,
+        "top1_same_token_id": (
+            left_top1 is not None
+            and right_top1 is not None
+            and left_top1.get("token_id") == right_top1.get("token_id")
+        ),
+        "mean_abs_shared_logprob_delta": _mean_abs_delta(shared_deltas),
+        "max_abs_shared_logprob_delta": _max_abs_delta(shared_deltas),
+        "top_shared_logprob_deltas": _top_abs_deltas(shared_deltas),
+    }
+
+
+def _generation_step(generation: dict[str, Any] | None, step_index: int) -> dict[str, Any] | None:
+    if not generation:
+        return None
+    for step in generation.get("steps") or []:
+        if int(step.get("step_index", -1)) == step_index:
+            return step
+    return None
+
+
+def _top_logprob_map(step: dict[str, Any]) -> dict[int, dict[str, Any]]:
+    output = {}
+    for item in step.get("top_logprobs") or []:
+        try:
+            token_id = int(item["token_id"])
+            logprob = float(item["logprob"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        output[token_id] = {
+            "token_id": token_id,
+            "token": item.get("token"),
+            "logprob": logprob,
+        }
+    return output
+
+
+def _first_top_logprob(step: dict[str, Any]) -> dict[str, Any] | None:
+    values = step.get("top_logprobs") or []
+    if not values:
+        return None
+    item = values[0]
+    try:
+        return {
+            "token_id": int(item["token_id"]),
+            "token": item.get("token"),
+            "logprob": float(item["logprob"]),
+        }
+    except (KeyError, TypeError, ValueError):
+        return None
 
 
 def _numeric_delta(left_value: Any, right_value: Any) -> dict[str, float] | None:

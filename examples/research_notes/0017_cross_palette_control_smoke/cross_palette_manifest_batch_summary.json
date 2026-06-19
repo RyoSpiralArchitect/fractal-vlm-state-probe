@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "batch_kind": "mlx_manifest_paired_stochastic_probe_batch",
+  "model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+  "stream_seed": 20260604,
+  "probe_seeds": [
+    0
+  ],
+  "max_frames": 50,
+  "frame_stride": 1,
+  "stream_temperature": 0.0,
+  "probe_temperature": 0.7,
+  "probe_preset": "forced_choice",
+  "probe_seed_policy": "same base probe seed is applied to all conditions; MLX run resets before/mid/after to seed, seed+1, seed+2",
+  "conditions": {
+    "mandelbrot_c": "runs/source_variant_smoke/stimuli/mandelbrot_c/manifest.json",
+    "julia_d": "runs/source_variant_smoke/stimuli/julia_d/manifest.json",
+    "mandelbrot_c_spatial_julia_d_palette": "runs/cross_palette_controls/mandelbrot_c_spatial_julia_d_palette/manifest.json",
+    "julia_d_spatial_mandelbrot_c_palette": "runs/cross_palette_controls/julia_d_spatial_mandelbrot_c_palette/manifest.json"
+  },
+  "records": [
+    {
+      "probe_seed": 0,
+      "stream_seed": 20260604,
+      "runs": {
+        "mandelbrot_c": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/mandelbrot_c_mlx.json",
+        "julia_d": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/julia_d_mlx.json",
+        "mandelbrot_c_spatial_julia_d_palette": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/mandelbrot_c_spatial_julia_d_palette_mlx.json",
+        "julia_d_spatial_mandelbrot_c_palette": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/julia_d_spatial_mandelbrot_c_palette_mlx.json"
+      },
+      "comparisons": {
+        "mandelbrot_c_vs_julia_d": {
+          "markdown": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/comparisons/mandelbrot_c_vs_julia_d.md",
+          "json": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/comparisons/mandelbrot_c_vs_julia_d.json"
+        },
+        "mandelbrot_c_vs_mandelbrot_c_spatial_julia_d_palette": {
+          "markdown": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/comparisons/mandelbrot_c_vs_mandelbrot_c_spatial_julia_d_palette.md",
+          "json": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/comparisons/mandelbrot_c_vs_mandelbrot_c_spatial_julia_d_palette.json"
+        },
+        "mandelbrot_c_vs_julia_d_spatial_mandelbrot_c_palette": {
+          "markdown": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/comparisons/mandelbrot_c_vs_julia_d_spatial_mandelbrot_c_palette.md",
+          "json": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/comparisons/mandelbrot_c_vs_julia_d_spatial_mandelbrot_c_palette.json"
+        },
+        "julia_d_vs_mandelbrot_c_spatial_julia_d_palette": {
+          "markdown": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/comparisons/julia_d_vs_mandelbrot_c_spatial_julia_d_palette.md",
+          "json": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/comparisons/julia_d_vs_mandelbrot_c_spatial_julia_d_palette.json"
+        },
+        "julia_d_vs_julia_d_spatial_mandelbrot_c_palette": {
+          "markdown": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/comparisons/julia_d_vs_julia_d_spatial_mandelbrot_c_palette.md",
+          "json": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/comparisons/julia_d_vs_julia_d_spatial_mandelbrot_c_palette.json"
+        },
+        "mandelbrot_c_spatial_julia_d_palette_vs_julia_d_spatial_mandelbrot_c_palette": {
+          "markdown": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/comparisons/mandelbrot_c_spatial_julia_d_palette_vs_julia_d_spatial_mandelbrot_c_palette.md",
+          "json": "runs/cross_palette_controls/manifest_probe_seed_0/probe_seed_0/comparisons/mandelbrot_c_spatial_julia_d_palette_vs_julia_d_spatial_mandelbrot_c_palette.json"
+        }
+      }
+    }
+  ]
+}
