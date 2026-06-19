@@ -67,6 +67,7 @@ Supported transform kinds:
 | `static_repeat` | One exact source frame repeated at the same cadence | Temporal evolution. |
 | `shuffled` | Source frame content and count | Temporal order. |
 | `reversed` | Source frame content and count | Forward temporal direction. |
+| `cross_palette_luminance_matched` | Source luminance-rank spatial ordering plus another manifest's exact frame-aligned RGB pixel multiset | The source frame's own color/brightness distribution. |
 
 Transform manifests record the source manifest hash, source condition, and
 source frame index for each emitted frame. That keeps the control auditable when
@@ -209,6 +210,37 @@ each probe seed, `manifest_batch_summary.md/json`, and
 `paired_stochastic_analysis.md/json`. It reuses completed run JSONs unless
 `--overwrite` is passed, so longer cutoff sweeps can be resumed.
 
+## Cross-Family Palette Controls
+
+When the question is whether a Mandelbrot/Julia split is carried by spatial
+organization rather than palette or brightness distribution, generate both
+directions of the cross-family control:
+
+```bash
+python3 scripts/generate_control_frames.py \
+  --kind cross_palette_luminance_matched \
+  --source-manifest runs/source_variant_smoke/stimuli/julia_d/manifest.json \
+  --palette-manifest runs/source_variant_smoke/stimuli/mandelbrot_c/manifest.json \
+  --condition-id julia_d_spatial_mandelbrot_c_palette \
+  --output runs/cross_palette_controls/julia_d_spatial_mandelbrot_c_palette \
+  --max-frames 50 \
+  --overwrite
+
+python3 scripts/generate_control_frames.py \
+  --kind cross_palette_luminance_matched \
+  --source-manifest runs/source_variant_smoke/stimuli/mandelbrot_c/manifest.json \
+  --palette-manifest runs/source_variant_smoke/stimuli/julia_d/manifest.json \
+  --condition-id mandelbrot_c_spatial_julia_d_palette \
+  --output runs/cross_palette_controls/mandelbrot_c_spatial_julia_d_palette \
+  --max-frames 50 \
+  --overwrite
+```
+
+These controls preserve the palette manifest's exact RGB pixel multiset within
+each aligned frame. If a trace distance follows the spatial source after this
+swap, that is a stronger input-organization signal than a raw family
+comparison. It is still not a complete local-texture or topology proof.
+
 ## Image Statistics
 
 Before interpreting trace-summary clusters, measure the visual manifests
@@ -231,3 +263,21 @@ edge-strength mean, spectral centroid, high-frequency energy ratio,
 colorfulness, and mean absolute luminance change between adjacent frames. These
 metrics are controls for image-level variation; they are not model-state
 measurements.
+
+To audit the image statistics after the selected model processor has produced
+`pixel_values`, use:
+
+```bash
+python3 scripts/analyze_processor_image_stats.py \
+  --manifest runs/source_variant_smoke/stimuli/mandelbrot_c/manifest.json \
+  --manifest runs/source_variant_smoke/stimuli/julia_d/manifest.json \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --patch-size 14 \
+  --max-frames 50 \
+  --output-md runs/processor_stats/source_variant_processor_stats.md \
+  --output-json runs/processor_stats/source_variant_processor_stats.json
+```
+
+The processor-space report adds cycles-per-patch spectral summaries. This is
+the safer surface for cutoff-sweep interpretation because it measures the
+resized/normalized tensor actually sent to the model.

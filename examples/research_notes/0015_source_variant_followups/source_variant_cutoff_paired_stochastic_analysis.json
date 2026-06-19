@@ -1,0 +1,1494 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "paired_stochastic_probe_batch",
+  "probe_seed_count": 1,
+  "condition_keys": [
+    "julia_d_high_018",
+    "julia_d_high_028",
+    "julia_d_low_018",
+    "julia_d_low_028",
+    "mandelbrot_c_high_018",
+    "mandelbrot_c_high_028",
+    "mandelbrot_c_low_018",
+    "mandelbrot_c_low_028"
+  ],
+  "before_alignment": {
+    "seed_count": 1,
+    "all_conditions_same_count": 1,
+    "records": [
+      {
+        "probe_seed": 0,
+        "probe_id": "blue_silence_poem",
+        "same_across_conditions": true,
+        "unique_text_count": 1
+      }
+    ]
+  },
+  "condition_phase_drift": [
+    {
+      "condition_key": "julia_d_high_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.8387096774193549,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "julia_d_high_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.851063829787234,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "julia_d_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.8387096774193549,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "julia_d_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.851063829787234,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "julia_d_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.8387096774193549,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "julia_d_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.851063829787234,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "julia_d_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.8387096774193549,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "julia_d_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.851063829787234,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "mandelbrot_c_high_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.8387096774193549,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "mandelbrot_c_high_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.851063829787234,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "mandelbrot_c_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.8387096774193549,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "mandelbrot_c_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.851063829787234,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "mandelbrot_c_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.8387096774193549,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "mandelbrot_c_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.851063829787234,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "mandelbrot_c_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.8387096774193549,
+      "std_distance_from_before": 0.0
+    },
+    {
+      "condition_key": "mandelbrot_c_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance_from_before": 0.851063829787234,
+      "std_distance_from_before": 0.0
+    }
+  ],
+  "pairwise_phase_distances": [
+    {
+      "left": "julia_d_high_018",
+      "right": "julia_d_high_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "julia_d_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "julia_d_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "julia_d_low_018",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "julia_d_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "julia_d_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "julia_d_low_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "julia_d_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "julia_d_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "mandelbrot_c_high_018",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "mandelbrot_c_high_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "mandelbrot_c_high_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "mandelbrot_c_high_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "mandelbrot_c_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "mandelbrot_c_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "mandelbrot_c_low_018",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "mandelbrot_c_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "mandelbrot_c_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "mandelbrot_c_low_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "mandelbrot_c_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_018",
+      "right": "mandelbrot_c_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "julia_d_low_018",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "julia_d_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "julia_d_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "julia_d_low_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "julia_d_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "julia_d_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "mandelbrot_c_high_018",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "mandelbrot_c_high_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "mandelbrot_c_high_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "mandelbrot_c_high_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "mandelbrot_c_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "mandelbrot_c_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "mandelbrot_c_low_018",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "mandelbrot_c_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "mandelbrot_c_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "mandelbrot_c_low_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "mandelbrot_c_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_high_028",
+      "right": "mandelbrot_c_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "julia_d_low_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "julia_d_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "julia_d_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "mandelbrot_c_high_018",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "mandelbrot_c_high_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "mandelbrot_c_high_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "mandelbrot_c_high_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "mandelbrot_c_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "mandelbrot_c_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "mandelbrot_c_low_018",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "mandelbrot_c_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "mandelbrot_c_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "mandelbrot_c_low_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "mandelbrot_c_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_018",
+      "right": "mandelbrot_c_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_028",
+      "right": "mandelbrot_c_high_018",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_low_028",
+      "right": "mandelbrot_c_high_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_028",
+      "right": "mandelbrot_c_high_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_028",
+      "right": "mandelbrot_c_high_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_low_028",
+      "right": "mandelbrot_c_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_028",
+      "right": "mandelbrot_c_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_028",
+      "right": "mandelbrot_c_low_018",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_low_028",
+      "right": "mandelbrot_c_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_028",
+      "right": "mandelbrot_c_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_028",
+      "right": "mandelbrot_c_low_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "julia_d_low_028",
+      "right": "mandelbrot_c_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "julia_d_low_028",
+      "right": "mandelbrot_c_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot_c_high_018",
+      "right": "mandelbrot_c_high_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "mandelbrot_c_high_018",
+      "right": "mandelbrot_c_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot_c_high_018",
+      "right": "mandelbrot_c_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot_c_high_018",
+      "right": "mandelbrot_c_low_018",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "mandelbrot_c_high_018",
+      "right": "mandelbrot_c_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot_c_high_018",
+      "right": "mandelbrot_c_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot_c_high_018",
+      "right": "mandelbrot_c_low_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "mandelbrot_c_high_018",
+      "right": "mandelbrot_c_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot_c_high_018",
+      "right": "mandelbrot_c_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot_c_high_028",
+      "right": "mandelbrot_c_low_018",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "mandelbrot_c_high_028",
+      "right": "mandelbrot_c_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot_c_high_028",
+      "right": "mandelbrot_c_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot_c_high_028",
+      "right": "mandelbrot_c_low_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "mandelbrot_c_high_028",
+      "right": "mandelbrot_c_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot_c_high_028",
+      "right": "mandelbrot_c_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot_c_low_018",
+      "right": "mandelbrot_c_low_028",
+      "phase": "before",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": null,
+      "std_before_adjusted_distance": null
+    },
+    {
+      "left": "mandelbrot_c_low_018",
+      "right": "mandelbrot_c_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    },
+    {
+      "left": "mandelbrot_c_low_018",
+      "right": "mandelbrot_c_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_distance": 0.0,
+      "std_distance": 0.0,
+      "mean_before_adjusted_distance": 0.0,
+      "std_before_adjusted_distance": 0.0
+    }
+  ],
+  "pairwise_cache_distances": [
+    {
+      "comparison_id": "julia_d_high_018_vs_julia_d_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 1.0369873046875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 0.5518198013305664,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "julia_d_high_018_vs_julia_d_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 2.624755859375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.4126167297363281,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "julia_d_high_018_vs_julia_d_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 1.6566162109375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 0.7799644470214844,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "julia_d_high_018_vs_julia_d_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 4.47412109375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.026836395263672,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "julia_d_low_018_vs_julia_d_high_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 3.0360107421875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.1165084838867188,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "julia_d_low_018_vs_julia_d_high_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 4.846923828125,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.2543692588806152,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "julia_d_low_018_vs_julia_d_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 4.072998046875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.0891199111938477,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "julia_d_low_018_vs_julia_d_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 5.72265625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.9709715843200684,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "julia_d_low_018_vs_julia_d_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 3.1802978515625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 0.8866844177246094,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "julia_d_low_018_vs_julia_d_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 0.6826171875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 0.30377817153930664,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "julia_d_low_028_vs_julia_d_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 2.693603515625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 0.720799446105957,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "julia_d_low_028_vs_julia_d_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 5.60107421875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.8621368408203125,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_018_vs_julia_d_high_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 6.214111328125,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.5786752700805664,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_018_vs_julia_d_high_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 4.5439453125,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.898057460784912,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_018_vs_julia_d_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 5.90185546875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.552001953125,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_018_vs_julia_d_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 6.299560546875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.1416373252868652,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_018_vs_julia_d_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 6.061279296875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.8869104385375977,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_018_vs_julia_d_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 2.04736328125,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.0719718933105469,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_018_vs_julia_d_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 4.88427734375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.980381965637207,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_018_vs_julia_d_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 1.822265625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.0660605430603027,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_018_vs_mandelbrot_c_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 2.025146484375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 0.9416484832763672,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_018_vs_mandelbrot_c_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 5.8277587890625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.0254435539245605,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_018_vs_mandelbrot_c_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 6.453857421875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.5540456771850586,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_018_vs_mandelbrot_c_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 5.30731201171875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.9557085037231445,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_028_vs_julia_d_high_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 4.537353515625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.9096975326538086,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_028_vs_julia_d_high_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 5.099853515625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.9068994522094727,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_028_vs_julia_d_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 4.22509765625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.7357158660888672,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_028_vs_julia_d_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 6.85546875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.217892646789551,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_028_vs_julia_d_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 4.384521484375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.0980901718139648,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_028_vs_julia_d_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 5.3681640625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.8954195976257324,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_028_vs_julia_d_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 3.20751953125,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.2122526168823242,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_high_028_vs_julia_d_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 5.032958984375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.7743959426879883,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_julia_d_high_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 10.323974609375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 4.147870063781738,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_julia_d_high_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 7.8587646484375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 4.038031101226807,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_julia_d_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 10.79833984375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 4.083217620849609,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_julia_d_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 8.49951171875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 4.7265753746032715,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_julia_d_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 10.1611328125,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.383946418762207,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_julia_d_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 7.8548583984375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.918743133544922,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_julia_d_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 10.5869140625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.574784278869629,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_julia_d_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 8.111083984375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.9133477210998535,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_mandelbrot_c_high_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 8.5401611328125,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.6563758850097656,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_mandelbrot_c_high_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 7.372802734375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.1939926147460938,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_mandelbrot_c_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 8.101318359375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.8612232208251953,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_mandelbrot_c_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 6.76171875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.2795863151550293,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_mandelbrot_c_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 2.0863037109375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 1.1456403732299805,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_018_vs_mandelbrot_c_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 2.369140625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 0.9115018844604492,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_028_vs_julia_d_high_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 11.793212890625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.610597610473633,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_028_vs_julia_d_high_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 6.46240234375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.2206759452819824,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_028_vs_julia_d_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 11.48095703125,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.6044626235961914,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_028_vs_julia_d_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 8.218017578125,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.919098377227783,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_028_vs_julia_d_low_018",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 11.640380859375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.398019790649414,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_028_vs_julia_d_low_018",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 7.34844970703125,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.6597681045532227,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_028_vs_julia_d_low_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 10.46337890625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 3.5495052337646484,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_028_vs_julia_d_low_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 7.12957763671875,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.6168665885925293,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_028_vs_mandelbrot_c_high_028",
+      "phase": "after",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 7.255859375,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.875668525695801,
+      "std_mean_abs_l2_delta": 0.0
+    },
+    {
+      "comparison_id": "mandelbrot_c_low_028_vs_mandelbrot_c_high_028",
+      "phase": "mid",
+      "sample_count": 1,
+      "mean_max_abs_l2_delta": 4.8697509765625,
+      "std_max_abs_l2_delta": 0.0,
+      "mean_mean_abs_l2_delta": 2.36808443069458,
+      "std_mean_abs_l2_delta": 0.0
+    }
+  ],
+  "interpretation_notes": [
+    "This summary uses surface lexical distances only; it is not an embedding-level semantic analysis.",
+    "Phase distances are paired by probe seed and report mid/after distances after subtracting before-phase distance.",
+    "The stream can remain deterministic while probe sampling is varied through matched probe seeds."
+  ]
+}

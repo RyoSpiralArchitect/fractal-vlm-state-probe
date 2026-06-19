@@ -1,0 +1,1788 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "image_statistics_batch",
+  "created_at_utc": "2026-06-19T07:09:03Z",
+  "manifest_count": 4,
+  "records": [
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_image_statistics",
+      "created_at_utc": "2026-06-19T07:09:02Z",
+      "manifest_path": "runs/source_variant_smoke/stimuli/mandelbrot_c/manifest.json",
+      "manifest_sha256": "d26cbb2017827d2adc70c0bbadff3b419567d1f968a86f232fe18dba62cacdcd",
+      "condition": {
+        "condition_id": "mandelbrot_zoom_c",
+        "condition_family": "fractal",
+        "temporal_policy": "ordered",
+        "semantic_load": "low",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "source_variant",
+        "description": "Second deterministic Mandelbrot source variant for family-internal distance checks."
+      },
+      "stimulus_config_sha256": "528c4c3b72f18624f5e870d8f38b4f15218cac45d113993ca88cb8ddc0f32b6f",
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "luminance_mean": {
+          "mean": 0.3880190870812908,
+          "std": 0.05260877950923716,
+          "min": 0.30149138829656863,
+          "max": 0.4750431024305556
+        },
+        "luminance_std": {
+          "mean": 0.09472066584391302,
+          "std": 0.023059302353372706,
+          "min": 0.0629110786686121,
+          "max": 0.12742370684874754
+        },
+        "luminance_entropy_bits": {
+          "mean": 5.01450012806968,
+          "std": 0.4837298748165212,
+          "min": 4.091190371201275,
+          "max": 5.838847517753948
+        },
+        "edge_density": {
+          "mean": 0.013157552083333334,
+          "std": 0.008214487108877466,
+          "min": 0.003984375,
+          "max": 0.025677083333333333
+        },
+        "edge_strength_mean": {
+          "mean": 0.008019959683449526,
+          "std": 0.001904330465271385,
+          "min": 0.00536027384109267,
+          "max": 0.011032097813516103
+        },
+        "spectral_centroid": {
+          "mean": 0.07863640232527053,
+          "std": 0.013567560472220873,
+          "min": 0.06287762319923056,
+          "max": 0.11679660269083711
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.06832101620618171,
+          "std": 0.017716035538498147,
+          "min": 0.04853599171099424,
+          "max": 0.11727516480454002
+        },
+        "colorfulness": {
+          "mean": 0.28829954175226263,
+          "std": 0.03142549843020902,
+          "min": 0.2488269803203907,
+          "max": 0.3311021852113946
+        },
+        "mean_abs_luminance_delta_from_previous": {
+          "mean": 0.038288471667038027,
+          "std": 0.008229042014344615,
+          "min": 0.028800574336192805,
+          "max": 0.057005153278186275
+        },
+        "rgb_mean": {
+          "channels": [
+            {
+              "mean": 0.5440934436274264,
+              "std": 0.0699915411171136,
+              "min": 0.42746823937903095,
+              "max": 0.6553140318626915
+            },
+            {
+              "mean": 0.307759599673266,
+              "std": 0.05313188850834622,
+              "min": 0.22412091503282516,
+              "max": 0.40304483251636086
+            },
+            {
+              "mean": 0.7234786049834842,
+              "std": 0.029500987565069598,
+              "min": 0.6574193218953439,
+              "max": 0.7598300653592232
+            }
+          ]
+        },
+        "rgb_std": {
+          "channels": [
+            {
+              "mean": 0.12547740718002878,
+              "std": 0.03501330236473747,
+              "min": 0.07945844348632028,
+              "max": 0.17683049960360242
+            },
+            {
+              "mean": 0.09246991643937193,
+              "std": 0.014765985761015355,
+              "min": 0.06921780195393999,
+              "max": 0.11305793425421223
+            },
+            {
+              "mean": 0.15261783178646124,
+              "std": 0.06913640992853082,
+              "min": 0.07110664026519711,
+              "max": 0.2706789097651404
+            }
+          ]
+        }
+      },
+      "frame_stats": [
+        {
+          "rgb_mean": [
+            0.42746823937903095,
+            0.22412091503282516,
+            0.6969579248359141
+          ],
+          "rgb_std": [
+            0.17485258416377628,
+            0.10227090644321664,
+            0.2706789097651404
+          ],
+          "luminance_mean": 0.30149138829656863,
+          "luminance_std": 0.12448761288099547,
+          "luminance_entropy_bits": 4.091190371201275,
+          "edge_density": 0.021328125,
+          "edge_strength_mean": 0.008262242230600028,
+          "spectral_centroid": 0.0672963813781479,
+          "high_frequency_energy_ratio": 0.06198756289301429,
+          "colorfulness": 0.3282102942401699,
+          "index": 0,
+          "t_seconds": 0.0,
+          "path": "frames/frame_000000.png",
+          "sha256": "ed3d6eada7e1997a581efcb4f6492402a3b54c93ddeba0b866331dacb0f925c7",
+          "mean_abs_luminance_delta_from_previous": null
+        },
+        {
+          "rgb_mean": [
+            0.4445017361112551,
+            0.23685411560467595,
+            0.6987333026956433
+          ],
+          "rgb_std": [
+            0.17683049960360242,
+            0.10909904458371099,
+            0.2611765783651009
+          ],
+          "luminance_mean": 0.31434767703227123,
+          "luminance_std": 0.12742370684874754,
+          "luminance_entropy_bits": 4.355207612961384,
+          "edge_density": 0.025065104166666668,
+          "edge_strength_mean": 0.00978258452361121,
+          "spectral_centroid": 0.07984922194185316,
+          "high_frequency_energy_ratio": 0.07647935124590693,
+          "colorfulness": 0.3311021852113946,
+          "index": 1,
+          "t_seconds": 1.0,
+          "path": "frames/frame_000001.png",
+          "sha256": "b85a684b49c199b56af5a2b96ee04c453b5e1f00a093041bc5e89b71b2a1566d",
+          "mean_abs_luminance_delta_from_previous": 0.039649651215277776
+        },
+        {
+          "rgb_mean": [
+            0.46767238562090196,
+            0.25248769403587507,
+            0.7113722937089124
+          ],
+          "rgb_std": [
+            0.1690305454375055,
+            0.11019903764766668,
+            0.23849040284552236
+          ],
+          "luminance_mean": 0.331367427563317,
+          "luminance_std": 0.12342905044494262,
+          "luminance_entropy_bits": 4.553675643309871,
+          "edge_density": 0.025677083333333333,
+          "edge_strength_mean": 0.010313302683530975,
+          "spectral_centroid": 0.08637515140780222,
+          "high_frequency_energy_ratio": 0.08053528911865734,
+          "colorfulness": 0.3290903082094313,
+          "index": 2,
+          "t_seconds": 2.0,
+          "path": "frames/frame_000002.png",
+          "sha256": "24a8b026f988897486e5f55fc563c9e984a73bb47fd035ff74a8db08c3980b42",
+          "mean_abs_luminance_delta_from_previous": 0.040515971343954245
+        },
+        {
+          "rgb_mean": [
+            0.5051779513887172,
+            0.276389042075351,
+            0.7404475592319867
+          ],
+          "rgb_std": [
+            0.1408267053136822,
+            0.10234588692210042,
+            0.18237498311388475
+          ],
+          "luminance_mean": 0.35853458913398695,
+          "luminance_std": 0.10575039799465745,
+          "luminance_entropy_bits": 4.8037646322637055,
+          "edge_density": 0.023932291666666668,
+          "edge_strength_mean": 0.010535201768276565,
+          "spectral_centroid": 0.11679660269083711,
+          "high_frequency_energy_ratio": 0.11727516480454002,
+          "colorfulness": 0.3185208449103714,
+          "index": 3,
+          "t_seconds": 3.0,
+          "path": "frames/frame_000003.png",
+          "sha256": "0819114b7ca8052cc24bd1292ca7de449ee09d8c1a6334272396b58d1935b313",
+          "mean_abs_luminance_delta_from_previous": 0.04935643812295751
+        },
+        {
+          "rgb_mean": [
+            0.5147888071895944,
+            0.2824520016341069,
+            0.7452131331701378
+          ],
+          "rgb_std": [
+            0.1314985720498836,
+            0.09574539304944871,
+            0.16694275830098518
+          ],
+          "luminance_mean": 0.3652581601919934,
+          "luminance_std": 0.0987622035258595,
+          "luminance_entropy_bits": 4.847965294596392,
+          "edge_density": 0.0133203125,
+          "edge_strength_mean": 0.007466259919886724,
+          "spectral_centroid": 0.07919999462971347,
+          "high_frequency_energy_ratio": 0.06988755242358041,
+          "colorfulness": 0.3038734559845192,
+          "index": 4,
+          "t_seconds": 4.0,
+          "path": "frames/frame_000004.png",
+          "sha256": "0d67395c99f39adfb4036ac0bff4cdc63621048f1bf5f05c8bfb5fde94ba080b",
+          "mean_abs_luminance_delta_from_previous": 0.03680085388071895
+        },
+        {
+          "rgb_mean": [
+            0.5458698427289895,
+            0.30417963643797935,
+            0.7557172181375218
+          ],
+          "rgb_std": [
+            0.10672172275331089,
+            0.08919889302056085,
+            0.11719848340666322
+          ],
+          "luminance_mean": 0.388163987694036,
+          "luminance_std": 0.08364050494808449,
+          "luminance_entropy_bits": 5.109450199091332,
+          "edge_density": 0.010755208333333334,
+          "edge_strength_mean": 0.0074503237252050245,
+          "spectral_centroid": 0.0854564308738161,
+          "high_frequency_energy_ratio": 0.07615588777519129,
+          "colorfulness": 0.2953899246146467,
+          "index": 5,
+          "t_seconds": 5.0,
+          "path": "frames/frame_000005.png",
+          "sha256": "ff61de99330d77e6add0eb7c8e15c5a34968b5c8418b19e330f2d22d01f30858",
+          "mean_abs_luminance_delta_from_previous": 0.03800409028799019
+        },
+        {
+          "rgb_mean": [
+            0.5634732945259464,
+            0.31615180759812045,
+            0.7598300653592232
+          ],
+          "rgb_std": [
+            0.08179173355603424,
+            0.07373104395677155,
+            0.07508973361610208
+          ],
+          "luminance_mean": 0.4007659259293301,
+          "luminance_std": 0.06573957679540879,
+          "luminance_entropy_bits": 5.157013779008104,
+          "edge_density": 0.0047786458333333335,
+          "edge_strength_mean": 0.00536027384109267,
+          "spectral_centroid": 0.06287762319923056,
+          "high_frequency_energy_ratio": 0.05216859069483781,
+          "colorfulness": 0.26555168644605476,
+          "index": 6,
+          "t_seconds": 6.0,
+          "path": "frames/frame_000006.png",
+          "sha256": "3938376c79df6efa56d36a2896b5654a71dd8450318370a9c3f8a4def3bd01a5",
+          "mean_abs_luminance_delta_from_previous": 0.03310083700980392
+        },
+        {
+          "rgb_mean": [
+            0.5785159824346334,
+            0.3285534109477916,
+            0.7509357128262306
+          ],
+          "rgb_std": [
+            0.07945844348632028,
+            0.06921780195393999,
+            0.07110664026519711
+          ],
+          "luminance_mean": 0.41219145584150324,
+          "luminance_std": 0.0629110786686121,
+          "luminance_entropy_bits": 5.2447946176783535,
+          "edge_density": 0.003984375,
+          "edge_strength_mean": 0.00553214781663767,
+          "spectral_centroid": 0.07006742077416289,
+          "high_frequency_energy_ratio": 0.05988465584929279,
+          "colorfulness": 0.2488269803203907,
+          "index": 7,
+          "t_seconds": 7.0,
+          "path": "frames/frame_000007.png",
+          "sha256": "c6002a3941805f597b0daae67872bc3923985e482fcf4b3f682800fa51e87e6b",
+          "mean_abs_luminance_delta_from_previous": 0.029750414103349675
+        },
+        {
+          "rgb_mean": [
+            0.5937343749999665,
+            0.3420561172385979,
+            0.7385708231207812
+          ],
+          "rgb_std": [
+            0.08650757475915828,
+            0.07454060252786632,
+            0.08219403739128305
+          ],
+          "luminance_mean": 0.42419127660334965,
+          "luminance_std": 0.06839022935359895,
+          "luminance_entropy_bits": 5.278433470217591,
+          "edge_density": 0.004583333333333333,
+          "edge_strength_mean": 0.00619395766459717,
+          "spectral_centroid": 0.07793857751516123,
+          "high_frequency_energy_ratio": 0.06364322728224321,
+          "colorfulness": 0.25290829921839897,
+          "index": 8,
+          "t_seconds": 8.0,
+          "path": "frames/frame_000008.png",
+          "sha256": "4311ecd8fa72a0186cebe10e83bda446764051c70d49359fcc6ed3b4ed3b1c90",
+          "mean_abs_luminance_delta_from_previous": 0.028800574336192805
+        },
+        {
+          "rgb_mean": [
+            0.6056639093136081,
+            0.35322288602941965,
+            0.7256535947712341
+          ],
+          "rgb_std": [
+            0.09539130848516492,
+            0.07940424836474766,
+            0.09670850643125384
+          ],
+          "luminance_mean": 0.433781344750817,
+          "luminance_std": 0.07462079826673661,
+          "luminance_entropy_bits": 5.322576272328041,
+          "edge_density": 0.005611979166666667,
+          "edge_strength_mean": 0.006458980746000223,
+          "spectral_centroid": 0.07896208208535509,
+          "high_frequency_energy_ratio": 0.06066413234814534,
+          "colorfulness": 0.2545532971208062,
+          "index": 9,
+          "t_seconds": 9.0,
+          "path": "frames/frame_000009.png",
+          "sha256": "75bc19ac4ee7e88c68ecffa03baedddd694337c5c790b7695fd8cba84b883e2a",
+          "mean_abs_luminance_delta_from_previous": 0.029738072457107842
+        },
+        {
+          "rgb_mean": [
+            0.626940767973781,
+            0.3736027369280876,
+            0.7008923100488812
+          ],
+          "rgb_std": [
+            0.11415800529459892,
+            0.09082820454822123,
+            0.11836901283016626
+          ],
+          "luminance_mean": 0.4510927095077614,
+          "luminance_std": 0.0881246579586548,
+          "luminance_entropy_bits": 5.571082126426164,
+          "edge_density": 0.007200520833333333,
+          "edge_strength_mean": 0.007852143468439958,
+          "spectral_centroid": 0.07282159845052398,
+          "high_frequency_energy_ratio": 0.05263478832777689,
+          "colorfulness": 0.25966219145482833,
+          "index": 10,
+          "t_seconds": 10.0,
+          "path": "frames/frame_000010.png",
+          "sha256": "51743394ad7f8f613005898297b0e7ca88a51a9112342b72c175998d156ee953",
+          "mean_abs_luminance_delta_from_previous": 0.03845113230187908
+        },
+        {
+          "rgb_mean": [
+            0.6553140318626915,
+            0.40304483251636086,
+            0.6574193218953439
+          ],
+          "rgb_std": [
+            0.1486611912573078,
+            0.11305793425421223,
+            0.15108393510623555
+          ],
+          "luminance_mean": 0.4750431024305556,
+          "luminance_std": 0.11336817244065785,
+          "luminance_entropy_bits": 5.838847517753948,
+          "edge_density": 0.011653645833333334,
+          "edge_strength_mean": 0.011032097813516103,
+          "spectral_centroid": 0.06599574295664255,
+          "high_frequency_energy_ratio": 0.04853599171099424,
+          "colorfulness": 0.27190503329613935,
+          "index": 11,
+          "t_seconds": 11.0,
+          "path": "frames/frame_000011.png",
+          "sha256": "532e20f1657c2b7be64f84313bec925fb65be382527308d74080fadaabcb8b39",
+          "mean_abs_luminance_delta_from_previous": 0.057005153278186275
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_image_statistics",
+      "created_at_utc": "2026-06-19T07:09:03Z",
+      "manifest_path": "runs/source_variant_smoke/stimuli/julia_d/manifest.json",
+      "manifest_sha256": "3a86cc361fa6db6ebbdda225500c6a00b3342b1c9510513ea6ad9c38e7b5ade2",
+      "condition": {
+        "condition_id": "julia_zoom_d",
+        "condition_family": "fractal",
+        "temporal_policy": "ordered",
+        "semantic_load": "low",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "source_variant",
+        "description": "Second deterministic Julia source variant for family-internal distance checks."
+      },
+      "stimulus_config_sha256": "d07ab6340cc949b59af24d8b0f2f71663f9268ef3e4fb9b90f9aadfe643f7ff6",
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "luminance_mean": {
+          "mean": 0.6163267748400054,
+          "std": 0.05137128837693057,
+          "min": 0.5557850990808824,
+          "max": 0.7029117515522876
+        },
+        "luminance_std": {
+          "mean": 0.15425548130274666,
+          "std": 0.018795009345296095,
+          "min": 0.11411129867165114,
+          "max": 0.17651666067448685
+        },
+        "luminance_entropy_bits": {
+          "mean": 5.380181986398043,
+          "std": 1.0416369705200679,
+          "min": 3.2723304733934326,
+          "max": 6.383654364059478
+        },
+        "edge_density": {
+          "mean": 0.08872178819444444,
+          "std": 0.016025225281281242,
+          "min": 0.05515625,
+          "max": 0.112109375
+        },
+        "edge_strength_mean": {
+          "mean": 0.026851135404235213,
+          "std": 0.005214571636126493,
+          "min": 0.0155901029334053,
+          "max": 0.03420075920626901
+        },
+        "spectral_centroid": {
+          "mean": 0.08958768000458568,
+          "std": 0.008003040330289599,
+          "min": 0.07591418588032717,
+          "max": 0.0985603662379304
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.09432268737359446,
+          "std": 0.0072811956047925674,
+          "min": 0.08245099453862383,
+          "max": 0.10353771665987599
+        },
+        "colorfulness": {
+          "mean": 0.5434403424705376,
+          "std": 0.028755878196204673,
+          "min": 0.5086781224967108,
+          "max": 0.5869748716170059
+        },
+        "mean_abs_luminance_delta_from_previous": {
+          "mean": 0.07011515933600712,
+          "std": 0.015846398408156572,
+          "min": 0.03917480490196079,
+          "max": 0.09351092779820261
+        },
+        "rgb_mean": {
+          "channels": [
+            {
+              "mean": 0.5681791002859251,
+              "std": 0.10525558551679948,
+              "min": 0.37952604166673554,
+              "max": 0.6766946486927199
+            },
+            {
+              "mean": 0.6260580320669134,
+              "std": 0.09515786613610777,
+              "min": 0.5196023284313525,
+              "max": 0.7898700980388089
+            },
+            {
+              "mean": 0.6617062823393441,
+              "std": 0.07752700751374916,
+              "min": 0.5724835580064848,
+              "max": 0.7937592933010095
+            }
+          ]
+        },
+        "rgb_std": {
+          "channels": [
+            {
+              "mean": 0.2246608875323445,
+              "std": 0.014090462709904788,
+              "min": 0.2031324915727404,
+              "max": 0.24620112688055418
+            },
+            {
+              "mean": 0.24426083369780108,
+              "std": 0.019974922083273526,
+              "min": 0.19462935405002268,
+              "max": 0.26335444316341866
+            },
+            {
+              "mean": 0.2160577504756661,
+              "std": 0.022318696652690283,
+              "min": 0.16514980799562823,
+              "max": 0.24096640539121728
+            }
+          ]
+        }
+      },
+      "frame_stats": [
+        {
+          "rgb_mean": [
+            0.37952604166673554,
+            0.7898700980388089,
+            0.7937592933010095
+          ],
+          "rgb_std": [
+            0.2031324915727404,
+            0.19462935405002268,
+            0.16514980799562823
+          ],
+          "luminance_mean": 0.7029117515522876,
+          "luminance_std": 0.11411129867165114,
+          "luminance_entropy_bits": 3.2723304733934326,
+          "edge_density": 0.05515625,
+          "edge_strength_mean": 0.0155901029334053,
+          "spectral_centroid": 0.09126930049561913,
+          "high_frequency_energy_ratio": 0.0935855104564464,
+          "colorfulness": 0.5577291460849293,
+          "index": 0,
+          "t_seconds": 0.0,
+          "path": "frames/frame_000000.png",
+          "sha256": "b7d226a8493825ee48d44c425478d92cce22e24d72eefbbcf9129a7db00b514a",
+          "mean_abs_luminance_delta_from_previous": null
+        },
+        {
+          "rgb_mean": [
+            0.41258282271244484,
+            0.7638383374180495,
+            0.7733109681375043
+          ],
+          "rgb_std": [
+            0.2208198690763221,
+            0.21338141611092235,
+            0.18143351226710935
+          ],
+          "luminance_mean": 0.6898453389297385,
+          "luminance_std": 0.12531357799301518,
+          "luminance_entropy_bits": 3.7579135838333504,
+          "edge_density": 0.06609375,
+          "edge_strength_mean": 0.018778194405319974,
+          "spectral_centroid": 0.0911485810400954,
+          "high_frequency_energy_ratio": 0.09393906430297852,
+          "colorfulness": 0.5774909663705431,
+          "index": 1,
+          "t_seconds": 1.0,
+          "path": "frames/frame_000001.png",
+          "sha256": "2891c3e7eae86513428e5a4c035b467e523813ea57a12c5202982324a4caf61c",
+          "mean_abs_luminance_delta_from_previous": 0.03917480490196079
+        },
+        {
+          "rgb_mean": [
+            0.4519681372550023,
+            0.7311460375815693,
+            0.7472314133988434
+          ],
+          "rgb_std": [
+            0.23527841711729536,
+            0.23116606900827325,
+            0.19769697141192302
+          ],
+          "luminance_mean": 0.6729541801062091,
+          "luminance_std": 0.13728886658160402,
+          "luminance_entropy_bits": 4.2828246957075375,
+          "edge_density": 0.07950520833333333,
+          "edge_strength_mean": 0.02298938752785516,
+          "spectral_centroid": 0.09534021383643965,
+          "high_frequency_energy_ratio": 0.10120010768316987,
+          "colorfulness": 0.5869748716170059,
+          "index": 2,
+          "t_seconds": 2.0,
+          "path": "frames/frame_000002.png",
+          "sha256": "e51d436aad0366535efcc87e43ddb66ce85a17b378f4b7b94168c3f2ceaba237",
+          "mean_abs_luminance_delta_from_previous": 0.049675111397058824
+        },
+        {
+          "rgb_mean": [
+            0.49840839460789377,
+            0.6913810253267523,
+            0.7152046568628401
+          ],
+          "rgb_std": [
+            0.2457465918374759,
+            0.2469823052838684,
+            0.2128134743138335
+          ],
+          "luminance_mean": 0.652075110232843,
+          "luminance_std": 0.14905045586942886,
+          "luminance_entropy_bits": 4.898961239956403,
+          "edge_density": 0.0925,
+          "edge_strength_mean": 0.027034523261156823,
+          "spectral_centroid": 0.09602650456084916,
+          "high_frequency_energy_ratio": 0.10159110836185152,
+          "colorfulness": 0.5845583540412306,
+          "index": 3,
+          "t_seconds": 3.0,
+          "path": "frames/frame_000003.png",
+          "sha256": "d0b6327f34e9bd6590eb7a15ee1f1027b1295f456787ba5ed5e64d4e4eebad77",
+          "mean_abs_luminance_delta_from_previous": 0.06262816194852941
+        },
+        {
+          "rgb_mean": [
+            0.5359012459149901,
+            0.6594306576797654,
+            0.6896854575163158
+          ],
+          "rgb_std": [
+            0.24620112688055418,
+            0.2537526570959176,
+            0.22054431203803337
+          ],
+          "luminance_mean": 0.6353527012867647,
+          "luminance_std": 0.15517278508678176,
+          "luminance_entropy_bits": 5.295924475304476,
+          "edge_density": 0.093828125,
+          "edge_strength_mean": 0.028105374842287714,
+          "spectral_centroid": 0.09185603826203002,
+          "high_frequency_energy_ratio": 0.09536503499090643,
+          "colorfulness": 0.5686635635087388,
+          "index": 4,
+          "t_seconds": 4.0,
+          "path": "frames/frame_000004.png",
+          "sha256": "44275e1daedf3217b03a386eb06c3745fb67049f622d10710b816b757768dcc6",
+          "mean_abs_luminance_delta_from_previous": 0.06948001662581699
+        },
+        {
+          "rgb_mean": [
+            0.5770376838234847,
+            0.6267577614379237,
+            0.6640588235292749
+          ],
+          "rgb_std": [
+            0.24146026860793315,
+            0.25471483836805664,
+            0.22301099311492348
+          ],
+          "luminance_mean": 0.618880409620098,
+          "luminance_std": 0.15785942115598334,
+          "luminance_entropy_bits": 5.703571387169757,
+          "edge_density": 0.10393229166666666,
+          "edge_strength_mean": 0.030600672567056945,
+          "spectral_centroid": 0.09733453455992239,
+          "high_frequency_energy_ratio": 0.10004634596055421,
+          "colorfulness": 0.5403816998414791,
+          "index": 5,
+          "t_seconds": 5.0,
+          "path": "frames/frame_000005.png",
+          "sha256": "9a8a80ab46ca08361a380da7e239dbbc98e7a7fe49baae4d5dddeef1d45d41eb",
+          "mean_abs_luminance_delta_from_previous": 0.07634613643790848
+        },
+        {
+          "rgb_mean": [
+            0.6165643382352625,
+            0.5916022263071483,
+            0.6355602532677913
+          ],
+          "rgb_std": [
+            0.23097883068674271,
+            0.2542524127878012,
+            0.22553330358847629
+          ],
+          "luminance_mean": 0.6000829408496732,
+          "luminance_std": 0.16139690018201988,
+          "luminance_entropy_bits": 6.032449068598305,
+          "edge_density": 0.10861979166666667,
+          "edge_strength_mean": 0.03253826819022847,
+          "spectral_centroid": 0.0985603662379304,
+          "high_frequency_energy_ratio": 0.10353771665987599,
+          "colorfulness": 0.5130782237677437,
+          "index": 6,
+          "t_seconds": 6.0,
+          "path": "frames/frame_000006.png",
+          "sha256": "dfb94af85800eb4c68345e247d44e2f6ef14c7594c9aed0983b127eaf5a509b3",
+          "mean_abs_luminance_delta_from_previous": 0.08580995055147056
+        },
+        {
+          "rgb_mean": [
+            0.6561099877450355,
+            0.5538454861110698,
+            0.604359477124114
+          ],
+          "rgb_std": [
+            0.21813308462773345,
+            0.25201904403103675,
+            0.22666401033866085
+          ],
+          "luminance_mean": 0.5792340293096405,
+          "luminance_std": 0.16374943947009651,
+          "luminance_entropy_bits": 6.374294128805127,
+          "edge_density": 0.112109375,
+          "edge_strength_mean": 0.03420075920626901,
+          "spectral_centroid": 0.09629750424104168,
+          "high_frequency_energy_ratio": 0.10098446652834049,
+          "colorfulness": 0.51211333095925,
+          "index": 7,
+          "t_seconds": 7.0,
+          "path": "frames/frame_000007.png",
+          "sha256": "bd8280160789c962698f88c394dddc2944c527c687f4c507fb0b017fcb59dd9d",
+          "mean_abs_luminance_delta_from_previous": 0.09351092779820261
+        },
+        {
+          "rgb_mean": [
+            0.6732499999999194,
+            0.5353212826797145,
+            0.5887321282679051
+          ],
+          "rgb_std": [
+            0.21024027970361694,
+            0.2501649319441919,
+            0.22716673436450177
+          ],
+          "luminance_mean": 0.5685011910334968,
+          "luminance_std": 0.1655227956559793,
+          "luminance_entropy_bits": 6.383654364059478,
+          "edge_density": 0.09734375,
+          "edge_strength_mean": 0.030776302414528032,
+          "spectral_centroid": 0.08670828228059702,
+          "high_frequency_energy_ratio": 0.09160385248131206,
+          "colorfulness": 0.5086781224967108,
+          "index": 8,
+          "t_seconds": 8.0,
+          "path": "frames/frame_000008.png",
+          "sha256": "56e8c3fc7ede477af13e2186484849c58e481ef530c2da138af446e08c571e4c",
+          "mean_abs_luminance_delta_from_previous": 0.0904510120506536
+        },
+        {
+          "rgb_mean": [
+            0.6766946486927199,
+            0.5264267769607688,
+            0.5802724673202115
+          ],
+          "rgb_std": [
+            0.21214549913849134,
+            0.2541089416956296,
+            0.2313409716508274
+          ],
+          "luminance_mean": 0.5622613853349674,
+          "luminance_std": 0.16875855653028762,
+          "luminance_entropy_bits": 6.296976432034139,
+          "edge_density": 0.08838541666666666,
+          "edge_strength_mean": 0.02774135524847282,
+          "spectral_centroid": 0.0779178180136403,
+          "high_frequency_energy_ratio": 0.08472514067839952,
+          "colorfulness": 0.5175981596561833,
+          "index": 9,
+          "t_seconds": 9.0,
+          "path": "frames/frame_000009.png",
+          "sha256": "06662ca5b00f92aa72db473f6f28d46d726e8622bbe0edd8e85ba5c9c3223414",
+          "mean_abs_luminance_delta_from_previous": 0.07460762109885621
+        },
+        {
+          "rgb_mean": [
+            0.6718353758169234,
+            0.5196023284313525,
+            0.5724835580064848
+          ],
+          "rgb_std": [
+            0.21585935599344452,
+            0.26335444316341866,
+            0.24096640539121728
+          ],
+          "luminance_mean": 0.5557850990808824,
+          "luminance_std": 0.17651666067448685,
+          "luminance_entropy_bits": 6.192004457735353,
+          "edge_density": 0.08645833333333333,
+          "edge_strength_mean": 0.02769317354131917,
+          "spectral_centroid": 0.07667883064653601,
+          "high_frequency_energy_ratio": 0.08284290584067473,
+          "colorfulness": 0.5290361627502875,
+          "index": 10,
+          "t_seconds": 10.0,
+          "path": "frames/frame_000010.png",
+          "sha256": "aa75a372d624f75f04bf1e8de648f5e7a421a7600a47515b20bd384414557fc7",
+          "mean_abs_luminance_delta_from_previous": 0.06675452555147059
+        },
+        {
+          "rgb_mean": [
+            0.6682705269606894,
+            0.5234743668300371,
+            0.5758168913398346
+          ],
+          "rgb_std": [
+            0.21593483514578413,
+            0.26260359083447404,
+            0.24037250923285872
+          ],
+          "luminance_mean": 0.5580371607434641,
+          "luminance_std": 0.1763250177616256,
+          "luminance_entropy_bits": 6.07127953017916,
+          "edge_density": 0.08072916666666667,
+          "edge_strength_mean": 0.02616551071292311,
+          "spectral_centroid": 0.07591418588032717,
+          "high_frequency_energy_ratio": 0.08245099453862383,
+          "colorfulness": 0.5249815085523493,
+          "index": 11,
+          "t_seconds": 11.0,
+          "path": "frames/frame_000011.png",
+          "sha256": "f4520b1a25f5d3baabccd929d2543417ba95db6404d810fbcb8b7bfcc3cfaac1",
+          "mean_abs_luminance_delta_from_previous": 0.06282848433415032
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_image_statistics",
+      "created_at_utc": "2026-06-19T07:09:03Z",
+      "manifest_path": "runs/cross_palette_controls/mandelbrot_c_spatial_julia_d_palette/manifest.json",
+      "manifest_sha256": "e52f4b5836d0fff1a25dd1c8617d26b0499d19533615d663a5ef5ce94f78f162",
+      "condition": {
+        "condition_id": "mandelbrot_c_spatial_julia_d_palette",
+        "condition_family": "control",
+        "temporal_policy": "ordered",
+        "semantic_load": "none",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "cross_family_palette_matched_control",
+        "description": "Luminance-rank transform using the spatial ordering of mandelbrot_zoom_c and the frame-aligned RGB pixel multiset of julia_zoom_d."
+      },
+      "stimulus_config_sha256": "1c70c69d7dd0532d7db5dcf6a26fc5d532c4a4c1c528715f9cd0f2ebfd2adb31",
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "luminance_mean": {
+          "mean": 0.6163267748400054,
+          "std": 0.05137128837693058,
+          "min": 0.5557850990808824,
+          "max": 0.7029117515522876
+        },
+        "luminance_std": {
+          "mean": 0.15425548130274666,
+          "std": 0.0187950093452961,
+          "min": 0.11411129867165114,
+          "max": 0.17651666067448685
+        },
+        "luminance_entropy_bits": {
+          "mean": 5.380181986398043,
+          "std": 1.0416369705200679,
+          "min": 3.2723304733934326,
+          "max": 6.383654364059478
+        },
+        "edge_density": {
+          "mean": 0.008145616319444444,
+          "std": 0.0047547335719434645,
+          "min": 0.002955729166666667,
+          "max": 0.0185546875
+        },
+        "edge_strength_mean": {
+          "mean": 0.005939780449425581,
+          "std": 0.0011759254180577897,
+          "min": 0.0038530922384510443,
+          "max": 0.008622224470754428
+        },
+        "spectral_centroid": {
+          "mean": 0.0285083146325405,
+          "std": 0.00540702135578904,
+          "min": 0.022512547254724253,
+          "max": 0.03800620620618021
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.01747847291233738,
+          "std": 0.006084935997087562,
+          "min": 0.011522313322680704,
+          "max": 0.029773134386236362
+        },
+        "colorfulness": {
+          "mean": 0.5434403424705376,
+          "std": 0.02875587819620467,
+          "min": 0.508678122496711,
+          "max": 0.5869748716170059
+        },
+        "mean_abs_luminance_delta_from_previous": {
+          "mean": 0.04602611983437313,
+          "std": 0.010934015288075546,
+          "min": 0.031523923733660135,
+          "max": 0.06789484820261436
+        },
+        "rgb_mean": {
+          "channels": [
+            {
+              "mean": 0.5681791002859318,
+              "std": 0.10525558551681062,
+              "min": 0.37952604166680826,
+              "max": 0.676694648692766
+            },
+            {
+              "mean": 0.6260580320669323,
+              "std": 0.09515786613610985,
+              "min": 0.5196023284314396,
+              "max": 0.789870098038867
+            },
+            {
+              "mean": 0.6617062823391938,
+              "std": 0.07752700751354853,
+              "min": 0.572483558006486,
+              "max": 0.7937592933006015
+            }
+          ]
+        },
+        "rgb_std": {
+          "channels": [
+            {
+              "mean": 0.224660887532362,
+              "std": 0.014090462709894032,
+              "min": 0.20313249157281982,
+              "max": 0.24620112688053655
+            },
+            {
+              "mean": 0.24426083369781282,
+              "std": 0.019974922083271306,
+              "min": 0.19462935405007883,
+              "max": 0.2633544431634181
+            },
+            {
+              "mean": 0.21605775047567474,
+              "std": 0.022318696652689728,
+              "min": 0.16514980799569173,
+              "max": 0.2409664053912164
+            }
+          ]
+        }
+      },
+      "frame_stats": [
+        {
+          "rgb_mean": [
+            0.37952604166680826,
+            0.789870098038867,
+            0.7937592933006015
+          ],
+          "rgb_std": [
+            0.20313249157281982,
+            0.19462935405007883,
+            0.16514980799569173
+          ],
+          "luminance_mean": 0.7029117515522876,
+          "luminance_std": 0.11411129867165114,
+          "luminance_entropy_bits": 3.2723304733934326,
+          "edge_density": 0.007252604166666667,
+          "edge_strength_mean": 0.0038530922384510443,
+          "spectral_centroid": 0.03497024010197572,
+          "high_frequency_energy_ratio": 0.02304839851529008,
+          "colorfulness": 0.5577291460849293,
+          "index": 0,
+          "t_seconds": 0.0,
+          "path": "frames/frame_000000.png",
+          "sha256": "1004e973fbb2936271f6b57a00755c95e3bf6c87c2145704127b0e64b83ebd04",
+          "mean_abs_luminance_delta_from_previous": null
+        },
+        {
+          "rgb_mean": [
+            0.41258282271243263,
+            0.7638383374181329,
+            0.7733109681369994
+          ],
+          "rgb_std": [
+            0.22081986907636852,
+            0.2133814161108897,
+            0.18143351226702886
+          ],
+          "luminance_mean": 0.6898453389297385,
+          "luminance_std": 0.12531357799301518,
+          "luminance_entropy_bits": 3.7579135838333504,
+          "edge_density": 0.011119791666666667,
+          "edge_strength_mean": 0.0050075276101498745,
+          "spectral_centroid": 0.037061664577683076,
+          "high_frequency_energy_ratio": 0.02564204224735991,
+          "colorfulness": 0.5774909663705431,
+          "index": 1,
+          "t_seconds": 1.0,
+          "path": "frames/frame_000001.png",
+          "sha256": "d3f933858a6d79007dbe803c750c91c24e34e7a59cd8ececfc161c502f8f7dfb",
+          "mean_abs_luminance_delta_from_previous": 0.03366440512663398
+        },
+        {
+          "rgb_mean": [
+            0.4519681372549551,
+            0.7311460375815422,
+            0.7472314133982527
+          ],
+          "rgb_std": [
+            0.235278417117316,
+            0.2311660690082717,
+            0.19769697141196488
+          ],
+          "luminance_mean": 0.6729541801062091,
+          "luminance_std": 0.137288866581604,
+          "luminance_entropy_bits": 4.2828246957075375,
+          "edge_density": 0.0185546875,
+          "edge_strength_mean": 0.0058542600648977825,
+          "spectral_centroid": 0.03262782578348065,
+          "high_frequency_energy_ratio": 0.02377812551996823,
+          "colorfulness": 0.5869748716170059,
+          "index": 2,
+          "t_seconds": 2.0,
+          "path": "frames/frame_000002.png",
+          "sha256": "b6f435cec4e8ecb5de8b5acc9f4006ee73bb8ff117ebe3241d2fad9325335883",
+          "mean_abs_luminance_delta_from_previous": 0.03833509689542483
+        },
+        {
+          "rgb_mean": [
+            0.49840839460781705,
+            0.6913810253267121,
+            0.7152046568625446
+          ],
+          "rgb_std": [
+            0.2457465918375011,
+            0.24698230528388007,
+            0.21281347431382308
+          ],
+          "luminance_mean": 0.652075110232843,
+          "luminance_std": 0.14905045586942886,
+          "luminance_entropy_bits": 4.898961239956403,
+          "edge_density": 0.01578125,
+          "edge_strength_mean": 0.007533198277678479,
+          "spectral_centroid": 0.03800620620618021,
+          "high_frequency_energy_ratio": 0.029773134386236362,
+          "colorfulness": 0.5845583540412306,
+          "index": 3,
+          "t_seconds": 3.0,
+          "path": "frames/frame_000003.png",
+          "sha256": "4b86994d9aaf4344fcc7d9f1c1dc55d7c1f9a63907bd77103c976584ed8b2832",
+          "mean_abs_luminance_delta_from_previous": 0.06789484820261436
+        },
+        {
+          "rgb_mean": [
+            0.5359012459149808,
+            0.659430657679765,
+            0.6896854575161134
+          ],
+          "rgb_std": [
+            0.24620112688053655,
+            0.2537526570959004,
+            0.22054431203807195
+          ],
+          "luminance_mean": 0.6353527012867647,
+          "luminance_std": 0.15517278508678176,
+          "luminance_entropy_bits": 5.295924475304476,
+          "edge_density": 0.0083984375,
+          "edge_strength_mean": 0.005617904614824635,
+          "spectral_centroid": 0.025291628288363812,
+          "high_frequency_energy_ratio": 0.015535005109666997,
+          "colorfulness": 0.5686635635087389,
+          "index": 4,
+          "t_seconds": 4.0,
+          "path": "frames/frame_000004.png",
+          "sha256": "657b5960f75920a65806aed0beda11633d0c2c4c0b490b067889af2f37c49598",
+          "mean_abs_luminance_delta_from_previous": 0.042655715584150315
+        },
+        {
+          "rgb_mean": [
+            0.5770376838235122,
+            0.6267577614379348,
+            0.6640588235293382
+          ],
+          "rgb_std": [
+            0.2414602686079192,
+            0.2547148383680964,
+            0.22301099311493894
+          ],
+          "luminance_mean": 0.618880409620098,
+          "luminance_std": 0.1578594211559833,
+          "luminance_entropy_bits": 5.703571387169757,
+          "edge_density": 0.0069921875,
+          "edge_strength_mean": 0.006048601963002514,
+          "spectral_centroid": 0.02629989313113228,
+          "high_frequency_energy_ratio": 0.0153762180119421,
+          "colorfulness": 0.5403816998414791,
+          "index": 5,
+          "t_seconds": 5.0,
+          "path": "frames/frame_000005.png",
+          "sha256": "f509856dd28b7357affe45fca321d30545ede0a800e972ed118d7a033fe95295",
+          "mean_abs_luminance_delta_from_previous": 0.0524473384599673
+        },
+        {
+          "rgb_mean": [
+            0.6165643382352596,
+            0.5916022263071433,
+            0.6355602532679131
+          ],
+          "rgb_std": [
+            0.23097883068678407,
+            0.25425241278778854,
+            0.22553330358846857
+          ],
+          "luminance_mean": 0.6000829408496732,
+          "luminance_std": 0.16139690018201988,
+          "luminance_entropy_bits": 6.032449068598305,
+          "edge_density": 0.002955729166666667,
+          "edge_strength_mean": 0.004994002297779367,
+          "spectral_centroid": 0.024795711397405905,
+          "high_frequency_energy_ratio": 0.011949352165079127,
+          "colorfulness": 0.5130782237677437,
+          "index": 6,
+          "t_seconds": 6.0,
+          "path": "frames/frame_000006.png",
+          "sha256": "a09a5fc9550349f937e41354c1327f6a6418bae0e8eb7b65ed12dd600c608e76",
+          "mean_abs_luminance_delta_from_previous": 0.048283612765522864
+        },
+        {
+          "rgb_mean": [
+            0.6561099877449553,
+            0.5538454861111367,
+            0.6043594771241229
+          ],
+          "rgb_std": [
+            0.21813308462774192,
+            0.25201904403105285,
+            0.22666401033867162
+          ],
+          "luminance_mean": 0.5792340293096405,
+          "luminance_std": 0.16374943947009654,
+          "luminance_entropy_bits": 6.374294128805127,
+          "edge_density": 0.0031510416666666666,
+          "edge_strength_mean": 0.005727202440356341,
+          "spectral_centroid": 0.025803458428897513,
+          "high_frequency_energy_ratio": 0.012801979503162994,
+          "colorfulness": 0.51211333095925,
+          "index": 7,
+          "t_seconds": 7.0,
+          "path": "frames/frame_000007.png",
+          "sha256": "ff7958b21908856e72584ffb70a3daf24954e6cae234ce86fc3860d79fb64952",
+          "mean_abs_luminance_delta_from_previous": 0.05167107073120915
+        },
+        {
+          "rgb_mean": [
+            0.673249999999925,
+            0.5353212826797282,
+            0.5887321282678528
+          ],
+          "rgb_std": [
+            0.21024027970362866,
+            0.2501649319442289,
+            0.2271667343644983
+          ],
+          "luminance_mean": 0.5685011910334967,
+          "luminance_std": 0.1655227956559793,
+          "luminance_entropy_bits": 6.383654364059478,
+          "edge_density": 0.0036197916666666666,
+          "edge_strength_mean": 0.0057136633257678145,
+          "spectral_centroid": 0.023380999853368105,
+          "high_frequency_energy_ratio": 0.012135360186811328,
+          "colorfulness": 0.508678122496711,
+          "index": 8,
+          "t_seconds": 8.0,
+          "path": "frames/frame_000008.png",
+          "sha256": "44217e5ef3cea5aa41c74679e2484b546380a304dd4615e6447151df69c1c418",
+          "mean_abs_luminance_delta_from_previous": 0.04368244009395424
+        },
+        {
+          "rgb_mean": [
+            0.676694648692766,
+            0.5264267769607645,
+            0.5802724673202365
+          ],
+          "rgb_std": [
+            0.21214549913850123,
+            0.254108941695639,
+            0.23134097165083953
+          ],
+          "luminance_mean": 0.5622613853349674,
+          "luminance_std": 0.16875855653028762,
+          "luminance_entropy_bits": 6.296976432034139,
+          "edge_density": 0.004440104166666667,
+          "edge_strength_mean": 0.00568841378136365,
+          "spectral_centroid": 0.022512547254724253,
+          "high_frequency_energy_ratio": 0.011522313322680704,
+          "colorfulness": 0.5175981596561833,
+          "index": 9,
+          "t_seconds": 9.0,
+          "path": "frames/frame_000009.png",
+          "sha256": "1db095f71393c0b69f87550b22055b662fde664bc43d937ed654f9646560979e",
+          "mean_abs_luminance_delta_from_previous": 0.031523923733660135
+        },
+        {
+          "rgb_mean": [
+            0.6718353758170412,
+            0.5196023284314396,
+            0.572483558006486
+          ],
+          "rgb_std": [
+            0.21585935599343997,
+            0.2633544431634181,
+            0.2409664053912164
+          ],
+          "luminance_mean": 0.5557850990808824,
+          "luminance_std": 0.17651666067448685,
+          "luminance_entropy_bits": 6.192004457735353,
+          "edge_density": 0.005846354166666666,
+          "edge_strength_mean": 0.006617274308081042,
+          "spectral_centroid": 0.023018307301671807,
+          "high_frequency_energy_ratio": 0.012067760890470281,
+          "colorfulness": 0.5290361627502875,
+          "index": 10,
+          "t_seconds": 10.0,
+          "path": "frames/frame_000010.png",
+          "sha256": "73f21bd72ce4ffccc2553093de3e5dca1ebb1f940fbb7b89f213e1c71c620b73",
+          "mean_abs_luminance_delta_from_previous": 0.03559035816993463
+        },
+        {
+          "rgb_mean": [
+            0.6682705269607284,
+            0.5234743668300215,
+            0.5758168913398645
+          ],
+          "rgb_std": [
+            0.2159348351457865,
+            0.2626035908345091,
+            0.2403725092328828
+          ],
+          "luminance_mean": 0.5580371607434641,
+          "luminance_std": 0.1763250177616256,
+          "luminance_entropy_bits": 6.07127953017916,
+          "edge_density": 0.009635416666666667,
+          "edge_strength_mean": 0.008622224470754428,
+          "spectral_centroid": 0.02833129326560268,
+          "high_frequency_energy_ratio": 0.016111985089380467,
+          "colorfulness": 0.5249815085523493,
+          "index": 11,
+          "t_seconds": 11.0,
+          "path": "frames/frame_000011.png",
+          "sha256": "afcc4b412127dd6453f2ff789a545979aa71538555ac48510441a33a24ae32f3",
+          "mean_abs_luminance_delta_from_previous": 0.06053850841503267
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_image_statistics",
+      "created_at_utc": "2026-06-19T07:09:03Z",
+      "manifest_path": "runs/cross_palette_controls/julia_d_spatial_mandelbrot_c_palette/manifest.json",
+      "manifest_sha256": "10e6a7e85bc89e11977b9c0cfb7cb8bc732af65f6ae517f24c23cc0be233787b",
+      "condition": {
+        "condition_id": "julia_d_spatial_mandelbrot_c_palette",
+        "condition_family": "control",
+        "temporal_policy": "ordered",
+        "semantic_load": "none",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "cross_family_palette_matched_control",
+        "description": "Luminance-rank transform using the spatial ordering of julia_zoom_d and the frame-aligned RGB pixel multiset of mandelbrot_zoom_c."
+      },
+      "stimulus_config_sha256": "70f9aee62de5352864e16a52a56740c5018ffe46f0a7d57dcfe1b27dce926672",
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "luminance_mean": {
+          "mean": 0.3880190870812909,
+          "std": 0.05260877950923716,
+          "min": 0.30149138829656863,
+          "max": 0.4750431024305556
+        },
+        "luminance_std": {
+          "mean": 0.09472066584391302,
+          "std": 0.02305930235337271,
+          "min": 0.0629110786686121,
+          "max": 0.12742370684874757
+        },
+        "luminance_entropy_bits": {
+          "mean": 5.01450012806968,
+          "std": 0.4837298748165212,
+          "min": 4.091190371201275,
+          "max": 5.838847517753948
+        },
+        "edge_density": {
+          "mean": 0.06572699652777778,
+          "std": 0.037618863267110246,
+          "min": 0.0124609375,
+          "max": 0.12475260416666667
+        },
+        "edge_strength_mean": {
+          "mean": 0.016647591619017445,
+          "std": 0.0062329845543476325,
+          "min": 0.008252721222869738,
+          "max": 0.025911426304736036
+        },
+        "spectral_centroid": {
+          "mean": 0.13341517000093003,
+          "std": 0.03999481936958956,
+          "min": 0.08184505579752531,
+          "max": 0.18816483319488989
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.16463975113324023,
+          "std": 0.05944429856176177,
+          "min": 0.08688124947661048,
+          "max": 0.2533765055943956
+        },
+        "colorfulness": {
+          "mean": 0.28829954175226263,
+          "std": 0.03142549843020901,
+          "min": 0.2488269803203907,
+          "max": 0.3311021852113946
+        },
+        "mean_abs_luminance_delta_from_previous": {
+          "mean": 0.048888366180184196,
+          "std": 0.01668189119043528,
+          "min": 0.025226595966094768,
+          "max": 0.07618614540441176
+        },
+        "rgb_mean": {
+          "channels": [
+            {
+              "mean": 0.5440934436274244,
+              "std": 0.06999154111709671,
+              "min": 0.4274682393790936,
+              "max": 0.6553140318625932
+            },
+            {
+              "mean": 0.3077595996732573,
+              "std": 0.0531318885083367,
+              "min": 0.2241209150327566,
+              "max": 0.4030448325163538
+            },
+            {
+              "mean": 0.7234786049835532,
+              "std": 0.02950098756499052,
+              "min": 0.657419321895314,
+              "max": 0.7598300653591983
+            }
+          ]
+        },
+        "rgb_std": {
+          "channels": [
+            {
+              "mean": 0.12547740718004358,
+              "std": 0.03501330236475143,
+              "min": 0.07945844348632278,
+              "max": 0.17683049960377087
+            },
+            {
+              "mean": 0.09246991643937134,
+              "std": 0.014765985761020416,
+              "min": 0.0692178019539128,
+              "max": 0.11305793425421515
+            },
+            {
+              "mean": 0.1526178317864319,
+              "std": 0.06913640992850159,
+              "min": 0.07110664026516575,
+              "max": 0.27067890976513787
+            }
+          ]
+        }
+      },
+      "frame_stats": [
+        {
+          "rgb_mean": [
+            0.4274682393790936,
+            0.2241209150327566,
+            0.6969579248363862
+          ],
+          "rgb_std": [
+            0.174852584163764,
+            0.10227090644319052,
+            0.27067890976513787
+          ],
+          "luminance_mean": 0.30149138829656863,
+          "luminance_std": 0.12448761288099547,
+          "luminance_entropy_bits": 4.091190371201275,
+          "edge_density": 0.07782552083333333,
+          "edge_strength_mean": 0.01580923270856098,
+          "spectral_centroid": 0.08660092686525742,
+          "high_frequency_energy_ratio": 0.08688124947661048,
+          "colorfulness": 0.3282102942401699,
+          "index": 0,
+          "t_seconds": 0.0,
+          "path": "frames/frame_000000.png",
+          "sha256": "648b8386eb754efe22b7ffb60e9d17649fcc87ed574b7b91b4f00e7248bc5e07",
+          "mean_abs_luminance_delta_from_previous": null
+        },
+        {
+          "rgb_mean": [
+            0.4445017361112331,
+            0.23685411560468084,
+            0.6987333026959629
+          ],
+          "rgb_std": [
+            0.17683049960377087,
+            0.1090990445837296,
+            0.26117657836491615
+          ],
+          "luminance_mean": 0.31434767703227123,
+          "luminance_std": 0.12742370684874757,
+          "luminance_entropy_bits": 4.355207612961384,
+          "edge_density": 0.09880208333333333,
+          "edge_strength_mean": 0.020195809145435804,
+          "spectral_centroid": 0.10596229687741746,
+          "high_frequency_energy_ratio": 0.11450081605554058,
+          "colorfulness": 0.3311021852113946,
+          "index": 1,
+          "t_seconds": 1.0,
+          "path": "frames/frame_000001.png",
+          "sha256": "2c219f9879d3261dab87e620bb30ebf24c8c0ceaf0550623f4b71511d6cfa304",
+          "mean_abs_luminance_delta_from_previous": 0.06496797954452616
+        },
+        {
+          "rgb_mean": [
+            0.46767238562087715,
+            0.2524876940360392,
+            0.7113722937091906
+          ],
+          "rgb_std": [
+            0.16903054543747467,
+            0.1101990376476671,
+            0.23849040284544537
+          ],
+          "luminance_mean": 0.331367427563317,
+          "luminance_std": 0.12342905044494262,
+          "luminance_entropy_bits": 4.553675643309871,
+          "edge_density": 0.12475260416666667,
+          "edge_strength_mean": 0.025911426304736036,
+          "spectral_centroid": 0.1368765500859009,
+          "high_frequency_energy_ratio": 0.15763214261455788,
+          "colorfulness": 0.3290903082094313,
+          "index": 2,
+          "t_seconds": 2.0,
+          "path": "frames/frame_000002.png",
+          "sha256": "b858ae39108998233e198574b06bd6654d2d5876b2ba167789aa39067a85dcc2",
+          "mean_abs_luminance_delta_from_previous": 0.07618614540441176
+        },
+        {
+          "rgb_mean": [
+            0.5051779513888891,
+            0.27638904207527,
+            0.7404475592320063
+          ],
+          "rgb_std": [
+            0.1408267053136798,
+            0.10234588692214654,
+            0.18237498311399175
+          ],
+          "luminance_mean": 0.35853458913398695,
+          "luminance_std": 0.10575039799465746,
+          "luminance_entropy_bits": 4.8037646322637055,
+          "edge_density": 0.11248697916666667,
+          "edge_strength_mean": 0.023837628951879162,
+          "spectral_centroid": 0.17663336473402366,
+          "high_frequency_energy_ratio": 0.22223553770615267,
+          "colorfulness": 0.3185208449103714,
+          "index": 3,
+          "t_seconds": 3.0,
+          "path": "frames/frame_000003.png",
+          "sha256": "9fda1e9e5fde3db2ab7e89f504ec800e947d6e9d29059f81866ea9cacfe1bf86",
+          "mean_abs_luminance_delta_from_previous": 0.07388028354779412
+        },
+        {
+          "rgb_mean": [
+            0.5147888071895318,
+            0.2824520016341224,
+            0.7452131331700883
+          ],
+          "rgb_std": [
+            0.13149857204990587,
+            0.09574539304943279,
+            0.1669427583008196
+          ],
+          "luminance_mean": 0.3652581601919935,
+          "luminance_std": 0.0987622035258595,
+          "luminance_entropy_bits": 4.847965294596392,
+          "edge_density": 0.09696614583333334,
+          "edge_strength_mean": 0.0222967119120393,
+          "spectral_centroid": 0.1764422375026037,
+          "high_frequency_energy_ratio": 0.22157040357326913,
+          "colorfulness": 0.3038734559845192,
+          "index": 4,
+          "t_seconds": 4.0,
+          "path": "frames/frame_000004.png",
+          "sha256": "a46dfe36a99ab3a8ca2dc8d2abe64f10f40f6da670d4be0f73fdc2308e81d567",
+          "mean_abs_luminance_delta_from_previous": 0.05688182089460784
+        },
+        {
+          "rgb_mean": [
+            0.5458698427287465,
+            0.30417963643799,
+            0.7557172181371582
+          ],
+          "rgb_std": [
+            0.10672172275329689,
+            0.08919889302053542,
+            0.11719848340666993
+          ],
+          "luminance_mean": 0.388163987694036,
+          "luminance_std": 0.0836405049480845,
+          "luminance_entropy_bits": 5.109450199091332,
+          "edge_density": 0.05412760416666667,
+          "edge_strength_mean": 0.01477901100480398,
+          "spectral_centroid": 0.13698866348004146,
+          "high_frequency_energy_ratio": 0.1669958980069848,
+          "colorfulness": 0.29538992461464664,
+          "index": 5,
+          "t_seconds": 5.0,
+          "path": "frames/frame_000005.png",
+          "sha256": "4108c9490b0c0985406d589d0076c0a0f6748d5fe6f58524160101f201262978",
+          "mean_abs_luminance_delta_from_previous": 0.0456478151245915
+        },
+        {
+          "rgb_mean": [
+            0.5634732945260726,
+            0.3161518075980954,
+            0.7598300653591983
+          ],
+          "rgb_std": [
+            0.08179173355604595,
+            0.07373104395677532,
+            0.07508973361610849
+          ],
+          "luminance_mean": 0.4007659259293301,
+          "luminance_std": 0.06573957679540879,
+          "luminance_entropy_bits": 5.157013779008104,
+          "edge_density": 0.01671875,
+          "edge_strength_mean": 0.008975604009499514,
+          "spectral_centroid": 0.08393633628034469,
+          "high_frequency_energy_ratio": 0.09059556597395182,
+          "colorfulness": 0.26555168644605476,
+          "index": 6,
+          "t_seconds": 6.0,
+          "path": "frames/frame_000006.png",
+          "sha256": "bd84ec729eb55eb4b18430e0a480497cc02cd09846da45c3e6de5ed8d30969a4",
+          "mean_abs_luminance_delta_from_previous": 0.03723622555147059
+        },
+        {
+          "rgb_mean": [
+            0.578515982434689,
+            0.3285534109477313,
+            0.7509357128264816
+          ],
+          "rgb_std": [
+            0.07945844348632278,
+            0.0692178019539128,
+            0.07110664026516575
+          ],
+          "luminance_mean": 0.4121914558415033,
+          "luminance_std": 0.0629110786686121,
+          "luminance_entropy_bits": 5.2447946176783535,
+          "edge_density": 0.0124609375,
+          "edge_strength_mean": 0.008252721222869738,
+          "spectral_centroid": 0.08184505579752531,
+          "high_frequency_energy_ratio": 0.09788396222220018,
+          "colorfulness": 0.2488269803203907,
+          "index": 7,
+          "t_seconds": 7.0,
+          "path": "frames/frame_000007.png",
+          "sha256": "99bad7077b29f5a24732d5efda49b729bd782ff6d51484cd7982c80cfc6ef5d7",
+          "mean_abs_luminance_delta_from_previous": 0.03567614617034314
+        },
+        {
+          "rgb_mean": [
+            0.5937343749999217,
+            0.3420561172385707,
+            0.7385708231207909
+          ],
+          "rgb_std": [
+            0.08650757475916286,
+            0.07454060252787725,
+            0.08219403739129613
+          ],
+          "luminance_mean": 0.42419127660334965,
+          "luminance_std": 0.06839022935359894,
+          "luminance_entropy_bits": 5.278433470217591,
+          "edge_density": 0.018489583333333334,
+          "edge_strength_mean": 0.008487883638450868,
+          "spectral_centroid": 0.09663747814206268,
+          "high_frequency_energy_ratio": 0.12325153503827745,
+          "colorfulness": 0.25290829921839897,
+          "index": 8,
+          "t_seconds": 8.0,
+          "path": "frames/frame_000008.png",
+          "sha256": "17fff87a50b38b419cb25337a794ea0bd7fc4735f4693872871e1eba4d3dee17",
+          "mean_abs_luminance_delta_from_previous": 0.03204283005514706
+        },
+        {
+          "rgb_mean": [
+            0.6056639093136783,
+            0.35322288602939245,
+            0.7256535947711914
+          ],
+          "rgb_std": [
+            0.09539130848518267,
+            0.07940424836475367,
+            0.09670850643123526
+          ],
+          "luminance_mean": 0.4337813447508169,
+          "luminance_std": 0.07462079826673661,
+          "luminance_entropy_bits": 5.322576272328041,
+          "edge_density": 0.03358072916666666,
+          "edge_strength_mean": 0.01099370529937291,
+          "spectral_centroid": 0.1431306724122559,
+          "high_frequency_energy_ratio": 0.1930739608021345,
+          "colorfulness": 0.25455329712080627,
+          "index": 9,
+          "t_seconds": 9.0,
+          "path": "frames/frame_000009.png",
+          "sha256": "509fb8daa3c966838a225c7b0378ded139980fa87363e9b61cfab5751592869f",
+          "mean_abs_luminance_delta_from_previous": 0.025226595966094768
+        },
+        {
+          "rgb_mean": [
+            0.6269407679737665,
+            0.3736027369280847,
+            0.7008923100488701
+          ],
+          "rgb_std": [
+            0.11415800529460152,
+            0.0908282045482198,
+            0.11836901283016771
+          ],
+          "luminance_mean": 0.4510927095077614,
+          "luminance_std": 0.0881246579586548,
+          "luminance_entropy_bits": 5.571082126426164,
+          "edge_density": 0.0571875,
+          "edge_strength_mean": 0.016370470829468253,
+          "spectral_centroid": 0.18776362463883745,
+          "high_frequency_energy_ratio": 0.2533765055943956,
+          "colorfulness": 0.2596621914548283,
+          "index": 10,
+          "t_seconds": 10.0,
+          "path": "frames/frame_000010.png",
+          "sha256": "e6a7688f995dca2bc60d394e86aa56591dc7a78bfcf6e02484717f999556d504",
+          "mean_abs_luminance_delta_from_previous": 0.03567491293913398
+        },
+        {
+          "rgb_mean": [
+            0.6553140318625932,
+            0.4030448325163538,
+            0.657419321895314
+          ],
+          "rgb_std": [
+            0.14866119125731514,
+            0.11305793425421515,
+            0.1510839351062289
+          ],
+          "luminance_mean": 0.4750431024305556,
+          "luminance_std": 0.11336817244065785,
+          "luminance_entropy_bits": 5.838847517753948,
+          "edge_density": 0.08532552083333333,
+          "edge_strength_mean": 0.023860894401092805,
+          "spectral_centroid": 0.18816483319488989,
+          "high_frequency_energy_ratio": 0.2476794365348077,
+          "colorfulness": 0.27190503329613935,
+          "index": 11,
+          "t_seconds": 11.0,
+          "path": "frames/frame_000011.png",
+          "sha256": "edf27dd955fc8777617857d8fc888e0f25966aaea42a9f434ee0e2b5529beb25",
+          "mean_abs_luminance_delta_from_previous": 0.05435127278390522
+        }
+      ]
+    }
+  ],
+  "pairwise_deltas": [
+    {
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "julia_zoom_d",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.22830768775871463,
+        "luminance_std": 0.05953481545883364,
+        "luminance_entropy_bits": 0.36568185832836253,
+        "edge_density": 0.07556423611111111,
+        "edge_strength_mean": 0.018831175720785687,
+        "spectral_centroid": 0.010951277679315155,
+        "high_frequency_energy_ratio": 0.026001671167412754,
+        "colorfulness": 0.255140800718275,
+        "mean_abs_luminance_delta_from_previous": 0.031826687668969095
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.22830768775871463,
+        "luminance_std": 0.05953481545883364,
+        "luminance_entropy_bits": 0.36568185832836253,
+        "edge_density": 0.00501193576388889,
+        "edge_strength_mean": 0.002080179234023945,
+        "spectral_centroid": 0.05012808769273003,
+        "high_frequency_energy_ratio": 0.05084254329384433,
+        "colorfulness": 0.255140800718275,
+        "mean_abs_luminance_delta_from_previous": 0.007737648167335104
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 1.1102230246251565e-16,
+        "luminance_std": 0.0,
+        "luminance_entropy_bits": 0.0,
+        "edge_density": 0.05256944444444444,
+        "edge_strength_mean": 0.008627631935567918,
+        "spectral_centroid": 0.05477876767565951,
+        "high_frequency_energy_ratio": 0.09631873492705852,
+        "colorfulness": 0.0,
+        "mean_abs_luminance_delta_from_previous": 0.01059989451314617
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_d",
+      "right_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.0,
+        "luminance_std": 0.0,
+        "luminance_entropy_bits": 0.0,
+        "edge_density": 0.08057617187499999,
+        "edge_strength_mean": 0.02091135495480963,
+        "spectral_centroid": 0.06107936537204518,
+        "high_frequency_energy_ratio": 0.07684421446125708,
+        "colorfulness": 0.0,
+        "mean_abs_luminance_delta_from_previous": 0.02408903950163399
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_d",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.22830768775871452,
+        "luminance_std": 0.05953481545883364,
+        "luminance_entropy_bits": 0.36568185832836253,
+        "edge_density": 0.022994791666666667,
+        "edge_strength_mean": 0.010203543785217768,
+        "spectral_centroid": 0.04382748999634435,
+        "high_frequency_energy_ratio": 0.07031706375964576,
+        "colorfulness": 0.255140800718275,
+        "mean_abs_luminance_delta_from_previous": 0.021226793155822925
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "aggregate_mean_abs_deltas": {
+        "luminance_mean": 0.22830768775871452,
+        "luminance_std": 0.05953481545883364,
+        "luminance_entropy_bits": 0.36568185832836253,
+        "edge_density": 0.05758138020833333,
+        "edge_strength_mean": 0.010707811169591862,
+        "spectral_centroid": 0.10490685536838953,
+        "high_frequency_energy_ratio": 0.14716127822090286,
+        "colorfulness": 0.255140800718275,
+        "mean_abs_luminance_delta_from_previous": 0.002862246345811066
+      }
+    }
+  ]
+}

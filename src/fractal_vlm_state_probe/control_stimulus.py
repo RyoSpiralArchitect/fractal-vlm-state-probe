@@ -288,6 +288,107 @@ def render_manifest_transform(
     return manifest
 
 
+def render_cross_palette_manifest_transform(
+    output_dir: Path,
+    *,
+    source_manifest_path: Path,
+    palette_manifest_path: Path,
+    max_frames: int | None = None,
+    condition_id: str | None = None,
+    overwrite: bool = False,
+) -> dict[str, Any]:
+    """Use source spatial ranks with frame-aligned RGB pixels from another manifest."""
+    if max_frames is not None and max_frames < 1:
+        raise ValueError("max_frames must be positive")
+
+    with source_manifest_path.open("r", encoding="utf-8") as handle:
+        source_manifest = json.load(handle)
+    with palette_manifest_path.open("r", encoding="utf-8") as handle:
+        palette_manifest = json.load(handle)
+
+    source_frames = list(source_manifest.get("frames") or [])
+    palette_frames = list(palette_manifest.get("frames") or [])
+    if not source_frames:
+        raise ValueError(f"source manifest contains no frames: {source_manifest_path}")
+    if not palette_frames:
+        raise ValueError(f"palette manifest contains no frames: {palette_manifest_path}")
+
+    frame_count = min(len(source_frames), len(palette_frames))
+    if max_frames is not None:
+        frame_count = min(frame_count, max_frames)
+    selected_source_frames = source_frames[:frame_count]
+    selected_palette_frames = palette_frames[:frame_count]
+
+    fps = _manifest_fps(source_manifest)
+    condition = _cross_palette_condition(
+        source_manifest=source_manifest,
+        palette_manifest=palette_manifest,
+        condition_id=condition_id,
+    )
+    frames_dir = output_dir / "frames"
+    frames_dir.mkdir(parents=True, exist_ok=True)
+
+    frame_records = []
+    for output_index, (source_record, palette_record) in enumerate(
+        zip(selected_source_frames, selected_palette_frames)
+    ):
+        filename = f"frame_{output_index:06d}.png"
+        output_frame_path = frames_dir / filename
+        if output_frame_path.exists() and not overwrite:
+            raise FileExistsError(f"{output_frame_path} exists; pass overwrite=True to replace")
+
+        source_path = _resolve_source_frame_path(source_manifest_path, source_record)
+        palette_path = _resolve_source_frame_path(palette_manifest_path, palette_record)
+        with Image.open(source_path) as image:
+            source_array = np.asarray(image.convert("RGB"))
+        with Image.open(palette_path) as image:
+            palette_array = np.asarray(image.convert("RGB"))
+        if source_array.shape != palette_array.shape:
+            raise ValueError(
+                "source and palette frames must have matching RGB shapes; "
+                f"got {source_array.shape} and {palette_array.shape}"
+            )
+
+        array = luminance_quantile_match_rgb(source_array, reference=palette_array)
+        Image.fromarray(array).save(output_frame_path)
+        frame_record = _frame_record(
+            output_index,
+            fps,
+            output_frame_path,
+            output_dir,
+            int(array.shape[1]),
+            int(array.shape[0]),
+        )
+        frame_record["source_index"] = source_record.get("index")
+        frame_record["source_path"] = source_record.get("path")
+        frame_record["source_sha256"] = source_record.get("sha256")
+        frame_record["palette_index"] = palette_record.get("index")
+        frame_record["palette_path"] = palette_record.get("path")
+        frame_record["palette_sha256"] = palette_record.get("sha256")
+        frame_records.append(frame_record)
+
+    stimulus_config = {
+        "schema_version": 1,
+        "kind": "cross_family_luminance_palette_matched",
+        "source_manifest": str(source_manifest_path),
+        "source_manifest_sha256": sha256_file(source_manifest_path),
+        "source_condition": source_manifest.get("stimulus_condition"),
+        "palette_manifest": str(palette_manifest_path),
+        "palette_manifest_sha256": sha256_file(palette_manifest_path),
+        "palette_condition": palette_manifest.get("stimulus_condition"),
+        "max_frames": max_frames,
+        "stimulus_condition": condition.to_dict(),
+    }
+    manifest = _manifest(
+        generator="fractal_vlm_state_probe.control_stimulus",
+        condition=condition,
+        stimulus_config=stimulus_config,
+        frames=frame_records,
+    )
+    write_json(output_dir / "manifest.json", manifest)
+    return manifest
+
+
 def generate_control_frame(spec: GeneratedControlSpec, frame_index: int) -> np.ndarray:
     spec.validate()
     if not 0 <= frame_index < spec.total_frames:
@@ -491,6 +592,29 @@ def _transform_condition(
         source_kind="generated",
         comparison_role=f"{transform_kind}_temporal_control",
         description=f"{transform_kind} temporal transform of {source_id}.",
+    )
+
+
+def _cross_palette_condition(
+    *,
+    source_manifest: dict[str, Any],
+    palette_manifest: dict[str, Any],
+    condition_id: str | None,
+) -> StimulusCondition:
+    source = StimulusCondition.from_dict(source_manifest.get("stimulus_condition") or {})
+    palette = StimulusCondition.from_dict(palette_manifest.get("stimulus_condition") or {})
+    return StimulusCondition(
+        condition_id=condition_id or f"{source.condition_id}_spatial_{palette.condition_id}_palette",
+        condition_family="control",
+        temporal_policy=source.temporal_policy,
+        semantic_load="none",
+        deterministic=True,
+        source_kind=source.source_kind,
+        comparison_role="cross_family_palette_matched_control",
+        description=(
+            f"Luminance-rank transform using the spatial ordering of {source.condition_id} "
+            f"and the frame-aligned RGB pixel multiset of {palette.condition_id}."
+        ),
     )
 
 

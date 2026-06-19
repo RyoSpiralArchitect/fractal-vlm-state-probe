@@ -1,0 +1,1455 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "processor_image_statistics_batch",
+  "created_at_utc": "2026-06-19T07:11:19Z",
+  "manifest_count": 4,
+  "records": [
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_processor_image_statistics",
+      "created_at_utc": "2026-06-19T07:11:02Z",
+      "manifest_path": "runs/source_variant_smoke/stimuli/mandelbrot_c/manifest.json",
+      "manifest_sha256": "d26cbb2017827d2adc70c0bbadff3b419567d1f968a86f232fe18dba62cacdcd",
+      "condition": {
+        "condition_id": "mandelbrot_zoom_c",
+        "condition_family": "fractal",
+        "temporal_policy": "ordered",
+        "semantic_load": "low",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "source_variant",
+        "description": "Second deterministic Mandelbrot source variant for family-internal distance checks."
+      },
+      "stimulus_config_sha256": "528c4c3b72f18624f5e870d8f38b4f15218cac45d113993ca88cb8ddc0f32b6f",
+      "processor_patch_size": 14,
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "tensor_mean": {
+          "mean": 0.050389224474456706,
+          "std": 0.08227441051416369,
+          "min": -0.10052674039392374,
+          "max": 0.1439586758901702
+        },
+        "tensor_std": {
+          "mean": 0.4310919111144462,
+          "std": 0.07071058752362265,
+          "min": 0.3530121243942629,
+          "max": 0.5479248368564507
+        },
+        "tensor_min": {
+          "mean": -1.0,
+          "std": 0.0,
+          "min": -1.0,
+          "max": -1.0
+        },
+        "tensor_max": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "spectral_centroid": {
+          "mean": 0.015452139284216663,
+          "std": 0.005286957027099608,
+          "min": 0.008194656121075268,
+          "max": 0.024462469831020506
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.002422031592072746,
+          "std": 0.001182671756833631,
+          "min": 0.0009787637310868882,
+          "max": 0.004949436810514978
+        },
+        "spectral_centroid_cycles_per_patch": {
+          "mean": 0.15296837460392107,
+          "std": 0.05233820431985604,
+          "min": 0.08112295677785841,
+          "max": 0.24216609622920313
+        },
+        "energy_ratio_above_half_cycle_per_patch": {
+          "mean": 0.07044729550715464,
+          "std": 0.03277802050803324,
+          "min": 0.03517665683001495,
+          "max": 0.13977371222853846
+        },
+        "energy_ratio_above_one_cycle_per_patch": {
+          "mean": 0.028959077902873828,
+          "std": 0.01258633769286003,
+          "min": 0.014575680968844613,
+          "max": 0.05419474892787092
+        },
+        "mean_abs_tensor_delta_from_previous": {
+          "mean": 0.051768013409956536,
+          "std": 0.018438619514845198,
+          "min": 0.029215809060217538,
+          "max": 0.0849740218239709
+        }
+      },
+      "frame_stats": [
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": -0.10052674039392374,
+          "tensor_std": 0.5479248368564507,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.008194656121075268,
+          "high_frequency_energy_ratio": 0.0014658279340610245,
+          "spectral_centroid_cycles_per_patch": 0.08112295677785841,
+          "energy_ratio_above_half_cycle_per_patch": 0.0354078006420583,
+          "energy_ratio_above_one_cycle_per_patch": 0.015019878162344066,
+          "index": 0,
+          "t_seconds": 0.0,
+          "path": "frames/frame_000000.png",
+          "sha256": "ed3d6eada7e1997a581efcb4f6492402a3b54c93ddeba0b866331dacb0f925c7",
+          "mean_abs_tensor_delta_from_previous": null
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": -0.07952370576867,
+          "tensor_std": 0.5370949333704285,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.010096242116637838,
+          "high_frequency_energy_ratio": 0.0019873318416897927,
+          "spectral_centroid_cycles_per_patch": 0.09994769771246174,
+          "energy_ratio_above_half_cycle_per_patch": 0.043169537978093905,
+          "energy_ratio_above_one_cycle_per_patch": 0.019288957619337323,
+          "index": 1,
+          "t_seconds": 1.0,
+          "path": "frames/frame_000001.png",
+          "sha256": "b85a684b49c199b56af5a2b96ee04c453b5e1f00a093041bc5e89b71b2a1566d",
+          "mean_abs_tensor_delta_from_previous": 0.0753436655263859
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": -0.045279527497872514,
+          "tensor_std": 0.51756918221984,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.011371301959681189,
+          "high_frequency_energy_ratio": 0.002248539132582718,
+          "spectral_centroid_cycles_per_patch": 0.11257014617254625,
+          "energy_ratio_above_half_cycle_per_patch": 0.047966431385676335,
+          "energy_ratio_above_one_cycle_per_patch": 0.02228331089643408,
+          "index": 2,
+          "t_seconds": 2.0,
+          "path": "frames/frame_000002.png",
+          "sha256": "24a8b026f988897486e5f55fc563c9e984a73bb47fd035ff74a8db08c3980b42",
+          "mean_abs_tensor_delta_from_previous": 0.06861074179301857
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.014916292854549183,
+          "tensor_std": 0.474919821546651,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.01675393927496677,
+          "high_frequency_energy_ratio": 0.003539189956234966,
+          "spectral_centroid_cycles_per_patch": 0.16585553702083283,
+          "energy_ratio_above_half_cycle_per_patch": 0.07839107934904485,
+          "energy_ratio_above_one_cycle_per_patch": 0.03710239933428159,
+          "index": 3,
+          "t_seconds": 3.0,
+          "path": "frames/frame_000003.png",
+          "sha256": "0819114b7ca8052cc24bd1292ca7de449ee09d8c1a6334272396b58d1935b313",
+          "mean_abs_tensor_delta_from_previous": 0.0849740218239709
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.028416375837725272,
+          "tensor_std": 0.4622714620720199,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.01228509634814859,
+          "high_frequency_energy_ratio": 0.0021491299555169282,
+          "spectral_centroid_cycles_per_patch": 0.12161624909428347,
+          "energy_ratio_above_half_cycle_per_patch": 0.0481171168835363,
+          "energy_ratio_above_one_cycle_per_patch": 0.021300344200207936,
+          "index": 4,
+          "t_seconds": 4.0,
+          "path": "frames/frame_000004.png",
+          "sha256": "0d67395c99f39adfb4036ac0bff4cdc63621048f1bf5f05c8bfb5fde94ba080b",
+          "mean_abs_tensor_delta_from_previous": 0.052451495606703216
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.07059364831034443,
+          "tensor_std": 0.4232047911668663,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.021138949467282453,
+          "high_frequency_energy_ratio": 0.004118901616428942,
+          "spectral_centroid_cycles_per_patch": 0.2092649232166525,
+          "energy_ratio_above_half_cycle_per_patch": 0.09794998473006465,
+          "energy_ratio_above_one_cycle_per_patch": 0.04108147905910783,
+          "index": 5,
+          "t_seconds": 5.0,
+          "path": "frames/frame_000005.png",
+          "sha256": "ff61de99330d77e6add0eb7c8e15c5a34968b5c8418b19e330f2d22d01f30858",
+          "mean_abs_tensor_delta_from_previous": 0.05406843031377816
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.0930015620897989,
+          "tensor_std": 0.39371287065232397,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.024462469831020506,
+          "high_frequency_energy_ratio": 0.004949436810514978,
+          "spectral_centroid_cycles_per_patch": 0.24216609622920313,
+          "energy_ratio_above_half_cycle_per_patch": 0.13977371222853846,
+          "energy_ratio_above_one_cycle_per_patch": 0.05419474892787092,
+          "index": 6,
+          "t_seconds": 6.0,
+          "path": "frames/frame_000006.png",
+          "sha256": "3938376c79df6efa56d36a2896b5654a71dd8450318370a9c3f8a4def3bd01a5",
+          "mean_abs_tensor_delta_from_previous": 0.040259580583709785
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.10537446464469209,
+          "tensor_std": 0.3759732807903362,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.022214802166587923,
+          "high_frequency_energy_ratio": 0.0026447410149220804,
+          "spectral_centroid_cycles_per_patch": 0.21991532156596702,
+          "energy_ratio_above_half_cycle_per_patch": 0.11235105944827073,
+          "energy_ratio_above_one_cycle_per_patch": 0.04326112659867304,
+          "index": 7,
+          "t_seconds": 7.0,
+          "path": "frames/frame_000007.png",
+          "sha256": "c6002a3941805f597b0daae67872bc3923985e482fcf4b3f682800fa51e87e6b",
+          "mean_abs_tensor_delta_from_previous": 0.02978604116114808
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.11628645606205648,
+          "tensor_std": 0.3648747240953651,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.02040859719450148,
+          "high_frequency_energy_ratio": 0.0025033270081235297,
+          "spectral_centroid_cycles_per_patch": 0.2020348045903145,
+          "energy_ratio_above_half_cycle_per_patch": 0.09564553682314345,
+          "energy_ratio_above_one_cycle_per_patch": 0.03791973560115341,
+          "index": 8,
+          "t_seconds": 8.0,
+          "path": "frames/frame_000008.png",
+          "sha256": "4311ecd8fa72a0186cebe10e83bda446764051c70d49359fcc6ed3b4ed3b1c90",
+          "mean_abs_tensor_delta_from_previous": 0.029215809060217538
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.12308217459374443,
+          "tensor_std": 0.3586495423717273,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.016356179442682403,
+          "high_frequency_energy_ratio": 0.001490548081038639,
+          "spectral_centroid_cycles_per_patch": 0.16191791557514626,
+          "energy_ratio_above_half_cycle_per_patch": 0.06624379609970114,
+          "energy_ratio_above_one_cycle_per_patch": 0.024805187661049007,
+          "index": 9,
+          "t_seconds": 9.0,
+          "path": "frames/frame_000009.png",
+          "sha256": "75bc19ac4ee7e88c68ecffa03baedddd694337c5c790b7695fd8cba84b883e2a",
+          "mean_abs_tensor_delta_from_previous": 0.030819895415520594
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.13437101707086574,
+          "tensor_std": 0.3530121243942629,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.012226879723152473,
+          "high_frequency_energy_ratio": 0.0009787637310868882,
+          "spectral_centroid_cycles_per_patch": 0.12103993390990775,
+          "energy_ratio_above_half_cycle_per_patch": 0.04517483368771268,
+          "energy_ratio_above_one_cycle_per_patch": 0.01667608580518213,
+          "index": 10,
+          "t_seconds": 10.0,
+          "path": "frames/frame_000010.png",
+          "sha256": "51743394ad7f8f613005898297b0e7ca88a51a9112342b72c175998d156ee953",
+          "mean_abs_tensor_delta_from_previous": 0.041264074758058204
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.1439586758901702,
+          "tensor_std": 0.36389536383708243,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.009916557764863065,
+          "high_frequency_energy_ratio": 0.000988642022672465,
+          "spectral_centroid_cycles_per_patch": 0.098168913381879,
+          "energy_ratio_above_half_cycle_per_patch": 0.03517665683001495,
+          "energy_ratio_above_one_cycle_per_patch": 0.014575680968844613,
+          "index": 11,
+          "t_seconds": 11.0,
+          "path": "frames/frame_000011.png",
+          "sha256": "532e20f1657c2b7be64f84313bec925fb65be382527308d74080fadaabcb8b39",
+          "mean_abs_tensor_delta_from_previous": 0.06265439146701099
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_processor_image_statistics",
+      "created_at_utc": "2026-06-19T07:11:09Z",
+      "manifest_path": "runs/source_variant_smoke/stimuli/julia_d/manifest.json",
+      "manifest_sha256": "3a86cc361fa6db6ebbdda225500c6a00b3342b1c9510513ea6ad9c38e7b5ade2",
+      "condition": {
+        "condition_id": "julia_zoom_d",
+        "condition_family": "fractal",
+        "temporal_policy": "ordered",
+        "semantic_load": "low",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "source_variant",
+        "description": "Second deterministic Julia source variant for family-internal distance checks."
+      },
+      "stimulus_config_sha256": "d07ab6340cc949b59af24d8b0f2f71663f9268ef3e4fb9b90f9aadfe643f7ff6",
+      "processor_patch_size": 14,
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "tensor_mean": {
+          "mean": 0.23669275104043297,
+          "std": 0.0456860327571518,
+          "min": 0.17532344704118763,
+          "max": 0.3084792027802905
+        },
+        "tensor_std": {
+          "mean": 0.49158265672628004,
+          "std": 0.023805763211075488,
+          "min": 0.4635720875873947,
+          "max": 0.5380018800219248
+        },
+        "tensor_min": {
+          "mean": -1.0,
+          "std": 0.0,
+          "min": -1.0,
+          "max": -1.0
+        },
+        "tensor_max": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "spectral_centroid": {
+          "mean": 0.02804030526587879,
+          "std": 0.005560556341803259,
+          "min": 0.018587135985556277,
+          "max": 0.034970144030971956
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.006135694421930714,
+          "std": 0.0009752923775077373,
+          "min": 0.004488980223020265,
+          "max": 0.007338914615568018
+        },
+        "spectral_centroid_cycles_per_patch": {
+          "mean": 0.2775848600006125,
+          "std": 0.055046699350425256,
+          "min": 0.18400325857512687,
+          "max": 0.3461867637671876
+        },
+        "energy_ratio_above_half_cycle_per_patch": {
+          "mean": 0.1680111686580744,
+          "std": 0.03702076625838836,
+          "min": 0.10619338331097479,
+          "max": 0.2190398776994107
+        },
+        "energy_ratio_above_one_cycle_per_patch": {
+          "mean": 0.08446072427319283,
+          "std": 0.016557869322902995,
+          "min": 0.058642709831557185,
+          "max": 0.1071121357772946
+        },
+        "mean_abs_tensor_delta_from_previous": {
+          "mean": 0.09784344215354338,
+          "std": 0.023002719822937362,
+          "min": 0.05146477726201741,
+          "max": 0.1277045514867195
+        }
+      },
+      "frame_stats": [
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.3084792027802905,
+          "tensor_std": 0.5380018800219248,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.034970144030971956,
+          "high_frequency_energy_ratio": 0.007338914615568018,
+          "spectral_centroid_cycles_per_patch": 0.3461867637671876,
+          "energy_ratio_above_half_cycle_per_patch": 0.2190398776994107,
+          "energy_ratio_above_one_cycle_per_patch": 0.1071121357772946,
+          "index": 0,
+          "t_seconds": 0.0,
+          "path": "frames/frame_000000.png",
+          "sha256": "b7d226a8493825ee48d44c425478d92cce22e24d72eefbbcf9129a7db00b514a",
+          "mean_abs_tensor_delta_from_previous": null
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.2994117458728062,
+          "tensor_std": 0.527284471289326,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.03300741780345544,
+          "high_frequency_energy_ratio": 0.006739361111273489,
+          "spectral_centroid_cycles_per_patch": 0.32675676541593285,
+          "energy_ratio_above_half_cycle_per_patch": 0.20348116659303275,
+          "energy_ratio_above_one_cycle_per_patch": 0.1016078411571975,
+          "index": 1,
+          "t_seconds": 1.0,
+          "path": "frames/frame_000001.png",
+          "sha256": "2891c3e7eae86513428e5a4c035b467e523813ea57a12c5202982324a4caf61c",
+          "mean_abs_tensor_delta_from_previous": 0.05146477726201741
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.2864403358290912,
+          "tensor_std": 0.5150750421524805,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.03305017222281297,
+          "high_frequency_energy_ratio": 0.006787559749511701,
+          "spectral_centroid_cycles_per_patch": 0.3271800125738806,
+          "energy_ratio_above_half_cycle_per_patch": 0.20317840342986565,
+          "energy_ratio_above_one_cycle_per_patch": 0.1006381234565446,
+          "index": 2,
+          "t_seconds": 2.0,
+          "path": "frames/frame_000002.png",
+          "sha256": "e51d436aad0366535efcc87e43ddb66ce85a17b378f4b7b94168c3f2ceaba237",
+          "mean_abs_tensor_delta_from_previous": 0.06475071391098047
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.26945228138451827,
+          "tensor_std": 0.5036035827893621,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.03224828217597272,
+          "high_frequency_energy_ratio": 0.006860633026681388,
+          "spectral_centroid_cycles_per_patch": 0.31924170611546615,
+          "energy_ratio_above_half_cycle_per_patch": 0.1965241171985269,
+          "energy_ratio_above_one_cycle_per_patch": 0.09887571627397863,
+          "index": 3,
+          "t_seconds": 3.0,
+          "path": "frames/frame_000003.png",
+          "sha256": "d0b6327f34e9bd6590eb7a15ee1f1027b1295f456787ba5ed5e64d4e4eebad77",
+          "mean_abs_tensor_delta_from_previous": 0.08159385103856061
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.2560728901528604,
+          "tensor_std": 0.49244417231084436,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.030830521425179648,
+          "high_frequency_energy_ratio": 0.0069055162758475805,
+          "spectral_centroid_cycles_per_patch": 0.3052065907416634,
+          "energy_ratio_above_half_cycle_per_patch": 0.18230003486246615,
+          "energy_ratio_above_one_cycle_per_patch": 0.09091777560576612,
+          "index": 4,
+          "t_seconds": 4.0,
+          "path": "frames/frame_000004.png",
+          "sha256": "44275e1daedf3217b03a386eb06c3745fb67049f622d10710b816b757768dcc6",
+          "mean_abs_tensor_delta_from_previous": 0.09409426934187526
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.24452034642768905,
+          "tensor_std": 0.4774699605491345,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.03090941291328376,
+          "high_frequency_energy_ratio": 0.006616719661555183,
+          "spectral_centroid_cycles_per_patch": 0.30598757662869175,
+          "energy_ratio_above_half_cycle_per_patch": 0.1843892236162979,
+          "energy_ratio_above_one_cycle_per_patch": 0.09039460642146717,
+          "index": 5,
+          "t_seconds": 5.0,
+          "path": "frames/frame_000005.png",
+          "sha256": "9a8a80ab46ca08361a380da7e239dbbc98e7a7fe49baae4d5dddeef1d45d41eb",
+          "mean_abs_tensor_delta_from_previous": 0.10360964966991465
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.2284355373095472,
+          "tensor_std": 0.46703184748799426,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.03055429209659197,
+          "high_frequency_energy_ratio": 0.00687920334684747,
+          "spectral_centroid_cycles_per_patch": 0.302472059901966,
+          "energy_ratio_above_half_cycle_per_patch": 0.1819434899605289,
+          "energy_ratio_above_one_cycle_per_patch": 0.08997540845403877,
+          "index": 6,
+          "t_seconds": 6.0,
+          "path": "frames/frame_000006.png",
+          "sha256": "dfb94af85800eb4c68345e247d44e2f6ef14c7594c9aed0983b127eaf5a509b3",
+          "mean_abs_tensor_delta_from_previous": 0.11584197002628213
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.208721244167272,
+          "tensor_std": 0.4635720875873947,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.027779433331558686,
+          "high_frequency_energy_ratio": 0.005977196179940956,
+          "spectral_centroid_cycles_per_patch": 0.2750023596077065,
+          "energy_ratio_above_half_cycle_per_patch": 0.16267187196533497,
+          "energy_ratio_above_one_cycle_per_patch": 0.08022480529289559,
+          "index": 7,
+          "t_seconds": 7.0,
+          "path": "frames/frame_000007.png",
+          "sha256": "bd8280160789c962698f88c394dddc2944c527c687f4c507fb0b017fcb59dd9d",
+          "mean_abs_tensor_delta_from_previous": 0.12703004594285477
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.197406463239868,
+          "tensor_std": 0.4643054247797534,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.024645460389965547,
+          "high_frequency_energy_ratio": 0.005686096973669964,
+          "spectral_centroid_cycles_per_patch": 0.24397761034092733,
+          "energy_ratio_above_half_cycle_per_patch": 0.14465426397244696,
+          "energy_ratio_above_one_cycle_per_patch": 0.0727032150403992,
+          "index": 8,
+          "t_seconds": 8.0,
+          "path": "frames/frame_000008.png",
+          "sha256": "56e8c3fc7ede477af13e2186484849c58e481ef530c2da138af446e08c571e4c",
+          "mean_abs_tensor_delta_from_previous": 0.1277045514867195
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.18822229093592746,
+          "tensor_std": 0.47372070506377256,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.02077547044958055,
+          "high_frequency_energy_ratio": 0.0048520157564854,
+          "spectral_centroid_cycles_per_patch": 0.2056666645213479,
+          "energy_ratio_above_half_cycle_per_patch": 0.12018916371369177,
+          "energy_ratio_above_one_cycle_per_patch": 0.06241107604047368,
+          "index": 9,
+          "t_seconds": 9.0,
+          "path": "frames/frame_000009.png",
+          "sha256": "06662ca5b00f92aa72db473f6f28d46d726e8622bbe0edd8e85ba5c9c3223414",
+          "mean_abs_tensor_delta_from_previous": 0.11078008568197777
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.17532344704118763,
+          "tensor_std": 0.48927665937017734,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.019125920365615938,
+          "high_frequency_energy_ratio": 0.004488980223020265,
+          "spectral_centroid_cycles_per_patch": 0.18933695181745291,
+          "energy_ratio_above_half_cycle_per_patch": 0.11156902757431515,
+          "energy_ratio_above_one_cycle_per_patch": 0.06002527792670091,
+          "index": 10,
+          "t_seconds": 10.0,
+          "path": "frames/frame_000010.png",
+          "sha256": "aa75a372d624f75f04bf1e8de648f5e7a421a7600a47515b20bd384414557fc7",
+          "mean_abs_tensor_delta_from_previous": 0.10295526899461716
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.17782722734413764,
+          "tensor_std": 0.48720604731319667,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.018587135985556277,
+          "high_frequency_energy_ratio": 0.004496136142767164,
+          "spectral_centroid_cycles_per_patch": 0.18400325857512687,
+          "energy_ratio_above_half_cycle_per_patch": 0.10619338331097479,
+          "energy_ratio_above_one_cycle_per_patch": 0.058642709831557185,
+          "index": 11,
+          "t_seconds": 11.0,
+          "path": "frames/frame_000011.png",
+          "sha256": "f4520b1a25f5d3baabccd929d2543417ba95db6404d810fbcb8b7bfcc3cfaac1",
+          "mean_abs_tensor_delta_from_previous": 0.09645268033317736
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_processor_image_statistics",
+      "created_at_utc": "2026-06-19T07:11:13Z",
+      "manifest_path": "runs/cross_palette_controls/mandelbrot_c_spatial_julia_d_palette/manifest.json",
+      "manifest_sha256": "e52f4b5836d0fff1a25dd1c8617d26b0499d19533615d663a5ef5ce94f78f162",
+      "condition": {
+        "condition_id": "mandelbrot_c_spatial_julia_d_palette",
+        "condition_family": "control",
+        "temporal_policy": "ordered",
+        "semantic_load": "none",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "cross_family_palette_matched_control",
+        "description": "Luminance-rank transform using the spatial ordering of mandelbrot_zoom_c and the frame-aligned RGB pixel multiset of julia_zoom_d."
+      },
+      "stimulus_config_sha256": "1c70c69d7dd0532d7db5dcf6a26fc5d532c4a4c1c528715f9cd0f2ebfd2adb31",
+      "processor_patch_size": 14,
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "tensor_mean": {
+          "mean": 0.23661962409566514,
+          "std": 0.04577051070066509,
+          "min": 0.1751791134210519,
+          "max": 0.3084892022305269
+        },
+        "tensor_std": {
+          "mean": 0.49496299681278116,
+          "std": 0.022731808718394492,
+          "min": 0.4685860736545155,
+          "max": 0.539783348739948
+        },
+        "tensor_min": {
+          "mean": -1.0,
+          "std": 0.0,
+          "min": -1.0,
+          "max": -1.0
+        },
+        "tensor_max": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "spectral_centroid": {
+          "mean": 0.01357573456381711,
+          "std": 0.0040451251991833895,
+          "min": 0.008530967970731876,
+          "max": 0.019440286277926908
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.003884987496953913,
+          "std": 0.002257676981773497,
+          "min": 0.0014243830984996665,
+          "max": 0.007812938678768106
+        },
+        "spectral_centroid_cycles_per_patch": {
+          "mean": 0.13439291557529146,
+          "std": 0.04004469642727622,
+          "min": 0.0844522742306565,
+          "max": 0.19244901557461863
+        },
+        "energy_ratio_above_half_cycle_per_patch": {
+          "mean": 0.06527163714823835,
+          "std": 0.022225106382408735,
+          "min": 0.03836866752258723,
+          "max": 0.09953926094341366
+        },
+        "energy_ratio_above_one_cycle_per_patch": {
+          "mean": 0.03078550700096723,
+          "std": 0.012357967791949137,
+          "min": 0.016492645503902018,
+          "max": 0.049218739991248685
+        },
+        "mean_abs_tensor_delta_from_previous": {
+          "mean": 0.06344302978385899,
+          "std": 0.01570847476924208,
+          "min": 0.0345060674100849,
+          "max": 0.09439932190999645
+        }
+      },
+      "frame_stats": [
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.3084892022305269,
+          "tensor_std": 0.539783348739948,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.019440286277926908,
+          "high_frequency_energy_ratio": 0.007812938678768106,
+          "spectral_centroid_cycles_per_patch": 0.19244901557461863,
+          "energy_ratio_above_half_cycle_per_patch": 0.09474003003676743,
+          "energy_ratio_above_one_cycle_per_patch": 0.049218739991248685,
+          "index": 0,
+          "t_seconds": 0.0,
+          "path": "frames/frame_000000.png",
+          "sha256": "1004e973fbb2936271f6b57a00755c95e3bf6c87c2145704127b0e64b83ebd04",
+          "mean_abs_tensor_delta_from_previous": null
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.2994834262592116,
+          "tensor_std": 0.5291746990667173,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.01908063722920163,
+          "high_frequency_energy_ratio": 0.00732851141445172,
+          "spectral_centroid_cycles_per_patch": 0.18888867163780562,
+          "energy_ratio_above_half_cycle_per_patch": 0.09214855800569055,
+          "energy_ratio_above_one_cycle_per_patch": 0.04751287861532999,
+          "index": 1,
+          "t_seconds": 1.0,
+          "path": "frames/frame_000001.png",
+          "sha256": "d3f933858a6d79007dbe803c750c91c24e34e7a59cd8ececfc161c502f8f7dfb",
+          "mean_abs_tensor_delta_from_previous": 0.0345060674100849
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.28639396928955835,
+          "tensor_std": 0.5173021157424873,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.018330412999238675,
+          "high_frequency_energy_ratio": 0.006924335157536323,
+          "spectral_centroid_cycles_per_patch": 0.18146183067196392,
+          "energy_ratio_above_half_cycle_per_patch": 0.09298178709546172,
+          "energy_ratio_above_one_cycle_per_patch": 0.04822575723497376,
+          "index": 2,
+          "t_seconds": 2.0,
+          "path": "frames/frame_000002.png",
+          "sha256": "b6f435cec4e8ecb5de8b5acc9f4006ee73bb8ff117ebe3241d2fad9325335883",
+          "mean_abs_tensor_delta_from_previous": 0.04250895602800766
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.26948656404062454,
+          "tensor_std": 0.5055967973782721,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.018670408888967264,
+          "high_frequency_energy_ratio": 0.005306392056400551,
+          "spectral_centroid_cycles_per_patch": 0.18482761826080085,
+          "energy_ratio_above_half_cycle_per_patch": 0.09953926094341366,
+          "energy_ratio_above_one_cycle_per_patch": 0.04440228816982044,
+          "index": 3,
+          "t_seconds": 3.0,
+          "path": "frames/frame_000003.png",
+          "sha256": "4b86994d9aaf4344fcc7d9f1c1dc55d7c1f9a63907bd77103c976584ed8b2832",
+          "mean_abs_tensor_delta_from_previous": 0.08051395354956195
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.25609070990638044,
+          "tensor_std": 0.4953287847712775,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.013891050811509546,
+          "high_frequency_energy_ratio": 0.003638522829607055,
+          "spectral_centroid_cycles_per_patch": 0.13751438717275413,
+          "energy_ratio_above_half_cycle_per_patch": 0.06473883685164684,
+          "energy_ratio_above_one_cycle_per_patch": 0.0301999016034587,
+          "index": 4,
+          "t_seconds": 4.0,
+          "path": "frames/frame_000004.png",
+          "sha256": "657b5960f75920a65806aed0beda11633d0c2c4c0b490b067889af2f37c49598",
+          "mean_abs_tensor_delta_from_previous": 0.0578155445659119
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.24450442349091533,
+          "tensor_std": 0.4813093631705813,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.013371688609041848,
+          "high_frequency_energy_ratio": 0.003340592936358637,
+          "spectral_centroid_cycles_per_patch": 0.13237296367915766,
+          "energy_ratio_above_half_cycle_per_patch": 0.06234390550234483,
+          "energy_ratio_above_one_cycle_per_patch": 0.028485555864414876,
+          "index": 5,
+          "t_seconds": 5.0,
+          "path": "frames/frame_000005.png",
+          "sha256": "f509856dd28b7357affe45fca321d30545ede0a800e972ed118d7a033fe95295",
+          "mean_abs_tensor_delta_from_previous": 0.06964791355674871
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.22824627058959449,
+          "tensor_std": 0.4715406964632631,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.011590347111878044,
+          "high_frequency_energy_ratio": 0.0029842714142463804,
+          "spectral_centroid_cycles_per_patch": 0.11473858254760835,
+          "energy_ratio_above_half_cycle_per_patch": 0.05480790535018485,
+          "energy_ratio_above_one_cycle_per_patch": 0.024518480678617276,
+          "index": 6,
+          "t_seconds": 6.0,
+          "path": "frames/frame_000006.png",
+          "sha256": "a09a5fc9550349f937e41354c1327f6a6418bae0e8eb7b65ed12dd600c608e76",
+          "mean_abs_tensor_delta_from_previous": 0.0662715595998792
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.2086518683075666,
+          "tensor_std": 0.4685860736545155,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.01086980486151566,
+          "high_frequency_energy_ratio": 0.0025853097992097644,
+          "spectral_centroid_cycles_per_patch": 0.10760557818853116,
+          "energy_ratio_above_half_cycle_per_patch": 0.05008431403392616,
+          "energy_ratio_above_one_cycle_per_patch": 0.022411764733629973,
+          "index": 7,
+          "t_seconds": 7.0,
+          "path": "frames/frame_000007.png",
+          "sha256": "ff7958b21908856e72584ffb70a3daf24954e6cae234ce86fc3860d79fb64952",
+          "mean_abs_tensor_delta_from_previous": 0.06921410715603427
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.19740137060270407,
+          "tensor_std": 0.4691838187591853,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.009707159977918184,
+          "high_frequency_energy_ratio": 0.001893851944476863,
+          "spectral_centroid_cycles_per_patch": 0.09609598105028047,
+          "energy_ratio_above_half_cycle_per_patch": 0.04565500952318626,
+          "energy_ratio_above_one_cycle_per_patch": 0.019772892358839313,
+          "index": 8,
+          "t_seconds": 8.0,
+          "path": "frames/frame_000008.png",
+          "sha256": "44217e5ef3cea5aa41c74679e2484b546380a304dd4615e6447151df69c1c418",
+          "mean_abs_tensor_delta_from_previous": 0.06591584245955234
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.18799365159881623,
+          "tensor_std": 0.47793980072258174,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.008865855183347046,
+          "high_frequency_energy_ratio": 0.0014546417753564446,
+          "spectral_centroid_cycles_per_patch": 0.08776748849627636,
+          "energy_ratio_above_half_cycle_per_patch": 0.04034060365249875,
+          "energy_ratio_above_one_cycle_per_patch": 0.01692184939079446,
+          "index": 9,
+          "t_seconds": 9.0,
+          "path": "frames/frame_000009.png",
+          "sha256": "1db095f71393c0b69f87550b22055b662fde664bc43d937ed654f9646560979e",
+          "mean_abs_tensor_delta_from_previous": 0.05512260554245265
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.1751791134210519,
+          "tensor_std": 0.49355541965586885,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.008530967970731876,
+          "high_frequency_energy_ratio": 0.0014243830984996665,
+          "spectral_centroid_cycles_per_patch": 0.0844522742306565,
+          "energy_ratio_above_half_cycle_per_patch": 0.03836866752258723,
+          "energy_ratio_above_one_cycle_per_patch": 0.016492645503902018,
+          "index": 10,
+          "t_seconds": 10.0,
+          "path": "frames/frame_000010.png",
+          "sha256": "73f21bd72ce4ffccc2553093de3e5dca1ebb1f940fbb7b89f213e1c71c620b73",
+          "mean_abs_tensor_delta_from_previous": 0.061957455844218884
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.177514919411031,
+          "tensor_std": 0.4902550436286759,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.010560194844528635,
+          "high_frequency_energy_ratio": 0.0019260988585354383,
+          "spectral_centroid_cycles_per_patch": 0.10454059539304382,
+          "energy_ratio_above_half_cycle_per_patch": 0.04751076726115196,
+          "energy_ratio_above_one_cycle_per_patch": 0.021263329866577273,
+          "index": 11,
+          "t_seconds": 11.0,
+          "path": "frames/frame_000011.png",
+          "sha256": "afcc4b412127dd6453f2ff789a545979aa71538555ac48510441a33a24ae32f3",
+          "mean_abs_tensor_delta_from_previous": 0.09439932190999645
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "analysis_kind": "manifest_processor_image_statistics",
+      "created_at_utc": "2026-06-19T07:11:19Z",
+      "manifest_path": "runs/cross_palette_controls/julia_d_spatial_mandelbrot_c_palette/manifest.json",
+      "manifest_sha256": "10e6a7e85bc89e11977b9c0cfb7cb8bc732af65f6ae517f24c23cc0be233787b",
+      "condition": {
+        "condition_id": "julia_d_spatial_mandelbrot_c_palette",
+        "condition_family": "control",
+        "temporal_policy": "ordered",
+        "semantic_load": "none",
+        "deterministic": true,
+        "source_kind": "generated",
+        "comparison_role": "cross_family_palette_matched_control",
+        "description": "Luminance-rank transform using the spatial ordering of julia_zoom_d and the frame-aligned RGB pixel multiset of mandelbrot_zoom_c."
+      },
+      "stimulus_config_sha256": "70f9aee62de5352864e16a52a56740c5018ffe46f0a7d57dcfe1b27dce926672",
+      "processor_patch_size": 14,
+      "frame_count_available": 12,
+      "frame_count_analyzed": 12,
+      "aggregate": {
+        "tensor_mean": {
+          "mean": 0.051096258402462104,
+          "std": 0.0817473181449347,
+          "min": -0.09953818662271025,
+          "max": 0.14482390359159744
+        },
+        "tensor_std": {
+          "mean": 0.42675280161398715,
+          "std": 0.06984404919087493,
+          "min": 0.3476166951521477,
+          "max": 0.5451034724350334
+        },
+        "tensor_min": {
+          "mean": -1.0,
+          "std": 0.0,
+          "min": -1.0,
+          "max": -1.0
+        },
+        "tensor_max": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "spectral_centroid": {
+          "mean": 0.053014370727715115,
+          "std": 0.01864769420051325,
+          "min": 0.016584931485456863,
+          "max": 0.07430822960368623
+        },
+        "high_frequency_energy_ratio": {
+          "mean": 0.014682434490067092,
+          "std": 0.006431662883130282,
+          "min": 0.002399249089784003,
+          "max": 0.021705077214197153
+        },
+        "spectral_centroid_cycles_per_patch": {
+          "mean": 0.5248154945866695,
+          "std": 0.1846027543174637,
+          "min": 0.1641824452643316,
+          "max": 0.7356139427102691
+        },
+        "energy_ratio_above_half_cycle_per_patch": {
+          "mean": 0.35778988514576593,
+          "std": 0.14276053880212491,
+          "min": 0.07768327007961225,
+          "max": 0.5280508721594563
+        },
+        "energy_ratio_above_one_cycle_per_patch": {
+          "mean": 0.2056691486213108,
+          "std": 0.0908471859915803,
+          "min": 0.03176171345874214,
+          "max": 0.3120603034929211
+        },
+        "mean_abs_tensor_delta_from_previous": {
+          "mean": 0.08750427585497299,
+          "std": 0.04387063387108186,
+          "min": 0.038014083700897996,
+          "max": 0.16084196374788237
+        }
+      },
+      "frame_stats": [
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": -0.09953818662271025,
+          "tensor_std": 0.5451034724350334,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.016584931485456863,
+          "high_frequency_energy_ratio": 0.002399249089784003,
+          "spectral_centroid_cycles_per_patch": 0.1641824452643316,
+          "energy_ratio_above_half_cycle_per_patch": 0.07768327007961225,
+          "energy_ratio_above_one_cycle_per_patch": 0.03176171345874214,
+          "index": 0,
+          "t_seconds": 0.0,
+          "path": "frames/frame_000000.png",
+          "sha256": "648b8386eb754efe22b7ffb60e9d17649fcc87ed574b7b91b4f00e7248bc5e07",
+          "mean_abs_tensor_delta_from_previous": null
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": -0.07797288213967793,
+          "tensor_std": 0.532246039239675,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.023381058697699627,
+          "high_frequency_energy_ratio": 0.00423569972872087,
+          "spectral_centroid_cycles_per_patch": 0.23146067219049754,
+          "energy_ratio_above_half_cycle_per_patch": 0.12897508424950108,
+          "energy_ratio_above_one_cycle_per_patch": 0.05817941856401388,
+          "index": 1,
+          "t_seconds": 1.0,
+          "path": "frames/frame_000001.png",
+          "sha256": "2c219f9879d3261dab87e620bb30ebf24c8c0ceaf0550623f4b71511d6cfa304",
+          "mean_abs_tensor_delta_from_previous": 0.13324985003825282
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": -0.043041770978527856,
+          "tensor_std": 0.5093781849395768,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.037103537318777816,
+          "high_frequency_energy_ratio": 0.0075210695720068265,
+          "spectral_centroid_cycles_per_patch": 0.3673062798176229,
+          "energy_ratio_above_half_cycle_per_patch": 0.23599641440506738,
+          "energy_ratio_above_one_cycle_per_patch": 0.11353154672986923,
+          "index": 2,
+          "t_seconds": 2.0,
+          "path": "frames/frame_000002.png",
+          "sha256": "b858ae39108998233e198574b06bd6654d2d5876b2ba167789aa39067a85dcc2",
+          "mean_abs_tensor_delta_from_previous": 0.16084196374788237
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.016227810025167305,
+          "tensor_std": 0.4674308429981782,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.05981096244521071,
+          "high_frequency_energy_ratio": 0.015556569055935152,
+          "spectral_centroid_cycles_per_patch": 0.592098319880234,
+          "energy_ratio_above_half_cycle_per_patch": 0.41230563409451737,
+          "energy_ratio_above_one_cycle_per_patch": 0.23101087747521054,
+          "index": 3,
+          "t_seconds": 3.0,
+          "path": "frames/frame_000003.png",
+          "sha256": "9fda1e9e5fde3db2ab7e89f504ec800e947d6e9d29059f81866ea9cacfe1bf86",
+          "mean_abs_tensor_delta_from_previous": 0.14904243473257595
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.029501532230381437,
+          "tensor_std": 0.4548043837060396,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.06644481820356002,
+          "high_frequency_energy_ratio": 0.01827419276821628,
+          "spectral_centroid_cycles_per_patch": 0.6577701413702252,
+          "energy_ratio_above_half_cycle_per_patch": 0.4555965702163922,
+          "energy_ratio_above_one_cycle_per_patch": 0.2600762207966535,
+          "index": 4,
+          "t_seconds": 4.0,
+          "path": "frames/frame_000004.png",
+          "sha256": "a46dfe36a99ab3a8ca2dc8d2abe64f10f40f6da670d4be0f73fdc2308e81d567",
+          "mean_abs_tensor_delta_from_previous": 0.11310139350996937
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.07068780634028081,
+          "tensor_std": 0.4206308018073553,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.07389358985642144,
+          "high_frequency_energy_ratio": 0.021686749486893284,
+          "spectral_centroid_cycles_per_patch": 0.7315092186317032,
+          "energy_ratio_above_half_cycle_per_patch": 0.5280508721594563,
+          "energy_ratio_above_one_cycle_per_patch": 0.3120603034929211,
+          "index": 5,
+          "t_seconds": 5.0,
+          "path": "frames/frame_000005.png",
+          "sha256": "4108c9490b0c0985406d589d0076c0a0f6748d5fe6f58524160101f201262978",
+          "mean_abs_tensor_delta_from_previous": 0.08811788645927139
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.09295731907208744,
+          "tensor_std": 0.39337613982430886,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.04197231019110707,
+          "high_frequency_energy_ratio": 0.012898268972301027,
+          "spectral_centroid_cycles_per_patch": 0.4155046722147588,
+          "energy_ratio_above_half_cycle_per_patch": 0.2826678846676598,
+          "energy_ratio_above_one_cycle_per_patch": 0.17066822991242014,
+          "index": 6,
+          "t_seconds": 6.0,
+          "path": "frames/frame_000006.png",
+          "sha256": "bd84ec729eb55eb4b18430e0a480497cc02cd09846da45c3e6de5ed8d30969a4",
+          "mean_abs_tensor_delta_from_previous": 0.05121017233947851
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.10536268764231485,
+          "tensor_std": 0.3754336025246759,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.049002548542285605,
+          "high_frequency_energy_ratio": 0.014228966899377053,
+          "spectral_centroid_cycles_per_patch": 0.4851004811754237,
+          "energy_ratio_above_half_cycle_per_patch": 0.33071015983191154,
+          "energy_ratio_above_one_cycle_per_patch": 0.19531691841078871,
+          "index": 7,
+          "t_seconds": 7.0,
+          "path": "frames/frame_000007.png",
+          "sha256": "99bad7077b29f5a24732d5efda49b729bd782ff6d51484cd7982c80cfc6ef5d7",
+          "mean_abs_tensor_delta_from_previous": 0.039693479062448744
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.11629391324194696,
+          "tensor_std": 0.3637631218014025,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.059251842130557036,
+          "high_frequency_energy_ratio": 0.018624373094628586,
+          "spectral_centroid_cycles_per_patch": 0.5865633111563632,
+          "energy_ratio_above_half_cycle_per_patch": 0.39495379369724865,
+          "energy_ratio_above_one_cycle_per_patch": 0.23861987926300574,
+          "index": 8,
+          "t_seconds": 8.0,
+          "path": "frames/frame_000008.png",
+          "sha256": "17fff87a50b38b419cb25337a794ea0bd7fc4735f4693872871e1eba4d3dee17",
+          "mean_abs_tensor_delta_from_previous": 0.03893391105855781
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.12317828929344951,
+          "tensor_std": 0.35607088362968436,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.07025765970938286,
+          "high_frequency_energy_ratio": 0.02141904719466393,
+          "spectral_centroid_cycles_per_patch": 0.695515346551221,
+          "energy_ratio_above_half_cycle_per_patch": 0.489938193498297,
+          "energy_ratio_above_one_cycle_per_patch": 0.29796778705761434,
+          "index": 9,
+          "t_seconds": 9.0,
+          "path": "frames/frame_000009.png",
+          "sha256": "509fb8daa3c966838a225c7b0378ded139980fa87363e9b61cfab5751592869f",
+          "mean_abs_tensor_delta_from_previous": 0.038014083700897996
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.13467467913323553,
+          "tensor_std": 0.3476166951521477,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.07430822960368623,
+          "high_frequency_energy_ratio": 0.021705077214197153,
+          "spectral_centroid_cycles_per_patch": 0.7356139427102691,
+          "energy_ratio_above_half_cycle_per_patch": 0.5178215537542928,
+          "energy_ratio_above_one_cycle_per_patch": 0.30955007407072876,
+          "index": 10,
+          "t_seconds": 10.0,
+          "path": "frames/frame_000010.png",
+          "sha256": "e6a7688f995dca2bc60d394e86aa56591dc7a78bfcf6e02484717f999556d504",
+          "mean_abs_tensor_delta_from_previous": 0.05871442408464324
+        },
+        {
+          "pixel_values_shape": [
+            3,
+            384,
+            4992
+          ],
+          "tensor_mean": 0.14482390359159744,
+          "tensor_std": 0.35517945130976775,
+          "tensor_min": -1.0,
+          "tensor_max": 1.0,
+          "spectral_centroid": 0.0641609605484361,
+          "high_frequency_energy_ratio": 0.017639950804080942,
+          "spectral_centroid_cycles_per_patch": 0.635161104077384,
+          "energy_ratio_above_half_cycle_per_patch": 0.4387791910952347,
+          "energy_ratio_above_one_cycle_per_patch": 0.2492868142237618,
+          "index": 11,
+          "t_seconds": 11.0,
+          "path": "frames/frame_000011.png",
+          "sha256": "edf27dd955fc8777617857d8fc888e0f25966aaea42a9f434ee0e2b5529beb25",
+          "mean_abs_tensor_delta_from_previous": 0.09162743567072472
+        }
+      ]
+    }
+  ],
+  "pairwise_deltas": [
+    {
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "julia_zoom_d",
+      "aggregate_mean_abs_deltas": {
+        "tensor_mean": 0.18630352656597626,
+        "tensor_std": 0.06049074561183382,
+        "tensor_min": 0.0,
+        "tensor_max": 0.0,
+        "spectral_centroid": 0.012588165981662127,
+        "high_frequency_energy_ratio": 0.003713662829857968,
+        "spectral_centroid_cycles_per_patch": 0.12461648539669143,
+        "energy_ratio_above_half_cycle_per_patch": 0.09756387315091974,
+        "energy_ratio_above_one_cycle_per_patch": 0.055501646370319,
+        "mean_abs_tensor_delta_from_previous": 0.04607542874358684
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "aggregate_mean_abs_deltas": {
+        "tensor_mean": 0.18623039962120844,
+        "tensor_std": 0.06387108569833494,
+        "tensor_min": 0.0,
+        "tensor_max": 0.0,
+        "spectral_centroid": 0.0018764047203995524,
+        "high_frequency_energy_ratio": 0.0014629559048811667,
+        "spectral_centroid_cycles_per_patch": 0.018575459028629615,
+        "energy_ratio_above_half_cycle_per_patch": 0.005175658358916299,
+        "energy_ratio_above_one_cycle_per_patch": 0.0018264290980934024,
+        "mean_abs_tensor_delta_from_previous": 0.011675016373902454
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_zoom_c",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "aggregate_mean_abs_deltas": {
+        "tensor_mean": 0.0007070339280053975,
+        "tensor_std": 0.004339109500459071,
+        "tensor_min": 0.0,
+        "tensor_max": 0.0,
+        "spectral_centroid": 0.037562231443498455,
+        "high_frequency_energy_ratio": 0.012260402897994346,
+        "spectral_centroid_cycles_per_patch": 0.37184711998274844,
+        "energy_ratio_above_half_cycle_per_patch": 0.28734258963861126,
+        "energy_ratio_above_one_cycle_per_patch": 0.17671007071843697,
+        "mean_abs_tensor_delta_from_previous": 0.03573626244501645
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_d",
+      "right_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "aggregate_mean_abs_deltas": {
+        "tensor_mean": 7.312694476782622e-05,
+        "tensor_std": 0.0033803400865011213,
+        "tensor_min": 0.0,
+        "tensor_max": 0.0,
+        "spectral_centroid": 0.01446457070206168,
+        "high_frequency_energy_ratio": 0.002250706924976801,
+        "spectral_centroid_cycles_per_patch": 0.14319194442532104,
+        "energy_ratio_above_half_cycle_per_patch": 0.10273953150983604,
+        "energy_ratio_above_one_cycle_per_patch": 0.0536752172722256,
+        "mean_abs_tensor_delta_from_previous": 0.034400412369684386
+      }
+    },
+    {
+      "left_condition_id": "julia_zoom_d",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "aggregate_mean_abs_deltas": {
+        "tensor_mean": 0.18559649263797087,
+        "tensor_std": 0.06482985511229289,
+        "tensor_min": 0.0,
+        "tensor_max": 0.0,
+        "spectral_centroid": 0.024974065461836326,
+        "high_frequency_energy_ratio": 0.008546740068136379,
+        "spectral_centroid_cycles_per_patch": 0.24723063458605704,
+        "energy_ratio_above_half_cycle_per_patch": 0.18977871648769154,
+        "energy_ratio_above_one_cycle_per_patch": 0.12120842434811797,
+        "mean_abs_tensor_delta_from_previous": 0.010339166298570387
+      }
+    },
+    {
+      "left_condition_id": "mandelbrot_c_spatial_julia_d_palette",
+      "right_condition_id": "julia_d_spatial_mandelbrot_c_palette",
+      "aggregate_mean_abs_deltas": {
+        "tensor_mean": 0.18552336569320305,
+        "tensor_std": 0.06821019519879401,
+        "tensor_min": 0.0,
+        "tensor_max": 0.0,
+        "spectral_centroid": 0.039438636163898005,
+        "high_frequency_energy_ratio": 0.010797446993113179,
+        "spectral_centroid_cycles_per_patch": 0.3904225790113781,
+        "energy_ratio_above_half_cycle_per_patch": 0.29251824799752757,
+        "energy_ratio_above_one_cycle_per_patch": 0.1748836416203436,
+        "mean_abs_tensor_delta_from_previous": 0.024061246071113998
+      }
+    }
+  ],
+  "processor_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct"
+}

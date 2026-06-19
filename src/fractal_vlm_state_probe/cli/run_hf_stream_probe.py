@@ -4,6 +4,7 @@ import argparse
 from pathlib import Path
 
 from fractal_vlm_state_probe.hf_stream import HFStreamRunConfig, run_hf_stream_probe
+from fractal_vlm_state_probe.prompts import available_probe_presets
 
 
 def main() -> None:
@@ -16,6 +17,7 @@ def main() -> None:
     parser.add_argument("--frame-stride", type=int, default=1)
     parser.add_argument("--max-new-tokens", type=int, default=2)
     parser.add_argument("--probe-max-new-tokens", type=int, default=64)
+    parser.add_argument("--probe-preset", choices=available_probe_presets(), default="default")
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument(
         "--probe-temperature",
@@ -78,6 +80,7 @@ def main() -> None:
             frame_stride=args.frame_stride,
             max_new_tokens=args.max_new_tokens,
             probe_max_new_tokens=args.probe_max_new_tokens,
+            probe_preset=args.probe_preset,
             temperature=args.temperature,
             probe_temperature=args.probe_temperature,
             seed=args.seed,

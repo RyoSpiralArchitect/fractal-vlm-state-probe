@@ -16,7 +16,7 @@ from .delivery import (
     prepare_frame_deliveries,
     stimulus_delivery_record,
 )
-from .prompts import DEFAULT_PROBES, SYNC_PROMPT, SYSTEM_PROMPT
+from .prompts import SYNC_PROMPT, SYSTEM_PROMPT, resolve_probe_preset
 from .providers import get_capabilities
 from .seeding import set_global_seed
 from .stimulus import validate_manifest, write_json
@@ -40,6 +40,7 @@ class StreamRunConfig:
     dry_run: bool = False
     use_prompt_cache_state: bool = True
     probe_cache_policy: ProbeCachePolicy = "isolated"
+    probe_preset: str = "default"
     cache_summary_every: int = 10
     cache_summary_max_layers: int | None = 4
     adapter_id: str = "mlx_vlm"
@@ -53,6 +54,7 @@ class StreamRunConfig:
 def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
     seed_record = set_global_seed(config.seed, include_mlx=True)
     probe_phase_seeds = _probe_phase_seeds(config.probe_seed)
+    probes = resolve_probe_preset(config.probe_preset)
     manifest = _load_manifest(config.manifest_path)
     issues = validate_manifest(config.manifest_path)
     if issues:
@@ -90,6 +92,8 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
             "stream_temperature": config.temperature,
             "probe_temperature": _probe_temperature(config),
             "probe_seed_policy": _probe_seed_policy(config.probe_seed),
+            "probe_preset": config.probe_preset,
+            "probe_count": len(probes),
             "prompt_cache_state_requested": config.use_prompt_cache_state,
             "probe_cache_policy": config.probe_cache_policy,
             "probe_history_policy": _probe_history_policy(config.probe_cache_policy),
@@ -125,7 +129,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
     }
 
     if config.dry_run:
-        result["probes"]["before"] = _dry_probe_records("before")
+        result["probes"]["before"] = _dry_probe_records("before", probes=probes)
         for frame in frames:
             delivery = frame_deliveries[int(frame["index"])]
             event = _planned_frame_event(
@@ -134,8 +138,8 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
                 output_base=config.output_path.parent,
             )
             result["stream_events"].append(event)
-        result["probes"]["mid"] = _dry_probe_records("mid")
-        result["probes"]["after"] = _dry_probe_records("after")
+        result["probes"]["mid"] = _dry_probe_records("mid", probes=probes)
+        result["probes"]["after"] = _dry_probe_records("after", probes=probes)
         write_json(config.output_path, result)
         return result
 
@@ -151,7 +155,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
     result["runtime"] = mlx["runtime"]
 
     result["probes"]["before"] = _run_probe_batch(
-        probes=DEFAULT_PROBES,
+        probes=probes,
         history=[{"role": "system", "content": SYSTEM_PROMPT}],
         phase="before",
         model=model,
@@ -193,7 +197,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
 
         if mid_index is not None and position == mid_index:
             result["probes"]["mid"] = _run_probe_batch(
-                probes=DEFAULT_PROBES,
+                probes=probes,
                 history=history,
                 phase="mid",
                 model=model,
@@ -210,7 +214,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
             )
 
     result["probes"]["after"] = _run_probe_batch(
-        probes=DEFAULT_PROBES,
+        probes=probes,
         history=history,
         phase="after",
         model=model,
@@ -643,7 +647,7 @@ def _planned_frame_event(
     }
 
 
-def _dry_probe_records(phase: str) -> list[dict[str, str]]:
+def _dry_probe_records(phase: str, *, probes: list[dict[str, str]]) -> list[dict[str, str]]:
     return [
         {
             "phase": phase,
@@ -651,5 +655,5 @@ def _dry_probe_records(phase: str) -> list[dict[str, str]]:
             "prompt": probe["prompt"],
             "assistant_text": "<dry-run>",
         }
-        for probe in DEFAULT_PROBES
+        for probe in probes
     ]

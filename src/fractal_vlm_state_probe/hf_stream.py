@@ -25,7 +25,7 @@ from .mlx_stream import (
     _select_frames,
     _should_summarize_cache,
 )
-from .prompts import DEFAULT_PROBES, SYNC_PROMPT, SYSTEM_PROMPT
+from .prompts import SYNC_PROMPT, SYSTEM_PROMPT, resolve_probe_preset
 from .providers import get_capabilities
 from .seeding import set_global_seed
 from .stimulus import validate_manifest, write_json
@@ -48,6 +48,7 @@ class HFStreamRunConfig:
     probe_temperature: float | None = None
     dry_run: bool = False
     probe_cache_policy: ProbeCachePolicy = "isolated"
+    probe_preset: str = "default"
     trace_every: int = 10
     trace_max_layers: int | None = 4
     torch_dtype: TorchDTypeName = "auto"
@@ -63,6 +64,7 @@ class HFStreamRunConfig:
 
 def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
     seed_record = set_global_seed(config.seed, include_torch=True)
+    probes = resolve_probe_preset(config.probe_preset)
     manifest = _load_manifest(config.manifest_path)
     issues = validate_manifest(config.manifest_path)
     if issues:
@@ -96,6 +98,8 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
             "stream_temperature": config.temperature,
             "probe_temperature": _probe_temperature(config),
             "probe_cache_policy": config.probe_cache_policy,
+            "probe_preset": config.probe_preset,
+            "probe_count": len(probes),
             "probe_history_policy": _probe_history_policy(config.probe_cache_policy),
             "mid_probe_policy": "after half of the selected frame stream has been consumed",
             "trace_every": config.trace_every,
@@ -129,7 +133,7 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
     result["frame_artifacts"] = frame_artifact_list(frame_deliveries)
 
     if config.dry_run:
-        result["probes"]["before"] = _dry_probe_records("before")
+        result["probes"]["before"] = _dry_probe_records("before", probes=probes)
         for frame in frames:
             delivery = frame_deliveries[int(frame["index"])]
             event = _planned_frame_event(
@@ -138,8 +142,8 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
                 output_base=config.output_path.parent,
             )
             result["stream_events"].append(event)
-        result["probes"]["mid"] = _dry_probe_records("mid")
-        result["probes"]["after"] = _dry_probe_records("after")
+        result["probes"]["mid"] = _dry_probe_records("mid", probes=probes)
+        result["probes"]["after"] = _dry_probe_records("after", probes=probes)
         write_json(config.output_path, result)
         return result
 
@@ -148,7 +152,7 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
     history: list[dict[str, str]] = [{"role": "system", "content": SYSTEM_PROMPT}]
 
     result["probes"]["before"] = _run_probe_batch(
-        probes=DEFAULT_PROBES,
+        probes=probes,
         history=[{"role": "system", "content": SYSTEM_PROMPT}],
         phase="before",
         runtime=runtime,
@@ -175,7 +179,7 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
 
         if mid_index is not None and position == mid_index:
             result["probes"]["mid"] = _run_probe_batch(
-                probes=DEFAULT_PROBES,
+                probes=probes,
                 history=history,
                 phase="mid",
                 runtime=runtime,
@@ -186,7 +190,7 @@ def run_hf_stream_probe(config: HFStreamRunConfig) -> dict[str, Any]:
             )
 
     result["probes"]["after"] = _run_probe_batch(
-        probes=DEFAULT_PROBES,
+        probes=probes,
         history=history,
         phase="after",
         runtime=runtime,

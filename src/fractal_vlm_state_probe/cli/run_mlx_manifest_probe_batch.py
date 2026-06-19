@@ -18,6 +18,7 @@ from fractal_vlm_state_probe.paired_stochastic import (
     write_paired_stochastic_json,
     write_paired_stochastic_markdown,
 )
+from fractal_vlm_state_probe.prompts import available_probe_presets
 from fractal_vlm_state_probe.stimulus import write_json
 
 _MANIFEST_KEY_PATTERN = re.compile(r"^[A-Za-z0-9_.-]+$")
@@ -40,6 +41,7 @@ def main() -> None:
     parser.add_argument("--frame-stride", type=int, default=1)
     parser.add_argument("--max-tokens", type=int, default=2)
     parser.add_argument("--probe-max-tokens", type=int, default=80)
+    parser.add_argument("--probe-preset", choices=available_probe_presets(), default="default")
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--probe-temperature", type=float, default=0.7)
     parser.add_argument("--cache-summary-every", type=int, default=10)
@@ -85,6 +87,7 @@ def main() -> None:
         "frame_stride": args.frame_stride,
         "stream_temperature": args.temperature,
         "probe_temperature": args.probe_temperature,
+        "probe_preset": args.probe_preset,
         "probe_seed_policy": "same base probe seed is applied to all conditions; MLX run resets before/mid/after to seed, seed+1, seed+2",
         "conditions": {key: str(path) for key, path in manifests.items()},
         "records": batch_records,
@@ -141,6 +144,7 @@ def _run_or_reuse(
             frame_stride=args.frame_stride,
             max_tokens=args.max_tokens,
             probe_max_tokens=args.probe_max_tokens,
+            probe_preset=args.probe_preset,
             temperature=args.temperature,
             probe_temperature=args.probe_temperature,
             dry_run=args.dry_run,
@@ -184,6 +188,7 @@ def _format_manifest_batch_summary(summary: dict[str, Any]) -> str:
         f"- Frame stride: `{summary['frame_stride']}`",
         f"- Stream temperature: `{summary['stream_temperature']}`",
         f"- Probe temperature: `{summary['probe_temperature']}`",
+        f"- Probe preset: `{summary['probe_preset']}`",
         "",
         "## Conditions",
         "",

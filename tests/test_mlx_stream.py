@@ -97,6 +97,27 @@ def test_mlx_dry_run_probe_only_omits_stream_turns(tmp_path: Path) -> None:
     assert result["stream_events"] == []
 
 
+def test_mlx_dry_run_uses_forced_choice_probe_preset(tmp_path: Path) -> None:
+    manifest_path = _render_test_manifest(tmp_path / "stimulus")
+    output_path = tmp_path / "forced_choice.json"
+    result = run_stream_probe(
+        StreamRunConfig(
+            manifest_path=manifest_path,
+            output_path=output_path,
+            model_id="example/model",
+            dry_run=True,
+            delivery_mode="probe_only",
+            probe_preset="forced_choice",
+        )
+    )
+    assert result["context_policy"]["probe_preset"] == "forced_choice"
+    assert result["context_policy"]["probe_count"] == 2
+    assert [probe["probe_id"] for probe in result["probes"]["before"]] == [
+        "forced_family_choice",
+        "forced_frequency_choice",
+    ]
+
+
 def _render_test_manifest(output_dir: Path) -> Path:
     render_stimulus(
         FractalSpec(

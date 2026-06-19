@@ -10,6 +10,7 @@ from fractal_vlm_state_probe.control_stimulus import (
     frequency_filter_rgb,
     luminance_quantile_match_rgb,
     quantile_match_rgb,
+    render_cross_palette_manifest_transform,
     render_blank_stimulus,
     render_generated_control_stimulus,
     render_manifest_transform,
@@ -318,3 +319,55 @@ def test_frequency_transform_writes_control_condition(tmp_path: Path) -> None:
     )
     assert validate_manifest(tmp_path / "low_pass" / "manifest.json") == []
     assert validate_manifest(tmp_path / "high_pass_luminance_quantile_matched" / "manifest.json") == []
+
+
+def test_cross_palette_transform_preserves_palette_pixels_with_source_geometry(tmp_path: Path) -> None:
+    source_dir = tmp_path / "source"
+    palette_dir = tmp_path / "palette"
+    source_manifest = render_generated_control_stimulus(
+        GeneratedControlSpec(
+            kind="checkerboard",
+            width=32,
+            height=24,
+            total_frames=2,
+            fps=1.0,
+            seed=3,
+            cell_size=8,
+        ),
+        source_dir,
+    )
+    palette_manifest = render_generated_control_stimulus(
+        GeneratedControlSpec(
+            kind="quasicrystal",
+            width=32,
+            height=24,
+            total_frames=2,
+            fps=1.0,
+            seed=17,
+            cell_size=8,
+        ),
+        palette_dir,
+    )
+
+    matched_manifest = render_cross_palette_manifest_transform(
+        tmp_path / "matched",
+        source_manifest_path=source_dir / "manifest.json",
+        palette_manifest_path=palette_dir / "manifest.json",
+    )
+
+    matched_path = tmp_path / "matched" / matched_manifest["frames"][0]["path"]
+    palette_path = palette_dir / palette_manifest["frames"][0]["path"]
+    matched_image = np.asarray(Image.open(matched_path).convert("RGB"))
+    palette_image = np.asarray(Image.open(palette_path).convert("RGB"))
+
+    assert matched_manifest["stimulus_condition"]["condition_family"] == "control"
+    assert matched_manifest["stimulus_condition"]["comparison_role"] == "cross_family_palette_matched_control"
+    assert matched_manifest["frames"][0]["source_index"] == 0
+    assert matched_manifest["frames"][0]["palette_index"] == 0
+    assert matched_manifest["frames"][0]["sha256"] != source_manifest["frames"][0]["sha256"]
+    assert matched_manifest["frames"][0]["source_sha256"] == source_manifest["frames"][0]["sha256"]
+    assert matched_manifest["frames"][0]["palette_sha256"] == palette_manifest["frames"][0]["sha256"]
+    assert sorted(map(tuple, matched_image.reshape(-1, 3).tolist())) == sorted(
+        map(tuple, palette_image.reshape(-1, 3).tolist())
+    )
+    assert validate_manifest(tmp_path / "matched" / "manifest.json") == []
