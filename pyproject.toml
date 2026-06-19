@@ -44,6 +44,7 @@ run-julia-smoke = "fractal_vlm_state_probe.cli.run_julia_smoke:main"
 compare-runs = "fractal_vlm_state_probe.cli.compare_runs:main"
 analyze-cache-classifier = "fractal_vlm_state_probe.cli.analyze_cache_classifier:main"
 analyze-image-cache-correlations = "fractal_vlm_state_probe.cli.analyze_image_cache_correlations:main"
+analyze-factorial-cache-contrast = "fractal_vlm_state_probe.cli.analyze_factorial_cache_contrast:main"
 analyze-image-stats = "fractal_vlm_state_probe.cli.analyze_image_stats:main"
 analyze-processor-image-stats = "fractal_vlm_state_probe.cli.analyze_processor_image_stats:main"
 

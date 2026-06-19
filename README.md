@@ -43,16 +43,18 @@ probe, frame count, cache policy, and timing where possible.
 
 ## Current Pilot Reading
 
-In the first seeded Mandelbrot-vs-Julia smoke comparison, the before/mid/after
-creative probe stayed inside the same broad generative attractor and the paired
-Mandelbrot/Julia probe text matched exactly. At the same time, the probe wording
-shifted across phases within each run, and sampled source-cache summaries showed
-nonzero deltas after visual streaming.
+The visible readout and the measured object have separated. In the paired
+SmolVLM runs, creative probes and forced-choice labels can remain identical
+across conditions while sampled source-cache summaries still move. The current
+signal is therefore not "the model says Mandelbrot instead of Julia"; it is
+"the readout label is fixed, but the traced context-state geometry changes."
 
-That is not evidence that one fractal family has a stable effect. It is a more
-modest and more useful signal: the apparatus can capture cases where surface
-text remains similar while the traced context state moves. The next priority is
-therefore `Null vs Stream`, before stronger fractal-family claims.
+The cross-family palette controls make the interpretation stricter. Swapping
+frame-level RGB pixel multisets by luminance rank did not simply remove a
+palette confound. It exposed a nonlinear interaction among palette donor,
+spatial luminance-rank field, and processor-space frequency structure. Macro
+geometry alone is now too coarse as the main story; the working hypothesis is
+distribution-coupled visual perturbation of persistent multimodal state.
 
 ## Current Restart Point
 
@@ -71,11 +73,11 @@ For a fresh read, start with `docs/experiment_design.md`, then
 `docs/research_notes/0016_five_step_instrumentation_kickoff.md`, then
 `docs/research_notes/0017_cross_palette_control_smoke.md`.
 
-The next live run should compare original streams against cross-family palette
-controls, processor-space image statistics, and the existing raw image/cache
-correlation path. Surface text mobility, forced-choice/logprob tilt, image-stat
-deltas, processor-space deltas, and trace-summary separation should be reported
-separately.
+The next live run should repeat the 2x2 cross-palette factorial design on fresh
+50-frame source variants, with richer trace-position capture and a logprob-
+capable forced-choice readout. Surface labels, first-step logprob tilt, raw
+image stats, processor-space stats, and cache-summary factorial contrasts
+should be reported as separate evidence layers.
 
 ## Infrastructure Tiers
 
@@ -123,6 +125,8 @@ first logprob-focused pass unless a selected model exposes the needed signal.
   but probe sampling is repeated across matched probe seeds.
 - Compare paired run JSONs with probe text, frame artifacts, stream-cache
   deltas, and probe-source-cache deltas.
+- Analyze 2x2 cache-summary factorial contrasts for spatial main effect,
+  palette main effect, and spatial-by-palette interaction.
 - Compare saved HF first-step top-k logprobs for probe readout deltas when
   generation score summaries are available.
 - Train a small nearest-centroid classifier on saved cache-summary features to

@@ -101,7 +101,8 @@ forced-choice probe preset, and first sequence-position cache-delta reporting
 are implemented. Cross-family palette controls and processor-space image
 statistics are implemented. First-step top-k logprob readout comparison for
 saved HF runs is implemented. The first 12-frame cross-family palette-control
-smoke is documented. Transform seed/cutoff aggregation,
+smoke is documented, including a summary-stat 2x2 cache factorial contrast
+for spatial main effect, palette main effect, and interaction. Transform seed/cutoff aggregation,
 full-vocabulary logprob/teacher-forced reads, and cache-swap intervention
 scaffolding are next.
 

@@ -93,6 +93,27 @@ processor space than either original stream. The Mandelbrot-spatial/Julia-
 palette hybrid keeps Julia-like tensor mean/std while remaining low in
 processor-space spectral centroid.
 
+This is why the cross-palette transform should be treated as a nonlinear
+perturbation, not as an additive decomposition into "structure plus palette".
+Conceptually, if
+
+```text
+H_{S,P}(x) = Q_P(r_S(x))
+```
+
+where `r_S(x)` is the spatial donor's luminance-rank field and `Q_P` is the
+palette donor's quantile map, then local changes follow the product-like form:
+
+```text
+grad H_{S,P}(x) ~= Q'_P(r_S(x)) * grad r_S(x)
+```
+
+The same palette donor can therefore compress or amplify local structure
+depending on the rank field it is laid over. In this smoke, the
+Mandelbrot-spatial/Julia-palette hybrid becomes lower-frequency than the
+Mandelbrot original in processor space, while the Julia-spatial/Mandelbrot-
+palette hybrid becomes higher-frequency than the Julia original.
+
 ## Probe Surface
 
 The forced-choice surface labels were identical across all four conditions:
@@ -143,6 +164,59 @@ the processor-space statistics: the Julia-spatial/Mandelbrot-palette hybrid
 becomes a high-frequency tensor, while the Mandelbrot-spatial/Julia-palette
 hybrid becomes low-frequency but Julia-like in mean/std.
 
+One important refinement: the "farther than original" statement is strongest
+for max L2. For after-phase mean L2, `mandelbrot_c` versus
+`mandelbrot_c_spatial_julia_d_palette` is `2.642`, very close to and slightly
+below the original `mandelbrot_c` versus `julia_d` value of `2.704`. This points
+away from a global "everything moved farther" reading and toward a localized
+large displacement in a particular layer, key/value tensor, or sampled slice.
+
+## 2x2 Factorial Cache Contrast
+
+The four cells form a clean 2x2 design:
+
+- `z_MM`: Mandelbrot spatial rank x Mandelbrot palette
+- `z_JJ`: Julia spatial rank x Julia palette
+- `z_MJ`: Mandelbrot spatial rank x Julia palette
+- `z_JM`: Julia spatial rank x Mandelbrot palette
+
+The first analyzer computes signed contrasts over saved cache summary
+statistics:
+
+```text
+spatial_main_effect = ((z_JM - z_MM) + (z_JJ - z_MJ)) / 2
+palette_main_effect = ((z_MJ - z_MM) + (z_JJ - z_JM)) / 2
+interaction_effect = z_JJ - z_JM - z_MJ + z_MM
+```
+
+This is not yet a full hidden-state vector contrast; the run JSONs store summary
+statistics, not complete layer tensors. Still, it gives a first map of where the
+spatial-by-palette interaction appears in the saved trace summaries.
+
+Top scalar L2 effects:
+
+| Effect | Phase | Probe | Layer | Tensor | Value |
+| --- | --- | --- | ---: | --- | ---: |
+| interaction | after | `forced_family_choice` | 0 | keys | `-8.956` |
+| interaction | after | `forced_frequency_choice` | 0 | keys | `-8.956` |
+| interaction | mid | `forced_family_choice` | 23 | values | `8.653` |
+| interaction | mid | `forced_frequency_choice` | 23 | values | `8.653` |
+| interaction | mid | `forced_family_choice` | 15 | keys | `7.718` |
+| interaction | mid | `forced_frequency_choice` | 15 | keys | `7.718` |
+| palette main | mid | `forced_family_choice` | 0 | keys | `-7.489` |
+| palette main | mid | `forced_frequency_choice` | 0 | keys | `-7.489` |
+
+The scalar interaction argmax does not persist across phase: mid peaks at layer
+`23` values, while after peaks at layer `0` keys. That makes the interaction
+look temporally and layer-position dependent, rather than a single stable scalar
+offset.
+
+The current sampled `sequence_position_stats` did not produce nonzero
+sequence-position L2 effects in this four-cell contrast. This is a limitation of
+the saved position sampling, not evidence that position structure is absent.
+The next trace run should capture richer nonzero position bands around image
+tokens and recent text tokens.
+
 ## Image/Cache Join
 
 The image/cache join matched all `12` rows with `0` unmatched cache rows. In
@@ -171,24 +245,30 @@ This smoke makes the research direction stricter:
 - It suggests that cross-family palette controls are not merely nuisance
   controls; they are informative perturbations of the persistent multimodal
   state.
+- It moves the target from surface-label steering to distribution-coupled
+  latent-state steering: the readout label is fixed, but the pre-readout state
+  geometry changes.
 
 The cautious claim after this run:
 
 > In this 12-frame forced-choice smoke, cross-family RGB-palette swaps did not
 > erase source-cache separation. Instead, they exposed a nontrivial interaction
 > between palette donor, spatial luminance rank, and processor-space spectral
-> content, while surface forced-choice labels remained identical.
+> content. The forced-choice labels remained identical, but the saved
+> source-cache summaries show spatial-by-palette interaction structure.
 
 ## Next
 
 1. Repeat the same four-condition design with fresh 50-frame source variants.
-2. Add processor-stat deltas to the image/cache correlation reporter, not only
+2. Capture richer trace positions or full aligned layer tensors so the 2x2
+   interaction can be computed as a vector, not only over summary statistics.
+3. Add processor-stat deltas to the image/cache correlation reporter, not only
    raw image-stat deltas.
-3. Run the same four conditions through HF forced-choice probes so first-step
+4. Run the same four conditions through HF forced-choice probes so first-step
    top-k logprob readout can be compared.
-4. Repeat the control on at least one more Mandelbrot/Julia source pair to
+5. Repeat the control on at least one more Mandelbrot/Julia source pair to
    check whether the asymmetry is source-specific.
-5. Only after that, consider cache-swap intervention on the strongest matched
+6. Only after that, consider cache-swap intervention on the strongest matched
    pairs.
 
 ## Artifacts
@@ -197,3 +277,4 @@ The cautious claim after this run:
 - [Cross-palette processor image statistics JSON](../../examples/research_notes/0017_cross_palette_control_smoke/cross_palette_processor_image_stats.json)
 - [Cross-palette paired stochastic analysis JSON](../../examples/research_notes/0017_cross_palette_control_smoke/cross_palette_paired_stochastic_analysis.json)
 - [Cross-palette image/cache correlation JSON](../../examples/research_notes/0017_cross_palette_control_smoke/cross_palette_image_cache_correlation.json)
+- [Cross-palette factorial cache contrast JSON](../../examples/research_notes/0017_cross_palette_control_smoke/cross_palette_factorial_cache_contrast.json)
