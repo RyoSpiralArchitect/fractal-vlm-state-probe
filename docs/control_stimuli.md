@@ -241,6 +241,29 @@ each aligned frame. If a trace distance follows the spatial source after this
 swap, that is a stronger input-organization signal than a raw family
 comparison. It is still not a complete local-texture or topology proof.
 
+For repeated 2x2 source-pair preparation, use the batch helper instead of
+hand-writing each `MJ` and `JM` transform:
+
+```bash
+python3 scripts/prepare_cross_palette_factorial_batch.py \
+  --output-root runs/cross_palette_replications \
+  --pair c_d=runs/source_variant_smoke/stimuli/mandelbrot_c/manifest.json,runs/source_variant_smoke/stimuli/julia_d/manifest.json \
+  --pair b_c=runs/source_variant_smoke/stimuli/mandelbrot_b/manifest.json,runs/source_variant_smoke/stimuli/julia_c/manifest.json \
+  --max-frames 50 \
+  --processor-model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --patch-size 14 \
+  --overwrite
+```
+
+This writes cross-palette manifests, raw image-stat factorial contrasts,
+processor-space image-stat factorial contrasts when requested, and suggested
+MLX manifest-batch commands for each pair.
+
+The first two-pair 12-frame readout is documented in
+[`0019_cross_palette_replication_readout.md`](research_notes/0019_cross_palette_replication_readout.md).
+It should be treated as a replication smoke, not a full 50-frame result,
+because the source-variant manifests currently contain 12 frames.
+
 ## Image Statistics
 
 Before interpreting trace-summary clusters, measure the visual manifests

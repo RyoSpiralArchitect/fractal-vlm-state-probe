@@ -91,6 +91,9 @@ Status: first MLX batch runner and lexical summary implemented.
   density, spectrum, entropy, periodicity, and symmetry.
 - Processor-space image statistics computed after `pixel_values` conversion,
   including architecture-aware cycles-per-patch spectral summaries.
+- Raw and processor-space 2x2 factorial image-stat contrasts aligned with the
+  cache-summary factorial contrast.
+- Replicated cross-palette factorial preparation over multiple source pairs.
 
 Status: first generator suite, paired pattern batch runner, image-statistic
 reporter, RGB quantile-matched phase-scramble control, luminance-rank matched
@@ -102,9 +105,14 @@ are implemented. Cross-family palette controls and processor-space image
 statistics are implemented. First-step top-k logprob readout comparison for
 saved HF runs is implemented. The first 12-frame cross-family palette-control
 smoke is documented, including a summary-stat 2x2 cache factorial contrast
-for spatial main effect, palette main effect, and interaction. Transform seed/cutoff aggregation,
-full-vocabulary logprob/teacher-forced reads, and cache-swap intervention
-scaffolding are next.
+for spatial main effect, palette main effect, and interaction. Replicated
+cross-palette batch preparation and raw/processor image-stat factorial
+contrasts are implemented. The first two-pair 12-frame cross-palette
+replication is documented: forced-choice surface labels remained fixed, cache
+interaction argmax locations repeated, and processor image-stat interactions
+were pair-dependent. True 50-frame source variants, transform seed/cutoff
+aggregation, full-vocabulary logprob/teacher-forced reads, and cache-swap
+intervention scaffolding are next.
 
 ## Phase 5: Research Report
 

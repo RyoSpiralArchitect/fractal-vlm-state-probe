@@ -71,13 +71,17 @@ For a fresh read, start with `docs/experiment_design.md`, then
 `docs/research_notes/0014_image_cache_correlation.md`, then
 `docs/research_notes/0015_source_variant_followups.md`, then
 `docs/research_notes/0016_five_step_instrumentation_kickoff.md`, then
-`docs/research_notes/0017_cross_palette_control_smoke.md`.
+`docs/research_notes/0017_cross_palette_control_smoke.md`, then
+`docs/research_notes/0018_cross_palette_replication_path.md`, then
+`docs/research_notes/0019_cross_palette_replication_readout.md`.
 
-The next live run should repeat the 2x2 cross-palette factorial design on fresh
-50-frame source variants, with richer trace-position capture and a logprob-
-capable forced-choice readout. Surface labels, first-step logprob tilt, raw
-image stats, processor-space stats, and cache-summary factorial contrasts
-should be reported as separate evidence layers.
+The first replicated cross-palette readout used two 12-frame source-pair
+replications. Surface forced-choice labels stayed fixed, while cache-summary
+interaction argmax locations repeated at mid layer 23 `values` and after layer 0
+`keys`. Processor-space image-stat interactions were pair-dependent, so the
+current interpretation stays at the level of traceable state-geometry
+interaction, not a single scalar image-stat mechanism. The next live run should
+move to true 50-frame source variants and add first-token logit/top-k readouts.
 
 ## Infrastructure Tiers
 
@@ -127,6 +131,8 @@ first logprob-focused pass unless a selected model exposes the needed signal.
   deltas, and probe-source-cache deltas.
 - Analyze 2x2 cache-summary factorial contrasts for spatial main effect,
   palette main effect, and spatial-by-palette interaction.
+- Prepare replicated 2x2 cross-palette batches and analyze the same factorial
+  contrast over raw and processor-space image statistics.
 - Compare saved HF first-step top-k logprobs for probe readout deltas when
   generation score summaries are available.
 - Train a small nearest-centroid classifier on saved cache-summary features to
@@ -403,6 +409,34 @@ python3 scripts/run_mlx_manifest_probe_batch.py \
   --probe-cache-policy isolated
 ```
 
+To prepare replicated cross-palette factorial source pairs before launching MLX
+inference:
+
+```bash
+python3 scripts/prepare_cross_palette_factorial_batch.py \
+  --output-root runs/cross_palette_replications \
+  --pair c_d=runs/source_variant_smoke/stimuli/mandelbrot_c/manifest.json,runs/source_variant_smoke/stimuli/julia_d/manifest.json \
+  --pair b_c=runs/source_variant_smoke/stimuli/mandelbrot_b/manifest.json,runs/source_variant_smoke/stimuli/julia_c/manifest.json \
+  --max-frames 50 \
+  --processor-model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --patch-size 14 \
+  --overwrite
+```
+
+To analyze a saved raw or processor image-stat batch in the same 2x2 coordinate
+system as cache summaries:
+
+```bash
+python3 scripts/analyze_factorial_image_contrast.py \
+  --stats-json runs/cross_palette_controls/cross_palette_processor_image_stats.json \
+  --mm mandelbrot_zoom_c \
+  --jj julia_zoom_d \
+  --mj mandelbrot_c_spatial_julia_d_palette \
+  --jm julia_d_spatial_mandelbrot_c_palette \
+  --output-json runs/cross_palette_controls/processor_factorial_image_contrast.json \
+  --output-md runs/cross_palette_controls/processor_factorial_image_contrast.md
+```
+
 ## Documentation
 
 - [Experiment Design](docs/experiment_design.md)
@@ -427,6 +461,8 @@ python3 scripts/run_mlx_manifest_probe_batch.py \
 - [Research Note 0015: Source Variant Follow-Up Probes](docs/research_notes/0015_source_variant_followups.md)
 - [Research Note 0016: Five-Step Instrumentation Kickoff](docs/research_notes/0016_five_step_instrumentation_kickoff.md)
 - [Research Note 0017: Cross-Palette Control Smoke](docs/research_notes/0017_cross_palette_control_smoke.md)
+- [Research Note 0018: Cross-Palette Replication Path](docs/research_notes/0018_cross_palette_replication_path.md)
+- [Research Note 0019: Cross-Palette Replication Readout](docs/research_notes/0019_cross_palette_replication_readout.md)
 
 ## Claim Boundary
 
