@@ -5,10 +5,12 @@ from pathlib import Path
 from fractal_vlm_state_probe.fractals import FractalSpec
 from fractal_vlm_state_probe.mlx_stream import (
     StreamRunConfig,
+    _collect_stream,
     _mid_probe_after_position,
     _probe_phase_seeds,
     _should_summarize_cache,
     run_stream_probe,
+    summarize_mlx_logprobs,
 )
 from fractal_vlm_state_probe.stimulus import render_stimulus
 
@@ -32,6 +34,51 @@ def test_should_summarize_cache_keeps_key_positions() -> None:
 def test_probe_phase_seeds_are_phase_stable() -> None:
     assert _probe_phase_seeds(None) == {"before": None, "mid": None, "after": None}
     assert _probe_phase_seeds(10) == {"before": 10, "mid": 11, "after": 12}
+
+
+def test_summarize_mlx_logprobs_keeps_sorted_top_k() -> None:
+    import mlx.core as mx
+
+    class Processor:
+        def decode(self, ids: list[int], skip_special_tokens: bool = False) -> str:
+            return f"T{ids[0]}"
+
+    records = summarize_mlx_logprobs(
+        mx.array([-3.0, -0.5, -1.5, -0.25]),
+        processor=Processor(),
+        top_k=2,
+    )
+
+    assert records == [
+        {"token_id": 3, "token": "T3", "logprob": -0.25},
+        {"token_id": 1, "token": "T1", "logprob": -0.5},
+    ]
+
+
+def test_collect_stream_records_generation_step_top_logprobs() -> None:
+    import mlx.core as mx
+
+    class Chunk:
+        text = "A"
+        token = 3
+        logprobs = mx.array([-3.0, -0.5, -1.5, -0.25])
+        prompt_tokens = 4
+        generation_tokens = 1
+        total_tokens = 5
+
+    class Processor:
+        def decode(self, ids: list[int], skip_special_tokens: bool = False) -> str:
+            return f"T{ids[0]}"
+
+    generation = _collect_stream([Chunk()], processor=Processor(), top_k=2)
+
+    assert generation["text"] == "A"
+    assert generation["summary"]["score_steps"] == 1
+    step = generation["summary"]["steps"][0]
+    assert step["token_id"] == 3
+    assert step["token"] == "T3"
+    assert step["token_logprob"] == -0.25
+    assert [item["token_id"] for item in step["top_logprobs"]] == [3, 1]
 
 
 def test_mlx_dry_run_records_text_only_delivery(tmp_path: Path) -> None:

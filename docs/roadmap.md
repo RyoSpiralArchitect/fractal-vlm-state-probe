@@ -94,6 +94,8 @@ Status: first MLX batch runner and lexical summary implemented.
 - Raw and processor-space 2x2 factorial image-stat contrasts aligned with the
   cache-summary factorial contrast.
 - Replicated cross-palette factorial preparation over multiple source pairs.
+- MLX first generated-token top-k readout capture and saved-run readout
+  contrast analysis.
 
 Status: first generator suite, paired pattern batch runner, image-statistic
 reporter, RGB quantile-matched phase-scramble control, luminance-rank matched
@@ -110,8 +112,13 @@ cross-palette batch preparation and raw/processor image-stat factorial
 contrasts are implemented. The first two-pair 12-frame cross-palette
 replication is documented: forced-choice surface labels remained fixed, cache
 interaction argmax locations repeated, and processor image-stat interactions
-were pair-dependent. True 50-frame source variants, transform seed/cutoff
-aggregation, full-vocabulary logprob/teacher-forced reads, and cache-swap
+were pair-dependent. The first true 50-frame two-pair replication is documented:
+surface labels stayed fixed and scalar cache interaction argmax locations again
+landed at mid layer 23 `values` and after layer 0 `keys`. MLX first-token
+top-k readout capture and a saved-run readout analyzer are implemented. The
+top-k20 rerun found identical first-token top-20 sets across `MM/JJ/MJ/JM` for
+every phase/probe record while the cache locus persisted. Transform seed/cutoff
+aggregation, full-vocabulary logprob or teacher-forced reads, and cache-swap
 intervention scaffolding are next.
 
 ## Phase 5: Research Report

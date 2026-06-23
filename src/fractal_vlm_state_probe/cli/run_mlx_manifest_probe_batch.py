@@ -42,6 +42,12 @@ def main() -> None:
     parser.add_argument("--max-tokens", type=int, default=2)
     parser.add_argument("--probe-max-tokens", type=int, default=80)
     parser.add_argument("--probe-preset", choices=available_probe_presets(), default="default")
+    parser.add_argument(
+        "--generation-readout-top-k",
+        type=int,
+        default=10,
+        help="Save top-k token logprobs for each generated token when the backend exposes them.",
+    )
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--probe-temperature", type=float, default=0.7)
     parser.add_argument("--cache-summary-every", type=int, default=10)
@@ -88,6 +94,7 @@ def main() -> None:
         "stream_temperature": args.temperature,
         "probe_temperature": args.probe_temperature,
         "probe_preset": args.probe_preset,
+        "generation_readout_top_k": args.generation_readout_top_k,
         "probe_seed_policy": "same base probe seed is applied to all conditions; MLX run resets before/mid/after to seed, seed+1, seed+2",
         "conditions": {key: str(path) for key, path in manifests.items()},
         "records": batch_records,
@@ -145,6 +152,7 @@ def _run_or_reuse(
             max_tokens=args.max_tokens,
             probe_max_tokens=args.probe_max_tokens,
             probe_preset=args.probe_preset,
+            generation_readout_top_k=args.generation_readout_top_k,
             temperature=args.temperature,
             probe_temperature=args.probe_temperature,
             dry_run=args.dry_run,
@@ -189,6 +197,7 @@ def _format_manifest_batch_summary(summary: dict[str, Any]) -> str:
         f"- Stream temperature: `{summary['stream_temperature']}`",
         f"- Probe temperature: `{summary['probe_temperature']}`",
         f"- Probe preset: `{summary['probe_preset']}`",
+        f"- Generation readout top-k: `{summary['generation_readout_top_k']}`",
         "",
         "## Conditions",
         "",

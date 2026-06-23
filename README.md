@@ -73,15 +73,19 @@ For a fresh read, start with `docs/experiment_design.md`, then
 `docs/research_notes/0016_five_step_instrumentation_kickoff.md`, then
 `docs/research_notes/0017_cross_palette_control_smoke.md`, then
 `docs/research_notes/0018_cross_palette_replication_path.md`, then
-`docs/research_notes/0019_cross_palette_replication_readout.md`.
+`docs/research_notes/0019_cross_palette_replication_readout.md`, then
+`docs/research_notes/0020_true_50_frame_cross_palette_replication.md`.
 
-The first replicated cross-palette readout used two 12-frame source-pair
-replications. Surface forced-choice labels stayed fixed, while cache-summary
-interaction argmax locations repeated at mid layer 23 `values` and after layer 0
-`keys`. Processor-space image-stat interactions were pair-dependent, so the
-current interpretation stays at the level of traceable state-geometry
-interaction, not a single scalar image-stat mechanism. The next live run should
-move to true 50-frame source variants and add first-token logit/top-k readouts.
+The first true 50-frame cross-palette replication kept all `MM/JJ/MJ/JM` cells
+at 50 frames for two source pairs. Surface forced-choice labels stayed fixed,
+while scalar cache-summary interaction argmax locations repeated at mid layer 23
+`values` and after layer 0 `keys`. Processor-space image-stat interactions
+remained pair-dependent, so the current interpretation is a replicated
+state-geometry locus, not a single scalar image-stat mechanism. A top-k20
+readout rerun then found identical first-token top-20 sets across `MM/JJ/MJ/JM`
+for every phase/probe record, with max common-token interaction around `0.004`
+logprob. The next readout step is full-vocabulary or teacher-forced scoring, or
+a targeted cache-swap intervention.
 
 ## Infrastructure Tiers
 
@@ -437,6 +441,19 @@ python3 scripts/analyze_factorial_image_contrast.py \
   --output-md runs/cross_palette_controls/processor_factorial_image_contrast.md
 ```
 
+To analyze saved first generated-token top-k readouts from a rerun that includes
+`generation.steps`:
+
+```bash
+python3 scripts/analyze_probe_readout_contrast.py \
+  --mm runs/cross_palette_replication_50_v1/c_d_50f/manifest_probe_seed_0/probe_seed_0/mm_mlx.json \
+  --jj runs/cross_palette_replication_50_v1/c_d_50f/manifest_probe_seed_0/probe_seed_0/jj_mlx.json \
+  --mj runs/cross_palette_replication_50_v1/c_d_50f/manifest_probe_seed_0/probe_seed_0/mj_mlx.json \
+  --jm runs/cross_palette_replication_50_v1/c_d_50f/manifest_probe_seed_0/probe_seed_0/jm_mlx.json \
+  --output-json runs/cross_palette_replication_50_v1/c_d_50f/probe_readout_contrast.json \
+  --output-md runs/cross_palette_replication_50_v1/c_d_50f/probe_readout_contrast.md
+```
+
 ## Documentation
 
 - [Experiment Design](docs/experiment_design.md)
@@ -463,6 +480,7 @@ python3 scripts/analyze_factorial_image_contrast.py \
 - [Research Note 0017: Cross-Palette Control Smoke](docs/research_notes/0017_cross_palette_control_smoke.md)
 - [Research Note 0018: Cross-Palette Replication Path](docs/research_notes/0018_cross_palette_replication_path.md)
 - [Research Note 0019: Cross-Palette Replication Readout](docs/research_notes/0019_cross_palette_replication_readout.md)
+- [Research Note 0020: True 50-Frame Cross-Palette Replication](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
 
 ## Claim Boundary
 
