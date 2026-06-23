@@ -17,6 +17,12 @@ def main() -> None:
     parser.add_argument("--max-tokens", type=int, default=2)
     parser.add_argument("--probe-max-tokens", type=int, default=64)
     parser.add_argument("--probe-preset", choices=available_probe_presets(), default="default")
+    parser.add_argument(
+        "--generation-readout-top-k",
+        type=int,
+        default=10,
+        help="Save top-k token logprobs for each generated token when the backend exposes them.",
+    )
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument(
         "--probe-temperature",
@@ -87,6 +93,7 @@ def main() -> None:
             max_tokens=args.max_tokens,
             probe_max_tokens=args.probe_max_tokens,
             probe_preset=args.probe_preset,
+            generation_readout_top_k=args.generation_readout_top_k,
             temperature=args.temperature,
             probe_temperature=args.probe_temperature,
             seed=args.seed,

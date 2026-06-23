@@ -43,6 +43,7 @@ class StreamRunConfig:
     probe_preset: str = "default"
     cache_summary_every: int = 10
     cache_summary_max_layers: int | None = 4
+    generation_readout_top_k: int = 10
     adapter_id: str = "mlx_vlm"
     include_frame_artifacts: bool = True
     seed: int | None = None
@@ -100,6 +101,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
             "mid_probe_policy": "after half of the selected frame stream has been consumed",
             "cache_summary_every": config.cache_summary_every,
             "cache_summary_max_layers": config.cache_summary_max_layers,
+            "generation_readout_top_k": config.generation_readout_top_k,
             "include_frame_artifacts": config.include_frame_artifacts,
         },
         "non_claims": [
@@ -168,6 +170,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
         prompt_cache_state_source=None,
         probe_cache_policy="no_cache",
         cache_summary_max_layers=config.cache_summary_max_layers,
+        generation_readout_top_k=config.generation_readout_top_k,
         probe_seed=probe_phase_seeds["before"],
     )
 
@@ -192,6 +195,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
                 config.cache_summary_every,
             ),
             cache_summary_max_layers=config.cache_summary_max_layers,
+            generation_readout_top_k=config.generation_readout_top_k,
         )
         result["stream_events"].append(event)
 
@@ -210,6 +214,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
                 prompt_cache_state_source=prompt_cache_state,
                 probe_cache_policy=config.probe_cache_policy,
                 cache_summary_max_layers=config.cache_summary_max_layers,
+                generation_readout_top_k=config.generation_readout_top_k,
                 probe_seed=probe_phase_seeds["mid"],
             )
 
@@ -227,6 +232,7 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
         prompt_cache_state_source=prompt_cache_state,
         probe_cache_policy=config.probe_cache_policy,
         cache_summary_max_layers=config.cache_summary_max_layers,
+        generation_readout_top_k=config.generation_readout_top_k,
         probe_seed=probe_phase_seeds["after"],
     )
 
@@ -266,6 +272,7 @@ def _run_frame_turn(
     temperature: float,
     capture_cache_summary: bool,
     cache_summary_max_layers: int | None,
+    generation_readout_top_k: int,
 ) -> dict[str, Any]:
     timecode = format_timecode(float(frame["t_seconds"]))
     prompt = f"{delivery_prompt_prefix(frame, delivery.mode, timecode)}\n{SYNC_PROMPT}"
@@ -287,7 +294,9 @@ def _run_frame_turn(
             max_tokens=max_tokens,
             temperature=temperature,
             prompt_cache_state=prompt_cache_state,
-        )
+        ),
+        processor=processor,
+        top_k=generation_readout_top_k,
     )
     wall_s = time.perf_counter() - started
 
@@ -331,6 +340,7 @@ def _run_probe_batch(
     prompt_cache_state_source: Any,
     probe_cache_policy: ProbeCachePolicy,
     cache_summary_max_layers: int | None,
+    generation_readout_top_k: int,
     probe_seed: int | None,
 ) -> list[dict[str, Any]]:
     records = []
@@ -362,7 +372,9 @@ def _run_probe_batch(
                 max_tokens=max_tokens,
                 temperature=temperature,
                 prompt_cache_state=prompt_cache_state,
-            )
+            ),
+            processor=processor,
+            top_k=generation_readout_top_k,
         )
         records.append(
             {
@@ -518,12 +530,26 @@ def _mlx_sequence_position_stats(mx: Any, tensor: Any) -> list[dict[str, Any]]:
     return records
 
 
-def _collect_stream(chunks: Any) -> dict[str, Any]:
+def _collect_stream(
+    chunks: Any,
+    *,
+    processor: Any | None = None,
+    top_k: int = 10,
+) -> dict[str, Any]:
     text_parts = []
     last = None
-    for chunk in chunks:
+    step_records = []
+    for step_index, chunk in enumerate(chunks):
         last = chunk
         text_parts.append(getattr(chunk, "text", str(chunk)))
+        step_record = _summarize_mlx_generation_step(
+            chunk,
+            processor=processor,
+            step_index=step_index,
+            top_k=top_k,
+        )
+        if step_record is not None:
+            step_records.append(step_record)
 
     summary = {}
     if last is not None:
@@ -538,7 +564,108 @@ def _collect_stream(chunks: Any) -> dict[str, Any]:
             value = getattr(last, key, None)
             if value is not None:
                 summary[key] = value
+    if step_records:
+        summary["score_steps"] = len(step_records)
+        summary["steps"] = step_records
     return {"text": "".join(text_parts).strip(), "summary": summary}
+
+
+def _summarize_mlx_generation_step(
+    chunk: Any,
+    *,
+    processor: Any | None,
+    step_index: int,
+    top_k: int,
+) -> dict[str, Any] | None:
+    logprobs = getattr(chunk, "logprobs", None)
+    token = getattr(chunk, "token", None)
+    if logprobs is None and token is None:
+        return None
+
+    record: dict[str, Any] = {"step_index": step_index}
+    token_id = _coerce_token_id(token)
+    if token_id is not None:
+        record["token_id"] = token_id
+        record["token"] = _decode_token(processor, token_id)
+    if logprobs is None:
+        return record
+    record["top_logprobs"] = summarize_mlx_logprobs(
+        logprobs,
+        processor=processor,
+        top_k=top_k,
+    )
+    if token_id is not None:
+        token_logprob = _mlx_logprob_at(logprobs, token_id)
+        if token_logprob is not None:
+            record["token_logprob"] = token_logprob
+    return record
+
+
+def summarize_mlx_logprobs(
+    logprobs: Any,
+    *,
+    processor: Any | None,
+    top_k: int = 10,
+) -> list[dict[str, Any]]:
+    if top_k <= 0:
+        return []
+    try:
+        import mlx.core as mx
+    except Exception:
+        return []
+    if not hasattr(logprobs, "shape") or len(logprobs.shape) < 1:
+        return []
+    vocab_size = int(logprobs.shape[-1])
+    if vocab_size < 1:
+        return []
+    k = min(top_k, vocab_size)
+    indices = mx.argsort(logprobs)[-k:][::-1]
+    values = logprobs[indices]
+    mx.eval(indices, values)
+    return [
+        {
+            "token_id": int(token_id),
+            "token": _decode_token(processor, int(token_id)),
+            "logprob": float(logprob),
+        }
+        for token_id, logprob in zip(indices.tolist(), values.tolist())
+    ]
+
+
+def _mlx_logprob_at(logprobs: Any, token_id: int) -> float | None:
+    try:
+        import mlx.core as mx
+    except Exception:
+        return None
+    if token_id < 0 or not hasattr(logprobs, "shape") or token_id >= int(logprobs.shape[-1]):
+        return None
+    value = logprobs[token_id]
+    mx.eval(value)
+    return float(value.item())
+
+
+def _coerce_token_id(token: Any) -> int | None:
+    if token is None:
+        return None
+    try:
+        return int(token.item()) if hasattr(token, "item") else int(token)
+    except Exception:
+        return None
+
+
+def _decode_token(processor: Any | None, token_id: int) -> str:
+    if processor is None:
+        return ""
+    tokenizer = getattr(processor, "tokenizer", processor)
+    try:
+        return tokenizer.decode([token_id], skip_special_tokens=False)
+    except TypeError:
+        try:
+            return tokenizer.decode([token_id])
+        except Exception:
+            return ""
+    except Exception:
+        return ""
 
 
 def _load_mlx_runtime(model_id: str) -> dict[str, Any]:

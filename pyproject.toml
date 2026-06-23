@@ -47,6 +47,7 @@ analyze-cache-classifier = "fractal_vlm_state_probe.cli.analyze_cache_classifier
 analyze-image-cache-correlations = "fractal_vlm_state_probe.cli.analyze_image_cache_correlations:main"
 analyze-factorial-cache-contrast = "fractal_vlm_state_probe.cli.analyze_factorial_cache_contrast:main"
 analyze-factorial-image-contrast = "fractal_vlm_state_probe.cli.analyze_factorial_image_contrast:main"
+analyze-probe-readout-contrast = "fractal_vlm_state_probe.cli.analyze_probe_readout_contrast:main"
 analyze-image-stats = "fractal_vlm_state_probe.cli.analyze_image_stats:main"
 analyze-processor-image-stats = "fractal_vlm_state_probe.cli.analyze_processor_image_stats:main"
 
