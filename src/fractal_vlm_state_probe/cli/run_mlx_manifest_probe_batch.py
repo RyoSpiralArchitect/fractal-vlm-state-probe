@@ -57,10 +57,26 @@ def main() -> None:
     parser.add_argument("--probe-max-tokens", type=int, default=80)
     parser.add_argument("--probe-preset", choices=available_probe_presets(), default="default")
     parser.add_argument(
+        "--after-probe-protocol",
+        choices=["direct_multimodal_replay", "legacy_cache_branch"],
+        default="direct_multimodal_replay",
+        help="After-probe protocol used when --context-protocol cumulative_replay.",
+    )
+    parser.add_argument(
+        "--capture-direct-probe-cache",
+        action="store_true",
+        help="Summarize direct-probe caches in addition to the source replay cache.",
+    )
+    parser.add_argument(
         "--generation-readout-top-k",
         type=int,
         default=10,
         help="Save top-k token logprobs for each generated token when the backend exposes them.",
+    )
+    parser.add_argument(
+        "--save-full-vocab-first-step",
+        action="store_true",
+        help="Save compressed full-vocabulary first-step logprobs for every probe run.",
     )
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--probe-temperature", type=float, default=0.7)
@@ -116,7 +132,14 @@ def main() -> None:
         "stream_temperature": args.temperature,
         "probe_temperature": args.probe_temperature,
         "probe_preset": args.probe_preset,
+        "after_probe_protocol": args.after_probe_protocol
+        if args.context_protocol == "cumulative_replay"
+        else None,
+        "capture_direct_probe_cache": args.capture_direct_probe_cache
+        if args.context_protocol == "cumulative_replay"
+        else None,
         "generation_readout_top_k": args.generation_readout_top_k,
+        "save_full_vocab_first_step": args.save_full_vocab_first_step,
         "cache_summary_every": args.cache_summary_every,
         "cache_summary_max_layers": args.cache_summary_max_layers,
         "probe_seed_policy": "same base probe seed is applied to all conditions; MLX phases use seed, seed+1, seed+2",
@@ -183,7 +206,10 @@ def _run_or_reuse(
                 max_tokens=args.max_tokens,
                 probe_max_tokens=args.probe_max_tokens,
                 probe_preset=args.probe_preset,
+                after_probe_protocol=args.after_probe_protocol,
+                capture_direct_probe_cache=args.capture_direct_probe_cache,
                 generation_readout_top_k=args.generation_readout_top_k,
+                save_full_vocab_first_step=args.save_full_vocab_first_step,
                 temperature=args.temperature,
                 probe_temperature=args.probe_temperature,
                 dry_run=args.dry_run,
@@ -206,6 +232,7 @@ def _run_or_reuse(
             probe_max_tokens=args.probe_max_tokens,
             probe_preset=args.probe_preset,
             generation_readout_top_k=args.generation_readout_top_k,
+            save_full_vocab_first_step=args.save_full_vocab_first_step,
             temperature=args.temperature,
             probe_temperature=args.probe_temperature,
             dry_run=args.dry_run,
@@ -252,7 +279,10 @@ def _format_manifest_batch_summary(summary: dict[str, Any]) -> str:
         f"- Stream temperature: `{summary['stream_temperature']}`",
         f"- Probe temperature: `{summary['probe_temperature']}`",
         f"- Probe preset: `{summary['probe_preset']}`",
+        f"- After-probe protocol: `{summary['after_probe_protocol']}`",
+        f"- Capture direct-probe cache: `{summary['capture_direct_probe_cache']}`",
         f"- Generation readout top-k: `{summary['generation_readout_top_k']}`",
+        f"- Full-vocabulary first step: `{summary['save_full_vocab_first_step']}`",
         f"- Cache summary every: `{summary['cache_summary_every']}`",
         f"- Cache summary max layers: `{summary['cache_summary_max_layers']}`",
         "",

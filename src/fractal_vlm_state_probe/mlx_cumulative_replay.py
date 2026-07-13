@@ -3,9 +3,13 @@ from __future__ import annotations
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 from .delivery import frame_artifact_list, prepare_frame_deliveries, stimulus_delivery_record
+from .full_vocab_readout import (
+    full_vocab_sidecar_path,
+    write_full_vocab_logprob_sidecar,
+)
 from .mlx_stream import (
     _collect_stream,
     _dry_probe_records,
@@ -40,11 +44,16 @@ class CumulativeReplayRunConfig:
     probe_preset: str = "forced_choice"
     cache_summary_max_layers: int | None = 4
     generation_readout_top_k: int = 10
+    save_full_vocab_first_step: bool = False
     dry_run: bool = False
     include_frame_artifacts: bool = True
     seed: int | None = 20260604
     probe_seed: int | None = 0
     adapter_id: str = "mlx_vlm"
+    after_probe_protocol: Literal[
+        "direct_multimodal_replay", "legacy_cache_branch"
+    ] = "direct_multimodal_replay"
+    capture_direct_probe_cache: bool = False
 
 
 def run_cumulative_replay_probe(
@@ -96,14 +105,22 @@ def run_cumulative_replay_probe(
             "probe_preset": config.probe_preset,
             "probe_count": len(probes),
             "probe_cache_policy": "isolated",
-            "probe_history_policy": "after probe is a branch read from the replay cache",
+            "after_probe_protocol": config.after_probe_protocol,
+            "capture_direct_probe_cache": config.capture_direct_probe_cache,
+            "probe_history_policy": (
+                "after probes use fresh direct multimodal forwards over the same ordered images"
+                if config.after_probe_protocol == "direct_multimodal_replay"
+                else "after probes use the legacy branch read from the replay cache"
+            ),
             "cache_summary_max_layers": config.cache_summary_max_layers,
             "generation_readout_top_k": config.generation_readout_top_k,
+            "save_full_vocab_first_step": config.save_full_vocab_first_step,
             "include_frame_artifacts": config.include_frame_artifacts,
         },
         "non_claims": [
             "Cumulative replay is a distinct protocol from incremental multi-turn cache persistence.",
             "Ordered multi-image batching does not prove temporal processing equivalent to a video stream.",
+            "Direct multimodal after probes measure immediate image-conditioned readout, not persistence after the ACK turn.",
             "KV-cache summaries are computational traces, not subjective states.",
         ],
         "stimulus": {
@@ -124,7 +141,11 @@ def run_cumulative_replay_probe(
         "frame_artifacts": frame_artifact_list(deliveries),
         "probe_schedule": {
             "before": "clean text-only branch",
-            "after": "branch read after one ordered multi-image replay turn",
+            "after": (
+                "fresh direct multimodal read using the same ordered image batch"
+                if config.after_probe_protocol == "direct_multimodal_replay"
+                else "legacy branch read after one ordered multi-image replay turn"
+            ),
             "mid": None,
         },
         "probes": {},
@@ -168,6 +189,9 @@ def run_cumulative_replay_probe(
         cache_summary_max_layers=config.cache_summary_max_layers,
         generation_readout_top_k=config.generation_readout_top_k,
         probe_seed=probe_phase_seeds["before"],
+        full_vocab_output_path=config.output_path
+        if config.save_full_vocab_first_step
+        else None,
     )
 
     set_global_seed(config.seed, include_mlx=True)
@@ -186,29 +210,69 @@ def run_cumulative_replay_probe(
         record["position"]
         for record in replay_event["cache_token_layout"]["sequence_position_plan"]
     ]
-    result["probes"]["after"] = _run_probe_batch(
-        probes=probes,
-        history=history,
-        phase="after",
-        model=mlx["model"],
-        processor=mlx["processor"],
-        model_config=mlx["model_config"],
-        stream_generate=mlx["stream_generate"],
-        apply_chat_template=mlx["apply_chat_template"],
-        max_tokens=config.probe_max_tokens,
-        temperature=config.probe_temperature,
-        prompt_cache_state_source=prompt_cache_state,
-        probe_cache_policy="isolated",
-        cache_summary_max_layers=config.cache_summary_max_layers,
-        generation_readout_top_k=config.generation_readout_top_k,
-        probe_seed=probe_phase_seeds["after"],
-        cache_summary_sequence_positions=replay_positions,
-    )
+    if config.after_probe_protocol == "direct_multimodal_replay":
+        result["probes"]["after"] = _run_direct_multimodal_probe_batch(
+            probes=probes,
+            frames=frames,
+            deliveries=deliveries,
+            prompt_cache_state_reference=prompt_cache_state,
+            replay_positions=replay_positions,
+            mlx=mlx,
+            config=config,
+            probe_seed=probe_phase_seeds["after"],
+        )
+    else:
+        result["probes"]["after"] = _run_probe_batch(
+            probes=probes,
+            history=history,
+            phase="after",
+            model=mlx["model"],
+            processor=mlx["processor"],
+            model_config=mlx["model_config"],
+            stream_generate=mlx["stream_generate"],
+            apply_chat_template=mlx["apply_chat_template"],
+            max_tokens=config.probe_max_tokens,
+            temperature=config.probe_temperature,
+            prompt_cache_state_source=prompt_cache_state,
+            probe_cache_policy="isolated",
+            cache_summary_max_layers=config.cache_summary_max_layers,
+            generation_readout_top_k=config.generation_readout_top_k,
+            probe_seed=probe_phase_seeds["after"],
+            cache_summary_sequence_positions=replay_positions,
+            full_vocab_output_path=config.output_path
+            if config.save_full_vocab_first_step
+            else None,
+        )
     write_json(config.output_path, result)
     return result
 
 
 def cumulative_replay_prompt(frames: list[dict[str, Any]]) -> str:
+    lines = cumulative_replay_context_lines(frames)
+    lines.extend(
+        [
+            "Treat the ordered image batch as the cumulative visual context. Do not classify or describe it yet.",
+            SYNC_PROMPT,
+        ]
+    )
+    return "\n".join(lines)
+
+
+def cumulative_replay_probe_prompt(
+    frames: list[dict[str, Any]],
+    probe_prompt: str,
+) -> str:
+    lines = cumulative_replay_context_lines(frames)
+    lines.extend(
+        [
+            "Use the ordered image batch directly as context for this measurement question:",
+            probe_prompt,
+        ]
+    )
+    return "\n".join(lines)
+
+
+def cumulative_replay_context_lines(frames: list[dict[str, Any]]) -> list[str]:
     lines = [
         f"This is an ordered cumulative replay of {len(frames)} frames from one deterministic visual stream.",
         "Read the attached images in exactly this order:",
@@ -218,13 +282,115 @@ def cumulative_replay_prompt(frames: list[dict[str, Any]]) -> str:
             f"{ordinal + 1}. frame {int(frame['index']):06d} at "
             f"{format_timecode(float(frame['t_seconds']))} ({float(frame['t_seconds']):.3f} seconds)"
         )
-    lines.extend(
-        [
-            "Treat the ordered image batch as the cumulative visual context. Do not classify or describe it yet.",
-            SYNC_PROMPT,
-        ]
+    return lines
+
+
+def _run_direct_multimodal_probe_batch(
+    *,
+    probes: list[dict[str, str]],
+    frames: list[dict[str, Any]],
+    deliveries: dict[int, Any],
+    prompt_cache_state_reference: Any,
+    replay_positions: list[int],
+    mlx: dict[str, Any],
+    config: CumulativeReplayRunConfig,
+    probe_seed: int | None,
+) -> list[dict[str, Any]]:
+    probe_seed_record = set_global_seed(probe_seed, include_mlx=True)
+    image_paths = [str(deliveries[int(frame["index"])].image_path) for frame in frames]
+    reference_summary = summarize_prompt_cache_state(
+        prompt_cache_state_reference,
+        max_layers=config.cache_summary_max_layers,
+        sequence_positions=replay_positions,
     )
-    return "\n".join(lines)
+    records = []
+    for probe in probes:
+        prompt_cache_state = (
+            _new_prompt_cache_state(mlx.get("prompt_cache_state"))
+            if config.capture_direct_probe_cache
+            else None
+        )
+        prompt = cumulative_replay_probe_prompt(frames, probe["prompt"])
+        messages = [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": prompt},
+        ]
+        formatted_prompt = mlx["apply_chat_template"](
+            mlx["processor"],
+            mlx["model_config"],
+            messages,
+            num_images=len(image_paths),
+        )
+        full_vocab_writer = None
+        if config.save_full_vocab_first_step:
+            sidecar_path = full_vocab_sidecar_path(
+                config.output_path,
+                phase="after",
+                probe_id=probe["id"],
+            )
+
+            def full_vocab_writer(logprobs: Any, *, path: Path = sidecar_path) -> dict[str, Any]:
+                return write_full_vocab_logprob_sidecar(
+                    logprobs,
+                    path=path,
+                    relative_to=config.output_path.parent,
+                )
+
+        started = time.perf_counter()
+        generation = _collect_stream(
+            mlx["stream_generate"](
+                mlx["model"],
+                mlx["processor"],
+                formatted_prompt,
+                image=image_paths,
+                max_tokens=config.probe_max_tokens,
+                temperature=config.probe_temperature,
+                prompt_cache_state=prompt_cache_state,
+            ),
+            processor=mlx["processor"],
+            top_k=config.generation_readout_top_k,
+            first_step_full_vocab_writer=full_vocab_writer,
+        )
+        token_layout = (
+            summarize_prompt_cache_token_layout(prompt_cache_state, mlx["model_config"])
+            if prompt_cache_state is not None
+            else None
+        )
+        direct_positions = (
+            [item["position"] for item in token_layout["sequence_position_plan"]]
+            if token_layout is not None
+            else []
+        )
+        records.append(
+            {
+                "phase": "after",
+                "probe_id": probe["id"],
+                "prompt": probe["prompt"],
+                "direct_multimodal_prompt": prompt,
+                "assistant_text": generation["text"],
+                "generation": generation["summary"],
+                "probe_seed": probe_seed,
+                "probe_seed_record": probe_seed_record,
+                "wall_s": time.perf_counter() - started,
+                "after_probe_protocol": "direct_multimodal_replay",
+                "cache_branch_status": "not_used_direct_multimodal_replay",
+                "cache_prefix_audit": {
+                    "available": False,
+                    "reason": "fresh direct multimodal forward; no source cache reuse attempted",
+                },
+                "source_cache_summary_before_probe": reference_summary,
+                "cache_token_layout": token_layout,
+                "cache_summary": summarize_prompt_cache_state(
+                    prompt_cache_state,
+                    max_layers=config.cache_summary_max_layers,
+                    sequence_positions=direct_positions,
+                )
+                if config.capture_direct_probe_cache
+                else None,
+                "cache_summary_captured": config.capture_direct_probe_cache,
+            }
+        )
+    return records
 
 
 def _run_replay_turn(

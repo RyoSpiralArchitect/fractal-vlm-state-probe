@@ -6,6 +6,7 @@ from fractal_vlm_state_probe.fractals import FractalSpec
 from fractal_vlm_state_probe.mlx_cumulative_replay import (
     CumulativeReplayRunConfig,
     cumulative_replay_prompt,
+    cumulative_replay_probe_prompt,
     run_cumulative_replay_probe,
 )
 from fractal_vlm_state_probe.stimulus import render_stimulus
@@ -23,6 +24,20 @@ def test_cumulative_replay_prompt_records_order_and_timecodes() -> None:
     assert prompt.index("frame 000003") < prompt.index("frame 000009")
     assert "00:00.500" in prompt
     assert "00:01.250" in prompt
+
+
+def test_direct_replay_probe_prompt_keeps_order_and_measurement_question() -> None:
+    prompt = cumulative_replay_probe_prompt(
+        [
+            {"index": 3, "t_seconds": 0.5},
+            {"index": 9, "t_seconds": 1.25},
+        ],
+        "Answer exactly A, B, or C.",
+    )
+
+    assert prompt.index("frame 000003") < prompt.index("frame 000009")
+    assert "Answer exactly A, B, or C." in prompt
+    assert "Return ACK only" not in prompt
 
 
 def test_cumulative_replay_dry_run_records_distinct_protocol(tmp_path: Path) -> None:
@@ -47,6 +62,9 @@ def test_cumulative_replay_dry_run_records_distinct_protocol(tmp_path: Path) -> 
         == "single_turn_ordered_multi_image_replay"
     )
     assert result["probe_schedule"]["mid"] is None
+    assert result["context_policy"]["after_probe_protocol"] == "direct_multimodal_replay"
+    assert result["context_policy"]["capture_direct_probe_cache"] is False
+    assert "fresh direct multimodal" in result["probe_schedule"]["after"]
     assert result["reproducibility"]["probe_phase_seeds"]["after"] == 7
     event = result["stream_events"][0]
     assert event["image_count"] == 2

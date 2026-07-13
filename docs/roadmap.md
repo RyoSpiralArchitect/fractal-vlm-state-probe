@@ -94,37 +94,21 @@ Status: first MLX batch runner and lexical summary implemented.
 - Raw and processor-space 2x2 factorial image-stat contrasts aligned with the
   cache-summary factorial contrast.
 - Replicated cross-palette factorial preparation over multiple source pairs.
-- MLX first generated-token top-k readout capture and saved-run readout
+- MLX first-step top-k and complete-vocabulary readout capture with saved-run
   contrast analysis.
 
-Status: first generator suite, paired pattern batch runner, image-statistic
-reporter, RGB quantile-matched phase-scramble control, luminance-rank matched
-phase-scramble control, low/high-pass frequency controls, and arbitrary
-manifest batch runner implemented. The first image-stat/cache-distance
-correlation reporter is implemented. Independent stream variants, a
-forced-choice probe preset, and first sequence-position cache-delta reporting
-are implemented. Cross-family palette controls and processor-space image
-statistics are implemented. First-step top-k logprob readout comparison for
-saved HF runs is implemented. The first 12-frame cross-family palette-control
-smoke is documented, including a summary-stat 2x2 cache factorial contrast
-for spatial main effect, palette main effect, and interaction. Replicated
-cross-palette batch preparation and raw/processor image-stat factorial
-contrasts are implemented. The first two-pair 12-frame cross-palette
-replication is documented: forced-choice surface labels remained fixed, cache
-interaction argmax locations repeated, and processor image-stat interactions
-were pair-dependent. The first true 50-frame two-pair replication is documented:
-surface labels stayed fixed and scalar cache interaction argmax locations again
-landed at mid layer 23 `values` and after layer 0 `keys`. MLX first-token
-top-k readout capture and a saved-run readout analyzer are implemented. The
-top-k20 rerun found identical first-token top-20 sets across `MM/JJ/MJ/JM` for
-every phase/probe record while the cache locus persisted. Transform seed/cutoff
-aggregation and full-vocabulary logprob or teacher-forced reads are still next.
-The first cache-swap intervention scaffold is implemented for layer-targeted
-MLX `PromptCacheState` `values` swaps before creative branch probes.
+Status: the generator, transformed-control, external-manifest, raw image-stat,
+processor-stat, 2x2 factorial, and arbitrary manifest-batch paths are
+implemented. Cross-palette transfer is replicated over two source pairs and
+shows pair-dependent non-additive input/processor interactions. Complete
+first-step vocabulary capture and KL/JS/TV/Hellinger plus probability-space
+factorial analysis are now implemented. Earlier persistent-cache and branched
+top-k interpretations were withdrawn by the Note 0027 prefix audit; the input
+and processor-space findings remain valid.
 
 ## Phase 4.65: Targeted Cache Interventions
 
-- Strict source/donor token-history and tensor-shape compatibility checks.
+- Exact source/donor multimodal prefix and cache sequence-length checks.
 - Single-layer values swaps with reciprocal branches.
 - Matched source-with-source sham branches.
 - Multi-layer and multi-seed sweep runner with saved top-k readouts.
@@ -132,23 +116,14 @@ MLX `PromptCacheState` `values` swaps before creative branch probes.
 - Dense layer, key/value, layer-window, and sequence-position intervention
   scans.
 
-Status: the first two-pair sweep is complete for layers `0`, `12`, `22`, and
-`23` over three matched probe seeds. All generated token sequences remained
-origin-identical. Layer 12 produced the largest tested top-k perturbation in
-both pairs, about `22%` of baseline source/donor separation, but remained
-origin-like. Layer 23 was smaller and strongly origin-like. Self-swap shams were
-exactly zero. A seed-0 dense scan over layers `8-23` then produced highly similar
-profiles across both source pairs (Pearson `0.964`, Spearman `0.982`), with the
-same argmax at layer 10 and the same top three layers `10`, `13`, and `12`.
-This separates the replicated layer 23 summary-stat locus from single-layer
-generative sufficiency and identifies a mid-layer confirmation target. Strict
-three-seed reciprocal/sham confirmation is now complete for layers `10`, `12`,
-and `13` in both pairs. Directional ranks repeat almost exactly within each
-pair, but the exact peak is layer 10 for `c_d` and layer 13 for `b_c`; the
-supported object is a layers 10-13 band. Every intervention token sequence
-remained origin-identical and every self-sham top-k effect was zero. Keys,
-key-value pairs, layer windows, position-local swaps, and full-vocabulary
-scoring are next.
+Status: historical values-swap scaffolds and runs exist, but the Note 0027
+audit found that their image-conditioned branch did not preserve the required
+multimodal prefix/cache-length relation. All layer-23 and layers-10-13 causal
+or susceptibility claims are withdrawn. This phase is blocked on a rebuilt
+multimodal suffix path that fails closed unless exact prefix, cache length,
+tensor shape, and token-region invariants pass. Reciprocal directions,
+self-sham branches, full-vocabulary scoring, keys/values, layer windows, and
+position-local swaps remain required after that path is valid.
 
 ## Phase 4.7: Cross-Model Replication
 
@@ -160,16 +135,16 @@ scoring are next.
 - Compare loci by normalized depth and token region rather than raw layer or
   position number alone.
 
-Status: the Qwen2.5-VL-3B 4bit lane now includes two source pairs at 1, 2, and 4
-frames under an explicit single-turn ordered multi-image replay protocol. All
-six 36-layer factorials kept the forced-choice top-k10 readout cell-invariant
-and repeated the scalar interaction argmax at layer 33 `values`. Image-token
-mapping is implemented; it shows that the exact sequence-position argmax is not
-stable, withdrawing position 128 as a fixed mechanistic candidate. MLX-VLM
-0.4.4 still fails when reusing Qwen's prompt cache across a second incremental
-image turn, so persistent multi-turn replication remains open. Replay lengths
-8/16, full-vocabulary scoring, and an upstream-compatible incremental path are
-next.
+Status: the valid direct lane now covers SmolVLM2, Qwen2.5-VL, and Gemma 3 over
+two source pairs: 20 factorial points, 80 cell runs, and 320 complete-vocabulary
+sidecars. Qwen covers 1/2/4/8/16 images and repeats a fresh ACK layer 33
+`values` scalar locus at all 10 points. SmolVLM covers 1/2/4 images and moves
+across depth/tensor. Gemma covers 1/2 images and repeats early pair-specific
+loci while showing much stronger frequency than family readout interaction.
+Every direct after-factorial has non-identical cell distributions. The next
+replication should add source pairs, prompt/candidate permutations, a fourth
+architecture, and matched natural/geometric controls before extending nested
+lengths again.
 
 ## Phase 5: Research Report
 
@@ -179,6 +154,8 @@ next.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: evidence matrix started. Manuscript tables and figures remain future;
-the current priority is full-vocabulary scoring and intervention/cross-model
-coverage before prose claims are promoted.
+Status: the evidence matrix and Note 0027 now encode the audited claim boundary
+and three-model direct replication. Manuscript tables and figures remain
+future. The current priority is independent source-pair and prompt replication,
+full-vector cache contrasts, and a valid intervention path before causal prose
+is promoted.

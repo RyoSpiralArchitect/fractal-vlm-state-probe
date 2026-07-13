@@ -2,11 +2,17 @@
 
 Date: 2026-07-13
 
+> **Protocol audit update (2026-07-13):** [Note 0027](0027_cache_prefix_audit_and_direct_full_vocab.md)
+> retains the fresh multi-image ACK cache trajectory but withdraws the
+> text-only branched readout. The legacy branch reused only `42/241` source
+> tokens in the one-frame audit and produced byte-identical full-vocabulary
+> sidecars; valid direct probes produce non-identical distributions.
+
 ## Status
 
-Completed as a two-pair, three-length cumulative visual replay trajectory over
-all 36 Qwen language-model cache layers. This is a multi-image context result,
-not an incremental multi-turn persistence result.
+Partially retained: the fresh 1/2/4-frame ACK cache trajectory over all 36
+layers remains valid. The branched readout and its equality claim are
+superseded by Note 0027.
 
 ## Motivation
 

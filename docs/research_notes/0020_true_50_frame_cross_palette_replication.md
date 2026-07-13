@@ -2,6 +2,12 @@
 
 Date: 2026-06-24
 
+> **Protocol audit update (2026-07-13):** [Note 0027](0027_cache_prefix_audit_and_direct_full_vocab.md)
+> found that MLX-VLM `0.4.4` did not retain the full multimodal token prefix
+> across incremental turns or text-only probe branches. The input/processor
+> analyses in this note remain valid, but persistent-cache and branched-readout
+> interpretations below are withdrawn pending a valid rerun.
+
 This note records the first true 50-frame cross-palette replication, the
 first-token top-k readout instrumentation, and the first readout-enabled rerun.
 

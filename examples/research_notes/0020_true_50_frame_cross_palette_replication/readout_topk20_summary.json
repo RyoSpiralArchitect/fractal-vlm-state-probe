@@ -3,6 +3,11 @@
   "analysis_kind": "true_50_frame_readout_topk20_summary",
   "summary_kind": "true_50_frame_readout_topk20_summary",
   "run_root": "runs/cross_palette_replication_50_v1_readout_topk20",
+  "protocol_audit": {
+    "status": "withdrawn_pending_valid_multimodal_rerun",
+    "superseded_by": "docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md",
+    "retained_scope": "Input and processor-space image analyses only; persistent cache and branched top-k interpretations are withdrawn."
+  },
   "pairs": {
     "c_d_50f": {
       "cache_scalar_argmax": {

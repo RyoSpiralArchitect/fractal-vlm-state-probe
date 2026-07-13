@@ -2,11 +2,17 @@
 
 Date: 2026-07-13
 
+> **Protocol audit update (2026-07-13):** [Note 0027](0027_cache_prefix_audit_and_direct_full_vocab.md)
+> showed that the multimodal source path and creative probe branch did not
+> satisfy full-prefix or token/cache-length reuse invariants. All causal and
+> layer-susceptibility interpretations in this note are withdrawn pending a
+> verified multimodal intervention path.
+
 ## Status
 
-Completed for two source pairs, four layers, and three matched probe seeds. The
-intervention was technically valid, but the repeated layer 23 cache-summary
-locus did not produce donor-directed creative readout steering.
+Historical run completed for two source pairs, four layers, and three matched
+probe seeds. The numerical artifacts are retained, but the intervention path
+is not considered technically valid after the Note 0027 audit.
 
 ## Question
 

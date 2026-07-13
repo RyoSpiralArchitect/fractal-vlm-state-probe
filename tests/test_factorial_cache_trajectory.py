@@ -20,6 +20,10 @@ def test_factorial_cache_trajectory_tracks_scalar_and_position_stability(
         run_path = root / "mm.json"
         _write_json(run_path, _run(frames, position))
         _write_json(root / "probe_readout_contrast.json", _readout())
+        _write_json(
+            root / "full_vocab_readout_contrast.json",
+            _full_vocab_readout(frames),
+        )
         analysis_path = root / "factorial_cache_contrast.json"
         analysis = _analysis(run_path, effect=effect, position=position)
         _write_json(analysis_path, analysis)
@@ -37,8 +41,12 @@ def test_factorial_cache_trajectory_tracks_scalar_and_position_stability(
     assert series["scalar_argmax_location_consistent"] is True
     assert series["position_argmax_location_consistent"] is False
     assert series["readout_cell_invariant_at_all_points"] is True
+    assert series["full_vocab_distribution_cell_invariant_at_all_points"] is False
     assert series["frame_count_vs_abs_scalar_interaction_pearson"] == 1.0
+    assert series["frame_count_vs_full_vocab_interaction_l1_pearson"] == 1.0
+    assert result["points"][1]["full_vocab_readout"]["interaction_l1_norm"] == 0.4
     assert result["points"][1]["position_argmax"]["roles"] == ["image_run_1_start"]
+    assert result["points"][1]["scalar_argmax"]["normalized_depth"] == 1.0
     assert "Factorial Cache Trajectory" in format_factorial_cache_trajectory_markdown(result)
 
 
@@ -98,6 +106,7 @@ def _run(frames: int, position: int) -> dict:
         },
         "stream_events": [
             {
+                "cache_summary": {"total_layers": 34},
                 "cache_token_layout": {
                     "token_count": 100 * frames,
                     "image_token_count": 99 * frames,
@@ -122,6 +131,44 @@ def _readout() -> dict:
                 },
                 "mean_top_k_jaccard": 1.0,
                 "top_common_token_effects": [{"interaction_effect": 0.0}],
+            }
+        ]
+    }
+
+
+def _full_vocab_readout(frames: int) -> dict:
+    return {
+        "records": [
+            {
+                "phase": "after",
+                "probe_id": "forced_family_choice",
+                "vocab_size": 100,
+                "all_sidecars_byte_identical": False,
+                "pairwise_distances": [
+                    {"jensen_shannon": 0.01 * frames},
+                    {"jensen_shannon": 0.005 * frames},
+                ],
+                "probability_contrasts": {
+                    "interaction": {
+                        "l1_norm": 0.2 * frames,
+                        "max_abs": 0.1 * frames,
+                        "argmax_token_id": 7,
+                        "argmax_token": "A",
+                    }
+                },
+                "forced_choice_candidates": {
+                    "available": True,
+                    "cells": {
+                        cell: {
+                            "conditional_probabilities": {
+                                "A": 0.5,
+                                "B": 0.25,
+                                "C": 0.25,
+                            }
+                        }
+                        for cell in ("mm", "jj", "mj", "jm")
+                    },
+                },
             }
         ]
     }

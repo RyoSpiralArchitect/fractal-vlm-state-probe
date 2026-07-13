@@ -6,6 +6,7 @@ from fractal_vlm_state_probe.fractals import FractalSpec
 from fractal_vlm_state_probe.mlx_stream import (
     StreamRunConfig,
     _collect_stream,
+    audit_prompt_cache_prefix,
     _mid_probe_after_position,
     _mlx_tensor_stats,
     _mlx_sequence_position_stats,
@@ -105,6 +106,33 @@ def test_collect_stream_records_generation_step_top_logprobs() -> None:
     assert [item["token_id"] for item in step["top_logprobs"]] == [3, 1]
 
 
+def test_collect_stream_can_persist_first_step_full_vocab_metadata() -> None:
+    import mlx.core as mx
+
+    class Chunk:
+        text = "A"
+        token = 1
+        logprobs = mx.array([-1.5, -0.25, -2.0])
+
+    captured = []
+
+    def writer(logprobs: object) -> dict:
+        captured.append(logprobs)
+        return {"path": "sidecar.npz", "vocab_size": 3}
+
+    generation = _collect_stream(
+        [Chunk()],
+        top_k=2,
+        first_step_full_vocab_writer=writer,
+    )
+
+    assert len(captured) == 1
+    assert generation["summary"]["steps"][0]["full_vocab_sidecar"] == {
+        "path": "sidecar.npz",
+        "vocab_size": 3,
+    }
+
+
 def test_mlx_tensor_stats_promotes_float16_reductions() -> None:
     import math
 
@@ -156,6 +184,43 @@ def test_prompt_cache_token_layout_finds_image_runs_and_focus_positions() -> Non
     assert "image_run_0_start" in roles[2]
     assert "image_run_0_end" in roles[3]
     assert "vision_end_token_id" in roles[4]
+
+
+def test_cache_prefix_audit_rejects_partial_prefix_and_cache_length_mismatch() -> None:
+    import numpy as np
+
+    class Tokenized:
+        input_ids = np.array([[1, 2, 9, 4, 5]])
+
+    class Tokenizer:
+        pad_token = "<pad>"
+
+        def __call__(self, *args: object, **kwargs: object) -> Tokenized:
+            return Tokenized()
+
+    class Processor:
+        tokenizer = Tokenizer()
+        chat_template = "template"
+
+    class CacheEntry:
+        keys = np.zeros((1, 1, 7, 2))
+
+    class State:
+        token_ids = [1, 2, 3, 4]
+        cache = [CacheEntry()]
+
+    audit = audit_prompt_cache_prefix(
+        State(),
+        formatted_prompt="formatted",
+        processor=Processor(),
+        model_config={"model_type": "qwen2_5_vl"},
+    )
+
+    assert audit["common_prefix_token_count"] == 2
+    assert audit["full_source_prefix_match"] is False
+    assert audit["cache_sequence_lengths"] == [7]
+    assert audit["token_cache_length_aligned"] is False
+    assert audit["reuse_safe_under_token_prefix_contract"] is False
 
 
 def test_mlx_dry_run_records_text_only_delivery(tmp_path: Path) -> None:

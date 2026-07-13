@@ -97,10 +97,32 @@ def format_factorial_cache_trajectory_markdown(analysis: dict[str, Any]) -> str:
     lines.extend(
         [
             "",
+            "## Full-Vocabulary Readout",
+            "",
+            "| Series | Label | Frames | Max pair JS | Interaction L1 | Interaction max | Token | Sidecars identical | Candidate conditionals |",
+            "| --- | --- | ---: | ---: | ---: | ---: | --- | --- | --- |",
+        ]
+    )
+    for point in analysis["points"]:
+        full_vocab = point.get("full_vocab_readout") or {}
+        candidate_text = _candidate_text(full_vocab.get("forced_choice_candidates"))
+        lines.append(
+            f"| `{point['series_id']}` | `{point['label']}` | {point['frame_count']} | "
+            f"{_fmt(full_vocab.get('max_pair_jensen_shannon'), digits=8)} | "
+            f"{_fmt(full_vocab.get('interaction_l1_norm'), digits=8)} | "
+            f"{_fmt(full_vocab.get('interaction_max_abs'), digits=8)} | "
+            f"`{full_vocab.get('interaction_argmax_token') or 'n/a'}` | "
+            f"`{full_vocab.get('all_sidecars_byte_identical')}` | "
+            f"{candidate_text} |"
+        )
+
+    lines.extend(
+        [
+            "",
             "## Series Summary",
             "",
-            "| Series | Points | Frames | Scalar location stable | Position location stable | Readout cell-invariant | Frame/effect Pearson |",
-            "| --- | ---: | --- | --- | --- | --- | ---: |",
+            "| Series | Points | Frames | Scalar location stable | Position location stable | Generated label invariant | Full distribution invariant | Frame/cache Pearson | Frame/full interaction Pearson |",
+            "| --- | ---: | --- | --- | --- | --- | --- | ---: | ---: |",
         ]
     )
     for record in analysis["series"]:
@@ -110,7 +132,9 @@ def format_factorial_cache_trajectory_markdown(analysis: dict[str, Any]) -> str:
             f"`{record['scalar_argmax_location_consistent']}` | "
             f"`{record['position_argmax_location_consistent']}` | "
             f"`{record['readout_cell_invariant_at_all_points']}` | "
-            f"{_fmt(record.get('frame_count_vs_abs_scalar_interaction_pearson'))} |"
+            f"`{record['full_vocab_distribution_cell_invariant_at_all_points']}` | "
+            f"{_fmt(record.get('frame_count_vs_abs_scalar_interaction_pearson'))} | "
+            f"{_fmt(record.get('frame_count_vs_full_vocab_interaction_l1_pearson'))} |"
         )
     lines.extend(["", "## Interpretation Notes", ""])
     lines.extend(f"- {note}" for note in analysis.get("interpretation_notes", []))
@@ -135,6 +159,8 @@ def _trajectory_point(
     context = run.get("context_policy") or {}
     event = ((run.get("stream_events") or [{}])[0])
     layout = event.get("cache_token_layout") or {}
+    source_cache_summary = event.get("cache_summary") or {}
+    total_layers = source_cache_summary.get("total_layers")
     role_map = {
         int(record["position"]): list(record.get("roles") or [])
         for record in layout.get("sequence_position_plan") or []
@@ -146,6 +172,10 @@ def _trajectory_point(
             analysis.get("scalar_records") or [],
             scalar,
         )
+        scalar["normalized_depth"] = _normalized_depth(
+            scalar.get("layer_index"),
+            total_layers,
+        )
     if position:
         position["relative_abs_interaction"] = _relative_effect(
             analysis.get("sequence_position_records") or [],
@@ -156,21 +186,34 @@ def _trajectory_point(
             role_map=role_map,
             image_runs=layout.get("image_token_runs") or [],
         )
+        position["normalized_depth"] = _normalized_depth(
+            position.get("layer_index"),
+            total_layers,
+        )
     frame_count = int(stimulus.get("frame_count_selected") or 0)
     readout = _readout_record(analysis_path, phase=phase, probe_id=probe_id)
-    series_id = f"{mm_header.get('condition_id')}__{jj_header.get('condition_id')}"
+    full_vocab_readout = _full_vocab_readout_record(
+        analysis_path,
+        phase=phase,
+        probe_id=probe_id,
+    )
+    model_id = mm_header.get("model")
+    series_id = (
+        f"{model_id}__{mm_header.get('condition_id')}__{jj_header.get('condition_id')}"
+    )
     scalar_abs = (scalar or {}).get("abs_interaction_effect")
     return {
         "label": label,
         "analysis_path": str(analysis_path),
         "series_id": series_id,
-        "model_id": mm_header.get("model"),
+        "model_id": model_id,
         "context_protocol": context.get("visual_context_protocol")
         or context.get("frame_delivery"),
         "frame_count": frame_count,
         "cache_token_count": layout.get("token_count"),
         "image_token_count": layout.get("image_token_count"),
         "image_token_runs": layout.get("image_token_runs") or [],
+        "total_layers": total_layers,
         "scalar_argmax": scalar,
         "position_argmax": position,
         "scalar_abs_interaction_per_frame": (
@@ -180,6 +223,7 @@ def _trajectory_point(
         "family_top_k_jaccard": readout.get("mean_top_k_jaccard"),
         "family_top_interaction_effect": readout.get("top_interaction_effect"),
         "readout_cell_invariant": readout.get("cell_invariant"),
+        "full_vocab_readout": full_vocab_readout,
     }
 
 
@@ -193,6 +237,12 @@ def _series_summary(series_id: str, points: list[dict[str, Any]]) -> dict[str, A
         for point in ordered
         if point.get("scalar_argmax")
     ]
+    full_vocab_effects = [
+        float(point["full_vocab_readout"]["interaction_l1_norm"])
+        for point in ordered
+        if (point.get("full_vocab_readout") or {}).get("interaction_l1_norm")
+        is not None
+    ]
     return {
         "series_id": series_id,
         "model_id": ordered[0].get("model_id"),
@@ -204,7 +254,15 @@ def _series_summary(series_id: str, points: list[dict[str, Any]]) -> dict[str, A
         "readout_cell_invariant_at_all_points": all(
             point.get("readout_cell_invariant") is True for point in ordered
         ),
+        "full_vocab_distribution_cell_invariant_at_all_points": all(
+            (point.get("full_vocab_readout") or {}).get("max_pair_jensen_shannon") == 0.0
+            for point in ordered
+        ),
         "frame_count_vs_abs_scalar_interaction_pearson": _pearson(frame_counts, effects),
+        "frame_count_vs_full_vocab_interaction_l1_pearson": _pearson(
+            frame_counts,
+            full_vocab_effects,
+        ),
     }
 
 
@@ -254,6 +312,37 @@ def _readout_record(analysis_path: Path, *, phase: str, probe_id: str) -> dict[s
     return {}
 
 
+def _full_vocab_readout_record(
+    analysis_path: Path,
+    *,
+    phase: str,
+    probe_id: str,
+) -> dict[str, Any]:
+    path = analysis_path.parent / "full_vocab_readout_contrast.json"
+    if not path.is_file():
+        return {}
+    analysis = _load_json(path)
+    for record in analysis.get("records") or []:
+        if record.get("phase") != phase or record.get("probe_id") != probe_id:
+            continue
+        pairwise = record.get("pairwise_distances") or []
+        interaction = ((record.get("probability_contrasts") or {}).get("interaction") or {})
+        return {
+            "vocab_size": record.get("vocab_size"),
+            "max_pair_jensen_shannon": max(
+                (float(item["jensen_shannon"]) for item in pairwise),
+                default=None,
+            ),
+            "interaction_l1_norm": interaction.get("l1_norm"),
+            "interaction_max_abs": interaction.get("max_abs"),
+            "interaction_argmax_token_id": interaction.get("argmax_token_id"),
+            "interaction_argmax_token": interaction.get("argmax_token"),
+            "all_sidecars_byte_identical": record.get("all_sidecars_byte_identical"),
+            "forced_choice_candidates": record.get("forced_choice_candidates"),
+        }
+    return {}
+
+
 def _load_json(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
@@ -284,9 +373,19 @@ def _location(record: dict[str, Any]) -> str:
     if not record:
         return "n/a"
     value = f"layer {record.get('layer_index')} `{record.get('tensor')}`"
+    if isinstance(record.get("normalized_depth"), (int, float)):
+        value += f" (depth {record['normalized_depth']:.3f})"
     if record.get("position") is not None:
         value += f" pos {record['position']}"
     return value
+
+
+def _normalized_depth(layer_index: Any, total_layers: Any) -> float | None:
+    if not isinstance(layer_index, int) or not isinstance(total_layers, int):
+        return None
+    if total_layers <= 1:
+        return 0.0
+    return layer_index / (total_layers - 1)
 
 
 def _pearson(left: list[float | int], right: list[float | int]) -> float | None:
@@ -307,7 +406,20 @@ def _pearson(left: list[float | int], right: list[float | int]) -> float | None:
     return sum(a * b for a, b in zip(left_centered, right_centered)) / denominator
 
 
-def _fmt(value: Any, *, integer: bool = False) -> str:
+def _candidate_text(candidates: dict[str, Any] | None) -> str:
+    if not candidates or not candidates.get("available"):
+        return "n/a"
+    parts = []
+    for cell in ("mm", "jj", "mj", "jm"):
+        conditional = ((candidates.get("cells") or {}).get(cell) or {}).get(
+            "conditional_probabilities"
+        ) or {}
+        values = "/".join(f"{label}:{value:.3f}" for label, value in conditional.items())
+        parts.append(f"`{cell}` {values}")
+    return "; ".join(parts)
+
+
+def _fmt(value: Any, *, integer: bool = False, digits: int = 3) -> str:
     if not isinstance(value, (int, float)):
         return "n/a"
-    return str(int(value)) if integer else f"{float(value):.3f}"
+    return str(int(value)) if integer else f"{float(value):.{digits}f}"

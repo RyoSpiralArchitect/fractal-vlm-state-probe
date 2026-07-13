@@ -8,6 +8,12 @@
     "mlx_version": "0.31.1",
     "mlx_vlm_version": "0.4.4"
   },
+  "protocol_audit": {
+    "status": "partially_retained",
+    "superseded_by": "docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md",
+    "retained_scope": "Fresh ordered multi-image ACK cache summaries.",
+    "withdrawn_scope": "Text-only branched readout and full-distribution equality interpretation."
+  },
   "protocol": {
     "context_protocol": "single_turn_ordered_multi_image_replay",
     "source_pair_count": 2,
@@ -99,5 +105,5 @@
     "finite_cell_runs": 24,
     "cell_runs_checked": 24
   },
-  "claim_boundary": "Multi-image cumulative replay with a stable scalar layer-33 values locus; not incremental temporal persistence, a fixed token position, or full-vocabulary equality."
+  "claim_boundary": "Fresh multi-image ACK cache trajectory only; branched readout is withdrawn and this is not incremental persistence or causal evidence."
 }

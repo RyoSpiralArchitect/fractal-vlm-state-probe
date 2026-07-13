@@ -7,7 +7,7 @@ from copy import copy, deepcopy
 from dataclasses import dataclass
 from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
-from typing import Any, Literal
+from typing import Any, Callable, Literal
 
 from .delivery import (
     FrameDelivery,
@@ -16,6 +16,10 @@ from .delivery import (
     frame_artifact_list,
     prepare_frame_deliveries,
     stimulus_delivery_record,
+)
+from .full_vocab_readout import (
+    full_vocab_sidecar_path,
+    write_full_vocab_logprob_sidecar,
 )
 from .prompts import SYNC_PROMPT, SYSTEM_PROMPT, resolve_probe_preset
 from .providers import get_capabilities
@@ -45,6 +49,7 @@ class StreamRunConfig:
     cache_summary_every: int = 10
     cache_summary_max_layers: int | None = 4
     generation_readout_top_k: int = 10
+    save_full_vocab_first_step: bool = False
     adapter_id: str = "mlx_vlm"
     include_frame_artifacts: bool = True
     seed: int | None = None
@@ -107,6 +112,7 @@ def run_stream_probe(
             "cache_summary_every": config.cache_summary_every,
             "cache_summary_max_layers": config.cache_summary_max_layers,
             "generation_readout_top_k": config.generation_readout_top_k,
+            "save_full_vocab_first_step": config.save_full_vocab_first_step,
             "include_frame_artifacts": config.include_frame_artifacts,
         },
         "non_claims": [
@@ -181,6 +187,9 @@ def run_stream_probe(
         cache_summary_max_layers=config.cache_summary_max_layers,
         generation_readout_top_k=config.generation_readout_top_k,
         probe_seed=probe_phase_seeds["before"],
+        full_vocab_output_path=config.output_path
+        if config.save_full_vocab_first_step
+        else None,
     )
 
     mid_index = _mid_probe_after_position(len(frames))
@@ -225,6 +234,9 @@ def run_stream_probe(
                 cache_summary_max_layers=config.cache_summary_max_layers,
                 generation_readout_top_k=config.generation_readout_top_k,
                 probe_seed=probe_phase_seeds["mid"],
+                full_vocab_output_path=config.output_path
+                if config.save_full_vocab_first_step
+                else None,
             )
 
     result["probes"]["after"] = _run_probe_batch(
@@ -243,6 +255,9 @@ def run_stream_probe(
         cache_summary_max_layers=config.cache_summary_max_layers,
         generation_readout_top_k=config.generation_readout_top_k,
         probe_seed=probe_phase_seeds["after"],
+        full_vocab_output_path=config.output_path
+        if config.save_full_vocab_first_step
+        else None,
     )
 
     write_json(config.output_path, result)
@@ -292,6 +307,12 @@ def _run_frame_turn(
         messages,
         num_images=delivery.num_images,
     )
+    cache_prefix_audit = audit_prompt_cache_prefix(
+        prompt_cache_state,
+        formatted_prompt=formatted_prompt,
+        processor=processor,
+        model_config=model_config,
+    )
     image_arg = str(delivery.image_path) if delivery.image_path is not None else None
     started = time.perf_counter()
     generation = _collect_stream(
@@ -323,6 +344,7 @@ def _run_frame_turn(
         "prompt": prompt,
         "assistant_text": generation["text"],
         "generation": generation["summary"],
+        "cache_prefix_audit": cache_prefix_audit,
         "wall_s": wall_s,
         "cache_summary": summarize_prompt_cache_state(
             prompt_cache_state,
@@ -352,6 +374,7 @@ def _run_probe_batch(
     generation_readout_top_k: int,
     probe_seed: int | None,
     cache_summary_sequence_positions: list[int] | None = None,
+    full_vocab_output_path: Path | None = None,
 ) -> list[dict[str, Any]]:
     records = []
     probe_seed_record = set_global_seed(probe_seed, include_mlx=True)
@@ -373,7 +396,28 @@ def _run_probe_batch(
             messages,
             num_images=0,
         )
+        cache_prefix_audit = audit_prompt_cache_prefix(
+            prompt_cache_state_source,
+            formatted_prompt=formatted_prompt,
+            processor=processor,
+            model_config=model_config,
+        )
         started = time.perf_counter()
+        full_vocab_writer = None
+        if full_vocab_output_path is not None:
+            sidecar_path = full_vocab_sidecar_path(
+                full_vocab_output_path,
+                phase=phase,
+                probe_id=probe["id"],
+            )
+
+            def full_vocab_writer(logprobs: Any, *, path: Path = sidecar_path) -> dict[str, Any]:
+                return write_full_vocab_logprob_sidecar(
+                    logprobs,
+                    path=path,
+                    relative_to=full_vocab_output_path.parent,
+                )
+
         generation = _collect_stream(
             stream_generate(
                 model,
@@ -386,6 +430,7 @@ def _run_probe_batch(
             ),
             processor=processor,
             top_k=generation_readout_top_k,
+            first_step_full_vocab_writer=full_vocab_writer,
         )
         records.append(
             {
@@ -398,6 +443,7 @@ def _run_probe_batch(
                 "probe_seed_record": probe_seed_record,
                 "wall_s": time.perf_counter() - started,
                 "cache_branch_status": cache_branch_status,
+                "cache_prefix_audit": cache_prefix_audit,
                 "source_cache_summary_before_probe": source_cache_summary,
                 "cache_summary": summarize_prompt_cache_state(
                     prompt_cache_state,
@@ -531,6 +577,109 @@ def summarize_prompt_cache_token_layout(
             for position, roles in sorted(focus_roles.items())
         ],
     }
+
+
+def audit_prompt_cache_prefix(
+    prompt_cache_state: Any,
+    *,
+    formatted_prompt: Any,
+    processor: Any,
+    model_config: Any,
+) -> dict[str, Any]:
+    if prompt_cache_state is None or getattr(prompt_cache_state, "cache", None) is None:
+        return {
+            "available": False,
+            "reason": "source prompt cache is unavailable",
+        }
+    source_ids = list(getattr(prompt_cache_state, "token_ids", []) or [])
+    try:
+        formatted_ids = _tokenize_formatted_prompt(
+            formatted_prompt,
+            processor=processor,
+            model_config=model_config,
+        )
+    except Exception as exc:
+        return {
+            "available": False,
+            "reason": f"formatted prompt tokenization failed: {type(exc).__name__}: {exc}",
+            "source_token_count": len(source_ids),
+        }
+
+    common_prefix = _common_prefix_length(source_ids, formatted_ids)
+    cache_lengths = sorted(set(_cache_sequence_lengths(prompt_cache_state.cache)))
+    token_cache_aligned = bool(cache_lengths) and all(
+        length == len(source_ids) for length in cache_lengths
+    )
+    full_prefix = common_prefix == len(source_ids)
+    return {
+        "available": True,
+        "source_token_count": len(source_ids),
+        "formatted_prompt_token_count": len(formatted_ids),
+        "common_prefix_token_count": common_prefix,
+        "common_prefix_fraction": common_prefix / len(source_ids) if source_ids else 0.0,
+        "full_source_prefix_match": full_prefix,
+        "cache_sequence_lengths": cache_lengths,
+        "token_cache_length_aligned": token_cache_aligned,
+        "reuse_safe_under_token_prefix_contract": full_prefix and token_cache_aligned,
+        "caveat": (
+            "MLX-VLM 0.4.4 trims cache tensors by token-prefix length; multimodal "
+            "embedding expansion can make token and cache lengths diverge."
+        ),
+    }
+
+
+def _tokenize_formatted_prompt(
+    formatted_prompt: Any,
+    *,
+    processor: Any,
+    model_config: Any,
+) -> list[int]:
+    if not isinstance(formatted_prompt, str):
+        raise TypeError(f"expected formatted prompt string, got {type(formatted_prompt).__name__}")
+    tokenizer = getattr(processor, "tokenizer", processor)
+    model_type = _model_config_value(model_config, "model_type")
+    add_special_tokens = (
+        getattr(processor, "chat_template", None) is None
+        if model_type in {"gemma3", "gemma3n", "gemma4"}
+        else True
+    )
+    encoded = tokenizer(
+        formatted_prompt,
+        add_special_tokens=add_special_tokens,
+        padding=True,
+        padding_side="left",
+        return_tensors="np",
+    )
+    input_ids = getattr(encoded, "input_ids", None)
+    if input_ids is None and isinstance(encoded, dict):
+        input_ids = encoded.get("input_ids")
+    if input_ids is None:
+        raise ValueError("tokenizer did not return input_ids")
+    return [int(value) for value in input_ids.reshape(-1).tolist()]
+
+
+def _common_prefix_length(left: list[int], right: list[int]) -> int:
+    for index, (left_id, right_id) in enumerate(zip(left, right)):
+        if left_id != right_id:
+            return index
+    return min(len(left), len(right))
+
+
+def _cache_sequence_lengths(cache: Any) -> list[int]:
+    lengths = []
+    if cache is None:
+        return lengths
+    if isinstance(cache, (list, tuple)):
+        for entry in cache:
+            lengths.extend(_cache_sequence_lengths(entry))
+        return lengths
+    nested = getattr(cache, "caches", None)
+    if nested is not None:
+        lengths.extend(_cache_sequence_lengths(nested))
+    keys = getattr(cache, "keys", None)
+    if keys is not None and hasattr(keys, "shape") and len(keys.shape) >= 3:
+        lengths.append(int(keys.shape[-2]))
+    return lengths
 
 
 def _probe_prompt_cache_state(
@@ -673,6 +822,7 @@ def _collect_stream(
     *,
     processor: Any | None = None,
     top_k: int = 10,
+    first_step_full_vocab_writer: Callable[[Any], dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     text_parts = []
     last = None
@@ -687,6 +837,14 @@ def _collect_stream(
             top_k=top_k,
         )
         if step_record is not None:
+            if (
+                step_index == 0
+                and first_step_full_vocab_writer is not None
+                and getattr(chunk, "logprobs", None) is not None
+            ):
+                step_record["full_vocab_sidecar"] = first_step_full_vocab_writer(
+                    chunk.logprobs
+                )
             step_records.append(step_record)
 
     summary = {}

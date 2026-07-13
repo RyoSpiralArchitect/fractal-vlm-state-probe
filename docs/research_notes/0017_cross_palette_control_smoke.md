@@ -2,6 +2,11 @@
 
 Date: 2026-06-19
 
+> **Protocol audit update (2026-07-13):** [Note 0027](0027_cache_prefix_audit_and_direct_full_vocab.md)
+> found that the incremental MLX-VLM image-turn path used here did not preserve
+> a valid multimodal prefix/cache-length relation. The transformed-image and
+> processor analyses remain useful; cache/readout interpretations are historical.
+
 This note records the first cross-family palette-control run following
 [0016 Five-Step Instrumentation Kickoff](0016_five_step_instrumentation_kickoff.md).
 

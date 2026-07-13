@@ -2,6 +2,11 @@
 
 Date: 2026-06-22
 
+> **Protocol audit update (2026-07-13):** [Note 0027](0027_cache_prefix_audit_and_direct_full_vocab.md)
+> found that the incremental MLX-VLM image-turn and text-only branch paths used
+> here were not valid multimodal cache continuations. Input/processor findings
+> remain usable; cache and quiet-readout interpretations are withdrawn.
+
 This note records the first run of the replicated cross-palette factorial path
 introduced in [0018](0018_cross_palette_replication_path.md).
 

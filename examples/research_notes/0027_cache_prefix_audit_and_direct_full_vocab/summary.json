@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "cache_prefix_audit_and_direct_full_vocab_summary",
+  "date": "2026-07-13",
+  "runtime": {
+    "mlx_version": "0.31.1",
+    "mlx_vlm_version": "0.4.4"
+  },
+  "prefix_audit": {
+    "run_count": 2,
+    "available_record_count": 7,
+    "safe_record_count": 0,
+    "unsafe_record_count": 7,
+    "qwen_legacy_branch": {
+      "source_token_count": 241,
+      "common_prefix_token_count": 42,
+      "common_prefix_fraction": 0.17427385892116182,
+      "cache_sequence_length": 256
+    },
+    "smol_incremental_second_frame": {
+      "source_token_count": 186,
+      "common_prefix_token_count": 41,
+      "common_prefix_fraction": 0.22043010752688172,
+      "cache_sequence_length": 256
+    },
+    "claim_effect": "Incremental multimodal cache, branched readout, and cache-swap intervention claims are withdrawn pending valid rerun."
+  },
+  "direct_protocol": {
+    "context_protocol": "fresh_ordered_multi_image_ack_plus_fresh_direct_multimodal_probes",
+    "source_pair_count": 2,
+    "factorial_cells_per_point": 4,
+    "factorial_point_count": 20,
+    "cell_run_count": 80,
+    "full_vocab_sidecar_count": 320,
+    "probe_seed": 0,
+    "probe_temperature": 0.0,
+    "generation_readout_top_k": 20
+  },
+  "models": {
+    "smolvlm": {
+      "model_id": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+      "revision": "482adb537c021c86670beed01cd58990d01e72e4",
+      "vocab_size": 49280,
+      "frame_counts": [1, 2, 4],
+      "factorial_point_count": 6,
+      "cell_run_count": 24,
+      "scalar_argmax_locations": [
+        "layer_1_keys",
+        "layer_16_keys",
+        "layer_21_keys"
+      ],
+      "scalar_location_consistent": false,
+      "family_max_pair_js_range": [0.0009741144204835476, 0.009550962076802519],
+      "family_interaction_l1_range": [0.020016849392583278, 0.24881317832066074],
+      "frequency_max_pair_js_range": [0.001468840471809368, 0.006672033032779587],
+      "frequency_interaction_l1_range": [0.0334125880232276, 0.1708792843407769]
+    },
+    "qwen2_5_vl": {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "revision": "46d4cf06a06ffc1a766c214174f9cbed2f45bcab",
+      "vocab_size": 151936,
+      "frame_counts": [1, 2, 4, 8, 16],
+      "factorial_point_count": 10,
+      "cell_run_count": 40,
+      "scalar_argmax_layer": 33,
+      "scalar_argmax_tensor": "values",
+      "scalar_argmax_normalized_depth": 0.9428571428571428,
+      "scalar_location_consistent": true,
+      "family_max_pair_js_range": [0.01299242166555216, 0.09961445645927401],
+      "family_interaction_l1_range": [0.24159700547603075, 1.0136084866002],
+      "frequency_max_pair_js_range": [0.0012411668457598824, 0.03383963123826235],
+      "frequency_interaction_l1_range": [0.024244692814681102, 0.2547093099253508]
+    },
+    "gemma3": {
+      "model_id": "mlx-community/gemma-3-4b-it-4bit",
+      "revision": "93724907d4ed1745d2fe50baadf3b0b01a65abf2",
+      "vocab_size": 262208,
+      "frame_counts": [1, 2],
+      "factorial_point_count": 4,
+      "cell_run_count": 16,
+      "scalar_argmax_by_pair": {
+        "c_d": "layer_1_values",
+        "b_c": "layer_3_values"
+      },
+      "scalar_location_consistent_within_pair": true,
+      "local_argmax": "layer_0_values_at_image_run_start",
+      "family_max_pair_js_range": [0.000018526189848078683, 0.0004353684259582588],
+      "family_interaction_l1_range": [0.0002414224701332688, 0.002605057009949194],
+      "frequency_max_pair_js_range": [0.04252635104659671, 0.5336328691577465],
+      "frequency_interaction_l1_range": [0.07799358459647852, 1.2643381147498867]
+    }
+  },
+  "validation": {
+    "direct_after_factorials_with_nonidentical_full_vocab_sidecars": 20,
+    "direct_after_factorials_checked": 20,
+    "legacy_qwen_full_vocab_sidecars_byte_identical": true
+  },
+  "claim_boundary": "Fresh multimodal cache summaries and direct full-vocabulary readouts only; no incremental persistence, valid cache intervention, universal layer, or causal mediation claim."
+}

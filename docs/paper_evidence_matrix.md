@@ -3,83 +3,104 @@
 Last updated: 2026-07-13
 
 This file is the compact bridge from run artifacts to a manuscript draft. It
-separates replicated observations, provisional interpretation, and missing
-evidence. Counts below refer to actual run units; pairwise distances derived
-from the same four cells are not treated as independent samples.
+separates valid observations, descriptive interpretation, withdrawn results,
+and missing evidence. Counts refer to actual run units; pairwise distances from
+the same four factorial cells are not independent samples.
 
-## Evidence Units
+## Current Evidence Units
 
-| Evidence unit | Model / protocol | Independent replication unit | Main observation | Current claim strength | Primary artifact |
+| Evidence unit | Model / protocol | Replication unit | Main observation | Claim strength | Primary artifact |
 | --- | --- | --- | --- | --- | --- |
-| Cross-palette input audit | SmolVLM processor, 50 frames, `MM/JJ/MJ/JM` | 2 source pairs | Palette and spatial rank interact non-additively after image transformation and processor conversion | replicated input-level observation | [Note 0020](research_notes/0020_true_50_frame_cross_palette_replication.md) |
-| Persistent cache-summary factorial | SmolVLM2-2.2B, 50-frame stream | 2 source pairs | Mid scalar interaction argmax repeats at layer 23 `values`; after repeats at layer 0 `keys` | replicated summary-stat locus | [Note 0020](research_notes/0020_true_50_frame_cross_palette_replication.md) |
-| Forced-choice top-k20 readout | SmolVLM2-2.2B, 50-frame rerun | 2 source pairs | First-token sets are identical and maximum saved common-token interaction is about `0.004` logprob | replicated readout/trace dissociation within one model | [Note 0020](research_notes/0020_true_50_frame_cross_palette_replication.md) |
-| Targeted values-swap | SmolVLM2-2.2B, 25-frame mid context | 2 source pairs x 3 probe seeds | Layer 23 swaps do not steer tokens toward donor; layer 12 gives the largest tested top-k perturbation, about `22%` of baseline separation | replicated intervention null/dissociation for this readout | [Note 0022](research_notes/0022_two_pair_values_swap_intervention.md) |
-| Dense values-swap profile | SmolVLM2-2.2B, layers 8-23, seed 0 | 2 source pairs | Layer profiles are highly similar (`r=0.964`, `rho=0.982`), with the same layer 10 peak and top three layers 10/13/12 | replicated screening profile; controls pending | [Note 0024](research_notes/0024_dense_mid_layer_values_swap_profile.md) |
-| Controlled mid-layer values-swap | SmolVLM2-2.2B, layers 10/12/13, 3 seeds | 2 source pairs x reciprocal directions | Directional ranks repeat within each pair; exact peak is pair-dependent within a layers 10-13 band; all tokens stay origin-identical and shams are zero | replicated controlled intervention profile | [Note 0025](research_notes/0025_controlled_mid_layer_values_swap_confirmation.md) |
-| Cross-model factorial pilot | Qwen2.5-VL-3B 4bit, 1 frame, all 36 layers | 2 source pairs | Surface/top-k10 readout is cell-invariant while scalar interaction argmax repeats at layer 33 `values` | replicated one-frame cross-architecture pilot | [Note 0023](research_notes/0023_qwen_cross_model_factorial_pilot.md) |
-| Qwen cumulative-replay trajectory | Qwen2.5-VL-3B 4bit, 1/2/4 ordered images, all 36 layers | 2 source pairs x 3 nested replay lengths | All six scalar argmaxes repeat at layer 33 `values`; readout stays cell-invariant; exact local position does not persist | replicated scalar locus under a non-incremental multi-image protocol | [Note 0026](research_notes/0026_qwen_cumulative_replay_trajectory.md) |
+| Cross-palette input audit | SmolVLM processor, 50-frame `MM/JJ/MJ/JM` | 2 source pairs | Palette donor and spatial luminance-rank field interact non-additively in raw and processor space | replicated input-level observation | [Note 0020](research_notes/0020_true_50_frame_cross_palette_replication.md) |
+| Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
+| Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 2 pairs x 5 nested lengths, 40 cells | All 10 direct after-factorials have non-identical full-vocabulary distributions; fresh ACK scalar argmax is layer 33 `values` at all 10 points | replicated within this model and source-pair set | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
+| SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 2 pairs x 3 nested lengths, 24 cells | All 6 direct after-factorials are non-identical; fresh ACK scalar argmax moves across layers and tensors | replicated absence of the old fixed-locus pattern under the valid protocol | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
+| Gemma 3 direct factorial trajectory | Gemma-3-4B-it 4bit, fresh ACK plus fresh direct probes | 2 pairs x 2 nested lengths, 16 cells | All 4 direct after-factorials are non-identical; ACK loci are stable within pair but early and pair-specific; frequency readout can change sharply | third-architecture replication with short trajectory | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
+| Cross-model direct aggregate | Three VLMs, complete first-step vocabulary | 20 factorial points, 80 cells, 320 sidecars | Readout interactions and cache-summary loci vary by architecture, source pair, probe, and frame count | replicated heterogeneity; not a universal mechanism | [tracked summary](../examples/research_notes/0027_cache_prefix_audit_and_direct_full_vocab/summary.json) |
+
+## Withdrawn From The Evidence Set
+
+| Historical result | Why withdrawn | What remains usable |
+| --- | --- | --- |
+| SmolVLM 25/50-frame persistent cache trajectories | Reconstructed history omitted processor-inserted image tokens and failed prefix/cache-length invariants | deterministic stimuli, manifests, raw image statistics, and processor-space statistics |
+| Mid/after equality from text-only cache branches | The branch did not retain the full multimodal prefix; a Qwen legacy rerun produced byte-identical sidecars across image cells | fresh source-cache observations made in one valid multimodal forward |
+| Layer 23 and layers 10-13 values-swap conclusions | Reciprocal and sham controls did not repair the invalid underlying multimodal suffix path | intervention code as a historical scaffold and audit target |
+| Top-k or generated-letter equality claims | Partial readout cannot establish equality over the complete vocabulary | saved top-k records as descriptive slices only |
 
 ## Draft Claim Ladder
 
-### Supported now
+### Supported Now
 
-1. Luminance-rank cross-palette transformation is not an additive palette
-   control; it creates non-additive processor-space perturbations.
-2. Under SmolVLM's 50-frame protocol, saved cache-summary factorial interaction
-   loci repeat across two independent source pairs while forced-choice readout
-   remains quiet.
-3. The repeated layer 23 summary locus is not sufficient for donor-directed
-   generation under a whole-layer values-only creative-probe swap.
-4. SmolVLM values-swap susceptibility forms a controlled layers 10-13 band;
-   direction repeats within pair while the exact peak changes across pairs.
-5. A different architecture, Qwen2.5-VL, shows cache/readout separation and a
-   repeated scalar layer-33 `values` locus over 1/2/4-frame cumulative replay.
+1. Luminance-rank cross-palette transfer is not an additive palette control; it
+   creates non-additive input and processor-space perturbations.
+2. The audited MLX-VLM `0.4.4` incremental and text-only branch paths do not
+   preserve the multimodal prefix needed for persistence or intervention
+   interpretation.
+3. Under fresh direct multimodal probes, every one of the 20 tested
+   `MM/JJ/MJ/JM` factorials has non-identical full-vocabulary first-step
+   distributions at saved numerical precision.
+4. Fresh ACK cache-summary interaction loci are architecture- and pair-dependent:
+   stable and late in Qwen, moving in SmolVLM, and stable-within-pair but early
+   in Gemma 3.
+5. A generated letter or top-k set can remain fixed while the complete
+   distribution changes; visible-label equality is not distribution equality.
 
 ### Provisional
 
-- Persistent VLM source-cache state is sensitive to a nonlinear combination of
-  RGB marginal distribution, spatial luminance rank, and processor-space
-  frequency structure.
-- Summary-stat salience and intervention leverage are distinct quantities.
-- Qwen scalar layer 33 `values` is an architecture-specific summary-stat locus.
-  The exact local sequence position is pair- and replay-length-dependent.
+- The measured object is distribution-coupled visual perturbation under fresh
+  multimodal inference, not yet persistent latent-state steering.
+- Qwen layer 33 `values` is a reproducible scalar summary locus for these two
+  source pairs and five nested lengths, not a universal mechanistic locus.
+- Cache-summary magnitude and direct readout interaction are neither equivalent
+  nor monotonically coupled in the current trajectories.
+- Probe family and candidate calibration matter: Gemma 3 is nearly saturated
+  for the family probe but strongly sensitive for the frequency probe.
 
-### Not supported yet
+### Not Supported Yet
 
+- persistent multimodal state across incremental turns,
+- a valid cache intervention or causal mediation effect,
 - semantic or subjective-state steering,
-- equality of full-vocabulary output distributions,
-- a model-general layer number or normalized depth locus,
-- persistent multi-frame replication in Qwen2.5-VL,
-- causal irrelevance of SmolVLM layer 23,
-- inference from six pairwise distances as six independent observations.
+- a model-general layer, tensor, normalized depth, or token position,
+- statistical significance from the current two source pairs,
+- independence of nested replay lengths or within-factorial pairwise distances.
 
 ## Statistical Boundaries
 
-- The independent replication count for the current cross-palette spine is two
-  source pairs, not the six pairwise distances within each four-cell design.
-- Probe seeds isolate stochastic readout variation but do not create new visual
-  stimuli or new source-pair replications.
-- Mid and after are identical in a one-frame Qwen run by design and cannot be
-  used as temporal persistence replicates.
-- Qwen 1/2/4 replay lengths are nested contexts, not three independent stimulus
-  replications; cumulative replay is not incremental temporal persistence.
-- Sequence-position argmax is over saved sampled positions and can change when
-  the sampling plan is enriched.
-- Cache summaries collapse vector direction; a signed scalar contrast is a
-  contrast of the saved statistic, not a hidden-state vector contrast.
-- Top-k overlap and RMSE are partial readouts. Full-vocabulary KL/JS or
-  teacher-forced candidate scoring remains a required measurement upgrade.
+- The independent visual replication count is two source pairs, not six
+  pairwise distances within each four-cell design.
+- Replay lengths are nested contexts, not independent stimulus replicates.
+- ACK caches and direct probes come from separate fresh forwards with different
+  prompts; their relationship is descriptive, not causal.
+- Cache summaries collapse vector direction and sample token positions. A
+  scalar argmax is not a full hidden-state vector contrast.
+- "Non-identical" means unequal at the saved numerical precision. It is not a
+  null-hypothesis significance test.
+- Probe seeds isolate stochastic generation variation but do not create new
+  visual source-pair replications.
 
 ## Highest-Value Next Data
 
-1. Add full-vocabulary first-step sidecars or teacher-forced candidate scores
-   for the existing SmolVLM and Qwen factorial runs.
-2. Compare SmolVLM values, keys, key-value pairs, layer windows, and
-   position-local swaps within layers `10-13`.
-3. Extend Qwen cumulative replay to 8/16 frames and compare image-run-local
-   interaction profiles rather than one sampled argmax.
-4. Repair or replace Qwen's incremental second-image cache path before making a
-   persistent multi-turn claim.
-5. Add a third local model now that replay, token-region, and trajectory
-   contracts are model-neutral enough to produce comparable artifacts.
+1. Add independent source pairs before extending the same nested trajectories.
+2. Run prompt paraphrases, family/frequency candidate-order permutations, and
+   neutral candidate controls.
+3. Save full-vector cache contrasts at the stable Qwen and Gemma candidate
+   loci, with image-token region reporting.
+4. Rebuild intervention logic only on a multimodal suffix path that asserts
+   exact prefix and cache sequence-length compatibility before mutation.
+5. Add a fourth architecture plus natural and geometric matched controls under
+   the same direct protocol.
+
+## Manuscript-Safe Wording
+
+Preferred:
+
+> In three local VLMs, fresh multimodal cross-palette factorial cells produced
+> non-identical complete first-step distributions. Fresh source-cache summary
+> loci differed across architectures, and the current protocol does not test
+> state persistence or causal cache mediation.
+
+Avoid:
+
+> The fractal stream creates a persistent hidden state that is causally stored
+> in a universal cache layer.

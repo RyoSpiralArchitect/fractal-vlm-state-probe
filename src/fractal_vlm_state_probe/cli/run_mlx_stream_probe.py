@@ -23,6 +23,11 @@ def main() -> None:
         default=10,
         help="Save top-k token logprobs for each generated token when the backend exposes them.",
     )
+    parser.add_argument(
+        "--save-full-vocab-first-step",
+        action="store_true",
+        help="Save compressed full-vocabulary first-step logprobs for each probe.",
+    )
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument(
         "--probe-temperature",
@@ -94,6 +99,7 @@ def main() -> None:
             probe_max_tokens=args.probe_max_tokens,
             probe_preset=args.probe_preset,
             generation_readout_top_k=args.generation_readout_top_k,
+            save_full_vocab_first_step=args.save_full_vocab_first_step,
             temperature=args.temperature,
             probe_temperature=args.probe_temperature,
             seed=args.seed,

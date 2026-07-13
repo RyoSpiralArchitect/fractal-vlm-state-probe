@@ -9,6 +9,12 @@
     "mlx_version": "0.31.1",
     "mlx_vlm_version": "0.4.4"
   },
+  "protocol_audit": {
+    "status": "partially_retained",
+    "superseded_by": "docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md",
+    "retained_scope": "Fresh one-image source-cache observation only.",
+    "withdrawn_scope": "Text-only branched readout and its equality interpretation."
+  },
   "protocol": {
     "frame_count": 1,
     "probe_seed": 0,
@@ -65,5 +71,5 @@
     "error": "[broadcast_shapes] Shapes (263) and (221) cannot be broadcast.",
     "scope": "MLX-VLM 0.4.4 Qwen2.5-VL PromptCacheState reuse across image turns"
   },
-  "claim_boundary": "One-frame cross-architecture trace pilot; not a persistent multi-frame replication."
+  "claim_boundary": "Fresh one-frame source-cache pilot only; branched readout is withdrawn and this is not persistence evidence."
 }

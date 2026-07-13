@@ -4,6 +4,11 @@
   "date": "2026-07-13",
   "model_id": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
   "model_revision": "482adb537c021c86670beed01cd58990d01e72e4",
+  "protocol_audit": {
+    "status": "withdrawn_pending_valid_multimodal_intervention_path",
+    "superseded_by": "docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md",
+    "reason": "The image-conditioned branch failed full-prefix and cache sequence-length reuse invariants."
+  },
   "protocol": {
     "source_pair_count": 2,
     "frames_consumed": 25,
@@ -77,5 +82,5 @@
     "source_intervention_exact_matches": 32,
     "source_intervention_trials": 32
   },
-  "claim_boundary": "Two-pair seed-0 screening profile; selected layers require multi-seed reciprocal and sham confirmation."
+  "claim_boundary": "Historical numerical profile only; no causal layers 10-13 susceptibility claim is currently supported."
 }

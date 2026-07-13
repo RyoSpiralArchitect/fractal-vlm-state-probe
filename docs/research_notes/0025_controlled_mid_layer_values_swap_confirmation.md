@@ -2,10 +2,15 @@
 
 Date: 2026-07-13
 
+> **Protocol audit update (2026-07-13):** [Note 0027](0027_cache_prefix_audit_and_direct_full_vocab.md)
+> found that reciprocal and sham controls did not repair the underlying
+> multimodal prefix/cache-length mismatch. The layer-band claim is withdrawn
+> until the intervention is rebuilt on a verified suffix path.
+
 ## Status
 
-Completed as a two-pair, three-layer, three-seed controlled confirmation with
-reciprocal and self-sham branches.
+Historical two-pair, three-layer, three-seed run with reciprocal and self-sham
+branches. It is no longer treated as a valid causal confirmation.
 
 ## Motivation
 

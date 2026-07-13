@@ -2,9 +2,15 @@
 
 Date: 2026-06-25
 
+> **Protocol audit update (2026-07-13):** [Note 0027](0027_cache_prefix_audit_and_direct_full_vocab.md)
+> found that this scaffold's image-conditioned branch did not preserve the full
+> multimodal prefix/cache-length relation. Keep it for protocol forensics only;
+> it is not a valid intervention path in MLX-VLM `0.4.4`.
+
 ## Status
 
-Implemented as an experiment scaffold. No result claim is made in this note.
+Historical experiment scaffold. No result claim is made in this note, and the
+execution path must be rebuilt before reuse.
 
 ## Motivation
 

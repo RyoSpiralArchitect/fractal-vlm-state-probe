@@ -1,17 +1,16 @@
 # Fractal VLM State Probe
 
-Deterministic visual streams, factorial controls, and cache interventions for
-separating visible multimodal readout from the internal state geometry that
-precedes it.
+Deterministic visual controls, audited multimodal protocols, full-vocabulary
+factorial readouts, and fresh cache-summary traces for asking what a VLM changes
+before a generated label makes that change visible.
 
-This project starts from a simple spiral-shaped hunch: a visual context is not
-just an image, and a model's response is not just a final string. The project
-began by asking whether controlled visual streams change later non-visual
-generation. The evidence has made the current question more precise:
+This project began by asking whether controlled visual streams change later
+non-visual generation. A cache-prefix audit changed both the protocol and the
+question. The current target is narrower and directly measurable:
 
-> When visible answers remain unchanged, which input-conditioned differences
-> persist in traced multimodal state, where do they appear, and which of them
-> can affect later readout under direct intervention?
+> Under fresh multimodal forwards, how do controlled input transformations
+> change full-vocabulary readout distributions and cache-summary geometry, and
+> which parts of that relationship repeat across models and source pairs?
 
 The repo is deliberately cautious. It does not claim that a model has subjective
 experience, enters a mental state, or undergoes adaptation in the human sense.
@@ -20,133 +19,83 @@ tensor/cache traces.
 
 ## Research Shape
 
-The first program compares stimulus conditions within the same model, not
-providers against each other. The current program keeps four measured objects
-separate:
+The program compares controlled stimulus conditions within the same model and
+keeps four objects separate:
 
 1. the transformed input and processor-space perturbation,
-2. the visible label or generated-token readout,
-3. the geometry of saved cache summaries,
-4. the readout effect of direct cache intervention.
-
-The foundational question is still simpler than "which fractal is different?":
-
-> Does sustained visual streaming change the later non-visual probe at all,
-> beyond ordinary transcript length and cache growth?
-
-That makes the early ladder:
-
-1. Probe-only baseline.
-2. Text-only stream with the same timecodes and synchronization prompt.
-3. Blank, static, repeated, or shuffled visual controls.
-4. Fractal A vs the same fractal repeated or shuffled.
-5. Fractal A vs Fractal B.
-6. Fractal streams vs non-fractal geometry.
-7. Fractal streams vs natural texture or landscape sequences.
-8. Fractal streams vs semantic-rich video such as streets, rooms, or animals.
+2. the complete first-step readout distribution from a fresh direct probe,
+3. the cache summary from a separate fresh multimodal ACK forward,
+4. whether any cache reuse path preserves the full multimodal prefix and has a
+   cache sequence length compatible with its token history.
 
 Every condition is represented as a manifest with frame timestamps, relative
-paths, hashes, and `stimulus_condition` metadata. Runs then use the same model,
-probe, frame count, cache policy, and timing where possible.
+paths, hashes, and `stimulus_condition` metadata. A run contributes to the
+current evidence set only when its protocol boundary is explicit.
 
-## Current Pilot Reading
+## Current Evidence
 
-The visible readout and the measured object have separated. In the paired
-SmolVLM runs, creative probes and forced-choice labels can remain identical
-across conditions while sampled source-cache summaries still move. The current
-signal is therefore not "the model says Mandelbrot instead of Julia"; it is
-"the readout label is fixed, but the traced context-state geometry changes."
+The July 2026 audit found that MLX-VLM `0.4.4` text-history reconstruction does
+not retain processor-inserted image tokens. In the audited incremental and
+text-only branch paths, the common token prefix was incomplete and cache tensor
+length did not match token-history length. The earlier 25/50-frame persistence,
+branched readout, and cache-swap intervention claims are therefore withdrawn
+pending a verified multimodal suffix path.
 
-The cross-family palette controls make the interpretation stricter. Swapping
-frame-level RGB pixel multisets by luminance rank did not simply remove a
-palette confound. It exposed a nonlinear interaction among palette donor,
-spatial luminance-rank field, and processor-space frequency structure. Macro
-geometry alone is now too coarse as the main story; the working hypothesis is
-distribution-coupled visual perturbation of persistent multimodal state.
+The replacement protocol uses no image-conditioned cache reuse:
 
-The intervention and cross-model results sharpen that story. In two SmolVLM
-source pairs, single-layer `values` swaps did not steer generated tokens toward
-the donor. Dense seed-0 scans identified layers 10, 13, and 12 as a shared
-susceptibility band. Three-seed reciprocal/sham confirmation preserved that
-band but made the exact peak pair-dependent: layer 10 for `c_d`, layer 13 for
-`b_c`. Directional ranks repeated almost perfectly within each pair, every
-token sequence stayed origin-identical, and self-sham top-k effects were zero.
-The repeated layer-23 summary locus remained weak under direct replacement.
+1. Run one fresh ordered multi-image ACK forward and summarize its source cache.
+2. Run each forced-choice probe as a separate fresh multimodal forward over the
+   same ordered images.
+3. Save the complete first-step vocabulary distribution, not only a generated
+   letter or top-k slice.
 
-Qwen2.5-VL now has a separately labeled cumulative-replay lane. Across two
-source pairs and 1/2/4-frame `MM/JJ/MJ/JM` factorials, all six scalar interaction
-argmaxes landed at layer 33 `values` while forced-choice top-k10 readout remained
-cell-invariant. Image-token-aware sampling showed that the exact local position
-does not persist across pair and replay length. Summary-stat salience, local
-concentration, readout sensitivity, and causal leverage are therefore treated
-as separate objects.
+The current valid matrix contains 20 `MM/JJ/MJ/JM` factorial points, 80 cell
+runs, and 320 compressed full-vocabulary sidecars across SmolVLM2, Qwen2.5-VL,
+and Gemma 3. Every direct after-factorial contains non-identical cell
+distributions.
 
-## Current Restart Point
+- Qwen repeats a late layer 33 `values` source-cache summary locus at all 10
+  pair-by-length points, while its full-vocabulary interaction changes
+  non-monotonically over 1/2/4/8/16 images.
+- SmolVLM's source-cache summary locus moves across layers and tensors over
+  1/2/4 images; the old persistent layer-23 story does not replicate.
+- Gemma 3 has stable but pair-specific early source-cache loci from one to two
+  images, a nearly saturated family readout, and a much stronger frequency
+  readout interaction.
 
-For a fresh read, start with `docs/experiment_design.md`, then
-`docs/research_notes/0002_null_vs_stream_smoke.md`, then
-`docs/research_notes/0006_paired_stochastic_probe_smoke.md`, then
-`docs/research_notes/0007_paired_stochastic_probe_50_seed.md`, then
-`docs/research_notes/0008_pattern_probe_smoke.md`, then
-`docs/research_notes/0009_stimulus_seed_8_variant_smoke.md`, then
-`docs/research_notes/0010_phase_scramble_image_stats.md`, then
-`docs/research_notes/0011_quantile_matched_phase_scramble.md`, then
-`docs/research_notes/0012_frequency_ablation_smoke.md`, then
-`docs/research_notes/0013_frequency_cutoff_sweep.md`, then
-`docs/research_notes/0014_image_cache_correlation.md`, then
-`docs/research_notes/0015_source_variant_followups.md`, then
-`docs/research_notes/0016_five_step_instrumentation_kickoff.md`, then
-`docs/research_notes/0017_cross_palette_control_smoke.md`, then
-`docs/research_notes/0018_cross_palette_replication_path.md`, then
-`docs/research_notes/0019_cross_palette_replication_readout.md`, then
-`docs/research_notes/0020_true_50_frame_cross_palette_replication.md`, then
-`docs/research_notes/0021_layer23_values_swap_intervention_scaffold.md`, then
-`docs/research_notes/0022_two_pair_values_swap_intervention.md`, then
-`docs/research_notes/0023_qwen_cross_model_factorial_pilot.md`, then
-`docs/research_notes/0024_dense_mid_layer_values_swap_profile.md`, then
-`docs/research_notes/0025_controlled_mid_layer_values_swap_confirmation.md`,
-then `docs/research_notes/0026_qwen_cumulative_replay_trajectory.md`. The
-compact paper-facing evidence index is `docs/paper_evidence_matrix.md`.
+The cross-palette input result remains intact: luminance-rank palette transfer
+creates a nonlinear interaction among palette donor, spatial rank field, and
+processor-space frequency structure. The current reading is therefore
+distribution-coupled visual perturbation under fresh multimodal inference, not
+yet persistent latent-state steering.
 
-The first true 50-frame cross-palette replication kept all `MM/JJ/MJ/JM` cells
-at 50 frames for two source pairs. Surface forced-choice labels stayed fixed,
-while scalar cache-summary interaction argmax locations repeated at mid layer 23
-`values` and after layer 0 `keys`. Processor-space image-stat interactions
-remained pair-dependent, so the current interpretation is a replicated
-state-geometry locus, not a single scalar image-stat mechanism. A top-k20
-readout rerun then found identical first-token top-20 sets across `MM/JJ/MJ/JM`
-for every phase/probe record, with max common-token interaction around `0.004`
-logprob.
+The repo does **not** currently support a universal layer, persistent
+multi-turn state, a valid cache intervention effect, causal mediation from the
+ACK cache to the direct probe, or full-distribution equality inferred from an
+unchanged generated label.
 
-The targeted intervention is now a two-pair, four-layer, three-seed result.
-Every source/donor swap preserved the origin's generated token sequence. Layer
-12 produced the largest tested top-k perturbation in both pairs, about `22%` of
-source/donor baseline separation, while layer 23 produced only `3.6-5.4%` and
-remained strongly origin-like. The matched self-swap sham effect was zero. A
-follow-up seed-0 screen over layers 8-23 repeated the same profile shape across
-both source pairs (`r=0.964`, `rho=0.982`), peaking at layer 10 with layers 13
-and 12 next. Strict multi-seed reciprocal and sham confirmation then kept all
-three layers active but shifted the exact peak from layer 10 in `c_d` to layer
-13 in `b_c`. Source and reciprocal rank profiles had Spearman `1.0` within both
-pairs, all intervention token sequences remained origin-identical, and every
-self-sham top-k effect was zero. The supported object is now a layers 10-13
-susceptibility band, not a universal layer-10 point.
+## Start Here
 
-The separate-architecture lane now includes Qwen2.5-VL cumulative replay. Two
-source pairs at 1, 2, and 4 frames kept every cell at family/frequency labels
-`C/L` and top-k10 Jaccard `1.0`, while all six scalar cache interaction argmaxes
-repeated at layer 33 `values`. The exact position changed across pair and frame
-count once image-token boundaries were sampled, withdrawing position 128 as a
-fixed candidate. Qwen's current incremental `PromptCacheState` path still fails
-on a second image turn, so cumulative replay is multi-image context evidence,
-not persistent-stream replication. Full-vocabulary scoring, key/key-value
-interventions, and longer replay lengths are next.
+1. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
+   for the protocol audit, three-model rerun, and current claim boundary.
+2. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
+   supported/provisional/withdrawn map.
+3. [Experiment Design](docs/experiment_design.md) for the control ladder.
+4. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
+   for the still-valid input and processor-space cross-palette analysis.
+5. [Examples](examples/README.md) for tracked summaries and the historical note
+   sequence.
+
+Relevant historical cross-palette and intervention notes now carry
+protocol-audit banners where their cache or branched readout interpretations
+were superseded.
 
 ## Infrastructure Tiers
 
-- **T1 Local Internal Trace**: MLX-VLM now, Hugging Face Transformers next.
-  This is the main path for hidden states, attention hooks, and KV/cache
-  summaries. Adapters should support both `model_id` and `local_path`.
+- **T1 Local Internal Trace**: MLX-VLM is the primary measured path; a Hugging
+  Face Transformers adapter is also available. This tier covers hidden-state,
+  attention, and KV/cache summaries where the model exposes them, using either
+  `model_id` or `local_path`.
 - **T2 Remote Logprob Probe**: provider APIs only when the selected multimodal
   model returns useful logprobs. This tier measures output-distribution proxies,
   not internal state.
@@ -172,48 +121,38 @@ first logprob-focused pass unless a selected model exposes the needed signal.
   another manifest for cross-family palette controls.
 - Analyze image statistics after a model processor converts frames into
   `pixel_values`, including cycles-per-patch spectral summaries.
-- Attach condition metadata for fractal, geometry, natural, and control
-  comparisons.
-- Build manifests for external frame directories, so natural videos can be
-  sampled elsewhere and brought into the same run format.
-- Stream frames into MLX-VLM one turn at a time with an explicit chat transcript.
-- Run a separately labeled ordered multi-image cumulative replay for models
-  whose incremental image-turn cache path is incompatible.
-- Run a Hugging Face Transformers stream probe with `model_id` or `local_path`,
-  full transcript replay, hidden-state summaries, KV-cache summaries, and
-  generation logprob summaries where the selected model exposes them.
-- Use isolated probe branches by default so before/mid/after probes do not
-  contaminate the main stream cache/history.
-- Record probe outputs, generation metrics, and sampled KV-cache summaries.
-- Seed MLX/HF smoke runs for reproducible paired comparisons.
-- Run paired stochastic-probe MLX batches where stream generation stays greedy
-  but probe sampling is repeated across matched probe seeds.
-- Compare paired run JSONs with probe text, frame artifacts, stream-cache
-  deltas, and probe-source-cache deltas.
-- Analyze 2x2 cache-summary factorial contrasts for spatial main effect,
-  palette main effect, and spatial-by-palette interaction.
-- Track factorial cache argmax trajectories across replay lengths and map
-  sampled positions to image-token runs and vision markers.
+- Attach condition metadata and build manifests for external natural or
+  geometric frame directories.
+- Run a fresh ordered multi-image ACK forward plus fresh direct multimodal
+  probes, without reusing image-conditioned cache state.
+- Save compressed full-vocabulary first-step logprobs with SHA-256, vocabulary
+  size, dtype, and log-normalization diagnostics.
+- Compare complete readout distributions with KL, Jensen-Shannon, total
+  variation, Hellinger, conditional candidate probabilities, and
+  probability-space 2x2 factorial contrasts.
+- Record sampled KV-cache summaries over all layers and map local argmaxes to
+  image-token runs and vision markers.
+- Analyze cache-summary spatial, palette, and interaction contrasts; track
+  loci by model, source pair, replay length, tensor, and normalized depth.
+- Audit reconstructed prompt prefixes and cache sequence lengths before any
+  `PromptCacheState` reuse is interpreted.
 - Prepare replicated 2x2 cross-palette batches and analyze the same factorial
   contrast over raw and processor-space image statistics.
-- Compare saved HF first-step top-k logprobs for probe readout deltas when
-  generation score summaries are available.
-- Run a targeted MLX `PromptCacheState` values-swap probe that replaces only one
-  source cache layer's `values` tensor with the donor tensor before a creative
-  branch probe.
-- Sweep targeted values swaps over layers and matched probe seeds with
-  reciprocal branches, self-swap shams, token/edit comparisons, top-k RMSE, and
-  normalized donor-pull summaries.
-- Compare dense intervention layer profiles across source pairs, including
-  Pearson/Spearman similarity, peak layers, and top-k overlap.
 - Reuse one loaded MLX model across manifest-batch conditions while creating a
   fresh prompt-cache state for every run.
 - Promote MLX cache tensors to float32 for summary reductions, avoiding
-  float16 variance/L2 overflow on Qwen-class caches.
+  low-precision variance/L2 overflow, and promote unsupported bfloat16
+  logprobs before saving.
+- Run paired stochastic probes and compare paired run JSONs for earlier
+  behavior-level experiments.
+- Run Hugging Face Transformers probes with `model_id` or `local_path` where a
+  selected model exposes compatible hidden-state, cache, or logprob outputs.
 - Train a small nearest-centroid classifier on saved cache-summary features to
   test whether measured traces retain condition information when probe text is
   unchanged.
-- Provide provider capability scaffolding for T1/T2/T3 adapters.
+- Retain legacy incremental-stream, cache-branch, and values-swap CLIs for
+  protocol forensics. Under MLX-VLM `0.4.4`, their image-conditioned reuse path
+  is audit-only and does not support persistence or intervention claims.
 
 ## Quickstart
 
@@ -236,21 +175,25 @@ python3 scripts/run_mlx_stream_probe.py \
 On a machine with MLX and MLX-VLM installed:
 
 ```bash
-python3 scripts/run_mlx_stream_probe.py \
+python3 scripts/run_mlx_cumulative_replay_probe.py \
   --manifest runs/smoke/mandelbrot_a/manifest.json \
+  --output runs/smoke/mandelbrot_a_direct_4f.json \
   --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
   --max-frames 4 \
-  --max-tokens 2 \
-  --probe-max-tokens 48 \
-  --probe-cache-policy isolated \
-  --cache-summary-every 10 \
-  --cache-summary-max-layers 4 \
-  --seed 20260604 \
-  --output runs/smoke/mandelbrot_a_mlx.json
+  --probe-preset forced_choice \
+  --after-probe-protocol direct_multimodal_replay \
+  --save-full-vocab-first-step \
+  --cache-summary-max-layers -1 \
+  --no-frame-artifacts
 ```
 
-To run the first Null-vs-Stream ladder from the same manifest, keep the seed,
-probe, frame count, and model fixed while changing only `--delivery-mode`:
+This writes a fresh ACK source-cache summary and fresh direct multimodal probe
+records. It does not claim that state persisted from the ACK into the probes.
+
+The original Null-vs-Stream ladder remains available for protocol development.
+Keep the seed, probe, frame count, and model fixed while changing only
+`--delivery-mode`; treat incremental visual-cache reuse as audit-only until its
+prefix and cache-length invariants pass:
 
 ```bash
 python3 scripts/run_mlx_stream_probe.py \
@@ -399,6 +342,10 @@ The same comparison command can compare `probe_only` vs `visual_stream`, or
 `text_only_stream` vs `visual_stream`, to keep the first claim boundary focused
 on Null-vs-Stream before fractal-family effects.
 
+The following null/fractal, unseeded, and paired-pattern runners reproduce the
+historical behavior-level ladder. Their incremental image-cache traces are not
+part of the current evidence set.
+
 To run the first seeded 50-frame null/fractal batch, use one generated blank
 visual null plus Mandelbrot and Julia, three seeds each:
 
@@ -467,11 +414,12 @@ python3 scripts/run_mlx_pattern_probe_batch.py \
   --overwrite
 ```
 
-To run the same paired probe design over arbitrary existing manifests:
+To run the current fresh cumulative/direct protocol over arbitrary existing
+manifests:
 
 ```bash
 python3 scripts/run_mlx_manifest_probe_batch.py \
-  --output-root runs/frequency_cutoff_sweep_probe_seed_0 \
+  --output-root runs/frequency_cutoff_sweep_direct_seed_0 \
   --manifest mandelbrot_low_018=runs/frequency_ablation_smoke/mandelbrot_low_pass_luminance_quantile_matched_cutoff_018/manifest.json \
   --manifest mandelbrot_high_018=runs/frequency_ablation_smoke/mandelbrot_high_pass_luminance_quantile_matched_cutoff_018/manifest.json \
   --manifest julia_low_018=runs/frequency_ablation_smoke/julia_low_pass_luminance_quantile_matched_cutoff_018/manifest.json \
@@ -479,9 +427,14 @@ python3 scripts/run_mlx_manifest_probe_batch.py \
   --probe-seeds 0 \
   --max-frames 12 \
   --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --context-protocol cumulative_replay \
+  --after-probe-protocol direct_multimodal_replay \
+  --save-full-vocab-first-step \
+  --cache-summary-max-layers -1 \
   --temperature 0 \
   --probe-temperature 0.7 \
-  --probe-cache-policy isolated
+  --no-frame-artifacts \
+  --overwrite
 ```
 
 To prepare replicated cross-palette factorial source pairs before launching MLX
@@ -512,89 +465,53 @@ python3 scripts/analyze_factorial_image_contrast.py \
   --output-md runs/cross_palette_controls/processor_factorial_image_contrast.md
 ```
 
-To analyze saved first generated-token top-k readouts from a rerun that includes
-`generation.steps`:
+To compare complete first-step distributions from four fresh direct cell runs:
 
 ```bash
-python3 scripts/analyze_probe_readout_contrast.py \
-  --mm runs/cross_palette_replication_50_v1/c_d_50f/manifest_probe_seed_0/probe_seed_0/mm_mlx.json \
-  --jj runs/cross_palette_replication_50_v1/c_d_50f/manifest_probe_seed_0/probe_seed_0/jj_mlx.json \
-  --mj runs/cross_palette_replication_50_v1/c_d_50f/manifest_probe_seed_0/probe_seed_0/mj_mlx.json \
-  --jm runs/cross_palette_replication_50_v1/c_d_50f/manifest_probe_seed_0/probe_seed_0/jm_mlx.json \
-  --output-json runs/cross_palette_replication_50_v1/c_d_50f/probe_readout_contrast.json \
-  --output-md runs/cross_palette_replication_50_v1/c_d_50f/probe_readout_contrast.md
+python3 scripts/analyze_full_vocab_readout_contrast.py \
+  --mm runs/direct_factorial/mm_mlx.json \
+  --jj runs/direct_factorial/jj_mlx.json \
+  --mj runs/direct_factorial/mj_mlx.json \
+  --jm runs/direct_factorial/jm_mlx.json \
+  --output-json runs/direct_factorial/full_vocab_readout_contrast.json \
+  --output-md runs/direct_factorial/full_vocab_readout_contrast.md
 ```
 
-To run the first pinpoint cache intervention scaffold, swap donor layer 23
-`values` into a source stream cache before a creative probe:
+To aggregate prefix/cache-length invariants from audit runs:
 
 ```bash
-python3 scripts/run_mlx_cache_values_swap_probe.py \
-  --source-manifest runs/cross_palette_replication_50_v1/stimuli/mandelbrot_zoom_c_50f/manifest.json \
-  --donor-manifest runs/cross_palette_replication_50_v1/stimuli/julia_zoom_d_50f/manifest.json \
-  --source-label mandelbrot_c \
-  --donor-label julia_d \
-  --output runs/cache_values_swap/c_d_layer23_values_mid.json \
-  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
-  --max-frames 50 \
-  --probe-phase mid \
-  --layer-index 23 \
-  --probe-temperature 0.7 \
-  --probe-seed 0 \
-  --generation-readout-top-k 20
+python3 scripts/analyze_cache_prefix_audits.py \
+  --run qwen=runs/cache_prefix_audit/qwen_legacy_branch.json \
+  --run smol=runs/cache_prefix_audit/smol_incremental_two_frame.json \
+  --output-json runs/cache_prefix_audit/prefix_audit_analysis.json \
+  --output-md runs/cache_prefix_audit/prefix_audit_analysis.md
 ```
 
-To sweep target and control layers over matched seeds, including reciprocal and
-self-swap sham branches, then aggregate token and top-k effects:
+The legacy cache-swap and cache-branch CLIs remain in the repository so the
+withdrawn path can be reproduced and audited. Do not treat their current
+MLX-VLM `0.4.4` outputs as persistence or intervention evidence.
 
-```bash
-python3 scripts/run_mlx_cache_values_swap_sweep.py \
-  --source-manifest runs/cross_palette_replication_50_v1/stimuli/mandelbrot_zoom_c_50f/manifest.json \
-  --donor-manifest runs/cross_palette_replication_50_v1/stimuli/julia_zoom_d_50f/manifest.json \
-  --source-label mandelbrot_c \
-  --donor-label julia_d \
-  --output runs/cache_values_swap/c_d_mid_values_sweep.json \
-  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
-  --max-frames 50 \
-  --probe-phase mid \
-  --layer-index 0 \
-  --layer-index 12 \
-  --layer-index 22 \
-  --layer-index 23 \
-  --probe-seeds 0 1 2 \
-  --generation-readout-top-k 50
-
-python3 scripts/analyze_cache_interventions.py \
-  --run runs/cache_values_swap/c_d_mid_values_sweep.json \
-  --output-json runs/cache_values_swap/c_d_mid_values_sweep_analysis.json \
-  --output-md runs/cache_values_swap/c_d_mid_values_sweep_analysis.md
-
-python3 scripts/analyze_cache_intervention_profiles.py \
-  --analysis c_d=runs/cache_values_swap/c_d_mid_values_dense_l8_23_seed0_screen_analysis.json \
-  --analysis b_c=runs/cache_values_swap/b_c_mid_values_dense_l8_23_seed0_screen_analysis.json \
-  --output-json runs/cache_values_swap/dense_l8_23_seed0_profile_comparison.json \
-  --output-md runs/cache_values_swap/dense_l8_23_seed0_profile_comparison.md
-```
-
-To run a clearly separated cumulative multi-image replay and summarize a
-frame-count trajectory:
+To run a fresh multi-image ACK plus direct probes and summarize a frame-count
+trajectory:
 
 ```bash
 python3 scripts/run_mlx_cumulative_replay_probe.py \
   --manifest runs/cross_palette_replication_50_v1/stimuli/mandelbrot_zoom_c_50f/manifest.json \
-  --output runs/qwen_cumulative_replay_smoke/mandelbrot_c_4f.json \
+  --output runs/direct_replay/mandelbrot_c_4f.json \
   --model mlx-community/Qwen2.5-VL-3B-Instruct-4bit \
   --max-frames 4 \
   --probe-preset forced_choice \
+  --after-probe-protocol direct_multimodal_replay \
+  --save-full-vocab-first-step \
   --cache-summary-max-layers -1 \
   --no-frame-artifacts
 
 python3 scripts/analyze_factorial_cache_trajectory.py \
-  --analysis c_d_1f=runs/qwen_cumulative_replay/c_d_1f_all_layers_seed0/factorial_cache_contrast.json \
-  --analysis c_d_2f=runs/qwen_cumulative_replay/c_d_2f_all_layers_seed0/factorial_cache_contrast.json \
-  --analysis c_d_4f=runs/qwen_cumulative_replay/c_d_4f_all_layers_seed0/factorial_cache_contrast.json \
-  --output-json runs/qwen_cumulative_replay/c_d_frame_trajectory.json \
-  --output-md runs/qwen_cumulative_replay/c_d_frame_trajectory.md
+  --analysis c_d_1f=runs/full_vocab_factorials/qwen_c_d_1f_direct_all_layers_seed0/factorial_cache_contrast.json \
+  --analysis c_d_2f=runs/full_vocab_factorials/qwen_c_d_2f_direct_all_layers_seed0/factorial_cache_contrast.json \
+  --analysis c_d_4f=runs/full_vocab_factorials/qwen_c_d_4f_direct_all_layers_seed0/factorial_cache_contrast.json \
+  --output-json runs/full_vocab_factorials/qwen_c_d_trajectory.json \
+  --output-md runs/full_vocab_factorials/qwen_c_d_trajectory.md
 ```
 
 ## Documentation
@@ -631,10 +548,13 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0024: Dense Mid-Layer Values-Swap Profile](docs/research_notes/0024_dense_mid_layer_values_swap_profile.md)
 - [Research Note 0025: Controlled Mid-Layer Values-Swap Confirmation](docs/research_notes/0025_controlled_mid_layer_values_swap_confirmation.md)
 - [Research Note 0026: Qwen Cumulative-Replay Trajectory](docs/research_notes/0026_qwen_cumulative_replay_trajectory.md)
+- [Research Note 0027: Cache-Prefix Audit and Direct Full-Vocabulary Replay](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
 
 ## Claim Boundary
 
-A single run can support "observed in this run" only. Repeated seeds, models,
-stimulus families, probes, and controls are required before describing an effect
-as stable. The strongest early result is not a grand claim; it is a clean
-artifact trail that makes the next run easier to trust.
+A single run can support "observed in this run" only. Nested frame lengths are
+not independent stimulus replications, and four factorial cells do not turn
+their six pairwise distances into six independent samples. An unchanged letter
+does not establish equality of output distributions. No persistence or cache
+intervention claim is promoted unless full multimodal prefix and cache-length
+invariants pass on the exact execution path being interpreted.

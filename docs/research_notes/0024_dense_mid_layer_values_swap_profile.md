@@ -2,11 +2,15 @@
 
 Date: 2026-07-13
 
+> **Protocol audit update (2026-07-13):** [Note 0027](0027_cache_prefix_audit_and_direct_full_vocab.md)
+> invalidated the multimodal cache-branch assumptions used here. The saved
+> profile is historical diagnostic output, not current evidence for a causal
+> layers 10-13 band.
+
 ## Status
 
-Completed as a two-pair, seed-0 screening scan over layers 8-23. The profile is
-highly reproducible across source pairs, but selected layers still require the
-multi-seed reciprocal and sham controls used in Note 0022.
+Historical two-pair, seed-0 screening scan over layers 8-23. Its numerical
+profile is reproducible, but its intervention interpretation is withdrawn.
 
 ## Motivation
 

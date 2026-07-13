@@ -2,10 +2,15 @@
 
 Date: 2026-07-13
 
+> **Protocol audit update (2026-07-13):** [Note 0027](0027_cache_prefix_audit_and_direct_full_vocab.md)
+> retains the fresh one-image source-cache observation but withdraws the
+> text-only branched readout. Direct multimodal full-vocabulary probes show
+> non-identical cell distributions.
+
 ## Status
 
-Completed as a one-frame, two-pair cross-architecture pilot. This note does not
-claim a persistent multi-frame replication.
+Historical one-frame, two-pair pilot. The fresh source-cache portion remains
+usable; the branched readout portion is superseded.
 
 Subsequent update: [Note 0026](0026_qwen_cumulative_replay_trajectory.md)
 completed a separately labeled 1/2/4-frame cumulative-replay trajectory. It
