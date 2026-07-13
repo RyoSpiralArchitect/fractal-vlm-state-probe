@@ -90,6 +90,19 @@ def test_full_vocab_factorial_uses_complete_probability_distributions(
     assert interaction["argmax_token_id"] == 0
     assert interaction["argmax_token"] == "A"
     assert record["top_probability_interaction_tokens"][0]["token_id"] == 0
+    balanced = record["balanced_probability_contrasts"]
+    assert math.isclose(
+        balanced["spatial_contrast"]["l1_norm"],
+        2.0 * record["probability_contrasts"]["spatial_main_effect"]["l1_norm"],
+        rel_tol=1e-6,
+    )
+    assert math.isclose(
+        balanced["palette_contrast"]["l1_norm"],
+        2.0 * record["probability_contrasts"]["palette_main_effect"]["l1_norm"],
+        rel_tol=1e-6,
+    )
+    shares = record["balanced_probability_contrast_energy"]["energy_shares"]
+    assert math.isclose(sum(shares.values()), 1.0, rel_tol=1e-12)
     candidates = record["forced_choice_candidates"]
     assert candidates["available"] is True
     assert math.isclose(

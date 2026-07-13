@@ -39,6 +39,10 @@ def test_cache_tensor_replication_reports_shared_image_direction(
         record for record in group["regions"] if record["region"] == "image_tokens"
     )
     assert image["direction_cosine_summary"]["median"] == 1.0
+    shares = image["balanced_contrast_energy_shares"]
+    assert shares["spatial_contrast"]["median"] == pytest.approx(1.0 / 3.0)
+    assert shares["palette_contrast"]["median"] == pytest.approx(1.0 / 3.0)
+    assert shares["interaction_contrast"]["median"] == pytest.approx(1.0 / 3.0)
     json.dumps(result)
 
 

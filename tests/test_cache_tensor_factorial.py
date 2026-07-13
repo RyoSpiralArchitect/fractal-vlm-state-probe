@@ -12,6 +12,7 @@ from fractal_vlm_state_probe.cache_tensor_artifact import (
 )
 from fractal_vlm_state_probe.cache_tensor_factorial import (
     analyze_cache_tensor_factorial,
+    balanced_factorial_contrast_vectors,
     cache_tensor_regions,
     factorial_effect_vectors,
 )
@@ -59,6 +60,12 @@ def test_cache_tensor_factorial_localizes_interaction_to_image_tokens(
     assert non_image["l2_norm"] == 0.0
     assert result["interaction_partition"]["image_energy_fraction"] == 1.0
     assert result["interaction_partition"]["partition_closes"] is True
+    assert (
+        regions["image_tokens"]["balanced_contrast_energy"]["energy_shares"][
+            "interaction_contrast"
+        ]
+        == 1.0 / 3.0
+    )
     json.dumps(result)
 
 
@@ -75,6 +82,11 @@ def test_factorial_effect_vector_formulas() -> None:
     assert effects["spatial_main_effect"].item() == 2.5
     assert effects["palette_main_effect"].item() == 1.5
     assert effects["interaction"].item() == 1.0
+
+    contrasts = balanced_factorial_contrast_vectors(cells)
+    assert contrasts["spatial_contrast"].item() == 5.0
+    assert contrasts["palette_contrast"].item() == 3.0
+    assert contrasts["interaction_contrast"].item() == 1.0
 
 
 def test_cache_tensor_regions_partition_effective_sequence() -> None:

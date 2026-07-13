@@ -2,6 +2,13 @@
 
 Date: 2026-07-13
 
+> **Balanced-contrast update (2026-07-14):** [Note 0031](0031_balanced_contrasts_five_model_expansion.md)
+> expands this surface to five models and places spatial, palette, and
+> interaction contrasts on the same cell-coefficient scale. The localization
+> and direction results below remain valid; the raw interaction/pairwise RMS
+> ratio should not be read as evidence that interaction is the dominant
+> factorial axis.
+
 ## Status
 
 Completed for the four independent one-frame source pairs in Qwen2.5-VL and

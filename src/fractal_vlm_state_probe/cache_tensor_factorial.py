@@ -79,6 +79,7 @@ def analyze_cache_tensor_factorial(
             for cell in CELL_KEYS
         }
         effects = factorial_effect_vectors(cell_arrays)
+        balanced_contrasts = balanced_factorial_contrast_vectors(cell_arrays)
         pairwise = _pairwise_distances(cell_arrays)
         mean_cell_rms = float(
             np.mean([_rms(values) for values in cell_arrays.values()])
@@ -93,6 +94,15 @@ def analyze_cache_tensor_factorial(
             )
             for name, values in effects.items()
         }
+        balanced_contrast_metrics = {
+            name: _vector_metrics(
+                values,
+                positions=positions,
+                mean_cell_rms=mean_cell_rms,
+                mean_pairwise_rms=mean_pairwise_rms,
+            )
+            for name, values in balanced_contrasts.items()
+        }
         region_records.append(
             {
                 "region": region_name,
@@ -104,6 +114,10 @@ def analyze_cache_tensor_factorial(
                 "mean_pairwise_rms": mean_pairwise_rms,
                 "pairwise_distances": pairwise,
                 "effects": effect_metrics,
+                "balanced_contrasts": balanced_contrast_metrics,
+                "balanced_contrast_energy": _balanced_contrast_energy(
+                    balanced_contrast_metrics
+                ),
                 "effect_direction_cosines": {
                     "spatial_vs_palette": _cosine(
                         effects["spatial_main_effect"],
@@ -152,12 +166,19 @@ def analyze_cache_tensor_factorial(
             "palette_main_effect": "((MJ - MM) + (JJ - JM)) / 2",
             "interaction": "JJ - JM - MJ + MM",
         },
+        "balanced_contrast_formulas": {
+            "spatial_contrast": "JJ + JM - MM - MJ",
+            "palette_contrast": "JJ + MJ - MM - JM",
+            "interaction_contrast": "JJ + MM - JM - MJ",
+        },
         "regions": region_records,
         "interaction_partition": partition,
         "interpretation_notes": [
             "Tensor sidecars are trimmed to each cache entry's effective offset before analysis.",
             "Image and non-image regions use processor-expanded image-token positions from the saved source token layout.",
             "RMS permits region-size comparison; L2 retains total interaction energy and therefore scales with element count.",
+            "Balanced spatial, palette, and interaction contrasts all use +/-1 cell coefficients; their energy shares sum to one when any cell contrast is nonzero.",
+            "An interaction energy share of 1/3 is the exchangeable isotropic reference across the three balanced factorial axes, not a fitted null distribution.",
             "These are full source-cache tensor contrasts from fresh ACK forwards, not cache-reuse or intervention effects.",
         ],
     }
@@ -216,6 +237,17 @@ def factorial_effect_vectors(
     }
 
 
+def balanced_factorial_contrast_vectors(
+    cells: dict[str, np.ndarray],
+) -> dict[str, np.ndarray]:
+    effects = factorial_effect_vectors(cells)
+    return {
+        "spatial_contrast": 2.0 * effects["spatial_main_effect"],
+        "palette_contrast": 2.0 * effects["palette_main_effect"],
+        "interaction_contrast": effects["interaction"],
+    }
+
+
 def write_cache_tensor_factorial_json(analysis: dict[str, Any], path: Path) -> None:
     write_json(path, analysis)
 
@@ -261,6 +293,28 @@ def format_cache_tensor_factorial_markdown(analysis: dict[str, Any]) -> str:
             f"- Image interaction energy fraction: `{_fmt(partition.get('image_energy_fraction'))}`",
             f"- Non-image interaction energy fraction: `{_fmt(partition.get('non_image_energy_fraction'))}`",
             f"- Partition closes: `{partition.get('partition_closes')}`",
+            "",
+            "## Balanced Contrast Calibration",
+            "",
+            "All three contrasts below use the same `+1/+1/-1/-1` coefficient scale.",
+            "The exchangeable isotropic reference share is `0.33333333`.",
+            "",
+            "| Region | Spatial energy share | Palette energy share | Interaction energy share | Interaction minus 1/3 |",
+            "| --- | ---: | ---: | ---: | ---: |",
+        ]
+    )
+    for record in analysis["regions"]:
+        calibration = record["balanced_contrast_energy"]
+        shares = calibration["energy_shares"]
+        lines.append(
+            f"| `{record['region']}` | {_fmt(shares['spatial_contrast'])} | "
+            f"{_fmt(shares['palette_contrast'])} | "
+            f"{_fmt(shares['interaction_contrast'])} | "
+            f"{_fmt(calibration['interaction_share_minus_exchangeable_reference'])} |"
+        )
+
+    lines.extend(
+        [
             "",
             "## Direction Cosines",
             "",
@@ -388,6 +442,28 @@ def _interaction_partition(
         ),
         "partition_closes": math.isclose(
             partition_energy, total_energy, rel_tol=1e-9, abs_tol=1e-9
+        ),
+    }
+
+
+def _balanced_contrast_energy(
+    metrics: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    energies = {name: float(record["l2_norm"]) ** 2 for name, record in metrics.items()}
+    total_energy = sum(energies.values())
+    shares = {
+        name: _safe_ratio(energy, total_energy) for name, energy in energies.items()
+    }
+    interaction_share = shares["interaction_contrast"]
+    reference = 1.0 / 3.0
+    return {
+        "coefficient_scale": "+1/+1/-1/-1 for every contrast",
+        "l2_squared": energies,
+        "total_l2_squared": total_energy,
+        "energy_shares": shares,
+        "exchangeable_isotropic_reference_share": reference,
+        "interaction_share_minus_exchangeable_reference": (
+            None if interaction_share is None else interaction_share - reference
         ),
     }
 

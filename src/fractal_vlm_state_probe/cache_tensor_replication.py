@@ -67,6 +67,8 @@ def analyze_cache_tensor_replication(
             "Direction cosines compare the same layer, tensor, model, and token region across independent source pairs.",
             "No raw vector cosine is computed across models or layers because their cache coordinates are not assumed to align.",
             "The image-token region carries total interaction energy, while the fixed post-image suffix can carry a more repeatable low-energy direction.",
+            "Balanced factorial contrast shares compare spatial, palette, and interaction axes on the same +/-1 coefficient scale; 1/3 is the exchangeable isotropic reference.",
+            "Group-level spatial, palette, and interaction shares are componentwise medians and therefore need not sum exactly to one.",
             "The pre-image prefix is an autoregressive alignment control: it should not depend on later image tokens.",
             "These are deterministic descriptive replications over four source pairs, not null-hypothesis tests.",
         ],
@@ -117,17 +119,21 @@ def format_cache_tensor_replication_markdown(analysis: dict[str, Any]) -> str:
             "",
             "## Region Direction Replication",
             "",
-            "| Model | Layer | Region | Interaction RMS median (range) | Relative to pairwise median | Cross-pair cosine median (range) | Positive cosine share |",
-            "| --- | ---: | --- | --- | ---: | --- | ---: |",
+            "| Model | Layer | Region | Interaction RMS median (range) | Relative to pairwise median | Balanced S / P / I energy shares | Cross-pair cosine median (range) | Positive cosine share |",
+            "| --- | ---: | --- | --- | ---: | --- | --- | ---: |",
         ]
     )
     for group in analysis["groups"]:
         for region in group["regions"]:
             direction = region["direction_cosine_summary"]
+            shares = region["balanced_contrast_energy_shares"]
             lines.append(
                 f"| `{_short_model(group['model_id'])}` | {group['layer_index']} | "
                 f"`{region['region']}` | {_range_text(region['interaction_rms'])} | "
                 f"{_fmt(region['relative_rms_to_mean_pairwise_rms']['median'])} | "
+                f"{_fmt(shares['spatial_contrast']['median'])} / "
+                f"{_fmt(shares['palette_contrast']['median'])} / "
+                f"{_fmt(shares['interaction_contrast']['median'])} | "
                 f"{_range_text(direction)} | {_fmt(direction['positive_share'])} |"
             )
 
@@ -174,6 +180,28 @@ def _point_record(
         analysis["cells"]["mm"]["cache_token_layout"],
         sequence_length=tensor_shape[-2],
     )
+    region_metrics = {}
+    for name, record in regions.items():
+        balanced_shares = (record.get("balanced_contrast_energy") or {}).get(
+            "energy_shares"
+        ) or {}
+        region_metrics[name] = {
+            "interaction_rms": float(record["effects"]["interaction"]["rms"]),
+            "relative_rms_to_mean_pairwise_rms": record["effects"]["interaction"][
+                "relative_rms_to_mean_pairwise_rms"
+            ],
+            "balanced_contrast_energy_shares": {
+                contrast: balanced_shares.get(contrast)
+                for contrast in (
+                    "spatial_contrast",
+                    "palette_contrast",
+                    "interaction_contrast",
+                )
+            },
+            "balanced_interaction_energy_share": balanced_shares.get(
+                "interaction_contrast"
+            ),
+        }
     return {
         "label": label,
         "analysis_path": str(path),
@@ -197,15 +225,7 @@ def _point_record(
                 for effect in pre_image["effects"].values()
             )
         ),
-        "region_metrics": {
-            name: {
-                "interaction_rms": float(record["effects"]["interaction"]["rms"]),
-                "relative_rms_to_mean_pairwise_rms": record["effects"]["interaction"][
-                    "relative_rms_to_mean_pairwise_rms"
-                ],
-            }
-            for name, record in regions.items()
-        },
+        "region_metrics": region_metrics,
         "_analysis": analysis,
         "_region_positions": region_positions,
     }
@@ -270,6 +290,23 @@ def _group_record(
                     point["region_metrics"][region]["relative_rms_to_mean_pairwise_rms"]
                     for point in points
                 ),
+                "balanced_interaction_energy_share": _summary(
+                    point["region_metrics"][region]["balanced_interaction_energy_share"]
+                    for point in points
+                ),
+                "balanced_contrast_energy_shares": {
+                    contrast: _summary(
+                        point["region_metrics"][region][
+                            "balanced_contrast_energy_shares"
+                        ][contrast]
+                        for point in points
+                    )
+                    for contrast in (
+                        "spatial_contrast",
+                        "palette_contrast",
+                        "interaction_contrast",
+                    )
+                },
                 "pairwise_direction_cosines": interaction_replication["pairwise"],
                 "direction_cosine_summary": interaction_replication["summary"],
                 "effect_direction_replication": effect_replication,

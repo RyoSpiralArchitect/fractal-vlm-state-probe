@@ -9,6 +9,10 @@ from typing import Any
 
 import numpy as np
 
+from .cache_tensor_factorial import (
+    balanced_factorial_contrast_vectors,
+    factorial_effect_vectors,
+)
 from .probe_readout import CELL_KEYS
 from .stimulus import write_json
 
@@ -161,6 +165,11 @@ def analyze_full_vocab_readout_contrast(
             "palette_main_effect": "((mj - mm) + (jj - jm)) / 2",
             "interaction_effect": "jj - jm - mj + mm",
         },
+        "balanced_contrast_formulas": {
+            "spatial_contrast": "jj + jm - mm - mj",
+            "palette_contrast": "jj + mj - mm - jm",
+            "interaction_contrast": "jj + mm - jm - mj",
+        },
         "record_count": len(records),
         "available_record_count": len(available),
         "records": records,
@@ -168,6 +177,8 @@ def analyze_full_vocab_readout_contrast(
             "Each record uses the complete saved first-step vocabulary distribution.",
             "Pairwise distances within one four-cell factorial are descriptive, not independent samples.",
             "Probability-space interaction is bounded and primary; tail-sensitive logprob interaction is diagnostic.",
+            "Balanced probability contrasts use the same +/-1 cell-coefficient scale before their L2 energy shares are compared.",
+            "An interaction energy share of 1/3 is the exchangeable isotropic reference across the three balanced factorial axes, not a fitted null distribution.",
             "Logprob interaction excludes tokens that are non-finite in any cell and reports the excluded count.",
             "A sidecar hash and vocabulary-size check is performed before analysis.",
         ],
@@ -210,6 +221,34 @@ def format_full_vocab_readout_markdown(analysis: dict[str, Any]) -> str:
             f"{record['vocab_size']} | {max_js:.8g} | {interaction['l1_norm']:.8g} | "
             f"{interaction['max_abs']:.8g} | `{token}` | "
             f"{_format_metric(record['logprob_interaction']['reference_weighted_rms'])} |"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Balanced Contrast Calibration",
+            "",
+            "All three probability contrasts use the same `+1/+1/-1/-1` coefficient scale.",
+            "The exchangeable isotropic reference share is `0.33333333`.",
+            "",
+            "| Phase | Probe | Spatial energy share | Palette energy share | Interaction energy share | Interaction minus 1/3 |",
+            "| --- | --- | ---: | ---: | ---: | ---: |",
+        ]
+    )
+    for record in analysis["records"]:
+        if not record["available"]:
+            lines.append(
+                f"| `{record['phase']}` | `{record['probe_id']}` | n/a | n/a | n/a | n/a |"
+            )
+            continue
+        calibration = record["balanced_probability_contrast_energy"]
+        shares = calibration["energy_shares"]
+        lines.append(
+            f"| `{record['phase']}` | `{record['probe_id']}` | "
+            f"{_format_metric(shares['spatial_contrast'])} | "
+            f"{_format_metric(shares['palette_contrast'])} | "
+            f"{_format_metric(shares['interaction_contrast'])} | "
+            f"{_format_metric(calibration['interaction_share_minus_exchangeable_reference'])} |"
         )
 
     lines.extend(["", "## Pairwise Distribution Distances", ""])
@@ -334,24 +373,9 @@ def _analyze_phase_probe(
             }
         )
 
-    probability_spatial = (
-        probabilities["jm"]
-        - probabilities["mm"]
-        + probabilities["jj"]
-        - probabilities["mj"]
-    ) / 2.0
-    probability_palette = (
-        probabilities["mj"]
-        - probabilities["mm"]
-        + probabilities["jj"]
-        - probabilities["jm"]
-    ) / 2.0
-    probability_interaction = (
-        probabilities["jj"]
-        - probabilities["jm"]
-        - probabilities["mj"]
-        + probabilities["mm"]
-    )
+    probability_effects = factorial_effect_vectors(probabilities)
+    balanced_probability_contrasts = balanced_factorial_contrast_vectors(probabilities)
+    probability_interaction = probability_effects["interaction"]
     reference = sum(probabilities.values()) / len(probabilities)
     logprob_interaction, logprob_interaction_summary = _logprob_interaction(
         logprobs,
@@ -401,10 +425,16 @@ def _analyze_phase_probe(
         },
         "pairwise_distances": pairwise,
         "probability_contrasts": {
-            "spatial_main_effect": _vector_summary(probability_spatial, token_labels),
-            "palette_main_effect": _vector_summary(probability_palette, token_labels),
-            "interaction": _vector_summary(probability_interaction, token_labels),
+            name: _vector_summary(values, token_labels)
+            for name, values in probability_effects.items()
         },
+        "balanced_probability_contrasts": {
+            name: _vector_summary(values, token_labels)
+            for name, values in balanced_probability_contrasts.items()
+        },
+        "balanced_probability_contrast_energy": _balanced_contrast_energy(
+            balanced_probability_contrasts
+        ),
         "logprob_interaction": logprob_interaction_summary,
         "forced_choice_candidates": _forced_choice_candidate_summary(
             probe_id=probe_id,
@@ -525,6 +555,31 @@ def _vector_summary(values: np.ndarray, token_labels: dict[int, str]) -> dict[st
         "argmax_token": token_labels.get(token_id, ""),
         "argmax_signed_effect": float(values[token_id]),
         "sum": float(np.sum(values)),
+    }
+
+
+def _balanced_contrast_energy(
+    contrasts: dict[str, np.ndarray],
+) -> dict[str, Any]:
+    energies = {
+        name: float(np.dot(values, values)) for name, values in contrasts.items()
+    }
+    total_energy = sum(energies.values())
+    shares = {
+        name: energy / total_energy if total_energy > 0.0 else None
+        for name, energy in energies.items()
+    }
+    interaction_share = shares["interaction_contrast"]
+    reference = 1.0 / 3.0
+    return {
+        "coefficient_scale": "+1/+1/-1/-1 for every contrast",
+        "l2_squared": energies,
+        "total_l2_squared": total_energy,
+        "energy_shares": shares,
+        "exchangeable_isotropic_reference_share": reference,
+        "interaction_share_minus_exchangeable_reference": (
+            None if interaction_share is None else interaction_share - reference
+        ),
     }
 
 

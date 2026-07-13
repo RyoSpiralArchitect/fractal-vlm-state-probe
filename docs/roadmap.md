@@ -135,16 +135,16 @@ position-local swaps remain required after that path is valid.
 - Compare loci by normalized depth and token region rather than raw layer or
   position number alone.
 
-Status: the valid direct lane now covers SmolVLM2, Qwen2.5-VL, and Gemma 3 over
-two source pairs: 20 factorial points, 80 cell runs, and 320 complete-vocabulary
-sidecars. Qwen covers 1/2/4/8/16 images and repeats a fresh ACK layer 33
-`values` scalar locus at all 10 points. SmolVLM covers 1/2/4 images and moves
-across depth/tensor. Gemma covers 1/2 images and repeats early pair-specific
-loci while showing much stronger frequency than family readout interaction.
-Every direct after-factorial has non-identical cell distributions. The next
-replication should add source pairs, prompt/candidate permutations, a fourth
-architecture, and matched natural/geometric controls before extending nested
-lengths again.
+Status: the valid direct lane now covers SmolVLM2, Qwen2.5-VL, Gemma 3,
+InternVL3, and LFM2-VL. The standard matrix contains 34 factorial points, 136
+cell runs, and 544 complete-vocabulary sidecars; the one-frame surface is
+balanced at four source pairs per model. Qwen repeats a late scalar locus,
+InternVL a late band, Gemma an early band, SmolVLM broad pair dependence, and
+LFM2 six hybrid-attention cache entries. Every direct after-factorial has
+non-identical cell distributions. Selected full-vector captures now cover 26
+model-local targets and 104 layer-by-pair analyses. The next replication should
+add independently generated trajectories, a second-pair prompt audit, and
+matched natural/geometric/frequency controls before extending nested lengths.
 
 ## Phase 5: Research Report
 
@@ -154,8 +154,9 @@ lengths again.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Note 0027 now encode the audited claim boundary
-and three-model direct replication. Manuscript tables and figures remain
-future. The current priority is independent source-pair and prompt replication,
-full-vector cache contrasts, and a valid intervention path before causal prose
-is promoted.
+Status: the evidence matrix and Notes 0027-0031 encode the audited claim
+boundary, five-model direct replication, selected full-vector localization,
+and balanced factorial calibration. Initial manuscript tables exist; calibrated
+nulls and figures remain future work. The current priority is independent
+trajectory and prompt replication, head/position-resolved vector analysis, and
+a valid intervention path before causal prose is promoted.

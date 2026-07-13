@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "balanced_contrasts_five_model_expansion_summary",
+  "date": "2026-07-14",
+  "balanced_contrast_calibration": {
+    "spatial_contrast": "JJ + JM - MM - MJ",
+    "palette_contrast": "JJ + MJ - MM - JM",
+    "interaction_contrast": "JJ + MM - JM - MJ",
+    "coefficient_scale": "+1/+1/-1/-1 for every contrast",
+    "exchangeable_isotropic_reference_share": 0.3333333333333333,
+    "reference_is_fitted_null": false
+  },
+  "corpus": {
+    "model_count": 5,
+    "source_pair_count": 4,
+    "source_pair_ids": [
+      "b_c",
+      "c_d",
+      "d_e",
+      "e_f"
+    ],
+    "valid_direct_standard_factorial_count": 34,
+    "valid_direct_standard_cell_run_count": 136,
+    "valid_direct_standard_full_vocab_sidecar_count": 544,
+    "one_frame_direct_factorial_count": 20,
+    "one_frame_direct_cell_run_count": 80,
+    "one_frame_direct_full_vocab_sidecar_count": 320,
+    "full_vector_source_only_run_count": 80,
+    "full_vector_tensor_artifact_count": 416,
+    "full_vector_factorial_analysis_count": 104,
+    "full_vector_target_group_count": 26
+  },
+  "lfm2_vl_integrity": {
+    "model_id": "mlx-community/LFM2-VL-1.6B-4bit",
+    "mlx_version": "0.31.1",
+    "mlx_vlm_version": "0.4.4",
+    "reported_cache_layers": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14
+    ],
+    "effective_cache_positions": 216,
+    "image_token_run": {
+      "start": 44,
+      "end": 123,
+      "length": 80
+    },
+    "source_only_run_count": 16,
+    "tensor_sidecar_count": 192,
+    "tensor_sidecars_passing_hash_shape_finite": 192,
+    "full_vector_smoke_batch_bitwise_exact": 12,
+    "full_vector_smoke_batch_target_count": 12,
+    "direct_run_count": 16,
+    "full_vocab_sidecar_count": 64,
+    "full_vocab_sidecars_passing_hash_shape_finite": 64,
+    "before_unique_hashes_per_probe": 1,
+    "after_unique_hashes_per_probe": 16,
+    "direct_smoke_batch_bitwise_exact": 4,
+    "direct_smoke_batch_target_count": 4,
+    "operational_caveat": "One multi-cell direct process hit a Metal command-buffer timeout after its first completed cell; independent per-cell processes completed deterministically."
+  },
+  "full_vector": {
+    "global": {
+      "analysis_count": 104,
+      "dominant_axis_counts": {
+        "spatial": 84,
+        "palette": 14,
+        "interaction": 6
+      },
+      "interaction_share_above_one_third_count": 9,
+      "pre_image_all_effects_zero_count": 104,
+      "interaction_argmax_in_image_count": 100,
+      "image_interaction_energy_fraction_at_least_0_9_count": 102,
+      "image_interaction_energy_fraction_median": 0.9794630494486068,
+      "image_interaction_energy_fraction_min": 0.8621936326655992,
+      "image_cross_pair_interaction_cosine_count": 156,
+      "positive_image_cross_pair_interaction_cosine_count": 156,
+      "image_cross_pair_interaction_cosine_range": [
+        0.02478536573515386,
+        0.5623245583506167
+      ]
+    },
+    "models": {
+      "qwen2_5_vl": {
+        "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+        "target_group_count": 1,
+        "analysis_count": 4,
+        "dominant_axis_counts": {
+          "spatial": 4,
+          "palette": 0,
+          "interaction": 0
+        },
+        "image_interaction_share_median": 0.3042621974487808,
+        "image_interaction_share_range": [
+          0.2970301978765092,
+          0.3331151943317214
+        ],
+        "image_interaction_energy_fraction_median": 0.9932786032532257,
+        "interaction_argmax_in_image_count": 4
+      },
+      "internvl3": {
+        "model_id": "mlx-community/InternVL3-2B-4bit",
+        "target_group_count": 3,
+        "analysis_count": 12,
+        "dominant_axis_counts": {
+          "spatial": 12,
+          "palette": 0,
+          "interaction": 0
+        },
+        "image_interaction_share_median": 0.2999310018091298,
+        "image_interaction_share_range": [
+          0.28442271225007376,
+          0.34032618717876667
+        ],
+        "image_interaction_energy_fraction_median": 0.9998792070212322,
+        "interaction_argmax_in_image_count": 12
+      },
+      "gemma3": {
+        "model_id": "mlx-community/gemma-3-4b-it-4bit",
+        "target_group_count": 4,
+        "analysis_count": 16,
+        "dominant_axis_counts": {
+          "spatial": 16,
+          "palette": 0,
+          "interaction": 0
+        },
+        "image_interaction_share_median": 0.2883507178107151,
+        "image_interaction_share_range": [
+          0.2569302102527933,
+          0.31656144636528494
+        ],
+        "image_interaction_energy_fraction_median": 0.9998964761324456,
+        "interaction_argmax_in_image_count": 16
+      },
+      "smolvlm2": {
+        "model_id": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+        "target_group_count": 6,
+        "analysis_count": 24,
+        "dominant_axis_counts": {
+          "spatial": 4,
+          "palette": 14,
+          "interaction": 6
+        },
+        "image_interaction_share_median": 0.2769273233626163,
+        "image_interaction_share_range": [
+          0.24177598788558174,
+          0.48923763308979706
+        ],
+        "image_interaction_energy_fraction_median": 0.9534755760216729,
+        "interaction_argmax_in_image_count": 20
+      },
+      "lfm2_vl": {
+        "model_id": "mlx-community/LFM2-VL-1.6B-4bit",
+        "target_group_count": 12,
+        "analysis_count": 48,
+        "dominant_axis_counts": {
+          "spatial": 48,
+          "palette": 0,
+          "interaction": 0
+        },
+        "image_interaction_share_median": 0.28482607911134594,
+        "image_interaction_share_range": [
+          0.25404757057164623,
+          0.3174657394741755
+        ],
+        "image_interaction_energy_fraction_median": 0.9706184945288303,
+        "interaction_argmax_in_image_count": 48
+      }
+    }
+  },
+  "one_frame_direct_readout": {
+    "factorial_count": 20,
+    "before_record_count": 40,
+    "before_zero_balanced_energy_count": 40,
+    "after_record_count": 40,
+    "after_nonzero_balanced_energy_count": 40,
+    "dominant_axis_counts": {
+      "spatial": 13,
+      "palette": 12,
+      "interaction": 15
+    },
+    "interaction_share_above_one_third_count": 18,
+    "cell_invariant_generated_semantics_count": 34,
+    "cell_varying_generated_semantics_count": 6,
+    "model_componentwise_median_shares": {
+      "qwen2_5_vl": {
+        "family": {
+          "spatial": 0.205953,
+          "palette": 0.160128,
+          "interaction": 0.680155
+        },
+        "frequency": {
+          "spatial": 0.214507,
+          "palette": 0.410554,
+          "interaction": 0.393529
+        }
+      },
+      "smolvlm2": {
+        "family": {
+          "spatial": 0.272351,
+          "palette": 0.447381,
+          "interaction": 0.280268
+        },
+        "frequency": {
+          "spatial": 0.247971,
+          "palette": 0.390876,
+          "interaction": 0.303124
+        }
+      },
+      "gemma3": {
+        "family": {
+          "spatial": 0.321493,
+          "palette": 0.322945,
+          "interaction": 0.355562
+        },
+        "frequency": {
+          "spatial": 0.264574,
+          "palette": 0.41392,
+          "interaction": 0.293639
+        }
+      },
+      "internvl3": {
+        "family": {
+          "spatial": 0.652936,
+          "palette": 0.091884,
+          "interaction": 0.272939
+        },
+        "frequency": {
+          "spatial": 0.363279,
+          "palette": 0.064188,
+          "interaction": 0.408009
+        }
+      },
+      "lfm2_vl": {
+        "family": {
+          "spatial": 0.738542,
+          "palette": 0.103566,
+          "interaction": 0.160637
+        },
+        "frequency": {
+          "spatial": 0.366915,
+          "palette": 0.377072,
+          "interaction": 0.258294
+        }
+      }
+    }
+  },
+  "measurement_surface_contrast": {
+    "source_cache_dominant_axis_counts": {
+      "spatial": 84,
+      "palette": 14,
+      "interaction": 6
+    },
+    "direct_readout_dominant_axis_counts": {
+      "spatial": 13,
+      "palette": 12,
+      "interaction": 15
+    },
+    "causal_projection_claim_supported": false,
+    "reason": "The source ACK cache and direct probe are separate fresh forwards with different prompts and cache states."
+  },
+  "claim_boundary": "Fresh source-only ACK cache tensors and separate fresh direct full-vocabulary probes. No persistent-state, valid cache-intervention, cross-model coordinate-alignment, causal mediation, fitted-null, or prompt-invariant semantic-decoder claim.",
+  "provenance": {
+    "five_model_replication": "runs/full_vector_factorials/five_model_replication/cache_tensor_replication.json",
+    "lfm2_full_vector_runs": "runs/full_vector_factorials/lfm2_vl_four_pair_1f_source_cache_seed0/",
+    "lfm2_full_vector_analyses": "runs/full_vector_factorials/analyses/lfm2_vl_*/",
+    "lfm2_direct_runs": "runs/lfm2_vl_factorials/{b_c,c_d,d_e,e_f}_1f_direct_seed0/"
+  }
+}

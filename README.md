@@ -57,11 +57,11 @@ The replacement protocol uses no image-conditioned cache reuse:
 3. Save the complete first-step vocabulary distribution, not only a generated
    letter or top-k slice.
 
-The current valid standard matrix contains 30 `MM/JJ/MJ/JM` factorial points,
-120 cell runs, and 480 compressed full-vocabulary sidecars across SmolVLM2,
-Qwen2.5-VL, Gemma 3, and InternVL3. Every direct after-factorial contains
-non-identical cell distributions. At one frame, the independent replication
-surface is now four source pairs x four models.
+The current valid standard matrix contains 34 `MM/JJ/MJ/JM` factorial points,
+136 cell runs, and 544 compressed full-vocabulary sidecars across SmolVLM2,
+Qwen2.5-VL, Gemma 3, InternVL3, and LFM2-VL. Every direct after-factorial
+contains non-identical cell distributions. At one frame, the independent
+replication surface is now four source pairs x five models.
 
 - Qwen repeats a late layer 33 `values` source-cache summary locus with a
   negative interaction at all four independent one-frame source pairs and all
@@ -77,6 +77,10 @@ surface is now four source pairs x four models.
   but its exact layer and interaction sign are pair-dependent. Its standard
   family readout is nearly saturated while its frequency interaction is much
   larger and more variable.
+- LFM2-VL exposes six hybrid-attention cache entries at layers 2/5/8/10/12/14.
+  Its full-vector source-cache contrasts are spatial-dominant at every captured
+  layer, K/V component, and source pair, while its direct readout axis changes
+  with source pair and probe family.
 
 A separate three-model prompt audit adds 192 sidecars over four semantically
 aligned probe variants. All 48 baseline sidecars reproduce byte-for-byte, but
@@ -85,14 +89,15 @@ candidate distributions in architecture-specific ways. The direct readout is
 therefore a measurement of visual evidence combined with prompt calibration,
 not a prompt-invariant extraction of what the model "sees."
 
-The first full-vector follow-up adds 32 source-only ACK runs and 64 target
-tensor sidecars over Qwen layer 33 `values` and InternVL layers 25-27 `values`.
-Across all 16 layer-by-pair factorial analyses, the interaction argmax lies in
-the image-token region, the shared pre-image prefix is exactly unchanged, and
-more than 99.1% of interaction energy lies in image tokens. Those high-energy
-image directions are only weakly aligned across source pairs, while the much
-smaller post-image effect is more directionally aligned. A repeatable scalar
-locus therefore does not imply one shared underlying vector direction.
+The full-vector surface now contains 80 source-only ACK runs, 416 target tensor
+sidecars, and 104 layer-by-pair analyses over 26 model-local target groups.
+Every pre-image prefix has exactly zero effect, 100/104 interaction argmaxes are
+image tokens, and 102/104 image-token energy fractions exceed 0.9. Balanced
+`+1/+1/-1/-1` calibration changes the magnitude reading: spatial, palette, and
+interaction are dominant in 84, 14, and 6 analyses respectively. Interaction
+is nonzero and image-localized, but it is usually not the dominant factorial
+axis. High-energy image directions remain only weakly aligned across source
+pairs, so a repeatable scalar locus does not imply one shared vector mechanism.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
@@ -107,20 +112,22 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-1. [Note 0030](docs/research_notes/0030_full_vector_cache_factorials.md)
-   for the newest full-vector 2x2 cache result and updated research object.
-2. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
+1. [Note 0031](docs/research_notes/0031_balanced_contrasts_five_model_expansion.md)
+   for balanced factorial calibration and the five-model cache/readout matrix.
+2. [Note 0030](docs/research_notes/0030_full_vector_cache_factorials.md)
+   for the first full-vector 2x2 cache result and direction analysis.
+3. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
    for the three-model prompt audit and InternVL expansion.
-3. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
+4. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
    for the four-pair replication and first prompt audit.
-4. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
+5. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
    for the protocol audit that defines the valid fresh-forward boundary.
-5. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
+6. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
    supported/provisional/withdrawn map.
-6. [Experiment Design](docs/experiment_design.md) for the control ladder.
-7. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
+7. [Experiment Design](docs/experiment_design.md) for the control ladder.
+8. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
    for the still-valid input and processor-space cross-palette analysis.
-8. [Examples](examples/README.md) for tracked summaries and the historical note
+9. [Examples](examples/README.md) for tracked summaries and the historical note
    sequence.
 
 Relevant historical cross-palette and intervention notes now carry
@@ -165,7 +172,7 @@ first logprob-focused pass unless a selected model exposes the needed signal.
 - Save compressed full-vocabulary first-step logprobs with SHA-256, vocabulary
   size, dtype, and log-normalization diagnostics.
 - Compare complete readout distributions with KL, Jensen-Shannon, total
-  variation, Hellinger, conditional candidate probabilities, and
+  variation, Hellinger, conditional candidate probabilities, and balanced
   probability-space 2x2 factorial contrasts.
 - Run forced-choice paraphrase, candidate-order, and label-remapping controls;
   align candidate probabilities by declared semantics before comparing prompt
@@ -177,8 +184,9 @@ first logprob-focused pass unless a selected model exposes the needed signal.
 - Save selected source-cache tensors as offset-trimmed float32 sidecars with
   shape, token-count, and SHA-256 integrity metadata.
 - Compute full-vector spatial, palette, and interaction contrasts over image,
-  pre-image, post-image, and complete effective-cache regions; aggregate
-  model-local directions across independent source pairs.
+  pre-image, post-image, and complete effective-cache regions; compare balanced
+  contrast-energy shares and aggregate model-local directions across source
+  pairs.
 - Analyze cache-summary spatial, palette, and interaction contrasts; track
   loci by model, source pair, replay length, tensor, and normalized depth.
 - Aggregate independent source-pair replications across models while reporting
@@ -647,6 +655,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0028: Source-Pair Replication and Prompt Robustness](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
 - [Research Note 0029: Cross-Model Prompt Audit and InternVL Expansion](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
 - [Research Note 0030: Full-Vector Source-Cache Factorials](docs/research_notes/0030_full_vector_cache_factorials.md)
+- [Research Note 0031: Balanced Contrasts and Five-Model Expansion](docs/research_notes/0031_balanced_contrasts_five_model_expansion.md)
 
 ## Claim Boundary
 
