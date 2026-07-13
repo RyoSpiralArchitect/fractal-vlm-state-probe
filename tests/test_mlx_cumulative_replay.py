@@ -2,6 +2,9 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
+from fractal_vlm_state_probe.cache_tensor_artifact import CacheTensorCaptureSpec
 from fractal_vlm_state_probe.fractals import FractalSpec
 from fractal_vlm_state_probe.mlx_cumulative_replay import (
     CumulativeReplayRunConfig,
@@ -62,7 +65,9 @@ def test_cumulative_replay_dry_run_records_distinct_protocol(tmp_path: Path) -> 
         == "single_turn_ordered_multi_image_replay"
     )
     assert result["probe_schedule"]["mid"] is None
-    assert result["context_policy"]["after_probe_protocol"] == "direct_multimodal_replay"
+    assert (
+        result["context_policy"]["after_probe_protocol"] == "direct_multimodal_replay"
+    )
     assert result["context_policy"]["capture_direct_probe_cache"] is False
     assert "fresh direct multimodal" in result["probe_schedule"]["after"]
     assert result["reproducibility"]["probe_phase_seeds"]["after"] == 7
@@ -74,6 +79,57 @@ def test_cumulative_replay_dry_run_records_distinct_protocol(tmp_path: Path) -> 
     assert event["frame_index"] == 1
     assert event["cache_summary_captured"] is False
     assert output_path.exists()
+
+
+def test_source_cache_only_dry_run_omits_probes_and_records_capture_policy(
+    tmp_path: Path,
+) -> None:
+    manifest_path = _render_test_manifest(tmp_path / "stimulus")
+
+    result = run_cumulative_replay_probe(
+        CumulativeReplayRunConfig(
+            manifest_path=manifest_path,
+            output_path=tmp_path / "source_only.json",
+            model_id="example/model",
+            max_frames=1,
+            source_cache_only=True,
+            cache_tensor_captures=(CacheTensorCaptureSpec(3),),
+            dry_run=True,
+            include_frame_artifacts=False,
+        )
+    )
+
+    assert result["context_policy"]["source_cache_only"] is True
+    assert result["context_policy"]["probe_count"] == 0
+    assert result["context_policy"]["cache_tensor_captures"] == [
+        {"layer_index": 3, "tensor": "values"}
+    ]
+    assert result["probes"] == {"before": [], "after": []}
+    assert "omitted" in result["probe_schedule"]["after"]
+
+
+@pytest.mark.parametrize(
+    "invalid_option",
+    ["save_full_vocab_first_step", "capture_direct_probe_cache"],
+)
+def test_source_cache_only_rejects_probe_only_outputs(
+    tmp_path: Path,
+    invalid_option: str,
+) -> None:
+    manifest_path = _render_test_manifest(tmp_path / "stimulus")
+    options = {invalid_option: True}
+
+    with pytest.raises(ValueError, match="source-cache-only"):
+        run_cumulative_replay_probe(
+            CumulativeReplayRunConfig(
+                manifest_path=manifest_path,
+                output_path=tmp_path / "source_only.json",
+                model_id="example/model",
+                source_cache_only=True,
+                dry_run=True,
+                **options,
+            )
+        )
 
 
 def _render_test_manifest(output_dir: Path) -> Path:

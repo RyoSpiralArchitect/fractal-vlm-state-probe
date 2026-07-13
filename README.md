@@ -1,17 +1,23 @@
 # Fractal VLM State Probe
 
 Deterministic visual controls, audited multimodal protocols, full-vocabulary
-factorial readouts, and fresh cache-summary traces for asking what a VLM changes
-before a generated label makes that change visible.
+factorial readouts, and full-vector source-cache contrasts for asking what a
+VLM changes before a generated label makes that change visible.
 
 This project began by asking whether controlled visual streams change later
 non-visual generation. A cache-prefix audit changed both the protocol and the
 question. The current target is narrower and directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
-> change cache-summary geometry and prompt-conditioned full-vocabulary
-> readouts, and which parts repeat across models, source pairs, and probe
-> formulations?
+> decompose into spatial, palette, and interaction effects across source-cache
+> token regions and prompt-conditioned full-vocabulary readouts, and which
+> locations, magnitudes, or directions repeat across models, source pairs, and
+> probe formulations?
+
+The main measured object is no longer a generated label or one scalar cache
+distance. It is now the aligned 2x2 contrast itself: first over complete
+readout distributions, and, at selected cache targets, over the full tensor
+split into image, pre-image, and post-image token regions.
 
 The repo is deliberately cautious. It does not claim that a model has subjective
 experience, enters a mental state, or undergoes adaptation in the human sense.
@@ -25,7 +31,8 @@ keeps four objects separate:
 
 1. the transformed input and processor-space perturbation,
 2. the complete first-step readout distribution from a fresh direct probe,
-3. the cache summary from a separate fresh multimodal ACK forward,
+3. the cache summary or selected full tensor from a separate fresh multimodal
+   ACK forward,
 4. whether any cache reuse path preserves the full multimodal prefix and has a
    cache sequence length compatible with its token history.
 
@@ -78,6 +85,15 @@ candidate distributions in architecture-specific ways. The direct readout is
 therefore a measurement of visual evidence combined with prompt calibration,
 not a prompt-invariant extraction of what the model "sees."
 
+The first full-vector follow-up adds 32 source-only ACK runs and 64 target
+tensor sidecars over Qwen layer 33 `values` and InternVL layers 25-27 `values`.
+Across all 16 layer-by-pair factorial analyses, the interaction argmax lies in
+the image-token region, the shared pre-image prefix is exactly unchanged, and
+more than 99.1% of interaction energy lies in image tokens. Those high-energy
+image directions are only weakly aligned across source pairs, while the much
+smaller post-image effect is more directionally aligned. A repeatable scalar
+locus therefore does not imply one shared underlying vector direction.
+
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
 processor-space frequency structure. The current reading is therefore
@@ -91,18 +107,20 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-1. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
-   for the three-model prompt audit, InternVL expansion, and newest reading.
-2. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
+1. [Note 0030](docs/research_notes/0030_full_vector_cache_factorials.md)
+   for the newest full-vector 2x2 cache result and updated research object.
+2. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
+   for the three-model prompt audit and InternVL expansion.
+3. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
    for the four-pair replication and first prompt audit.
-3. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
+4. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
    for the protocol audit that defines the valid fresh-forward boundary.
-4. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
+5. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
    supported/provisional/withdrawn map.
-5. [Experiment Design](docs/experiment_design.md) for the control ladder.
-6. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
+6. [Experiment Design](docs/experiment_design.md) for the control ladder.
+7. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
    for the still-valid input and processor-space cross-palette analysis.
-7. [Examples](examples/README.md) for tracked summaries and the historical note
+8. [Examples](examples/README.md) for tracked summaries and the historical note
    sequence.
 
 Relevant historical cross-palette and intervention notes now carry
@@ -156,6 +174,11 @@ first logprob-focused pass unless a selected model exposes the needed signal.
   generated-label stability and probability-surface stability separate.
 - Record sampled KV-cache summaries over all layers and map local argmaxes to
   image-token runs and vision markers.
+- Save selected source-cache tensors as offset-trimmed float32 sidecars with
+  shape, token-count, and SHA-256 integrity metadata.
+- Compute full-vector spatial, palette, and interaction contrasts over image,
+  pre-image, post-image, and complete effective-cache regions; aggregate
+  model-local directions across independent source pairs.
 - Analyze cache-summary spatial, palette, and interaction contrasts; track
   loci by model, source pair, replay length, tensor, and normalized depth.
 - Aggregate independent source-pair replications across models while reporting
@@ -217,6 +240,39 @@ python3 scripts/run_mlx_cumulative_replay_probe.py \
 
 This writes a fresh ACK source-cache summary and fresh direct multimodal probe
 records. It does not claim that state persisted from the ACK into the probes.
+
+To capture selected source-cache tensors without running any probes:
+
+```bash
+python3 scripts/run_mlx_cumulative_replay_probe.py \
+  --manifest runs/smoke/mandelbrot_a/manifest.json \
+  --output runs/full_vector/mandelbrot_a_mlx.json \
+  --model mlx-community/Qwen2.5-VL-3B-Instruct-4bit \
+  --max-frames 1 \
+  --source-cache-only \
+  --capture-cache-tensor 33:values \
+  --cache-summary-max-layers -1 \
+  --no-frame-artifacts
+```
+
+After capturing aligned `MM/JJ/MJ/JM` cells, compute one full-vector factorial:
+
+```bash
+python3 scripts/analyze_cache_tensor_factorial.py \
+  --mm runs/full_vector/mm_mlx.json \
+  --jj runs/full_vector/jj_mlx.json \
+  --mj runs/full_vector/mj_mlx.json \
+  --jm runs/full_vector/jm_mlx.json \
+  --layer 33 \
+  --tensor values \
+  --output-json runs/full_vector/layer33_factorial.json \
+  --output-md runs/full_vector/layer33_factorial.md
+```
+
+Use `scripts/analyze_cache_tensor_replication.py` with repeated
+`--analysis KEY=PATH` arguments to compare same-target directions across
+independent source pairs. Raw directions are intentionally not compared across
+models or layers.
 
 The original Null-vs-Stream ladder remains available for protocol development.
 Keep the seed, probe, frame count, and model fixed while changing only
@@ -590,6 +646,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0027: Cache-Prefix Audit and Direct Full-Vocabulary Replay](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
 - [Research Note 0028: Source-Pair Replication and Prompt Robustness](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
 - [Research Note 0029: Cross-Model Prompt Audit and InternVL Expansion](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
+- [Research Note 0030: Full-Vector Source-Cache Factorials](docs/research_notes/0030_full_vector_cache_factorials.md)
 
 ## Claim Boundary
 

@@ -6,6 +6,10 @@ from itertools import combinations
 from pathlib import Path
 from typing import Any
 
+from fractal_vlm_state_probe.cache_tensor_artifact import (
+    cache_tensor_capture_policy,
+    parse_cache_tensor_capture_spec,
+)
 from fractal_vlm_state_probe.compare_runs import (
     compare_runs,
     load_run,
@@ -33,7 +37,9 @@ _MANIFEST_KEY_PATTERN = re.compile(r"^[A-Za-z0-9_.-]+$")
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run a paired stochastic-probe MLX batch over arbitrary manifests.")
+    parser = argparse.ArgumentParser(
+        description="Run a paired stochastic-probe MLX batch over arbitrary manifests."
+    )
     parser.add_argument("--output-root", required=True, type=Path)
     parser.add_argument(
         "--manifest",
@@ -55,7 +61,9 @@ def main() -> None:
     parser.add_argument("--frame-stride", type=int, default=1)
     parser.add_argument("--max-tokens", type=int, default=2)
     parser.add_argument("--probe-max-tokens", type=int, default=80)
-    parser.add_argument("--probe-preset", choices=available_probe_presets(), default="default")
+    parser.add_argument(
+        "--probe-preset", choices=available_probe_presets(), default="default"
+    )
     parser.add_argument(
         "--after-probe-protocol",
         choices=["direct_multimodal_replay", "legacy_cache_branch"],
@@ -78,6 +86,18 @@ def main() -> None:
         action="store_true",
         help="Save compressed full-vocabulary first-step logprobs for every probe run.",
     )
+    parser.add_argument(
+        "--source-cache-only",
+        action="store_true",
+        help="Run only each fresh multimodal ACK forward and omit before/after probes.",
+    )
+    parser.add_argument(
+        "--capture-cache-tensor",
+        action="append",
+        default=[],
+        metavar="LAYER[:keys|values]",
+        help="Save one trimmed source-cache tensor sidecar per condition. Repeat for more layers.",
+    )
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--probe-temperature", type=float, default=0.7)
     parser.add_argument("--cache-summary-every", type=int, default=10)
@@ -87,11 +107,34 @@ def main() -> None:
         default=4,
         help="Maximum layers to summarize per capture. Use -1 for all layers.",
     )
-    parser.add_argument("--probe-cache-policy", choices=["isolated", "shared_append", "no_cache"], default="isolated")
+    parser.add_argument(
+        "--probe-cache-policy",
+        choices=["isolated", "shared_append", "no_cache"],
+        default="isolated",
+    )
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--no-frame-artifacts", action="store_true")
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
+    if args.context_protocol != "cumulative_replay" and (
+        args.source_cache_only or args.capture_cache_tensor
+    ):
+        parser.error(
+            "--source-cache-only and --capture-cache-tensor require "
+            "--context-protocol cumulative_replay"
+        )
+    if args.source_cache_only and args.save_full_vocab_first_step:
+        parser.error(
+            "--source-cache-only cannot be combined with --save-full-vocab-first-step"
+        )
+    if args.source_cache_only and args.capture_direct_probe_cache:
+        parser.error(
+            "--source-cache-only cannot be combined with --capture-direct-probe-cache"
+        )
+    cache_tensor_captures = tuple(
+        parse_cache_tensor_capture_spec(raw) for raw in args.capture_cache_tensor
+    )
+    args.cache_tensor_captures = cache_tensor_captures
 
     manifests = parse_manifest_specs(args.manifest)
     args.output_root.mkdir(parents=True, exist_ok=True)
@@ -140,6 +183,10 @@ def main() -> None:
         else None,
         "generation_readout_top_k": args.generation_readout_top_k,
         "save_full_vocab_first_step": args.save_full_vocab_first_step,
+        "source_cache_only": args.source_cache_only,
+        "cache_tensor_captures": cache_tensor_capture_policy(
+            args.cache_tensor_captures
+        ),
         "cache_summary_every": args.cache_summary_every,
         "cache_summary_max_layers": args.cache_summary_max_layers,
         "probe_seed_policy": "same base probe seed is applied to all conditions; MLX phases use seed, seed+1, seed+2",
@@ -153,9 +200,15 @@ def main() -> None:
     )
 
     analysis = analyze_paired_stochastic_batch(batch_records)
-    write_paired_stochastic_json(analysis, args.output_root / "paired_stochastic_analysis.json")
-    write_paired_stochastic_markdown(analysis, args.output_root / "paired_stochastic_analysis.md")
-    print(f"wrote manifest paired stochastic analysis to {args.output_root / 'paired_stochastic_analysis.md'}")
+    write_paired_stochastic_json(
+        analysis, args.output_root / "paired_stochastic_analysis.json"
+    )
+    write_paired_stochastic_markdown(
+        analysis, args.output_root / "paired_stochastic_analysis.md"
+    )
+    print(
+        f"wrote manifest paired stochastic analysis to {args.output_root / 'paired_stochastic_analysis.md'}"
+    )
 
 
 def parse_manifest_specs(raw_specs: list[str]) -> dict[str, Path]:
@@ -166,7 +219,9 @@ def parse_manifest_specs(raw_specs: list[str]) -> dict[str, Path]:
         key, raw_path = raw.split("=", 1)
         key = key.strip()
         if not key or not _MANIFEST_KEY_PATTERN.match(key):
-            raise ValueError(f"manifest key must contain only letters, digits, dot, underscore, or hyphen: {key}")
+            raise ValueError(
+                f"manifest key must contain only letters, digits, dot, underscore, or hyphen: {key}"
+            )
         if key in manifests:
             raise ValueError(f"duplicate manifest key: {key}")
         path = Path(raw_path).expanduser()
@@ -210,6 +265,8 @@ def _run_or_reuse(
                 capture_direct_probe_cache=args.capture_direct_probe_cache,
                 generation_readout_top_k=args.generation_readout_top_k,
                 save_full_vocab_first_step=args.save_full_vocab_first_step,
+                source_cache_only=args.source_cache_only,
+                cache_tensor_captures=args.cache_tensor_captures,
                 temperature=args.temperature,
                 probe_temperature=args.probe_temperature,
                 dry_run=args.dry_run,
@@ -257,7 +314,9 @@ def _write_seed_comparisons(
     comparison_dir = seed_dir / "comparisons"
     for left_key, right_key in combinations(run_paths, 2):
         comparison_id = f"{left_key}_vs_{right_key}"
-        comparison = compare_runs(load_run(run_paths[left_key]), load_run(run_paths[right_key]))
+        comparison = compare_runs(
+            load_run(run_paths[left_key]), load_run(run_paths[right_key])
+        )
         md_path = comparison_dir / f"{comparison_id}.md"
         json_path = comparison_dir / f"{comparison_id}.json"
         write_comparison_markdown(comparison, md_path)
@@ -267,6 +326,10 @@ def _write_seed_comparisons(
 
 
 def _format_manifest_batch_summary(summary: dict[str, Any]) -> str:
+    capture_targets = ", ".join(
+        f"{record['layer_index']}:{record['tensor']}"
+        for record in summary["cache_tensor_captures"]
+    )
     lines = [
         "# MLX Manifest Paired Stochastic Probe Batch",
         "",
@@ -283,6 +346,8 @@ def _format_manifest_batch_summary(summary: dict[str, Any]) -> str:
         f"- Capture direct-probe cache: `{summary['capture_direct_probe_cache']}`",
         f"- Generation readout top-k: `{summary['generation_readout_top_k']}`",
         f"- Full-vocabulary first step: `{summary['save_full_vocab_first_step']}`",
+        f"- Source-cache only: `{summary['source_cache_only']}`",
+        f"- Cache tensor captures: `{capture_targets or 'none'}`",
         f"- Cache summary every: `{summary['cache_summary_every']}`",
         f"- Cache summary max layers: `{summary['cache_summary_max_layers']}`",
         "",

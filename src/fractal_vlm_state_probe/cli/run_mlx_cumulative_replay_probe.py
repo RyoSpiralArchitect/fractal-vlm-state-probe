@@ -3,6 +3,9 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from fractal_vlm_state_probe.cache_tensor_artifact import (
+    parse_cache_tensor_capture_spec,
+)
 from fractal_vlm_state_probe.mlx_cumulative_replay import (
     CumulativeReplayRunConfig,
     run_cumulative_replay_probe,
@@ -21,7 +24,9 @@ def main() -> None:
     parser.add_argument("--frame-stride", type=int, default=1)
     parser.add_argument("--max-tokens", type=int, default=2)
     parser.add_argument("--probe-max-tokens", type=int, default=64)
-    parser.add_argument("--probe-preset", choices=available_probe_presets(), default="forced_choice")
+    parser.add_argument(
+        "--probe-preset", choices=available_probe_presets(), default="forced_choice"
+    )
     parser.add_argument(
         "--after-probe-protocol",
         choices=["direct_multimodal_replay", "legacy_cache_branch"],
@@ -39,6 +44,18 @@ def main() -> None:
         action="store_true",
         help="Save compressed full-vocabulary first-step logprobs for each probe.",
     )
+    parser.add_argument(
+        "--source-cache-only",
+        action="store_true",
+        help="Run only the fresh multimodal ACK forward and omit before/after probes.",
+    )
+    parser.add_argument(
+        "--capture-cache-tensor",
+        action="append",
+        default=[],
+        metavar="LAYER[:keys|values]",
+        help="Save one trimmed source-cache tensor sidecar. Repeat for more layers.",
+    )
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--probe-temperature", type=float, default=0.0)
     parser.add_argument("--cache-summary-max-layers", type=int, default=4)
@@ -47,6 +64,14 @@ def main() -> None:
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--no-frame-artifacts", action="store_true")
     args = parser.parse_args()
+    if args.source_cache_only and args.save_full_vocab_first_step:
+        parser.error(
+            "--source-cache-only cannot be combined with --save-full-vocab-first-step"
+        )
+    if args.source_cache_only and args.capture_direct_probe_cache:
+        parser.error(
+            "--source-cache-only cannot be combined with --capture-direct-probe-cache"
+        )
 
     result = run_cumulative_replay_probe(
         CumulativeReplayRunConfig(
@@ -62,6 +87,11 @@ def main() -> None:
             capture_direct_probe_cache=args.capture_direct_probe_cache,
             generation_readout_top_k=args.generation_readout_top_k,
             save_full_vocab_first_step=args.save_full_vocab_first_step,
+            source_cache_only=args.source_cache_only,
+            cache_tensor_captures=tuple(
+                parse_cache_tensor_capture_spec(raw)
+                for raw in args.capture_cache_tensor
+            ),
             temperature=args.temperature,
             probe_temperature=args.probe_temperature,
             cache_summary_max_layers=None

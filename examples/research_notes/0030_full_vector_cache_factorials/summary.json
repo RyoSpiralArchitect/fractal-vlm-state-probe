@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "full_vector_source_cache_factorial_summary",
+  "note": "0030_full_vector_cache_factorials",
+  "date": "2026-07-13",
+  "protocol": {
+    "context_protocol": "single_turn_ordered_multi_image_replay",
+    "measurement_mode": "source_cache_only",
+    "image_conditioned_cache_reuse": false,
+    "frame_count": 1,
+    "stream_seed": 20260604,
+    "stream_temperature": 0.0
+  },
+  "measurement_surface": {
+    "model_count": 2,
+    "source_pair_count": 4,
+    "model_source_pair_factorial_count": 8,
+    "cell_run_count": 32,
+    "tensor_sidecar_count": 64,
+    "target_group_count": 4,
+    "target_layer_factorial_analysis_count": 16
+  },
+  "integrity": {
+    "hash_shape_finite_offset_failures": 0,
+    "target_scalar_record_exact_matches": 64,
+    "target_scalar_record_comparisons": 64,
+    "duplicate_full_tensor_exact_matches": 4,
+    "duplicate_full_tensor_comparisons": 4,
+    "duplicate_full_tensor_max_abs_difference": 0.0,
+    "interaction_argmax_in_image_count": 16,
+    "interaction_argmax_comparisons": 16,
+    "pre_image_all_effects_zero_count": 16,
+    "pre_image_comparisons": 16
+  },
+  "token_layouts": {
+    "qwen": {
+      "raw_sequence_capacity": 256,
+      "effective_sequence_length": 241,
+      "image_position_start": 43,
+      "image_position_end": 141,
+      "image_token_count": 99,
+      "pre_image_token_count": 43,
+      "post_image_token_count": 99,
+      "tensor_shape": [1, 2, 241, 128]
+    },
+    "internvl3": {
+      "raw_sequence_capacity": 3584,
+      "effective_sequence_length": 3471,
+      "image_position_start": 43,
+      "image_position_end": 3370,
+      "image_token_count": 3328,
+      "pre_image_token_count": 43,
+      "post_image_token_count": 100,
+      "tensor_shape": [1, 2, 3471, 128]
+    }
+  },
+  "target_groups": {
+    "qwen_layer_33_values": {
+      "source_pair_count": 4,
+      "image_interaction_energy_fraction_median": 0.9932786032532257,
+      "image_interaction_energy_fraction_min": 0.991147437253392,
+      "image_interaction_energy_fraction_max": 0.9952272043573899,
+      "image_interaction_rms_median": 6.017640524338792,
+      "image_interaction_relative_to_pairwise_rms_median": 1.3521753144062858,
+      "image_cross_pair_interaction_cosine_median": 0.060445611693818846,
+      "image_cross_pair_interaction_cosine_min": 0.026443887615871953,
+      "image_cross_pair_interaction_cosine_max": 0.07996109222500863,
+      "post_image_interaction_rms_median": 0.47514139015869505,
+      "post_image_cross_pair_interaction_cosine_median": 0.6865880241684659
+    },
+    "internvl3_layer_25_values": {
+      "source_pair_count": 4,
+      "image_interaction_energy_fraction_median": 0.9998967756123466,
+      "image_interaction_energy_fraction_min": 0.9998846082397013,
+      "image_interaction_energy_fraction_max": 0.999920406448416,
+      "image_interaction_rms_median": 3.3084726108636566,
+      "image_interaction_relative_to_pairwise_rms_median": 1.3364378858189574,
+      "image_cross_pair_interaction_cosine_median": 0.09664596698672748,
+      "image_cross_pair_interaction_cosine_min": 0.054778500552195186,
+      "image_cross_pair_interaction_cosine_max": 0.14793326402849566,
+      "post_image_interaction_rms_median": 0.18948589775788421,
+      "post_image_cross_pair_interaction_cosine_median": 0.36319183204516214
+    },
+    "internvl3_layer_26_values": {
+      "source_pair_count": 4,
+      "image_interaction_energy_fraction_median": 0.9998800925187781,
+      "image_interaction_energy_fraction_min": 0.9998642692438341,
+      "image_interaction_energy_fraction_max": 0.9999040612783578,
+      "image_interaction_rms_median": 4.102873479516823,
+      "image_interaction_relative_to_pairwise_rms_median": 1.3457754015778,
+      "image_cross_pair_interaction_cosine_median": 0.08798139592564466,
+      "image_cross_pair_interaction_cosine_min": 0.04726566215766915,
+      "image_cross_pair_interaction_cosine_max": 0.1344229449279666,
+      "post_image_interaction_rms_median": 0.25513233398157753,
+      "post_image_cross_pair_interaction_cosine_median": 0.3667446815134223
+    },
+    "internvl3_layer_27_values": {
+      "source_pair_count": 4,
+      "image_interaction_energy_fraction_median": 0.9998381112073725,
+      "image_interaction_energy_fraction_min": 0.9998216447390218,
+      "image_interaction_energy_fraction_max": 0.9998738058027632,
+      "image_interaction_rms_median": 4.080636768976735,
+      "image_interaction_relative_to_pairwise_rms_median": 1.3474457067178898,
+      "image_cross_pair_interaction_cosine_median": 0.08801846225173382,
+      "image_cross_pair_interaction_cosine_min": 0.04752414756913952,
+      "image_cross_pair_interaction_cosine_max": 0.1353622638260177,
+      "post_image_interaction_rms_median": 0.2904145347058221,
+      "post_image_cross_pair_interaction_cosine_median": 0.3501167835910576
+    }
+  },
+  "claim_boundary": "Targeted full-vector source-cache interactions localize to image tokens under fresh ACK forwards; weak image-direction and stronger low-energy post-image alignment are descriptive across four source pairs, not evidence of persistence, causal mediation, a shared cross-model basis, or a universal mechanism.",
+  "local_artifacts": {
+    "qwen_runs": "runs/full_vector_factorials/qwen_four_pair_1f_source_cache_seed0/",
+    "internvl3_runs": "runs/full_vector_factorials/internvl3_four_pair_1f_source_cache_seed0/",
+    "factorial_analyses": "runs/full_vector_factorials/analyses/",
+    "cross_pair_aggregate": "runs/full_vector_factorials/cross_pair_replication/cache_tensor_replication.json"
+  }
+}

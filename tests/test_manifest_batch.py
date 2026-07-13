@@ -118,6 +118,76 @@ def test_manifest_batch_supports_cumulative_replay_dry_run(
     assert run["stream_events"][0]["image_count"] == 2
 
 
+def test_manifest_batch_supports_source_cache_only_capture_dry_run(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    blank_manifest = _render_blank(tmp_path / "blank")
+    checker_manifest = _render_control(tmp_path / "checkerboard", "checkerboard")
+    output_root = tmp_path / "source_cache_batch"
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "run_mlx_manifest_probe_batch.py",
+            "--output-root",
+            str(output_root),
+            "--manifest",
+            f"blank={blank_manifest}",
+            "--manifest",
+            f"checkerboard={checker_manifest}",
+            "--probe-seeds",
+            "0",
+            "--max-frames",
+            "1",
+            "--context-protocol",
+            "cumulative_replay",
+            "--source-cache-only",
+            "--capture-cache-tensor",
+            "3:values",
+            "--dry-run",
+            "--overwrite",
+        ],
+    )
+
+    main()
+
+    summary = _load_json(output_root / "manifest_batch_summary.json")
+    assert summary["source_cache_only"] is True
+    assert summary["cache_tensor_captures"] == [{"layer_index": 3, "tensor": "values"}]
+    run = _load_json(output_root / "probe_seed_0" / "blank_mlx.json")
+    assert run["probes"] == {"before": [], "after": []}
+
+
+@pytest.mark.parametrize(
+    "feature_flag",
+    ["--source-cache-only", "--capture-cache-tensor"],
+)
+def test_manifest_batch_rejects_cache_capture_features_for_incremental_protocol(
+    tmp_path: Path,
+    monkeypatch,
+    feature_flag: str,
+) -> None:
+    argv = [
+        "run_mlx_manifest_probe_batch.py",
+        "--output-root",
+        str(tmp_path / "invalid_batch"),
+        "--manifest",
+        "left=missing-left.json",
+        "--manifest",
+        "right=missing-right.json",
+        "--probe-seeds",
+        "0",
+        feature_flag,
+    ]
+    if feature_flag == "--capture-cache-tensor":
+        argv.append("3:values")
+    monkeypatch.setattr(sys, "argv", argv)
+
+    with pytest.raises(SystemExit, match="2"):
+        main()
+
+
 def _render_blank(output_dir: Path) -> Path:
     render_blank_stimulus(
         output_dir,

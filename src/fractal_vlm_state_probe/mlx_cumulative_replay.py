@@ -5,7 +5,16 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Literal
 
-from .delivery import frame_artifact_list, prepare_frame_deliveries, stimulus_delivery_record
+from .cache_tensor_artifact import (
+    CacheTensorCaptureSpec,
+    cache_tensor_capture_policy,
+    capture_prompt_cache_tensors,
+)
+from .delivery import (
+    frame_artifact_list,
+    prepare_frame_deliveries,
+    stimulus_delivery_record,
+)
 from .full_vocab_readout import (
     full_vocab_sidecar_path,
     write_full_vocab_logprob_sidecar,
@@ -50,10 +59,12 @@ class CumulativeReplayRunConfig:
     seed: int | None = 20260604
     probe_seed: int | None = 0
     adapter_id: str = "mlx_vlm"
-    after_probe_protocol: Literal[
-        "direct_multimodal_replay", "legacy_cache_branch"
-    ] = "direct_multimodal_replay"
+    after_probe_protocol: Literal["direct_multimodal_replay", "legacy_cache_branch"] = (
+        "direct_multimodal_replay"
+    )
     capture_direct_probe_cache: bool = False
+    source_cache_only: bool = False
+    cache_tensor_captures: tuple[CacheTensorCaptureSpec, ...] = ()
 
 
 def run_cumulative_replay_probe(
@@ -61,9 +72,17 @@ def run_cumulative_replay_probe(
     *,
     mlx_runtime: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    if config.source_cache_only and config.save_full_vocab_first_step:
+        raise ValueError(
+            "source-cache-only mode cannot save probe first-step vocabulary scores"
+        )
+    if config.source_cache_only and config.capture_direct_probe_cache:
+        raise ValueError("source-cache-only mode cannot capture a direct-probe cache")
     seed_record = set_global_seed(config.seed, include_mlx=True)
     probe_phase_seeds = _probe_phase_seeds(config.probe_seed)
-    probes = resolve_probe_preset(config.probe_preset)
+    probes = (
+        [] if config.source_cache_only else resolve_probe_preset(config.probe_preset)
+    )
     manifest = _load_manifest(config.manifest_path)
     issues = validate_manifest(config.manifest_path)
     if issues:
@@ -104,6 +123,7 @@ def run_cumulative_replay_probe(
             "probe_seed_policy": _probe_seed_policy(config.probe_seed),
             "probe_preset": config.probe_preset,
             "probe_count": len(probes),
+            "source_cache_only": config.source_cache_only,
             "probe_cache_policy": "isolated",
             "after_probe_protocol": config.after_probe_protocol,
             "capture_direct_probe_cache": config.capture_direct_probe_cache,
@@ -115,6 +135,9 @@ def run_cumulative_replay_probe(
             "cache_summary_max_layers": config.cache_summary_max_layers,
             "generation_readout_top_k": config.generation_readout_top_k,
             "save_full_vocab_first_step": config.save_full_vocab_first_step,
+            "cache_tensor_captures": cache_tensor_capture_policy(
+                config.cache_tensor_captures
+            ),
             "include_frame_artifacts": config.include_frame_artifacts,
         },
         "non_claims": [
@@ -140,11 +163,19 @@ def run_cumulative_replay_probe(
         },
         "frame_artifacts": frame_artifact_list(deliveries),
         "probe_schedule": {
-            "before": "clean text-only branch",
+            "before": (
+                "omitted in source-cache-only mode"
+                if config.source_cache_only
+                else "clean text-only branch"
+            ),
             "after": (
-                "fresh direct multimodal read using the same ordered image batch"
-                if config.after_probe_protocol == "direct_multimodal_replay"
-                else "legacy branch read after one ordered multi-image replay turn"
+                "omitted in source-cache-only mode"
+                if config.source_cache_only
+                else (
+                    "fresh direct multimodal read using the same ordered image batch"
+                    if config.after_probe_protocol == "direct_multimodal_replay"
+                    else "legacy branch read after one ordered multi-image replay turn"
+                )
             ),
             "mid": None,
         },
@@ -169,29 +200,35 @@ def run_cumulative_replay_probe(
     mlx = mlx_runtime or _load_mlx_runtime(config.model_id)
     prompt_cache_state = _new_prompt_cache_state(mlx.get("prompt_cache_state"))
     if prompt_cache_state is None:
-        raise RuntimeError("MLX PromptCacheState is unavailable; cumulative replay cannot run")
+        raise RuntimeError(
+            "MLX PromptCacheState is unavailable; cumulative replay cannot run"
+        )
     result["runtime"] = mlx["runtime"]
     history: list[dict[str, str]] = [{"role": "system", "content": SYSTEM_PROMPT}]
 
-    result["probes"]["before"] = _run_probe_batch(
-        probes=probes,
-        history=history,
-        phase="before",
-        model=mlx["model"],
-        processor=mlx["processor"],
-        model_config=mlx["model_config"],
-        stream_generate=mlx["stream_generate"],
-        apply_chat_template=mlx["apply_chat_template"],
-        max_tokens=config.probe_max_tokens,
-        temperature=config.probe_temperature,
-        prompt_cache_state_source=None,
-        probe_cache_policy="no_cache",
-        cache_summary_max_layers=config.cache_summary_max_layers,
-        generation_readout_top_k=config.generation_readout_top_k,
-        probe_seed=probe_phase_seeds["before"],
-        full_vocab_output_path=config.output_path
-        if config.save_full_vocab_first_step
-        else None,
+    result["probes"]["before"] = (
+        []
+        if config.source_cache_only
+        else _run_probe_batch(
+            probes=probes,
+            history=history,
+            phase="before",
+            model=mlx["model"],
+            processor=mlx["processor"],
+            model_config=mlx["model_config"],
+            stream_generate=mlx["stream_generate"],
+            apply_chat_template=mlx["apply_chat_template"],
+            max_tokens=config.probe_max_tokens,
+            temperature=config.probe_temperature,
+            prompt_cache_state_source=None,
+            probe_cache_policy="no_cache",
+            cache_summary_max_layers=config.cache_summary_max_layers,
+            generation_readout_top_k=config.generation_readout_top_k,
+            probe_seed=probe_phase_seeds["before"],
+            full_vocab_output_path=config.output_path
+            if config.save_full_vocab_first_step
+            else None,
+        )
     )
 
     set_global_seed(config.seed, include_mlx=True)
@@ -210,7 +247,9 @@ def run_cumulative_replay_probe(
         record["position"]
         for record in replay_event["cache_token_layout"]["sequence_position_plan"]
     ]
-    if config.after_probe_protocol == "direct_multimodal_replay":
+    if config.source_cache_only:
+        result["probes"]["after"] = []
+    elif config.after_probe_protocol == "direct_multimodal_replay":
         result["probes"]["after"] = _run_direct_multimodal_probe_batch(
             probes=probes,
             frames=frames,
@@ -329,7 +368,9 @@ def _run_direct_multimodal_probe_batch(
                 probe_id=probe["id"],
             )
 
-            def full_vocab_writer(logprobs: Any, *, path: Path = sidecar_path) -> dict[str, Any]:
+            def full_vocab_writer(
+                logprobs: Any, *, path: Path = sidecar_path
+            ) -> dict[str, Any]:
                 return write_full_vocab_logprob_sidecar(
                     logprobs,
                     path=path,
@@ -433,6 +474,12 @@ def _run_replay_turn(
         prompt_cache_state,
         mlx["model_config"],
     )
+    cache_tensor_artifacts = capture_prompt_cache_tensors(
+        prompt_cache_state,
+        specs=config.cache_tensor_captures,
+        run_output_path=config.output_path,
+        relative_to=config.output_path.parent,
+    )
     replay_positions = [
         record["position"] for record in token_layout["sequence_position_plan"]
     ]
@@ -455,6 +502,7 @@ def _run_replay_turn(
         "generation": generation["summary"],
         "wall_s": time.perf_counter() - started,
         "cache_token_layout": token_layout,
+        "cache_tensor_artifacts": cache_tensor_artifacts,
         "cache_summary": summarize_prompt_cache_state(
             prompt_cache_state,
             max_layers=config.cache_summary_max_layers,
