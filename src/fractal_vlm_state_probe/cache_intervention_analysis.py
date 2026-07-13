@@ -95,22 +95,31 @@ def format_values_swap_analysis_markdown(analysis: dict[str, Any]) -> str:
             "",
             "## Group Summaries",
             "",
-            "| Model | Pair | Phase | Layer | Trials | Token donor pull mean | Top-k effect / baseline mean | Top-k donor pull mean | Exact source/intervention | Exact self-sham |",
-            "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+            "| Model | Pair | Phase | Layer | Trials | Source effect / baseline | Source donor pull | Reciprocal effect / baseline | Reciprocal source pull | Exact source/origin | Exact reciprocal/origin | Exact self-sham | Sham top-k RMSE |",
+            "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
         ]
     )
     for group in analysis.get("group_summaries", []):
         sham_available = group["source_self_sham_available_count"]
         sham_exact = group["source_self_sham_exact_match_count"]
         sham_display = f"{sham_exact}/{sham_available}" if sham_available else "n/a"
+        reciprocal_available = group["reciprocal_intervention_available_count"]
+        reciprocal_exact = group["reciprocal_origin_exact_match_count"]
+        reciprocal_display = (
+            f"{reciprocal_exact}/{reciprocal_available}"
+            if reciprocal_available
+            else "n/a"
+        )
         lines.append(
             f"| `{group['model_id']}` | `{group['source_condition']}` -> `{group['donor_condition']}` | "
             f"`{group['probe_phase']}` | {group['layer_index']} | {group['trial_count']} | "
-            f"{_format_number(_metric(group, 'metrics', 'token_donor_pull_index', 'mean'))} | "
             f"{_format_number(_metric(group, 'metrics', 'top_k_effect_to_baseline_ratio', 'mean'))} | "
             f"{_format_number(_metric(group, 'metrics', 'top_k_donor_pull_index', 'mean'))} | "
+            f"{_format_number(_metric(group, 'metrics', 'reciprocal_top_k_effect_to_baseline_ratio', 'mean'))} | "
+            f"{_format_number(_metric(group, 'metrics', 'top_k_source_pull_index', 'mean'))} | "
             f"{group['source_intervention_exact_match_count']}/{group['trial_count']} | "
-            f"{sham_display} |"
+            f"{reciprocal_display} | {sham_display} | "
+            f"{_format_number(_metric(group, 'metrics', 'self_sham_top_k_effect', 'mean'))} |"
         )
 
     lines.extend(["", "## Interpretation Notes", ""])
@@ -402,6 +411,22 @@ def _group_summaries(trials: list[dict[str, Any]]) -> list[dict[str, Any]]:
                     bool(_metric(record, "source_intervention", "distance_to_source", "token", "exact_match"))
                     for record in records
                 ),
+                "reciprocal_origin_exact_match_count": sum(
+                    bool(
+                        _metric(
+                            record,
+                            "reciprocal_intervention",
+                            "distance_to_donor",
+                            "token",
+                            "exact_match",
+                        )
+                    )
+                    for record in records
+                ),
+                "reciprocal_intervention_available_count": sum(
+                    record.get("reciprocal_intervention") is not None
+                    for record in records
+                ),
                 "source_self_sham_exact_match_count": sum(
                     bool(_metric(record, "source_self_sham_distance", "token", "exact_match"))
                     for record in records
@@ -458,6 +483,11 @@ def _group_metric_values(records: list[dict[str, Any]]) -> dict[str, list[float]
         ),
         "token_source_pull_index": ("reciprocal_intervention", "source_pull_index", "token"),
         "top_k_source_pull_index": ("reciprocal_intervention", "source_pull_index", "top_k"),
+        "reciprocal_top_k_effect_to_baseline_ratio": (
+            "reciprocal_intervention",
+            "effect_to_baseline_ratio",
+            "top_k",
+        ),
         "self_sham_token_effect": (
             "source_self_sham_distance",
             "token",

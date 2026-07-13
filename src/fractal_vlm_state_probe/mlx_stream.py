@@ -351,6 +351,7 @@ def _run_probe_batch(
     cache_summary_max_layers: int | None,
     generation_readout_top_k: int,
     probe_seed: int | None,
+    cache_summary_sequence_positions: list[int] | None = None,
 ) -> list[dict[str, Any]]:
     records = []
     probe_seed_record = set_global_seed(probe_seed, include_mlx=True)
@@ -358,6 +359,7 @@ def _run_probe_batch(
         source_cache_summary = summarize_prompt_cache_state(
             prompt_cache_state_source,
             max_layers=cache_summary_max_layers,
+            sequence_positions=cache_summary_sequence_positions,
         )
         prompt_cache_state, cache_branch_status = _probe_prompt_cache_state(
             prompt_cache_state_source,
@@ -400,6 +402,7 @@ def _run_probe_batch(
                 "cache_summary": summarize_prompt_cache_state(
                     prompt_cache_state,
                     max_layers=cache_summary_max_layers,
+                    sequence_positions=cache_summary_sequence_positions,
                 ),
             }
         )
@@ -413,6 +416,7 @@ def summarize_prompt_cache_state(
     prompt_cache_state: Any,
     *,
     max_layers: int | None = 4,
+    sequence_positions: list[int] | None = None,
 ) -> dict[str, Any] | None:
     if prompt_cache_state is None or getattr(prompt_cache_state, "cache", None) is None:
         return None
@@ -424,6 +428,12 @@ def summarize_prompt_cache_state(
     except Exception:
         return {"available": False, "reason": "mlx import failed"}
 
+    token_count = len(getattr(prompt_cache_state, "token_ids", []) or [])
+    requested_positions = set(sequence_positions or [])
+    if token_count > 0:
+        requested_positions.update(
+            {token_count // 2, max(0, token_count - 2), token_count - 1}
+        )
     layers = []
     cache_entries = list(prompt_cache_state.cache)
     for layer_index in select_layer_indices(len(cache_entries), max_layers):
@@ -432,18 +442,94 @@ def summarize_prompt_cache_state(
         keys = getattr(entry, "keys", None)
         values = getattr(entry, "values", None)
         if keys is not None:
-            layer_record["keys"] = _mlx_tensor_stats(mx, keys)
+            layer_record["keys"] = _mlx_tensor_stats(
+                mx,
+                keys,
+                sequence_positions=sorted(requested_positions),
+            )
         if values is not None:
-            layer_record["values"] = _mlx_tensor_stats(mx, values)
+            layer_record["values"] = _mlx_tensor_stats(
+                mx,
+                values,
+                sequence_positions=sorted(requested_positions),
+            )
         if "keys" in layer_record or "values" in layer_record:
             layers.append(layer_record)
     return {
         "available": True,
-        "token_count": len(getattr(prompt_cache_state, "token_ids", []) or []),
+        "token_count": token_count,
         "total_layers": len(cache_entries),
         "reported_layers": len(layers),
         "truncated": max_layers is not None and len(cache_entries) > max_layers,
+        "sequence_position_sampling": {
+            "policy": "cache-shape anchors plus token-count anchors and caller-requested positions",
+            "requested_positions": sorted(set(sequence_positions or [])),
+            "token_count_anchor_positions": sorted(requested_positions - set(sequence_positions or [])),
+        },
         "layers": layers,
+    }
+
+
+def summarize_prompt_cache_token_layout(
+    prompt_cache_state: Any,
+    model_config: Any,
+) -> dict[str, Any]:
+    token_ids = list(getattr(prompt_cache_state, "token_ids", []) or [])
+    marker_names = (
+        "vision_start_token_id",
+        "vision_end_token_id",
+        "vision_token_id",
+        "image_token_id",
+        "image_token_index",
+    )
+    marker_token_ids = {
+        name: int(value)
+        for name in marker_names
+        if (value := _model_config_value(model_config, name)) is not None
+    }
+    marker_positions = {
+        name: [index for index, token_id in enumerate(token_ids) if token_id == marker_id]
+        for name, marker_id in marker_token_ids.items()
+    }
+    image_token_id = marker_token_ids.get("image_token_id")
+    if image_token_id is None:
+        image_token_id = marker_token_ids.get("image_token_index")
+    image_positions = (
+        [index for index, token_id in enumerate(token_ids) if token_id == image_token_id]
+        if image_token_id is not None
+        else []
+    )
+    image_runs = _contiguous_position_runs(image_positions)
+    focus_roles: dict[int, set[str]] = {}
+
+    def add_focus(position: int, role: str) -> None:
+        if 0 <= position < len(token_ids):
+            focus_roles.setdefault(position, set()).add(role)
+
+    dense_image_markers = {"image_token_id", "image_token_index"}
+    for name, positions in marker_positions.items():
+        if name in dense_image_markers:
+            continue
+        for position in positions:
+            add_focus(position, name)
+    for run_index, run in enumerate(image_runs):
+        add_focus(run["start"], f"image_run_{run_index}_start")
+        add_focus((run["start"] + run["end"]) // 2, f"image_run_{run_index}_mid")
+        add_focus(run["end"], f"image_run_{run_index}_end")
+    if token_ids:
+        add_focus(0, "first_token")
+        add_focus(len(token_ids) // 2, "token_count_mid")
+        add_focus(len(token_ids) - 1, "last_token")
+    return {
+        "token_count": len(token_ids),
+        "marker_token_ids": marker_token_ids,
+        "marker_positions": marker_positions,
+        "image_token_count": len(image_positions),
+        "image_token_runs": image_runs,
+        "sequence_position_plan": [
+            {"position": position, "roles": sorted(roles)}
+            for position, roles in sorted(focus_roles.items())
+        ],
     }
 
 
@@ -490,7 +576,12 @@ def _clone_cache_entry(entry: Any) -> Any:
     return shallow
 
 
-def _mlx_tensor_stats(mx: Any, tensor: Any) -> dict[str, Any]:
+def _mlx_tensor_stats(
+    mx: Any,
+    tensor: Any,
+    *,
+    sequence_positions: list[int] | None = None,
+) -> dict[str, Any]:
     # Cache tensors are commonly float16; promote before reductions so
     # variance and norm do not overflow on otherwise finite activations.
     stats_tensor = tensor.astype(mx.float32)
@@ -512,18 +603,33 @@ def _mlx_tensor_stats(mx: Any, tensor: Any) -> dict[str, Any]:
         "max": float(max_val.item()),
         "l2_norm": float(l2.item()),
     }
-    slices = _mlx_sequence_position_stats(mx, tensor)
+    slices = _mlx_sequence_position_stats(
+        mx,
+        tensor,
+        sequence_positions=sequence_positions,
+    )
     if slices:
         stats["sequence_position_stats"] = slices
     return stats
 
 
-def _mlx_sequence_position_stats(mx: Any, tensor: Any) -> list[dict[str, Any]]:
+def _mlx_sequence_position_stats(
+    mx: Any,
+    tensor: Any,
+    *,
+    sequence_positions: list[int] | None = None,
+) -> list[dict[str, Any]]:
     if not hasattr(tensor, "shape") or len(tensor.shape) < 3:
         return []
     sequence_length = int(tensor.shape[-2])
+    selected_positions = set(select_sequence_positions(sequence_length))
+    selected_positions.update(
+        position
+        for position in sequence_positions or []
+        if 0 <= position < sequence_length
+    )
     records = []
-    for position in select_sequence_positions(sequence_length):
+    for position in sorted(selected_positions):
         sliced = tensor[..., position, :].astype(mx.float32)
         mean = mx.mean(sliced)
         var = mx.var(sliced)
@@ -540,6 +646,26 @@ def _mlx_sequence_position_stats(mx: Any, tensor: Any) -> list[dict[str, Any]]:
             }
         )
     return records
+
+
+def _model_config_value(model_config: Any, name: str) -> Any:
+    if isinstance(model_config, dict):
+        return model_config.get(name)
+    return getattr(model_config, name, None)
+
+
+def _contiguous_position_runs(positions: list[int]) -> list[dict[str, int]]:
+    if not positions:
+        return []
+    runs = []
+    start = previous = positions[0]
+    for position in positions[1:]:
+        if position != previous + 1:
+            runs.append({"start": start, "end": previous, "length": previous - start + 1})
+            start = position
+        previous = position
+    runs.append({"start": start, "end": previous, "length": previous - start + 1})
+    return runs
 
 
 def _collect_stream(

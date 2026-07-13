@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "qwen_cumulative_replay_trajectory_summary",
+  "date": "2026-07-13",
+  "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+  "model_revision": "46d4cf06a06ffc1a766c214174f9cbed2f45bcab",
+  "runtime": {
+    "mlx_version": "0.31.1",
+    "mlx_vlm_version": "0.4.4"
+  },
+  "protocol": {
+    "context_protocol": "single_turn_ordered_multi_image_replay",
+    "source_pair_count": 2,
+    "factorial_cells_per_pair": 4,
+    "frame_counts": [1, 2, 4],
+    "cell_run_count": 24,
+    "probe_seed": 0,
+    "probe_temperature": 0.0,
+    "generation_readout_top_k": 10,
+    "cache_layer_count": 36
+  },
+  "points": {
+    "c_d": {
+      "1": {
+        "cache_token_count": 241,
+        "image_token_count": 99,
+        "scalar_interaction": -65.12567138671875,
+        "scalar_relative": 0.07836570533965558,
+        "position": 128,
+        "position_role": "image_run_0_interior"
+      },
+      "2": {
+        "cache_token_count": 371,
+        "image_token_count": 198,
+        "scalar_interaction": -100.39312744140625,
+        "scalar_relative": 0.09647452269931367,
+        "position": 144,
+        "position_role": "image_run_1_start"
+      },
+      "4": {
+        "cache_token_count": 631,
+        "image_token_count": 396,
+        "scalar_interaction": -194.9886474609375,
+        "scalar_relative": 0.14053633670875001,
+        "position": 242,
+        "position_role": "image_run_1_end"
+      }
+    },
+    "b_c": {
+      "1": {
+        "cache_token_count": 241,
+        "image_token_count": 99,
+        "scalar_interaction": -34.47186279296875,
+        "scalar_relative": 0.0406668955552267,
+        "position": 141,
+        "position_role": "image_run_0_end"
+      },
+      "2": {
+        "cache_token_count": 371,
+        "image_token_count": 198,
+        "scalar_interaction": -94.03643798828125,
+        "scalar_relative": 0.08956007547506635,
+        "position": 141,
+        "position_role": "image_run_0_end"
+      },
+      "4": {
+        "cache_token_count": 631,
+        "image_token_count": 396,
+        "scalar_interaction": -141.064453125,
+        "scalar_relative": 0.10120315363949739,
+        "position": 315,
+        "position_role": "image_run_2_interior+token_count_mid"
+      }
+    }
+  },
+  "series": {
+    "c_d": {
+      "scalar_argmax_layer": 33,
+      "scalar_argmax_tensor": "values",
+      "scalar_location_consistent": true,
+      "position_location_consistent": false,
+      "frame_count_vs_abs_interaction_pearson": 0.9977048900934148
+    },
+    "b_c": {
+      "scalar_argmax_layer": 33,
+      "scalar_argmax_tensor": "values",
+      "scalar_location_consistent": true,
+      "position_location_consistent": false,
+      "frame_count_vs_abs_interaction_pearson": 0.9669213890919514
+    }
+  },
+  "readout": {
+    "family_label_all_cells_all_points": "C",
+    "frequency_label_all_cells_all_points": "L",
+    "top_k_jaccard_all_points": 1.0,
+    "saved_common_token_interaction_all_points": 0.0
+  },
+  "validation": {
+    "finite_cell_runs": 24,
+    "cell_runs_checked": 24
+  },
+  "claim_boundary": "Multi-image cumulative replay with a stable scalar layer-33 values locus; not incremental temporal persistence, a fixed token position, or full-vocabulary equality."
+}

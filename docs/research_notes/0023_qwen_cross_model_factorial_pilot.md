@@ -7,6 +7,11 @@ Date: 2026-07-13
 Completed as a one-frame, two-pair cross-architecture pilot. This note does not
 claim a persistent multi-frame replication.
 
+Subsequent update: [Note 0026](0026_qwen_cumulative_replay_trajectory.md)
+completed a separately labeled 1/2/4-frame cumulative-replay trajectory. It
+confirms the scalar layer 33 `values` locus but shows that position 128 was not
+a stable local locus under image-token-aware sampling.
+
 ## Motivation
 
 The SmolVLM experiments repeatedly separated a quiet forced-choice readout from
@@ -68,10 +73,13 @@ The source-cache summaries were not identical.
 | `b_c` | `5.209` to `36.433` | layer 33 `values`, `-34.139` | layer 33 `values`, position 128, `19.341` |
 
 The local interaction magnitude was `130.4%` and `42.3%` of its four-cell grand
-mean for `c_d` and `b_c`, respectively. Both the scalar and sequence-position
-argmax therefore repeat at late layer 33 `values`; position 128 also repeats.
-The local interaction sign flips across source pairs, so the replicated object
-is the locus and large non-additivity, not a universal direction.
+mean for `c_d` and `b_c`, respectively. Under the original four-position
+sampler, both scalar and sequence-position argmax repeated at late layer 33
+`values`, and position 128 was selected in both pairs. The local interaction
+sign flips across source pairs, so the replicated object was the locus and
+large non-additivity, not a universal direction. Note 0026 later showed that
+the exact position does not remain stable once image-token boundaries are
+sampled directly.
 
 Mid and after are numerically identical in this one-frame design because the
 mid probe occurs immediately after the only frame and no additional stream turn
@@ -105,10 +113,11 @@ The narrow result is:
 > saved first-token top-k10 readouts were cell-invariant while cache
 > summaries retained nonzero spatial-by-palette interaction structure.
 
-The most interesting cross-pair candidate is the layer 33 `values`, position
-128 interaction. It should not yet be compared directly with SmolVLM's
-50-frame layer 23 `values` locus because model depth, tokenization, image-token
-layout, and temporal protocol differ.
+The surviving cross-pair candidate is the scalar layer 33 `values` interaction.
+Position 128 is retained here as the historical output of the original sparse
+sampler, not as a current mechanistic candidate. The scalar locus should not
+yet be compared directly with SmolVLM's 50-frame layer 23 `values` locus because
+model depth, tokenization, image-token layout, and temporal protocol differ.
 
 ## Next Steps
 

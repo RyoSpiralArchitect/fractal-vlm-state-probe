@@ -12,6 +12,10 @@ from fractal_vlm_state_probe.compare_runs import (
     write_comparison_json,
     write_comparison_markdown,
 )
+from fractal_vlm_state_probe.mlx_cumulative_replay import (
+    CumulativeReplayRunConfig,
+    run_cumulative_replay_probe,
+)
 from fractal_vlm_state_probe.mlx_stream import (
     StreamRunConfig,
     _load_mlx_runtime,
@@ -39,6 +43,12 @@ def main() -> None:
         help="Manifest to include in the batch. Repeat for each condition.",
     )
     parser.add_argument("--model", default="HuggingFaceTB/SmolVLM2-2.2B-Instruct")
+    parser.add_argument(
+        "--context-protocol",
+        choices=["incremental_cache", "cumulative_replay"],
+        default="incremental_cache",
+        help="Incremental image turns or one ordered multi-image replay turn.",
+    )
     parser.add_argument("--probe-seeds", type=int, nargs="+", required=True)
     parser.add_argument("--stream-seed", type=int, default=20260604)
     parser.add_argument("--max-frames", type=int, default=None)
@@ -98,6 +108,7 @@ def main() -> None:
         "schema_version": 1,
         "batch_kind": "mlx_manifest_paired_stochastic_probe_batch",
         "model": args.model,
+        "context_protocol": args.context_protocol,
         "stream_seed": args.stream_seed,
         "probe_seeds": args.probe_seeds,
         "max_frames": args.max_frames,
@@ -108,7 +119,7 @@ def main() -> None:
         "generation_readout_top_k": args.generation_readout_top_k,
         "cache_summary_every": args.cache_summary_every,
         "cache_summary_max_layers": args.cache_summary_max_layers,
-        "probe_seed_policy": "same base probe seed is applied to all conditions; MLX run resets before/mid/after to seed, seed+1, seed+2",
+        "probe_seed_policy": "same base probe seed is applied to all conditions; MLX phases use seed, seed+1, seed+2",
         "conditions": {key: str(path) for key, path in manifests.items()},
         "records": batch_records,
     }
@@ -158,6 +169,32 @@ def _run_or_reuse(
     print(f"running probe_seed={probe_seed} manifest={manifest_path} -> {output_path}")
     if not args.dry_run and "mlx" not in runtime_holder:
         runtime_holder["mlx"] = _load_mlx_runtime(args.model)
+    cache_summary_max_layers = (
+        None if args.cache_summary_max_layers < 0 else args.cache_summary_max_layers
+    )
+    if args.context_protocol == "cumulative_replay":
+        run_cumulative_replay_probe(
+            CumulativeReplayRunConfig(
+                manifest_path=manifest_path,
+                output_path=output_path,
+                model_id=args.model,
+                max_frames=args.max_frames,
+                frame_stride=args.frame_stride,
+                max_tokens=args.max_tokens,
+                probe_max_tokens=args.probe_max_tokens,
+                probe_preset=args.probe_preset,
+                generation_readout_top_k=args.generation_readout_top_k,
+                temperature=args.temperature,
+                probe_temperature=args.probe_temperature,
+                dry_run=args.dry_run,
+                cache_summary_max_layers=cache_summary_max_layers,
+                seed=args.stream_seed,
+                probe_seed=probe_seed,
+                include_frame_artifacts=not args.no_frame_artifacts,
+            ),
+            mlx_runtime=runtime_holder.get("mlx"),
+        )
+        return
     run_stream_probe(
         StreamRunConfig(
             manifest_path=manifest_path,
@@ -174,9 +211,7 @@ def _run_or_reuse(
             dry_run=args.dry_run,
             probe_cache_policy=args.probe_cache_policy,
             cache_summary_every=args.cache_summary_every,
-            cache_summary_max_layers=None
-            if args.cache_summary_max_layers < 0
-            else args.cache_summary_max_layers,
+            cache_summary_max_layers=cache_summary_max_layers,
             seed=args.stream_seed,
             probe_seed=probe_seed,
             delivery_mode="visual_stream",
@@ -209,6 +244,7 @@ def _format_manifest_batch_summary(summary: dict[str, Any]) -> str:
         "# MLX Manifest Paired Stochastic Probe Batch",
         "",
         f"- Model: `{summary['model']}`",
+        f"- Context protocol: `{summary['context_protocol']}`",
         f"- Stream seed: `{summary['stream_seed']}`",
         f"- Probe seeds: `{', '.join(str(seed) for seed in summary['probe_seeds'])}`",
         f"- Max frames per run: `{summary['max_frames']}`",

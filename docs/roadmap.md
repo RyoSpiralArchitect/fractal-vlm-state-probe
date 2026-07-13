@@ -142,8 +142,13 @@ profiles across both source pairs (Pearson `0.964`, Spearman `0.982`), with the
 same argmax at layer 10 and the same top three layers `10`, `13`, and `12`.
 This separates the replicated layer 23 summary-stat locus from single-layer
 generative sufficiency and identifies a mid-layer confirmation target. Strict
-multi-seed reciprocal/sham confirmation, keys, key-value pairs, position-local
-swaps, and full-vocabulary scoring are next.
+three-seed reciprocal/sham confirmation is now complete for layers `10`, `12`,
+and `13` in both pairs. Directional ranks repeat almost exactly within each
+pair, but the exact peak is layer 10 for `c_d` and layer 13 for `b_c`; the
+supported object is a layers 10-13 band. Every intervention token sequence
+remained origin-identical and every self-sham top-k effect was zero. Keys,
+key-value pairs, layer windows, position-local swaps, and full-vocabulary
+scoring are next.
 
 ## Phase 4.7: Cross-Model Replication
 
@@ -155,13 +160,16 @@ swaps, and full-vocabulary scoring are next.
 - Compare loci by normalized depth and token region rather than raw layer or
   position number alone.
 
-Status: the first Qwen2.5-VL-3B 4bit pilot is complete for two one-frame source
-pairs with all 36 cache layers. Labels and saved first-token top-k10 readouts
-were cell-invariant, while the cache-summary interaction argmax repeated at
-layer 33 `values`, position 128. MLX-VLM 0.4.4 currently fails when reusing
-Qwen's prompt cache across a second image turn, so persistent multi-frame
-cross-model replication remains open. Early/middle/late frame sampling,
-token-region mapping, and an explicit cumulative-replay lane are next.
+Status: the Qwen2.5-VL-3B 4bit lane now includes two source pairs at 1, 2, and 4
+frames under an explicit single-turn ordered multi-image replay protocol. All
+six 36-layer factorials kept the forced-choice top-k10 readout cell-invariant
+and repeated the scalar interaction argmax at layer 33 `values`. Image-token
+mapping is implemented; it shows that the exact sequence-position argmax is not
+stable, withdrawing position 128 as a fixed mechanistic candidate. MLX-VLM
+0.4.4 still fails when reusing Qwen's prompt cache across a second incremental
+image turn, so persistent multi-turn replication remains open. Replay lengths
+8/16, full-vocabulary scoring, and an upstream-compatible incremental path are
+next.
 
 ## Phase 5: Research Report
 

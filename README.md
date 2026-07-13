@@ -66,13 +66,19 @@ distribution-coupled visual perturbation of persistent multimodal state.
 
 The intervention and cross-model results sharpen that story. In two SmolVLM
 source pairs, single-layer `values` swaps did not steer generated tokens toward
-the donor. Dense seed-0 scans over layers 8-23 produced highly similar
-susceptibility profiles across the two pairs (`r=0.964`, `rho=0.982`), with the
-same peak at layer 10 and the same top three layers: 10, 13, and 12. The repeated
-layer 23 summary locus remained weak under direct replacement. In one-frame
-Qwen2.5-VL pilots, the surface and first-token top-k10 readouts again stayed
-fixed while all-layer cache contrasts repeated at late layer 33 `values`.
-Summary-stat salience, readout sensitivity, and causal leverage are now treated
+the donor. Dense seed-0 scans identified layers 10, 13, and 12 as a shared
+susceptibility band. Three-seed reciprocal/sham confirmation preserved that
+band but made the exact peak pair-dependent: layer 10 for `c_d`, layer 13 for
+`b_c`. Directional ranks repeated almost perfectly within each pair, every
+token sequence stayed origin-identical, and self-sham top-k effects were zero.
+The repeated layer-23 summary locus remained weak under direct replacement.
+
+Qwen2.5-VL now has a separately labeled cumulative-replay lane. Across two
+source pairs and 1/2/4-frame `MM/JJ/MJ/JM` factorials, all six scalar interaction
+argmaxes landed at layer 33 `values` while forced-choice top-k10 readout remained
+cell-invariant. Image-token-aware sampling showed that the exact local position
+does not persist across pair and replay length. Summary-stat salience, local
+concentration, readout sensitivity, and causal leverage are therefore treated
 as separate objects.
 
 ## Current Restart Point
@@ -97,8 +103,10 @@ For a fresh read, start with `docs/experiment_design.md`, then
 `docs/research_notes/0021_layer23_values_swap_intervention_scaffold.md`, then
 `docs/research_notes/0022_two_pair_values_swap_intervention.md`, then
 `docs/research_notes/0023_qwen_cross_model_factorial_pilot.md`, then
-`docs/research_notes/0024_dense_mid_layer_values_swap_profile.md`. The compact
-paper-facing evidence index is `docs/paper_evidence_matrix.md`.
+`docs/research_notes/0024_dense_mid_layer_values_swap_profile.md`, then
+`docs/research_notes/0025_controlled_mid_layer_values_swap_confirmation.md`,
+then `docs/research_notes/0026_qwen_cumulative_replay_trajectory.md`. The
+compact paper-facing evidence index is `docs/paper_evidence_matrix.md`.
 
 The first true 50-frame cross-palette replication kept all `MM/JJ/MJ/JM` cells
 at 50 frames for two source pairs. Surface forced-choice labels stayed fixed,
@@ -117,16 +125,22 @@ source/donor baseline separation, while layer 23 produced only `3.6-5.4%` and
 remained strongly origin-like. The matched self-swap sham effect was zero. A
 follow-up seed-0 screen over layers 8-23 repeated the same profile shape across
 both source pairs (`r=0.964`, `rho=0.982`), peaking at layer 10 with layers 13
-and 12 next. Strict multi-seed reciprocal and sham confirmation of those three
-layers is the next intervention step.
+and 12 next. Strict multi-seed reciprocal and sham confirmation then kept all
+three layers active but shifted the exact peak from layer 10 in `c_d` to layer
+13 in `b_c`. Source and reciprocal rank profiles had Spearman `1.0` within both
+pairs, all intervention token sequences remained origin-identical, and every
+self-sham top-k effect was zero. The supported object is now a layers 10-13
+susceptibility band, not a universal layer-10 point.
 
-The first separate-architecture lane is also live. Two one-frame Qwen2.5-VL
-four-cell runs kept labels and first-token top-k10 identical while the full
-36-layer cache interaction argmax repeated at layer 33 `values`, position 128.
-Qwen's current MLX-VLM `PromptCacheState` path fails on a second image turn, so
-this remains a one-frame cross-model trace pilot, not a persistent-stream
-replication. Full-vocabulary scoring, confirmed mid-layer interventions, and an
-explicit cumulative-replay lane are next.
+The separate-architecture lane now includes Qwen2.5-VL cumulative replay. Two
+source pairs at 1, 2, and 4 frames kept every cell at family/frequency labels
+`C/L` and top-k10 Jaccard `1.0`, while all six scalar cache interaction argmaxes
+repeated at layer 33 `values`. The exact position changed across pair and frame
+count once image-token boundaries were sampled, withdrawing position 128 as a
+fixed candidate. Qwen's current incremental `PromptCacheState` path still fails
+on a second image turn, so cumulative replay is multi-image context evidence,
+not persistent-stream replication. Full-vocabulary scoring, key/key-value
+interventions, and longer replay lengths are next.
 
 ## Infrastructure Tiers
 
@@ -163,6 +177,8 @@ first logprob-focused pass unless a selected model exposes the needed signal.
 - Build manifests for external frame directories, so natural videos can be
   sampled elsewhere and brought into the same run format.
 - Stream frames into MLX-VLM one turn at a time with an explicit chat transcript.
+- Run a separately labeled ordered multi-image cumulative replay for models
+  whose incremental image-turn cache path is incompatible.
 - Run a Hugging Face Transformers stream probe with `model_id` or `local_path`,
   full transcript replay, hidden-state summaries, KV-cache summaries, and
   generation logprob summaries where the selected model exposes them.
@@ -176,6 +192,8 @@ first logprob-focused pass unless a selected model exposes the needed signal.
   deltas, and probe-source-cache deltas.
 - Analyze 2x2 cache-summary factorial contrasts for spatial main effect,
   palette main effect, and spatial-by-palette interaction.
+- Track factorial cache argmax trajectories across replay lengths and map
+  sampled positions to image-token runs and vision markers.
 - Prepare replicated 2x2 cross-palette batches and analyze the same factorial
   contrast over raw and processor-space image statistics.
 - Compare saved HF first-step top-k logprobs for probe readout deltas when
@@ -558,6 +576,27 @@ python3 scripts/analyze_cache_intervention_profiles.py \
   --output-md runs/cache_values_swap/dense_l8_23_seed0_profile_comparison.md
 ```
 
+To run a clearly separated cumulative multi-image replay and summarize a
+frame-count trajectory:
+
+```bash
+python3 scripts/run_mlx_cumulative_replay_probe.py \
+  --manifest runs/cross_palette_replication_50_v1/stimuli/mandelbrot_zoom_c_50f/manifest.json \
+  --output runs/qwen_cumulative_replay_smoke/mandelbrot_c_4f.json \
+  --model mlx-community/Qwen2.5-VL-3B-Instruct-4bit \
+  --max-frames 4 \
+  --probe-preset forced_choice \
+  --cache-summary-max-layers -1 \
+  --no-frame-artifacts
+
+python3 scripts/analyze_factorial_cache_trajectory.py \
+  --analysis c_d_1f=runs/qwen_cumulative_replay/c_d_1f_all_layers_seed0/factorial_cache_contrast.json \
+  --analysis c_d_2f=runs/qwen_cumulative_replay/c_d_2f_all_layers_seed0/factorial_cache_contrast.json \
+  --analysis c_d_4f=runs/qwen_cumulative_replay/c_d_4f_all_layers_seed0/factorial_cache_contrast.json \
+  --output-json runs/qwen_cumulative_replay/c_d_frame_trajectory.json \
+  --output-md runs/qwen_cumulative_replay/c_d_frame_trajectory.md
+```
+
 ## Documentation
 
 - [Experiment Design](docs/experiment_design.md)
@@ -590,6 +629,8 @@ python3 scripts/analyze_cache_intervention_profiles.py \
 - [Research Note 0022: Two-Pair Values-Swap Intervention](docs/research_notes/0022_two_pair_values_swap_intervention.md)
 - [Research Note 0023: Qwen Cross-Model Factorial Pilot](docs/research_notes/0023_qwen_cross_model_factorial_pilot.md)
 - [Research Note 0024: Dense Mid-Layer Values-Swap Profile](docs/research_notes/0024_dense_mid_layer_values_swap_profile.md)
+- [Research Note 0025: Controlled Mid-Layer Values-Swap Confirmation](docs/research_notes/0025_controlled_mid_layer_values_swap_confirmation.md)
+- [Research Note 0026: Qwen Cumulative-Replay Trajectory](docs/research_notes/0026_qwen_cumulative_replay_trajectory.md)
 
 ## Claim Boundary
 

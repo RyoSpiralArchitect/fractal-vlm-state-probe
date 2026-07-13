@@ -21,7 +21,11 @@ def test_profile_comparison_aligns_layers_and_reports_correlations() -> None:
     assert comparison["argmax_same"] is True
     assert comparison["top_3_overlap_count"] == 3
     assert result["profiles"]["pair_a"]["argmax_layer"] == 10
+    directional = result["profiles"]["pair_a"]["directional_comparison"]
+    assert directional["pearson"] == 1.0
+    assert directional["argmax_same"] is True
     assert "Cache Intervention Layer Profiles" in format_profile_comparison_markdown(result)
+    assert "Reciprocal Direction Checks" in format_profile_comparison_markdown(result)
 
 
 def test_profile_comparison_requires_one_identity_per_input() -> None:
@@ -52,6 +56,11 @@ def _analysis(values: list[float], *, source: str = "mm", donor: str = "jj") -> 
                     "top_k_effect_to_baseline_ratio": {"mean": ratio},
                     "source_intervention_top_k_effect": {"mean": ratio / 10},
                     "top_k_donor_pull_index": {"mean": -1 + ratio},
+                    "reciprocal_top_k_effect_to_baseline_ratio": {
+                        "mean": ratio * 0.9
+                    },
+                    "top_k_source_pull_index": {"mean": -1 + ratio * 0.9},
+                    "self_sham_top_k_effect": {"mean": 0.0},
                 },
             }
             for layer, ratio in zip((8, 9, 10), values)

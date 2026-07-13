@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "controlled_mid_layer_values_swap_confirmation_summary",
+  "date": "2026-07-13",
+  "model_id": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+  "model_revision": "482adb537c021c86670beed01cd58990d01e72e4",
+  "protocol": {
+    "source_pair_count": 2,
+    "frames_consumed": 25,
+    "probe_phase": "mid",
+    "tensor": "values",
+    "layer_indices": [10, 12, 13],
+    "probe_seeds": [0, 1, 2],
+    "probe_temperature": 0.7,
+    "probe_max_tokens": 64,
+    "generation_readout_top_k": 50,
+    "include_reciprocal": true,
+    "include_self_sham": true,
+    "layer_seed_trial_count": 18
+  },
+  "profiles": {
+    "c_d": {
+      "source_effect_to_baseline_ratio": {
+        "10": 0.26898323465902246,
+        "12": 0.2239279106807663,
+        "13": 0.24107344106605214
+      },
+      "reciprocal_effect_to_baseline_ratio": {
+        "10": 0.2774661098540096,
+        "12": 0.24565377767066088,
+        "13": 0.25771560365097795
+      },
+      "source_argmax_layer": 10,
+      "reciprocal_argmax_layer": 10,
+      "directional_pearson": 0.9999987632050654,
+      "directional_spearman": 1.0,
+      "directional_mean_abs_difference": 0.015616968256602507
+    },
+    "b_c": {
+      "source_effect_to_baseline_ratio": {
+        "10": 0.2468480327020018,
+        "12": 0.21695288955281153,
+        "13": 0.24875613220711618
+      },
+      "reciprocal_effect_to_baseline_ratio": {
+        "10": 0.2531466992570308,
+        "12": 0.2284037835160571,
+        "13": 0.2544354993099838
+      },
+      "source_argmax_layer": 13,
+      "reciprocal_argmax_layer": 13,
+      "directional_pearson": 0.9999541240553637,
+      "directional_spearman": 1.0,
+      "directional_mean_abs_difference": 0.007809642540380746
+    }
+  },
+  "cross_pair_source_profile": {
+    "pearson": 0.7556276529110029,
+    "spearman": 0.5,
+    "mean_abs_difference": 0.012264304742013158,
+    "argmax_same": false,
+    "top_3_overlap_count": 3
+  },
+  "controls": {
+    "source_origin_exact_matches": 18,
+    "source_intervention_trials": 18,
+    "reciprocal_origin_exact_matches": 18,
+    "reciprocal_intervention_trials": 18,
+    "self_sham_origin_exact_matches": 18,
+    "self_sham_trials": 18,
+    "self_sham_top_k_rmse_max": 0.0
+  },
+  "claim_boundary": "Controlled top-k50 confirmation of an origin-like layers 10-13 susceptibility band; not donor-directed generation or full-vocabulary equivalence."
+}

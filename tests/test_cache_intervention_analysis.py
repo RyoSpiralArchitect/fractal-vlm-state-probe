@@ -26,10 +26,14 @@ def test_values_swap_analysis_reports_complete_donor_pull() -> None:
     assert trial["source_intervention"]["effect_to_baseline_ratio"]["token"] == 1.0
     assert trial["source_intervention"]["effect_to_baseline_ratio"]["top_k"] == 1.0
     assert trial["reciprocal_intervention"]["source_pull_index"]["token"] == 1.0
-    assert analysis["group_summaries"][0]["trial_count"] == 1
+    group = analysis["group_summaries"][0]
+    assert group["trial_count"] == 1
+    assert group["reciprocal_origin_exact_match_count"] == 0
+    assert group["reciprocal_intervention_available_count"] == 1
+    assert group["metrics"]["reciprocal_top_k_effect_to_baseline_ratio"]["mean"] == 1.0
     markdown = format_values_swap_analysis_markdown(analysis)
     assert "Cache Values-Swap" in markdown
-    assert "| 0/1 | n/a |" in markdown
+    assert "| 0/1 | 0/1 | n/a | n/a |" in markdown
 
 
 def test_values_swap_analysis_marks_pull_unavailable_for_identical_baselines() -> None:

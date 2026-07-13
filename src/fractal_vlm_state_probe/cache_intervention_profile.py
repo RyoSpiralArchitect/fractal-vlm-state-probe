@@ -33,6 +33,7 @@ def compare_cache_intervention_profiles(
             "Effect ratio is the mean per-trial intervention-to-origin top-k RMSE divided by source-donor baseline RMSE.",
             "Profile correlations are descriptive; cache layers are not independent statistical samples.",
             "A screening profile without reciprocal or sham branches requires controlled follow-up at selected layers.",
+            "Directional comparisons align source-with-donor and reciprocal donor-with-source effects within one controlled profile.",
         ],
     }
 
@@ -70,6 +71,30 @@ def format_profile_comparison_markdown(analysis: dict[str, Any]) -> str:
             for label in labels
         ]
         lines.append(f"| {layer} | " + " | ".join(values) + " |")
+
+    directional = [
+        (label, profile.get("directional_comparison"))
+        for label, profile in profiles.items()
+        if (profile.get("directional_comparison") or {}).get("common_layer_count")
+    ]
+    if directional:
+        lines.extend(
+            [
+                "",
+                "## Reciprocal Direction Checks",
+                "",
+                "| Profile | Common layers | Pearson | Spearman | Mean abs difference | Argmax layers | Same argmax |",
+                "| --- | ---: | ---: | ---: | ---: | --- | --- |",
+            ]
+        )
+        for label, record in directional:
+            lines.append(
+                f"| `{label}` | {record['common_layer_count']} | "
+                f"{_format_number(record['pearson'])} | {_format_number(record['spearman'])} | "
+                f"{_format_number(record['mean_abs_difference'])} | "
+                f"{record['source_argmax_layer']} / {record['reciprocal_argmax_layer']} | "
+                f"`{record['argmax_same']}` |"
+            )
 
     lines.extend(["", "## Pairwise Comparisons", ""])
     lines.extend(
@@ -123,6 +148,15 @@ def _extract_profile(label: str, analysis: dict[str, Any]) -> dict[str, Any]:
                     metrics, "source_intervention_top_k_effect"
                 ),
                 "donor_pull": _mean_metric(metrics, "top_k_donor_pull_index"),
+                "reciprocal_effect_to_baseline_ratio": _mean_metric(
+                    metrics, "reciprocal_top_k_effect_to_baseline_ratio"
+                ),
+                "reciprocal_source_pull": _mean_metric(
+                    metrics, "top_k_source_pull_index"
+                ),
+                "self_sham_top_k_effect": _mean_metric(
+                    metrics, "self_sham_top_k_effect"
+                ),
                 "trial_count": group.get("trial_count"),
                 "probe_seeds": group.get("probe_seeds") or [],
             }
@@ -130,6 +164,15 @@ def _extract_profile(label: str, analysis: dict[str, Any]) -> dict[str, Any]:
     ranked = sorted(
         (record for record in layers if record["effect_to_baseline_ratio"] is not None),
         key=lambda record: record["effect_to_baseline_ratio"],
+        reverse=True,
+    )
+    reciprocal_ranked = sorted(
+        (
+            record
+            for record in layers
+            if record["reciprocal_effect_to_baseline_ratio"] is not None
+        ),
+        key=lambda record: record["reciprocal_effect_to_baseline_ratio"],
         reverse=True,
     )
     return {
@@ -145,7 +188,56 @@ def _extract_profile(label: str, analysis: dict[str, Any]) -> dict[str, Any]:
             ranked[0]["effect_to_baseline_ratio"] if ranked else None
         ),
         "top_3_layers": [record["layer_index"] for record in ranked[:3]],
+        "reciprocal_argmax_layer": (
+            reciprocal_ranked[0]["layer_index"] if reciprocal_ranked else None
+        ),
+        "reciprocal_top_3_layers": [
+            record["layer_index"] for record in reciprocal_ranked[:3]
+        ],
+        "directional_comparison": _directional_comparison(layers),
         "layers": layers,
+    }
+
+
+def _directional_comparison(layers: list[dict[str, Any]]) -> dict[str, Any]:
+    common = [
+        record
+        for record in layers
+        if record["effect_to_baseline_ratio"] is not None
+        and record["reciprocal_effect_to_baseline_ratio"] is not None
+    ]
+    source_values = [record["effect_to_baseline_ratio"] for record in common]
+    reciprocal_values = [
+        record["reciprocal_effect_to_baseline_ratio"] for record in common
+    ]
+    source_ranked = sorted(
+        common,
+        key=lambda record: record["effect_to_baseline_ratio"],
+        reverse=True,
+    )
+    reciprocal_ranked = sorted(
+        common,
+        key=lambda record: record["reciprocal_effect_to_baseline_ratio"],
+        reverse=True,
+    )
+    source_argmax = source_ranked[0]["layer_index"] if source_ranked else None
+    reciprocal_argmax = reciprocal_ranked[0]["layer_index"] if reciprocal_ranked else None
+    return {
+        "common_layers": [record["layer_index"] for record in common],
+        "common_layer_count": len(common),
+        "pearson": _pearson(source_values, reciprocal_values),
+        "spearman": _pearson(
+            _average_ranks(source_values),
+            _average_ranks(reciprocal_values),
+        ),
+        "mean_abs_difference": (
+            mean(abs(a - b) for a, b in zip(source_values, reciprocal_values))
+            if common
+            else None
+        ),
+        "source_argmax_layer": source_argmax,
+        "reciprocal_argmax_layer": reciprocal_argmax,
+        "argmax_same": source_argmax == reciprocal_argmax if common else None,
     }
 
 

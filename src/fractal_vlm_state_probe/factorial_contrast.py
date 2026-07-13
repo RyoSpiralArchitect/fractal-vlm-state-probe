@@ -58,6 +58,7 @@ def analyze_factorial_cache_contrast(
             "This is a factorial contrast over saved cache summary statistics, not a full hidden-state vector contrast.",
             "Signed effects preserve direction for scalar summaries but cannot recover vector direction lost before saving.",
             "The interaction term estimates whether palette effect changes with spatial-rank donor in the saved summary field.",
+            "Sequence-position argmax is only over positions sampled into the run artifact, not a full token-position search.",
         ],
     }
 

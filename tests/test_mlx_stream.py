@@ -8,12 +8,14 @@ from fractal_vlm_state_probe.mlx_stream import (
     _collect_stream,
     _mid_probe_after_position,
     _mlx_tensor_stats,
+    _mlx_sequence_position_stats,
     _new_prompt_cache_state,
     _package_version,
     _probe_phase_seeds,
     _should_summarize_cache,
     run_stream_probe,
     summarize_mlx_logprobs,
+    summarize_prompt_cache_token_layout,
 )
 from fractal_vlm_state_probe.stimulus import render_stimulus
 
@@ -115,6 +117,45 @@ def test_mlx_tensor_stats_promotes_float16_reductions() -> None:
     assert math.isfinite(stats["l2_norm"])
     assert math.isfinite(stats["sequence_position_stats"][0]["variance"])
     assert math.isfinite(stats["sequence_position_stats"][0]["l2_norm"])
+
+
+def test_mlx_sequence_stats_include_requested_positions() -> None:
+    import mlx.core as mx
+
+    tensor = mx.zeros((1, 1, 8, 2))
+    records = _mlx_sequence_position_stats(
+        mx,
+        tensor,
+        sequence_positions=[3, 5],
+    )
+
+    assert [record["position"] for record in records] == [0, 3, 4, 5, 6, 7]
+
+
+def test_prompt_cache_token_layout_finds_image_runs_and_focus_positions() -> None:
+    class State:
+        token_ids = [10, 151652, 151655, 151655, 151653, 20, 151652, 151655, 151653, 30]
+
+    config = {
+        "vision_start_token_id": 151652,
+        "vision_end_token_id": 151653,
+        "image_token_id": 151655,
+    }
+
+    layout = summarize_prompt_cache_token_layout(State(), config)
+
+    assert layout["image_token_count"] == 3
+    assert layout["image_token_runs"] == [
+        {"start": 2, "end": 3, "length": 2},
+        {"start": 7, "end": 7, "length": 1},
+    ]
+    roles = {
+        record["position"]: record["roles"]
+        for record in layout["sequence_position_plan"]
+    }
+    assert "image_run_0_start" in roles[2]
+    assert "image_run_0_end" in roles[3]
+    assert "vision_end_token_id" in roles[4]
 
 
 def test_mlx_dry_run_records_text_only_delivery(tmp_path: Path) -> None:
