@@ -7,6 +7,9 @@ from fractal_vlm_state_probe.mlx_stream import (
     StreamRunConfig,
     _collect_stream,
     _mid_probe_after_position,
+    _mlx_tensor_stats,
+    _new_prompt_cache_state,
+    _package_version,
     _probe_phase_seeds,
     _should_summarize_cache,
     run_stream_probe,
@@ -34,6 +37,25 @@ def test_should_summarize_cache_keeps_key_positions() -> None:
 def test_probe_phase_seeds_are_phase_stable() -> None:
     assert _probe_phase_seeds(None) == {"before": None, "mid": None, "after": None}
     assert _probe_phase_seeds(10) == {"before": 10, "mid": 11, "after": 12}
+
+
+def test_package_version_reports_installed_mlx_vlm() -> None:
+    assert _package_version("mlx-vlm") != "unknown"
+
+
+def test_new_prompt_cache_state_does_not_reuse_batch_state() -> None:
+    class PromptCacheState:
+        def __init__(self) -> None:
+            self.token_ids = []
+            self.cache = []
+
+    prototype = PromptCacheState()
+    first = _new_prompt_cache_state(prototype)
+    second = _new_prompt_cache_state(prototype)
+
+    assert first is not prototype
+    assert second is not prototype
+    assert first is not second
 
 
 def test_summarize_mlx_logprobs_keeps_sorted_top_k() -> None:
@@ -79,6 +101,20 @@ def test_collect_stream_records_generation_step_top_logprobs() -> None:
     assert step["token"] == "T3"
     assert step["token_logprob"] == -0.25
     assert [item["token_id"] for item in step["top_logprobs"]] == [3, 1]
+
+
+def test_mlx_tensor_stats_promotes_float16_reductions() -> None:
+    import math
+
+    import mlx.core as mx
+
+    tensor = mx.array([[[65504.0, -65504.0]]], dtype=mx.float16)
+    stats = _mlx_tensor_stats(mx, tensor)
+
+    assert math.isfinite(stats["variance"])
+    assert math.isfinite(stats["l2_norm"])
+    assert math.isfinite(stats["sequence_position_stats"][0]["variance"])
+    assert math.isfinite(stats["sequence_position_stats"][0]["l2_norm"])
 
 
 def test_mlx_dry_run_records_text_only_delivery(tmp_path: Path) -> None:

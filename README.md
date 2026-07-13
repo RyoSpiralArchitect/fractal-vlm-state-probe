@@ -1,16 +1,17 @@
 # Fractal VLM State Probe
 
-Deterministic visual streams for probing how multimodal language models change
-their observable behavior, token distributions, and accessible internal traces
-under sustained visual context.
+Deterministic visual streams, factorial controls, and cache interventions for
+separating visible multimodal readout from the internal state geometry that
+precedes it.
 
 This project starts from a simple spiral-shaped hunch: a visual context is not
-just an image, and a model's response is not just a final string. If we deliver a
-carefully controlled stream one frame at a time, keep the transcript explicit,
-and preserve enough instrumentation, we can ask a cleaner question:
+just an image, and a model's response is not just a final string. The project
+began by asking whether controlled visual streams change later non-visual
+generation. The evidence has made the current question more precise:
 
-> How does a multimodal model's non-visual reasoning and generation shift after
-> exposure to different classes of visual motion?
+> When visible answers remain unchanged, which input-conditioned differences
+> persist in traced multimodal state, where do they appear, and which of them
+> can affect later readout under direct intervention?
 
 The repo is deliberately cautious. It does not claim that a model has subjective
 experience, enters a mental state, or undergoes adaptation in the human sense.
@@ -20,8 +21,15 @@ tensor/cache traces.
 ## Research Shape
 
 The first program compares stimulus conditions within the same model, not
-providers against each other. But the first question is even simpler than
-"which fractal is different?":
+providers against each other. The current program keeps four measured objects
+separate:
+
+1. the transformed input and processor-space perturbation,
+2. the visible label or generated-token readout,
+3. the geometry of saved cache summaries,
+4. the readout effect of direct cache intervention.
+
+The foundational question is still simpler than "which fractal is different?":
 
 > Does sustained visual streaming change the later non-visual probe at all,
 > beyond ordinary transcript length and cache growth?
@@ -56,6 +64,17 @@ spatial luminance-rank field, and processor-space frequency structure. Macro
 geometry alone is now too coarse as the main story; the working hypothesis is
 distribution-coupled visual perturbation of persistent multimodal state.
 
+The intervention and cross-model results sharpen that story. In two SmolVLM
+source pairs, single-layer `values` swaps did not steer generated tokens toward
+the donor. Dense seed-0 scans over layers 8-23 produced highly similar
+susceptibility profiles across the two pairs (`r=0.964`, `rho=0.982`), with the
+same peak at layer 10 and the same top three layers: 10, 13, and 12. The repeated
+layer 23 summary locus remained weak under direct replacement. In one-frame
+Qwen2.5-VL pilots, the surface and first-token top-k10 readouts again stayed
+fixed while all-layer cache contrasts repeated at late layer 33 `values`.
+Summary-stat salience, readout sensitivity, and causal leverage are now treated
+as separate objects.
+
 ## Current Restart Point
 
 For a fresh read, start with `docs/experiment_design.md`, then
@@ -74,7 +93,12 @@ For a fresh read, start with `docs/experiment_design.md`, then
 `docs/research_notes/0017_cross_palette_control_smoke.md`, then
 `docs/research_notes/0018_cross_palette_replication_path.md`, then
 `docs/research_notes/0019_cross_palette_replication_readout.md`, then
-`docs/research_notes/0020_true_50_frame_cross_palette_replication.md`.
+`docs/research_notes/0020_true_50_frame_cross_palette_replication.md`, then
+`docs/research_notes/0021_layer23_values_swap_intervention_scaffold.md`, then
+`docs/research_notes/0022_two_pair_values_swap_intervention.md`, then
+`docs/research_notes/0023_qwen_cross_model_factorial_pilot.md`, then
+`docs/research_notes/0024_dense_mid_layer_values_swap_profile.md`. The compact
+paper-facing evidence index is `docs/paper_evidence_matrix.md`.
 
 The first true 50-frame cross-palette replication kept all `MM/JJ/MJ/JM` cells
 at 50 frames for two source pairs. Surface forced-choice labels stayed fixed,
@@ -84,8 +108,25 @@ remained pair-dependent, so the current interpretation is a replicated
 state-geometry locus, not a single scalar image-stat mechanism. A top-k20
 readout rerun then found identical first-token top-20 sets across `MM/JJ/MJ/JM`
 for every phase/probe record, with max common-token interaction around `0.004`
-logprob. The next readout step is full-vocabulary or teacher-forced scoring, or
-a targeted cache-swap intervention.
+logprob.
+
+The targeted intervention is now a two-pair, four-layer, three-seed result.
+Every source/donor swap preserved the origin's generated token sequence. Layer
+12 produced the largest tested top-k perturbation in both pairs, about `22%` of
+source/donor baseline separation, while layer 23 produced only `3.6-5.4%` and
+remained strongly origin-like. The matched self-swap sham effect was zero. A
+follow-up seed-0 screen over layers 8-23 repeated the same profile shape across
+both source pairs (`r=0.964`, `rho=0.982`), peaking at layer 10 with layers 13
+and 12 next. Strict multi-seed reciprocal and sham confirmation of those three
+layers is the next intervention step.
+
+The first separate-architecture lane is also live. Two one-frame Qwen2.5-VL
+four-cell runs kept labels and first-token top-k10 identical while the full
+36-layer cache interaction argmax repeated at layer 33 `values`, position 128.
+Qwen's current MLX-VLM `PromptCacheState` path fails on a second image turn, so
+this remains a one-frame cross-model trace pilot, not a persistent-stream
+replication. Full-vocabulary scoring, confirmed mid-layer interventions, and an
+explicit cumulative-replay lane are next.
 
 ## Infrastructure Tiers
 
@@ -139,6 +180,18 @@ first logprob-focused pass unless a selected model exposes the needed signal.
   contrast over raw and processor-space image statistics.
 - Compare saved HF first-step top-k logprobs for probe readout deltas when
   generation score summaries are available.
+- Run a targeted MLX `PromptCacheState` values-swap probe that replaces only one
+  source cache layer's `values` tensor with the donor tensor before a creative
+  branch probe.
+- Sweep targeted values swaps over layers and matched probe seeds with
+  reciprocal branches, self-swap shams, token/edit comparisons, top-k RMSE, and
+  normalized donor-pull summaries.
+- Compare dense intervention layer profiles across source pairs, including
+  Pearson/Spearman similarity, peak layers, and top-k overlap.
+- Reuse one loaded MLX model across manifest-batch conditions while creating a
+  fresh prompt-cache state for every run.
+- Promote MLX cache tensors to float32 for summary reductions, avoiding
+  float16 variance/L2 overflow on Qwen-class caches.
 - Train a small nearest-centroid classifier on saved cache-summary features to
   test whether measured traces retain condition information when probe text is
   unchanged.
@@ -454,6 +507,57 @@ python3 scripts/analyze_probe_readout_contrast.py \
   --output-md runs/cross_palette_replication_50_v1/c_d_50f/probe_readout_contrast.md
 ```
 
+To run the first pinpoint cache intervention scaffold, swap donor layer 23
+`values` into a source stream cache before a creative probe:
+
+```bash
+python3 scripts/run_mlx_cache_values_swap_probe.py \
+  --source-manifest runs/cross_palette_replication_50_v1/stimuli/mandelbrot_zoom_c_50f/manifest.json \
+  --donor-manifest runs/cross_palette_replication_50_v1/stimuli/julia_zoom_d_50f/manifest.json \
+  --source-label mandelbrot_c \
+  --donor-label julia_d \
+  --output runs/cache_values_swap/c_d_layer23_values_mid.json \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --max-frames 50 \
+  --probe-phase mid \
+  --layer-index 23 \
+  --probe-temperature 0.7 \
+  --probe-seed 0 \
+  --generation-readout-top-k 20
+```
+
+To sweep target and control layers over matched seeds, including reciprocal and
+self-swap sham branches, then aggregate token and top-k effects:
+
+```bash
+python3 scripts/run_mlx_cache_values_swap_sweep.py \
+  --source-manifest runs/cross_palette_replication_50_v1/stimuli/mandelbrot_zoom_c_50f/manifest.json \
+  --donor-manifest runs/cross_palette_replication_50_v1/stimuli/julia_zoom_d_50f/manifest.json \
+  --source-label mandelbrot_c \
+  --donor-label julia_d \
+  --output runs/cache_values_swap/c_d_mid_values_sweep.json \
+  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
+  --max-frames 50 \
+  --probe-phase mid \
+  --layer-index 0 \
+  --layer-index 12 \
+  --layer-index 22 \
+  --layer-index 23 \
+  --probe-seeds 0 1 2 \
+  --generation-readout-top-k 50
+
+python3 scripts/analyze_cache_interventions.py \
+  --run runs/cache_values_swap/c_d_mid_values_sweep.json \
+  --output-json runs/cache_values_swap/c_d_mid_values_sweep_analysis.json \
+  --output-md runs/cache_values_swap/c_d_mid_values_sweep_analysis.md
+
+python3 scripts/analyze_cache_intervention_profiles.py \
+  --analysis c_d=runs/cache_values_swap/c_d_mid_values_dense_l8_23_seed0_screen_analysis.json \
+  --analysis b_c=runs/cache_values_swap/b_c_mid_values_dense_l8_23_seed0_screen_analysis.json \
+  --output-json runs/cache_values_swap/dense_l8_23_seed0_profile_comparison.json \
+  --output-md runs/cache_values_swap/dense_l8_23_seed0_profile_comparison.md
+```
+
 ## Documentation
 
 - [Experiment Design](docs/experiment_design.md)
@@ -461,6 +565,7 @@ python3 scripts/analyze_probe_readout_contrast.py \
 - [Control Stimuli](docs/control_stimuli.md)
 - [Provider Tiers](docs/provider_tiers.md)
 - [Roadmap](docs/roadmap.md)
+- [Paper Evidence Matrix](docs/paper_evidence_matrix.md)
 - [Examples](examples/README.md)
 - [Research Note 0002: Null vs Stream Smoke](docs/research_notes/0002_null_vs_stream_smoke.md)
 - [Research Note 0003: Cache Summary Condition Classifier](docs/research_notes/0003_cache_summary_condition_classifier.md)
@@ -481,6 +586,10 @@ python3 scripts/analyze_probe_readout_contrast.py \
 - [Research Note 0018: Cross-Palette Replication Path](docs/research_notes/0018_cross_palette_replication_path.md)
 - [Research Note 0019: Cross-Palette Replication Readout](docs/research_notes/0019_cross_palette_replication_readout.md)
 - [Research Note 0020: True 50-Frame Cross-Palette Replication](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
+- [Research Note 0021: Layer 23 Values-Swap Intervention Scaffold](docs/research_notes/0021_layer23_values_swap_intervention_scaffold.md)
+- [Research Note 0022: Two-Pair Values-Swap Intervention](docs/research_notes/0022_two_pair_values_swap_intervention.md)
+- [Research Note 0023: Qwen Cross-Model Factorial Pilot](docs/research_notes/0023_qwen_cross_model_factorial_pilot.md)
+- [Research Note 0024: Dense Mid-Layer Values-Swap Profile](docs/research_notes/0024_dense_mid_layer_values_swap_profile.md)
 
 ## Claim Boundary
 

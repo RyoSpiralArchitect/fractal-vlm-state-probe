@@ -12,7 +12,11 @@ from fractal_vlm_state_probe.compare_runs import (
     write_comparison_json,
     write_comparison_markdown,
 )
-from fractal_vlm_state_probe.mlx_stream import StreamRunConfig, run_stream_probe
+from fractal_vlm_state_probe.mlx_stream import (
+    StreamRunConfig,
+    _load_mlx_runtime,
+    run_stream_probe,
+)
 from fractal_vlm_state_probe.paired_stochastic import (
     analyze_paired_stochastic_batch,
     write_paired_stochastic_json,
@@ -51,7 +55,12 @@ def main() -> None:
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--probe-temperature", type=float, default=0.7)
     parser.add_argument("--cache-summary-every", type=int, default=10)
-    parser.add_argument("--cache-summary-max-layers", type=int, default=4)
+    parser.add_argument(
+        "--cache-summary-max-layers",
+        type=int,
+        default=4,
+        help="Maximum layers to summarize per capture. Use -1 for all layers.",
+    )
     parser.add_argument("--probe-cache-policy", choices=["isolated", "shared_append", "no_cache"], default="isolated")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--no-frame-artifacts", action="store_true")
@@ -62,6 +71,7 @@ def main() -> None:
     args.output_root.mkdir(parents=True, exist_ok=True)
 
     batch_records = []
+    runtime_holder: dict[str, Any] = {}
     for probe_seed in args.probe_seeds:
         seed_dir = args.output_root / f"probe_seed_{probe_seed}"
         seed_dir.mkdir(parents=True, exist_ok=True)
@@ -72,6 +82,7 @@ def main() -> None:
                 manifest_path=manifest_path,
                 args=args,
                 probe_seed=probe_seed,
+                runtime_holder=runtime_holder,
             )
         comparisons = _write_seed_comparisons(seed_dir=seed_dir, run_paths=run_paths)
         batch_records.append(
@@ -95,6 +106,8 @@ def main() -> None:
         "probe_temperature": args.probe_temperature,
         "probe_preset": args.probe_preset,
         "generation_readout_top_k": args.generation_readout_top_k,
+        "cache_summary_every": args.cache_summary_every,
+        "cache_summary_max_layers": args.cache_summary_max_layers,
         "probe_seed_policy": "same base probe seed is applied to all conditions; MLX run resets before/mid/after to seed, seed+1, seed+2",
         "conditions": {key: str(path) for key, path in manifests.items()},
         "records": batch_records,
@@ -137,11 +150,14 @@ def _run_or_reuse(
     manifest_path: Path,
     args: argparse.Namespace,
     probe_seed: int,
+    runtime_holder: dict[str, Any],
 ) -> None:
     if output_path.exists() and not args.overwrite:
         print(f"reusing {output_path}")
         return
     print(f"running probe_seed={probe_seed} manifest={manifest_path} -> {output_path}")
+    if not args.dry_run and "mlx" not in runtime_holder:
+        runtime_holder["mlx"] = _load_mlx_runtime(args.model)
     run_stream_probe(
         StreamRunConfig(
             manifest_path=manifest_path,
@@ -158,12 +174,15 @@ def _run_or_reuse(
             dry_run=args.dry_run,
             probe_cache_policy=args.probe_cache_policy,
             cache_summary_every=args.cache_summary_every,
-            cache_summary_max_layers=args.cache_summary_max_layers,
+            cache_summary_max_layers=None
+            if args.cache_summary_max_layers < 0
+            else args.cache_summary_max_layers,
             seed=args.stream_seed,
             probe_seed=probe_seed,
             delivery_mode="visual_stream",
             include_frame_artifacts=not args.no_frame_artifacts,
-        )
+        ),
+        mlx_runtime=runtime_holder.get("mlx"),
     )
 
 
@@ -198,6 +217,8 @@ def _format_manifest_batch_summary(summary: dict[str, Any]) -> str:
         f"- Probe temperature: `{summary['probe_temperature']}`",
         f"- Probe preset: `{summary['probe_preset']}`",
         f"- Generation readout top-k: `{summary['generation_readout_top_k']}`",
+        f"- Cache summary every: `{summary['cache_summary_every']}`",
+        f"- Cache summary max layers: `{summary['cache_summary_max_layers']}`",
         "",
         "## Conditions",
         "",

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "qwen_cross_model_factorial_pilot_summary",
+  "summary_kind": "qwen_cross_model_factorial_pilot",
+  "date": "2026-07-13",
+  "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+  "model_revision": "46d4cf06a06ffc1a766c214174f9cbed2f45bcab",
+  "runtime": {
+    "mlx_version": "0.31.1",
+    "mlx_vlm_version": "0.4.4"
+  },
+  "protocol": {
+    "frame_count": 1,
+    "probe_seed": 0,
+    "probe_temperature": 0.0,
+    "first_token_top_k": 10,
+    "sampled_cache_layer_count": 36,
+    "source_pair_count": 2
+  },
+  "surface_readout": {
+    "family_choice": "A",
+    "frequency_choice": "L",
+    "identical_across_cells": true,
+    "first_token_top_k_jaccard": 1.0,
+    "max_saved_common_token_interaction": 0.0
+  },
+  "pairs": {
+    "c_d": {
+      "pairwise_max_l2_min": 11.623,
+      "pairwise_max_l2_max": 62.94,
+      "scalar_interaction_argmax": {
+        "layer_index": 33,
+        "tensor": "values",
+        "interaction_effect": -71.09002685546875
+      },
+      "sequence_position_interaction_argmax": {
+        "layer_index": 33,
+        "tensor": "values",
+        "position": 128,
+        "interaction_effect": -51.02592849731445,
+        "relative_abs_interaction_to_grand_mean": 1.3040611605646644
+      }
+    },
+    "b_c": {
+      "pairwise_max_l2_min": 5.209,
+      "pairwise_max_l2_max": 36.433,
+      "scalar_interaction_argmax": {
+        "layer_index": 33,
+        "tensor": "values",
+        "interaction_effect": -34.13922119140625
+      },
+      "sequence_position_interaction_argmax": {
+        "layer_index": 33,
+        "tensor": "values",
+        "position": 128,
+        "interaction_effect": 19.34142303466797,
+        "relative_abs_interaction_to_grand_mean": 0.42254013286554976
+      }
+    }
+  },
+  "multi_frame_attempt": {
+    "completed": false,
+    "failed_on_frame": 2,
+    "error_class": "ValueError",
+    "error": "[broadcast_shapes] Shapes (263) and (221) cannot be broadcast.",
+    "scope": "MLX-VLM 0.4.4 Qwen2.5-VL PromptCacheState reuse across image turns"
+  },
+  "claim_boundary": "One-frame cross-architecture trace pilot; not a persistent multi-frame replication."
+}

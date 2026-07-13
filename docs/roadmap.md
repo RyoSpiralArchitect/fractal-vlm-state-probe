@@ -118,8 +118,50 @@ landed at mid layer 23 `values` and after layer 0 `keys`. MLX first-token
 top-k readout capture and a saved-run readout analyzer are implemented. The
 top-k20 rerun found identical first-token top-20 sets across `MM/JJ/MJ/JM` for
 every phase/probe record while the cache locus persisted. Transform seed/cutoff
-aggregation, full-vocabulary logprob or teacher-forced reads, and cache-swap
-intervention scaffolding are next.
+aggregation and full-vocabulary logprob or teacher-forced reads are still next.
+The first cache-swap intervention scaffold is implemented for layer-targeted
+MLX `PromptCacheState` `values` swaps before creative branch probes.
+
+## Phase 4.65: Targeted Cache Interventions
+
+- Strict source/donor token-history and tensor-shape compatibility checks.
+- Single-layer values swaps with reciprocal branches.
+- Matched source-with-source sham branches.
+- Multi-layer and multi-seed sweep runner with saved top-k readouts.
+- Token edit distance, top-k RMSE, and normalized donor/source pull analysis.
+- Dense layer, key/value, layer-window, and sequence-position intervention
+  scans.
+
+Status: the first two-pair sweep is complete for layers `0`, `12`, `22`, and
+`23` over three matched probe seeds. All generated token sequences remained
+origin-identical. Layer 12 produced the largest tested top-k perturbation in
+both pairs, about `22%` of baseline source/donor separation, but remained
+origin-like. Layer 23 was smaller and strongly origin-like. Self-swap shams were
+exactly zero. A seed-0 dense scan over layers `8-23` then produced highly similar
+profiles across both source pairs (Pearson `0.964`, Spearman `0.982`), with the
+same argmax at layer 10 and the same top three layers `10`, `13`, and `12`.
+This separates the replicated layer 23 summary-stat locus from single-layer
+generative sufficiency and identifies a mid-layer confirmation target. Strict
+multi-seed reciprocal/sham confirmation, keys, key-value pairs, position-local
+swaps, and full-vocabulary scoring are next.
+
+## Phase 4.7: Cross-Model Replication
+
+- Reuse the same manifests, factorial formulas, and readout contracts across
+  distinct local VLM architectures.
+- Record runtime versions and validate cache summaries for finite values.
+- Separate stateless/single-frame, cumulative-replay, and incremental-cache
+  protocols explicitly.
+- Compare loci by normalized depth and token region rather than raw layer or
+  position number alone.
+
+Status: the first Qwen2.5-VL-3B 4bit pilot is complete for two one-frame source
+pairs with all 36 cache layers. Labels and saved first-token top-k10 readouts
+were cell-invariant, while the cache-summary interaction argmax repeated at
+layer 33 `values`, position 128. MLX-VLM 0.4.4 currently fails when reusing
+Qwen's prompt cache across a second image turn, so persistent multi-frame
+cross-model replication remains open. Early/middle/late frame sampling,
+token-region mapping, and an explicit cumulative-replay lane are next.
 
 ## Phase 5: Research Report
 
@@ -129,4 +171,6 @@ intervention scaffolding are next.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: future.
+Status: evidence matrix started. Manuscript tables and figures remain future;
+the current priority is full-vocabulary scoring and intervention/cross-model
+coverage before prose claims are promoted.

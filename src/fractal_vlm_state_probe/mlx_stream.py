@@ -5,6 +5,7 @@ import json
 import time
 from copy import copy, deepcopy
 from dataclasses import dataclass
+from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 from typing import Any, Literal
 
@@ -52,7 +53,11 @@ class StreamRunConfig:
     blank_rgb: tuple[int, int, int] = (0, 0, 0)
 
 
-def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
+def run_stream_probe(
+    config: StreamRunConfig,
+    *,
+    mlx_runtime: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     seed_record = set_global_seed(config.seed, include_mlx=True)
     probe_phase_seeds = _probe_phase_seeds(config.probe_seed)
     probes = resolve_probe_preset(config.probe_preset)
@@ -145,13 +150,17 @@ def run_stream_probe(config: StreamRunConfig) -> dict[str, Any]:
         write_json(config.output_path, result)
         return result
 
-    mlx = _load_mlx_runtime(config.model_id)
+    mlx = mlx_runtime or _load_mlx_runtime(config.model_id)
     model = mlx["model"]
     processor = mlx["processor"]
     model_config = mlx["model_config"]
     stream_generate = mlx["stream_generate"]
     apply_chat_template = mlx["apply_chat_template"]
-    prompt_cache_state = mlx["prompt_cache_state"] if config.use_prompt_cache_state else None
+    prompt_cache_state = (
+        _new_prompt_cache_state(mlx.get("prompt_cache_state"))
+        if config.use_prompt_cache_state
+        else None
+    )
 
     history: list[dict[str, str]] = [{"role": "system", "content": SYSTEM_PROMPT}]
     result["runtime"] = mlx["runtime"]
@@ -482,13 +491,16 @@ def _clone_cache_entry(entry: Any) -> Any:
 
 
 def _mlx_tensor_stats(mx: Any, tensor: Any) -> dict[str, Any]:
-    mean = mx.mean(tensor)
-    var = mx.var(tensor)
+    # Cache tensors are commonly float16; promote before reductions so
+    # variance and norm do not overflow on otherwise finite activations.
+    stats_tensor = tensor.astype(mx.float32)
+    mean = mx.mean(stats_tensor)
+    var = mx.var(stats_tensor)
     std = mx.sqrt(var)
-    abs_mean = mx.mean(mx.abs(tensor))
-    min_val = mx.min(tensor)
-    max_val = mx.max(tensor)
-    l2 = mx.linalg.norm(tensor)
+    abs_mean = mx.mean(mx.abs(stats_tensor))
+    min_val = mx.min(stats_tensor)
+    max_val = mx.max(stats_tensor)
+    l2 = mx.linalg.norm(stats_tensor)
     mx.eval(mean, var, std, abs_mean, min_val, max_val, l2)
     stats = {
         "shape": list(tensor.shape),
@@ -512,7 +524,7 @@ def _mlx_sequence_position_stats(mx: Any, tensor: Any) -> list[dict[str, Any]]:
     sequence_length = int(tensor.shape[-2])
     records = []
     for position in select_sequence_positions(sequence_length):
-        sliced = tensor[..., position, :]
+        sliced = tensor[..., position, :].astype(mx.float32)
         mean = mx.mean(sliced)
         var = mx.var(sliced)
         abs_mean = mx.mean(mx.abs(sliced))
@@ -705,10 +717,27 @@ def _load_mlx_runtime(model_id: str) -> dict[str, Any]:
         "runtime": {
             "mlx_available": True,
             "mlx_version": getattr(mx, "__version__", "unknown"),
+            "mlx_vlm_version": _package_version("mlx-vlm"),
             "mlx_vlm_load_kwargs": {},
             "prompt_cache_state_available": prompt_cache_cls is not None,
         },
     }
+
+
+def _package_version(distribution: str) -> str:
+    try:
+        return version(distribution)
+    except PackageNotFoundError:
+        return "unknown"
+
+
+def _new_prompt_cache_state(prototype: Any) -> Any | None:
+    if prototype is None:
+        return None
+    try:
+        return prototype.__class__()
+    except Exception as exc:
+        raise RuntimeError("could not create a fresh MLX PromptCacheState") from exc
 
 
 def _load_manifest(path: Path) -> dict[str, Any]:

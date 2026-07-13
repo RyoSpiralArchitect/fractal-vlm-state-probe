@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "dense_mid_layer_values_swap_profile_summary",
+  "date": "2026-07-13",
+  "model_id": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+  "model_revision": "482adb537c021c86670beed01cd58990d01e72e4",
+  "protocol": {
+    "source_pair_count": 2,
+    "frames_consumed": 25,
+    "probe_phase": "mid",
+    "tensor": "values",
+    "layer_indices": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+    "probe_seeds": [0],
+    "probe_temperature": 0.7,
+    "probe_max_tokens": 64,
+    "generation_readout_top_k": 50,
+    "include_reciprocal": false,
+    "include_self_sham": false
+  },
+  "profiles": {
+    "c_d": {
+      "effect_to_baseline_ratio": {
+        "8": 0.1663022680407437,
+        "9": 0.16540054070118604,
+        "10": 0.27921668868383115,
+        "11": 0.09714329032893416,
+        "12": 0.20307513687086573,
+        "13": 0.2375605635726672,
+        "14": 0.1291848945816513,
+        "15": 0.14059572640809964,
+        "16": 0.0895676780653147,
+        "17": 0.08310243570287548,
+        "18": 0.07353847565099046,
+        "19": 0.06907952375832944,
+        "20": 0.05573368112661427,
+        "21": 0.055011270938134016,
+        "22": 0.0270850040036193,
+        "23": 0.03303089448892287
+      },
+      "top_3_layers": [10, 13, 12],
+      "argmax_layer": 10,
+      "argmax_donor_pull": -0.5653240551941446
+    },
+    "b_c": {
+      "effect_to_baseline_ratio": {
+        "8": 0.2137157533718551,
+        "9": 0.14908929192114967,
+        "10": 0.24334519179057387,
+        "11": 0.11377034433082249,
+        "12": 0.21382326627907985,
+        "13": 0.23258243599046108,
+        "14": 0.1558907190980394,
+        "15": 0.1750048626214821,
+        "16": 0.12687157050865816,
+        "17": 0.098355633546773,
+        "18": 0.09030778550204845,
+        "19": 0.09391432143831384,
+        "20": 0.06374446388179378,
+        "21": 0.0735110897179629,
+        "22": 0.041536485452327104,
+        "23": 0.04991549894105967
+      },
+      "top_3_layers": [10, 13, 12],
+      "argmax_layer": 10,
+      "argmax_donor_pull": -0.8494741290707639
+    }
+  },
+  "profile_comparison": {
+    "common_layer_count": 16,
+    "pearson": 0.9643815440859126,
+    "spearman": 0.9823529411764705,
+    "mean_abs_difference": 0.021567024248788782,
+    "argmax_same": true,
+    "top_3_overlap_count": 3
+  },
+  "token_readout": {
+    "source_intervention_exact_matches": 32,
+    "source_intervention_trials": 32
+  },
+  "claim_boundary": "Two-pair seed-0 screening profile; selected layers require multi-seed reciprocal and sham confirmation."
+}

@@ -35,8 +35,21 @@ FORCED_CHOICE_PROBES = [
     },
 ]
 
+CREATIVE_REFLECTION_PROMPT = (
+    "Describe the visual impression this evolving pattern leaves behind. "
+    "Write a short abstract reflection in 3-5 sentences."
+)
+
+CREATIVE_REFLECTION_PROBES = [
+    {
+        "id": "creative_visual_impression",
+        "prompt": CREATIVE_REFLECTION_PROMPT,
+    },
+]
+
 PROBE_PRESETS = {
     "default": DEFAULT_PROBES,
+    "creative_reflection": CREATIVE_REFLECTION_PROBES,
     "forced_choice": FORCED_CHOICE_PROBES,
 }
 
