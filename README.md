@@ -9,8 +9,9 @@ non-visual generation. A cache-prefix audit changed both the protocol and the
 question. The current target is narrower and directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
-> change full-vocabulary readout distributions and cache-summary geometry, and
-> which parts of that relationship repeat across models and source pairs?
+> change cache-summary geometry and prompt-conditioned full-vocabulary
+> readouts, and which parts repeat across models, source pairs, and probe
+> formulations?
 
 The repo is deliberately cautious. It does not claim that a model has subjective
 experience, enters a mental state, or undergoes adaptation in the human sense.
@@ -49,19 +50,30 @@ The replacement protocol uses no image-conditioned cache reuse:
 3. Save the complete first-step vocabulary distribution, not only a generated
    letter or top-k slice.
 
-The current valid matrix contains 20 `MM/JJ/MJ/JM` factorial points, 80 cell
-runs, and 320 compressed full-vocabulary sidecars across SmolVLM2, Qwen2.5-VL,
-and Gemma 3. Every direct after-factorial contains non-identical cell
-distributions.
+The current valid standard matrix contains 26 `MM/JJ/MJ/JM` factorial points,
+104 cell runs, and 416 compressed full-vocabulary sidecars across SmolVLM2,
+Qwen2.5-VL, and Gemma 3. Every direct after-factorial contains non-identical
+cell distributions. At one frame, the independent replication surface is now
+four source pairs x three models, rather than two source pairs.
 
-- Qwen repeats a late layer 33 `values` source-cache summary locus at all 10
-  pair-by-length points, while its full-vocabulary interaction changes
-  non-monotonically over 1/2/4/8/16 images.
-- SmolVLM's source-cache summary locus moves across layers and tensors over
-  1/2/4 images; the old persistent layer-23 story does not replicate.
-- Gemma 3 has stable but pair-specific early source-cache loci from one to two
-  images, a nearly saturated family readout, and a much stronger frequency
-  readout interaction.
+- Qwen repeats a late layer 33 `values` source-cache summary locus with a
+  negative interaction at all four independent one-frame source pairs and all
+  12 tested pair-by-length points. Its full-vocabulary interaction still
+  changes non-monotonically over 1/2/4/8/16 images.
+- SmolVLM's one-frame source-cache argmax spans layers 1/21/22 and both keys and
+  values across four pairs; the old persistent layer-23 story does not
+  replicate.
+- Gemma 3 stays in early `values` components across all four one-frame pairs,
+  but its exact layer and interaction sign are pair-dependent. Its standard
+  family readout is nearly saturated while its frequency interaction is much
+  larger and more variable.
+
+A separate Gemma 3 prompt audit adds 64 sidecars over four semantically aligned
+probe variants. The baseline rerun is byte-identical to the prior run, but
+candidate order, paraphrase, and label remapping can change both generated
+semantics and the 2x2 interaction by orders of magnitude. The direct readout is
+therefore a measurement of visual evidence combined with prompt calibration,
+not a prompt-invariant extraction of what the model "sees."
 
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
@@ -71,19 +83,21 @@ yet persistent latent-state steering.
 
 The repo does **not** currently support a universal layer, persistent
 multi-turn state, a valid cache intervention effect, causal mediation from the
-ACK cache to the direct probe, or full-distribution equality inferred from an
-unchanged generated label.
+ACK cache to the direct probe, a prompt-invariant categorical visual readout,
+or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-1. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
-   for the protocol audit, three-model rerun, and current claim boundary.
-2. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
+1. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
+   for the four-pair replication, prompt audit, and newest interpretation.
+2. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
+   for the protocol audit that defines the valid fresh-forward boundary.
+3. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
    supported/provisional/withdrawn map.
-3. [Experiment Design](docs/experiment_design.md) for the control ladder.
-4. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
+4. [Experiment Design](docs/experiment_design.md) for the control ladder.
+5. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
    for the still-valid input and processor-space cross-palette analysis.
-5. [Examples](examples/README.md) for tracked summaries and the historical note
+6. [Examples](examples/README.md) for tracked summaries and the historical note
    sequence.
 
 Relevant historical cross-palette and intervention notes now carry
@@ -130,10 +144,15 @@ first logprob-focused pass unless a selected model exposes the needed signal.
 - Compare complete readout distributions with KL, Jensen-Shannon, total
   variation, Hellinger, conditional candidate probabilities, and
   probability-space 2x2 factorial contrasts.
+- Run forced-choice paraphrase, candidate-order, and label-remapping controls;
+  align candidate probabilities by declared semantics before comparing prompt
+  variants.
 - Record sampled KV-cache summaries over all layers and map local argmaxes to
   image-token runs and vision markers.
 - Analyze cache-summary spatial, palette, and interaction contrasts; track
   loci by model, source pair, replay length, tensor, and normalized depth.
+- Aggregate independent source-pair replications across models while reporting
+  exact-layer, K/V-component, and interaction-sign stability separately.
 - Audit reconstructed prompt prefixes and cache sequence lengths before any
   `PromptCacheState` reuse is interpreted.
 - Prepare replicated 2x2 cross-palette batches and analyze the same factorial

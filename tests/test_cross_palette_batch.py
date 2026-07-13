@@ -44,7 +44,13 @@ def test_prepare_cross_palette_factorial_batch_writes_manifests_and_raw_contrast
     assert validate_manifest(jm_manifest) == []
     assert Path(record["analyses"]["raw_image_stats_json"]).exists()
     assert Path(record["analyses"]["raw_factorial_image_contrast_json"]).exists()
-    assert "run_mlx_manifest_probe_batch.py" in record["suggested_commands"]["mlx_manifest_probe_batch"]
+    command = record["suggested_commands"]["mlx_manifest_probe_batch"]
+    assert "run_mlx_manifest_probe_batch.py" in command
+    assert "--max-frames 2" in command
+    assert "--context-protocol cumulative_replay" in command
+    assert "--after-probe-protocol direct_multimodal_replay" in command
+    assert "--save-full-vocab-first-step" in command
+    assert "--cache-summary-max-layers -1" in command
     assert (tmp_path / "batch" / "cross_palette_factorial_batch_summary.md").exists()
 
 

@@ -66,6 +66,8 @@ def test_cumulative_replay_dry_run_records_distinct_protocol(tmp_path: Path) -> 
     assert result["context_policy"]["capture_direct_probe_cache"] is False
     assert "fresh direct multimodal" in result["probe_schedule"]["after"]
     assert result["reproducibility"]["probe_phase_seeds"]["after"] == 7
+    assert result["probes"]["before"][0]["prompt_variant"] == "baseline"
+    assert result["probes"]["before"][0]["candidate_semantics"]["A"] == "mandelbrot"
     event = result["stream_events"][0]
     assert event["image_count"] == 2
     assert event["frame_indices"] == [0, 1]

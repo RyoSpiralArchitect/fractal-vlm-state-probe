@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "kind": "mandelbrot",
+  "width": 320,
+  "height": 240,
+  "total_frames": 50,
+  "fps": 1.0,
+  "center_start": [-1.65, -0.01],
+  "center_end": [-1.768778833, -0.001738996],
+  "scale_start": 1.2,
+  "scale_end": 0.02,
+  "max_iter": 192,
+  "color_seed": 53,
+  "stimulus_condition": {
+    "condition_id": "mandelbrot_zoom_e_50f",
+    "condition_family": "fractal",
+    "temporal_policy": "ordered",
+    "semantic_load": "low",
+    "deterministic": true,
+    "source_kind": "generated",
+    "comparison_role": "source_variant",
+    "description": "Independent 50-frame Mandelbrot zoom toward the left antenna boundary."
+  }
+}

@@ -21,7 +21,7 @@ from .full_vocab_readout import (
     full_vocab_sidecar_path,
     write_full_vocab_logprob_sidecar,
 )
-from .prompts import SYNC_PROMPT, SYSTEM_PROMPT, resolve_probe_preset
+from .prompts import SYNC_PROMPT, SYSTEM_PROMPT, probe_metadata, resolve_probe_preset
 from .providers import get_capabilities
 from .seeding import set_global_seed
 from .stimulus import validate_manifest, write_json
@@ -358,7 +358,7 @@ def _run_frame_turn(
 
 def _run_probe_batch(
     *,
-    probes: list[dict[str, str]],
+    probes: list[dict[str, Any]],
     history: list[dict[str, str]],
     phase: str,
     model: Any,
@@ -437,6 +437,7 @@ def _run_probe_batch(
                 "phase": phase,
                 "probe_id": probe["id"],
                 "prompt": prompt,
+                **probe_metadata(probe),
                 "assistant_text": generation["text"],
                 "generation": generation["summary"],
                 "probe_seed": probe_seed,
@@ -1087,12 +1088,17 @@ def _planned_frame_event(
     }
 
 
-def _dry_probe_records(phase: str, *, probes: list[dict[str, str]]) -> list[dict[str, str]]:
+def _dry_probe_records(
+    phase: str,
+    *,
+    probes: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
     return [
         {
             "phase": phase,
             "probe_id": probe["id"],
             "prompt": probe["prompt"],
+            **probe_metadata(probe),
             "assistant_text": "<dry-run>",
         }
         for probe in probes

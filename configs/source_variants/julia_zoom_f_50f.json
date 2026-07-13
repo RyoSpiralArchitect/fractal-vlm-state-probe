@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "kind": "julia",
+  "width": 320,
+  "height": 240,
+  "total_frames": 50,
+  "fps": 1.0,
+  "center_start": [0.0, 0.0],
+  "center_end": [-0.05, 0.04],
+  "scale_start": 3.0,
+  "scale_end": 0.45,
+  "julia_c": [0.355, 0.355],
+  "max_iter": 192,
+  "color_seed": 61,
+  "stimulus_condition": {
+    "condition_id": "julia_zoom_f_50f",
+    "condition_family": "fractal",
+    "temporal_policy": "ordered",
+    "semantic_load": "low",
+    "deterministic": true,
+    "source_kind": "generated",
+    "comparison_role": "source_variant",
+    "description": "Independent 50-frame Julia zoom for c=0.355+0.355i."
+  }
+}

@@ -240,6 +240,7 @@ def _prepare_pair(
                 pair_id=pair.pair_id,
                 output_root=output_root,
                 manifests=manifests,
+                max_frames=max_frames,
             ),
             "factorial_cache_contrast": _factorial_cache_command(
                 pair_id=pair.pair_id,
@@ -265,7 +266,13 @@ def _condition_id(manifest_path: Path) -> str:
     return str(condition_id)
 
 
-def _manifest_probe_command(*, pair_id: str, output_root: Path, manifests: dict[str, Path]) -> str:
+def _manifest_probe_command(
+    *,
+    pair_id: str,
+    output_root: Path,
+    manifests: dict[str, Path],
+    max_frames: int | None,
+) -> str:
     batch_root = output_root / pair_id / "manifest_probe_seed_0"
     lines = [
         "python3 scripts/run_mlx_manifest_probe_batch.py \\",
@@ -275,15 +282,24 @@ def _manifest_probe_command(*, pair_id: str, output_root: Path, manifests: dict[
         f"  --manifest mj={manifests['mj']} \\",
         f"  --manifest jm={manifests['jm']} \\",
         "  --probe-seeds 0 \\",
-        "  --max-frames 50 \\",
-        "  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \\",
-        "  --temperature 0 \\",
-        "  --probe-temperature 0.7 \\",
-        "  --probe-cache-policy isolated \\",
-        "  --cache-summary-every 10 \\",
-        "  --cache-summary-max-layers 4 \\",
-        "  --probe-preset forced_choice",
     ]
+    if max_frames is not None:
+        lines.append(f"  --max-frames {max_frames} \\")
+    lines.extend(
+        [
+            "  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \\",
+            "  --context-protocol cumulative_replay \\",
+            "  --after-probe-protocol direct_multimodal_replay \\",
+            "  --save-full-vocab-first-step \\",
+            "  --generation-readout-top-k 20 \\",
+            "  --temperature 0 \\",
+            "  --probe-temperature 0 \\",
+            "  --probe-max-tokens 2 \\",
+            "  --cache-summary-max-layers -1 \\",
+            "  --probe-preset forced_choice \\",
+            "  --no-frame-artifacts",
+        ]
+    )
     return "\n".join(lines)
 
 

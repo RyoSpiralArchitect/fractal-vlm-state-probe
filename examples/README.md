@@ -36,6 +36,7 @@ reading the current experiment logic and claim boundaries.
 | [0025 Controlled Mid-Layer Values-Swap Confirmation](../docs/research_notes/0025_controlled_mid_layer_values_swap_confirmation.md) | [summary.json](research_notes/0025_controlled_mid_layer_values_swap_confirmation/summary.json) | Historical reciprocal/sham run; intervention-path validity was not satisfied. |
 | [0026 Qwen Cumulative-Replay Trajectory](../docs/research_notes/0026_qwen_cumulative_replay_trajectory.md) | [summary.json](research_notes/0026_qwen_cumulative_replay_trajectory/summary.json) | Fresh ACK cache trajectory remains usable; the old text-only branch readout is withdrawn. |
 | [0027 Cache-Prefix Audit and Direct Full-Vocabulary Replay](../docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) | [summary.json](research_notes/0027_cache_prefix_audit_and_direct_full_vocab/summary.json) | Current evidence boundary: seven unsafe cache-reuse audits, 80 valid direct cells, full-vocabulary trajectories over SmolVLM, Qwen, and Gemma3. |
+| [0028 Source-Pair Replication and Prompt Robustness](../docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md) | [summary.json](research_notes/0028_source_pair_replication_and_prompt_robustness/summary.json) | Four independent source pairs across three VLMs, Qwen's 4/4 layer-33 `values` replication, and a semantic-aligned prompt audit showing strong readout calibration effects. |
 
 ## Reading Order
 

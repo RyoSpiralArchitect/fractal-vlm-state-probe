@@ -137,6 +137,68 @@ def test_full_vocab_factorial_handles_zero_probability_support(tmp_path: Path) -
     _assert_finite_json_value(analysis)
 
 
+def test_full_vocab_factorial_aligns_rotated_labels_to_semantics(
+    tmp_path: Path,
+) -> None:
+    probabilities = {
+        "mm": [0.7, 0.2, 0.1, 0.0],
+        "jj": [0.2, 0.2, 0.6, 0.0],
+        "mj": [0.3, 0.4, 0.3, 0.0],
+        "jm": [0.4, 0.2, 0.4, 0.0],
+    }
+    prompt_metadata = {
+        "probe_family": "family",
+        "prompt_variant": "rotated_labels",
+        "candidate_labels": ["A", "B", "C"],
+        "candidate_order": ["A", "B", "C"],
+        "candidate_semantics": {
+            "A": "unclear",
+            "B": "mandelbrot",
+            "C": "julia",
+        },
+    }
+    runs = {}
+    run_paths = {}
+    for cell, cell_probabilities in probabilities.items():
+        run_path = tmp_path / f"{cell}.json"
+        values = np.asarray(
+            [math.log(value) if value else -math.inf for value in cell_probabilities]
+        )
+        metadata = write_full_vocab_logprob_sidecar(
+            values,
+            path=tmp_path
+            / f"{cell}_full_vocab"
+            / "after__forced_family_choice_rotated_labels__step_000.npz",
+            relative_to=tmp_path,
+        )
+        runs[cell] = _run(
+            cell,
+            metadata,
+            probe_id="forced_family_choice_rotated_labels",
+            prompt_metadata=prompt_metadata,
+        )
+        run_paths[cell] = run_path
+
+    analysis = analyze_full_vocab_readout_contrast(
+        runs=runs,
+        run_paths=run_paths,
+    )
+
+    record = analysis["records"][0]
+    assert record["prompt_variant"] == "rotated_labels"
+    assert record["generated_semantics"] == {
+        cell: "unclear" for cell in ("mm", "jj", "mj", "jm")
+    }
+    semantic = record["forced_choice_candidates"]["cells"]["mm"][
+        "semantic_conditional_probabilities"
+    ]
+    assert semantic == {
+        "unclear": pytest.approx(0.7),
+        "mandelbrot": pytest.approx(0.2),
+        "julia": pytest.approx(0.1),
+    }
+
+
 def _assert_finite_json_value(value: object) -> None:
     if isinstance(value, dict):
         for child in value.values():
@@ -148,13 +210,20 @@ def _assert_finite_json_value(value: object) -> None:
         assert math.isfinite(value)
 
 
-def _run(cell: str, metadata: dict) -> dict:
+def _run(
+    cell: str,
+    metadata: dict,
+    *,
+    probe_id: str = "forced_family_choice",
+    prompt_metadata: dict | None = None,
+) -> dict:
     return {
         "stimulus": {"condition": {"condition_id": cell}},
         "probes": {
             "after": [
                 {
-                    "probe_id": "forced_family_choice",
+                    "probe_id": probe_id,
+                    **(prompt_metadata or {}),
                     "generation": {
                         "steps": [
                             {

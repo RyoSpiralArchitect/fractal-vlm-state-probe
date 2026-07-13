@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "source_pair_replication_and_prompt_robustness_summary",
+  "date": "2026-07-13",
+  "protocol": {
+    "context_protocol": "fresh_ordered_multi_image_ack_plus_fresh_direct_multimodal_probes",
+    "frame_count_for_cross_pair_replication": 1,
+    "probe_seed": 0,
+    "stream_temperature": 0.0,
+    "probe_temperature": 0.0,
+    "cache_summary_max_layers": null
+  },
+  "source_pair_expansion": {
+    "new_source_pairs": [
+      "d_e",
+      "e_f"
+    ],
+    "source_frame_count": 50,
+    "unique_hashes_per_source": 50,
+    "new_factorial_point_count": 6,
+    "new_cell_run_count": 24,
+    "new_full_vocab_sidecar_count": 96,
+    "raw_interactions": {
+      "d_e": {
+        "edge_density": 0.06405208333333334,
+        "high_frequency_energy_ratio": 0.21467548047107965,
+        "spectral_centroid": 0.13409528029868933
+      },
+      "e_f": {
+        "edge_density": 0.061973437500000006,
+        "high_frequency_energy_ratio": -0.04530261741358729,
+        "spectral_centroid": -0.017401293020553363
+      }
+    }
+  },
+  "standard_direct_matrix": {
+    "model_count": 3,
+    "source_pair_count": 4,
+    "factorial_point_count": 26,
+    "cell_run_count": 104,
+    "full_vocab_sidecar_count": 416,
+    "one_frame_factorial_point_count": 12,
+    "one_frame_cell_run_count": 48,
+    "direct_after_factorials_with_nonidentical_full_vocab_distributions": 26
+  },
+  "one_frame_model_replication": {
+    "qwen2_5_vl": {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "source_pair_count": 4,
+      "dominant_cache_location": "layer_33_values",
+      "exact_location_share": 1.0,
+      "component_share": 1.0,
+      "negative_interaction_sign_share": 1.0,
+      "normalized_depth_range": [
+        0.9428571428571428,
+        0.9428571428571428
+      ],
+      "family_interaction_l1": {
+        "median": 0.49795175724678276,
+        "min": 0.2050347018731757,
+        "max": 0.7162655753898121
+      },
+      "frequency_interaction_l1": {
+        "median": 0.08832083322666359,
+        "min": 0.024244692814681102,
+        "max": 0.14137943330903202
+      }
+    },
+    "smolvlm2": {
+      "model_id": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+      "source_pair_count": 4,
+      "dominant_cache_location": "layer_1_keys",
+      "exact_location_share": 0.5,
+      "dominant_component": "keys",
+      "component_share": 0.75,
+      "dominant_interaction_sign_share": 0.75,
+      "normalized_depth_range": [
+        0.043478260869565216,
+        0.9565217391304348
+      ],
+      "family_interaction_l1": {
+        "median": 0.10597513167124546,
+        "min": 0.03403234884027672,
+        "max": 0.24881317832066074
+      },
+      "frequency_interaction_l1": {
+        "median": 0.0931262081779273,
+        "min": 0.052315580615181406,
+        "max": 0.1708792843407769
+      }
+    },
+    "gemma3": {
+      "model_id": "mlx-community/gemma-3-4b-it-4bit",
+      "source_pair_count": 4,
+      "dominant_cache_location": "layer_3_values",
+      "exact_location_share": 0.5,
+      "dominant_component": "values",
+      "component_share": 1.0,
+      "dominant_interaction_sign_share": 0.75,
+      "normalized_depth_range": [
+        0.0,
+        0.09090909090909091
+      ],
+      "family_interaction_l1": {
+        "median": 0.0007588850983134672,
+        "min": 0.00018016075011532934,
+        "max": 0.002605057009949194
+      },
+      "frequency_interaction_l1": {
+        "median": 0.8087981221004652,
+        "min": 0.07799358459647852,
+        "max": 2.1722910106809623
+      }
+    }
+  },
+  "prompt_robustness": {
+    "model_id": "mlx-community/gemma-3-4b-it-4bit",
+    "source_pair": "e_f",
+    "prompt_variant_count_per_family": 4,
+    "probe_count": 8,
+    "cell_run_count": 4,
+    "full_vocab_sidecar_count": 64,
+    "baseline_sidecar_sha256_matches_prior": {
+      "matched": 16,
+      "checked": 16
+    },
+    "family": {
+      "generated_semantics_invariant_across_variants": false,
+      "max_semantic_total_variation_across_variants": 0.9997965053479084,
+      "variants": {
+        "baseline": {
+          "generated": "M/M/M/M",
+          "full_vocab_interaction_l1": 0.00024677141594254285
+        },
+        "paraphrase": {
+          "generated": "M/M/M/M",
+          "full_vocab_interaction_l1": 0.0000020878334565502876
+        },
+        "reversed_order": {
+          "generated": "M/J/J/J",
+          "full_vocab_interaction_l1": 1.6821730744268488
+        },
+        "rotated_labels": {
+          "generated": "M/M/M/M",
+          "full_vocab_interaction_l1": 0.0017001486120865829
+        }
+      }
+    },
+    "frequency": {
+      "generated_semantics_invariant_across_variants": false,
+      "max_semantic_total_variation_across_variants": 0.9998631182017714,
+      "variants": {
+        "baseline": {
+          "generated": "unclear/high/high/high",
+          "full_vocab_interaction_l1": 2.1722910106809623
+        },
+        "paraphrase": {
+          "generated": "unclear/unclear/high/high",
+          "full_vocab_interaction_l1": 3.083639822200305
+        },
+        "reversed_order": {
+          "generated": "low/high/low/high",
+          "full_vocab_interaction_l1": 0.1060043630351799
+        },
+        "rotated_labels": {
+          "generated": "high/high/high/high",
+          "full_vocab_interaction_l1": 0.0013186095380013515
+        }
+      }
+    }
+  },
+  "claim_boundary": "Fresh source-cache scalar summaries replicate differently by architecture, while direct forced-choice distributions are prompt-conditioned. No persistence, causal cache mediation, universal layer, prompt-invariant category readout, or semantic-state claim."
+}

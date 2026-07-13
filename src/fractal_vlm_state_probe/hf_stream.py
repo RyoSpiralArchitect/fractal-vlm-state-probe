@@ -25,7 +25,7 @@ from .mlx_stream import (
     _select_frames,
     _should_summarize_cache,
 )
-from .prompts import SYNC_PROMPT, SYSTEM_PROMPT, resolve_probe_preset
+from .prompts import SYNC_PROMPT, SYSTEM_PROMPT, probe_metadata, resolve_probe_preset
 from .providers import get_capabilities
 from .seeding import set_global_seed
 from .stimulus import validate_manifest, write_json
@@ -257,7 +257,7 @@ def _run_frame_turn(
 
 def _run_probe_batch(
     *,
-    probes: list[dict[str, str]],
+    probes: list[dict[str, Any]],
     history: list[dict[str, str]],
     phase: str,
     runtime: dict[str, Any],
@@ -284,6 +284,7 @@ def _run_probe_batch(
                 "phase": phase,
                 "probe_id": probe["id"],
                 "prompt": probe["prompt"],
+                **probe_metadata(probe),
                 "assistant_text": turn["assistant_text"],
                 "generation": turn["generation"],
                 "trace": turn["trace"],
@@ -573,7 +574,7 @@ def _as_legacy_cache(past_key_values: Any) -> Any:
 def _load_hf_runtime(config: HFStreamRunConfig) -> dict[str, Any]:
     try:
         import torch
-        from transformers import AutoModelForImageTextToText, AutoModelForVision2Seq, AutoProcessor
+        from transformers import AutoProcessor
     except Exception as exc:
         raise RuntimeError(
             "Hugging Face runtime is unavailable. Install optional dependencies or use --dry-run."

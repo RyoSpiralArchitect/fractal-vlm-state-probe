@@ -17,6 +17,27 @@ FORCED_CHOICE_LABELS = {
     "forced_frequency_choice": ("L", "H", "C"),
 }
 
+FORCED_CHOICE_SEMANTICS = {
+    "forced_family_choice": {
+        "A": "mandelbrot",
+        "B": "julia",
+        "C": "unclear",
+    },
+    "forced_frequency_choice": {
+        "L": "low_frequency",
+        "H": "high_frequency",
+        "C": "unclear",
+    },
+}
+
+PROBE_METADATA_KEYS = (
+    "probe_family",
+    "prompt_variant",
+    "candidate_labels",
+    "candidate_order",
+    "candidate_semantics",
+)
+
 
 def full_vocab_sidecar_path(
     run_output_path: Path,
@@ -168,13 +189,15 @@ def format_full_vocab_readout_markdown(analysis: dict[str, Any]) -> str:
         "",
         "## Records",
         "",
-        "| Phase | Probe | Available | Vocab | Max pair JS | Interaction L1 | Interaction max | Token | Weighted log interaction RMS |",
-        "| --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |",
+        "| Phase | Probe | Variant | Available | Vocab | Max pair JS | Interaction L1 | Interaction max | Token | Weighted log interaction RMS |",
+        "| --- | --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |",
     ]
     for record in analysis["records"]:
         if not record["available"]:
             lines.append(
-                f"| `{record['phase']}` | `{record['probe_id']}` | `false` | n/a | n/a | n/a | n/a | n/a | n/a |"
+                f"| `{record['phase']}` | `{record['probe_id']}` | "
+                f"`{record.get('prompt_variant') or 'n/a'}` | `false` | n/a | "
+                "n/a | n/a | n/a | n/a | n/a |"
             )
             continue
         interaction = record["probability_contrasts"]["interaction"]
@@ -182,7 +205,8 @@ def format_full_vocab_readout_markdown(analysis: dict[str, Any]) -> str:
         max_js = max((item["jensen_shannon"] for item in pairwise), default=0.0)
         token = interaction["argmax_token"] or str(interaction["argmax_token_id"])
         lines.append(
-            f"| `{record['phase']}` | `{record['probe_id']}` | `true` | "
+            f"| `{record['phase']}` | `{record['probe_id']}` | "
+            f"`{record.get('prompt_variant') or 'n/a'}` | `true` | "
             f"{record['vocab_size']} | {max_js:.8g} | {interaction['l1_norm']:.8g} | "
             f"{interaction['max_abs']:.8g} | `{token}` | "
             f"{_format_metric(record['logprob_interaction']['reference_weighted_rms'])} |"
@@ -213,8 +237,8 @@ def format_full_vocab_readout_markdown(analysis: dict[str, Any]) -> str:
                     "",
                     "Forced-choice candidate probabilities:",
                     "",
-                    "| Cell | Candidate mass | Conditional probabilities | Generated token |",
-                    "| --- | ---: | --- | --- |",
+                    "| Cell | Candidate mass | Label conditionals | Semantic conditionals | Generated token | Generated semantic |",
+                    "| --- | ---: | --- | --- | --- | --- |",
                 ]
             )
             for cell in CELL_KEYS:
@@ -223,9 +247,17 @@ def format_full_vocab_readout_markdown(analysis: dict[str, Any]) -> str:
                     f"{label}={value:.6f}"
                     for label, value in cell_record["conditional_probabilities"].items()
                 )
+                semantic_conditional = ", ".join(
+                    f"{label}={value:.6f}"
+                    for label, value in cell_record[
+                        "semantic_conditional_probabilities"
+                    ].items()
+                )
                 lines.append(
                     f"| `{cell}` | {cell_record['candidate_probability_mass']:.8g} | "
-                    f"{conditional} | `{record['generated_tokens'][cell]}` |"
+                    f"{conditional} | {semantic_conditional} | "
+                    f"`{record['generated_tokens'][cell]}` | "
+                    f"`{record['generated_semantics'][cell]}` |"
                 )
         lines.extend(["", "Top probability-space interaction tokens:", ""])
         for item in record["top_probability_interaction_tokens"][:10]:
@@ -251,9 +283,17 @@ def _analyze_phase_probe(
     probe_id: str,
     max_token_effects: int,
 ) -> dict[str, Any]:
-    steps = {
-        cell: _first_generation_step(run, phase=phase, probe_id=probe_id)
+    probe_records = {
+        cell: _probe_record(run, phase=phase, probe_id=probe_id)
         for cell, run in runs.items()
+    }
+    metadata = _shared_probe_metadata(
+        probe_records,
+        phase=phase,
+        probe_id=probe_id,
+    )
+    steps = {
+        cell: _first_generation_step(record) for cell, record in probe_records.items()
     }
     missing = [
         cell
@@ -263,6 +303,7 @@ def _analyze_phase_probe(
     base = {
         "phase": phase,
         "probe_id": probe_id,
+        **metadata,
         "available": not missing,
         "missing_cells": missing,
     }
@@ -351,6 +392,13 @@ def _analyze_phase_probe(
         "generated_tokens": {
             cell: str(steps[cell].get("token", "")) for cell in CELL_KEYS
         },
+        "generated_semantics": {
+            cell: _generated_semantic(
+                steps[cell],
+                metadata.get("candidate_semantics"),
+            )
+            for cell in CELL_KEYS
+        },
         "pairwise_distances": pairwise,
         "probability_contrasts": {
             "spatial_main_effect": _vector_summary(probability_spatial, token_labels),
@@ -362,6 +410,8 @@ def _analyze_phase_probe(
             probe_id=probe_id,
             probabilities=probabilities,
             token_labels=token_labels,
+            candidate_labels=metadata.get("candidate_labels"),
+            candidate_semantics=metadata.get("candidate_semantics"),
         ),
         "top_probability_interaction_tokens": top_tokens,
     }
@@ -502,18 +552,45 @@ def _phase_probe_keys(runs: Any) -> list[tuple[str, str]]:
     return sorted(keys, key=lambda item: (phase_order.get(item[0], 99), item[1]))
 
 
-def _first_generation_step(
+def _probe_record(
     run: dict[str, Any],
     *,
     phase: str,
     probe_id: str,
 ) -> dict[str, Any] | None:
     for record in (run.get("probes") or {}).get(phase, []) or []:
-        if record.get("probe_id") != probe_id:
-            continue
-        steps = (record.get("generation") or {}).get("steps") or []
-        return steps[0] if steps else None
+        if record.get("probe_id") == probe_id:
+            return record
     return None
+
+
+def _first_generation_step(record: dict[str, Any] | None) -> dict[str, Any] | None:
+    steps = ((record or {}).get("generation") or {}).get("steps") or []
+    return steps[0] if steps else None
+
+
+def _shared_probe_metadata(
+    records: dict[str, dict[str, Any] | None],
+    *,
+    phase: str,
+    probe_id: str,
+) -> dict[str, Any]:
+    metadata: dict[str, Any] = {}
+    for key in PROBE_METADATA_KEYS:
+        values = [
+            record.get(key)
+            for record in records.values()
+            if record is not None and key in record
+        ]
+        if not values:
+            continue
+        if any(value != values[0] for value in values[1:]):
+            raise ValueError(f"probe metadata mismatch for {phase}/{probe_id}: {key}")
+        metadata[key] = values[0]
+
+    for key, value in _default_candidate_metadata(probe_id).items():
+        metadata.setdefault(key, value)
+    return metadata
 
 
 def _token_label_map(steps: Any) -> dict[int, str]:
@@ -534,10 +611,13 @@ def _forced_choice_candidate_summary(
     probe_id: str,
     probabilities: dict[str, np.ndarray],
     token_labels: dict[int, str],
+    candidate_labels: Any = None,
+    candidate_semantics: Any = None,
 ) -> dict[str, Any] | None:
-    labels = FORCED_CHOICE_LABELS.get(probe_id)
-    if labels is None:
+    labels = tuple(candidate_labels or FORCED_CHOICE_LABELS.get(probe_id) or ())
+    if not labels:
         return None
+    semantics = dict(candidate_semantics or {})
     token_ids = {
         label: sorted(
             token_id
@@ -551,6 +631,7 @@ def _forced_choice_candidate_summary(
         return {
             "available": False,
             "labels": list(labels),
+            "candidate_semantics": semantics,
             "token_ids": token_ids,
             "missing_labels": missing,
             "cells": {},
@@ -563,20 +644,54 @@ def _forced_choice_candidate_summary(
             for label, ids in token_ids.items()
         }
         mass = sum(raw.values())
+        conditional = {
+            label: value / mass if mass else 0.0 for label, value in raw.items()
+        }
         cells[cell] = {
             "candidate_probability_mass": mass,
             "probabilities": raw,
-            "conditional_probabilities": {
-                label: value / mass if mass else 0.0 for label, value in raw.items()
+            "conditional_probabilities": conditional,
+            "semantic_conditional_probabilities": {
+                semantics.get(label, label): value
+                for label, value in conditional.items()
             },
         }
     return {
         "available": True,
         "labels": list(labels),
+        "candidate_semantics": semantics,
         "token_ids": token_ids,
         "missing_labels": [],
         "cells": cells,
     }
+
+
+def _default_candidate_metadata(probe_id: str) -> dict[str, Any]:
+    if probe_id.startswith("forced_family_choice"):
+        return {
+            "probe_family": "family",
+            "candidate_labels": ["A", "B", "C"],
+            "candidate_semantics": dict(
+                FORCED_CHOICE_SEMANTICS["forced_family_choice"]
+            ),
+        }
+    if probe_id.startswith("forced_frequency_choice"):
+        return {
+            "probe_family": "frequency",
+            "candidate_labels": ["L", "H", "C"],
+            "candidate_semantics": dict(
+                FORCED_CHOICE_SEMANTICS["forced_frequency_choice"]
+            ),
+        }
+    return {}
+
+
+def _generated_semantic(
+    step: dict[str, Any],
+    candidate_semantics: Any,
+) -> str | None:
+    semantics = dict(candidate_semantics or {})
+    return semantics.get(str(step.get("token", "")).strip())
 
 
 def _run_condition(run: dict[str, Any]) -> str | None:

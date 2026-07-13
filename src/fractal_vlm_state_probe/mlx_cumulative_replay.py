@@ -23,7 +23,7 @@ from .mlx_stream import (
     summarize_prompt_cache_state,
     summarize_prompt_cache_token_layout,
 )
-from .prompts import SYNC_PROMPT, SYSTEM_PROMPT, resolve_probe_preset
+from .prompts import SYNC_PROMPT, SYSTEM_PROMPT, probe_metadata, resolve_probe_preset
 from .providers import get_capabilities
 from .seeding import set_global_seed
 from .stimulus import validate_manifest, write_json
@@ -287,7 +287,7 @@ def cumulative_replay_context_lines(frames: list[dict[str, Any]]) -> list[str]:
 
 def _run_direct_multimodal_probe_batch(
     *,
-    probes: list[dict[str, str]],
+    probes: list[dict[str, Any]],
     frames: list[dict[str, Any]],
     deliveries: dict[int, Any],
     prompt_cache_state_reference: Any,
@@ -366,6 +366,7 @@ def _run_direct_multimodal_probe_batch(
                 "phase": "after",
                 "probe_id": probe["id"],
                 "prompt": probe["prompt"],
+                **probe_metadata(probe),
                 "direct_multimodal_prompt": prompt,
                 "assistant_text": generation["text"],
                 "generation": generation["summary"],
