@@ -50,16 +50,19 @@ The replacement protocol uses no image-conditioned cache reuse:
 3. Save the complete first-step vocabulary distribution, not only a generated
    letter or top-k slice.
 
-The current valid standard matrix contains 26 `MM/JJ/MJ/JM` factorial points,
-104 cell runs, and 416 compressed full-vocabulary sidecars across SmolVLM2,
-Qwen2.5-VL, and Gemma 3. Every direct after-factorial contains non-identical
-cell distributions. At one frame, the independent replication surface is now
-four source pairs x three models, rather than two source pairs.
+The current valid standard matrix contains 30 `MM/JJ/MJ/JM` factorial points,
+120 cell runs, and 480 compressed full-vocabulary sidecars across SmolVLM2,
+Qwen2.5-VL, Gemma 3, and InternVL3. Every direct after-factorial contains
+non-identical cell distributions. At one frame, the independent replication
+surface is now four source pairs x four models.
 
 - Qwen repeats a late layer 33 `values` source-cache summary locus with a
   negative interaction at all four independent one-frame source pairs and all
   12 tested pair-by-length points. Its full-vocabulary interaction still
   changes non-monotonically over 1/2/4/8/16 images.
+- InternVL3 places all four one-frame maxima in a late layer 25-27 `values`
+  band with a negative interaction. The component, sign, and normalized depth
+  repeat, while the exact layer does not.
 - SmolVLM's one-frame source-cache argmax spans layers 1/21/22 and both keys and
   values across four pairs; the old persistent layer-23 story does not
   replicate.
@@ -68,10 +71,10 @@ four source pairs x three models, rather than two source pairs.
   family readout is nearly saturated while its frequency interaction is much
   larger and more variable.
 
-A separate Gemma 3 prompt audit adds 64 sidecars over four semantically aligned
-probe variants. The baseline rerun is byte-identical to the prior run, but
-candidate order, paraphrase, and label remapping can change both generated
-semantics and the 2x2 interaction by orders of magnitude. The direct readout is
+A separate three-model prompt audit adds 192 sidecars over four semantically
+aligned probe variants. All 48 baseline sidecars reproduce byte-for-byte, but
+candidate order, paraphrase, and label remapping change generated semantics and
+candidate distributions in architecture-specific ways. The direct readout is
 therefore a measurement of visual evidence combined with prompt calibration,
 not a prompt-invariant extraction of what the model "sees."
 
@@ -88,16 +91,18 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-1. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
-   for the four-pair replication, prompt audit, and newest interpretation.
-2. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
+1. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
+   for the three-model prompt audit, InternVL expansion, and newest reading.
+2. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
+   for the four-pair replication and first prompt audit.
+3. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
    for the protocol audit that defines the valid fresh-forward boundary.
-3. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
+4. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
    supported/provisional/withdrawn map.
-4. [Experiment Design](docs/experiment_design.md) for the control ladder.
-5. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
+5. [Experiment Design](docs/experiment_design.md) for the control ladder.
+6. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
    for the still-valid input and processor-space cross-palette analysis.
-6. [Examples](examples/README.md) for tracked summaries and the historical note
+7. [Examples](examples/README.md) for tracked summaries and the historical note
    sequence.
 
 Relevant historical cross-palette and intervention notes now carry
@@ -147,6 +152,8 @@ first logprob-focused pass unless a selected model exposes the needed signal.
 - Run forced-choice paraphrase, candidate-order, and label-remapping controls;
   align candidate probabilities by declared semantics before comparing prompt
   variants.
+- Aggregate semantic prompt-robustness audits across models while keeping
+  generated-label stability and probability-surface stability separate.
 - Record sampled KV-cache summaries over all layers and map local argmaxes to
   image-token runs and vision markers.
 - Analyze cache-summary spatial, palette, and interaction contrasts; track
@@ -159,6 +166,8 @@ first logprob-focused pass unless a selected model exposes the needed signal.
   contrast over raw and processor-space image statistics.
 - Reuse one loaded MLX model across manifest-batch conditions while creating a
   fresh prompt-cache state for every run.
+- Adapt InternVL's custom MLX image expansion and string-oriented chat template
+  when the installed Transformers processor path cannot construct them.
 - Promote MLX cache tensors to float32 for summary reductions, avoiding
   low-precision variance/L2 overflow, and promote unsupported bfloat16
   logprobs before saving.
@@ -506,6 +515,17 @@ python3 scripts/analyze_cache_prefix_audits.py \
   --output-md runs/cache_prefix_audit/prefix_audit_analysis.md
 ```
 
+To compare semantic-aligned prompt robustness across models:
+
+```bash
+python3 scripts/analyze_prompt_robustness_aggregate.py \
+  --analysis gemma3=runs/prompt_controls/gemma3/prompt_robustness.json \
+  --analysis qwen=runs/prompt_controls/qwen/prompt_robustness.json \
+  --analysis smol=runs/prompt_controls/smol/prompt_robustness.json \
+  --output-json runs/prompt_controls/cross_model/prompt_robustness_aggregate.json \
+  --output-md runs/prompt_controls/cross_model/prompt_robustness_aggregate.md
+```
+
 The legacy cache-swap and cache-branch CLIs remain in the repository so the
 withdrawn path can be reproduced and audited. Do not treat their current
 MLX-VLM `0.4.4` outputs as persistence or intervention evidence.
@@ -568,6 +588,8 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0025: Controlled Mid-Layer Values-Swap Confirmation](docs/research_notes/0025_controlled_mid_layer_values_swap_confirmation.md)
 - [Research Note 0026: Qwen Cumulative-Replay Trajectory](docs/research_notes/0026_qwen_cumulative_replay_trajectory.md)
 - [Research Note 0027: Cache-Prefix Audit and Direct Full-Vocabulary Replay](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
+- [Research Note 0028: Source-Pair Replication and Prompt Robustness](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
+- [Research Note 0029: Cross-Model Prompt Audit and InternVL Expansion](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
 
 ## Claim Boundary
 

@@ -37,6 +37,7 @@ reading the current experiment logic and claim boundaries.
 | [0026 Qwen Cumulative-Replay Trajectory](../docs/research_notes/0026_qwen_cumulative_replay_trajectory.md) | [summary.json](research_notes/0026_qwen_cumulative_replay_trajectory/summary.json) | Fresh ACK cache trajectory remains usable; the old text-only branch readout is withdrawn. |
 | [0027 Cache-Prefix Audit and Direct Full-Vocabulary Replay](../docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) | [summary.json](research_notes/0027_cache_prefix_audit_and_direct_full_vocab/summary.json) | Current evidence boundary: seven unsafe cache-reuse audits, 80 valid direct cells, full-vocabulary trajectories over SmolVLM, Qwen, and Gemma3. |
 | [0028 Source-Pair Replication and Prompt Robustness](../docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md) | [summary.json](research_notes/0028_source_pair_replication_and_prompt_robustness/summary.json) | Four independent source pairs across three VLMs, Qwen's 4/4 layer-33 `values` replication, and a semantic-aligned prompt audit showing strong readout calibration effects. |
+| [0029 Cross-Model Prompt Audit and InternVL Expansion](../docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md) | [summary.json](research_notes/0029_cross_model_prompt_and_internvl_expansion/summary.json) | Three-model prompt robustness with 48/48 exact baseline sidecars, plus InternVL's four-pair late negative `values` band and the four-architecture evidence matrix. |
 
 ## Reading Order
 

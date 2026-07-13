@@ -354,6 +354,8 @@ def _metric_range_text(record: dict[str, Any]) -> str:
 
 
 def _short_model(model_id: str) -> str:
+    if "InternVL3" in model_id:
+        return "InternVL3-2B"
     if "Qwen2.5" in model_id:
         return "Qwen2.5-VL-3B"
     if "SmolVLM2" in model_id:

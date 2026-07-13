@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "cross_model_prompt_and_internvl_expansion_summary",
+  "note": "0029_cross_model_prompt_and_internvl_expansion",
+  "date": "2026-07-13",
+  "protocol": {
+    "context_protocol": "single_turn_ordered_multi_image_replay",
+    "after_probe_protocol": "direct_multimodal_replay",
+    "image_conditioned_cache_reuse": false,
+    "frame_count": 1,
+    "stream_seed": 20260604,
+    "probe_seed": 0,
+    "stream_temperature": 0.0,
+    "probe_temperature": 0.0
+  },
+  "standard_matrix": {
+    "model_count": 4,
+    "source_pair_count": 4,
+    "factorial_point_count": 30,
+    "cell_run_count": 120,
+    "full_vocab_sidecar_count": 480,
+    "one_frame_factorial_point_count": 16,
+    "all_direct_after_factorials_nonidentical": true
+  },
+  "prompt_robustness_audit": {
+    "model_count": 3,
+    "source_pair": "e_f",
+    "cell_run_count": 12,
+    "full_vocab_sidecar_count": 192,
+    "baseline_sidecar_hash_matches": 48,
+    "baseline_sidecar_hash_comparisons": 48,
+    "models": {
+      "gemma3": {
+        "family_generated_variant_changes": 1,
+        "family_max_semantic_tv": 0.9997965053479084,
+        "family_baseline_semantic_interaction_l1": 0.00024675696082153924,
+        "frequency_generated_variant_changes": 3,
+        "frequency_max_semantic_tv": 0.9998631182017714,
+        "frequency_baseline_semantic_interaction_l1": 2.172291467121393
+      },
+      "qwen": {
+        "family_generated_variant_changes": 1,
+        "family_max_semantic_tv": 0.5005186770579353,
+        "family_baseline_semantic_interaction_l1": 0.39781466991754144,
+        "frequency_generated_variant_changes": 1,
+        "frequency_max_semantic_tv": 0.5988138677042966,
+        "frequency_baseline_semantic_interaction_l1": 0.060289619778655434
+      },
+      "smol": {
+        "family_generated_variant_changes": 2,
+        "family_max_semantic_tv": 0.18211023369877893,
+        "family_baseline_semantic_interaction_l1": 0.11223470418280868,
+        "frequency_generated_variant_changes": 3,
+        "frequency_max_semantic_tv": 0.31667456543320105,
+        "frequency_baseline_semantic_interaction_l1": 0.09866586466283511
+      }
+    }
+  },
+  "internvl3": {
+    "model_id": "mlx-community/InternVL3-2B-4bit",
+    "snapshot_revision": "e474b39487e563dbfa12c12e6a7e7d743cf340d4",
+    "mlx_vlm_version": "0.4.4",
+    "processor_compatibility": "internvl_chat_custom_image_expansion",
+    "integrity": {
+      "run_json_count": 16,
+      "sidecar_count": 64,
+      "distinct_sidecar_path_count": 64,
+      "hash_check_failures": 0,
+      "nan_or_positive_infinity_failures": 0,
+      "vocab_size": 151674,
+      "reported_cache_layers": 28,
+      "total_cache_layers": 28,
+      "cache_token_count": 3471,
+      "image_token_count": 3328,
+      "image_token_run_count": 1
+    },
+    "cache_factorials": {
+      "b_c": {
+        "layer_index": 25,
+        "tensor": "values",
+        "interaction_effect": -88.9603271484375,
+        "relative_abs_interaction": 0.044249573037186574,
+        "normalized_depth": 0.9259259259259259
+      },
+      "c_d": {
+        "layer_index": 26,
+        "tensor": "values",
+        "interaction_effect": -156.664794921875,
+        "relative_abs_interaction": 0.0675959838526774,
+        "normalized_depth": 0.9629629629629629
+      },
+      "d_e": {
+        "layer_index": 27,
+        "tensor": "values",
+        "interaction_effect": -146.18408203125,
+        "relative_abs_interaction": 0.06227261504630848,
+        "normalized_depth": 1.0
+      },
+      "e_f": {
+        "layer_index": 27,
+        "tensor": "values",
+        "interaction_effect": -76.28955078125,
+        "relative_abs_interaction": 0.03233279052504647,
+        "normalized_depth": 1.0
+      }
+    },
+    "cache_summary": {
+      "dominant_location": "layer_27_values",
+      "dominant_location_share": 0.5,
+      "values_component_share": 1.0,
+      "negative_sign_share": 1.0,
+      "normalized_depth_min": 0.9259259259259259,
+      "normalized_depth_max": 1.0
+    },
+    "readout_summary": {
+      "family_interaction_l1_median": 0.5104167601624676,
+      "family_interaction_l1_min": 0.3337798594845587,
+      "family_interaction_l1_max": 0.6268744796049087,
+      "frequency_interaction_l1_median": 0.19641626410639274,
+      "frequency_interaction_l1_min": 0.06534732548806052,
+      "frequency_interaction_l1_max": 0.41667588339157013,
+      "family_generated_patterns": {
+        "b_c": "mandelbrot/mandelbrot/mandelbrot/mandelbrot",
+        "c_d": "mandelbrot/mandelbrot/unclear/mandelbrot",
+        "d_e": "mandelbrot/mandelbrot/mandelbrot/mandelbrot",
+        "e_f": "mandelbrot/mandelbrot/mandelbrot/mandelbrot"
+      },
+      "frequency_generated_pattern_all_pairs": "unclear/unclear/unclear/unclear"
+    }
+  },
+  "four_model_cache_profiles": {
+    "qwen": "exact late values locus, 4/4 negative",
+    "internvl3": "late values band, 4/4 negative",
+    "gemma3": "early values band, pair-dependent layer and sign",
+    "smolvlm2": "broad pair-dependent layer, component, and sign"
+  },
+  "claim_boundary": "Fresh source-cache summaries and fresh direct readouts are separate condition-level observations; no persistence, cache intervention, causal mediation, universal layer, or prompt-invariant categorical decoder is established.",
+  "local_artifacts": {
+    "prompt_aggregate": "runs/source_pair_expansion_50_v1/prompt_controls/cross_model_e_f_1f_forced_choice_robustness_seed0/prompt_robustness_aggregate.json",
+    "internvl_runs": "runs/internvl3_four_pair_1f_direct_seed0/",
+    "internvl_factorials": "runs/internvl3_full_vocab_factorials/",
+    "four_model_aggregate": "runs/source_pair_expansion_50_v1/cross_model_four_arch_four_pair/cross_model_replication.json"
+  }
+}

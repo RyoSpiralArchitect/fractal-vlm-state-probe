@@ -16,8 +16,9 @@ the same four factorial cells are not independent samples.
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4/8/16; 48 cells total | All 12 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` with negative sign at all 12 points and all 4 one-frame pairs | exact scalar-locus replication within this model and source set | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
 | Gemma 3 direct factorial trajectory | Gemma-3-4B-it 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2; 24 cells total | All 6 direct after-factorials are non-identical; all four one-frame maxima are early `values`, but exact layer and sign vary; frequency readout can change sharply | component-level regularity plus pair-dependent exact locus | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
-| Cross-model direct aggregate | Three VLMs, complete first-step vocabulary | 26 factorial points, 104 cells, 416 sidecars | Every direct after-factorial is non-identical; cache loci and readout interactions vary by architecture, source pair, probe, and frame count | replicated heterogeneity; Qwen-specific exact-locus result | [tracked summary](../examples/research_notes/0028_source_pair_replication_and_prompt_robustness/summary.json) |
-| Prompt robustness audit | Gemma-3-4B, `e_f`, fresh direct probes | 1 source pair x 4 cells x 8 probes, 64 sidecars | Baseline repeats byte-for-byte, while paraphrase, candidate order, and label mapping change semantic candidate distributions and 2x2 interactions by orders of magnitude | direct single-model/pair prompt-sensitivity observation | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
+| InternVL3 direct factorial replication | InternVL3-2B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All four direct after-factorials are non-identical; all ACK maxima are late layer 25-27 `values` with negative sign | component/sign/depth-band replication with pair-dependent exact layer | [Note 0029](research_notes/0029_cross_model_prompt_and_internvl_expansion.md) |
+| Cross-model direct aggregate | Four VLMs, complete first-step vocabulary | 30 factorial points, 120 cells, 480 sidecars | Every direct after-factorial is non-identical; Qwen has an exact late locus, InternVL a late band, Gemma an early band, and SmolVLM broad pair dependence | replicated architecture heterogeneity plus model-conditional regularities | [tracked summary](../examples/research_notes/0029_cross_model_prompt_and_internvl_expansion/summary.json) |
+| Prompt robustness audit | Gemma 3, Qwen2.5-VL, and SmolVLM2, `e_f`, fresh direct probes | 1 source pair x 3 models x 4 cells x 8 probes, 192 sidecars | All 48 baseline sidecars repeat byte-for-byte; prompt variants change generated semantics and semantic probability surfaces differently by architecture | replicated cross-model prompt sensitivity on one source pair | [Note 0029](research_notes/0029_cross_model_prompt_and_internvl_expansion.md) |
 
 ## Withdrawn From The Evidence Set
 
@@ -37,17 +38,18 @@ the same four factorial cells are not independent samples.
 2. The audited MLX-VLM `0.4.4` incremental and text-only branch paths do not
    preserve the multimodal prefix needed for persistence or intervention
    interpretation.
-3. Under fresh direct multimodal probes, every one of the 26 tested
+3. Under fresh direct multimodal probes, every one of the 30 tested
    `MM/JJ/MJ/JM` factorials has non-identical full-vocabulary first-step
    distributions at saved numerical precision.
 4. At one frame, Qwen's layer 33 `values` scalar interaction locus and negative
-   sign repeat over all four independent source pairs. Gemma stays in early
-   `values` but changes layer/sign, while SmolVLM changes layer/component/sign.
+   sign repeat over all four independent source pairs. InternVL repeats a late
+   negative `values` band, Gemma stays in early `values` but changes layer/sign,
+   and SmolVLM changes layer/component/sign.
 5. A generated letter or top-k set can remain fixed while the complete
    distribution changes; visible-label equality is not distribution equality.
-6. In the Gemma `e_f` audit, semantic forced-choice distributions and
-   factorial interactions are not invariant to prompt and candidate
-   formulation, even though the baseline is exactly reproducible.
+6. In all three `e_f` prompt audits, at least one variant changes generated
+   semantics and semantic probability surfaces, even though every baseline
+   sidecar reproduces exactly.
 
 ### Provisional
 
@@ -56,11 +58,12 @@ the same four factorial cells are not independent samples.
 - Qwen layer 33 `values` is a reproducible scalar summary locus for these four
   one-frame source pairs and all 12 tested pair-by-length points, not a
   universal mechanistic locus.
+- The late negative `values` profiles in Qwen and InternVL are a candidate
+  architecture grouping, not evidence of one shared mechanism.
 - Cache-summary magnitude and direct readout interaction are neither equivalent
   nor monotonically coupled in the current trajectories.
-- Probe family and candidate calibration matter: Gemma 3 is nearly saturated
-  for the standard family probe, strongly sensitive for the standard frequency
-  probe, and sharply variant-dependent in the prompt audit.
+- Probe family and candidate calibration matter in all three audited models;
+  the magnitude and visible-label response are strongly architecture-specific.
 
 ### Not Supported Yet
 
@@ -90,25 +93,25 @@ the same four factorial cells are not independent samples.
 
 ## Highest-Value Next Data
 
-1. Replicate the prompt audit across Qwen, SmolVLM, and additional source pairs.
+1. Repeat the prompt audit on a second source pair.
 2. Balance wording, candidate order, and token-to-semantics mapping as separate
    factors, including neutral and non-forced readouts.
-3. Save full-vector cache contrasts at the stable Qwen and Gemma candidate
-   loci, with image-token region reporting.
+3. Save full-vector cache contrasts in the late Qwen/InternVL bands and Gemma's
+   early band, with image-token region reporting.
 4. Rebuild intervention logic only on a multimodal suffix path that asserts
    exact prefix and cache sequence-length compatibility before mutation.
-5. Add a fourth architecture plus natural and geometric matched controls under
+5. Add natural and geometric matched controls plus a fifth architecture under
    the same direct protocol.
 
 ## Manuscript-Safe Wording
 
 Preferred:
 
-> In three local VLMs, fresh multimodal cross-palette factorial cells produced
+> In four local VLMs, fresh multimodal cross-palette factorial cells produced
 > non-identical complete first-step distributions across four independent
-> source pairs. Qwen reproduced one late source-cache summary locus, while a
-> Gemma control showed that forced-choice semantic interactions can change
-> sharply with prompt formulation. The protocol does not test state persistence
+> source pairs. Source-cache scalar loci formed distinct architecture profiles,
+> while three-model controls showed that forced-choice semantic interactions
+> change with prompt formulation. The protocol does not test state persistence
 > or causal cache mediation.
 
 Avoid:
