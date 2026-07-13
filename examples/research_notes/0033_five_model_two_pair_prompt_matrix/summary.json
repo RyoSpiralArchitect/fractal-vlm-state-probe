@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "five_model_two_pair_prompt_matrix_summary",
+  "note": "0033_five_model_two_pair_prompt_matrix",
+  "date": "2026-07-14",
+  "protocol": {
+    "models": 5,
+    "source_pairs": [
+      "b_c",
+      "e_f"
+    ],
+    "visual_cells": [
+      "mm",
+      "jj",
+      "mj",
+      "jm"
+    ],
+    "probe_families": [
+      "family",
+      "frequency"
+    ],
+    "prompt_variants": [
+      "baseline",
+      "paraphrase",
+      "reversed_order",
+      "rotated_labels"
+    ],
+    "temperature": 0,
+    "stream_seed": 20260604,
+    "probe_seed": 0,
+    "after_probe_protocol": "direct_multimodal_replay",
+    "cache_reuse": false,
+    "readout": "complete first-step vocabulary distribution"
+  },
+  "integrity": {
+    "model_source_pair_audits": 10,
+    "cell_runs": 40,
+    "full_vocab_sidecars": 640,
+    "validated_sidecars": 640,
+    "validation_failures": 0,
+    "baseline_bitwise_exact": {
+      "matches": 160,
+      "total": 160
+    },
+    "new_b_c_extension": {
+      "models": [
+        "gemma3",
+        "internvl3",
+        "qwen",
+        "smol"
+      ],
+      "cell_runs": 16,
+      "sidecars": 256,
+      "baseline_bitwise_exact": "64/64"
+    }
+  },
+  "paired_replication": {
+    "record_count": 40,
+    "generated_pattern_agreement": {
+      "count": 34,
+      "total": 40
+    },
+    "balanced_dominant_axis_agreement": {
+      "count": 11,
+      "total": 40
+    },
+    "both_agreement": {
+      "count": 10,
+      "total": 40
+    },
+    "agreement_contingency": {
+      "generated_same_axis_same": 10,
+      "generated_same_axis_different": 24,
+      "generated_different_axis_same": 1,
+      "generated_different_axis_different": 5
+    },
+    "balanced_share_l1": {
+      "min": 0.035854483,
+      "median": 0.95209619,
+      "max": 1.9243178
+    }
+  },
+  "model_profiles": {
+    "gemma3": {
+      "generated_pattern_agreement": "5/8",
+      "balanced_axis_agreement": "5/8",
+      "both_agreement": "4/8",
+      "family_generated_axis": "3/4 / 2/4",
+      "frequency_generated_axis": "2/4 / 3/4",
+      "balanced_share_l1_median": 0.75087393
+    },
+    "internvl3": {
+      "generated_pattern_agreement": "8/8",
+      "balanced_axis_agreement": "3/8",
+      "both_agreement": "3/8",
+      "family_generated_axis": "4/4 / 2/4",
+      "frequency_generated_axis": "4/4 / 1/4",
+      "balanced_share_l1_median": 0.99693094
+    },
+    "lfm2_vl": {
+      "generated_pattern_agreement": "6/8",
+      "balanced_axis_agreement": "0/8",
+      "both_agreement": "0/8",
+      "family_generated_axis": "2/4 / 0/4",
+      "frequency_generated_axis": "4/4 / 0/4",
+      "balanced_share_l1_median": 1.2286212
+    },
+    "qwen": {
+      "generated_pattern_agreement": "7/8",
+      "balanced_axis_agreement": "3/8",
+      "both_agreement": "3/8",
+      "family_generated_axis": "3/4 / 1/4",
+      "frequency_generated_axis": "4/4 / 2/4",
+      "balanced_share_l1_median": 0.79827628
+    },
+    "smol": {
+      "generated_pattern_agreement": "8/8",
+      "balanced_axis_agreement": "0/8",
+      "both_agreement": "0/8",
+      "family_generated_axis": "4/4 / 0/4",
+      "frequency_generated_axis": "4/4 / 0/4",
+      "balanced_share_l1_median": 1.051255,
+      "b_c_dominant_axis_all_variants": "interaction",
+      "e_f_dominant_axis_all_variants": "palette"
+    }
+  },
+  "source_pair_profiles": {
+    "b_c": {
+      "changed_nonbaseline_generated_patterns": "20/30",
+      "cross_model_shared_variant_patterns": "0/8",
+      "balanced_dominance_spatial_palette_interaction": [
+        10,
+        9,
+        21
+      ],
+      "interaction_above_one_third": "24/40"
+    },
+    "e_f": {
+      "changed_nonbaseline_generated_patterns": "20/30",
+      "cross_model_shared_variant_patterns": "0/8",
+      "balanced_dominance_spatial_palette_interaction": [
+        15,
+        14,
+        11
+      ],
+      "interaction_above_one_third": "14/40"
+    },
+    "combined": {
+      "balanced_dominance_spatial_palette_interaction": [
+        25,
+        23,
+        32
+      ],
+      "interaction_above_one_third": "38/80"
+    }
+  },
+  "interpretation": {
+    "supported": "Categorical prompt-response replication is substantially more common than replication of the dominant balanced full-vocabulary factorial axis in this two-pair matrix.",
+    "not_supported": [
+      "forty independent visual replications",
+      "prompt-invariant semantic decoding",
+      "one shared hidden-state mechanism",
+      "causal source-cache to readout mediation",
+      "persistent multimodal state",
+      "semantic or subjective-state steering"
+    ]
+  },
+  "artifacts": {
+    "matrix_json": "runs/source_pair_expansion_50_v1/prompt_controls/five_model_two_pair_1f_forced_choice_robustness_seed0/prompt_robustness_pair_matrix.json",
+    "matrix_markdown": "runs/source_pair_expansion_50_v1/prompt_controls/five_model_two_pair_1f_forced_choice_robustness_seed0/prompt_robustness_pair_matrix.md",
+    "five_model_b_c": "runs/source_pair_expansion_50_v1/prompt_controls/five_model_b_c_1f_forced_choice_robustness_seed0/",
+    "five_model_e_f": "runs/source_pair_expansion_50_v1/prompt_controls/five_model_e_f_1f_forced_choice_robustness_seed0/"
+  }
+}

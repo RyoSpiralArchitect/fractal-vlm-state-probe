@@ -145,10 +145,10 @@ non-identical cell distributions. Selected full-vector captures now cover 26
 model-local targets and 104 layer-by-pair analyses. The next replication should
 add independently generated trajectories and matched
 natural/geometric/frequency controls before extending nested lengths. The
-`e_f` prompt audit now covers all five models, and LFM2 has the first
-second-pair prompt replication: generated patterns agree in 6/8 variants while
-balanced-axis dominance agrees in 0/8. The remaining four models still need a
-second-pair prompt audit.
+prompt audit now covers all five models on `b_c` and `e_f`. Generated patterns
+agree across source pairs in 34/40 paired model-family-variant records, while
+balanced-axis dominance agrees in 11/40. The next prompt replication should
+extend to `c_d` and `d_e` rather than add more nested replay lengths.
 
 ## Phase 5: Research Report
 
@@ -158,10 +158,10 @@ second-pair prompt audit.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0032 encode the audited claim
+Status: the evidence matrix and Notes 0027-0033 encode the audited claim
 boundary, five-model direct replication, selected full-vector localization,
-balanced factorial calibration, and five-model prompt sensitivity. Initial
-manuscript tables exist; calibrated nulls and figures remain future work. The
-current priority is a balanced prompt factorial, independent trajectory and
-control replication, head/position-resolved vector analysis, and a valid
-intervention path before causal prose is promoted.
+balanced factorial calibration, and the five-model two-pair prompt matrix.
+Initial manuscript tables exist; calibrated nulls and figures remain future
+work. The current priority is a balanced prompt factorial, independent
+trajectory and control replication, head/position-resolved vector analysis,
+and a valid intervention path before causal prose is promoted.

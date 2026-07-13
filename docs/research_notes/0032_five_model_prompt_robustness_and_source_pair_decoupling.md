@@ -2,6 +2,11 @@
 
 Date: 2026-07-14
 
+> **Follow-up:** [Note 0033](0033_five_model_two_pair_prompt_matrix.md)
+> extends the second-pair audit to all five models. Its 5 x 2 matrix supersedes
+> this note's LFM2-only source-pair replication limit while preserving the
+> results reported here.
+
 ## Status
 
 Completed as two extensions of the calibrated fresh-forward readout protocol:
@@ -176,8 +181,8 @@ The strongest manuscript-safe statement is:
 
 ## Claim Boundaries
 
-- The five-model comparison uses one source pair, `e_f`; only LFM2 currently
-  has a second-pair prompt audit.
+- In this note's snapshot, the five-model comparison uses `e_f` and only LFM2
+  has a second-pair audit. Note 0033 subsequently closes that coverage gap.
 - Paraphrase, candidate order, and token mapping are diagnostic variants, not a
   fully crossed orthogonal prompt factorial.
 - The measured distribution is the first generated-token distribution, not a
