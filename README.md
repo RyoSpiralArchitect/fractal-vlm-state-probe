@@ -1,23 +1,25 @@
 # Fractal VLM State Probe
 
 Deterministic visual controls, audited multimodal protocols, full-vocabulary
-factorial readouts, and full-vector source-cache contrasts for asking what a
-VLM changes before a generated label makes that change visible.
+factorial readouts, and full-vector source-cache contrasts for separating what
+a VLM visibly answers from what the measurement actually resolves.
 
 This project began by asking whether controlled visual streams change later
 non-visual generation. A cache-prefix audit changed both the protocol and the
 question. The current target is narrower and directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
-> decompose into spatial, palette, and interaction effects across source-cache
-> token regions and prompt-conditioned full-vocabulary readouts, and which
-> locations, magnitudes, or directions repeat across models, source pairs, and
-> probe formulations?
+> decompose into spatial, palette, and interaction effects across complete
+> prompt-conditioned readout distributions and selected source-cache tensors,
+> and which categorical patterns, scalar loci, or vector directions actually
+> repeat across models, source pairs, and probe formulations?
 
-The main measured object is no longer a generated label or one scalar cache
-distance. It is now the aligned 2x2 contrast itself: first over complete
-readout distributions, and, at selected cache targets, over the full tensor
-split into image, pre-image, and post-image token regions.
+A generated candidate is the visible answer, not the measured state. The main
+measured object is now the aligned 2x2 contrast itself: first over complete
+readout distributions and, at selected cache targets, over the full tensor.
+Token roles are used only when the processor-expanded layout is identified.
+An unchanged label therefore does not imply an unchanged distribution, and a
+repeatable scalar cache locus does not imply one shared full-vector mechanism.
 
 The repo is deliberately cautious. It does not claim that a model has subjective
 experience, enters a mental state, or undergoes adaptation in the human sense.
@@ -57,14 +59,13 @@ The replacement protocol uses no image-conditioned cache reuse:
 3. Save the complete first-step vocabulary distribution, not only a generated
    letter or top-k slice.
 
-The balanced five-model core contains 34 `MM/JJ/MJ/JM` factorial points, 136
-cell runs, and 544 compressed full-vocabulary sidecars across SmolVLM2,
-Qwen2.5-VL, Gemma 3, InternVL3, and LFM2-VL. A Phi-3.5 Vision `c_d` pilot brings
-the valid direct surface to 35 points, 140 cell runs, and 560 sidecars across
-six architectures. Every direct after-factorial contains non-identical cell
-distributions. The independent one-frame core is four source pairs x five
-models; Phi coverage is intentionally unbalanced and currently contains one
-pair.
+The independent one-frame direct core is now balanced over four source pairs x
+six models: SmolVLM2, Qwen2.5-VL, Gemma 3, InternVL3, LFM2-VL, and Phi-3.5
+Vision. The wider valid direct surface, including nested replay lengths,
+plus one bounded Granite Vision `c_d` pilot contains 39 `MM/JJ/MJ/JM`
+factorial points, 156 cell runs, and 624 compressed full-vocabulary sidecars.
+Every direct after-factorial contains non-identical cell distributions. Granite
+is not counted as a seventh balanced four-pair replication.
 
 - Qwen repeats a late layer 33 `values` source-cache summary locus with a
   negative interaction at all four independent one-frame source pairs and all
@@ -84,34 +85,41 @@ pair.
   Its full-vector source-cache contrasts are spatial-dominant at every captured
   layer, K/V component, and source pair, while its direct readout axis changes
   with source pair and probe family.
-- Phi-3.5 Vision adds a sixth architecture pilot on `c_d`. Its standard family
-  and frequency readouts are both palette-dominant, but prompt variants change
-  the generated family pattern in 3/3 non-baseline variants and split frequency
-  dominance between palette and spatial axes.
+- Phi-3.5 Vision now covers all four source pairs. Its scalar ACK argmax is in
+  early `keys` for 4/4 pairs, with a positive sign in 4/4 and layer 3 in 3/4.
+  Its standard direct axes still vary by source pair, and all 12 fixed
+  full-tensor targets are spatial-dominant despite the scalar interaction
+  profile.
+- Granite Vision passes the fresh-forward and full-vocabulary contracts on the
+  fixed `c_d` pair. Its direct family readout is spatial-dominant and frequency
+  readout interaction-dominant. Across prompt controls, all generated first
+  tokens remain outside the declared candidate labels while the measured axis
+  is spatial in 7/8 records and interaction in 1/8. Its processor sequence has
+  1,474 tokens but the effective cache offset is 3,073, so raw cache positions
+  remain role-unassigned and no full-vector localization is claimed.
 
-The core prompt audit now covers `b_c`, `c_d`, `d_e`, and `e_f` in all five
-models: 20 model/pair audit units, 80 cell runs, and 1,280 sidecars, with all
-320 baseline sidecars reproducing bitwise. Across the 40 fixed
-model-family-variant records, generated four-cell semantic patterns agree over
-all four source pairs in 27, while the dominant balanced full-vocabulary axis
-agrees in only 2. Over the six dependent pairwise comparisons per record,
-generated patterns agree in 185/240 and dominant axes in 100/240; in 105
-comparisons the categorical pattern repeats while the axis changes. The Phi
-`c_d` audit adds 64 validated sidecars and another distinct prompt profile, but
-does not yet constitute a sixth balanced four-pair replication.
+The prompt audit is likewise balanced over all six models and four pairs: 24
+model/pair audit units, 96 cell runs, and 1,536 sidecars, with all 384 baseline
+sidecars reproducing bitwise. Across 48 fixed model-family-variant records,
+generated four-cell semantic patterns agree over all four pairs in 29, the
+dominant balanced full-vocabulary axis agrees in 3, and both agree in only 2.
+Over the six dependent pairwise comparisons per record, generated patterns
+agree in 206/288 and dominant axes in 120/288; in 118 comparisons the visible
+pattern repeats while the measured axis changes. Including the unbalanced
+Granite `c_d` pilot, prompt artifact accounting is 25 audits, 100 cell runs,
+1,600 sidecars, and 400/400 bitwise-exact baseline sidecars; the cross-pair
+replication statistics remain the balanced six-model results above.
 
-The balanced five-model full-vector core contains 80 source-only ACK runs, 416
-target tensor sidecars, and 104 layer-by-pair analyses over 26 model-local
-target groups. Every pre-image prefix has exactly zero effect, 100/104
-interaction argmaxes are image tokens, and 102/104 image-token energy fractions
-exceed 0.9. Balanced `+1/+1/-1/-1` calibration makes spatial, palette, and
-interaction dominant in 84, 14, and 6 analyses respectively. Phi adds four ACK
-runs, eight tensors, and two selected `keys` analyses; both are
-spatial-dominant even though scalar summaries highlight interaction. Phi's
-processor-expanded image-token layout is not yet reconstructed, so its raw
-positions are not assigned image/non-image roles. High-energy core directions
-remain only weakly aligned across pairs, and a repeatable scalar locus does not
-imply one shared vector mechanism.
+The selected full-vector surface contains 96 source-only ACK runs, 464 target
+tensor sidecars, and 116 layer-by-pair analyses. The processor-partitioned
+five-model subset remains 104 analyses: every pre-image prefix has zero effect,
+100/104 interaction argmaxes are image tokens, and 102/104 image-token energy
+fractions exceed 0.9. Adding Phi's 12 fixed analyses changes balanced
+spatial/palette/interaction dominance to 96/14/6 over the complete selected
+surface. Phi's image-token layout is unresolved, so its 917 positions remain
+role-unassigned. Its cross-pair interaction-vector cosine median decreases
+from 0.274 at layer 1 to 0.084 at layer 27, separating scalar-locus replication
+from full-vector direction replication.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
@@ -126,29 +134,31 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-1. [Note 0034](docs/research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md)
-   for the complete five-model x four-source-pair prompt matrix and the
-   Phi-3.5 Vision pilot.
-2. [Note 0033](docs/research_notes/0033_five_model_two_pair_prompt_matrix.md)
+1. [Note 0035](docs/research_notes/0035_six_model_four_pair_completion_and_phi_full_vector.md)
+   for the balanced six-model x four-pair prompt matrix and Phi full-vector
+   replication, plus the bounded Granite Vision seventh-architecture pilot.
+2. [Note 0034](docs/research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md)
+   for the preceding five-model matrix and unbalanced Phi pilot.
+3. [Note 0033](docs/research_notes/0033_five_model_two_pair_prompt_matrix.md)
    for the earlier two-pair matrix and its transition into the four-pair test.
-3. [Note 0032](docs/research_notes/0032_five_model_prompt_robustness_and_source_pair_decoupling.md)
+4. [Note 0032](docs/research_notes/0032_five_model_prompt_robustness_and_source_pair_decoupling.md)
    for five-model prompt robustness and the LFM2 two-source-pair decoupling.
-4. [Note 0031](docs/research_notes/0031_balanced_contrasts_five_model_expansion.md)
+5. [Note 0031](docs/research_notes/0031_balanced_contrasts_five_model_expansion.md)
    for balanced factorial calibration and the five-model cache/readout matrix.
-5. [Note 0030](docs/research_notes/0030_full_vector_cache_factorials.md)
+6. [Note 0030](docs/research_notes/0030_full_vector_cache_factorials.md)
    for the first full-vector 2x2 cache result and direction analysis.
-6. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
+7. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
    for the three-model prompt audit and InternVL expansion.
-7. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
+8. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
    for the four-pair replication and first prompt audit.
-8. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
+9. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
    for the protocol audit that defines the valid fresh-forward boundary.
-9. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
+10. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
    supported/provisional/withdrawn map.
-10. [Experiment Design](docs/experiment_design.md) for the control ladder.
-11. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
+11. [Experiment Design](docs/experiment_design.md) for the control ladder.
+12. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
    for the still-valid input and processor-space cross-palette analysis.
-12. [Examples](examples/README.md) for tracked summaries and the historical note
+13. [Examples](examples/README.md) for tracked summaries and the historical note
    sequence.
 
 Relevant historical cross-palette and intervention notes now carry
@@ -722,6 +732,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0032: Five-Model Prompt Robustness and Source-Pair Decoupling](docs/research_notes/0032_five_model_prompt_robustness_and_source_pair_decoupling.md)
 - [Research Note 0033: Five-Model Two-Pair Prompt Matrix](docs/research_notes/0033_five_model_two_pair_prompt_matrix.md)
 - [Research Note 0034: Four-Pair Prompt Replication and Phi-3.5 Vision Expansion](docs/research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md)
+- [Research Note 0035: Six-Model Four-Pair Completion, Phi Full Vectors, and Granite Pilot](docs/research_notes/0035_six_model_four_pair_completion_and_phi_full_vector.md)
 
 ## Claim Boundary
 

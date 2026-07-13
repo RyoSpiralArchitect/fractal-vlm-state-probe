@@ -64,6 +64,73 @@ def ensure_mlx_processor_compat(
     )
 
 
+def ensure_mlx_chat_template_compat(
+    apply_chat_template: Any,
+    model_config: Any,
+) -> tuple[Any, str | None]:
+    if _config_value(model_config, "model_type") != "granite_vision":
+        return apply_chat_template, None
+    return (
+        _apply_granite_vision_chat_template,
+        "granite_vision_tokenizer_chat_template",
+    )
+
+
+def _apply_granite_vision_chat_template(
+    processor: Any,
+    model_config: Any,
+    prompt: Any,
+    *,
+    add_generation_prompt: bool = True,
+    return_messages: bool = False,
+    num_images: int = 0,
+    **kwargs: Any,
+) -> Any:
+    del model_config
+    messages = _granite_vision_messages(prompt, num_images=num_images)
+    if return_messages:
+        return messages
+    tokenizer = getattr(processor, "tokenizer", processor)
+    return tokenizer.apply_chat_template(
+        messages,
+        tokenize=False,
+        add_generation_prompt=add_generation_prompt,
+        **kwargs,
+    )
+
+
+def _granite_vision_messages(prompt: Any, *, num_images: int) -> list[dict[str, Any]]:
+    source = prompt if isinstance(prompt, list) else [prompt]
+    normalized = []
+    for item in source:
+        if isinstance(item, str):
+            normalized.append({"role": "user", "content": item})
+        elif isinstance(item, dict):
+            normalized.append(item)
+        else:
+            raise TypeError("Granite Vision prompt entries must be strings or mappings")
+
+    last_user_index = max(
+        (
+            index
+            for index, message in enumerate(normalized)
+            if message.get("role", "user") == "user"
+        ),
+        default=-1,
+    )
+    messages = []
+    for index, message in enumerate(normalized):
+        role = str(message.get("role") or "user")
+        content = []
+        if role == "user" and index == last_user_index:
+            content.extend({"type": "image"} for _ in range(num_images))
+        content.append(
+            {"type": "text", "text": _multimodal_content_text(message.get("content"))}
+        )
+        messages.append({"role": role, "content": content})
+    return messages
+
+
 def _build_internvl_processor(tokenizer: Any, model_config: Any) -> Any:
     from mlx_vlm.models.internvl_chat.processor import (
         IMG_CONTEXT_TOKEN,
@@ -117,6 +184,22 @@ def _internvl_content_text(content: Any) -> str:
             text_parts.append(str(item))
     image_prefix = "<image>\n" * image_count
     return image_prefix + "".join(text_parts)
+
+
+def _multimodal_content_text(content: Any) -> str:
+    if isinstance(content, str):
+        return content
+    if isinstance(content, dict):
+        return str(content.get("text") or content.get("content") or "")
+    if not isinstance(content, list):
+        return str(content) if content is not None else ""
+    return "".join(
+        str(item.get("text") or item.get("content") or "")
+        if isinstance(item, dict)
+        else str(item)
+        for item in content
+        if item is not None
+    )
 
 
 def _config_value(config: Any, name: str) -> Any:

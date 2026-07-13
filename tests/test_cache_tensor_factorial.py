@@ -101,6 +101,16 @@ def test_cache_tensor_regions_partition_effective_sequence() -> None:
     assert regions["post_image"] == [5, 6]
 
 
+def test_cache_tensor_regions_leave_roles_unassigned_without_image_positions() -> None:
+    regions = cache_tensor_regions({}, sequence_length=4)
+
+    assert regions["all_effective"] == [0, 1, 2, 3]
+    assert regions["image_tokens"] == []
+    assert regions["non_image_tokens"] == []
+    assert regions["pre_image"] == []
+    assert regions["post_image"] == []
+
+
 def _run(cell: str, metadata: dict) -> dict:
     return {
         "model_id": "example/model",

@@ -21,7 +21,10 @@ from .full_vocab_readout import (
     full_vocab_sidecar_path,
     write_full_vocab_logprob_sidecar,
 )
-from .mlx_processor_compat import ensure_mlx_processor_compat
+from .mlx_processor_compat import (
+    ensure_mlx_chat_template_compat,
+    ensure_mlx_processor_compat,
+)
 from .prompts import SYNC_PROMPT, SYSTEM_PROMPT, probe_metadata, resolve_probe_preset
 from .providers import get_capabilities
 from .seeding import set_global_seed
@@ -996,6 +999,9 @@ def _load_mlx_runtime(model_id: str) -> dict[str, Any]:
         processor,
         model_config,
     )
+    apply_chat_template, chat_template_compatibility = ensure_mlx_chat_template_compat(
+        apply_chat_template, model_config
+    )
 
     return {
         "model": model,
@@ -1011,6 +1017,7 @@ def _load_mlx_runtime(model_id: str) -> dict[str, Any]:
             "mlx_vlm_load_kwargs": {},
             "prompt_cache_state_available": prompt_cache_cls is not None,
             "processor_compatibility": processor_compatibility,
+            "chat_template_compatibility": chat_template_compatibility,
         },
     }
 

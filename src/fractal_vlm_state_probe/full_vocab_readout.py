@@ -138,14 +138,21 @@ def analyze_full_vocab_readout_contrast(
             f"runs and run_paths must contain exactly: {', '.join(CELL_KEYS)}"
         )
 
+    phase_probe_keys = _phase_probe_keys(runs.values())
+    shared_token_labels = _token_label_map(
+        _first_generation_step(_probe_record(run, phase=phase, probe_id=probe_id))
+        for run in runs.values()
+        for phase, probe_id in phase_probe_keys
+    )
     records = []
-    for phase, probe_id in _phase_probe_keys(runs.values()):
+    for phase, probe_id in phase_probe_keys:
         record = _analyze_phase_probe(
             runs=runs,
             run_paths=run_paths,
             phase=phase,
             probe_id=probe_id,
             max_token_effects=max_token_effects,
+            shared_token_labels=shared_token_labels,
         )
         records.append(record)
 
@@ -181,6 +188,7 @@ def analyze_full_vocab_readout_contrast(
             "An interaction energy share of 1/3 is the exchangeable isotropic reference across the three balanced factorial axes, not a fitted null distribution.",
             "Logprob interaction excludes tokens that are non-finite in any cell and reports the excluded count.",
             "A sidecar hash and vocabulary-size check is performed before analysis.",
+            "Candidate token labels may be recovered from sibling probes in the same factorial when one local top-logprob slice omits a label; candidate probabilities still come from each complete sidecar.",
         ],
     }
 
@@ -321,6 +329,7 @@ def _analyze_phase_probe(
     phase: str,
     probe_id: str,
     max_token_effects: int,
+    shared_token_labels: dict[int, str],
 ) -> dict[str, Any]:
     probe_records = {
         cell: _probe_record(run, phase=phase, probe_id=probe_id)
@@ -361,7 +370,10 @@ def _analyze_phase_probe(
             f"vocabulary-size mismatch for {phase}/{probe_id}: {vocab_sizes}"
         )
     probabilities = {cell: np.exp(values) for cell, values in logprobs.items()}
-    token_labels = _token_label_map(steps.values())
+    token_labels = {
+        **shared_token_labels,
+        **_token_label_map(steps.values()),
+    }
 
     pairwise = []
     for left, right in combinations(CELL_KEYS, 2):

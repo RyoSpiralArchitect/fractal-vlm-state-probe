@@ -16,6 +16,7 @@ from fractal_vlm_state_probe.cache_tensor_factorial import (
 )
 from fractal_vlm_state_probe.cache_tensor_replication import (
     analyze_cache_tensor_replication,
+    format_cache_tensor_replication_markdown,
 )
 
 
@@ -34,7 +35,9 @@ def test_cache_tensor_replication_reports_shared_image_direction(
     group = result["groups"][0]
     assert group["source_pair_ids"] == ["b_c", "c_d"]
     assert group["interaction_argmax_in_image_count"] == 2
+    assert group["image_partition_available_count"] == 2
     assert group["pre_image_all_effects_zero_count"] == 2
+    assert group["pre_image_effects_available_count"] == 2
     image = next(
         record for record in group["regions"] if record["region"] == "image_tokens"
     )
@@ -43,6 +46,44 @@ def test_cache_tensor_replication_reports_shared_image_direction(
     assert shares["spatial_contrast"]["median"] == pytest.approx(1.0 / 3.0)
     assert shares["palette_contrast"]["median"] == pytest.approx(1.0 / 3.0)
     assert shares["interaction_contrast"]["median"] == pytest.approx(1.0 / 3.0)
+    json.dumps(result)
+
+
+def test_cache_tensor_replication_preserves_unavailable_image_partition(
+    tmp_path: Path,
+) -> None:
+    first = _factorial(
+        tmp_path / "first",
+        mm_id="b",
+        jj_id="c",
+        scale=2.0,
+        image_layout=False,
+    )
+    second = _factorial(
+        tmp_path / "second",
+        mm_id="c",
+        jj_id="d",
+        scale=1.0,
+        image_layout=False,
+    )
+
+    result = analyze_cache_tensor_replication(
+        {"b_c": first, "c_d": second},
+        analysis_paths={"b_c": Path("b_c.json"), "c_d": Path("c_d.json")},
+    )
+
+    group = result["groups"][0]
+    assert group["image_partition_available_count"] == 0
+    assert group["interaction_argmax_in_image_count"] == 0
+    assert group["pre_image_effects_available_count"] == 0
+    assert group["pre_image_all_effects_zero_count"] == 0
+    assert group["image_energy_fraction"]["count"] == 0
+    assert {record["region"] for record in group["regions"]} == {"all_effective"}
+    assert all(
+        point["interaction_argmax_in_image"] is None for point in group["points"]
+    )
+    markdown = format_cache_tensor_replication_markdown(result)
+    assert "| n/a | n/a | n/a |" in markdown
     json.dumps(result)
 
 
@@ -69,6 +110,7 @@ def _factorial(
     mm_id: str,
     jj_id: str,
     scale: float,
+    image_layout: bool = True,
 ) -> dict:
     root.mkdir(parents=True)
     image_effect = np.array(
@@ -100,17 +142,20 @@ def _factorial(
             run_output_path=path,
             relative_to=root,
         )[0]
+        cache_token_layout = {
+            "token_count": 4,
+            "image_token_count": 2 if image_layout else 0,
+            "image_token_runs": (
+                [{"start": 1, "end": 2, "length": 2}] if image_layout else []
+            ),
+        }
         runs[cell] = {
             "model_id": "example/model",
             "stimulus": {"condition": {"condition_id": condition_ids[cell]}},
             "stream_events": [
                 {
                     "cache_tensor_artifacts": [metadata],
-                    "cache_token_layout": {
-                        "token_count": 4,
-                        "image_token_count": 2,
-                        "image_token_runs": [{"start": 1, "end": 2, "length": 2}],
-                    },
+                    "cache_token_layout": cache_token_layout,
                 }
             ],
         }

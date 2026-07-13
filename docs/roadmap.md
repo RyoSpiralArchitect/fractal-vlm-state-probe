@@ -135,22 +135,26 @@ position-local swaps remain required after that path is valid.
 - Compare loci by normalized depth and token region rather than raw layer or
   position number alone.
 
-Status: the balanced direct core covers SmolVLM2, Qwen2.5-VL, Gemma 3,
-InternVL3, and LFM2-VL over four source pairs. A Phi-3.5 Vision `c_d` pilot
-extends the valid direct lane to six architectures and brings the tracked
-surface to 35 factorial points, 140 cell runs, and 560 complete-vocabulary
-sidecars. Every direct after-factorial has non-identical cell distributions,
-but Phi coverage is not yet balanced. Qwen repeats a late scalar locus,
-InternVL a late band, Gemma an early band, SmolVLM broad pair dependence, and
-LFM2 six hybrid-attention cache entries. The five-model full-vector core covers
-26 local targets and 104 layer-by-pair analyses; Phi adds two selected `keys`
-analyses whose image-token partition remains unresolved. The five-model prompt
-audit now covers all four existing source pairs. Generated patterns agree over
-all four pairs in 27/40 fixed model-family-variant records, while balanced-axis
-dominance agrees in only 2/40. The next architecture step is to complete Phi's
-remaining three pairs. The next independent-evidence step is to add generated
-trajectories and matched natural/geometric/frequency controls before extending
-nested lengths.
+Status: the balanced one-frame direct core now covers SmolVLM2, Qwen2.5-VL,
+Gemma 3, InternVL3, LFM2-VL, and Phi-3.5 Vision over four source pairs. The
+wider valid direct surface contains 39 factorial points, 156 cell runs, and 624
+complete-vocabulary sidecars, with non-identical after-cell distributions in
+every factorial. The extra point is a bounded Granite Vision `c_d` pilot, not a
+seventh balanced block. Qwen repeats a late scalar locus, InternVL a late band,
+Gemma an early band, SmolVLM broad pair dependence, LFM2 six hybrid-attention
+cache entries, and Phi an early positive `keys` profile. The selected
+full-vector surface contains 116 layer-by-pair analyses; Phi contributes 12
+fixed `keys` analyses that are all spatial-dominant, weakly aligned across
+source pairs, and still lack an identified image-token partition. The six-model
+prompt audit is balanced over all four pairs. Generated patterns agree over
+every pair in 29/48 fixed model-family-variant records, balanced-axis dominance
+in 3/48, and both in 2/48. Granite adds one prompt audit whose generated
+candidate semantics are unresolved in all cells while its measured axis changes
+between baseline frequency and the three prompt controls. Wider Granite work is
+blocked on reconstructing its 1,474-token processor layout against 3,073
+effective cache positions. The next independent-evidence step is to add
+generated trajectories and matched natural/geometric/frequency controls before
+extending nested lengths.
 
 ## Phase 5: Research Report
 
@@ -160,12 +164,11 @@ nested lengths.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0034 encode the audited claim
-boundary, five-model direct replication, selected full-vector localization,
-balanced factorial calibration, the five-model four-pair prompt matrix, and an
-unbalanced sixth-architecture pilot. Initial manuscript tables exist;
-calibrated nulls and figures remain future work. The current priority is a
-balanced wording/order/verbalizer factorial, completion of Phi's four-pair
-surface, independent trajectory and control replication, compatible
-head/position-resolved vector analysis, and a valid intervention path before
-causal prose is promoted.
+Status: the evidence matrix and Notes 0027-0035 encode the audited claim
+boundary, balanced six-model direct and prompt replication, selected
+full-vector localization, and scalar-locus versus vector-direction separation.
+Initial manuscript tables exist; calibrated nulls and figures remain future
+work. The current priority is a balanced wording/order/verbalizer factorial, a
+Granite cache-coordinate reconstruction, independent trajectory and control
+replication, compatible head/position-resolved vector analysis, and a valid
+intervention path before causal prose is promoted.

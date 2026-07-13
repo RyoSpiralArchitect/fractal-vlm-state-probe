@@ -66,11 +66,12 @@ def analyze_cache_tensor_replication(
         "interpretation_notes": [
             "Direction cosines compare the same layer, tensor, model, and token region across independent source pairs.",
             "No raw vector cosine is computed across models or layers because their cache coordinates are not assumed to align.",
-            "The image-token region carries total interaction energy, while the fixed post-image suffix can carry a more repeatable low-energy direction.",
+            "When processor-expanded token roles are available, image and fixed-suffix regions are reported separately.",
+            "Unavailable image-token partitions remain explicit and do not assign image roles to raw sequence positions.",
             "Balanced factorial contrast shares compare spatial, palette, and interaction axes on the same +/-1 coefficient scale; 1/3 is the exchangeable isotropic reference.",
             "Group-level spatial, palette, and interaction shares are componentwise medians and therefore need not sum exactly to one.",
             "The pre-image prefix is an autoregressive alignment control: it should not depend on later image tokens.",
-            "These are deterministic descriptive replications over four source pairs, not null-hypothesis tests.",
+            "These are deterministic descriptive replications over the included source pairs, not null-hypothesis tests.",
         ],
     }
 
@@ -102,16 +103,18 @@ def format_cache_tensor_replication_markdown(analysis: dict[str, Any]) -> str:
         "| --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for group in analysis["groups"]:
-        image_direction = _region(group, "image_tokens")["direction_cosine_summary"]
-        post_direction = _region(group, "post_image")["direction_cosine_summary"]
+        image_region = _region(group, "image_tokens")
+        post_region = _region(group, "post_image")
+        image_direction = (image_region or {}).get("direction_cosine_summary") or {}
+        post_direction = (post_region or {}).get("direction_cosine_summary") or {}
         lines.append(
             f"| `{_short_model(group['model_id'])}` | {group['layer_index']} | "
             f"`{group['tensor']}` | {group['source_pair_count']} | "
             f"{_fmt(group['image_energy_fraction']['median'])} | "
-            f"{group['interaction_argmax_in_image_count']}/{group['source_pair_count']} | "
-            f"{group['pre_image_all_effects_zero_count']}/{group['source_pair_count']} | "
-            f"{_fmt(image_direction['median'])} | "
-            f"{_fmt(post_direction['median'])} |"
+            f"{_count_text(group['interaction_argmax_in_image_count'], group['image_partition_available_count'])} | "
+            f"{_count_text(group['pre_image_all_effects_zero_count'], group['pre_image_effects_available_count'])} | "
+            f"{_fmt(image_direction.get('median'))} | "
+            f"{_fmt(post_direction.get('median'))} |"
         )
 
     lines.extend(
@@ -173,6 +176,8 @@ def _point_record(
         raise ValueError(f"unsupported analysis kind for {label}")
     regions = {record["region"]: record for record in analysis.get("regions") or []}
     image_positions = _image_position_set(analysis)
+    interaction_partition = analysis.get("interaction_partition") or {}
+    image_partition_available = bool(interaction_partition.get("available"))
     all_interaction = regions["all_effective"]["effects"]["interaction"]
     pre_image = regions.get("pre_image")
     tensor_shape = [int(value) for value in analysis["tensor_shape"]]
@@ -213,17 +218,24 @@ def _point_record(
         "interaction_argmax_sequence_position": int(
             all_interaction["argmax_sequence_position"]
         ),
-        "interaction_argmax_in_image": int(all_interaction["argmax_sequence_position"])
-        in image_positions,
-        "image_energy_fraction": float(
-            analysis["interaction_partition"]["image_energy_fraction"]
+        "image_partition_available": image_partition_available,
+        "interaction_argmax_in_image": (
+            int(all_interaction["argmax_sequence_position"]) in image_positions
+            if image_partition_available
+            else None
         ),
-        "pre_image_all_effects_zero": bool(
-            pre_image
-            and all(
+        "image_energy_fraction": (
+            float(interaction_partition["image_energy_fraction"])
+            if image_partition_available
+            else None
+        ),
+        "pre_image_all_effects_zero": (
+            all(
                 float(effect["l2_norm"]) == 0.0
                 for effect in pre_image["effects"].values()
             )
+            if pre_image is not None
+            else None
         ),
         "region_metrics": region_metrics,
         "_analysis": analysis,
@@ -324,11 +336,17 @@ def _group_record(
         "source_pair_count": len(points),
         "source_pair_ids": sorted(source_pairs),
         "points": public_points,
+        "image_partition_available_count": sum(
+            int(point["image_partition_available"]) for point in points
+        ),
         "interaction_argmax_in_image_count": sum(
-            int(point["interaction_argmax_in_image"]) for point in points
+            point["interaction_argmax_in_image"] is True for point in points
+        ),
+        "pre_image_effects_available_count": sum(
+            point["pre_image_all_effects_zero"] is not None for point in points
         ),
         "pre_image_all_effects_zero_count": sum(
-            int(point["pre_image_all_effects_zero"]) for point in points
+            point["pre_image_all_effects_zero"] is True for point in points
         ),
         "image_energy_fraction": _summary(
             point["image_energy_fraction"] for point in points
@@ -424,8 +442,16 @@ def _summary(values: Any) -> dict[str, Any]:
     }
 
 
-def _region(group: dict[str, Any], name: str) -> dict[str, Any]:
-    return next(record for record in group["regions"] if record["region"] == name)
+def _region(group: dict[str, Any], name: str) -> dict[str, Any] | None:
+    return next(
+        (record for record in group["regions"] if record["region"] == name), None
+    )
+
+
+def _count_text(count: int, available: int) -> str:
+    if available == 0:
+        return "n/a"
+    return f"{count}/{available}"
 
 
 def _range_text(record: dict[str, Any]) -> str:

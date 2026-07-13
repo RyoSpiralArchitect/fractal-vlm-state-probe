@@ -175,7 +175,8 @@ def analyze_cache_tensor_factorial(
         "interaction_partition": partition,
         "interpretation_notes": [
             "Tensor sidecars are trimmed to each cache entry's effective offset before analysis.",
-            "Image and non-image regions use processor-expanded image-token positions from the saved source token layout.",
+            "When available, image and non-image regions use processor-expanded image-token positions from the saved source token layout.",
+            "If no image-token positions are identified, only the complete effective region is reported and raw positions remain role-unassigned.",
             "RMS permits region-size comparison; L2 retains total interaction energy and therefore scales with element count.",
             "Balanced spatial, palette, and interaction contrasts all use +/-1 cell coefficients; their energy shares sum to one when any cell contrast is nonzero.",
             "An interaction energy share of 1/3 is the exchangeable isotropic reference across the three balanced factorial axes, not a fitted null distribution.",
@@ -203,13 +204,16 @@ def cache_tensor_regions(
     image_positions = sorted(set(image_positions))
     image_set = set(image_positions)
     all_positions = list(range(sequence_length))
-    non_image = [position for position in all_positions if position not in image_set]
     if image_positions:
+        non_image = [
+            position for position in all_positions if position not in image_set
+        ]
         first_image = image_positions[0]
         last_image = image_positions[-1]
         pre_image = list(range(first_image))
         post_image = list(range(last_image + 1, sequence_length))
     else:
+        non_image = []
         pre_image = []
         post_image = []
     return {
