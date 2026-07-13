@@ -45,6 +45,12 @@ def test_prompt_robustness_aligns_labels_by_semantics() -> None:
         "interaction_vector_delta_l1"
     ] == pytest.approx(0)
     assert family["generated_semantics_invariant_across_variants"] is True
+    assert rotated["full_vocab_balanced_axis_dominant"] == "interaction"
+    assert rotated["full_vocab_balanced_contrast_energy"]["energy_shares"] == {
+        "spatial_contrast": 0.2,
+        "palette_contrast": 0.3,
+        "interaction_contrast": 0.5,
+    }
 
 
 def test_prompt_robustness_detects_prompt_sensitive_readout() -> None:
@@ -108,6 +114,13 @@ def _record(
         "generated_semantics": generated,
         "pairwise_distances": [{"jensen_shannon": 0.1}],
         "probability_contrasts": {"interaction": {"l1_norm": 0.2, "max_abs": 0.1}},
+        "balanced_probability_contrast_energy": {
+            "energy_shares": {
+                "spatial_contrast": 0.2,
+                "palette_contrast": 0.3,
+                "interaction_contrast": 0.5,
+            }
+        },
         "forced_choice_candidates": {
             "available": True,
             "cells": {

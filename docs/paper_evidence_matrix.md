@@ -20,7 +20,7 @@ the same four factorial cells are not independent samples.
 | LFM2-VL direct factorial replication | LFM2-VL-1.6B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All after-cell distributions are distinct; visible family labels vary in 3/4 pairs while frequency labels stay fixed; balanced readout axes remain pair-dependent | fifth-architecture replication with deterministic artifact integrity | [Note 0031](research_notes/0031_balanced_contrasts_five_model_expansion.md) |
 | Full-vector source-cache factorials | Five VLMs, 26 model-local layer/tensor targets, fresh source-only ACK | 4 source pairs x 26 target groups; 80 cell runs, 416 tensors, 104 analyses | Every pre-image effect is zero; 100/104 argmaxes are image tokens; balanced axis dominance is spatial/palette/interaction in 84/14/6 analyses | targeted vector localization plus calibrated descriptive direction replication | [Note 0031](research_notes/0031_balanced_contrasts_five_model_expansion.md) |
 | Cross-model direct aggregate | Five VLMs, complete first-step vocabulary | 34 factorial points, 136 cells, 544 sidecars | Every direct after-factorial is non-identical; one-frame balanced readout dominance is model-, pair-, and probe-dependent | replicated architecture heterogeneity plus model-conditional regularities | [tracked summary](../examples/research_notes/0031_balanced_contrasts_five_model_expansion/summary.json) |
-| Prompt robustness audit | Gemma 3, Qwen2.5-VL, and SmolVLM2, `e_f`, fresh direct probes | 1 source pair x 3 models x 4 cells x 8 probes, 192 sidecars | All 48 baseline sidecars repeat byte-for-byte; prompt variants change generated semantics and semantic probability surfaces differently by architecture | replicated cross-model prompt sensitivity on one source pair | [Note 0029](research_notes/0029_cross_model_prompt_and_internvl_expansion.md) |
+| Prompt robustness audit | Five VLMs on `e_f`, plus LFM2-VL on `b_c`, fresh direct probes | 6 model/source-pair audit units, 24 cell runs, 384 sidecars | All 96 baseline sidecars repeat bitwise; no variant has one generated pattern shared by all five models; LFM generated patterns agree across pairs in 6/8 variants while balanced-axis dominance agrees in 0/8 | five-model prompt sensitivity plus one-model two-pair distributional decoupling | [Note 0032](research_notes/0032_five_model_prompt_robustness_and_source_pair_decoupling.md) |
 
 ## Withdrawn From The Evidence Set
 
@@ -54,9 +54,10 @@ the same four factorial cells are not independent samples.
    84/14/6 analyses.
 6. A generated letter or top-k set can remain fixed while the complete
    distribution changes; visible-label equality is not distribution equality.
-7. In all three `e_f` prompt audits, at least one variant changes generated
-   semantics and semantic probability surfaces, even though every baseline
-   sidecar reproduces exactly.
+7. In all five `e_f` prompt audits, at least one variant changes generated
+   semantics and semantic probability surfaces. In LFM2, generated patterns
+   agree across two source pairs in 6/8 variants while balanced-axis dominance
+   agrees in 0/8. Every audited baseline sidecar reproduces exactly.
 
 ### Provisional
 
@@ -77,8 +78,11 @@ the same four factorial cells are not independent samples.
   mechanism.
 - Cache-summary magnitude and direct readout interaction are neither equivalent
   nor monotonically coupled in the current trajectories.
-- Probe family and candidate calibration matter in all three audited models;
-  the magnitude and visible-label response are strongly architecture-specific.
+- Probe family and candidate calibration matter in all five audited models;
+  the magnitude, visible-label response, and balanced factorial axis are
+  strongly architecture-specific. LFM2 further shows that categorical prompt
+  response can replicate across source pairs while distributional factorial
+  dominance does not.
 
 ### Not Supported Yet
 
@@ -109,12 +113,13 @@ the same four factorial cells are not independent samples.
 
 ## Highest-Value Next Data
 
-1. Repeat the prompt audit on a second source pair and add InternVL3/LFM2-VL.
-2. Balance wording, candidate order, and token-to-semantics mapping as separate
+1. Balance wording, candidate order, and token-to-semantics mapping as separate
    factors, including neutral and non-forced readouts.
+2. Repeat the second-pair prompt audit in Qwen, Gemma, SmolVLM, and InternVL,
+   then add independently generated trajectories.
 3. Resolve balanced full-vector axes by KV head and image-token position.
-4. Add independently generated source trajectories plus matched natural,
-   geometric, noise, and processor-frequency controls with permutation nulls.
+4. Add matched natural, geometric, noise, and processor-frequency controls with
+   permutation nulls.
 5. Rebuild intervention logic only on a multimodal suffix path that asserts
    exact prefix and cache sequence-length compatibility before mutation.
 
@@ -128,8 +133,10 @@ Preferred:
 > while selected full-vector contrasts localized interaction energy mainly to
 > image tokens. Equal-coefficient calibration showed that spatial structure,
 > rather than interaction, dominates most captured source-cache targets, while
-> direct readout axes vary by model, pair, and probe. The protocol does not test
-> state persistence or causal cache mediation.
+> direct readout axes vary by model, pair, and probe. Prompt controls further
+> show that categorical response replication can coexist with non-replicating
+> full-distribution factorial dominance. The protocol does not test state
+> persistence or causal cache mediation.
 
 Avoid:
 

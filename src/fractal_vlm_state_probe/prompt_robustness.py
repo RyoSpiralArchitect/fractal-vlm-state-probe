@@ -54,6 +54,7 @@ def analyze_prompt_robustness(
             "Candidate probabilities are aligned by declared meaning before variants are compared.",
             "Prompt variants change both wording and token context; this audit measures readout robustness, not a prompt-free visual representation.",
             "A stable generated label can coexist with a changing probability distribution, and the reverse can also occur near a decision boundary.",
+            "Balanced spatial, palette, and interaction shares use equal-scale Hadamard contrasts over the complete first-token distribution.",
             "The four factorial cells are descriptive contrasts and are not independent samples.",
         ],
     }
@@ -84,8 +85,8 @@ def format_prompt_robustness_markdown(analysis: dict[str, Any]) -> str:
                 f"- Generated semantics invariant across variants: `{family['generated_semantics_invariant_across_variants']}`",
                 f"- Maximum semantic TV across variants: `{_fmt(family['max_semantic_tv_across_variant_pairs'])}`",
                 "",
-                "| Variant | Generated semantics (MM / JJ / MJ / JM) | Max pair JS | Full-vocab interaction L1 | Semantic interaction L1 | Semantic interaction argmax | Agreement with baseline | Max semantic TV from baseline | Interaction delta L1 |",
-                "| --- | --- | ---: | ---: | ---: | --- | ---: | ---: | ---: |",
+                "| Variant | Generated semantics (MM / JJ / MJ / JM) | Max pair JS | Full-vocab interaction L1 | Balanced S / P / I | Dominant balanced axis | Semantic interaction L1 | Semantic interaction argmax | Agreement with baseline | Max semantic TV from baseline | Interaction delta L1 |",
+                "| --- | --- | ---: | ---: | --- | --- | ---: | --- | ---: | ---: | ---: |",
             ]
         )
         for variant in family["variants"]:
@@ -98,6 +99,8 @@ def format_prompt_robustness_markdown(analysis: dict[str, Any]) -> str:
                 f"| `{variant['prompt_variant']}` | {generated} | "
                 f"{_fmt(variant['max_pair_jensen_shannon'])} | "
                 f"{_fmt(variant['full_vocab_interaction_l1'])} | "
+                f"{_balanced_share_text(variant)} | "
+                f"`{variant.get('full_vocab_balanced_axis_dominant') or 'n/a'}` | "
                 f"{_fmt(interaction['l1_norm'])} | "
                 f"`{interaction['argmax_semantic']}` | "
                 f"{_fmt(comparison.get('generated_semantic_agreement_fraction'))} | "
@@ -216,7 +219,38 @@ def _variant_summary(record: dict[str, Any]) -> dict[str, Any]:
         "full_vocab_interaction_max_abs": float(
             record["probability_contrasts"]["interaction"]["max_abs"]
         ),
+        "full_vocab_balanced_contrast_energy": record.get(
+            "balanced_probability_contrast_energy"
+        ),
+        "full_vocab_balanced_axis_dominant": _balanced_axis_dominant(record),
     }
+
+
+def _balanced_axis_dominant(record: dict[str, Any]) -> str | None:
+    energy = record.get("balanced_probability_contrast_energy") or {}
+    shares = energy.get("energy_shares") or {}
+    named_shares = {
+        "spatial": shares.get("spatial_contrast"),
+        "palette": shares.get("palette_contrast"),
+        "interaction": shares.get("interaction_contrast"),
+    }
+    available = {
+        name: float(value) for name, value in named_shares.items() if value is not None
+    }
+    return max(available, key=available.get) if available else None
+
+
+def _balanced_share_text(variant: dict[str, Any]) -> str:
+    energy = variant.get("full_vocab_balanced_contrast_energy") or {}
+    shares = energy.get("energy_shares") or {}
+    values = [
+        shares.get("spatial_contrast"),
+        shares.get("palette_contrast"),
+        shares.get("interaction_contrast"),
+    ]
+    if any(value is None for value in values):
+        return "n/a"
+    return " / ".join(_fmt(value) for value in values)
 
 
 def _semantic_contrasts(

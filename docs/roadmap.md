@@ -143,8 +143,12 @@ InternVL a late band, Gemma an early band, SmolVLM broad pair dependence, and
 LFM2 six hybrid-attention cache entries. Every direct after-factorial has
 non-identical cell distributions. Selected full-vector captures now cover 26
 model-local targets and 104 layer-by-pair analyses. The next replication should
-add independently generated trajectories, a second-pair prompt audit, and
-matched natural/geometric/frequency controls before extending nested lengths.
+add independently generated trajectories and matched
+natural/geometric/frequency controls before extending nested lengths. The
+`e_f` prompt audit now covers all five models, and LFM2 has the first
+second-pair prompt replication: generated patterns agree in 6/8 variants while
+balanced-axis dominance agrees in 0/8. The remaining four models still need a
+second-pair prompt audit.
 
 ## Phase 5: Research Report
 
@@ -154,9 +158,10 @@ matched natural/geometric/frequency controls before extending nested lengths.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0031 encode the audited claim
+Status: the evidence matrix and Notes 0027-0032 encode the audited claim
 boundary, five-model direct replication, selected full-vector localization,
-and balanced factorial calibration. Initial manuscript tables exist; calibrated
-nulls and figures remain future work. The current priority is independent
-trajectory and prompt replication, head/position-resolved vector analysis, and
-a valid intervention path before causal prose is promoted.
+balanced factorial calibration, and five-model prompt sensitivity. Initial
+manuscript tables exist; calibrated nulls and figures remain future work. The
+current priority is a balanced prompt factorial, independent trajectory and
+control replication, head/position-resolved vector analysis, and a valid
+intervention path before causal prose is promoted.

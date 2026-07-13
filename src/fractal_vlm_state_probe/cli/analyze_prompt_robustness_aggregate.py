@@ -18,6 +18,12 @@ def main() -> None:
     parser.add_argument(
         "--analysis", action="append", required=True, metavar="KEY=PATH"
     )
+    parser.add_argument(
+        "--comparison-axis",
+        choices=("model", "source_pair", "condition"),
+        default="model",
+        help="Meaning of each KEY in --analysis (default: model).",
+    )
     parser.add_argument("--output-json", required=True, type=Path)
     parser.add_argument("--output-md", required=True, type=Path)
     args = parser.parse_args()
@@ -39,10 +45,12 @@ def main() -> None:
     analysis = analyze_prompt_robustness_aggregate(
         analyses,
         analysis_paths=paths,
+        comparison_axis=args.comparison_axis,
     )
     write_prompt_robustness_aggregate_json(analysis, args.output_json)
     write_prompt_robustness_aggregate_markdown(analysis, args.output_md)
-    print(f"wrote cross-model prompt robustness to {args.output_md}")
+    axis = args.comparison_axis.replace("_", "-")
+    print(f"wrote cross-{axis} prompt robustness to {args.output_md}")
 
 
 if __name__ == "__main__":
