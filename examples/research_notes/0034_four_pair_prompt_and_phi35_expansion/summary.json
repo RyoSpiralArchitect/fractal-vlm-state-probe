@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "four_pair_prompt_replication_and_phi35_expansion_summary",
+  "note": "0034_four_pair_prompt_replication_and_phi35_expansion",
+  "date": "2026-07-14",
+  "core_protocol": {
+    "models": [
+      "gemma3",
+      "internvl3",
+      "lfm2_vl",
+      "qwen",
+      "smol"
+    ],
+    "source_pairs": [
+      "b_c",
+      "c_d",
+      "d_e",
+      "e_f"
+    ],
+    "visual_cells": [
+      "mm",
+      "jj",
+      "mj",
+      "jm"
+    ],
+    "probe_families": [
+      "family",
+      "frequency"
+    ],
+    "prompt_variants": [
+      "baseline",
+      "paraphrase",
+      "reversed_order",
+      "rotated_labels"
+    ],
+    "temperature": 0,
+    "stream_seed": 20260604,
+    "probe_seed": 0,
+    "after_probe_protocol": "direct_multimodal_replay",
+    "cache_reuse": false,
+    "readout": "complete first-step vocabulary distribution"
+  },
+  "core_integrity": {
+    "model_source_pair_audits": 20,
+    "cell_runs": 80,
+    "full_vocab_sidecars": 1280,
+    "validated_sidecars": 1280,
+    "validation_failures": 0,
+    "baseline_bitwise_exact": {
+      "matches": 320,
+      "total": 320
+    },
+    "new_c_d_d_e_extension": {
+      "model_source_pair_audits": 10,
+      "cell_runs": 40,
+      "full_vocab_sidecars": 640,
+      "baseline_bitwise_exact": "160/160"
+    }
+  },
+  "all_pair_replication": {
+    "record_count": 40,
+    "generated_pattern_agreement": "27/40",
+    "balanced_dominant_axis_agreement": "2/40",
+    "both_agreement": "2/40",
+    "agreement_contingency": {
+      "generated_same_axis_same": 2,
+      "generated_same_axis_different": 25,
+      "generated_different_axis_same": 0,
+      "generated_different_axis_different": 13
+    },
+    "axis_stable_records": [
+      {
+        "model": "gemma3",
+        "probe_family": "frequency",
+        "prompt_variant": "rotated_labels",
+        "generated_pattern": "high_frequency/high_frequency/high_frequency/high_frequency",
+        "dominant_axis": "spatial",
+        "pairwise_share_l1_max": 1.2518469
+      },
+      {
+        "model": "qwen",
+        "probe_family": "frequency",
+        "prompt_variant": "paraphrase",
+        "generated_pattern": "low_frequency/low_frequency/low_frequency/low_frequency",
+        "dominant_axis": "spatial",
+        "pairwise_share_l1_max": 0.75015749
+      }
+    ]
+  },
+  "pairwise_replication": {
+    "record_count": 240,
+    "independent_replication_warning": "Six source-pair comparisons are repeated measures derived from each of 40 fixed model-family-variant records.",
+    "generated_pattern_agreement": "185/240",
+    "balanced_dominant_axis_agreement": "100/240",
+    "both_agreement": "80/240",
+    "agreement_contingency": {
+      "generated_same_axis_same": 80,
+      "generated_same_axis_different": 105,
+      "generated_different_axis_same": 20,
+      "generated_different_axis_different": 35
+    },
+    "balanced_share_l1": {
+      "min": 0.0154667168,
+      "median": 0.813782396,
+      "max": 1.9831524728
+    }
+  },
+  "model_profiles": {
+    "gemma3": {
+      "all_pair_generated_axis_both": "4/8 / 1/8 / 1/8",
+      "pairwise_generated_axis_both": "28/48 / 23/48 / 18/48",
+      "pairwise_share_l1_median": 0.7125983083
+    },
+    "internvl3": {
+      "all_pair_generated_axis_both": "7/8 / 0/8 / 0/8",
+      "pairwise_generated_axis_both": "45/48 / 20/48 / 18/48",
+      "pairwise_share_l1_median": 0.82091176
+    },
+    "lfm2_vl": {
+      "all_pair_generated_axis_both": "5/8 / 0/8 / 0/8",
+      "pairwise_generated_axis_both": "35/48 / 16/48 / 11/48",
+      "pairwise_share_l1_median": 0.85423729
+    },
+    "qwen": {
+      "all_pair_generated_axis_both": "5/8 / 1/8 / 1/8",
+      "pairwise_generated_axis_both": "37/48 / 17/48 / 14/48",
+      "pairwise_share_l1_median": 0.77191427
+    },
+    "smol": {
+      "all_pair_generated_axis_both": "6/8 / 0/8 / 0/8",
+      "pairwise_generated_axis_both": "40/48 / 24/48 / 19/48",
+      "pairwise_share_l1_median": 0.74429479
+    }
+  },
+  "family_profiles": {
+    "family": {
+      "all_pair_generated_agreement": "12/20",
+      "all_pair_axis_agreement": "0/20"
+    },
+    "frequency": {
+      "all_pair_generated_agreement": "15/20",
+      "all_pair_axis_agreement": "2/20"
+    }
+  },
+  "source_pair_profiles": {
+    "b_c": {
+      "changed_nonbaseline_generated_patterns": "20/30",
+      "cross_model_shared_variant_patterns": "0/8",
+      "balanced_dominance_spatial_palette_interaction": [
+        10,
+        9,
+        21
+      ],
+      "interaction_above_one_third": "24/40"
+    },
+    "c_d": {
+      "changed_nonbaseline_generated_patterns": "21/30",
+      "cross_model_shared_variant_patterns": "0/8",
+      "balanced_dominance_spatial_palette_interaction": [
+        16,
+        11,
+        13
+      ],
+      "interaction_above_one_third": "16/40"
+    },
+    "d_e": {
+      "changed_nonbaseline_generated_patterns": "16/30",
+      "cross_model_shared_variant_patterns": "0/8",
+      "balanced_dominance_spatial_palette_interaction": [
+        16,
+        13,
+        11
+      ],
+      "interaction_above_one_third": "16/40"
+    },
+    "e_f": {
+      "changed_nonbaseline_generated_patterns": "20/30",
+      "cross_model_shared_variant_patterns": "0/8",
+      "balanced_dominance_spatial_palette_interaction": [
+        15,
+        14,
+        11
+      ],
+      "interaction_above_one_third": "14/40"
+    },
+    "combined": {
+      "balanced_dominance_spatial_palette_interaction": [
+        57,
+        47,
+        56
+      ],
+      "interaction_above_one_third": "70/160"
+    }
+  },
+  "source_pair_comparisons": {
+    "b_c__c_d": {
+      "generated_axis_both": "27/40 / 9/40 / 6/40",
+      "balanced_share_l1_median": 1.1317144644
+    },
+    "b_c__d_e": {
+      "generated_axis_both": "35/40 / 11/40 / 10/40",
+      "balanced_share_l1_median": 0.8614599114
+    },
+    "b_c__e_f": {
+      "generated_axis_both": "34/40 / 11/40 / 10/40",
+      "balanced_share_l1_median": 0.9520961945
+    },
+    "c_d__d_e": {
+      "generated_axis_both": "29/40 / 23/40 / 17/40",
+      "balanced_share_l1_median": 0.5932691113
+    },
+    "c_d__e_f": {
+      "generated_axis_both": "28/40 / 24/40 / 18/40",
+      "balanced_share_l1_median": 0.6063789272
+    },
+    "d_e__e_f": {
+      "generated_axis_both": "32/40 / 22/40 / 19/40",
+      "balanced_share_l1_median": 0.6100765232
+    }
+  },
+  "phi35_pilot": {
+    "model_id": "mlx-community/Phi-3.5-vision-instruct-4bit",
+    "source_pair": "c_d",
+    "runtime": {
+      "mlx": "0.31.1",
+      "mlx_vlm": "0.4.4"
+    },
+    "integrity": {
+      "standard_direct_cells": 4,
+      "standard_direct_sidecars": 16,
+      "prompt_audit_cells": 4,
+      "prompt_audit_sidecars": 64,
+      "validated_prompt_sidecars": "64/64",
+      "baseline_bitwise_exact": "16/16"
+    },
+    "standard_direct": {
+      "family": {
+        "generated_pattern": "unclear/mandelbrot/mandelbrot/mandelbrot",
+        "max_pair_js": 0.04319509,
+        "balanced_spatial_palette_interaction": [
+          0.34867882,
+          0.45491483,
+          0.19640634
+        ],
+        "dominant_axis": "palette"
+      },
+      "frequency": {
+        "generated_pattern": "unclear/unclear/unclear/unclear",
+        "max_pair_js": 0.019359284,
+        "balanced_spatial_palette_interaction": [
+          0.15465793,
+          0.72432336,
+          0.12101871
+        ],
+        "dominant_axis": "palette"
+      }
+    },
+    "prompt_audit": {
+      "family_nonbaseline_generated_changes": "3/3",
+      "frequency_nonbaseline_generated_changes": "2/3",
+      "balanced_dominance_spatial_palette_interaction": [
+        2,
+        6,
+        0
+      ],
+      "interaction_above_one_third": "0/8"
+    },
+    "six_model_c_d": {
+      "cross_model_shared_generated_patterns": "0/8",
+      "unique_patterns_by_variant_family": [
+        3,
+        5,
+        4,
+        3
+      ],
+      "unique_patterns_by_variant_frequency": [
+        3,
+        5,
+        3,
+        4
+      ]
+    },
+    "source_cache": {
+      "reported_layers": 32,
+      "token_count": 917,
+      "raw_entry_shape": [
+        1,
+        32,
+        1024,
+        96
+      ],
+      "captured_effective_shape": [
+        1,
+        32,
+        917,
+        96
+      ],
+      "captured_ack_runs": 4,
+      "tensor_sidecars": 8,
+      "factorial_analyses": 2,
+      "targets": {
+        "layer_003_keys": {
+          "balanced_spatial_palette_interaction": [
+            0.43428932,
+            0.25029698,
+            0.3154137
+          ],
+          "dominant_axis": "spatial",
+          "interaction_argmax_position": 601
+        },
+        "layer_027_keys": {
+          "balanced_spatial_palette_interaction": [
+            0.37682016,
+            0.2987564,
+            0.32442344
+          ],
+          "dominant_axis": "spatial",
+          "interaction_argmax_position": 57
+        }
+      },
+      "image_token_partition": "unavailable because the recorded image marker is absent from the reconstructed token layout"
+    }
+  },
+  "combined_artifact_counts": {
+    "prompt_audit_units": 21,
+    "prompt_cell_runs": 84,
+    "prompt_full_vocab_sidecars": 1344,
+    "prompt_baseline_bitwise_exact": "336/336",
+    "direct_factorial_points": 35,
+    "direct_cell_runs": 140,
+    "direct_full_vocab_sidecars": 560,
+    "source_only_ack_runs": 84,
+    "cache_tensor_sidecars": 424,
+    "cache_tensor_factorial_analyses": 106,
+    "coverage_warning": "Phi-3.5 Vision currently contributes only c_d and two selected cache targets; six-model coverage is unbalanced."
+  },
+  "interpretation": {
+    "supported": "Generated semantic patterns replicate across all four source pairs much more often than the dominant balanced full-vocabulary factorial axis.",
+    "not_supported": [
+      "forty or 240 independent visual replications",
+      "a balanced six-model four-pair matrix",
+      "prompt-invariant semantic decoding",
+      "one shared source-cache or readout mechanism",
+      "Phi image-token localization",
+      "causal source-cache to readout mediation",
+      "persistent multimodal state",
+      "semantic or subjective-state steering"
+    ]
+  },
+  "artifacts": {
+    "core_matrix_json": "runs/source_pair_expansion_50_v1/prompt_controls/five_model_four_pair_1f_forced_choice_robustness_seed0/prompt_robustness_multi_pair_matrix.json",
+    "core_matrix_markdown": "runs/source_pair_expansion_50_v1/prompt_controls/five_model_four_pair_1f_forced_choice_robustness_seed0/prompt_robustness_multi_pair_matrix.md",
+    "phi_direct": "runs/phi35_vision_expansion/c_d_1f_direct_seed0/",
+    "phi_prompt": "runs/phi35_vision_expansion/prompt_controls/phi35_vision_c_d_1f_forced_choice_robustness_seed0/",
+    "six_model_c_d": "runs/phi35_vision_expansion/prompt_controls/six_model_c_d_1f_forced_choice_robustness_seed0/",
+    "phi_source_cache": "runs/phi35_vision_expansion/c_d_1f_source_cache_tensors_seed0/"
+  }
+}

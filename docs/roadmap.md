@@ -135,20 +135,22 @@ position-local swaps remain required after that path is valid.
 - Compare loci by normalized depth and token region rather than raw layer or
   position number alone.
 
-Status: the valid direct lane now covers SmolVLM2, Qwen2.5-VL, Gemma 3,
-InternVL3, and LFM2-VL. The standard matrix contains 34 factorial points, 136
-cell runs, and 544 complete-vocabulary sidecars; the one-frame surface is
-balanced at four source pairs per model. Qwen repeats a late scalar locus,
+Status: the balanced direct core covers SmolVLM2, Qwen2.5-VL, Gemma 3,
+InternVL3, and LFM2-VL over four source pairs. A Phi-3.5 Vision `c_d` pilot
+extends the valid direct lane to six architectures and brings the tracked
+surface to 35 factorial points, 140 cell runs, and 560 complete-vocabulary
+sidecars. Every direct after-factorial has non-identical cell distributions,
+but Phi coverage is not yet balanced. Qwen repeats a late scalar locus,
 InternVL a late band, Gemma an early band, SmolVLM broad pair dependence, and
-LFM2 six hybrid-attention cache entries. Every direct after-factorial has
-non-identical cell distributions. Selected full-vector captures now cover 26
-model-local targets and 104 layer-by-pair analyses. The next replication should
-add independently generated trajectories and matched
-natural/geometric/frequency controls before extending nested lengths. The
-prompt audit now covers all five models on `b_c` and `e_f`. Generated patterns
-agree across source pairs in 34/40 paired model-family-variant records, while
-balanced-axis dominance agrees in 11/40. The next prompt replication should
-extend to `c_d` and `d_e` rather than add more nested replay lengths.
+LFM2 six hybrid-attention cache entries. The five-model full-vector core covers
+26 local targets and 104 layer-by-pair analyses; Phi adds two selected `keys`
+analyses whose image-token partition remains unresolved. The five-model prompt
+audit now covers all four existing source pairs. Generated patterns agree over
+all four pairs in 27/40 fixed model-family-variant records, while balanced-axis
+dominance agrees in only 2/40. The next architecture step is to complete Phi's
+remaining three pairs. The next independent-evidence step is to add generated
+trajectories and matched natural/geometric/frequency controls before extending
+nested lengths.
 
 ## Phase 5: Research Report
 
@@ -158,10 +160,12 @@ extend to `c_d` and `d_e` rather than add more nested replay lengths.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0033 encode the audited claim
+Status: the evidence matrix and Notes 0027-0034 encode the audited claim
 boundary, five-model direct replication, selected full-vector localization,
-balanced factorial calibration, and the five-model two-pair prompt matrix.
-Initial manuscript tables exist; calibrated nulls and figures remain future
-work. The current priority is a balanced prompt factorial, independent
-trajectory and control replication, head/position-resolved vector analysis,
-and a valid intervention path before causal prose is promoted.
+balanced factorial calibration, the five-model four-pair prompt matrix, and an
+unbalanced sixth-architecture pilot. Initial manuscript tables exist;
+calibrated nulls and figures remain future work. The current priority is a
+balanced wording/order/verbalizer factorial, completion of Phi's four-pair
+surface, independent trajectory and control replication, compatible
+head/position-resolved vector analysis, and a valid intervention path before
+causal prose is promoted.

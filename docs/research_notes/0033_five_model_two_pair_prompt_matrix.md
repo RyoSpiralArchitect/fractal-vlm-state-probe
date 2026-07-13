@@ -8,6 +8,12 @@ Completed for five local VLMs, two independent source pairs, four visual
 factorial cells, two probe families, and four semantically aligned prompt
 variants.
 
+> **Follow-up:** [Note 0034](0034_four_pair_prompt_replication_and_phi35_expansion.md)
+> extends the same five-model audit to all four existing source pairs and adds
+> an unbalanced Phi-3.5 Vision pilot. Its four-pair result is the current prompt
+> replication boundary; the two-pair numbers below remain a reproducible
+> intermediate slice.
+
 This extension adds `b_c` prompt audits for Gemma 3, Qwen2.5-VL, SmolVLM2, and
 InternVL3. Together with the LFM2-VL `b_c` audit and all five `e_f` audits from
 Note 0032, the prompt surface now contains:

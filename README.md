@@ -57,11 +57,14 @@ The replacement protocol uses no image-conditioned cache reuse:
 3. Save the complete first-step vocabulary distribution, not only a generated
    letter or top-k slice.
 
-The current valid standard matrix contains 34 `MM/JJ/MJ/JM` factorial points,
-136 cell runs, and 544 compressed full-vocabulary sidecars across SmolVLM2,
-Qwen2.5-VL, Gemma 3, InternVL3, and LFM2-VL. Every direct after-factorial
-contains non-identical cell distributions. At one frame, the independent
-replication surface is now four source pairs x five models.
+The balanced five-model core contains 34 `MM/JJ/MJ/JM` factorial points, 136
+cell runs, and 544 compressed full-vocabulary sidecars across SmolVLM2,
+Qwen2.5-VL, Gemma 3, InternVL3, and LFM2-VL. A Phi-3.5 Vision `c_d` pilot brings
+the valid direct surface to 35 points, 140 cell runs, and 560 sidecars across
+six architectures. Every direct after-factorial contains non-identical cell
+distributions. The independent one-frame core is four source pairs x five
+models; Phi coverage is intentionally unbalanced and currently contains one
+pair.
 
 - Qwen repeats a late layer 33 `values` source-cache summary locus with a
   negative interaction at all four independent one-frame source pairs and all
@@ -81,25 +84,34 @@ replication surface is now four source pairs x five models.
   Its full-vector source-cache contrasts are spatial-dominant at every captured
   layer, K/V component, and source pair, while its direct readout axis changes
   with source pair and probe family.
+- Phi-3.5 Vision adds a sixth architecture pilot on `c_d`. Its standard family
+  and frequency readouts are both palette-dominant, but prompt variants change
+  the generated family pattern in 3/3 non-baseline variants and split frequency
+  dominance between palette and spatial axes.
 
-The prompt audit now covers both `b_c` and `e_f` in all five models. Its 40
-cell runs contain 640 sidecars, with all 160 baseline sidecars reproducing
-bitwise. Across the 40 paired model-family-variant records, generated four-cell
-semantic patterns agree across source pairs in 34, while the dominant balanced
-full-vocabulary axis agrees in only 11; both agree in 10. In 24/40 records the
-categorical pattern repeats as the spatial, palette, or interaction-dominant
-axis changes. Categorical readout replication therefore does not establish
-replication of the full-distribution factorial geometry.
+The core prompt audit now covers `b_c`, `c_d`, `d_e`, and `e_f` in all five
+models: 20 model/pair audit units, 80 cell runs, and 1,280 sidecars, with all
+320 baseline sidecars reproducing bitwise. Across the 40 fixed
+model-family-variant records, generated four-cell semantic patterns agree over
+all four source pairs in 27, while the dominant balanced full-vocabulary axis
+agrees in only 2. Over the six dependent pairwise comparisons per record,
+generated patterns agree in 185/240 and dominant axes in 100/240; in 105
+comparisons the categorical pattern repeats while the axis changes. The Phi
+`c_d` audit adds 64 validated sidecars and another distinct prompt profile, but
+does not yet constitute a sixth balanced four-pair replication.
 
-The full-vector surface now contains 80 source-only ACK runs, 416 target tensor
-sidecars, and 104 layer-by-pair analyses over 26 model-local target groups.
-Every pre-image prefix has exactly zero effect, 100/104 interaction argmaxes are
-image tokens, and 102/104 image-token energy fractions exceed 0.9. Balanced
-`+1/+1/-1/-1` calibration changes the magnitude reading: spatial, palette, and
-interaction are dominant in 84, 14, and 6 analyses respectively. Interaction
-is nonzero and image-localized, but it is usually not the dominant factorial
-axis. High-energy image directions remain only weakly aligned across source
-pairs, so a repeatable scalar locus does not imply one shared vector mechanism.
+The balanced five-model full-vector core contains 80 source-only ACK runs, 416
+target tensor sidecars, and 104 layer-by-pair analyses over 26 model-local
+target groups. Every pre-image prefix has exactly zero effect, 100/104
+interaction argmaxes are image tokens, and 102/104 image-token energy fractions
+exceed 0.9. Balanced `+1/+1/-1/-1` calibration makes spatial, palette, and
+interaction dominant in 84, 14, and 6 analyses respectively. Phi adds four ACK
+runs, eight tensors, and two selected `keys` analyses; both are
+spatial-dominant even though scalar summaries highlight interaction. Phi's
+processor-expanded image-token layout is not yet reconstructed, so its raw
+positions are not assigned image/non-image roles. High-energy core directions
+remain only weakly aligned across pairs, and a repeatable scalar locus does not
+imply one shared vector mechanism.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
@@ -114,26 +126,29 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-1. [Note 0033](docs/research_notes/0033_five_model_two_pair_prompt_matrix.md)
-   for the complete five-model x two-source-pair prompt replication matrix.
-2. [Note 0032](docs/research_notes/0032_five_model_prompt_robustness_and_source_pair_decoupling.md)
+1. [Note 0034](docs/research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md)
+   for the complete five-model x four-source-pair prompt matrix and the
+   Phi-3.5 Vision pilot.
+2. [Note 0033](docs/research_notes/0033_five_model_two_pair_prompt_matrix.md)
+   for the earlier two-pair matrix and its transition into the four-pair test.
+3. [Note 0032](docs/research_notes/0032_five_model_prompt_robustness_and_source_pair_decoupling.md)
    for five-model prompt robustness and the LFM2 two-source-pair decoupling.
-3. [Note 0031](docs/research_notes/0031_balanced_contrasts_five_model_expansion.md)
+4. [Note 0031](docs/research_notes/0031_balanced_contrasts_five_model_expansion.md)
    for balanced factorial calibration and the five-model cache/readout matrix.
-4. [Note 0030](docs/research_notes/0030_full_vector_cache_factorials.md)
+5. [Note 0030](docs/research_notes/0030_full_vector_cache_factorials.md)
    for the first full-vector 2x2 cache result and direction analysis.
-5. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
+6. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
    for the three-model prompt audit and InternVL expansion.
-6. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
+7. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
    for the four-pair replication and first prompt audit.
-7. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
+8. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
    for the protocol audit that defines the valid fresh-forward boundary.
-8. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
+9. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
    supported/provisional/withdrawn map.
-9. [Experiment Design](docs/experiment_design.md) for the control ladder.
-10. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
+10. [Experiment Design](docs/experiment_design.md) for the control ladder.
+11. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
    for the still-valid input and processor-space cross-palette analysis.
-11. [Examples](examples/README.md) for tracked summaries and the historical note
+12. [Examples](examples/README.md) for tracked summaries and the historical note
    sequence.
 
 Relevant historical cross-palette and intervention notes now carry
@@ -185,6 +200,8 @@ first logprob-focused pass unless a selected model exposes the needed signal.
   variants.
 - Aggregate semantic prompt-robustness audits across models while keeping
   generated-label stability and probability-surface stability separate.
+- Compare generated-pattern and balanced-axis replication over a model x three
+  or more source-pair matrix, retaining all-pair and dependent pairwise views.
 - Record sampled KV-cache summaries over all layers and map local argmaxes to
   image-token runs and vision markers.
 - Save selected source-cache tensors as offset-trimmed float32 sidecars with
@@ -621,6 +638,21 @@ python3 scripts/analyze_prompt_robustness_pair_matrix.py \
   --output-md runs/prompt_controls/two_pair/pair_matrix.md
 ```
 
+For three or more common source pairs, retain both strict all-pair agreement
+and all dependent source-pair comparisons:
+
+```bash
+python3 scripts/analyze_prompt_robustness_multi_pair_matrix.py \
+  --analysis qwen:b_c=runs/prompt_controls/qwen_b_c/prompt_robustness.json \
+  --analysis qwen:c_d=runs/prompt_controls/qwen_c_d/prompt_robustness.json \
+  --analysis qwen:d_e=runs/prompt_controls/qwen_d_e/prompt_robustness.json \
+  --analysis smol:b_c=runs/prompt_controls/smol_b_c/prompt_robustness.json \
+  --analysis smol:c_d=runs/prompt_controls/smol_c_d/prompt_robustness.json \
+  --analysis smol:d_e=runs/prompt_controls/smol_d_e/prompt_robustness.json \
+  --output-json runs/prompt_controls/multi_pair/matrix.json \
+  --output-md runs/prompt_controls/multi_pair/matrix.md
+```
+
 The legacy cache-swap and cache-branch CLIs remain in the repository so the
 withdrawn path can be reproduced and audited. Do not treat their current
 MLX-VLM `0.4.4` outputs as persistence or intervention evidence.
@@ -689,6 +721,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0031: Balanced Contrasts and Five-Model Expansion](docs/research_notes/0031_balanced_contrasts_five_model_expansion.md)
 - [Research Note 0032: Five-Model Prompt Robustness and Source-Pair Decoupling](docs/research_notes/0032_five_model_prompt_robustness_and_source_pair_decoupling.md)
 - [Research Note 0033: Five-Model Two-Pair Prompt Matrix](docs/research_notes/0033_five_model_two_pair_prompt_matrix.md)
+- [Research Note 0034: Four-Pair Prompt Replication and Phi-3.5 Vision Expansion](docs/research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md)
 
 ## Claim Boundary
 

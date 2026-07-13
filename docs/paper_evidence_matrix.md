@@ -18,9 +18,10 @@ the same four factorial cells are not independent samples.
 | Gemma 3 direct factorial trajectory | Gemma-3-4B-it 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2; 24 cells total | All 6 direct after-factorials are non-identical; all four one-frame maxima are early `values`, but exact layer and sign vary; frequency readout can change sharply | component-level regularity plus pair-dependent exact locus | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
 | InternVL3 direct factorial replication | InternVL3-2B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All four direct after-factorials are non-identical; all ACK maxima are late layer 25-27 `values` with negative sign | component/sign/depth-band replication with pair-dependent exact layer | [Note 0029](research_notes/0029_cross_model_prompt_and_internvl_expansion.md) |
 | LFM2-VL direct factorial replication | LFM2-VL-1.6B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All after-cell distributions are distinct; visible family labels vary in 3/4 pairs while frequency labels stay fixed; balanced readout axes remain pair-dependent | fifth-architecture replication with deterministic artifact integrity | [Note 0031](research_notes/0031_balanced_contrasts_five_model_expansion.md) |
-| Full-vector source-cache factorials | Five VLMs, 26 model-local layer/tensor targets, fresh source-only ACK | 4 source pairs x 26 target groups; 80 cell runs, 416 tensors, 104 analyses | Every pre-image effect is zero; 100/104 argmaxes are image tokens; balanced axis dominance is spatial/palette/interaction in 84/14/6 analyses | targeted vector localization plus calibrated descriptive direction replication | [Note 0031](research_notes/0031_balanced_contrasts_five_model_expansion.md) |
-| Cross-model direct aggregate | Five VLMs, complete first-step vocabulary | 34 factorial points, 136 cells, 544 sidecars | Every direct after-factorial is non-identical; one-frame balanced readout dominance is model-, pair-, and probe-dependent | replicated architecture heterogeneity plus model-conditional regularities | [tracked summary](../examples/research_notes/0031_balanced_contrasts_five_model_expansion/summary.json) |
-| Prompt robustness audit | Five VLMs on `b_c` and `e_f`, fresh direct probes | 10 model/source-pair audit units, 40 cell runs, 640 sidecars | All 160 baseline sidecars repeat bitwise; generated patterns agree across pairs in 34/40 paired records, balanced-axis dominance in 11/40, and both in 10/40 | five-model two-pair categorical versus distributional replication matrix | [Note 0033](research_notes/0033_five_model_two_pair_prompt_matrix.md) |
+| Full-vector source-cache core | Five VLMs, 26 model-local layer/tensor targets, fresh source-only ACK | 4 source pairs x 26 target groups; 80 cell runs, 416 tensors, 104 analyses | Every pre-image effect is zero; 100/104 argmaxes are image tokens; balanced axis dominance is spatial/palette/interaction in 84/14/6 analyses | targeted vector localization plus calibrated descriptive direction replication | [Note 0031](research_notes/0031_balanced_contrasts_five_model_expansion.md) |
+| Cross-model direct aggregate | Five-model four-pair core plus Phi-3.5 Vision on `c_d`, complete first-step vocabulary | 35 factorial points, 140 cells, 560 sidecars | Every direct after-factorial is non-identical; balanced readout dominance is model-, pair-, and probe-dependent; sixth-model coverage is unbalanced | replicated architecture heterogeneity plus a bounded sixth-architecture pilot | [Note 0034](research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md) |
+| Four-pair prompt robustness core | Five VLMs on `b_c`, `c_d`, `d_e`, and `e_f`, fresh direct probes | 20 model/source-pair audit units, 80 cell runs, 1,280 sidecars | All 320 baseline sidecars repeat bitwise; generated patterns agree over all four pairs in 27/40 records, balanced-axis dominance in 2/40, and both in 2/40 | five-model four-pair categorical versus distributional replication matrix | [Note 0034](research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md) |
+| Phi-3.5 Vision expansion pilot | Phi-3.5 Vision 4bit on `c_d`, fresh direct probes and source-only ACK | 4 standard direct cells and 16 sidecars; 4 prompt cells and 64 sidecars; 4 ACK cells, 8 tensors, 2 full-vector analyses | Prompt dominance is S/P/I in 2/6/0; both selected full tensors are spatial-dominant; image-token partition is unresolved | sixth-architecture feasibility and heterogeneity pilot, not balanced replication | [Note 0034](research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md) |
 
 ## Withdrawn From The Evidence Set
 
@@ -40,9 +41,10 @@ the same four factorial cells are not independent samples.
 2. The audited MLX-VLM `0.4.4` incremental and text-only branch paths do not
    preserve the multimodal prefix needed for persistence or intervention
    interpretation.
-3. Under fresh direct multimodal probes, every one of the 34 tested
+3. Under fresh direct multimodal probes, every one of the 35 tested
    `MM/JJ/MJ/JM` factorials has non-identical full-vocabulary first-step
-   distributions at saved numerical precision.
+   distributions at saved numerical precision. Thirty-four points form the
+   balanced five-model core; Phi currently contributes one `c_d` point.
 4. At one frame, Qwen's layer 33 `values` scalar interaction locus and negative
    sign repeat over all four independent source pairs. InternVL repeats a late
    negative `values` band, Gemma stays in early `values` but changes layer/sign,
@@ -54,10 +56,17 @@ the same four factorial cells are not independent samples.
    84/14/6 analyses.
 6. A generated letter or top-k set can remain fixed while the complete
    distribution changes; visible-label equality is not distribution equality.
-7. Across five models and two prompt-audited source pairs, generated semantic
-   patterns agree across pairs in 34/40 paired model-family-variant records,
-   while balanced-axis dominance agrees in 11/40 and both agree in 10/40.
-   Every one of the 160 baseline sidecars reproduces exactly.
+7. Across five models and four prompt-audited source pairs, generated semantic
+   patterns agree over all four pairs in 27/40 fixed model-family-variant
+   records, while balanced-axis dominance and both criteria agree in only 2/40.
+   Every one of the 320 baseline sidecars reproduces exactly.
+8. Over the six dependent source-pair comparisons per prompt record, generated
+   patterns agree in 185/240 comparisons and balanced-axis dominance in
+   100/240. In 105 comparisons, the categorical pattern repeats while the
+   dominant full-distribution axis changes.
+9. The Phi `c_d` pilot produces non-identical direct readouts and a distinct
+   prompt profile. Its two selected full-vector `keys` targets are
+   spatial-dominant, but its image-token partition is not yet identified.
 
 ### Provisional
 
@@ -78,10 +87,13 @@ the same four factorial cells are not independent samples.
   mechanism.
 - Cache-summary magnitude and direct readout interaction are neither equivalent
   nor monotonically coupled in the current trajectories.
-- Probe family and candidate calibration matter in all five audited models;
+- Probe family and candidate calibration matter in all six piloted models;
   the magnitude, visible-label response, and balanced factorial axis are
-  architecture- and source-pair-specific. In 24/40 paired records the
-  categorical pattern repeats while the dominant distributional axis changes.
+  architecture- and source-pair-specific. In the balanced five-model core,
+  only 2/40 prompt records retain one dominant axis across all four pairs.
+- `b_c` is more distributionally distinct from the other three pairs in this
+  four-pair matrix, but four source pairs do not establish a population-level
+  cluster.
 
 ### Not Supported Yet
 
@@ -109,19 +121,25 @@ the same four factorial cells are not independent samples.
   visual source-pair replications.
 - Prompt variants are repeated measurements over one visual factorial, not new
   visual source-pair replications.
-- The 40 paired prompt records share five models, two source pairs, two
+- The 40 all-pair prompt records share five models, four source pairs, two
   families, and four prompt variants. They are not 40 independent visual
   replications.
+- The 240 prompt pairwise comparisons are six dependent source-pair
+  comparisons from each of those 40 records, not 240 independent samples.
+- Phi currently contributes only `c_d`; pooled six-model artifact counts must
+  not be described as a balanced six-model four-pair design.
 
 ## Highest-Value Next Data
 
-1. Balance wording, candidate order, and token-to-semantics mapping as separate
+1. Extend Phi-3.5 Vision to `b_c`, `d_e`, and `e_f` to complete a balanced
+   sixth-model prompt and direct matrix.
+2. Balance wording, candidate order, and token-to-semantics mapping as separate
    factors, including neutral and non-forced readouts.
-2. Extend prompt audits to `c_d` and `d_e`, then add independently generated
-   trajectories.
-3. Resolve balanced full-vector axes by KV head and image-token position.
-4. Add matched natural, geometric, noise, and processor-frequency controls with
-   permutation nulls.
+3. Add independently generated trajectories and matched natural, geometric,
+   noise, and processor-frequency controls with source-level permutation
+   references.
+4. Reconstruct Phi's processor-expanded image-token layout, then resolve
+   balanced full-vector axes by KV head and token position.
 5. Rebuild intervention logic only on a multimodal suffix path that asserts
    exact prefix and cache sequence-length compatibility before mutation.
 
@@ -134,11 +152,12 @@ Preferred:
 > source pairs. Source-cache scalar loci formed distinct architecture profiles,
 > while selected full-vector contrasts localized interaction energy mainly to
 > image tokens. Equal-coefficient calibration showed that spatial structure,
-> rather than interaction, dominates most captured source-cache targets, while
-> direct readout axes vary by model, pair, and probe. Prompt controls further
-> show that categorical response replication is substantially more common than
-> replication of full-distribution factorial dominance across source pairs.
-> The protocol does not test state persistence or causal cache mediation.
+> rather than interaction, dominates most captured source-cache targets. Across
+> prompt controls, 27/40 fixed records retained one generated semantic pattern
+> over all four pairs, but only 2/40 retained one dominant full-distribution
+> factorial axis. A sixth-architecture `c_d` pilot produced another distinct
+> profile but is not yet a balanced replication. The protocol does not test
+> state persistence or causal cache mediation.
 
 Avoid:
 
