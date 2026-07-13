@@ -175,7 +175,7 @@ def analyze_cache_tensor_factorial(
         "interaction_partition": partition,
         "interpretation_notes": [
             "Tensor sidecars are trimmed to each cache entry's effective offset before analysis.",
-            "When available, image and non-image regions use processor-expanded image-token positions from the saved source token layout.",
+            "When available, image and non-image regions use the saved effective-cache position layout; identity layouts preserve processor positions and validated model-specific expansion layouts remap them.",
             "If no image-token positions are identified, only the complete effective region is reported and raw positions remain role-unassigned.",
             "RMS permits region-size comparison; L2 retains total interaction energy and therefore scales with element count.",
             "Balanced spatial, palette, and interaction contrasts all use +/-1 cell coefficients; their energy shares sum to one when any cell contrast is nonzero.",
@@ -193,7 +193,7 @@ def cache_tensor_regions(
     if sequence_length <= 0:
         raise ValueError("sequence_length must be positive")
     image_positions = []
-    for run in token_layout.get("image_token_runs") or []:
+    for run in _cache_image_position_runs(token_layout, sequence_length):
         start = int(run["start"])
         end = int(run["end"])
         if start < 0 or end < start or end >= sequence_length:
@@ -223,6 +223,27 @@ def cache_tensor_regions(
         "pre_image": pre_image,
         "post_image": post_image,
     }
+
+
+def _cache_image_position_runs(
+    token_layout: dict[str, Any],
+    sequence_length: int,
+) -> list[dict[str, Any]]:
+    cache_layout = token_layout.get("cache_position_layout")
+    if cache_layout is not None:
+        if not cache_layout.get("available"):
+            return []
+        mapped_length = int(cache_layout.get("cache_sequence_length", -1))
+        if mapped_length != sequence_length:
+            raise ValueError(
+                f"cache-position layout length {mapped_length} does not match tensor length {sequence_length}"
+            )
+        return list(cache_layout.get("image_position_runs") or [])
+
+    token_count = token_layout.get("token_count")
+    if token_count is not None and int(token_count) != sequence_length:
+        return []
+    return list(token_layout.get("image_token_runs") or [])
 
 
 def factorial_effect_vectors(

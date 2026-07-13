@@ -29,6 +29,7 @@ from .mlx_stream import (
     _probe_seed_policy,
     _run_probe_batch,
     _select_frames,
+    cache_layout_sequence_positions,
     summarize_prompt_cache_state,
     summarize_prompt_cache_token_layout,
 )
@@ -398,7 +399,7 @@ def _run_direct_multimodal_probe_batch(
             else None
         )
         direct_positions = (
-            [item["position"] for item in token_layout["sequence_position_plan"]]
+            cache_layout_sequence_positions(token_layout)
             if token_layout is not None
             else []
         )
@@ -480,9 +481,7 @@ def _run_replay_turn(
         run_output_path=config.output_path,
         relative_to=config.output_path.parent,
     )
-    replay_positions = [
-        record["position"] for record in token_layout["sequence_position_plan"]
-    ]
+    replay_positions = cache_layout_sequence_positions(token_layout)
     return {
         "event_kind": "ordered_multi_image_replay",
         "frame_index": int(frames[-1]["index"]),

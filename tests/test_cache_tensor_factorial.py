@@ -111,6 +111,38 @@ def test_cache_tensor_regions_leave_roles_unassigned_without_image_positions() -
     assert regions["post_image"] == []
 
 
+def test_cache_tensor_regions_use_validated_cache_position_mapping() -> None:
+    regions = cache_tensor_regions(
+        {
+            "token_count": 6,
+            "image_token_runs": [{"start": 1, "end": 3, "length": 3}],
+            "cache_position_layout": {
+                "available": True,
+                "cache_sequence_length": 9,
+                "image_position_runs": [{"start": 1, "end": 6, "length": 6}],
+            },
+        },
+        sequence_length=9,
+    )
+
+    assert regions["image_tokens"] == [1, 2, 3, 4, 5, 6]
+    assert regions["pre_image"] == [0]
+    assert regions["post_image"] == [7, 8]
+
+
+def test_cache_tensor_regions_fail_closed_on_unmapped_length_mismatch() -> None:
+    regions = cache_tensor_regions(
+        {
+            "token_count": 6,
+            "image_token_runs": [{"start": 1, "end": 3, "length": 3}],
+        },
+        sequence_length=9,
+    )
+
+    assert regions["image_tokens"] == []
+    assert regions["non_image_tokens"] == []
+
+
 def _run(cell: str, metadata: dict) -> dict:
     return {
         "model_id": "example/model",

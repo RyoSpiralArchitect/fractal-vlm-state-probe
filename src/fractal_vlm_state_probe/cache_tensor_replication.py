@@ -175,7 +175,6 @@ def _point_record(
     if analysis.get("analysis_kind") != "source_cache_tensor_factorial_contrast":
         raise ValueError(f"unsupported analysis kind for {label}")
     regions = {record["region"]: record for record in analysis.get("regions") or []}
-    image_positions = _image_position_set(analysis)
     interaction_partition = analysis.get("interaction_partition") or {}
     image_partition_available = bool(interaction_partition.get("available"))
     all_interaction = regions["all_effective"]["effects"]["interaction"]
@@ -185,6 +184,7 @@ def _point_record(
         analysis["cells"]["mm"]["cache_token_layout"],
         sequence_length=tensor_shape[-2],
     )
+    image_positions = set(region_positions["image_tokens"])
     region_metrics = {}
     for name, record in regions.items():
         balanced_shares = (record.get("balanced_contrast_energy") or {}).get(
@@ -395,14 +395,6 @@ def _direction_replication(vectors: dict[str, np.ndarray]) -> dict[str, Any]:
         "pairwise": pairwise,
         "summary": _summary(record["cosine"] for record in pairwise),
     }
-
-
-def _image_position_set(analysis: dict[str, Any]) -> set[int]:
-    layout = analysis["cells"]["mm"]["cache_token_layout"]
-    positions = set()
-    for run in layout.get("image_token_runs") or []:
-        positions.update(range(int(run["start"]), int(run["end"]) + 1))
-    return positions
 
 
 def _resolve_source_path(raw: str) -> Path:

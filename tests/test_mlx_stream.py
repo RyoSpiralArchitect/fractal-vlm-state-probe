@@ -14,6 +14,7 @@ from fractal_vlm_state_probe.mlx_stream import (
     _package_version,
     _probe_phase_seeds,
     _should_summarize_cache,
+    cache_layout_sequence_positions,
     run_stream_probe,
     summarize_mlx_logprobs,
     summarize_prompt_cache_token_layout,
@@ -161,8 +162,12 @@ def test_mlx_sequence_stats_include_requested_positions() -> None:
 
 
 def test_prompt_cache_token_layout_finds_image_runs_and_focus_positions() -> None:
+    class CacheEntry:
+        offset = 10
+
     class State:
         token_ids = [10, 151652, 151655, 151655, 151653, 20, 151652, 151655, 151653, 30]
+        cache = [CacheEntry()]
 
     config = {
         "vision_start_token_id": 151652,
@@ -184,6 +189,64 @@ def test_prompt_cache_token_layout_finds_image_runs_and_focus_positions() -> Non
     assert "image_run_0_start" in roles[2]
     assert "image_run_0_end" in roles[3]
     assert "vision_end_token_id" in roles[4]
+    cache_layout = layout["cache_position_layout"]
+    assert cache_layout["available"] is True
+    assert cache_layout["strategy"] == "identity"
+    assert cache_layout["image_position_runs"] == layout["image_token_runs"]
+    assert cache_layout_sequence_positions(layout) == list(range(10))
+
+
+def test_prompt_cache_token_layout_maps_granite_vision_expansion() -> None:
+    class CacheEntry:
+        offset = 3073
+
+    class State:
+        token_ids = [10] * 51 + [49155] * 1317 + [20] * 106
+        cache = [CacheEntry()]
+
+    layout = summarize_prompt_cache_token_layout(
+        State(),
+        {"model_type": "granite_vision", "image_token_index": 49155},
+    )
+
+    cache_layout = layout["cache_position_layout"]
+    assert layout["token_count"] == 1474
+    assert cache_layout["available"] is True
+    assert cache_layout["strategy"] == "granite_vision_single_image_run_replacement"
+    assert cache_layout["cache_sequence_length"] == 3073
+    assert cache_layout["image_position_count"] == 2916
+    assert cache_layout["image_position_runs"] == [
+        {"start": 51, "end": 2966, "length": 2916}
+    ]
+    assert cache_layout["pre_image_position_count"] == 51
+    assert cache_layout["post_image_position_count"] == 106
+    assert cache_layout["expansion_delta"] == 1599
+    assert cache_layout_sequence_positions(layout) == [0, 51, 1508, 1536, 2966, 3072]
+
+
+def test_prompt_cache_token_layout_fails_closed_for_unknown_expansion() -> None:
+    class CacheEntry:
+        offset = 8
+
+    class State:
+        token_ids = [10, 99, 99, 20]
+        cache = [CacheEntry()]
+
+    layout = summarize_prompt_cache_token_layout(
+        State(),
+        {"model_type": "unknown_vlm", "image_token_id": 99},
+    )
+
+    assert layout["cache_position_layout"] == {
+        "available": False,
+        "coordinate_space": "effective_cache_sequence",
+        "processor_token_count": 4,
+        "cache_sequence_lengths": [8],
+        "processor_image_position_count": 2,
+        "cache_sequence_length": 8,
+        "reason": "processor_token_and_cache_lengths_differ",
+    }
+    assert cache_layout_sequence_positions(layout) == []
 
 
 def test_cache_prefix_audit_rejects_partial_prefix_and_cache_length_mismatch() -> None:

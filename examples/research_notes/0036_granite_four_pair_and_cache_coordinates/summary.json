@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "granite_four_pair_cache_coordinate_and_seven_model_summary",
+  "note": "0036_granite_four_pair_completion_and_cache_coordinates",
+  "date": "2026-07-14",
+  "protocol": {
+    "models": [
+      "gemma3",
+      "granite_vision",
+      "internvl3",
+      "lfm2_vl",
+      "phi35_vision",
+      "qwen",
+      "smol"
+    ],
+    "source_pairs": ["b_c", "c_d", "d_e", "e_f"],
+    "visual_cells": ["mm", "jj", "mj", "jm"],
+    "prompt_families": ["family", "frequency"],
+    "prompt_variants": [
+      "baseline",
+      "paraphrase",
+      "reversed_order",
+      "rotated_labels"
+    ],
+    "temperature": 0,
+    "stream_seed": 20260604,
+    "probe_seed": 0,
+    "cache_reuse": false
+  },
+  "integrity": {
+    "balanced_one_frame_direct_factorials": 28,
+    "balanced_one_frame_direct_cells": 112,
+    "balanced_one_frame_direct_sidecars": 448,
+    "full_valid_direct_factorials": 42,
+    "full_valid_direct_cells": 168,
+    "standard_full_vocab_sidecars": 672,
+    "prompt_audits": 28,
+    "prompt_cell_runs": 112,
+    "prompt_full_vocab_sidecars": 1792,
+    "prompt_baseline_bitwise_exact": "448/448",
+    "granite_direct_sidecars": "64/64",
+    "granite_prompt_sidecars": "256/256",
+    "granite_prompt_baseline_bitwise_exact": "64/64",
+    "selected_full_vector_surface": {
+      "source_ack_cells": 112,
+      "tensor_sidecars": 512,
+      "factorial_analyses": 128,
+      "counting_note": "The earlier Granite c_d smoke is superseded by the fixed three-target four-pair set and is not counted twice."
+    }
+  },
+  "seven_model_prompt_matrix": {
+    "all_pair_record_count": 56,
+    "generated_pattern_agreement": "37/56",
+    "balanced_axis_agreement": "3/56",
+    "both_agreement": "2/56",
+    "pairwise_record_count": 336,
+    "pairwise_generated_pattern_agreement": "254/336",
+    "pairwise_balanced_axis_agreement": "132/336",
+    "pairwise_both_agreement": "100/336",
+    "pairwise_generated_same_axis_different": 154,
+    "balanced_share_l1": {
+      "min": 0.015466717,
+      "median": 0.74259253,
+      "max": 1.9831525
+    },
+    "dominant_axis_spatial_palette_interaction": [87, 68, 69],
+    "interaction_above_one_third": "85/224"
+  },
+  "granite_vision": {
+    "model_id": "mlx-community/granite-vision-3.2-2b-4bit",
+    "runtime": {
+      "mlx_version": "0.31.1",
+      "mlx_vlm_version": "0.4.4",
+      "chat_template_compatibility": "granite_vision_tokenizer_chat_template"
+    },
+    "direct_readout": {
+      "family_axes": {
+        "b_c": "spatial",
+        "c_d": "spatial",
+        "d_e": "palette",
+        "e_f": "interaction"
+      },
+      "frequency_axes": {
+        "b_c": "interaction",
+        "c_d": "interaction",
+        "d_e": "palette",
+        "e_f": "palette"
+      },
+      "all_factorials_non_identical": "8/8"
+    },
+    "scalar_cache": {
+      "key_component_replication": "3/4",
+      "exact_layer_mode": "layer_33_keys",
+      "exact_layer_mode_share": "2/4",
+      "sign_mode_share": "2/4",
+      "normalized_depth_range": [0.0, 0.8974359],
+      "points": {
+        "b_c": {
+          "layer": 33,
+          "tensor": "keys",
+          "interaction": 149.7998,
+          "relative": 0.01778766
+        },
+        "c_d": {
+          "layer": 35,
+          "tensor": "values",
+          "interaction": -313.53613,
+          "relative": 0.062036023
+        },
+        "d_e": {
+          "layer": 33,
+          "tensor": "keys",
+          "interaction": 152.37598,
+          "relative": 0.018145181
+        },
+        "e_f": {
+          "layer": 0,
+          "tensor": "keys",
+          "interaction": -199.32812,
+          "relative": 0.023717135
+        }
+      }
+    },
+    "prompt_readout": {
+      "variant_records": 32,
+      "generated_candidate_semantics_resolved": "0/128",
+      "candidate_probability_mass_range": [0.01774578, 0.16893707],
+      "dominant_axis_spatial_palette_interaction": [12, 9, 11],
+      "interaction_above_one_third": "13/32",
+      "all_pair_generated_pattern_agreement": "8/8",
+      "all_pair_balanced_axis_agreement": "0/8",
+      "pairwise_generated_pattern_agreement": "48/48",
+      "pairwise_balanced_axis_agreement": "12/48",
+      "pairwise_balanced_share_l1_median": 0.65441505,
+      "generated_agreement_interpretation": "Every generated semantic is unresolved, so agreement is replicated missing forced-choice compliance rather than positive category agreement."
+    },
+    "cache_coordinate_mapping": {
+      "strategy": "granite_vision_single_image_run_replacement",
+      "processor_prompt_token_count": 1472,
+      "generated_source_token_count": 2,
+      "saved_processor_token_count": 1474,
+      "processor_image_placeholder_count": 1317,
+      "cache_image_position_count": 2916,
+      "cache_effective_offset": 3073,
+      "expansion_delta": 1599,
+      "pre_image_position_count": 51,
+      "image_position_run": {"start": 51, "end": 2966, "length": 2916},
+      "post_image_position_count": 106,
+      "cache_raw_shape": [1, 8, 3328, 64],
+      "captured_shape": [1, 8, 3073, 64],
+      "partition_closes": true,
+      "single_image_run_only": true,
+      "unknown_mismatches_fail_closed": true
+    },
+    "full_vector": {
+      "targets": [
+        {"layer": 1, "tensor": "keys"},
+        {"layer": 35, "tensor": "values"},
+        {"layer": 39, "tensor": "values"}
+      ],
+      "tensor_shape": [1, 8, 3073, 64],
+      "spatial_dominant": "12/12",
+      "image_argmax": "12/12",
+      "pre_image_zero": "12/12",
+      "image_energy_above_0_9": "12/12",
+      "target_summaries": {
+        "layer_1_keys": {
+          "median_balanced_spatial_palette_interaction": [0.40868244, 0.30403483, 0.28971937],
+          "image_energy_fraction_median": 0.99999061,
+          "image_interaction_cosine_median": 0.1239376,
+          "post_image_interaction_cosine_median": 0.099442058
+        },
+        "layer_35_values": {
+          "median_balanced_spatial_palette_interaction": [0.37386475, 0.32134247, 0.30182529],
+          "image_energy_fraction_median": 0.99962403,
+          "image_interaction_cosine_median": 0.088009578,
+          "post_image_interaction_cosine_median": 0.69635145
+        },
+        "layer_39_values": {
+          "median_balanced_spatial_palette_interaction": [0.35774074, 0.33489979, 0.3061392],
+          "image_energy_fraction_median": 0.99936591,
+          "image_interaction_cosine_median": 0.085536727,
+          "post_image_interaction_cosine_median": 0.65278593
+        }
+      }
+    }
+  },
+  "selected_full_vector_surface": {
+    "dominant_axis_spatial_palette_interaction": [108, 14, 6],
+    "partition_resolved_analyses": 116,
+    "pre_image_zero": "116/116",
+    "image_argmax": "112/116",
+    "image_energy_above_0_9": "114/116",
+    "interaction_at_or_below_one_third": "117/128",
+    "phi_role_unassigned_analyses": 12
+  },
+  "claim_boundary": {
+    "independent_visual_replications": 4,
+    "prompt_records_are_independent": false,
+    "pairwise_comparisons_are_independent": false,
+    "granite_four_pair_replication_established": true,
+    "granite_single_image_cache_coordinate_mapping_established": true,
+    "granite_multi_image_coordinate_mapping_established": false,
+    "source_cache_to_readout_causal_path": false,
+    "persistent_state_established": false,
+    "universal_layer_established": false
+  },
+  "primary_artifacts": [
+    "runs/granite_vision_expansion/seven_model_four_pair_direct/cross_model_replication.json",
+    "runs/granite_vision_expansion/prompt_controls/seven_model_four_pair_1f_forced_choice_robustness_seed0/prompt_robustness_multi_pair_matrix.json",
+    "runs/granite_vision_expansion/four_pair_1f_source_cache_three_target_seed0/replication/layer_001_keys.json",
+    "runs/granite_vision_expansion/four_pair_1f_source_cache_three_target_seed0/replication/layer_035_values.json",
+    "runs/granite_vision_expansion/four_pair_1f_source_cache_three_target_seed0/replication/layer_039_values.json",
+    "runs/granite_vision_expansion/c_d_1f_cache_layout_smoke/mm_capture_mlx.json"
+  ]
+}

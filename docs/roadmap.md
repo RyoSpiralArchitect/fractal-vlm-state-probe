@@ -136,25 +136,25 @@ position-local swaps remain required after that path is valid.
   position number alone.
 
 Status: the balanced one-frame direct core now covers SmolVLM2, Qwen2.5-VL,
-Gemma 3, InternVL3, LFM2-VL, and Phi-3.5 Vision over four source pairs. The
-wider valid direct surface contains 39 factorial points, 156 cell runs, and 624
-complete-vocabulary sidecars, with non-identical after-cell distributions in
-every factorial. The extra point is a bounded Granite Vision `c_d` pilot, not a
-seventh balanced block. Qwen repeats a late scalar locus, InternVL a late band,
-Gemma an early band, SmolVLM broad pair dependence, LFM2 six hybrid-attention
-cache entries, and Phi an early positive `keys` profile. The selected
-full-vector surface contains 116 layer-by-pair analyses; Phi contributes 12
-fixed `keys` analyses that are all spatial-dominant, weakly aligned across
-source pairs, and still lack an identified image-token partition. The six-model
-prompt audit is balanced over all four pairs. Generated patterns agree over
-every pair in 29/48 fixed model-family-variant records, balanced-axis dominance
-in 3/48, and both in 2/48. Granite adds one prompt audit whose generated
-candidate semantics are unresolved in all cells while its measured axis changes
-between baseline frequency and the three prompt controls. Wider Granite work is
-blocked on reconstructing its 1,474-token processor layout against 3,073
-effective cache positions. The next independent-evidence step is to add
-generated trajectories and matched natural/geometric/frequency controls before
-extending nested lengths.
+Gemma 3, InternVL3, LFM2-VL, Phi-3.5 Vision, and Granite Vision over four source
+pairs. The wider valid direct surface contains 42 factorial points, 168 cell
+runs, and 672 complete-vocabulary sidecars, with non-identical after-cell
+distributions in every factorial. Qwen repeats a late scalar locus, InternVL a
+late band, Gemma an early band, SmolVLM broad pair dependence, LFM2 six
+hybrid-attention cache entries, Phi an early positive `keys` profile, and
+Granite a pair-dependent layer/component/sign profile. The selected full-vector
+surface contains 128 layer-by-pair analyses. Granite contributes 12 fixed
+analyses that are spatial-dominant, image-localized, and exactly zero over the
+shared pre-image prefix. Its single-image processor-to-cache expansion is now
+mapped from 1,474 processor-history tokens to 3,073 effective positions; unknown
+mismatches and multi-run layouts fail closed. Phi's 12 analyses remain
+role-unassigned. The seven-model prompt audit is balanced over all four pairs.
+Generated patterns agree over every pair in 37/56 fixed records, balanced-axis
+dominance in 3/56, and both in 2/56. Granite contributes 8/8 generated-pattern
+agreements only because every candidate semantic is unresolved, while its
+measured axis agrees in 0/8. The next independent-evidence step is to add
+generated trajectories and matched natural/geometric/noise/frequency controls
+before extending nested lengths.
 
 ## Phase 5: Research Report
 
@@ -164,11 +164,11 @@ extending nested lengths.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0035 encode the audited claim
-boundary, balanced six-model direct and prompt replication, selected
+Status: the evidence matrix and Notes 0027-0036 encode the audited claim
+boundary, balanced seven-model direct and prompt replication, selected
 full-vector localization, and scalar-locus versus vector-direction separation.
 Initial manuscript tables exist; calibrated nulls and figures remain future
-work. The current priority is a balanced wording/order/verbalizer factorial, a
-Granite cache-coordinate reconstruction, independent trajectory and control
-replication, compatible head/position-resolved vector analysis, and a valid
+work. The current priority is independent trajectory and matched-control
+replication, a balanced wording/order/verbalizer factorial, Phi coordinate
+resolution, compatible head/position-resolved vector analysis, and a valid
 intervention path before causal prose is promoted.

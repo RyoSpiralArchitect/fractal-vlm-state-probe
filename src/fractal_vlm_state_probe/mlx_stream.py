@@ -269,7 +269,11 @@ def run_stream_probe(
 
 
 def _probe_temperature(config: StreamRunConfig) -> float:
-    return config.temperature if config.probe_temperature is None else config.probe_temperature
+    return (
+        config.temperature
+        if config.probe_temperature is None
+        else config.probe_temperature
+    )
 
 
 def _probe_phase_seeds(base_seed: int | None) -> dict[str, int | None]:
@@ -281,7 +285,9 @@ def _probe_phase_seeds(base_seed: int | None) -> dict[str, int | None]:
 def _probe_seed_policy(base_seed: int | None) -> str:
     if base_seed is None:
         return "probe sampling uses the active global RNG state"
-    return "probe RNG is reset per phase from probe_seed, probe_seed+1, and probe_seed+2"
+    return (
+        "probe RNG is reset per phase from probe_seed, probe_seed+1, and probe_seed+2"
+    )
 
 
 def _run_frame_turn(
@@ -415,7 +421,9 @@ def _run_probe_batch(
                 probe_id=probe["id"],
             )
 
-            def full_vocab_writer(logprobs: Any, *, path: Path = sidecar_path) -> dict[str, Any]:
+            def full_vocab_writer(
+                logprobs: Any, *, path: Path = sidecar_path
+            ) -> dict[str, Any]:
                 return write_full_vocab_logprob_sidecar(
                     logprobs,
                     path=path,
@@ -515,7 +523,9 @@ def summarize_prompt_cache_state(
         "sequence_position_sampling": {
             "policy": "cache-shape anchors plus token-count anchors and caller-requested positions",
             "requested_positions": sorted(set(sequence_positions or [])),
-            "token_count_anchor_positions": sorted(requested_positions - set(sequence_positions or [])),
+            "token_count_anchor_positions": sorted(
+                requested_positions - set(sequence_positions or [])
+            ),
         },
         "layers": layers,
     }
@@ -539,14 +549,20 @@ def summarize_prompt_cache_token_layout(
         if (value := _model_config_value(model_config, name)) is not None
     }
     marker_positions = {
-        name: [index for index, token_id in enumerate(token_ids) if token_id == marker_id]
+        name: [
+            index for index, token_id in enumerate(token_ids) if token_id == marker_id
+        ]
         for name, marker_id in marker_token_ids.items()
     }
     image_token_id = marker_token_ids.get("image_token_id")
     if image_token_id is None:
         image_token_id = marker_token_ids.get("image_token_index")
     image_positions = (
-        [index for index, token_id in enumerate(token_ids) if token_id == image_token_id]
+        [
+            index
+            for index, token_id in enumerate(token_ids)
+            if token_id == image_token_id
+        ]
         if image_token_id is not None
         else []
     )
@@ -571,8 +587,17 @@ def summarize_prompt_cache_token_layout(
         add_focus(0, "first_token")
         add_focus(len(token_ids) // 2, "token_count_mid")
         add_focus(len(token_ids) - 1, "last_token")
+    cache_position_layout = _resolve_cache_position_layout(
+        token_count=len(token_ids),
+        image_token_runs=image_runs,
+        cache_sequence_lengths=_cache_effective_sequence_lengths(
+            getattr(prompt_cache_state, "cache", None)
+        ),
+        model_type=_model_config_value(model_config, "model_type"),
+    )
     return {
         "token_count": len(token_ids),
+        "coordinate_space": "processor_token_sequence",
         "marker_token_ids": marker_token_ids,
         "marker_positions": marker_positions,
         "image_token_count": len(image_positions),
@@ -581,7 +606,181 @@ def summarize_prompt_cache_token_layout(
             {"position": position, "roles": sorted(roles)}
             for position, roles in sorted(focus_roles.items())
         ],
+        "cache_position_layout": cache_position_layout,
     }
+
+
+def cache_layout_sequence_positions(token_layout: dict[str, Any]) -> list[int]:
+    cache_layout = token_layout.get("cache_position_layout")
+    if cache_layout is None:
+        plan = token_layout.get("sequence_position_plan")
+    elif cache_layout.get("strategy") == "identity":
+        plan = token_layout.get("sequence_position_plan")
+    elif cache_layout.get("available"):
+        plan = cache_layout.get("sequence_position_plan")
+    else:
+        plan = []
+    return [int(record["position"]) for record in plan or []]
+
+
+def _resolve_cache_position_layout(
+    *,
+    token_count: int,
+    image_token_runs: list[dict[str, int]],
+    cache_sequence_lengths: list[int],
+    model_type: Any,
+) -> dict[str, Any]:
+    unique_lengths = sorted(set(cache_sequence_lengths))
+    base = {
+        "available": False,
+        "coordinate_space": "effective_cache_sequence",
+        "processor_token_count": token_count,
+        "cache_sequence_lengths": unique_lengths,
+        "processor_image_position_count": sum(
+            int(run["length"]) for run in image_token_runs
+        ),
+    }
+    if len(unique_lengths) != 1:
+        return {
+            **base,
+            "reason": (
+                "cache_effective_length_unavailable"
+                if not unique_lengths
+                else "cache_effective_lengths_disagree"
+            ),
+        }
+
+    cache_length = unique_lengths[0]
+    if cache_length == token_count:
+        return _available_cache_position_layout(
+            base,
+            cache_length=cache_length,
+            image_position_runs=image_token_runs,
+            strategy="identity",
+        )
+    if model_type != "granite_vision":
+        return {
+            **base,
+            "cache_sequence_length": cache_length,
+            "reason": "processor_token_and_cache_lengths_differ",
+        }
+    if len(image_token_runs) != 1:
+        return {
+            **base,
+            "cache_sequence_length": cache_length,
+            "reason": "granite_vision_mapping_requires_one_image_run",
+        }
+
+    source_run = image_token_runs[0]
+    source_start = int(source_run["start"])
+    source_end = int(source_run["end"])
+    processor_image_count = int(source_run["length"])
+    processor_post_count = token_count - source_end - 1
+    cache_image_count = cache_length - (token_count - processor_image_count)
+    cache_end = cache_length - processor_post_count - 1
+    if (
+        cache_image_count <= 0
+        or cache_end < source_start
+        or cache_end - source_start + 1 != cache_image_count
+    ):
+        return {
+            **base,
+            "cache_sequence_length": cache_length,
+            "reason": "granite_vision_image_expansion_is_inconsistent",
+        }
+
+    return _available_cache_position_layout(
+        base,
+        cache_length=cache_length,
+        image_position_runs=[
+            {
+                "start": source_start,
+                "end": cache_end,
+                "length": cache_image_count,
+            }
+        ],
+        strategy="granite_vision_single_image_run_replacement",
+    )
+
+
+def _available_cache_position_layout(
+    base: dict[str, Any],
+    *,
+    cache_length: int,
+    image_position_runs: list[dict[str, int]],
+    strategy: str,
+) -> dict[str, Any]:
+    image_count = sum(int(run["length"]) for run in image_position_runs)
+    first_image = int(image_position_runs[0]["start"]) if image_position_runs else None
+    last_image = int(image_position_runs[-1]["end"]) if image_position_runs else None
+    return {
+        **base,
+        "available": True,
+        "reason": None,
+        "strategy": strategy,
+        "cache_sequence_length": cache_length,
+        "image_partition_available": bool(image_position_runs),
+        "image_position_count": image_count,
+        "image_position_runs": image_position_runs,
+        "non_image_position_count": cache_length - image_count,
+        "pre_image_position_count": first_image or 0,
+        "post_image_position_count": (
+            cache_length - last_image - 1 if last_image is not None else 0
+        ),
+        "expansion_delta": cache_length - int(base["processor_token_count"]),
+        "sequence_position_plan": _cache_sequence_position_plan(
+            cache_length,
+            image_position_runs=image_position_runs,
+        ),
+    }
+
+
+def _cache_sequence_position_plan(
+    sequence_length: int,
+    *,
+    image_position_runs: list[dict[str, int]],
+) -> list[dict[str, Any]]:
+    roles: dict[int, set[str]] = {}
+
+    def add(position: int, role: str) -> None:
+        if 0 <= position < sequence_length:
+            roles.setdefault(position, set()).add(role)
+
+    for run_index, run in enumerate(image_position_runs):
+        start = int(run["start"])
+        end = int(run["end"])
+        add(start, f"cache_image_run_{run_index}_start")
+        add((start + end) // 2, f"cache_image_run_{run_index}_mid")
+        add(end, f"cache_image_run_{run_index}_end")
+    if sequence_length:
+        add(0, "first_cache_position")
+        add(sequence_length // 2, "cache_sequence_mid")
+        add(sequence_length - 1, "last_cache_position")
+    return [
+        {"position": position, "roles": sorted(position_roles)}
+        for position, position_roles in sorted(roles.items())
+    ]
+
+
+def _cache_effective_sequence_lengths(cache: Any) -> list[int]:
+    if cache is None:
+        return []
+    if isinstance(cache, (list, tuple)):
+        return [
+            length
+            for entry in cache
+            for length in _cache_effective_sequence_lengths(entry)
+        ]
+    nested = getattr(cache, "caches", None)
+    if nested is not None:
+        return _cache_effective_sequence_lengths(nested)
+    offset = getattr(cache, "offset", None)
+    if offset is not None:
+        return [int(offset)]
+    keys = getattr(cache, "keys", None)
+    if keys is not None and hasattr(keys, "shape") and len(keys.shape) >= 3:
+        return [int(keys.shape[-2])]
+    return []
 
 
 def audit_prompt_cache_prefix(
@@ -621,7 +820,9 @@ def audit_prompt_cache_prefix(
         "source_token_count": len(source_ids),
         "formatted_prompt_token_count": len(formatted_ids),
         "common_prefix_token_count": common_prefix,
-        "common_prefix_fraction": common_prefix / len(source_ids) if source_ids else 0.0,
+        "common_prefix_fraction": common_prefix / len(source_ids)
+        if source_ids
+        else 0.0,
         "full_source_prefix_match": full_prefix,
         "cache_sequence_lengths": cache_lengths,
         "token_cache_length_aligned": token_cache_aligned,
@@ -640,7 +841,9 @@ def _tokenize_formatted_prompt(
     model_config: Any,
 ) -> list[int]:
     if not isinstance(formatted_prompt, str):
-        raise TypeError(f"expected formatted prompt string, got {type(formatted_prompt).__name__}")
+        raise TypeError(
+            f"expected formatted prompt string, got {type(formatted_prompt).__name__}"
+        )
     tokenizer = getattr(processor, "tokenizer", processor)
     model_type = _model_config_value(model_config, "model_type")
     add_special_tokens = (
@@ -815,7 +1018,9 @@ def _contiguous_position_runs(positions: list[int]) -> list[dict[str, int]]:
     start = previous = positions[0]
     for position in positions[1:]:
         if position != previous + 1:
-            runs.append({"start": start, "end": previous, "length": previous - start + 1})
+            runs.append(
+                {"start": start, "end": previous, "length": previous - start + 1}
+            )
             start = position
         previous = position
     runs.append({"start": start, "end": previous, "length": previous - start + 1})
@@ -938,7 +1143,11 @@ def _mlx_logprob_at(logprobs: Any, token_id: int) -> float | None:
         import mlx.core as mx
     except Exception:
         return None
-    if token_id < 0 or not hasattr(logprobs, "shape") or token_id >= int(logprobs.shape[-1]):
+    if (
+        token_id < 0
+        or not hasattr(logprobs, "shape")
+        or token_id >= int(logprobs.shape[-1])
+    ):
         return None
     value = logprobs[token_id]
     mx.eval(value)
@@ -994,7 +1203,9 @@ def _load_mlx_runtime(model_id: str) -> dict[str, Any]:
 
             model_config = load_config(model_id)
         except Exception as exc:
-            raise RuntimeError(f"could not resolve model config for {model_id}") from exc
+            raise RuntimeError(
+                f"could not resolve model config for {model_id}"
+            ) from exc
     processor, processor_compatibility = ensure_mlx_processor_compat(
         processor,
         model_config,
