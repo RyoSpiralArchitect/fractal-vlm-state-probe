@@ -19,11 +19,12 @@ the same four factorial cells are not independent samples.
 | Gemma 3 direct factorial trajectory | Gemma-3-4B-it 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2; 24 cells total | All 6 direct after-factorials are non-identical; all four one-frame maxima are early `values`, but exact layer and sign vary; frequency readout can change sharply | component-level regularity plus pair-dependent exact locus | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
 | InternVL3 direct factorial replication | InternVL3-2B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All four direct after-factorials are non-identical; all ACK maxima are late layer 25-27 `values` with negative sign | component/sign/depth-band replication with pair-dependent exact layer | [Note 0029](research_notes/0029_cross_model_prompt_and_internvl_expansion.md) |
 | LFM2-VL direct factorial replication | LFM2-VL-1.6B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All after-cell distributions are distinct; visible family labels vary in 3/4 pairs while frequency labels stay fixed; balanced readout axes remain pair-dependent | fifth-architecture replication with deterministic artifact integrity | [Note 0031](research_notes/0031_balanced_contrasts_five_model_expansion.md) |
-| Selected full-vector source-cache surface | Seven VLMs, with Qwen/Granite control extensions at fixed targets, fresh source-only ACK | 176 cell runs, 640 tensors, 160 analyses | Balanced axis dominance is spatial/palette/interaction in 131/23/6; in 148 partition-resolved analyses every pre-image effect is zero and 144 argmaxes are image tokens | targeted vector localization plus source-class direction calibration | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
-| Cross-model direct aggregate | Seven-model four-pair core, nested earlier lengths, and two-model controls, complete first-step vocabulary | 58 factorial points, 232 cells, 928 sidecars | Every direct after-factorial is non-identical; balanced readout dominance is model-, pair-, class-, and probe-dependent | balanced seven-architecture core plus bounded two-model extension | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
-| Four-pair prompt robustness core | Seven VLMs on `b_c`, `c_d`, `d_e`, and `e_f`, fresh direct probes | 28 model/source-pair audit units, 112 cell runs, 1,792 sidecars | All 448 baseline sidecars repeat bitwise; generated patterns agree over all four pairs in 37/56 records, balanced-axis dominance in 3/56, and both in 2/56 | seven-model four-pair categorical versus distributional replication matrix | [Note 0036](research_notes/0036_granite_four_pair_completion_and_cache_coordinates.md) |
+| Selected full-vector source-cache surface | Eight VLMs, with Qwen/Granite control extensions at fixed targets, fresh source-only ACK | 192 cell runs, 704 tensors, 176 analyses | Balanced axis dominance is spatial/palette/interaction in 146/24/6; in 164 partition-resolved analyses every pre-image effect is zero and 160 argmaxes are image tokens | targeted vector localization plus source-class direction calibration | [Note 0038](research_notes/0038_ministral3_eighth_model_replication.md) |
+| Cross-model direct aggregate | Eight-model four-pair core, nested earlier lengths, and two-model controls, complete first-step vocabulary | 62 factorial points, 248 cells, 992 sidecars | Every direct after-factorial is non-identical; balanced readout dominance is model-, pair-, class-, and probe-dependent | balanced eight-architecture core plus bounded two-model extension | [Note 0038](research_notes/0038_ministral3_eighth_model_replication.md) |
+| Four-pair prompt robustness core | Eight VLMs on `b_c`, `c_d`, `d_e`, and `e_f`, fresh direct probes | 32 model/source-pair audit units, 128 cell runs, 2,048 sidecars | All 512 baseline sidecars repeat bitwise; generated patterns agree over all four pairs in 39/64 records, balanced-axis dominance in 4/64, and both in 2/64 | eight-model four-pair categorical versus distributional replication matrix | [Note 0038](research_notes/0038_ministral3_eighth_model_replication.md) |
 | Phi-3.5 Vision full expansion | Phi-3.5 Vision 4bit on four source pairs, fresh direct probes and source-only ACK | 16 standard direct cells and 64 sidecars; 16 prompt cells and 256 sidecars; 16 ACK cells, 48 tensors, 12 full-vector analyses | Scalar ACK maxima are early positive `keys` in 4/4; all selected full tensors are spatial-dominant; cross-pair direction alignment is weak and image-token partition is unresolved | sixth-architecture scalar-locus versus vector-direction replication | [Note 0035](research_notes/0035_six_model_four_pair_completion_and_phi_full_vector.md) |
 | Granite Vision full expansion | Granite Vision 3.2 2B 4bit on four source pairs, fresh direct probes and source-only ACK | 16 direct cells and 64 sidecars; 16 prompt cells and 256 sidecars; 16 ACK cells, 48 tensors, 12 full-vector analyses | All 128 generated candidate semantics are unresolved while no measured prompt axis repeats over all four pairs; all selected full tensors are spatial-dominant and image-localized under a validated single-image coordinate map | seventh-architecture visible/measured separation plus token-region full-vector replication | [Note 0036](research_notes/0036_granite_four_pair_completion_and_cache_coordinates.md) |
+| Ministral 3 full expansion | Ministral-3-3B 4bit on four source pairs, fresh direct probes and source-only ACK | 16 direct cells and 64 sidecars; 16 prompt cells and 256 sidecars; 16 ACK cells, 64 tensors, 16 full-vector analyses | All generated candidates resolve; scalar maxima use `keys` in 4/4 but vary in layer/sign; selected vectors are spatial/palette/interaction-dominant in 15/1/0 and image-localized in 16/16 | eighth-architecture component-level scalar and token-region vector replication | [Note 0038](research_notes/0038_ministral3_eighth_model_replication.md) |
 
 ## Withdrawn From The Evidence Set
 
@@ -43,30 +44,31 @@ the same four factorial cells are not independent samples.
 2. The audited MLX-VLM `0.4.4` incremental and text-only branch paths do not
    preserve the multimodal prefix needed for persistence or intervention
    interpretation.
-3. Under fresh direct multimodal probes, every one of the 58 tested
+3. Under fresh direct multimodal probes, every one of the 62 tested
    `MM/JJ/MJ/JM` factorials has non-identical full-vocabulary first-step
    distributions at saved numerical precision. The independent one-frame core
-   is still balanced over seven models and four source pairs; the new 16
+   is balanced over eight models and four source pairs; 16 additional
    factorials are a two-model control extension.
 4. At one frame, Qwen's layer 33 `values` scalar interaction locus repeats over
    six independent fractal pairs, but its negative sign now repeats in 5/6.
    InternVL repeats a late negative `values` band over the original four, Gemma
    stays in early `values` but changes layer/sign, SmolVLM changes
    layer/component/sign, LFM2 exposes six hybrid-attention cache entries, and
-   Granite changes layer/component/sign across pairs.
-5. Across 160 selected full-vector cache analyses in seven VLMs, balanced
-   spatial/palette/interaction dominance occurs in 131/23/6 analyses. In the
-   148 analyses with identified token partitions, all shared pre-image prefixes
-   have zero effect and 144 interaction maxima fall in image tokens.
+   Granite changes layer/component/sign across pairs. Ministral uses `keys` in
+   4/4 while changing exact layer and sign.
+5. Across 176 selected full-vector cache analyses in eight VLMs, balanced
+   spatial/palette/interaction dominance occurs in 146/24/6 analyses. In the
+   164 analyses with identified token partitions, all shared pre-image prefixes
+   have zero effect and 160 interaction maxima fall in image tokens.
 6. A generated letter or top-k set can remain fixed while the complete
    distribution changes; visible-label equality is not distribution equality.
-7. Across seven models and four prompt-audited source pairs, generated semantic
-   patterns agree over all four pairs in 37/56 fixed model-family-variant
-   records, while balanced-axis dominance agrees in 3/56 and both criteria in
-   only 2/56. Every one of the 448 baseline sidecars reproduces exactly.
+7. Across eight models and four prompt-audited source pairs, generated semantic
+   patterns agree over all four pairs in 39/64 fixed model-family-variant
+   records, while balanced-axis dominance agrees in 4/64 and both criteria in
+   only 2/64. Every one of the 512 baseline sidecars reproduces exactly.
 8. Over the six dependent source-pair comparisons per prompt record, generated
-   patterns agree in 254/336 comparisons and balanced-axis dominance in
-   132/336. In 154 comparisons, the categorical pattern repeats while the
+   patterns agree in 275/384 comparisons and balanced-axis dominance in
+   151/384. In 167 comparisons, the categorical pattern repeats while the
    dominant full-distribution axis changes.
 9. Phi repeats an early positive `keys` scalar-summary profile over all four
    pairs. All 12 fixed full-vector `keys` targets are spatial-dominant, while
@@ -76,15 +78,19 @@ the same four factorial cells are not independent samples.
     four source pairs. None of its 128 prompt-generated first tokens maps to a
     declared candidate; all eight generated patterns therefore repeat as
     unresolved, while the measured dominant axis repeats in 0/8 records.
-11. Granite's validated single-image coordinate map replaces 1,317 processor
+11. Ministral passes direct and prompt full-vocabulary integrity checks on all
+    four pairs, resolves every generated candidate, and still retains both one
+    generated pattern and one measured axis in 0/8 fixed prompt records. All 16
+    selected tensor interactions peak in image positions.
+12. Granite's validated single-image coordinate map replaces 1,317 processor
     placeholders with 2,916 vision positions. All 12 original four-pair tensors
     are spatial-dominant and image-localized; the added `g_h` pair remains
     image-localized but is palette-dominant at all three fixed targets.
-12. In the Qwen/Granite control panel, raw palette-donor marginals are preserved
+13. In the Qwen/Granite control panel, raw palette-donor marginals are preserved
     to `1.11e-16`, processor tensor means are palette-dominant in 16/16
     model-by-panel records, and processor spectral axes agree across models in
     only 2/8 panels.
-13. All 32 new full-vector analyses localize interaction maxima to image
+14. All 32 new full-vector analyses localize interaction maxima to image
     positions and have zero pre-image effects, but interaction dominates 0/32.
     Late post-image direction alignment remains strong over six fractal pairs
     and collapses over the six matched or non-fractal controls.
@@ -95,7 +101,7 @@ the same four factorial cells are not independent samples.
   multimodal inference. The new direction result is source-class conditional,
   not persistent latent-state steering.
 - Nonzero interaction and image localization do not imply interaction-axis
-  dominance. Equal-coefficient calibration places 149/160 selected
+  dominance. Equal-coefficient calibration places 165/176 selected
   source-cache interaction shares at or below the exchangeable `1/3` reference.
 - Qwen layer 33 `values` is a reproducible scalar summary locus for six
   one-frame fractal source pairs and all 14 tested pair-by-length points. Its
@@ -110,11 +116,11 @@ the same four factorial cells are not independent samples.
   candidate explanations, not established mechanisms.
 - Cache-summary magnitude and direct readout interaction are neither equivalent
   nor monotonically coupled in the current trajectories.
-- Probe family and candidate calibration matter in all seven balanced models;
+- Probe family and candidate calibration matter in all eight balanced models;
   the magnitude, visible-label response, and balanced factorial axis are
-  architecture- and source-pair-specific. In the balanced seven-model core,
-  only 3/56 prompt records retain one dominant axis across all four pairs, and
-  only 2/56 retain both one axis and one generated pattern.
+  architecture- and source-pair-specific. In the balanced eight-model core,
+  only 4/64 prompt records retain one dominant axis across all four pairs, and
+  only 2/64 retain both one axis and one generated pattern.
 - `b_c` is more distributionally distinct from the other three pairs in this
   four-pair matrix, but four source pairs do not establish a population-level
   cluster.
@@ -138,7 +144,7 @@ the same four factorial cells are not independent samples.
 
 ## Statistical Boundaries
 
-- The balanced seven-model one-frame replication count remains four source
+- The balanced eight-model one-frame replication count remains four source
   pairs. Qwen and Granite now have six independent fractal pairs; the three
   `c_d` ablations are dependent matched controls, and the three non-fractal
   panels belong to different source classes.
@@ -156,11 +162,11 @@ the same four factorial cells are not independent samples.
   visual source-pair replications.
 - Prompt variants are repeated measurements over one visual factorial, not new
   visual source-pair replications.
-- The 56 all-pair prompt records share seven models, four source pairs, two
-  families, and four prompt variants. They are not 56 independent visual
+- The 64 all-pair prompt records share eight models, four source pairs, two
+  families, and four prompt variants. They are not 64 independent visual
   replications.
-- The 336 prompt pairwise comparisons are six dependent source-pair
-  comparisons from each of those 56 records, not 336 independent samples.
+- The 384 prompt pairwise comparisons are six dependent source-pair
+  comparisons from each of those 64 records, not 384 independent samples.
 - Phi's reconstructed layout does not identify image-token positions; its raw
   sequence positions must remain role-unassigned.
 - Granite's 1,474-token saved processor history maps to 3,073 effective cache
@@ -175,9 +181,8 @@ the same four factorial cells are not independent samples.
    factors, including neutral and non-forced readouts.
 3. Reconstruct Phi's processor-expanded image-token layout, then resolve
    balanced full-vector axes by KV head and token position.
-4. Run a fresh-forward contract pilot on a distinct small architecture, with
-   Mistral3 as the primary diversity candidate and FastVLM as the lower-cost
-   fallback.
+4. Resolve Ministral's selected full-vector effects by KV head and image patch,
+   using its validated identity processor-to-cache layout.
 5. Rebuild intervention logic only on a multimodal suffix path that asserts
    exact prefix and cache sequence-length compatibility before mutation.
 
@@ -185,10 +190,10 @@ the same four factorial cells are not independent samples.
 
 Preferred:
 
-> In seven local VLMs, fresh multimodal cross-palette factorial cells produced
+> In eight local VLMs, fresh multimodal cross-palette factorial cells produced
 > non-identical complete first-step distributions across a balanced core of
 > four independent source pairs. A two-model control extension increased the
-> valid surface to 58 factorials and showed that input interaction and
+> valid surface to 62 factorials and showed that input interaction and
 > image-token localization generalize across fractal, ablated, geometric,
 > noise, and natural inputs. Late post-image tensor directions remained aligned
 > over six fractal pairs but collapsed over matched and non-fractal controls,

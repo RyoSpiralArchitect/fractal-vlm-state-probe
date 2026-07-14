@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "ministral3_eighth_architecture_replication_summary",
+  "note": "0038_ministral3_eighth_model_replication",
+  "date": "2026-07-14",
+  "protocol": {
+    "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+    "source_pairs": ["b_c", "c_d", "d_e", "e_f"],
+    "visual_cells": ["mm", "jj", "mj", "jm"],
+    "temperature": 0,
+    "stream_seed": 20260604,
+    "probe_seed": 0,
+    "frame_count": 1,
+    "cache_reuse": false
+  },
+  "runtime": {
+    "mlx_version": "0.31.1",
+    "mlx_vlm_version": "0.4.4",
+    "transformers_version": "4.57.6",
+    "model_load_compatibility": "mistral3_transformers4_tokenizer_backend",
+    "language_layer_count": 26,
+    "kv_head_count": 8,
+    "hidden_size": 3072,
+    "head_dimension": 128,
+    "vocabulary_size": 131072
+  },
+  "integrity": {
+    "direct_cell_runs": 16,
+    "direct_full_vocab_sidecars": 64,
+    "before_four_cell_bitwise_exact_records": "8/8",
+    "after_four_cell_nonidentical_records": "8/8",
+    "direct_sidecar_hash_and_finite": "64/64",
+    "direct_generated_declared_candidates": "32/32",
+    "prompt_cell_runs": 16,
+    "prompt_full_vocab_sidecars": 256,
+    "prompt_sidecar_hash_and_finite": "256/256",
+    "prompt_baseline_matches_standard": "64/64",
+    "prompt_generated_declared_candidates": "128/128",
+    "source_only_ack_runs": 16,
+    "source_only_ack_outputs": "16/16",
+    "source_cache_identity_layouts": "16/16",
+    "direct_vs_source_cache_summary_exact": "16/16",
+    "cache_tensor_sidecars": 64,
+    "cache_tensor_hash_and_finite": "64/64",
+    "cache_tensor_factorial_analyses": 16
+  },
+  "cache_layout": {
+    "effective_position_count": 241,
+    "pre_image_position_count": 38,
+    "image_position_count": 99,
+    "post_image_position_count": 96,
+    "image_runs": 9,
+    "positions_per_image_run": 11,
+    "selected_tensor_shape": [1, 8, 241, 128]
+  },
+  "processor_audit": {
+    "tensor_mean_dominance_spatial_palette_interaction": [0, 4, 0],
+    "tensor_std_dominance_spatial_palette_interaction": [1, 3, 0],
+    "spectral_cpp_dominance_spatial_palette_interaction": [3, 1, 0],
+    "spectral_axis_by_pair": {
+      "b_c": "spatial",
+      "c_d": "palette",
+      "d_e": "spatial",
+      "e_f": "spatial"
+    },
+    "processor_spectral_to_direct_axis_agreement": "5/8"
+  },
+  "direct_readout": {
+    "candidate_probability_mass_range": [
+      0.9649438434672989,
+      0.9859774276939656
+    ],
+    "dominance_spatial_palette_interaction": [5, 2, 1],
+    "family_interaction_l1": {
+      "min": 0.4548551588315246,
+      "median": 0.7486899344320674,
+      "max": 1.3939730710114315
+    },
+    "frequency_interaction_l1": {
+      "min": 0.09797905320381171,
+      "median": 0.3341627667383844,
+      "max": 0.5121683682497198
+    },
+    "generated_tokens_mm_jj_mj_jm": {
+      "b_c": {"family": ["A", "A", "C", "A"], "frequency": ["L", "H", "L", "H"]},
+      "c_d": {"family": ["A", "C", "C", "A"], "frequency": ["L", "L", "L", "L"]},
+      "d_e": {"family": ["A", "A", "C", "A"], "frequency": ["L", "L", "L", "L"]},
+      "e_f": {"family": ["C", "A", "B", "A"], "frequency": ["L", "L", "H", "L"]}
+    }
+  },
+  "scalar_cache": {
+    "key_component": "4/4",
+    "negative_sign": "3/4",
+    "layer_16_mode": "2/4",
+    "normalized_depth_range": [0.0, 0.64],
+    "argmax_by_pair": {
+      "b_c": {"layer": 16, "tensor": "keys", "interaction": -14.52740478515625, "relative_abs_interaction": 0.017838018342206146},
+      "c_d": {"layer": 16, "tensor": "keys", "interaction": -9.80426025390625, "relative_abs_interaction": 0.0120343583767315},
+      "d_e": {"layer": 1, "tensor": "keys", "interaction": -11.0693359375, "relative_abs_interaction": 0.013209772143084499},
+      "e_f": {"layer": 0, "tensor": "keys", "interaction": 22.45318603515625, "relative_abs_interaction": 0.04245052842180021}
+    }
+  },
+  "selected_full_vector": {
+    "targets": [
+      {"layer": 0, "tensor": "keys", "selection": "scalar exception maximum"},
+      {"layer": 1, "tensor": "keys", "selection": "scalar exception maximum"},
+      {"layer": 16, "tensor": "keys", "selection": "modal scalar maximum"},
+      {"layer": 25, "tensor": "values", "selection": "late effect-unselected depth control"}
+    ],
+    "dominance_spatial_palette_interaction": [15, 1, 0],
+    "pre_image_zero": "16/16",
+    "image_interaction_argmax": "16/16",
+    "image_energy_fraction": {
+      "min": 0.892654768181672,
+      "median": 0.9704150318993351,
+      "above_0_9": "14/16"
+    },
+    "interaction_share_at_or_below_one_third": "16/16",
+    "direction_by_target": {
+      "layer_000_keys": {"image_cosine_median": 0.07904344737, "post_image_cosine_median": null, "image_energy_median": 1.0},
+      "layer_001_keys": {"image_cosine_median": 0.08761296519, "post_image_cosine_median": 0.42177151517, "image_energy_median": 0.999221},
+      "layer_016_keys": {"image_cosine_median": 0.05229742376, "post_image_cosine_median": 0.39933340559, "image_energy_median": 0.931052},
+      "layer_025_values": {"image_cosine_median": 0.05046908723, "post_image_cosine_median": 0.33318726178, "image_energy_median": 0.905928}
+    }
+  },
+  "prompt_robustness": {
+    "candidate_probability_mass_range": [
+      0.8719290800740375,
+      0.9859908938636004
+    ],
+    "ministral_all_pair": {
+      "records": 8,
+      "generated_pattern_agreement": "2/8",
+      "balanced_axis_agreement": "1/8",
+      "both": "0/8"
+    },
+    "ministral_pairwise": {
+      "records": 48,
+      "generated_pattern_agreement": "21/48",
+      "balanced_axis_agreement": "19/48",
+      "both": "8/48",
+      "balanced_share_l1_min_median_max": [
+        0.10348492191819603,
+        0.8986636994654452,
+        1.8515774366286406
+      ]
+    },
+    "eight_model_all_pair": {
+      "records": 64,
+      "generated_pattern_agreement": "39/64",
+      "balanced_axis_agreement": "4/64",
+      "both": "2/64"
+    },
+    "eight_model_pairwise": {
+      "records": 384,
+      "generated_pattern_agreement": "275/384",
+      "balanced_axis_agreement": "151/384",
+      "both": "108/384",
+      "balanced_share_l1_min_median_max": [
+        0.015466716791426104,
+        0.752723077558288,
+        1.983152472808082
+      ]
+    }
+  },
+  "updated_aggregate": {
+    "balanced_model_count": 8,
+    "balanced_source_pair_count": 4,
+    "balanced_direct_factorials": 32,
+    "balanced_direct_cells": 128,
+    "balanced_direct_full_vocab_sidecars": 512,
+    "valid_direct_factorials": 62,
+    "valid_direct_cells": 248,
+    "valid_direct_full_vocab_sidecars": 992,
+    "prompt_model_source_pair_audits": 32,
+    "prompt_cells": 128,
+    "prompt_full_vocab_sidecars": 2048,
+    "prompt_baseline_sidecars_exact": "512/512",
+    "selected_full_vector_source_ack_cells": 192,
+    "selected_full_vector_tensor_sidecars": 704,
+    "selected_full_vector_analyses": 176,
+    "selected_full_vector_dominance_spatial_palette_interaction": [146, 24, 6],
+    "partition_resolved_analyses": 164,
+    "pre_image_zero": "164/164",
+    "image_interaction_argmax": "160/164",
+    "image_energy_above_0_9": "160/164",
+    "interaction_share_at_or_below_one_third": "165/176"
+  },
+  "claim_boundary": {
+    "targets_are_preregistered": false,
+    "pairwise_cosines_are_independent": false,
+    "source_cache_to_readout_causal_path": false,
+    "persistent_state_established": false,
+    "universal_layer_or_direction_established": false,
+    "prompt_invariant_decoder_established": false
+  },
+  "primary_artifacts": [
+    "runs/ministral3_expansion/c_d_contract_smoke",
+    "runs/ministral3_expansion/processor/four_pair_1f",
+    "runs/ministral3_expansion/four_pair_1f_direct_seed0",
+    "runs/ministral3_expansion/eight_model_four_pair_direct/cross_model_replication.json",
+    "runs/ministral3_expansion/four_pair_1f_source_cache_four_target_seed0",
+    "runs/ministral3_expansion/prompt_controls/four_pair_1f_forced_choice_robustness_seed0/eight_model_four_pair_matrix/prompt_robustness_multi_pair_matrix.json"
+  ]
+}

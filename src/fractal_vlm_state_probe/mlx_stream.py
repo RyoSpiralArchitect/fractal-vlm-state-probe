@@ -24,6 +24,7 @@ from .full_vocab_readout import (
 from .mlx_processor_compat import (
     ensure_mlx_chat_template_compat,
     ensure_mlx_processor_compat,
+    load_mlx_vlm_with_compat,
 )
 from .prompts import SYNC_PROMPT, SYSTEM_PROMPT, probe_metadata, resolve_probe_preset
 from .providers import get_capabilities
@@ -1195,7 +1196,10 @@ def _load_mlx_runtime(model_id: str) -> dict[str, Any]:
     # mlx_vlm.load forwards **kwargs to model, image processor, and processor
     # loaders. Passing mlx dtype objects here breaks recent Transformers
     # processor deepcopy paths, so keep loading kwargs processor-safe.
-    model, processor = load(model_id)
+    model, processor, model_load_compatibility = load_mlx_vlm_with_compat(
+        model_id,
+        default_load=load,
+    )
     model_config = getattr(model, "config", None)
     if model_config is None:
         try:
@@ -1226,6 +1230,7 @@ def _load_mlx_runtime(model_id: str) -> dict[str, Any]:
             "mlx_version": getattr(mx, "__version__", "unknown"),
             "mlx_vlm_version": _package_version("mlx-vlm"),
             "mlx_vlm_load_kwargs": {},
+            "model_load_compatibility": model_load_compatibility,
             "prompt_cache_state_available": prompt_cache_cls is not None,
             "processor_compatibility": processor_compatibility,
             "chat_template_compatibility": chat_template_compatibility,

@@ -1,5 +1,8 @@
 # Research Note 0037: Control Specificity and Conditional Cache Directions
 
+> Superseding aggregate counts and the balanced eighth-model Ministral 3
+> expansion are recorded in [Note 0038](0038_ministral3_eighth_model_replication.md).
+
 Date: 2026-07-14
 
 ## Status

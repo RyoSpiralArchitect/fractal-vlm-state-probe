@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
 from typing import Any
 
 
@@ -47,6 +49,90 @@ class InternVLProcessorCompat:
 
     def __getattr__(self, name: str) -> Any:
         return getattr(self.tokenizer, name)
+
+
+def load_mlx_vlm_with_compat(
+    model_id: str,
+    *,
+    default_load: Any,
+) -> tuple[Any, Any, str | None]:
+    """Load through MLX-VLM, with a narrow Transformers 4 tokenizer fallback."""
+    try:
+        model, processor = default_load(model_id)
+        return model, processor, None
+    except ValueError as exc:
+        if "Tokenizer class TokenizersBackend does not exist" not in str(exc):
+            raise
+
+    from mlx_vlm.utils import get_model_path, load_config
+
+    model_path = get_model_path(model_id)
+    model_config = load_config(model_path)
+    if _config_value(model_config, "model_type") != "mistral3":
+        raise RuntimeError(
+            "TokenizersBackend compatibility is only validated for mistral3"
+        )
+    model, processor = _load_mistral3_transformers4(model_path)
+    return model, processor, "mistral3_transformers4_tokenizer_backend"
+
+
+def _load_mistral3_transformers4(model_path: Path) -> tuple[Any, Any]:
+    from mlx_vlm.models.mistral3.processing_mistral3 import Mistral3Processor
+    from mlx_vlm.utils import StoppingCriteria, load_model, load_tokenizer
+    from tokenizers import Tokenizer
+    from transformers import AutoImageProcessor, PreTrainedTokenizerFast
+
+    tokenizer_config = _read_json(model_path / "tokenizer_config.json")
+    model_config = _read_json(model_path / "config.json")
+    tokenizer = PreTrainedTokenizerFast(
+        tokenizer_object=Tokenizer.from_file(str(model_path / "tokenizer.json")),
+        bos_token=tokenizer_config.get("bos_token", "<s>"),
+        eos_token=tokenizer_config.get("eos_token", "</s>"),
+        pad_token=tokenizer_config.get("pad_token", "<pad>"),
+        unk_token=tokenizer_config.get("unk_token", "<unk>"),
+        model_max_length=int(
+            tokenizer_config.get("model_max_length")
+            or model_config.get("text_config", {}).get("max_position_embeddings")
+            or 262_144
+        ),
+    )
+    chat_template_path = model_path / "chat_template.jinja"
+    if not chat_template_path.exists():
+        raise FileNotFoundError(
+            f"mistral3 compatibility requires {chat_template_path}"
+        )
+    tokenizer.chat_template = chat_template_path.read_text(encoding="utf-8")
+
+    image_processor = AutoImageProcessor.from_pretrained(model_path, use_fast=False)
+    processor = Mistral3Processor(
+        image_processor=image_processor,
+        tokenizer=tokenizer,
+        patch_size=int(model_config.get("vision_config", {}).get("patch_size", 14)),
+        spatial_merge_size=int(model_config.get("spatial_merge_size", 1)),
+        chat_template=tokenizer.chat_template,
+    )
+    detokenizer_class = load_tokenizer(model_path, return_tokenizer=False)
+    processor.detokenizer = detokenizer_class(tokenizer)
+    eos_token_ids = _eos_token_ids(model_config, tokenizer.eos_token_id)
+    tokenizer.stopping_criteria = StoppingCriteria(eos_token_ids, tokenizer)
+    return load_model(model_path), processor
+
+
+def _eos_token_ids(model_config: dict[str, Any], fallback: int) -> list[int]:
+    raw = model_config.get("eos_token_id")
+    if raw is None:
+        raw = fallback
+    if isinstance(raw, list):
+        return [int(value) for value in raw]
+    return [int(raw)]
+
+
+def _read_json(path: Path) -> dict[str, Any]:
+    with path.open("r", encoding="utf-8") as handle:
+        value = json.load(handle)
+    if not isinstance(value, dict):
+        raise ValueError(f"expected JSON object: {path}")
+    return value
 
 
 def ensure_mlx_processor_compat(

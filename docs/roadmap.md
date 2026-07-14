@@ -136,28 +136,25 @@ position-local swaps remain required after that path is valid.
   position number alone.
 
 Status: the balanced one-frame direct core now covers SmolVLM2, Qwen2.5-VL,
-Gemma 3, InternVL3, LFM2-VL, Phi-3.5 Vision, and Granite Vision over four source
-pairs. A two-model eight-panel control extension adds two independent fractal
-pairs and matched frequency, geometry, noise, and natural controls. The wider
-valid direct surface contains 58 factorial points, 232 cell runs, and 928
-complete-vocabulary sidecars, with non-identical after-cell
-distributions in every factorial. Qwen repeats a late scalar locus, InternVL a
-late band, Gemma an early band, SmolVLM broad pair dependence, LFM2 six
-hybrid-attention cache entries, Phi an early positive `keys` profile, and
-Granite a pair-dependent layer/component/sign profile. The selected full-vector
-surface contains 160 layer-by-pair analyses. The 32 control-extension analyses
-are all image-localized and pre-image zero, but none is interaction-dominant.
-Late post-image directions remain aligned over six fractal pairs and collapse
-over the six controls. Granite's single-image processor-to-cache expansion is
-mapped from 1,474 processor-history tokens to 3,073 effective positions; unknown
-mismatches and multi-run layouts fail closed. Phi's 12 analyses remain
-role-unassigned. The seven-model prompt audit is balanced over all four pairs.
-Generated patterns agree over every pair in 37/56 fixed records, balanced-axis
-dominance in 3/56, and both in 2/56. Granite contributes 8/8 generated-pattern
-agreements only because every candidate semantic is unresolved, while its
-measured axis agrees in 0/8. The next independent-evidence step is to add
-multiple seeded pairs inside each control class and source-level permutation
-references before extending nested lengths.
+Gemma 3, InternVL3, LFM2-VL, Phi-3.5 Vision, Granite Vision, and Ministral 3 over
+four source pairs. A two-model eight-panel control extension adds two
+independent fractal pairs and matched frequency, geometry, noise, and natural
+controls. The wider valid direct surface contains 62 factorial points, 248 cell
+runs, and 992 complete-vocabulary sidecars, with non-identical after-cell
+distributions in every factorial. Ministral adds a four-pair `keys`-component
+scalar profile whose exact layer and sign vary. Its 16 selected full-vector
+targets are spatial/palette/interaction-dominant in 15/1/0 and all interaction
+maxima are image-localized. The total selected full-vector surface contains 176
+layer-by-pair analyses; 164 have resolved token partitions, including 164/164
+zero pre-image effects and 160/164 image-position interaction maxima. Late
+post-image directions remain aligned over six fractal pairs in Qwen/Granite and
+collapse over their six controls; Ministral repeats weaker post-image alignment
+over the original four fractal pairs at layers 1, 16, and 25. Phi's 12 analyses
+remain role-unassigned. The eight-model prompt audit is balanced over all four
+pairs. Generated patterns agree over every pair in 39/64 fixed records,
+balanced-axis dominance in 4/64, and both in 2/64. The next independent-evidence
+step is multiple seeded pairs inside each control class plus source-level
+permutation references before extending nested lengths.
 
 ## Phase 5: Research Report
 
@@ -167,12 +164,12 @@ references before extending nested lengths.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0037 encode the audited claim
-boundary, balanced seven-model direct and prompt replication, selected
+Status: the evidence matrix and Notes 0027-0038 encode the audited claim
+boundary, balanced eight-model direct and prompt replication, selected
 full-vector localization, scalar-locus versus vector-direction separation, and
 the source-class-conditional direction result. Initial manuscript tables exist;
 calibrated nulls and figures remain future work. The current priority is
 within-class source replication and permutation calibration, a neutral
 wording/order/verbalizer factorial, Phi coordinate resolution, a distinct
-eighth-architecture contract pilot, compatible head/position-resolved vector
+ninth-architecture replication, Ministral head/position-resolved vector
 analysis, and a valid intervention path before causal prose is promoted.
