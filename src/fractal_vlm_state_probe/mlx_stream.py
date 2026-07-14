@@ -659,7 +659,18 @@ def _resolve_cache_position_layout(
             image_position_runs=image_token_runs,
             strategy="identity",
         )
-    if model_type != "granite_vision":
+    replacement_layouts = {
+        "granite_vision": {
+            "reason_prefix": "granite_vision",
+            "strategy": "granite_vision_single_image_run_replacement",
+        },
+        "llava_qwen2": {
+            "reason_prefix": "llava_qwen2",
+            "strategy": "llava_qwen2_single_image_run_replacement",
+        },
+    }
+    replacement_layout = replacement_layouts.get(model_type)
+    if replacement_layout is None:
         return {
             **base,
             "cache_sequence_length": cache_length,
@@ -669,7 +680,9 @@ def _resolve_cache_position_layout(
         return {
             **base,
             "cache_sequence_length": cache_length,
-            "reason": "granite_vision_mapping_requires_one_image_run",
+            "reason": (
+                f"{replacement_layout['reason_prefix']}_mapping_requires_one_image_run"
+            ),
         }
 
     source_run = image_token_runs[0]
@@ -687,7 +700,9 @@ def _resolve_cache_position_layout(
         return {
             **base,
             "cache_sequence_length": cache_length,
-            "reason": "granite_vision_image_expansion_is_inconsistent",
+            "reason": (
+                f"{replacement_layout['reason_prefix']}_image_expansion_is_inconsistent"
+            ),
         }
 
     return _available_cache_position_layout(
@@ -700,7 +715,7 @@ def _resolve_cache_position_layout(
                 "length": cache_image_count,
             }
         ],
-        strategy="granite_vision_single_image_run_replacement",
+        strategy=str(replacement_layout["strategy"]),
     )
 
 

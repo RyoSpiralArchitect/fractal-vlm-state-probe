@@ -224,6 +224,33 @@ def test_prompt_cache_token_layout_maps_granite_vision_expansion() -> None:
     assert cache_layout_sequence_positions(layout) == [0, 51, 1508, 1536, 2966, 3072]
 
 
+def test_prompt_cache_token_layout_maps_llava_qwen2_placeholder_expansion() -> None:
+    class CacheEntry:
+        offset = 259
+
+    class State:
+        token_ids = [10, -200, 11, 12]
+        cache = [CacheEntry()]
+
+    layout = summarize_prompt_cache_token_layout(
+        State(),
+        {"model_type": "llava_qwen2", "image_token_index": -200},
+    )
+
+    cache_layout = layout["cache_position_layout"]
+    assert layout["token_count"] == 4
+    assert cache_layout["available"] is True
+    assert cache_layout["strategy"] == "llava_qwen2_single_image_run_replacement"
+    assert cache_layout["cache_sequence_length"] == 259
+    assert cache_layout["image_position_count"] == 256
+    assert cache_layout["image_position_runs"] == [
+        {"start": 1, "end": 256, "length": 256}
+    ]
+    assert cache_layout["pre_image_position_count"] == 1
+    assert cache_layout["post_image_position_count"] == 2
+    assert cache_layout["expansion_delta"] == 255
+
+
 def test_prompt_cache_token_layout_fails_closed_for_unknown_expansion() -> None:
     class CacheEntry:
         offset = 8

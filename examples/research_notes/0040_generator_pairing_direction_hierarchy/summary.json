@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "generator_pairing_direction_hierarchy_summary",
+  "note": "0040_generator_pairing_direction_hierarchy",
+  "date": "2026-07-14",
+  "design": {
+    "models": ["qwen", "ministral3"],
+    "broad_classes": ["geometry", "stochastic"],
+    "pairing_families_per_class": 4,
+    "seed_replicates_per_pairing_family": 2,
+    "source_pair_factorials": 16,
+    "source_manifests": 32,
+    "unique_first_frame_hashes": "32/32",
+    "source_role_reversal_interaction_invariant": true,
+    "raw_marginal_max_abs_spatial_or_interaction_leak": 4.440892098500626e-16
+  },
+  "processor": {
+    "qwen": {
+      "tensor_mean_spatial_palette_interaction": [0, 16, 0],
+      "tensor_std_spatial_palette_interaction": [2, 14, 0],
+      "spectral_cpp_spatial_palette_interaction": [6, 0, 10]
+    },
+    "ministral3": {
+      "tensor_mean_spatial_palette_interaction": [0, 16, 0],
+      "tensor_std_spatial_palette_interaction": [2, 14, 0],
+      "spectral_cpp_spatial_palette_interaction": [8, 0, 8]
+    },
+    "cross_model_spectral_axis_agreement": "14/16"
+  },
+  "direct": {
+    "combined_factorials": 32,
+    "new_factorials": 24,
+    "new_cell_runs": 96,
+    "new_full_vocab_sidecars": 384,
+    "before_four_cell_bitwise_exact": "64/64",
+    "after_four_cell_nonidentical": "64/64",
+    "qwen_candidate_mass_range": [0.9933362177688873, 0.9985571106921455],
+    "ministral3_candidate_mass_range": [0.9558576188596324, 0.9906686883890556],
+    "dominance": {
+      "qwen_family_spatial_palette_interaction": [10, 5, 1],
+      "qwen_frequency_spatial_palette_interaction": [6, 3, 7],
+      "ministral3_family_spatial_palette_interaction": [9, 3, 4],
+      "ministral3_frequency_spatial_palette_interaction": [10, 5, 1]
+    },
+    "cross_model_axis_agreement": {"family": "4/16", "frequency": "8/16"},
+    "processor_spectral_to_direct_axis_agreement": "29/64"
+  },
+  "full_vector": {
+    "targets": ["qwen_l033_values", "ministral3_l001_keys", "ministral3_l016_keys", "ministral3_l025_values"],
+    "analyses": 64,
+    "model_source_cells": 128,
+    "tensor_sidecars": 256,
+    "new_analyses": 48,
+    "new_model_source_cells": 96,
+    "new_tensor_sidecars": 192,
+    "pre_image_zero": "64/64",
+    "image_interaction_argmax": "60/64",
+    "image_energy_above_0_9": "63/64",
+    "image_dominance_spatial_palette_interaction": [55, 8, 1],
+    "image_interaction_share_at_or_below_one_third": "63/64"
+  },
+  "hierarchy": {
+    "seed_matching_assignments": 11025,
+    "family_block_broad_class_assignments": 70,
+    "seed_replication_tests_positive": "8/8",
+    "broad_class_transfer_unadjusted_p_below_0_05": "1/8",
+    "post_image_broad_class_transfer_unadjusted_p_below_0_05": "0/4",
+    "qwen_l033_values": {
+      "image": {"within_pairing": 0.13978369, "cross_pairing_same_broad": 0.026756433, "between_broad": 0.0053180318, "seed_p": 0.000090702948, "transfer_p": 0.028571429},
+      "post_image": {"within_pairing": 0.66468409, "cross_pairing_same_broad": 0.15998443, "between_broad": 0.064140479, "seed_p": 0.000090702948, "transfer_p": 0.11428571}
+    },
+    "ministral3_l001_keys": {
+      "image": {"within_pairing": 0.14625315, "cross_pairing_same_broad": 0.01476499, "between_broad": 0.011601682, "seed_p": 0.000090702948, "transfer_p": 0.42857143},
+      "post_image": {"within_pairing": 0.48929477, "cross_pairing_same_broad": 0.094134412, "between_broad": 0.090516257, "seed_p": 0.00036281179, "transfer_p": 0.45714286}
+    },
+    "ministral3_l016_keys": {
+      "image": {"within_pairing": 0.083600627, "cross_pairing_same_broad": 0.023051556, "between_broad": 0.0079821126, "seed_p": 0.014693878, "transfer_p": 0.14285714},
+      "post_image": {"within_pairing": 0.56714999, "cross_pairing_same_broad": 0.084460484, "between_broad": 0.0514437, "seed_p": 0.000090702948, "transfer_p": 0.25714286}
+    },
+    "ministral3_l025_values": {
+      "image": {"within_pairing": 0.066217191, "cross_pairing_same_broad": 0.015861957, "between_broad": 0.0040800765, "seed_p": 0.0044444444, "transfer_p": 0.057142857},
+      "post_image": {"within_pairing": 0.50758081, "cross_pairing_same_broad": 0.11523851, "between_broad": 0.053454941, "seed_p": 0.000090702948, "transfer_p": 0.11428571}
+    }
+  },
+  "claim_boundary": {
+    "pairing_conditioned_seed_replication_supported": true,
+    "generic_broad_class_direction_supported": false,
+    "natural_class_included": false,
+    "fractal_multi_pairing_class_included": false,
+    "p_values_multiplicity_adjusted": false,
+    "persistent_state_established": false,
+    "causal_cache_mediation_established": false
+  },
+  "primary_artifacts": [
+    "configs/generator_pairing_transfer_v1.json",
+    "runs/generator_pairing_transfer_v1/replication",
+    "runs/generator_pairing_transfer_v1/permutation",
+    "runs/generator_pairing_transfer_v1/hierarchy"
+  ]
+}

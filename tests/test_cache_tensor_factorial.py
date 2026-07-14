@@ -89,6 +89,26 @@ def test_factorial_effect_vector_formulas() -> None:
     assert contrasts["interaction_contrast"].item() == 1.0
 
 
+def test_factorial_interaction_is_invariant_to_simultaneous_source_role_swap() -> None:
+    cells = {
+        "mm": np.array([1.0, 2.0]),
+        "jj": np.array([7.0, 11.0]),
+        "mj": np.array([3.0, 5.0]),
+        "jm": np.array([13.0, 17.0]),
+    }
+    swapped = {
+        "mm": cells["jj"],
+        "jj": cells["mm"],
+        "mj": cells["jm"],
+        "jm": cells["mj"],
+    }
+
+    original = factorial_effect_vectors(cells)["interaction"]
+    role_reversed = factorial_effect_vectors(swapped)["interaction"]
+
+    np.testing.assert_array_equal(role_reversed, original)
+
+
 def test_cache_tensor_regions_partition_effective_sequence() -> None:
     regions = cache_tensor_regions(
         {"image_token_runs": [{"start": 2, "end": 4, "length": 3}]},

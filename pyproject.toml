@@ -41,6 +41,7 @@ run-mlx-paired-stochastic-probe-batch = "fractal_vlm_state_probe.cli.run_mlx_pai
 run-mlx-pattern-probe-batch = "fractal_vlm_state_probe.cli.run_mlx_pattern_probe_batch:main"
 run-mlx-manifest-probe-batch = "fractal_vlm_state_probe.cli.run_mlx_manifest_probe_batch:main"
 prepare-cross-palette-factorial-batch = "fractal_vlm_state_probe.cli.prepare_cross_palette_factorial_batch:main"
+prepare-generator-pairing-panel = "fractal_vlm_state_probe.cli.prepare_generator_pairing_panel:main"
 build-external-frame-manifest = "fractal_vlm_state_probe.cli.build_external_frame_manifest:main"
 list-provider-capabilities = "fractal_vlm_state_probe.cli.list_provider_capabilities:main"
 summarize-run = "fractal_vlm_state_probe.cli.summarize_run:main"
@@ -57,6 +58,7 @@ analyze-cache-interventions = "fractal_vlm_state_probe.cli.analyze_cache_interve
 analyze-cache-intervention-profiles = "fractal_vlm_state_probe.cli.analyze_cache_intervention_profiles:main"
 analyze-cache-prefix-audits = "fractal_vlm_state_probe.cli.analyze_cache_prefix_audits:main"
 analyze-cache-direction-class-permutation = "fractal_vlm_state_probe.cli.analyze_cache_direction_class_permutation:main"
+analyze-cache-direction-hierarchy = "fractal_vlm_state_probe.cli.analyze_cache_direction_hierarchy:main"
 analyze-image-stats = "fractal_vlm_state_probe.cli.analyze_image_stats:main"
 analyze-processor-image-stats = "fractal_vlm_state_probe.cli.analyze_processor_image_stats:main"
 

@@ -135,30 +135,26 @@ position-local swaps remain required after that path is valid.
 - Compare loci by normalized depth and token region rather than raw layer or
   position number alone.
 
-Status: the balanced one-frame direct core now covers SmolVLM2, Qwen2.5-VL,
-Gemma 3, InternVL3, LFM2-VL, Phi-3.5 Vision, Granite Vision, and Ministral 3 over
-four source pairs. Two-model control and seeded-class extensions add two
-independent fractal pairs, matched frequency and natural controls, and four
-seeded Voronoi/quasicrystal and white/blue-noise pairs. The wider valid direct
-surface contains 76 factorial points, 304 cell runs, and 1,216
-complete-vocabulary sidecars, with non-identical after-cell
-distributions in every factorial. Ministral adds a four-pair `keys`-component
-scalar profile whose exact layer and sign vary. Its 16 selected full-vector
-targets are spatial/palette/interaction-dominant in 15/1/0 and all interaction
-maxima are image-localized. The total selected full-vector surface contains 206
-layer-by-pair analyses; 194 have resolved token partitions, including 194/194
-zero pre-image effects and 188/194 image-position interaction maxima. A
-balanced Qwen/Ministral panel now contains four source pairs in each of the
-fractal, geometry, and noise classes. Within-class direction cosine exceeds
-between-class cosine in image and post-image regions at four targets under all
-eight exact source-pair-level tests (`p=6/34,650`). This revises the pooled
-control result from fractal-specific to fixed-generator-family conditional.
-Phi's 12 analyses remain role-unassigned. The eight-model prompt audit is
-balanced over all four pairs. Generated patterns agree over every pair in 39/64
-fixed records, balanced-axis dominance in 4/64, and both in 2/64. The next
-independent-evidence step is multiple generator pairings per class, source-role
-reversal, and leave-one-generator-pair-out transfer before extending nested
-lengths.
+Status: the balanced one-frame direct core now covers nine local architectures:
+SmolVLM2, Qwen2.5-VL, Gemma 3, InternVL3, LFM2-VL, Phi-3.5 Vision, Granite
+Vision, Ministral 3, and FastVLM over four source pairs. Two-model control and
+generator-pairing extensions add independent fractal pairs, matched frequency
+and natural controls, and 16 two-seed geometry/stochastic pairing units. The
+wider valid direct surface contains 104 factorial points, 416 cell runs, and
+1,664 complete-vocabulary sidecars, with non-identical after-cell distributions
+in every factorial. The selected full-vector surface contains 266 analyses;
+254 have resolved token partitions, including 254/254 zero pre-image effects
+and 248/254 image-position interaction maxima. FastVLM's 12 fixed targets are
+all spatial-dominant and image-localized under a validated `llava_qwen2`
+single-image map. In the Qwen/Ministral hierarchy, all eight exact matching
+tests support direction repetition across seeds of the same ordered pairing.
+When complete pairing families are moved across broad classes over 70 exact
+assignments, only Qwen's image-region test has unadjusted `p < 0.05`, and no
+post-image test does. Phi's 12 analyses remain role-unassigned. The eight-model
+prompt audit remains balanced over all four pairs: generated patterns agree in
+39/64 fixed records, balanced-axis dominance in 4/64, and both in 2/64. The
+next independent-evidence step is more seeds and pairing families, held-out
+pairing transfer, frequency matching, and head/patch-resolved direction.
 
 ## Phase 5: Research Report
 
@@ -168,13 +164,12 @@ lengths.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0039 encode the audited claim
-boundary, balanced eight-model direct and prompt replication, selected
-full-vector localization, scalar-locus versus vector-direction separation, and
-the fixed-generator-family direction result. The first exact source-level
-permutation null is complete; multiplicity-aware hierarchical tests and figures
-remain future work. The current priority is generator-pair diversity and role
-reversal, a neutral wording/order/verbalizer factorial, Phi coordinate
-resolution, a distinct ninth-architecture replication, Ministral
-head/position-resolved vector analysis, and a valid intervention path before
-causal prose is promoted.
+Status: the evidence matrix and Notes 0027-0041 encode the audited claim
+boundary, balanced nine-model direct replication, eight-model prompt
+replication, selected full-vector localization, scalar-locus versus
+vector-direction separation, and the pairing-conditioned direction hierarchy.
+Exact seed-matching and pairing-family block tests are complete. The current
+priority is higher seed and pairing-family replication, held-out and
+frequency-matched transfer, FastVLM hierarchy expansion, neutral
+wording/order/verbalizer controls, Phi coordinate resolution, head/patch-level
+vector analysis, and a valid intervention path before causal prose is promoted.

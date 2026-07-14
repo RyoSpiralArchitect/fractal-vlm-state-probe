@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "panel_id": "generator_pairing_transfer_v1",
+  "max_frames": 1,
+  "source_defaults": {
+    "width": 320,
+    "height": 240,
+    "total_frames": 1,
+    "fps": 1.0,
+    "cell_size": 24,
+    "sites": 32,
+    "dot_density": 0.035,
+    "motion_speed": 1.0
+  },
+  "pairs": [
+    {
+      "pair_id": "geometry_vq_r1",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_voronoi_quasicrystal",
+      "replicate": 1,
+      "source_a": {
+        "kind": "voronoi",
+        "seed": 109,
+        "condition_id": "geometry_01_a_voronoi_seed109"
+      },
+      "source_b": {
+        "kind": "quasicrystal",
+        "seed": 113,
+        "condition_id": "geometry_01_b_quasicrystal_seed113"
+      }
+    },
+    {
+      "pair_id": "geometry_vq_r2",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_voronoi_quasicrystal",
+      "replicate": 2,
+      "source_a": {
+        "kind": "voronoi",
+        "seed": 127,
+        "condition_id": "geometry_02_a_voronoi_seed127"
+      },
+      "source_b": {
+        "kind": "quasicrystal",
+        "seed": 131,
+        "condition_id": "geometry_02_b_quasicrystal_seed131"
+      }
+    },
+    {
+      "pair_id": "geometry_checker_hex_r1",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_checkerboard_hex_tiling",
+      "replicate": 1,
+      "source_a": {"kind": "checkerboard", "seed": 181, "cell_size": 16},
+      "source_b": {"kind": "hex_tiling", "seed": 191, "cell_size": 24}
+    },
+    {
+      "pair_id": "geometry_checker_hex_r2",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_checkerboard_hex_tiling",
+      "replicate": 2,
+      "source_a": {"kind": "checkerboard", "seed": 193, "cell_size": 16},
+      "source_b": {"kind": "hex_tiling", "seed": 197, "cell_size": 24}
+    },
+    {
+      "pair_id": "geometry_square_triangle_r1",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_square_triangle_tiling",
+      "replicate": 1,
+      "source_a": {"kind": "square_tiling", "seed": 199, "cell_size": 24},
+      "source_b": {"kind": "triangle_tiling", "seed": 211, "cell_size": 24}
+    },
+    {
+      "pair_id": "geometry_square_triangle_r2",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_square_triangle_tiling",
+      "replicate": 2,
+      "source_a": {"kind": "square_tiling", "seed": 223, "cell_size": 24},
+      "source_b": {"kind": "triangle_tiling", "seed": 227, "cell_size": 24}
+    },
+    {
+      "pair_id": "geometry_voronoi_hex_r1",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_voronoi_hex_tiling",
+      "replicate": 1,
+      "source_a": {"kind": "voronoi", "seed": 229, "sites": 32},
+      "source_b": {"kind": "hex_tiling", "seed": 233, "cell_size": 24}
+    },
+    {
+      "pair_id": "geometry_voronoi_hex_r2",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_voronoi_hex_tiling",
+      "replicate": 2,
+      "source_a": {"kind": "voronoi", "seed": 239, "sites": 32},
+      "source_b": {"kind": "hex_tiling", "seed": 241, "cell_size": 24}
+    },
+    {
+      "pair_id": "stochastic_white_blue_r1",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_white_blue_noise",
+      "replicate": 1,
+      "source_a": {
+        "kind": "white_noise",
+        "seed": 149,
+        "condition_id": "noise_01_a_white_seed149"
+      },
+      "source_b": {
+        "kind": "blue_noise",
+        "seed": 151,
+        "condition_id": "noise_01_b_blue_seed151"
+      }
+    },
+    {
+      "pair_id": "stochastic_white_blue_r2",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_white_blue_noise",
+      "replicate": 2,
+      "source_a": {
+        "kind": "white_noise",
+        "seed": 157,
+        "condition_id": "noise_02_a_white_seed157"
+      },
+      "source_b": {
+        "kind": "blue_noise",
+        "seed": 163,
+        "condition_id": "noise_02_b_blue_seed163"
+      }
+    },
+    {
+      "pair_id": "stochastic_white_dots_r1",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_white_random_dots",
+      "replicate": 1,
+      "source_a": {"kind": "white_noise", "seed": 251},
+      "source_b": {"kind": "random_dots", "seed": 257, "dot_density": 0.035}
+    },
+    {
+      "pair_id": "stochastic_white_dots_r2",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_white_random_dots",
+      "replicate": 2,
+      "source_a": {"kind": "white_noise", "seed": 263},
+      "source_b": {"kind": "random_dots", "seed": 269, "dot_density": 0.035}
+    },
+    {
+      "pair_id": "stochastic_blue_dots_r1",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_blue_random_dots",
+      "replicate": 1,
+      "source_a": {"kind": "blue_noise", "seed": 271},
+      "source_b": {"kind": "random_dots", "seed": 277, "dot_density": 0.035}
+    },
+    {
+      "pair_id": "stochastic_blue_dots_r2",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_blue_random_dots",
+      "replicate": 2,
+      "source_a": {"kind": "blue_noise", "seed": 281},
+      "source_b": {"kind": "random_dots", "seed": 283, "dot_density": 0.035}
+    },
+    {
+      "pair_id": "stochastic_sparse_dense_r1",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_sparse_dense_dots",
+      "replicate": 1,
+      "source_a": {"kind": "random_dots", "seed": 293, "dot_density": 0.015},
+      "source_b": {"kind": "random_dots", "seed": 307, "dot_density": 0.12}
+    },
+    {
+      "pair_id": "stochastic_sparse_dense_r2",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_sparse_dense_dots",
+      "replicate": 2,
+      "source_a": {"kind": "random_dots", "seed": 311, "dot_density": 0.015},
+      "source_b": {"kind": "random_dots", "seed": 313, "dot_density": 0.12}
+    }
+  ]
+}

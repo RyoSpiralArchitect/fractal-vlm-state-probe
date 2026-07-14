@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "fastvlm_ninth_model_replication_summary",
+  "note": "0041_fastvlm_ninth_model_replication",
+  "date": "2026-07-14",
+  "model": {
+    "model_id": "mlx-community/FastVLM-0.5B-bf16",
+    "model_type": "llava_qwen2",
+    "language_layers": 24,
+    "kv_heads": 2,
+    "head_dimension": 64,
+    "mlx_version": "0.31.1",
+    "mlx_vlm_version": "0.4.4"
+  },
+  "protocol": {
+    "source_pairs": ["b_c", "c_d", "d_e", "e_f"],
+    "visual_cells": ["mm", "jj", "mj", "jm"],
+    "frame_count": 1,
+    "temperature": 0,
+    "stream_seed": 20260604,
+    "probe_seed": 0,
+    "cache_reuse": false,
+    "fixed_targets": ["layer_001_keys", "layer_012_keys", "layer_023_values"]
+  },
+  "cache_layout": {
+    "processor_token_count": 142,
+    "processor_image_placeholder_count": 1,
+    "effective_cache_length": 397,
+    "pre_image_positions": 42,
+    "image_positions": 256,
+    "post_image_positions": 99,
+    "image_position_range": [42, 297],
+    "strategy": "llava_qwen2_single_image_run_replacement",
+    "raw_tensor_shape": [1, 2, 512, 64],
+    "saved_tensor_shape": [1, 2, 397, 64],
+    "resolved_cells": "16/16"
+  },
+  "source_response": {
+    "requested": "ACK",
+    "observed": "The image",
+    "fixed_across_cells": "16/16",
+    "ack_compliant": false
+  },
+  "direct": {
+    "factorials": 4,
+    "cell_runs": 16,
+    "full_vocab_sidecars": 64,
+    "before_four_cell_bitwise_exact": "8/8",
+    "after_four_cell_nonidentical": "8/8",
+    "generated_declared_candidates": "64/64",
+    "generated_token_counts": {"C": 53, "B": 11},
+    "after_candidate_mass_range": [0.659278550828153, 0.9711102460665052],
+    "after_dominance_spatial_palette_interaction": [2, 2, 4]
+  },
+  "full_vector": {
+    "source_cells": 16,
+    "tensor_sidecars": 48,
+    "analyses": 12,
+    "pre_image_zero": "12/12",
+    "image_interaction_argmax": "12/12",
+    "image_energy_above_0_9": "12/12",
+    "image_dominance_spatial_palette_interaction": [12, 0, 0],
+    "image_interaction_share_at_or_below_one_third": "12/12",
+    "direction": {
+      "layer_001_keys": {"image_median": 0.18771489, "post_image_median": 0.42400103},
+      "layer_012_keys": {"image_median": 0.19831398, "post_image_median": 0.54599005},
+      "layer_023_values": {"image_median": 0.13277483, "post_image_median": 0.59296655}
+    }
+  },
+  "updated_aggregate": {
+    "balanced_core_models": 9,
+    "valid_direct_factorials": 104,
+    "valid_direct_cells": 416,
+    "valid_direct_full_vocab_sidecars": 1664,
+    "selected_full_vector_source_cells": 360,
+    "selected_full_vector_tensor_sidecars": 1064,
+    "selected_full_vector_analyses": 266,
+    "selected_full_vector_dominance_spatial_palette_interaction": [227, 32, 7],
+    "partition_resolved_analyses": 254,
+    "pre_image_zero": "254/254",
+    "image_interaction_argmax": "248/254",
+    "image_energy_above_0_9": "249/254",
+    "image_interaction_share_at_or_below_one_third": "252/266"
+  },
+  "claim_boundary": {
+    "source_ack_compliant": false,
+    "all_layers_screened": false,
+    "non_fractal_transfer_tested": false,
+    "persistent_state_established": false,
+    "causal_cache_mediation_established": false,
+    "cross_model_vector_basis_established": false
+  },
+  "primary_artifacts": [
+    "runs/fastvlm_expansion/four_pair_1f_direct_seed0",
+    "runs/fastvlm_expansion/four_pair_1f_source_cache_three_target_seed0",
+    "runs/fastvlm_expansion/analyses",
+    "runs/fastvlm_expansion/replication"
+  ]
+}

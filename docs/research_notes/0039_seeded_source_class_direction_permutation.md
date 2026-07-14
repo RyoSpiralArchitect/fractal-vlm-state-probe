@@ -5,6 +5,15 @@ Date: 2026-07-14
 Status: completed for a balanced three-class, four-source-pair direction panel
 in Qwen2.5-VL and Ministral 3.
 
+> **Updated by [Note 0040](0040_generator_pairing_direction_hierarchy.md).**
+> The exact measurements below remain valid, but each class nests four seeds
+> inside one ordered generator pairing. Once multiple pairing families are
+> added and pairing family is the permutation unit, the evidence supports
+> strong pairing-conditioned seed replication, not generic broad-class
+> direction transfer.
+> Aggregate counts in this note are a historical snapshot; current nine-model
+> totals are recorded in [Note 0041](0041_fastvlm_ninth_model_replication.md).
+>
 > This note supersedes the directional interpretation in Notes 0037 and 0038.
 > Their artifact counts and within-panel observations remain valid, but pooling
 > six heterogeneous controls hid coherent directions inside the geometry and
@@ -172,18 +181,18 @@ The old result was not evidence that only fractals possess a repeated late
 direction. It was evidence that one should not average unlike controls and
 call the result a control population.
 
-The current bounded reading is:
+The bounded reading at this stage was:
 
 > Under fixed source-A/source-B generator pairings, independently seeded
 > Mandelbrot/Julia, Voronoi/quasicrystal, and white/blue-noise factorials each
 > produce coherent class-conditional post-image interaction directions. The
 > direction is organized by generator family and is not fractal-specific.
 
-This is more specific than generic image localization and less semantic than a
-class concept. The repeated vector may encode ordered generator identity,
-source-role orientation, processor geometry, low-level statistics, learned
-visual structure, or a mixture. The present design does not separate those
-possibilities.
+Note 0040 now narrows this further: the repeated vector primarily follows one
+ordered generator pairing across seeds. Transfer across different pairings in
+the same broad class is much weaker and geometry-skewed. The vector may encode
+ordered generator identity, processor geometry, low-level statistics, learned
+visual structure, or a mixture.
 
 The visible/readout separation also remains. Complete distributions change in
 all after records, but generated candidates and balanced readout axes do not
@@ -209,8 +218,9 @@ Interaction share is at or below `1/3` in 193/206 analyses.
 
 - A class is one fixed ordered generator pairing, not a sampled semantic
   population. Four seeds do not establish geometry or noise in general.
-- Source A/source B orientation is fixed. Reversing roles or changing the
-  generator pairing may reverse or replace the observed direction.
+- Simultaneously reversing source A/source B maps `MM <-> JJ` and `MJ <-> JM`,
+  leaving `JJ - JM - MJ + MM` invariant. It is not an independent interaction
+  experiment. Changing the generator pairing may replace the direction.
 - The natural-image class is not replicated in this panel.
 - The exact test conditions on these 12 observed source pairs. It does not
   license inference to unobserved visual populations.
@@ -228,7 +238,8 @@ Interaction share is at or below `1/3` in 193/206 analyses.
 ## Highest-Value Next Experiments
 
 1. Replace seed-only replication with multiple generator pairings inside each
-   class, reverse source roles, and use leave-one-generator-pair-out tests.
+   class and use pairing-family-blocked or leave-one-pairing-out tests. Note
+   0040 begins this for geometry and stochastic inputs.
 2. Add several independently sourced natural-image pairings with explicit
    content and licensing strata.
 3. Match or sweep processor-space spectral structure inside each generator

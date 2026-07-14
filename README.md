@@ -6,19 +6,21 @@ a VLM visibly answers from what the measurement actually resolves.
 
 This project began by asking whether controlled fractal streams change later
 non-visual generation. A cache-prefix audit changed the valid protocol; a
-balanced seeded source-class panel changed the measured object again. The
-newest result overturns the simpler fractal-specific reading: under fixed
-ordered generator pairings, fractal, geometry, and noise inputs each produce a
-coherent post-image interaction direction. Fractal identity and the generated
-label are no longer treated as the primary result. The current target is
-narrower and directly measurable:
+balanced seeded fixed-pairing panel changed the measured object again; a
+multi-pair generator hierarchy then changed what "replication" means. The
+newest result is narrower than either a fractal or broad-class story:
+full-vector interaction direction repeats strongly across seeds of the same
+ordered generator pairing, while transfer across different geometry or
+stochastic pairings is weak and target-dependent. Fractal identity, broad
+semantic class, and the generated label are not treated as the primary result.
+The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
 > decompose into spatial, palette, and interaction effects across complete
 > prompt-conditioned readout distributions and selected source-cache tensors,
 > and which marginal effects, categorical patterns, scalar loci, or vector
-> directions actually repeat across models, source classes, source pairs, and
-> probe formulations?
+> directions actually repeat across models, ordered generator pairings,
+> pairing families, source pairs, and probe formulations?
 
 A generated candidate is the visible answer, not the measured state. The main
 measured object is the aligned source-A/source-B 2x2 contrast itself: first in
@@ -26,7 +28,7 @@ raw and processor space, then over complete readout distributions and selected
 cache tensors. Token roles are used only when the processor-expanded layout is
 identified. An unchanged label therefore does not imply an unchanged
 distribution, a repeated scalar locus does not imply one vector mechanism, and
-image-token localization does not imply one source-class-invariant direction.
+image-token localization does not imply one generator-independent direction.
 
 The repo is deliberately cautious. It does not claim that a model has subjective
 experience, enters a mental state, or undergoes adaptation in the human sense.
@@ -41,7 +43,8 @@ keeps four objects separate:
 1. the transformed input and processor-space perturbation,
 2. the complete first-step readout distribution from a fresh direct probe,
 3. the cache summary or selected full tensor from a separate fresh multimodal
-   ACK forward,
+   source-context forward, retaining the actual response even when it is not
+   the requested `ACK`,
 4. whether any cache reuse path preserves the full multimodal prefix and has a
    cache sequence length compatible with its token history.
 
@@ -60,19 +63,20 @@ pending a verified multimodal suffix path.
 
 The replacement protocol uses no image-conditioned cache reuse:
 
-1. Run one fresh ordered multi-image ACK forward and summarize its source cache.
+1. Run one fresh ordered multi-image source-context forward, request `ACK`, and
+   record the actual response and source cache.
 2. Run each forced-choice probe as a separate fresh multimodal forward over the
    same ordered images.
 3. Save the complete first-step vocabulary distribution, not only a generated
    letter or top-k slice.
 
 The independent one-frame direct core is now balanced over four source pairs x
-eight models: SmolVLM2, Qwen2.5-VL, Gemma 3, InternVL3, LFM2-VL, Phi-3.5
-Vision, Granite Vision, and Ministral 3. Including nested replay lengths and the
-two-model control and seeded-class extensions, the wider valid direct surface
-now contains 76 `MM/JJ/MJ/JM` factorial points, 304 cell runs, and 1,216
-compressed full-vocabulary sidecars. Every direct after-factorial contains
-non-identical cell distributions.
+nine models: SmolVLM2, Qwen2.5-VL, Gemma 3, InternVL3, LFM2-VL, Phi-3.5
+Vision, Granite Vision, Ministral 3, and FastVLM. Including nested replay
+lengths and the two-model control, seeded, and generator-pairing extensions,
+the wider valid direct surface now contains 104 `MM/JJ/MJ/JM` factorial
+points, 416 cell runs, and 1,664 compressed full-vocabulary sidecars. Every
+direct after-factorial contains non-identical cell distributions.
 
 - Qwen repeats a late layer 33 `values` source-cache summary locus over all six
   independently generated one-frame fractal pairs and all 14 tested
@@ -110,6 +114,12 @@ non-identical cell distributions.
   in image positions. Its direct and prompt outputs also resolve declared
   candidates, so its measured prompt sensitivity is not an artifact of
   unresolved categorical output.
+- FastVLM adds the ninth balanced architecture. Its four-pair direct axes are
+  spatial/palette/interaction in 2/2/4. At three architecture-fixed early,
+  middle, and late tensor targets, all 12 interactions peak in image positions,
+  all are spatial-dominant, and all pairwise image and post-image direction
+  cosines are positive. Its source response is consistently `The image`, not
+  the requested `ACK`, and is retained as an explicit protocol difference.
 
 The new control-specificity extension crosses two additional fractal pairs,
 three matched `c_d` ablations, geometry, noise, and natural images in Qwen and
@@ -120,15 +130,16 @@ after records contain non-identical complete distributions, even though
 Granite resolves 0/64 generated candidate semantics. Qwen and Granite agree on
 the dominant balanced readout axis in only 6/16 panel-by-probe records.
 
-The follow-up balances four independently seeded source pairs inside each of
-three ordered generator classes: Mandelbrot/Julia, Voronoi/quasicrystal, and
-white/blue noise. Across Qwen layer 33 `values` and Ministral layers 1/16
-`keys` plus layer 25 `values`, mean within-class direction cosine exceeds mean
-between-class cosine in image and post-image regions under all eight exact
-source-pair-level tests (`p=6/34,650`). Every class has positive post-image
-coherence at every target. The result is therefore generator-family
-conditional, not fractal-specific, but each class still contains only one
-fixed generator pairing.
+The seeded follow-up originally grouped four independent seeds inside each of
+three fixed ordered generator pairings. All eight source-pair-level class tests
+were exact minima (`p=6/34,650`), but the new hierarchy shows why that was too
+broad a reading. It adds eight two-seed pairing families across geometry and
+stochastic classes. Under 11,025 exact within-class replicate matchings, all
+eight target/region tests support same-pairing seed repetition. When complete
+pairing families are instead moved across broad classes over 70 exact
+assignments, only Qwen's image-region test has unadjusted `p < 0.05`, and no
+post-image test does. The current result is ordered-pairing-conditioned, with a
+weaker geometry-skewed transfer tendency.
 
 The prompt audit is likewise balanced over all eight models and four pairs: 32
 model/pair audit units, 128 cell runs, and 2,048 sidecars, with all 512 baseline
@@ -147,72 +158,78 @@ features, mapping the saved 1,474-token history to 3,073 effective cache
 positions: 51 pre-image, 2,916 image, and 106 post-image. Unknown mismatches and
 multi-run layouts still fail closed.
 
-The selected full-vector surface now contains 248 source-only ACK runs, 824
-target tensor sidecars, and 206 layer-by-pair analyses. Balanced
-spatial/palette/interaction dominance is 175/25/6. Of the 194 analyses with
-identified token partitions, 194/194 pre-image interactions are exactly zero,
-188/194 interaction argmaxes are image tokens, and 190/194 image-token energy
+The selected full-vector surface now contains 360 source-only fresh forwards,
+1,064 target tensor sidecars, and 266 layer-by-pair analyses. Balanced
+spatial/palette/interaction dominance is 227/32/7. Of the 254 analyses with
+identified token partitions, 254/254 pre-image interactions are exactly zero,
+248/254 interaction argmaxes are image tokens, and 249/254 image-token energy
 fractions exceed 0.9.
 
-Direction is more specific than energy, but it is not fractal-specific. The
-earlier near-zero pooled-control cosine mixed dependent ablations and unrelated
-generator families. Once source pairs are balanced within class, fractal,
-geometry, and noise directions each repeat, while between-class directions
-remain much less aligned. A shared suffix is still insufficient by itself; the
-measured organization follows the ordered source-generator family.
+Direction is more specific than energy and more specific than broad visual
+class. The earlier near-zero pooled-control cosine mixed unlike controls; the
+next seeded panel then mistook nested repetition inside one pairing for broad
+class transfer. With both levels present, same-pairing seed directions repeat
+strongly, while different-pairing transfer is much weaker. A shared suffix is
+still insufficient by itself; the strongest measured organization follows the
+ordered source-generator pairing.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
 processor-space frequency structure. The interaction and image localization
-are not fractal-specific; neither is within-generator-family tensor direction.
-The current reading is therefore generator-family-conditional,
-distribution-coupled visual
+are not fractal-specific; neither is same-pairing tensor direction. The current
+reading is therefore ordered-pairing-conditioned, distribution-coupled visual
 perturbation under fresh multimodal inference, not persistent latent-state
 steering.
 
 The repo does **not** currently support a universal layer, persistent
 multi-turn state, a valid cache intervention effect, causal mediation from the
-ACK cache to the direct probe, a prompt-invariant categorical visual readout,
+source cache to the direct probe, a prompt-invariant categorical visual readout,
 or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-1. [Note 0039](docs/research_notes/0039_seeded_source_class_direction_permutation.md)
-   for the balanced seeded fractal/geometry/noise panel, exact source-level
-   permutation, and revised generator-family-conditional reading.
-2. [Note 0038](docs/research_notes/0038_ministral3_eighth_model_replication.md)
+1. [Note 0041](docs/research_notes/0041_fastvlm_ninth_model_replication.md)
+   for the ninth-model FastVLM expansion, `llava_qwen2` cache-coordinate map,
+   and fixed early/middle/late full-vector replication.
+2. [Note 0040](docs/research_notes/0040_generator_pairing_direction_hierarchy.md)
+   for the seed-versus-pairing hierarchy, family-block exact tests, and revised
+   ordered-pairing-conditioned reading.
+3. [Note 0039](docs/research_notes/0039_seeded_source_class_direction_permutation.md)
+   for the seeded fractal/geometry/noise result whose broad-class direction
+   interpretation is superseded by Note 0040.
+4. [Note 0038](docs/research_notes/0038_ministral3_eighth_model_replication.md)
    for the balanced eighth-model expansion, Ministral cache coordinates,
    full-vector localization, and updated prompt matrix.
-3. [Note 0037](docs/research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md)
+5. [Note 0037](docs/research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md)
    for the two-model matched control panel, six-fractal direction extension,
    and the pooled-control result later resolved by Note 0039.
-4. [Note 0036](docs/research_notes/0036_granite_four_pair_completion_and_cache_coordinates.md)
+6. [Note 0036](docs/research_notes/0036_granite_four_pair_completion_and_cache_coordinates.md)
    for the balanced seven-model x four-pair surface, Granite cache-coordinate
    resolution, and image-versus-suffix full-vector result.
-5. [Note 0035](docs/research_notes/0035_six_model_four_pair_completion_and_phi_full_vector.md)
+7. [Note 0035](docs/research_notes/0035_six_model_four_pair_completion_and_phi_full_vector.md)
    for the preceding balanced six-model matrix and Phi full-vector replication.
-6. [Note 0034](docs/research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md)
+8. [Note 0034](docs/research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md)
    for the preceding five-model matrix and unbalanced Phi pilot.
-7. [Note 0033](docs/research_notes/0033_five_model_two_pair_prompt_matrix.md)
+9. [Note 0033](docs/research_notes/0033_five_model_two_pair_prompt_matrix.md)
    for the earlier two-pair matrix and its transition into the four-pair test.
-8. [Note 0032](docs/research_notes/0032_five_model_prompt_robustness_and_source_pair_decoupling.md)
+10. [Note 0032](docs/research_notes/0032_five_model_prompt_robustness_and_source_pair_decoupling.md)
    for five-model prompt robustness and the LFM2 two-source-pair decoupling.
-9. [Note 0031](docs/research_notes/0031_balanced_contrasts_five_model_expansion.md)
+11. [Note 0031](docs/research_notes/0031_balanced_contrasts_five_model_expansion.md)
    for balanced factorial calibration and the five-model cache/readout matrix.
-10. [Note 0030](docs/research_notes/0030_full_vector_cache_factorials.md)
+12. [Note 0030](docs/research_notes/0030_full_vector_cache_factorials.md)
    for the first full-vector 2x2 cache result and direction analysis.
-11. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
+13. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
    for the three-model prompt audit and InternVL expansion.
-12. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
+14. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
    for the four-pair replication and first prompt audit.
-13. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
+15. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
    for the protocol audit that defines the valid fresh-forward boundary.
-14. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
+16. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
    supported/provisional/withdrawn map.
-15. [Experiment Design](docs/experiment_design.md) for the control ladder.
-16. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
+17. [Experiment Design](docs/experiment_design.md) for the control ladder.
+18. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
    for the still-valid input and processor-space cross-palette analysis.
-17. [Examples](examples/README.md) for tracked summaries and the historical note
+19. [Examples](examples/README.md) for tracked summaries and the historical note
    sequence.
 
 Relevant historical cross-palette and intervention notes now carry
@@ -241,6 +258,8 @@ first logprob-focused pass unless a selected model exposes the needed signal.
 - Generate deterministic visual controls: blank, white/blue noise, random dots,
   checkerboards, square/triangle/hex tilings, Voronoi fields, and
   quasicrystal-like patterns.
+- Materialize balanced two-seed panels over multiple ordered geometry and
+  stochastic generator pairings, with source-hash and raw-marginal audits.
 - Run paired stochastic-probe batches over selected fractal, geometric, and
   low-level control patterns.
 - Transform existing manifests into phase-scrambled, quantile-matched
@@ -274,6 +293,9 @@ first logprob-focused pass unless a selected model exposes the needed signal.
   pre-image, post-image, and complete effective-cache regions; compare balanced
   contrast-energy shares and aggregate model-local directions across source
   pairs.
+- Compare direction at three nested levels: same-pairing seed replication,
+  different pairings within a broad class, and between-class transfer. Exact
+  matching and pairing-family block tests keep the resampling unit explicit.
 - Analyze cache-summary spatial, palette, and interaction contrasts; track
   loci by model, source pair, replay length, tensor, and normalized depth.
 - Aggregate independent source-pair replications across models while reporting
@@ -286,6 +308,9 @@ first logprob-focused pass unless a selected model exposes the needed signal.
   fresh prompt-cache state for every run.
 - Adapt InternVL's custom MLX image expansion and string-oriented chat template
   when the installed Transformers processor path cannot construct them.
+- Resolve validated single-image processor-to-cache replacement layouts for
+  Granite Vision and `llava_qwen2` models such as FastVLM; unknown layouts fail
+  closed instead of receiving inferred token roles.
 - Promote MLX cache tensors to float32 for summary reductions, avoiding
   low-precision variance/L2 overflow, and promote unsupported bfloat16
   logprobs before saving.
@@ -369,28 +394,32 @@ Use `scripts/analyze_cache_tensor_replication.py` with repeated
 independent source pairs. Raw directions are intentionally not compared across
 models or layers.
 
-When several replicated source pairs form balanced classes, calibrate their
-directional organization by permuting complete source-pair units. The four
-factorial cells stay together and class sizes are preserved:
+To create the current multi-pair generator hierarchy, materialize the configured
+source generators and all four cross-palette cells first:
 
 ```bash
-python3 scripts/analyze_cache_direction_class_permutation.py \
-  --replication runs/seeded_class_direction_v1/replication/qwen_l33_values_12_pair.json \
-  --class-label fractal_b_c=fractal \
-  --class-label fractal_c_d=fractal \
-  --class-label fractal_d_e=fractal \
-  --class-label fractal_e_f=fractal \
-  --class-label geometry_00=geometry \
-  --class-label geometry_01=geometry \
-  --class-label geometry_02=geometry \
-  --class-label geometry_03=geometry \
-  --class-label noise_00=noise \
-  --class-label noise_01=noise \
-  --class-label noise_02=noise \
-  --class-label noise_03=noise \
-  --output-json runs/seeded_class_direction_v1/permutation/qwen_l33_values.json \
-  --output-md runs/seeded_class_direction_v1/permutation/qwen_l33_values.md
+python3 scripts/prepare_generator_pairing_panel.py \
+  --config configs/generator_pairing_transfer_v1.json \
+  --output-root runs/generator_pairing_transfer_v1 \
+  --overwrite
 ```
+
+After computing and aggregating the per-pair full-vector factorials, separate
+same-pairing seed replication from transfer across pairing families. The panel
+summary supplies both hierarchy maps, so the 16 labels do not need to be
+re-entered:
+
+```bash
+python3 scripts/analyze_cache_direction_hierarchy.py \
+  --replication runs/generator_pairing_transfer_v1/replication/qwen_l033_values.json \
+  --panel-summary runs/generator_pairing_transfer_v1/generator_pairing_panel_summary.json \
+  --output-json runs/generator_pairing_transfer_v1/hierarchy/qwen_l033_values.json \
+  --output-md runs/generator_pairing_transfer_v1/hierarchy/qwen_l033_values.md
+```
+
+The older class-permutation CLI remains available for protocol forensics, but a
+class containing seeds from only one ordered pairing cannot establish transfer
+to other generator pairings.
 
 The original Null-vs-Stream ladder remains available for protocol development.
 Keep the seed, probe, frame count, and model fixed while changing only
@@ -814,6 +843,8 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0037: Control Specificity and Conditional Cache Directions](docs/research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md)
 - [Research Note 0038: Ministral 3 Eighth-Model Replication](docs/research_notes/0038_ministral3_eighth_model_replication.md)
 - [Research Note 0039: Seeded Source-Class Direction Permutation](docs/research_notes/0039_seeded_source_class_direction_permutation.md)
+- [Research Note 0040: Generator-Pairing Direction Hierarchy](docs/research_notes/0040_generator_pairing_direction_hierarchy.md)
+- [Research Note 0041: FastVLM Ninth-Model Replication](docs/research_notes/0041_fastvlm_ninth_model_replication.md)
 
 ## Claim Boundary
 
@@ -822,6 +853,6 @@ not independent stimulus replications, and four factorial cells do not turn
 their six pairwise distances into six independent samples. An unchanged letter
 does not establish equality of output distributions. No persistence or cache
 intervention claim is promoted unless full multimodal prefix and cache-length
-invariants pass on the exact execution path being interpreted. A seeded class
-result over one fixed ordered generator pairing does not establish a semantic
-class in general.
+invariants pass on the exact execution path being interpreted. Seed repetition
+inside one ordered generator pairing does not establish transfer to other
+pairings, a broad semantic class, or a model-general direction.
