@@ -56,6 +56,7 @@ analyze-full-vocab-readout-contrast = "fractal_vlm_state_probe.cli.analyze_full_
 analyze-cache-interventions = "fractal_vlm_state_probe.cli.analyze_cache_interventions:main"
 analyze-cache-intervention-profiles = "fractal_vlm_state_probe.cli.analyze_cache_intervention_profiles:main"
 analyze-cache-prefix-audits = "fractal_vlm_state_probe.cli.analyze_cache_prefix_audits:main"
+analyze-cache-direction-class-permutation = "fractal_vlm_state_probe.cli.analyze_cache_direction_class_permutation:main"
 analyze-image-stats = "fractal_vlm_state_probe.cli.analyze_image_stats:main"
 analyze-processor-image-stats = "fractal_vlm_state_probe.cli.analyze_processor_image_stats:main"
 

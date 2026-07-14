@@ -2,6 +2,10 @@
 
 > Superseding aggregate counts and the balanced eighth-model Ministral 3
 > expansion are recorded in [Note 0038](0038_ministral3_eighth_model_replication.md).
+> The directional interpretation is superseded by
+> [Note 0039](0039_seeded_source_class_direction_permutation.md): balancing
+> independent seeds within geometry and noise reveals coherent class-specific
+> directions that were erased by pooling the heterogeneous controls here.
 
 Date: 2026-07-14
 

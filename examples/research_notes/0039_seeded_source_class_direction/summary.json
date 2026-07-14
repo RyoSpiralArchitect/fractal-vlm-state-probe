@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "seeded_source_class_direction_permutation_summary",
+  "note": "0039_seeded_source_class_direction_permutation",
+  "date": "2026-07-14",
+  "protocol": {
+    "models": [
+      "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "mlx-community/Ministral-3-3B-Instruct-2512-4bit"
+    ],
+    "classes": {
+      "fractal": {
+        "source_types": ["mandelbrot", "julia"],
+        "source_pairs": ["fractal_b_c", "fractal_c_d", "fractal_d_e", "fractal_e_f"]
+      },
+      "geometry": {
+        "source_types": ["voronoi", "quasicrystal"],
+        "source_pairs": ["geometry_00", "geometry_01", "geometry_02", "geometry_03"]
+      },
+      "noise": {
+        "source_types": ["white_noise", "blue_noise"],
+        "source_pairs": ["noise_00", "noise_01", "noise_02", "noise_03"]
+      }
+    },
+    "source_pair_count": 12,
+    "source_pairs_per_class": 4,
+    "visual_cells": ["mm", "jj", "mj", "jm"],
+    "source_role_orientation_fixed": true,
+    "temperature": 0,
+    "stream_seed": 20260604,
+    "probe_seed": 0,
+    "frame_count": 1,
+    "cache_reuse": false
+  },
+  "new_source_integrity": {
+    "new_source_manifests": 12,
+    "unique_first_frame_hashes": "12/12",
+    "new_factorials": 6,
+    "raw_factorials_audited": 8,
+    "max_abs_spatial_or_interaction_marginal_leak": 1.6653345369377348e-16,
+    "audited_marginals": [
+      "luminance_mean",
+      "luminance_std",
+      "luminance_entropy",
+      "colorfulness"
+    ]
+  },
+  "geometry_noise_processor": {
+    "model_pair_factorials": 16,
+    "tensor_mean_dominance_spatial_palette_interaction": [0, 16, 0],
+    "tensor_std_dominance_spatial_palette_interaction": [0, 16, 0],
+    "spectral_cpp_dominance_spatial_palette_interaction": [7, 0, 9],
+    "processor_spectral_to_direct_axis_agreement": "11/32",
+    "processor_spectral_to_direct_axis_agreement_by_model": {
+      "qwen": "3/16",
+      "ministral3": "8/16"
+    }
+  },
+  "geometry_noise_direct": {
+    "factorials": 16,
+    "cell_runs": 64,
+    "full_vocab_sidecars": 256,
+    "before_four_cell_bitwise_exact_records": "32/32",
+    "after_four_cell_nonidentical_records": "32/32",
+    "generated_declared_candidates": "256/256",
+    "candidate_probability_mass_range": [
+      0.8474767044287694,
+      0.9986039841773525
+    ],
+    "after_dominance_spatial_palette_interaction": [9, 11, 12],
+    "after_dominance_by_model": {
+      "qwen": [4, 7, 5],
+      "ministral3": [5, 4, 7]
+    }
+  },
+  "selected_full_vector": {
+    "targets": [
+      {
+        "model": "qwen",
+        "layer": 33,
+        "tensor": "values",
+        "selection": "previously repeated scalar locus"
+      },
+      {
+        "model": "ministral3",
+        "layer": 1,
+        "tensor": "keys",
+        "selection": "previous scalar exception maximum"
+      },
+      {
+        "model": "ministral3",
+        "layer": 16,
+        "tensor": "keys",
+        "selection": "previous modal scalar maximum"
+      },
+      {
+        "model": "ministral3",
+        "layer": 25,
+        "tensor": "values",
+        "selection": "effect-unselected late depth control"
+      }
+    ],
+    "source_pair_factorials": 48,
+    "distinct_source_ack_cells": 96,
+    "target_tensor_sidecars": 192,
+    "new_source_ack_cells": 56,
+    "new_target_tensor_sidecars": 120,
+    "new_factorial_analyses": 30,
+    "pre_image_zero": "48/48",
+    "image_interaction_argmax": "46/48",
+    "image_energy_above_0_9": "46/48",
+    "dominance_spatial_palette_interaction": [46, 2, 0],
+    "interaction_share_at_or_below_one_third": "45/48",
+    "image_energy_fraction_min_median_max": [
+      0.892654768181672,
+      0.9714371071706677,
+      0.9994236959736409
+    ],
+    "interaction_share_min_median_max": [
+      0.2324397095782912,
+      0.2997502359451746,
+      0.3420819260939434
+    ]
+  },
+  "permutation": {
+    "unit": "complete_source_pair_factorial",
+    "cell_labels_permuted": false,
+    "class_sizes": [4, 4, 4],
+    "mode": "exact",
+    "assignment_count": 34650,
+    "minimum_global_p": 0.00017316017316017316,
+    "statistic": "mean_within_class_cosine_minus_mean_between_class_cosine",
+    "global_results": {
+      "qwen_l33_values": {
+        "image": {
+          "within_mean": 0.07878047343688838,
+          "between_mean": 0.0035086727998694394,
+          "difference": 0.07527180063701894,
+          "p_greater": 0.00017316017316017316
+        },
+        "post_image": {
+          "within_mean": 0.709921995053655,
+          "between_mean": 0.0916644163062167,
+          "difference": 0.6182575787474384,
+          "p_greater": 0.00017316017316017316
+        }
+      },
+      "ministral3_l001_keys": {
+        "image": {
+          "within_mean": 0.09296175667079197,
+          "between_mean": 0.006779863705336535,
+          "difference": 0.08618189296545543,
+          "p_greater": 0.00017316017316017316
+        },
+        "post_image": {
+          "within_mean": 0.3666135385129665,
+          "between_mean": -0.01435413628847588,
+          "difference": 0.3809676748014424,
+          "p_greater": 0.00017316017316017316
+        }
+      },
+      "ministral3_l016_keys": {
+        "image": {
+          "within_mean": 0.037415730740486354,
+          "between_mean": -0.0017015051566387012,
+          "difference": 0.039117235897125055,
+          "p_greater": 0.00017316017316017316
+        },
+        "post_image": {
+          "within_mean": 0.3715906501667595,
+          "between_mean": 0.007454875866895001,
+          "difference": 0.3641357742998645,
+          "p_greater": 0.00017316017316017316
+        }
+      },
+      "ministral3_l025_values": {
+        "image": {
+          "within_mean": 0.03677050179509802,
+          "between_mean": 0.0005372120004647755,
+          "difference": 0.03623328979463324,
+          "p_greater": 0.00017316017316017316
+        },
+        "post_image": {
+          "within_mean": 0.34808947917423105,
+          "between_mean": 0.029275609157136853,
+          "difference": 0.3188138700170942,
+          "p_greater": 0.00017316017316017316
+        }
+      }
+    },
+    "post_image_class_results": {
+      "qwen_l33_values": {
+        "fractal": {"within_mean": 0.6776241912294187, "p_greater": 0.006060606060606061},
+        "geometry": {"within_mean": 0.6609848947326008, "p_greater": 0.00404040404040404},
+        "noise": {"within_mean": 0.7911568991989458, "p_greater": 0.00202020202020202}
+      },
+      "ministral3_l001_keys": {
+        "fractal": {"within_mean": 0.42718861120495816, "p_greater": 0.00404040404040404},
+        "geometry": {"within_mean": 0.3659783847486566, "p_greater": 0.00808080808080808},
+        "noise": {"within_mean": 0.30667361958528466, "p_greater": 0.00202020202020202}
+      },
+      "ministral3_l016_keys": {
+        "fractal": {"within_mean": 0.4075986216512019, "p_greater": 0.00202020202020202},
+        "geometry": {"within_mean": 0.38973248602621213, "p_greater": 0.00404040404040404},
+        "noise": {"within_mean": 0.31744084282286444, "p_greater": 0.006060606060606061}
+      },
+      "ministral3_l025_values": {
+        "fractal": {"within_mean": 0.33111032958325076, "p_greater": 0.00404040404040404},
+        "geometry": {"within_mean": 0.4068572497120318, "p_greater": 0.00202020202020202},
+        "noise": {"within_mean": 0.30630085822741054, "p_greater": 0.006060606060606061}
+      }
+    },
+    "p_values_multiplicity_adjusted": false
+  },
+  "updated_aggregate": {
+    "valid_direct_factorials": 76,
+    "valid_direct_cells": 304,
+    "valid_direct_full_vocab_sidecars": 1216,
+    "selected_full_vector_source_ack_cells": 248,
+    "selected_full_vector_tensor_sidecars": 824,
+    "selected_full_vector_analyses": 206,
+    "selected_full_vector_dominance_spatial_palette_interaction": [175, 25, 6],
+    "partition_resolved_analyses": 194,
+    "pre_image_zero": "194/194",
+    "image_interaction_argmax": "188/194",
+    "image_energy_above_0_9": "190/194",
+    "interaction_share_at_or_below_one_third": "193/206"
+  },
+  "claim_boundary": {
+    "generator_pairings_per_class": 1,
+    "natural_class_replicated": false,
+    "source_role_reversal_tested": false,
+    "class_specific_p_values_adjusted": false,
+    "targets_preregistered": false,
+    "source_cache_to_readout_causal_path": false,
+    "persistent_state_established": false,
+    "semantic_class_generality_established": false,
+    "universal_layer_or_direction_established": false
+  },
+  "primary_artifacts": [
+    "runs/seeded_class_direction_v1/replication",
+    "runs/seeded_class_direction_v1/permutation",
+    "runs/seeded_class_direction_v1/processor",
+    "runs/seeded_class_direction_v1/direct",
+    "runs/seeded_class_direction_v1/source_cache"
+  ]
+}

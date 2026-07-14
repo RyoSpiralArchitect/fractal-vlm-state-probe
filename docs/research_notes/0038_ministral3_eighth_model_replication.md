@@ -1,5 +1,11 @@
 # Research Note 0038: Ministral 3 Eighth-Model Replication
 
+> The four-pair Ministral measurements remain valid. Their directional
+> interpretation is updated by
+> [Note 0039](0039_seeded_source_class_direction_permutation.md), which adds
+> seeded geometry/noise replications, exact source-level permutations, and
+> superseding aggregate counts.
+
 Date: 2026-07-14
 
 Status: completed for the balanced four-source-pair, one-frame Ministral 3

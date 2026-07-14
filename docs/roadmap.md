@@ -137,24 +137,28 @@ position-local swaps remain required after that path is valid.
 
 Status: the balanced one-frame direct core now covers SmolVLM2, Qwen2.5-VL,
 Gemma 3, InternVL3, LFM2-VL, Phi-3.5 Vision, Granite Vision, and Ministral 3 over
-four source pairs. A two-model eight-panel control extension adds two
-independent fractal pairs and matched frequency, geometry, noise, and natural
-controls. The wider valid direct surface contains 62 factorial points, 248 cell
-runs, and 992 complete-vocabulary sidecars, with non-identical after-cell
+four source pairs. Two-model control and seeded-class extensions add two
+independent fractal pairs, matched frequency and natural controls, and four
+seeded Voronoi/quasicrystal and white/blue-noise pairs. The wider valid direct
+surface contains 76 factorial points, 304 cell runs, and 1,216
+complete-vocabulary sidecars, with non-identical after-cell
 distributions in every factorial. Ministral adds a four-pair `keys`-component
 scalar profile whose exact layer and sign vary. Its 16 selected full-vector
 targets are spatial/palette/interaction-dominant in 15/1/0 and all interaction
-maxima are image-localized. The total selected full-vector surface contains 176
-layer-by-pair analyses; 164 have resolved token partitions, including 164/164
-zero pre-image effects and 160/164 image-position interaction maxima. Late
-post-image directions remain aligned over six fractal pairs in Qwen/Granite and
-collapse over their six controls; Ministral repeats weaker post-image alignment
-over the original four fractal pairs at layers 1, 16, and 25. Phi's 12 analyses
-remain role-unassigned. The eight-model prompt audit is balanced over all four
-pairs. Generated patterns agree over every pair in 39/64 fixed records,
-balanced-axis dominance in 4/64, and both in 2/64. The next independent-evidence
-step is multiple seeded pairs inside each control class plus source-level
-permutation references before extending nested lengths.
+maxima are image-localized. The total selected full-vector surface contains 206
+layer-by-pair analyses; 194 have resolved token partitions, including 194/194
+zero pre-image effects and 188/194 image-position interaction maxima. A
+balanced Qwen/Ministral panel now contains four source pairs in each of the
+fractal, geometry, and noise classes. Within-class direction cosine exceeds
+between-class cosine in image and post-image regions at four targets under all
+eight exact source-pair-level tests (`p=6/34,650`). This revises the pooled
+control result from fractal-specific to fixed-generator-family conditional.
+Phi's 12 analyses remain role-unassigned. The eight-model prompt audit is
+balanced over all four pairs. Generated patterns agree over every pair in 39/64
+fixed records, balanced-axis dominance in 4/64, and both in 2/64. The next
+independent-evidence step is multiple generator pairings per class, source-role
+reversal, and leave-one-generator-pair-out transfer before extending nested
+lengths.
 
 ## Phase 5: Research Report
 
@@ -164,12 +168,13 @@ permutation references before extending nested lengths.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0038 encode the audited claim
+Status: the evidence matrix and Notes 0027-0039 encode the audited claim
 boundary, balanced eight-model direct and prompt replication, selected
 full-vector localization, scalar-locus versus vector-direction separation, and
-the source-class-conditional direction result. Initial manuscript tables exist;
-calibrated nulls and figures remain future work. The current priority is
-within-class source replication and permutation calibration, a neutral
-wording/order/verbalizer factorial, Phi coordinate resolution, a distinct
-ninth-architecture replication, Ministral head/position-resolved vector
-analysis, and a valid intervention path before causal prose is promoted.
+the fixed-generator-family direction result. The first exact source-level
+permutation null is complete; multiplicity-aware hierarchical tests and figures
+remain future work. The current priority is generator-pair diversity and role
+reversal, a neutral wording/order/verbalizer factorial, Phi coordinate
+resolution, a distinct ninth-architecture replication, Ministral
+head/position-resolved vector analysis, and a valid intervention path before
+causal prose is promoted.
