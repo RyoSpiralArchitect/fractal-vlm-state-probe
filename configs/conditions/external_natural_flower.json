@@ -1,0 +1,10 @@
+{
+  "condition_id": "natural_flower_photo",
+  "condition_family": "natural",
+  "temporal_policy": "static_repeat",
+  "semantic_load": "high",
+  "deterministic": true,
+  "source_kind": "external_frames",
+  "comparison_role": "semantic_natural_control",
+  "description": "scikit-learn bundled flower.jpg sample, CC BY 2.0, attributed to vultilion; fixed by manifest hash."
+}

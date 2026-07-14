@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "two_model_control_specificity_and_conditional_cache_direction_summary",
+  "note": "0037_control_specificity_panel_and_conditional_cache_directions",
+  "date": "2026-07-14",
+  "protocol": {
+    "models": [
+      "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "mlx-community/granite-vision-3.2-2b-4bit"
+    ],
+    "panels": [
+      "f_g",
+      "g_h",
+      "phase_c_d",
+      "low_c_d",
+      "high_c_d",
+      "geometry_v_q",
+      "noise_w_b",
+      "natural_c_f"
+    ],
+    "new_independent_fractal_pairs": ["f_g", "g_h"],
+    "dependent_matched_ablation_panels": [
+      "phase_c_d",
+      "low_c_d",
+      "high_c_d"
+    ],
+    "nonfractal_panels": ["geometry_v_q", "noise_w_b", "natural_c_f"],
+    "visual_cells": ["mm", "jj", "mj", "jm"],
+    "temperature": 0,
+    "stream_seed": 20260604,
+    "probe_seed": 0,
+    "frame_count": 1,
+    "cache_reuse": false
+  },
+  "integrity": {
+    "validated_canonical_manifests": "32/32",
+    "model_by_panel_direct_factorials": 16,
+    "direct_cell_runs": 64,
+    "direct_full_vocab_sidecars": 256,
+    "before_four_cell_bitwise_exact_records": "32/32",
+    "after_four_cell_nonidentical_records": "32/32",
+    "source_only_ack_runs": 64,
+    "cache_tensor_sidecars": 128,
+    "cache_tensor_factorial_analyses": 32,
+    "qwen_direct_vs_source_target_scalar_exact": "32/32",
+    "granite_direct_vs_source_target_scalar_exact": "96/96",
+    "target_scalar_max_abs_difference": 0.0
+  },
+  "input_audit": {
+    "raw_marginal_fields": [
+      "luminance_mean",
+      "luminance_std",
+      "luminance_entropy_bits",
+      "colorfulness"
+    ],
+    "max_abs_spatial_or_interaction_leak": 1.1102230246251565e-16,
+    "interpretation": "The rank transform preserves the palette donor RGB multiset while structural and frequency metrics remain free to interact."
+  },
+  "processor_audit": {
+    "qwen": {
+      "tensor_mean_dominance_spatial_palette_interaction": [0, 8, 0],
+      "tensor_std_dominance_spatial_palette_interaction": [1, 7, 0],
+      "spectral_cpp_dominance_spatial_palette_interaction": [5, 3, 0],
+      "processor_spectral_to_direct_axis_agreement": "7/16"
+    },
+    "granite": {
+      "tensor_mean_dominance_spatial_palette_interaction": [0, 8, 0],
+      "tensor_std_dominance_spatial_palette_interaction": [0, 8, 0],
+      "spectral_cpp_dominance_spatial_palette_interaction": [2, 4, 2],
+      "processor_spectral_to_direct_axis_agreement": "9/16"
+    },
+    "cross_model_spectral_axis_agreement": "2/8"
+  },
+  "direct_readout": {
+    "cross_model_balanced_axis_agreement": "6/16",
+    "qwen": {
+      "generated_candidate_semantics_resolved": "64/64",
+      "candidate_probability_mass_range": [
+        0.9938715815697335,
+        0.99897939522797
+      ],
+      "family_dominance_spatial_palette_interaction": [3, 3, 2],
+      "frequency_dominance_spatial_palette_interaction": [2, 2, 4]
+    },
+    "granite": {
+      "generated_candidate_semantics_resolved": "0/64",
+      "generated_first_tokens": ["Based", "The"],
+      "candidate_probability_mass_range": [
+        0.01902574245243296,
+        0.08656505003925863
+      ],
+      "family_dominance_spatial_palette_interaction": [3, 5, 0],
+      "frequency_dominance_spatial_palette_interaction": [3, 3, 2]
+    }
+  },
+  "scalar_cache": {
+    "qwen_current_panel": {
+      "layer_33_values_argmax": "6/8",
+      "negative_sign": "5/8"
+    },
+    "qwen_six_fractal_pairs": {
+      "layer_33_values_argmax": "6/6",
+      "negative_sign": "5/6",
+      "update": "The g_h point preserves the exact locus but changes the scalar interaction sign to positive."
+    },
+    "granite_current_panel": {
+      "key_component_mode": "6/8",
+      "exact_location_mode_share": "1/8",
+      "positive_sign_mode": "5/8"
+    }
+  },
+  "full_vector_current_panel": {
+    "targets": {
+      "qwen": [
+        {"layer": 33, "tensor": "values"}
+      ],
+      "granite": [
+        {"layer": 1, "tensor": "keys"},
+        {"layer": 35, "tensor": "values"},
+        {"layer": 39, "tensor": "values"}
+      ]
+    },
+    "dominant_axis_spatial_palette_interaction": [23, 9, 0],
+    "pre_image_zero": "32/32",
+    "image_interaction_argmax": "32/32",
+    "image_interaction_energy_above_0_989": "32/32",
+    "interaction_share_at_or_below_one_third": "32/32",
+    "qwen_current_dominance_spatial_palette_interaction": [5, 3, 0],
+    "granite_current_dominance_spatial_palette_interaction": [18, 6, 0]
+  },
+  "six_fractal_full_vector_update": {
+    "qwen_layer_33_values": {
+      "dominance_spatial_palette_interaction": [4, 2, 0],
+      "image_interaction_cosine_median": 0.058960737551636194,
+      "post_image_interaction_cosine_median": 0.6984409891384546
+    },
+    "granite_layer_1_keys": {
+      "dominance_spatial_palette_interaction": [5, 1, 0],
+      "image_interaction_cosine_median": 0.10890300672807032,
+      "post_image_interaction_cosine_median": 0.10536026988326047
+    },
+    "granite_layer_35_values": {
+      "dominance_spatial_palette_interaction": [5, 1, 0],
+      "image_interaction_cosine_median": 0.08393096209200922,
+      "post_image_interaction_cosine_median": 0.5748709070241572
+    },
+    "granite_layer_39_values": {
+      "dominance_spatial_palette_interaction": [5, 1, 0],
+      "image_interaction_cosine_median": 0.07655631113938342,
+      "post_image_interaction_cosine_median": 0.5565389700362505
+    }
+  },
+  "six_control_direction_calibration": {
+    "qwen_layer_33_values": {
+      "image_interaction_cosine_median": 0.003889414387518022,
+      "post_image_interaction_cosine_median": 0.055665339822664625
+    },
+    "granite_layer_1_keys": {
+      "image_interaction_cosine_median": 0.0067676013885579036,
+      "post_image_interaction_cosine_median": -0.006823906989469161
+    },
+    "granite_layer_35_values": {
+      "image_interaction_cosine_median": 0.0026484998965742514,
+      "post_image_interaction_cosine_median": 0.01251759941000137
+    },
+    "granite_layer_39_values": {
+      "image_interaction_cosine_median": 0.0009212716887906938,
+      "post_image_interaction_cosine_median": 0.01254563530524866
+    },
+    "interpretation": "The fixed source suffix is shared by fractal and control panels, so suffix identity alone is insufficient to explain the late cross-pair direction alignment."
+  },
+  "updated_aggregate": {
+    "valid_direct_factorials": 58,
+    "valid_direct_cells": 232,
+    "valid_direct_full_vocab_sidecars": 928,
+    "selected_full_vector_source_ack_cells": 176,
+    "selected_full_vector_tensor_sidecars": 640,
+    "selected_full_vector_analyses": 160,
+    "selected_full_vector_dominance_spatial_palette_interaction": [131, 23, 6],
+    "partition_resolved_analyses": 148,
+    "pre_image_zero": "148/148",
+    "image_interaction_argmax": "144/148",
+    "image_energy_above_0_9": "146/148",
+    "interaction_share_at_or_below_one_third": "149/160"
+  },
+  "claim_boundary": {
+    "new_independent_fractal_pairs": 2,
+    "qwen_and_granite_fractal_pair_total": 6,
+    "all_seven_models_extended_to_six_pairs": false,
+    "matched_ablation_panels_are_independent": false,
+    "control_panels_are_exchangeable": false,
+    "pairwise_cosines_are_independent": false,
+    "family_prompt_is_domain_valid_for_nonfractal_controls": false,
+    "source_cache_to_readout_causal_path": false,
+    "persistent_state_established": false,
+    "universal_direction_established": false
+  },
+  "primary_artifacts": [
+    "runs/control_specificity_panel_v1/two_model_control_replication.json",
+    "runs/control_specificity_panel_v1/qwen_direct_seed0",
+    "runs/control_specificity_panel_v1/granite_direct_seed0",
+    "runs/control_specificity_panel_v1/qwen_source_cache_seed0/replication/six_fractal_pairs.json",
+    "runs/control_specificity_panel_v1/qwen_source_cache_seed0/replication/control_six.json",
+    "runs/control_specificity_panel_v1/granite_source_cache_seed0/replication/six_fractal_layer_035_values.json",
+    "runs/control_specificity_panel_v1/granite_source_cache_seed0/replication/control_six_layer_035_values.json"
+  ]
+}

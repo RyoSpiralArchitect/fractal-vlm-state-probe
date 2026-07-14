@@ -8,7 +8,7 @@ from typing import Any
 import numpy as np
 
 from .cache_tensor_artifact import load_cache_tensor_artifact
-from .probe_readout import CELL_KEYS
+from .probe_readout import CELL_KEYS, CELL_SEMANTICS
 from .stimulus import write_json
 
 
@@ -144,12 +144,7 @@ def analyze_cache_tensor_factorial(
         "tensor": tensor,
         "tensor_shape": list(shape),
         "sequence_axis": -2,
-        "cell_semantics": {
-            "mm": "Mandelbrot spatial x Mandelbrot palette",
-            "jj": "Julia spatial x Julia palette",
-            "mj": "Mandelbrot spatial x Julia palette",
-            "jm": "Julia spatial x Mandelbrot palette",
-        },
+        "cell_semantics": dict(CELL_SEMANTICS),
         "cells": {
             cell: {
                 "source_path": str(run_paths[cell]),

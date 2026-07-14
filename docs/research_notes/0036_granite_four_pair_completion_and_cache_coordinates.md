@@ -2,6 +2,12 @@
 
 Date: 2026-07-14
 
+> **Control-specificity update:** [Note 0037](0037_control_specificity_panel_and_conditional_cache_directions.md)
+> adds two fractal pairs and matched/non-fractal controls in Qwen and Granite.
+> The original four-pair results below remain valid within their stated scope,
+> but `g_h` breaks the all-spatial Granite fixed-target pattern and the late
+> post-image direction alignment does not generalize to the control panels.
+
 ## Status
 
 Completed for Granite Vision over the four independent one-frame source pairs

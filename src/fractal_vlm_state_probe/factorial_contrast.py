@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+from .probe_readout import CELL_SEMANTICS
 from .stimulus import write_json
 
 CACHE_STAT_FIELDS = ("mean", "variance", "std", "abs_mean", "l2_norm")
@@ -34,12 +35,7 @@ def analyze_factorial_cache_contrast(
         "schema_version": 1,
         "analysis_kind": "factorial_cache_contrast_2x2",
         "cells": {cell: _run_header(run) for cell, run in cells.items()},
-        "cell_semantics": {
-            "mm": "Mandelbrot spatial rank x Mandelbrot palette",
-            "jj": "Julia spatial rank x Julia palette",
-            "mj": "Mandelbrot spatial rank x Julia palette",
-            "jm": "Julia spatial rank x Mandelbrot palette",
-        },
+        "cell_semantics": dict(CELL_SEMANTICS),
         "contrast_formulas": {
             "spatial_main_effect": "((jm - mm) + (jj - mj)) / 2",
             "palette_main_effect": "((mj - mm) + (jj - jm)) / 2",

@@ -4,22 +4,26 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
-This project began by asking whether controlled visual streams change later
-non-visual generation. A cache-prefix audit changed both the protocol and the
-question. The current target is narrower and directly measurable:
+This project began by asking whether controlled fractal streams change later
+non-visual generation. A cache-prefix audit changed the valid protocol; a
+matched fractal/geometry/noise/natural control panel changed the measured
+object again. Fractal identity and the generated label are no longer treated
+as the primary result. The current target is narrower and directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
 > decompose into spatial, palette, and interaction effects across complete
 > prompt-conditioned readout distributions and selected source-cache tensors,
-> and which categorical patterns, scalar loci, or vector directions actually
-> repeat across models, source pairs, and probe formulations?
+> and which marginal effects, categorical patterns, scalar loci, or vector
+> directions actually repeat across models, source classes, source pairs, and
+> probe formulations?
 
 A generated candidate is the visible answer, not the measured state. The main
-measured object is now the aligned 2x2 contrast itself: first over complete
-readout distributions and, at selected cache targets, over the full tensor.
-Token roles are used only when the processor-expanded layout is identified.
-An unchanged label therefore does not imply an unchanged distribution, and a
-repeatable scalar cache locus does not imply one shared full-vector mechanism.
+measured object is the aligned source-A/source-B 2x2 contrast itself: first in
+raw and processor space, then over complete readout distributions and selected
+cache tensors. Token roles are used only when the processor-expanded layout is
+identified. An unchanged label therefore does not imply an unchanged
+distribution, a repeated scalar locus does not imply one vector mechanism, and
+image-token localization does not imply source-class-invariant direction.
 
 The repo is deliberately cautious. It does not claim that a model has subjective
 experience, enters a mental state, or undergoes adaptation in the human sense.
@@ -59,17 +63,20 @@ The replacement protocol uses no image-conditioned cache reuse:
 3. Save the complete first-step vocabulary distribution, not only a generated
    letter or top-k slice.
 
-The independent one-frame direct core is now balanced over four source pairs x
+The independent one-frame direct core remains balanced over four source pairs x
 seven models: SmolVLM2, Qwen2.5-VL, Gemma 3, InternVL3, LFM2-VL, Phi-3.5
-Vision, and Granite Vision. The wider valid direct surface, including nested
-replay lengths, contains 42 `MM/JJ/MJ/JM` factorial points, 168 cell runs, and
-672 compressed full-vocabulary sidecars. Every direct after-factorial contains
-non-identical cell distributions.
+Vision, and Granite Vision. Including nested replay lengths and the new
+two-model control-specificity extension, the wider valid direct surface now
+contains 58 `MM/JJ/MJ/JM` factorial points, 232 cell runs, and 928 compressed
+full-vocabulary sidecars. Every direct after-factorial contains non-identical
+cell distributions.
 
-- Qwen repeats a late layer 33 `values` source-cache summary locus with a
-  negative interaction at all four independent one-frame source pairs and all
-  12 tested pair-by-length points. Its full-vocabulary interaction still
-  changes non-monotonically over 1/2/4/8/16 images.
+- Qwen repeats a late layer 33 `values` source-cache summary locus over all six
+  independently generated one-frame fractal pairs and all 14 tested
+  pair-by-length points. The added `g_h` pair changes the scalar interaction
+  sign, leaving 5/6 one-frame pairs and 13/14 total points negative. Its
+  full-vocabulary interaction still changes non-monotonically over
+  1/2/4/8/16 images.
 - InternVL3 places all four one-frame maxima in a late layer 25-27 `values`
   band with a negative interaction. The component, sign, and normalized depth
   repeat, while the exact layer does not.
@@ -89,10 +96,20 @@ non-identical cell distributions.
   Its standard direct axes still vary by source pair, and all 12 fixed
   full-tensor targets are spatial-dominant despite the scalar interaction
   profile.
-- Granite Vision now covers all four pairs. Its standard direct axes are
-  pair-dependent: family is spatial/spatial/palette/interaction and frequency
-  is interaction/interaction/palette/palette. Its scalar cache argmax spans
-  layers 0/33/35, both keys and values, and both signs.
+- Granite Vision's original four-pair standard axes remain pair-dependent:
+  family is spatial/spatial/palette/interaction and frequency is
+  interaction/interaction/palette/palette. Across the eight new control-panel
+  points, its scalar cache argmax occupies eight distinct locations, spans
+  keys and values, and uses both signs.
+
+The new control-specificity extension crosses two additional fractal pairs,
+three matched `c_d` ablations, geometry, noise, and natural images in Qwen and
+Granite. Raw palette-donor marginals are preserved to `1.11e-16`; processor
+tensor means are palette-dominant in 16/16 model-by-panel analyses, while the
+processor spectral axis agrees across models in only 2/8 panels. All 32 direct
+after records contain non-identical complete distributions, even though
+Granite resolves 0/64 generated candidate semantics. Qwen and Granite agree on
+the dominant balanced readout axis in only 6/16 panel-by-probe records.
 
 The prompt audit is likewise balanced over all seven models and four pairs: 28
 model/pair audit units, 112 cell runs, and 1,792 sidecars, with all 448 baseline
@@ -111,21 +128,29 @@ features, mapping the saved 1,474-token history to 3,073 effective cache
 positions: 51 pre-image, 2,916 image, and 106 post-image. Unknown mismatches and
 multi-run layouts still fail closed.
 
-The selected full-vector surface contains 112 source-only ACK runs, 512 target
-tensor sidecars, and 128 layer-by-pair analyses. Balanced
-spatial/palette/interaction dominance is 108/14/6. Of the 116 analyses with
-identified token partitions, 116/116 pre-image interactions are exactly zero,
-112/116 interaction argmaxes are image tokens, and 114/116 image-token energy
-fractions exceed 0.9. Granite's 12 fixed tensors are all spatial-dominant and
-place nearly all interaction energy in image positions, while late low-energy
-post-image directions align more strongly across source pairs than the
-high-energy image directions. Phi's 12 analyses remain role-unassigned.
+The selected full-vector surface now contains 176 source-only ACK runs, 640
+target tensor sidecars, and 160 layer-by-pair analyses. Balanced
+spatial/palette/interaction dominance is 131/23/6. Of the 148 analyses with
+identified token partitions, 148/148 pre-image interactions are exactly zero,
+144/148 interaction argmaxes are image tokens, and 146/148 image-token energy
+fractions exceed 0.9. In the 32 new control-panel analyses, localization repeats
+32/32 but interaction dominance occurs 0/32.
+
+Direction is more specific than energy. Over six fractal pairs, late
+post-image interaction cosine medians remain 0.698 for Qwen and 0.575/0.557 at
+Granite layers 35/39. Over the six matched or non-fractal controls they fall to
+0.056 and 0.013/0.013. The shared suffix is therefore insufficient by itself;
+the repeated direction is source-class conditional. The added `g_h` pair also
+breaks the earlier all-spatial Granite fixed-target pattern: its three targets
+are palette-dominant.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
-processor-space frequency structure. The current reading is therefore
-distribution-coupled visual perturbation under fresh multimodal inference, not
-yet persistent latent-state steering.
+processor-space frequency structure. The interaction and image localization
+are not fractal-specific; cross-pair tensor direction is. The current reading
+is therefore source-class-conditional, distribution-coupled visual
+perturbation under fresh multimodal inference, not persistent latent-state
+steering.
 
 The repo does **not** currently support a universal layer, persistent
 multi-turn state, a valid cache intervention effect, causal mediation from the
@@ -134,33 +159,36 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-1. [Note 0036](docs/research_notes/0036_granite_four_pair_completion_and_cache_coordinates.md)
+1. [Note 0037](docs/research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md)
+   for the two-model matched control panel, six-fractal direction extension,
+   and source-class-conditional cache result.
+2. [Note 0036](docs/research_notes/0036_granite_four_pair_completion_and_cache_coordinates.md)
    for the balanced seven-model x four-pair surface, Granite cache-coordinate
    resolution, and image-versus-suffix full-vector result.
-2. [Note 0035](docs/research_notes/0035_six_model_four_pair_completion_and_phi_full_vector.md)
+3. [Note 0035](docs/research_notes/0035_six_model_four_pair_completion_and_phi_full_vector.md)
    for the preceding balanced six-model matrix and Phi full-vector replication.
-3. [Note 0034](docs/research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md)
+4. [Note 0034](docs/research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md)
    for the preceding five-model matrix and unbalanced Phi pilot.
-4. [Note 0033](docs/research_notes/0033_five_model_two_pair_prompt_matrix.md)
+5. [Note 0033](docs/research_notes/0033_five_model_two_pair_prompt_matrix.md)
    for the earlier two-pair matrix and its transition into the four-pair test.
-5. [Note 0032](docs/research_notes/0032_five_model_prompt_robustness_and_source_pair_decoupling.md)
+6. [Note 0032](docs/research_notes/0032_five_model_prompt_robustness_and_source_pair_decoupling.md)
    for five-model prompt robustness and the LFM2 two-source-pair decoupling.
-6. [Note 0031](docs/research_notes/0031_balanced_contrasts_five_model_expansion.md)
+7. [Note 0031](docs/research_notes/0031_balanced_contrasts_five_model_expansion.md)
    for balanced factorial calibration and the five-model cache/readout matrix.
-7. [Note 0030](docs/research_notes/0030_full_vector_cache_factorials.md)
+8. [Note 0030](docs/research_notes/0030_full_vector_cache_factorials.md)
    for the first full-vector 2x2 cache result and direction analysis.
-8. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
+9. [Note 0029](docs/research_notes/0029_cross_model_prompt_and_internvl_expansion.md)
    for the three-model prompt audit and InternVL expansion.
-9. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
+10. [Note 0028](docs/research_notes/0028_source_pair_replication_and_prompt_robustness.md)
    for the four-pair replication and first prompt audit.
-10. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
+11. [Note 0027](docs/research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md)
    for the protocol audit that defines the valid fresh-forward boundary.
-11. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
+12. [Paper Evidence Matrix](docs/paper_evidence_matrix.md) for the compact
    supported/provisional/withdrawn map.
-12. [Experiment Design](docs/experiment_design.md) for the control ladder.
-13. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
+13. [Experiment Design](docs/experiment_design.md) for the control ladder.
+14. [Note 0020](docs/research_notes/0020_true_50_frame_cross_palette_replication.md)
    for the still-valid input and processor-space cross-palette analysis.
-14. [Examples](examples/README.md) for tracked summaries and the historical note
+15. [Examples](examples/README.md) for tracked summaries and the historical note
    sequence.
 
 Relevant historical cross-palette and intervention notes now carry
@@ -736,6 +764,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0034: Four-Pair Prompt Replication and Phi-3.5 Vision Expansion](docs/research_notes/0034_four_pair_prompt_replication_and_phi35_expansion.md)
 - [Research Note 0035: Six-Model Four-Pair Completion, Phi Full Vectors, and Granite Pilot](docs/research_notes/0035_six_model_four_pair_completion_and_phi_full_vector.md)
 - [Research Note 0036: Granite Four-Pair Completion and Cache Coordinates](docs/research_notes/0036_granite_four_pair_completion_and_cache_coordinates.md)
+- [Research Note 0037: Control Specificity and Conditional Cache Directions](docs/research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md)
 
 ## Claim Boundary
 

@@ -33,6 +33,8 @@ def test_factorial_image_contrast_reports_metric_interactions() -> None:
     markdown = format_factorial_image_contrast_markdown(analysis)
     assert "2x2 Factorial Image-Statistic Contrast" in markdown
     assert "luminance_mean" in markdown
+    assert "source A spatial rank x source A palette" in markdown
+    assert "Mandelbrot spatial rank" not in markdown
 
 
 def _record(condition_id: str, field: str, mean: float) -> dict:

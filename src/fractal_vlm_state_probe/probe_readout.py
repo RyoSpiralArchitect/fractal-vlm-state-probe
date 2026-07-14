@@ -8,6 +8,12 @@ from typing import Any
 from .stimulus import write_json
 
 CELL_KEYS = ("mm", "jj", "mj", "jm")
+CELL_SEMANTICS = {
+    "mm": "source A spatial rank x source A palette",
+    "jj": "source B spatial rank x source B palette",
+    "mj": "source A spatial rank x source B palette",
+    "jm": "source B spatial rank x source A palette",
+}
 
 
 def analyze_first_token_readout_contrast(
@@ -41,12 +47,7 @@ def analyze_first_token_readout_contrast(
             key: _run_condition(runs[key])
             for key in CELL_KEYS
         },
-        "cell_semantics": {
-            "mm": "Mandelbrot spatial rank x Mandelbrot palette",
-            "jj": "Julia spatial rank x Julia palette",
-            "mj": "Mandelbrot spatial rank x Julia palette",
-            "jm": "Julia spatial rank x Mandelbrot palette",
-        },
+        "cell_semantics": dict(CELL_SEMANTICS),
         "contrast_formulas": {
             "spatial_main_effect": "((jm - mm) + (jj - mj)) / 2",
             "palette_main_effect": "((mj - mm) + (jj - jm)) / 2",

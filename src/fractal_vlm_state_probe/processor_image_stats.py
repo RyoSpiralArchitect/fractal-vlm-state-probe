@@ -122,10 +122,19 @@ def extract_processor_pixel_tensor(processor: Any, image: Image.Image) -> np.nda
 
 def load_hf_processor(model_id_or_path: str, *, trust_remote_code: bool = False) -> Any:
     try:
-        from transformers import AutoProcessor
+        from transformers import AutoImageProcessor, AutoProcessor
     except ImportError as exc:  # pragma: no cover - exercised only without optional dependency.
         raise RuntimeError("install the hf extra to load processors: pip install -e '.[hf]'") from exc
-    return AutoProcessor.from_pretrained(model_id_or_path, trust_remote_code=trust_remote_code)
+    try:
+        return AutoImageProcessor.from_pretrained(
+            model_id_or_path,
+            trust_remote_code=trust_remote_code,
+        )
+    except (OSError, ValueError):
+        return AutoProcessor.from_pretrained(
+            model_id_or_path,
+            trust_remote_code=trust_remote_code,
+        )
 
 
 def write_processor_image_stats_json(analysis: dict[str, Any], output_path: Path) -> None:
@@ -208,16 +217,32 @@ def format_processor_image_stats_markdown(analysis: dict[str, Any]) -> str:
 
 def _call_processor(processor: Any, image: Image.Image) -> Any:
     try:
-        return processor(images=image, return_tensors="np")
+        return _call_with_tensor_backend_fallback(
+            lambda backend: processor(images=image, return_tensors=backend)
+        )
     except TypeError:
         pass
     image_processor = getattr(processor, "image_processor", None)
     if image_processor is None:
         raise TypeError("processor must accept images=... or expose image_processor")
     try:
-        return image_processor(images=image, return_tensors="np")
+        return _call_with_tensor_backend_fallback(
+            lambda backend: image_processor(images=image, return_tensors=backend)
+        )
     except TypeError:
-        return image_processor(image, return_tensors="np")
+        return _call_with_tensor_backend_fallback(
+            lambda backend: image_processor(image, return_tensors=backend)
+        )
+
+
+def _call_with_tensor_backend_fallback(call: Any) -> Any:
+    try:
+        return call("np")
+    except ValueError as exc:
+        message = str(exc).lower()
+        if "pytorch tensors" not in message and "return_tensors" not in message:
+            raise
+    return call("pt")
 
 
 def _get_pixel_values(payload: Any) -> Any:

@@ -13,7 +13,7 @@ from .cache_tensor_factorial import (
     balanced_factorial_contrast_vectors,
     factorial_effect_vectors,
 )
-from .probe_readout import CELL_KEYS
+from .probe_readout import CELL_KEYS, CELL_SEMANTICS
 from .stimulus import write_json
 
 FORCED_CHOICE_LABELS = {
@@ -161,12 +161,7 @@ def analyze_full_vocab_readout_contrast(
         "schema_version": 1,
         "analysis_kind": "full_vocab_first_token_probe_readout_contrast",
         "cells": {key: _run_condition(runs[key]) for key in CELL_KEYS},
-        "cell_semantics": {
-            "mm": "Mandelbrot spatial rank x Mandelbrot palette",
-            "jj": "Julia spatial rank x Julia palette",
-            "mj": "Mandelbrot spatial rank x Julia palette",
-            "jm": "Julia spatial rank x Mandelbrot palette",
-        },
+        "cell_semantics": dict(CELL_SEMANTICS),
         "contrast_formulas": {
             "spatial_main_effect": "((jm - mm) + (jj - mj)) / 2",
             "palette_main_effect": "((mj - mm) + (jj - jm)) / 2",

@@ -26,12 +26,35 @@ class FakeProcessor:
         return {"pixel_values": np.moveaxis(normalized, -1, 0)[None, :, :, :]}
 
 
+class FakeTorchOnlyProcessor:
+    def __init__(self) -> None:
+        self.backends = []
+
+    def __call__(self, *, images: Image.Image, return_tensors: str) -> dict[str, np.ndarray]:
+        self.backends.append(return_tensors)
+        if return_tensors == "np":
+            raise ValueError("Only returning PyTorch tensors is currently supported.")
+        assert return_tensors == "pt"
+        array = np.asarray(images.resize((12, 12)).convert("RGB"), dtype=np.float32)
+        return {"pixel_values": np.moveaxis(array, -1, 0)[None, :, :, :]}
+
+
 def test_extract_processor_pixel_tensor_normalizes_batch_channel_first() -> None:
     image = Image.new("RGB", (8, 8), (128, 64, 32))
     tensor = extract_processor_pixel_tensor(FakeProcessor(), image)
 
     assert tensor.shape == (3, 16, 16)
     assert float(tensor.std()) > 0.0
+
+
+def test_extract_processor_pixel_tensor_falls_back_to_torch_backend() -> None:
+    processor = FakeTorchOnlyProcessor()
+    image = Image.new("RGB", (8, 8), (128, 64, 32))
+
+    tensor = extract_processor_pixel_tensor(processor, image)
+
+    assert processor.backends == ["np", "pt"]
+    assert tensor.shape == (3, 12, 12)
 
 
 def test_processor_image_stats_show_checkerboard_energy_after_resize(tmp_path: Path) -> None:

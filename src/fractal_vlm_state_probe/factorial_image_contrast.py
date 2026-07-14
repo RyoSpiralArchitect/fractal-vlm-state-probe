@@ -6,6 +6,7 @@ from typing import Any
 
 from .image_stats import SCALAR_FRAME_FIELDS
 from .processor_image_stats import SCALAR_PROCESSOR_FRAME_FIELDS
+from .probe_readout import CELL_SEMANTICS
 from .stimulus import write_json
 
 EFFECT_FIELDS = ("spatial_main_effect", "palette_main_effect", "interaction_effect")
@@ -50,12 +51,7 @@ def analyze_factorial_image_contrast(
         "analysis_kind": "factorial_image_contrast_2x2",
         "source_analysis_kind": stats.get("analysis_kind"),
         "cells": {cell: _cell_header(record) for cell, record in cells.items()},
-        "cell_semantics": {
-            "mm": "Mandelbrot spatial rank x Mandelbrot palette",
-            "jj": "Julia spatial rank x Julia palette",
-            "mj": "Mandelbrot spatial rank x Julia palette",
-            "jm": "Julia spatial rank x Mandelbrot palette",
-        },
+        "cell_semantics": dict(CELL_SEMANTICS),
         "contrast_formulas": {
             "spatial_main_effect": "((jm - mm) + (jj - mj)) / 2",
             "palette_main_effect": "((mj - mm) + (jj - jm)) / 2",

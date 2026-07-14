@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "kind": "mandelbrot",
+  "width": 320,
+  "height": 240,
+  "total_frames": 50,
+  "fps": 1.0,
+  "center_start": [-0.78, 0.13],
+  "center_end": [-0.777807810193171, 0.131645108003206],
+  "scale_start": 2.4,
+  "scale_end": 0.012,
+  "max_iter": 224,
+  "color_seed": 67,
+  "stimulus_condition": {
+    "condition_id": "mandelbrot_zoom_f_50f",
+    "condition_family": "fractal",
+    "temporal_policy": "ordered",
+    "semantic_load": "low",
+    "deterministic": true,
+    "source_kind": "generated",
+    "comparison_role": "source_variant",
+    "description": "Independent 50-frame Mandelbrot zoom toward a double-spiral boundary."
+  }
+}
