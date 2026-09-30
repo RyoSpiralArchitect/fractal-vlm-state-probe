@@ -142,9 +142,9 @@ generator-pairing extensions add independent fractal pairs, matched frequency
 and natural controls, and 16 two-seed geometry/stochastic pairing units. The
 wider valid direct surface contains 104 factorial points, 416 cell runs, and
 1,664 complete-vocabulary sidecars, with non-identical after-cell distributions
-in every factorial. The selected full-vector surface contains 266 analyses;
-254 have resolved token partitions, including 254/254 zero pre-image effects
-and 248/254 image-position interaction maxima. FastVLM's 12 fixed targets are
+in every factorial. The selected full-vector surface contains 330 analyses;
+318 have resolved token partitions, including 318/318 zero pre-image effects
+and 312/318 image-position interaction maxima. FastVLM's 12 fixed targets are
 all spatial-dominant and image-localized under a validated `llava_qwen2`
 single-image map. In the Qwen/Ministral hierarchy, all eight exact matching
 tests support direction repetition across seeds of the same ordered pairing.
@@ -153,8 +153,12 @@ assignments, only Qwen's image-region test has unadjusted `p < 0.05`, and no
 post-image test does. Phi's 12 analyses remain role-unassigned. The eight-model
 prompt audit remains balanced over all four pairs: generated patterns agree in
 39/64 fixed records, balanced-axis dominance in 4/64, and both in 2/64. The
-next independent-evidence step is more seeds and pairing families, held-out
-pairing transfer, frequency matching, and head/patch-resolved direction.
+frozen-reference follow-up now predicts two new seeds per pairing at all four
+targets, with joint Holm `p=0.013889` in eight primary tests and all 68 fixed
+head/token-band average margins positive. Three stochastic image-family
+margins remain negative. The next independent-evidence steps are the FastVLM
+hierarchy, held-out pairing-family transfer and accepted processor-frequency
+controls. Token-order bands are not yet verified two-dimensional patches.
 
 ## Phase 5: Research Report
 
@@ -164,12 +168,13 @@ pairing transfer, frequency matching, and head/patch-resolved direction.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0041 encode the audited claim
+Status: the evidence matrix and Notes 0027-0042 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
-Exact seed-matching and pairing-family block tests are complete. The current
-priority is higher seed and pairing-family replication, held-out and
-frequency-matched transfer, FastVLM hierarchy expansion, neutral
+Exact seed-matching, frozen-reference new-seed prediction and fixed head/band
+decomposition are complete at the four Qwen/Ministral targets. The current
+priority is FastVLM hierarchy expansion, held-out pairing-family and
+frequency-matched transfer, neutral
 wording/order/verbalizer controls, Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.

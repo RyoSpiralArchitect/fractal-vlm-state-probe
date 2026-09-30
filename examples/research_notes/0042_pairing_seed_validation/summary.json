@@ -1,0 +1,5654 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "pairing_seed_validation_research_summary",
+  "note": "0042_pairing_seed_validation_and_localization",
+  "date": "2026-09-30",
+  "protocol": {
+    "pairing_family_count": 8,
+    "families_per_broad_class": 4,
+    "reference_replicates": [
+      1,
+      2
+    ],
+    "test_replicates": [
+      3,
+      4
+    ],
+    "stream_seed": 20260604,
+    "temperature": 0,
+    "source_pair_is_atomic": true,
+    "cache_reuse": false,
+    "primary_test_count": 8,
+    "joint_correction": "Holm",
+    "exact_block_assignments": 576,
+    "exploratory_view_count": 68,
+    "new_direct_full_vocab_factorials": 0
+  },
+  "input": {
+    "new_source_pair_factorials": 16,
+    "new_source_images": 32,
+    "new_unique_source_hashes": 32,
+    "combined_reference_test_unique_source_hashes": 64,
+    "raw_marginal_audit": {
+      "fields": [
+        "colorfulness",
+        "luminance_entropy_bits",
+        "luminance_mean",
+        "luminance_std"
+      ],
+      "field_record_count": 64,
+      "effect_value_count": 128,
+      "max_abs_spatial_or_interaction_effect": 2.220446049250313e-16
+    },
+    "test_sources": {
+      "geometry_vq_r3": {
+        "pairing_family": "geometry_voronoi_quasicrystal",
+        "broad_class": "geometry",
+        "source_a": "c7b7e24ab9f7f322f18b7e8228eb0f0d09e686487751782ba0354d41e52cd17c",
+        "source_b": "2d99a8271c48cc456c52b8a253b6509bf517ca657b2a3bc9138f3bb61a913ca6"
+      },
+      "geometry_vq_r4": {
+        "pairing_family": "geometry_voronoi_quasicrystal",
+        "broad_class": "geometry",
+        "source_a": "5e478a1069755abe86b275a2c96845fd3da2d6100077284556e86853044f1316",
+        "source_b": "7838259b640ef2a91226b084fd26ca5b20a17482c5b93678a0da3fc16f8ccfe4"
+      },
+      "geometry_checker_hex_r3": {
+        "pairing_family": "geometry_checkerboard_hex_tiling",
+        "broad_class": "geometry",
+        "source_a": "6b8aff0ef66152de06f3f0c34296941ec7e275dab5add21270652e42b91dfe6e",
+        "source_b": "762fa8a8189663859e351e37f9db23990384582ff43eac539f4a28a56a72249b"
+      },
+      "geometry_checker_hex_r4": {
+        "pairing_family": "geometry_checkerboard_hex_tiling",
+        "broad_class": "geometry",
+        "source_a": "70a0c3dac3d07501e0e6195024c9d0526d6b6ff99c6a23edc1e77b32d943fd4c",
+        "source_b": "0beee6a1cff7e6cd95b186ee8af4b2afa88c75950f91b74701887dd8113ca76a"
+      },
+      "geometry_square_triangle_r3": {
+        "pairing_family": "geometry_square_triangle_tiling",
+        "broad_class": "geometry",
+        "source_a": "8e17ce28fe3a63998f0fefceb1945ba617da9d22a2fc3ff66107dbe3bc6c848b",
+        "source_b": "da386bee322f36c5c421251453ba4a792a5bcdf57a64118f46cc6428f3f44240"
+      },
+      "geometry_square_triangle_r4": {
+        "pairing_family": "geometry_square_triangle_tiling",
+        "broad_class": "geometry",
+        "source_a": "a859d79b04e434fbf678805dec78ac18bd00536f8c8c88a0c9c750c6db760982",
+        "source_b": "8a4eb280702d80aa465a4f55d1025654ad0408597d2433974a22f4db69028129"
+      },
+      "geometry_voronoi_hex_r3": {
+        "pairing_family": "geometry_voronoi_hex_tiling",
+        "broad_class": "geometry",
+        "source_a": "6c5cc706d9d51f69ed6100af17f2b0ec9bf0730effdbcd00cf62711725f4b80f",
+        "source_b": "0d0af3482397a2d087f5afebc7de3f43806041743c88046fc375b0fbc7184754"
+      },
+      "geometry_voronoi_hex_r4": {
+        "pairing_family": "geometry_voronoi_hex_tiling",
+        "broad_class": "geometry",
+        "source_a": "aba4255e6c4ec595af120cfa454dd393c7e4746e86467ff336eba7052535ac6f",
+        "source_b": "39e231d289c85255771c8215c9d8b10b8d1cc42c0552d37e57fe7fa72daa8301"
+      },
+      "stochastic_white_blue_r3": {
+        "pairing_family": "stochastic_white_blue_noise",
+        "broad_class": "stochastic",
+        "source_a": "123c988cef6e467821cc783e5034c452be6e9e2574069b09298f5b96441bb58d",
+        "source_b": "27b7fb74df9f88e09f84760b9e64cb8e34778f61a563655841e7d8ca7ea4a589"
+      },
+      "stochastic_white_blue_r4": {
+        "pairing_family": "stochastic_white_blue_noise",
+        "broad_class": "stochastic",
+        "source_a": "e0e35bc6714b3faa34ddcd91939f00eb46accf937879f46ea009c4c88638677f",
+        "source_b": "962483c3bc3987b3f2f024a3e5a6438dc148f0cafb09e5741ab00d7a45f9bde2"
+      },
+      "stochastic_white_dots_r3": {
+        "pairing_family": "stochastic_white_random_dots",
+        "broad_class": "stochastic",
+        "source_a": "ecd4869d262466239b3ba3487ab79513512998b6244b12a197a896a8c207a00b",
+        "source_b": "4fded743beb318a840d2dd5dbed4f22fe4395160e5c7cb6d8f47c0b2689b7433"
+      },
+      "stochastic_white_dots_r4": {
+        "pairing_family": "stochastic_white_random_dots",
+        "broad_class": "stochastic",
+        "source_a": "e811a2741701c94e8d57d80713b8a0e09d919381897261a9d6848caa9f42a134",
+        "source_b": "83752b053050738e69945bb76ab03269b7e9d31ece27b1ec8be4adfd5d321c2a"
+      },
+      "stochastic_blue_dots_r3": {
+        "pairing_family": "stochastic_blue_random_dots",
+        "broad_class": "stochastic",
+        "source_a": "bfd55b6a3b11dad896ffc15dac2573f43953b922b707fa1f7a8ecfdd9df2ceef",
+        "source_b": "45eb1478cf30dbe800053f8cfaa8b4315a90e86484d50a8bf736ad852c20ecd0"
+      },
+      "stochastic_blue_dots_r4": {
+        "pairing_family": "stochastic_blue_random_dots",
+        "broad_class": "stochastic",
+        "source_a": "76aabf4063a1c1fdfefe5ddd70eae8956fdf23f95ae1680f13c10217ba283214",
+        "source_b": "f901523093094a568dd7580becfb72c9d10e3941f9c51e10fb64403000b269fe"
+      },
+      "stochastic_sparse_dense_r3": {
+        "pairing_family": "stochastic_sparse_dense_dots",
+        "broad_class": "stochastic",
+        "source_a": "77b14a636e3a49683fbea0e479409905a53d9ff65d755d3c2e6965cb1a4e838e",
+        "source_b": "aa3432cde871a43d70fbde65b818b3341ee23e54d4cd0b997862ae38b51dd608"
+      },
+      "stochastic_sparse_dense_r4": {
+        "pairing_family": "stochastic_sparse_dense_dots",
+        "broad_class": "stochastic",
+        "source_a": "80a382ff251056a33ca778a7854782e709126ab01f14b04db5a9924633306f86",
+        "source_b": "30660a25bf5b612185cc5f5e630ed1a463b96fd19aadbdc7272ab558113d0f99"
+      }
+    }
+  },
+  "execution": {
+    "new_source_cells": 128,
+    "new_tensor_sidecars": 256,
+    "new_factorial_analyses": 64,
+    "reference_recheck_cells": 8,
+    "reference_recheck_tensors": 16,
+    "reference_recheck_all_bitwise_equal": true,
+    "models": [
+      {
+        "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+        "source_response_counts": {
+          "ACK": 64
+        },
+        "source_suffix_token_ids": [
+          4032,
+          151645
+        ],
+        "model_snapshot": {
+          "schema_version": 1,
+          "analysis_kind": "model_snapshot_fingerprint",
+          "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+          "revision": "46d4cf06a06ffc1a766c214174f9cbed2f45bcab",
+          "file_sha256": {
+            "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+            "chat_template.json": "ad60d90252ed0b0705ba14e2d0ad0fec0beac1ea955642b54059b36052d8bc96",
+            "config.json": "7ed631bd2786d251cb38bd2a6a8a78c31bc1316f728bffa84b2d8954d3cfcd63",
+            "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "model.safetensors": "636982419c940321ac0f7793dc9dc3575a4ee4843a6b167b2e8c3d3cd25dacf4",
+            "model.safetensors.index.json": "3dacd0399838beaa368c4a4278477096c861defca3cfdcdd6f947b62d349af32",
+            "preprocessor_config.json": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+            "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+            "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+            "tokenizer_config.json": "2f58f4bbd7bbce15d683f525954ef3a92cd82f5e06415a9c513859bf8ab72436",
+            "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+          }
+        },
+        "runtime": {
+          "mlx_available": true,
+          "mlx_version": "0.31.1",
+          "mlx_vlm_version": "0.4.4",
+          "mlx_vlm_load_kwargs": {},
+          "model_load_compatibility": null,
+          "prompt_cache_state_available": true,
+          "processor_compatibility": null,
+          "chat_template_compatibility": null
+        }
+      },
+      {
+        "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+        "source_response_counts": {
+          "ACK": 64
+        },
+        "source_suffix_token_ids": [
+          13832,
+          2
+        ],
+        "model_snapshot": {
+          "schema_version": 1,
+          "analysis_kind": "model_snapshot_fingerprint",
+          "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+          "revision": "a962dcb09eee4169c890e544c9eb938f1113fdee",
+          "file_sha256": {
+            "chat_template.jinja": "c101a09b4ff42e8ed714cb67cd7144176e169b7d7be45d62e1e13326a5d7afd7",
+            "config.json": "cdd4bfa0a702d0241faaa3b80d15d481d7f8abf2659fba0958b1e7f24a28055f",
+            "generation_config.json": "e0923390059f84a9180b00e5501778acc45ea9856cd7f2fd68208b360927c677",
+            "model.safetensors": "69a68c0a961a64bb1145a697a83cf6cec45220d425c77a6c0a3568924078c3b4",
+            "model.safetensors.index.json": "22e571d413d8aa4e5f81f5ae678aa8b4f5b1d67598a67c08b31182075592ec93",
+            "params.json": "184afbdca12f4075121650335d65ada27b471b8b2952c8f2b699c16516306459",
+            "processor_config.json": "ece2373c2ae391bce18785a1810543bc6173a1f28b6767cffab2c35dbea5f002",
+            "tekken.json": "e29d19ea32eb7e26e6c0572d57cb7f9eca0f4420e0e0fe6ae1cf3be94da1c0d6",
+            "tokenizer.json": "286acad9b0e27fce778ac429763536accf618ccb6ed72963b6f94685e531c5c7",
+            "tokenizer_config.json": "54b6ee53caf87c338527472386b6adcc4253bf48b93cc9c27fe1d25db4ff36fc"
+          }
+        },
+        "runtime": {
+          "mlx_available": true,
+          "mlx_version": "0.31.1",
+          "mlx_vlm_version": "0.4.4",
+          "mlx_vlm_load_kwargs": {},
+          "model_load_compatibility": "mistral3_transformers4_tokenizer_backend",
+          "prompt_cache_state_available": true,
+          "processor_compatibility": null,
+          "chat_template_compatibility": null
+        }
+      }
+    ]
+  },
+  "new_factorial_integrity": {
+    "pre_image_zero": 64,
+    "image_argmax": 64,
+    "image_energy_above_0_9": 63,
+    "image_interaction_share_at_or_below_one_third": 59,
+    "image_dominance": {
+      "spatial_contrast": 54,
+      "palette_contrast": 10,
+      "interaction_contrast": 0
+    },
+    "whole_effective_dominance": {
+      "spatial_contrast": 56,
+      "palette_contrast": 8,
+      "interaction_contrast": 0
+    }
+  },
+  "primary_holm_p_below_0_05": 8,
+  "primary_tests": [
+    {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "layer_index": 33,
+      "tensor": "values",
+      "view": "image_tokens",
+      "primary": true,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.1770816608428355,
+      "other_family_cosine_mean": 0.03405490939462619,
+      "mean_family_margin": 0.14302675144820926,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.25457806225103596,
+        "geometry_square_triangle_tiling": 0.28430914487324427,
+        "geometry_voronoi_hex_tiling": 0.1679257946321579,
+        "geometry_voronoi_quasicrystal": 0.11552616935731871,
+        "stochastic_blue_random_dots": 0.11186199021718221,
+        "stochastic_sparse_dense_dots": 0.02988895748257343,
+        "stochastic_white_blue_noise": 0.08163870213294987,
+        "stochastic_white_random_dots": 0.09848519063921182
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 15,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.06200944656838662,
+        "null_q975": 0.09879585435965085,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "holm_p_greater": 0.013888888888888888,
+      "holm_family_size": 8,
+      "reference_family_order": [
+        "geometry_checkerboard_hex_tiling",
+        "geometry_square_triangle_tiling",
+        "geometry_voronoi_hex_tiling",
+        "geometry_voronoi_quasicrystal",
+        "stochastic_blue_random_dots",
+        "stochastic_sparse_dense_dots",
+        "stochastic_white_blue_noise",
+        "stochastic_white_random_dots"
+      ],
+      "test_label_order": [
+        "geometry_checker_hex_r3",
+        "geometry_checker_hex_r4",
+        "geometry_square_triangle_r3",
+        "geometry_square_triangle_r4",
+        "geometry_voronoi_hex_r3",
+        "geometry_voronoi_hex_r4",
+        "geometry_vq_r3",
+        "geometry_vq_r4",
+        "stochastic_blue_dots_r3",
+        "stochastic_blue_dots_r4",
+        "stochastic_sparse_dense_r3",
+        "stochastic_sparse_dense_r4",
+        "stochastic_white_blue_r3",
+        "stochastic_white_blue_r4",
+        "stochastic_white_dots_r3",
+        "stochastic_white_dots_r4"
+      ],
+      "reference_cosine_matrix": [
+        [
+          0.33202915601347366,
+          0.057513693126065885,
+          0.10414467332696563,
+          -0.001752484563446009,
+          0.013355471923751314,
+          -0.006890538602793503,
+          -0.004284336021615168,
+          -0.006893156150769634
+        ],
+        [
+          0.29117856326916125,
+          0.0463172439623594,
+          0.14586280380646213,
+          -0.009931145316718178,
+          -0.001345105201790325,
+          0.002751937411112098,
+          0.000812289225979717,
+          0.012994497168994474
+        ],
+        [
+          0.04325310632273741,
+          0.2616176889222954,
+          0.02778509765699088,
+          -0.008974665221393341,
+          -0.0020240110461653745,
+          0.0016609097670135303,
+          -0.0032926432611661803,
+          -0.011199603831653394
+        ],
+        [
+          0.07432237787027329,
+          0.3707663610355948,
+          0.044746403734696585,
+          0.010164960270900142,
+          -0.0034632906074380616,
+          0.0016929040215700472,
+          0.015392060353089584,
+          0.01934335757337129
+        ],
+        [
+          0.12414611300311221,
+          0.009487076513199454,
+          0.23983691690295028,
+          0.0370519261596467,
+          -0.0037458703797658356,
+          0.047922243881171056,
+          0.017140503465207242,
+          -0.00456468903234567
+        ],
+        [
+          0.15315642642493438,
+          0.02140414295916568,
+          0.2208576919305276,
+          0.029283373647427943,
+          0.02654817803844902,
+          0.026290954486314418,
+          0.013177715668495429,
+          0.018265999899476415
+        ],
+        [
+          -0.009602295890761166,
+          -0.006923964701071732,
+          0.04606150763036718,
+          0.10570474852248196,
+          0.0008517394073830628,
+          0.013545770742023575,
+          0.01164350778837446,
+          0.003094193753929407
+        ],
+        [
+          -0.009371061956179368,
+          0.01201724246475175,
+          -0.004349379165417442,
+          0.13462493965271854,
+          0.022057448618835553,
+          0.006843267305225619,
+          0.0027085945328021417,
+          0.003369417883640774
+        ],
+        [
+          0.007634708059342869,
+          0.01649782671916123,
+          0.025450069379485005,
+          0.0024086729756743544,
+          0.17327392834112654,
+          0.05695604595448795,
+          0.020314493153398713,
+          0.11644168008763636
+        ],
+        [
+          0.014374328627956408,
+          0.024053179687145564,
+          -0.018629100755167542,
+          -0.003465063334763409,
+          0.15825449943367115,
+          0.007932793606222469,
+          0.05398885621016772,
+          0.06777947300938661
+        ],
+        [
+          0.002880709387550145,
+          -0.010017429786288726,
+          0.026078289971186813,
+          0.014783693369153784,
+          0.028897846611541364,
+          0.028617473240711483,
+          0.018924396173922737,
+          0.018817663017953658
+        ],
+        [
+          0.024241124318712115,
+          -0.005553580145426989,
+          0.01873474686300751,
+          0.011435213958956417,
+          0.0017497371155279723,
+          0.07187875214197961,
+          0.003064027898953964,
+          0.050701260434733025
+        ],
+        [
+          -0.009975660749863724,
+          0.012523835168663957,
+          0.005961999607672869,
+          0.004493188059833502,
+          0.06316068517645598,
+          0.028481630722029538,
+          0.12143591141960361,
+          -0.01662569238042058
+        ],
+        [
+          -0.005721753824534486,
+          0.011852182384792142,
+          0.005943811425409841,
+          0.011869257963161317,
+          0.05472901571080059,
+          0.014002011472505004,
+          0.08586860184133738,
+          -0.01166632371624677
+        ],
+        [
+          0.012051365745631298,
+          0.00013207238787927254,
+          0.006045689128700925,
+          -0.019455819488500448,
+          0.06868831622347049,
+          0.014628177259247043,
+          -0.014069226151476056,
+          0.10802726346069766
+        ],
+        [
+          -0.013098930394017456,
+          0.0169987970326915,
+          -0.002746220714390877,
+          0.0003304386998843874,
+          0.07709552153019666,
+          0.018151674357181836,
+          -0.04332158460068847,
+          0.1293340773570365
+        ]
+      ],
+      "test_interaction_l2_norm": {
+        "min": 782.671203252133,
+        "mean": 926.3720392627284,
+        "max": 1041.899004647025
+      }
+    },
+    {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "layer_index": 33,
+      "tensor": "values",
+      "view": "post_image",
+      "primary": true,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.7269330067132728,
+      "other_family_cosine_mean": 0.21995182210705005,
+      "mean_family_margin": 0.5069811846062227,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.3352835362374836,
+        "geometry_square_triangle_tiling": 0.171125438895519,
+        "geometry_voronoi_hex_tiling": 0.43725078095001557,
+        "geometry_voronoi_quasicrystal": 0.5015057357842156,
+        "stochastic_blue_random_dots": 0.4819287812950963,
+        "stochastic_sparse_dense_dots": 0.6247449609058443,
+        "stochastic_white_blue_noise": 0.8751172910918531,
+        "stochastic_white_random_dots": 0.6288929516897538
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 15,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2711080483347458,
+        "null_q975": 0.3267569439931052,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "holm_p_greater": 0.013888888888888888,
+      "holm_family_size": 8,
+      "reference_family_order": [
+        "geometry_checkerboard_hex_tiling",
+        "geometry_square_triangle_tiling",
+        "geometry_voronoi_hex_tiling",
+        "geometry_voronoi_quasicrystal",
+        "stochastic_blue_random_dots",
+        "stochastic_sparse_dense_dots",
+        "stochastic_white_blue_noise",
+        "stochastic_white_random_dots"
+      ],
+      "test_label_order": [
+        "geometry_checker_hex_r3",
+        "geometry_checker_hex_r4",
+        "geometry_square_triangle_r3",
+        "geometry_square_triangle_r4",
+        "geometry_voronoi_hex_r3",
+        "geometry_voronoi_hex_r4",
+        "geometry_vq_r3",
+        "geometry_vq_r4",
+        "stochastic_blue_dots_r3",
+        "stochastic_blue_dots_r4",
+        "stochastic_sparse_dense_r3",
+        "stochastic_sparse_dense_r4",
+        "stochastic_white_blue_r3",
+        "stochastic_white_blue_r4",
+        "stochastic_white_dots_r3",
+        "stochastic_white_dots_r4"
+      ],
+      "reference_cosine_matrix": [
+        [
+          0.7303123352165078,
+          0.529227021076623,
+          0.4657374776500005,
+          0.24251892797871938,
+          -0.019961305479258732,
+          0.4269371054805594,
+          -0.15767698134431885,
+          0.13343484090567082
+        ],
+        [
+          0.7281139210570642,
+          0.4557955735522039,
+          0.4637692271513242,
+          0.20652932398694313,
+          -0.06727166192135953,
+          0.35421501201956274,
+          -0.15695142158989572,
+          0.10944158083972157
+        ],
+        [
+          0.5337582093116968,
+          0.4377164229749826,
+          0.37645082632150245,
+          0.08493409701397461,
+          0.14488095542285992,
+          0.15016888094148484,
+          -0.04793085105157858,
+          0.14742489674278167
+        ],
+        [
+          0.6176541049305668,
+          0.6435566908660793,
+          0.44605360377035086,
+          0.15821586680197972,
+          -0.020039581566114406,
+          0.2582176158096045,
+          -0.1337967816483272,
+          0.10516779696686906
+        ],
+        [
+          0.5712389747059357,
+          0.176767188796378,
+          0.8236346352689405,
+          0.3425767959724531,
+          -0.08453403432418387,
+          0.26793919153475165,
+          -0.23415051182506966,
+          0.201956110701153
+        ],
+        [
+          0.6260263278209434,
+          0.29382335764172146,
+          0.8132413438071509,
+          0.2766906065907495,
+          0.08245912583833084,
+          0.3403907493137742,
+          -0.11900011842463482,
+          0.1643003736697519
+        ],
+        [
+          0.15073672923489714,
+          0.026708271615107096,
+          0.3039979803072593,
+          0.6830935842707815,
+          -0.15908832511850599,
+          0.19264015073236718,
+          -0.06163555331963193,
+          -0.05248846295124897
+        ],
+        [
+          0.2681366460832009,
+          0.06920076818011639,
+          0.36099870944472007,
+          0.7131775889194167,
+          0.14473587784475242,
+          0.3599291323459591,
+          -0.10204177329902267,
+          0.16220107533647093
+        ],
+        [
+          0.11221811231882874,
+          0.1653569184080927,
+          0.09503742252150517,
+          -0.09914687513905449,
+          0.7393874877491731,
+          0.18070659732674135,
+          0.22663231915319115,
+          0.46337642605822404
+        ],
+        [
+          -0.0004724380714435962,
+          0.0614467589587909,
+          -0.018207082882499406,
+          -0.23267722178868053,
+          0.7130943254190266,
+          -0.041078183971942725,
+          0.2734829960348941,
+          0.3627525971329126
+        ],
+        [
+          0.2956394103846568,
+          0.27437816375214413,
+          0.32491272292114104,
+          0.2862581190162694,
+          0.20396624271131109,
+          0.7362655495321628,
+          0.07408572780742922,
+          0.09351852753611203
+        ],
+        [
+          0.4315434489283839,
+          0.342502400478514,
+          0.3193880521334236,
+          0.23417624261975542,
+          0.126422241582162,
+          0.7288904507343896,
+          -0.012998857017294752,
+          0.16200435274487185
+        ],
+        [
+          -0.2508385737714294,
+          0.013659529120122634,
+          -0.18948625795370488,
+          -0.025112522609681456,
+          0.44444994483556455,
+          -0.1432534946558622,
+          0.8088015148963811,
+          -0.417276388673799
+        ],
+        [
+          -0.21593650846379703,
+          0.05111653715483305,
+          -0.10984292260635248,
+          -0.0486183618440653,
+          0.46657955149965213,
+          -0.12016285674978824,
+          0.8628453301511723,
+          -0.46609996766422634
+        ],
+        [
+          0.22556584994328976,
+          0.08587500232786235,
+          0.12356020280102682,
+          -0.07471059919801498,
+          0.41742406090172623,
+          0.2185397946719821,
+          -0.27598744929722546,
+          0.7493456888453327
+        ],
+        [
+          0.3535888164249444,
+          0.23512799426717892,
+          0.2404840398597695,
+          0.032305184122936634,
+          0.2449815683969074,
+          0.391367317330618,
+          -0.363292222495126,
+          0.7194512377038023
+        ]
+      ],
+      "test_interaction_l2_norm": {
+        "min": 33.353125339646674,
+        "mean": 46.91551750976808,
+        "max": 65.23791553350895
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens",
+      "primary": true,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.23300041114310543,
+      "other_family_cosine_mean": 0.02564562053075744,
+      "mean_family_margin": 0.20735479061234802,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.41990940716053904,
+        "geometry_square_triangle_tiling": 0.4414862666542099,
+        "geometry_voronoi_hex_tiling": 0.22372863905331267,
+        "geometry_voronoi_quasicrystal": 0.18448172450620545,
+        "stochastic_blue_random_dots": -0.00009576814024669922,
+        "stochastic_sparse_dense_dots": 0.10380611130749855,
+        "stochastic_white_blue_noise": 0.017363298455833218,
+        "stochastic_white_random_dots": 0.2681586459014319
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 2,
+        "p_greater": 0.003472222222222222,
+        "null_q025": -0.09876966266476231,
+        "null_q975": 0.1474325126598276,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "holm_p_greater": 0.013888888888888888,
+      "holm_family_size": 8,
+      "reference_family_order": [
+        "geometry_checkerboard_hex_tiling",
+        "geometry_square_triangle_tiling",
+        "geometry_voronoi_hex_tiling",
+        "geometry_voronoi_quasicrystal",
+        "stochastic_blue_random_dots",
+        "stochastic_sparse_dense_dots",
+        "stochastic_white_blue_noise",
+        "stochastic_white_random_dots"
+      ],
+      "test_label_order": [
+        "geometry_checker_hex_r3",
+        "geometry_checker_hex_r4",
+        "geometry_square_triangle_r3",
+        "geometry_square_triangle_r4",
+        "geometry_voronoi_hex_r3",
+        "geometry_voronoi_hex_r4",
+        "geometry_vq_r3",
+        "geometry_vq_r4",
+        "stochastic_blue_dots_r3",
+        "stochastic_blue_dots_r4",
+        "stochastic_sparse_dense_r3",
+        "stochastic_sparse_dense_r4",
+        "stochastic_white_blue_r3",
+        "stochastic_white_blue_r4",
+        "stochastic_white_dots_r3",
+        "stochastic_white_dots_r4"
+      ],
+      "reference_cosine_matrix": [
+        [
+          0.5538486360470114,
+          0.09481789499166174,
+          0.10741170044697895,
+          -0.03752902720504493,
+          0.028759602167204225,
+          0.06901264737114929,
+          -0.12095737327827873,
+          0.017118851968058027
+        ],
+        [
+          0.3952984431601305,
+          0.02733500079013341,
+          0.17026176589372194,
+          -0.03431254025925941,
+          0.009809894345134147,
+          0.06051104215859678,
+          -0.03265787931584631,
+          0.03344127048695402
+        ],
+        [
+          0.06333660421611143,
+          0.43502759272527325,
+          0.03305764325867374,
+          0.04671976573432427,
+          0.03211457451500607,
+          -0.027215426930172704,
+          0.13157935640643567,
+          0.0008661774352531426
+        ],
+        [
+          0.12055232099839853,
+          0.5434992876679334,
+          -0.02052132422436101,
+          0.04351803127121365,
+          0.030624176072896747,
+          -0.07152514332550117,
+          0.032692613370775295,
+          0.0492571445147707
+        ],
+        [
+          0.1461087738935703,
+          -0.012055161756614544,
+          0.2539629057244196,
+          -0.005358272396813231,
+          0.025753258183497295,
+          0.012655808884204497,
+          -0.010303334503459348,
+          0.12328834354807082
+        ],
+        [
+          0.05198784807260988,
+          -0.030074222173044923,
+          0.25423806383194403,
+          0.03162210870950735,
+          -0.044570466294119516,
+          -0.031555442497624535,
+          -0.0030070666451343167,
+          -0.057020222460977855
+        ],
+        [
+          -0.03449962392257662,
+          -0.006588511859410279,
+          0.02251015688804795,
+          0.13604182077689012,
+          -0.04773336491093985,
+          -0.031078516967238335,
+          -0.008428763977230538,
+          0.013660276702580281
+        ],
+        [
+          -0.026323076005989113,
+          -0.018179103842431675,
+          0.059361285392930285,
+          0.23168200378571097,
+          -0.007347055416686144,
+          0.008468682574051156,
+          -0.009239852390740747,
+          0.0750957685504263
+        ],
+        [
+          0.04790403699890373,
+          0.042728127640851044,
+          -0.028351689268867164,
+          0.042501864449504934,
+          -0.020254869129174617,
+          0.09628852685746157,
+          0.03521618805875511,
+          0.07733748297040688
+        ],
+        [
+          0.020890557965914422,
+          0.03552450458758689,
+          0.003636639248607112,
+          0.052914378419053984,
+          0.08246342509425605,
+          -0.055592233348766826,
+          -0.020265335594442314,
+          0.05421564779331009
+        ],
+        [
+          0.004121530686888039,
+          -0.030849038393401265,
+          -0.018035848751807734,
+          -0.012327609353730106,
+          -0.08446883468951052,
+          0.15007893027692537,
+          0.08123752514752433,
+          0.04794721387791344
+        ],
+        [
+          0.03565225485924537,
+          0.046070584619087585,
+          -0.0005078056845749844,
+          -0.011986763125411165,
+          0.05225173401458415,
+          0.09369823186979498,
+          0.010606298830353536,
+          0.0009208814143048033
+        ],
+        [
+          -0.041205600293173925,
+          0.10612046911233498,
+          -0.030631223160015618,
+          -0.013702555637171883,
+          0.04671074197287798,
+          -0.09885145605162296,
+          -0.012228418297128223,
+          -0.01819965401451568
+        ],
+        [
+          -0.021207926957908532,
+          0.0459871748876613,
+          0.04597236109127607,
+          0.006138888795237129,
+          0.07566999806701759,
+          0.050833310825529256,
+          0.02677691705764578,
+          -0.1166972352527328
+        ],
+        [
+          0.04480956710464212,
+          0.11087098702452271,
+          0.020035333511268866,
+          0.04665266652855257,
+          0.0031410066434326804,
+          0.05190459681137069,
+          0.04960484020974827,
+          0.3415346092658167
+        ],
+        [
+          0.07304147321605013,
+          0.07745639657190365,
+          -0.02149338588304588,
+          -0.003980014225305769,
+          0.058016144616508725,
+          0.0322134752491318,
+          0.007788884155379753,
+          0.26233899843223774
+        ]
+      ],
+      "test_interaction_l2_norm": {
+        "min": 180.7170795972794,
+        "mean": 218.04871269152034,
+        "max": 261.97926040078346
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "post_image",
+      "primary": true,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.5754557275360219,
+      "other_family_cosine_mean": 0.105495599740619,
+      "mean_family_margin": 0.4699601277954029,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.6378359495713731,
+        "geometry_square_triangle_tiling": 0.4507369462479623,
+        "geometry_voronoi_hex_tiling": 0.26009314005679685,
+        "geometry_voronoi_quasicrystal": 0.12552904479034097,
+        "stochastic_blue_random_dots": 0.26997476480546545,
+        "stochastic_sparse_dense_dots": 0.5407854289557608,
+        "stochastic_white_blue_noise": 0.7624063016973871,
+        "stochastic_white_random_dots": 0.7123194462381364
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 14,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2371622627468708,
+        "null_q975": 0.29454481925235676,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "holm_p_greater": 0.013888888888888888,
+      "holm_family_size": 8,
+      "reference_family_order": [
+        "geometry_checkerboard_hex_tiling",
+        "geometry_square_triangle_tiling",
+        "geometry_voronoi_hex_tiling",
+        "geometry_voronoi_quasicrystal",
+        "stochastic_blue_random_dots",
+        "stochastic_sparse_dense_dots",
+        "stochastic_white_blue_noise",
+        "stochastic_white_random_dots"
+      ],
+      "test_label_order": [
+        "geometry_checker_hex_r3",
+        "geometry_checker_hex_r4",
+        "geometry_square_triangle_r3",
+        "geometry_square_triangle_r4",
+        "geometry_voronoi_hex_r3",
+        "geometry_voronoi_hex_r4",
+        "geometry_vq_r3",
+        "geometry_vq_r4",
+        "stochastic_blue_dots_r3",
+        "stochastic_blue_dots_r4",
+        "stochastic_sparse_dense_r3",
+        "stochastic_sparse_dense_r4",
+        "stochastic_white_blue_r3",
+        "stochastic_white_blue_r4",
+        "stochastic_white_dots_r3",
+        "stochastic_white_dots_r4"
+      ],
+      "reference_cosine_matrix": [
+        [
+          0.6862062416970665,
+          0.479811598960837,
+          0.3604021388105795,
+          -0.09253248973370148,
+          0.19436933193231926,
+          0.10616755542092476,
+          -0.2895126924428759,
+          0.24943088158102916
+        ],
+        [
+          0.8083263198266333,
+          0.16398089210498676,
+          0.07793296275644954,
+          -0.3330131157562908,
+          0.01609165735264971,
+          -0.2084407051978091,
+          -0.35727789803052906,
+          0.3468572727270455
+        ],
+        [
+          0.24288638806113902,
+          0.8020994882401717,
+          0.5224791136624052,
+          0.16100126273005563,
+          0.31551559072526736,
+          0.4209905736072795,
+          -0.13911137098337356,
+          0.049504002204625086
+        ],
+        [
+          0.37174255635013437,
+          0.6947827269379763,
+          0.45377276454304505,
+          0.03434288269989107,
+          0.2918085939287943,
+          0.34109022745234296,
+          -0.10491991211261231,
+          0.08331997695613286
+        ],
+        [
+          0.33251519065365176,
+          0.18122264062314813,
+          0.4997114715720339,
+          0.014388854945203944,
+          0.29093180144806524,
+          0.11010716550929983,
+          -0.18197922792455662,
+          0.23088219127496537
+        ],
+        [
+          0.16427282333228047,
+          -0.14600983243177748,
+          0.20348198832304198,
+          0.0026318622219395973,
+          0.21949821922619528,
+          -0.015283727587034354,
+          -0.07419915690922183,
+          0.2817123334584193
+        ],
+        [
+          0.22898276103347825,
+          0.10597382942128897,
+          0.24740587978563866,
+          0.16590831532130237,
+          0.13517662055089633,
+          0.12964950362671526,
+          -0.3130331535075461,
+          0.25686758356399275
+        ],
+        [
+          -0.08439865104511257,
+          0.3864043015908422,
+          0.4789899712817387,
+          0.5396024716153377,
+          0.18382368538344818,
+          0.37159578553775974,
+          -0.08146523691116345,
+          -0.10076396417499527
+        ],
+        [
+          -0.17251029200606097,
+          0.1685762881278709,
+          0.27967020111070584,
+          0.25886967657460136,
+          0.37811773520458547,
+          0.12259221402435135,
+          0.1194992078294243,
+          0.20939485326510995
+        ],
+        [
+          0.03600387183900503,
+          0.23003485980711452,
+          0.20712760172447114,
+          0.07977370454687387,
+          0.5192295901195488,
+          0.08023642574798698,
+          0.10752220345031376,
+          0.43294848282242393
+        ],
+        [
+          0.018886190742561534,
+          0.45675322500299104,
+          0.4745842132519123,
+          0.2872032507865519,
+          0.23015736019317604,
+          0.5022350046147368,
+          0.029720530487980512,
+          -0.022989602851653065
+        ],
+        [
+          -0.10760350942994115,
+          0.4602963045902857,
+          0.4962242513532849,
+          0.21893082233688546,
+          0.3807154864423395,
+          0.772743337946724,
+          0.08801798017903092,
+          -0.1253993005010554
+        ],
+        [
+          -0.4348768704091093,
+          0.09592198809279247,
+          0.10775714829349849,
+          0.1174955858668384,
+          -0.036435305357415675,
+          0.254124234231268,
+          0.6225795719046354,
+          -0.46477856818003044
+        ],
+        [
+          -0.26232086289630063,
+          -0.29295234776034385,
+          -0.2658617154625048,
+          -0.07593659301935266,
+          -0.1440078287521319,
+          -0.027293949501041595,
+          0.6312661746926473,
+          -0.394509152833123
+        ],
+        [
+          0.25775430811845534,
+          0.15119791806915464,
+          0.14984658684776686,
+          0.11512468204041068,
+          0.31572770023186736,
+          -0.10470061233525464,
+          -0.3371712677785222,
+          0.6230233275765549
+        ],
+        [
+          0.2869497246633014,
+          0.022172606984737827,
+          0.12251033359907712,
+          -0.007255743574776231,
+          0.4305960671623077,
+          -0.06244482505803581,
+          -0.37292013197145546,
+          0.7579778749833535
+        ]
+      ],
+      "test_interaction_l2_norm": {
+        "min": 4.620797897687908,
+        "mean": 5.9738474383873985,
+        "max": 8.77846698686559
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens",
+      "primary": true,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.15047224047141655,
+      "other_family_cosine_mean": 0.026241407682324545,
+      "mean_family_margin": 0.124230832789092,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.292716119990256,
+        "geometry_square_triangle_tiling": 0.31060003919024604,
+        "geometry_voronoi_hex_tiling": 0.16141080571704736,
+        "geometry_voronoi_quasicrystal": 0.057138808223839224,
+        "stochastic_blue_random_dots": -0.026605920800347172,
+        "stochastic_sparse_dense_dots": 0.08295857345520095,
+        "stochastic_white_blue_noise": -0.002949482802163605,
+        "stochastic_white_random_dots": 0.11857771933865717
+      },
+      "positive_family_margin_count": 6,
+      "retrieval_correct_count": 11,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 3,
+        "p_greater": 0.005208333333333333,
+        "null_q025": -0.06034174135148869,
+        "null_q975": 0.09637722562247991,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "holm_p_greater": 0.013888888888888888,
+      "holm_family_size": 8,
+      "reference_family_order": [
+        "geometry_checkerboard_hex_tiling",
+        "geometry_square_triangle_tiling",
+        "geometry_voronoi_hex_tiling",
+        "geometry_voronoi_quasicrystal",
+        "stochastic_blue_random_dots",
+        "stochastic_sparse_dense_dots",
+        "stochastic_white_blue_noise",
+        "stochastic_white_random_dots"
+      ],
+      "test_label_order": [
+        "geometry_checker_hex_r3",
+        "geometry_checker_hex_r4",
+        "geometry_square_triangle_r3",
+        "geometry_square_triangle_r4",
+        "geometry_voronoi_hex_r3",
+        "geometry_voronoi_hex_r4",
+        "geometry_vq_r3",
+        "geometry_vq_r4",
+        "stochastic_blue_dots_r3",
+        "stochastic_blue_dots_r4",
+        "stochastic_sparse_dense_r3",
+        "stochastic_sparse_dense_r4",
+        "stochastic_white_blue_r3",
+        "stochastic_white_blue_r4",
+        "stochastic_white_dots_r3",
+        "stochastic_white_dots_r4"
+      ],
+      "reference_cosine_matrix": [
+        [
+          0.42017412187492936,
+          0.09467900752589681,
+          0.1597059512860061,
+          -0.004276774162888485,
+          0.06002608058307561,
+          0.06981945223237256,
+          -0.04352877263294212,
+          0.06397452820504468
+        ],
+        [
+          0.3098266815159409,
+          0.08756590609200973,
+          0.12411653929094763,
+          -0.02808493980089692,
+          -0.034845725896182754,
+          0.042971281881988975,
+          -0.04051160167584119,
+          0.07293896231869765
+        ],
+        [
+          0.06949609516922191,
+          0.3093268151303715,
+          0.05919476692125926,
+          -0.028985160100243275,
+          0.0032757766952370235,
+          -0.0027316115060939806,
+          0.0469485582053373,
+          0.025143974150289565
+        ],
+        [
+          0.08684162879840943,
+          0.40361736251825053,
+          0.07764054757358488,
+          0.011044419442157841,
+          -0.0146451104218125,
+          -0.005140059462921571,
+          -0.02605185413926219,
+          -0.0006402647531927493
+        ],
+        [
+          0.1533237634997846,
+          -0.003383942841889357,
+          0.26203830316024235,
+          -0.025281899366042818,
+          -0.005635324432036742,
+          -0.00031526540161676535,
+          -0.032918457534643245,
+          0.0650829572801265
+        ],
+        [
+          0.08394750325277008,
+          -0.013321853649047163,
+          0.1376472576394756,
+          0.035308277201294466,
+          0.006228013282590537,
+          -0.024876889799075243,
+          0.04008413495472921,
+          -0.014016118613212291
+        ],
+        [
+          0.06225161721000025,
+          0.008270304503351542,
+          0.02452652123470176,
+          0.021656317394586504,
+          -0.044029178629494646,
+          0.020822188292481746,
+          0.02045930512270831,
+          0.0003037882203291613
+        ],
+        [
+          -0.03586226469010011,
+          -0.0012420703007454854,
+          0.025338451127478054,
+          0.12038215208132062,
+          -0.02281882946360724,
+          0.05731499293991354,
+          0.05543119510303145,
+          -0.0075269450328830185
+        ],
+        [
+          0.009067978621208075,
+          -0.0027730617445154825,
+          -0.01688038732760886,
+          -0.011248907306290808,
+          -0.010529303280640273,
+          0.06784652548659137,
+          -0.0007718769645342913,
+          0.07042991135720193
+        ],
+        [
+          0.0018686418948531136,
+          -0.03350590205720064,
+          -0.000649563547061184,
+          0.04213432074754295,
+          0.03417247709419817,
+          0.023698564255368565,
+          0.03856820353874702,
+          0.030793718569382133
+        ],
+        [
+          0.02805505411948239,
+          0.04385262041774529,
+          0.008789537136119057,
+          -0.011988474455244928,
+          -0.03832722436866079,
+          0.06446596460272504,
+          -0.002510682496357184,
+          0.02408794445236691
+        ],
+        [
+          0.028179539074780664,
+          -0.005797252886986508,
+          0.033124171044140734,
+          0.013010307055257516,
+          -0.03376988120396196,
+          0.10208037378985493,
+          0.03507158308307419,
+          0.017335834980073038
+        ],
+        [
+          -0.0009442753954354978,
+          0.058603966151860906,
+          -0.024683431965236355,
+          0.03277519247408274,
+          0.04854225840428755,
+          -0.03441089437986114,
+          -0.015510251197367951,
+          0.013316756099846535
+        ],
+        [
+          0.05175620844851109,
+          0.03180511692452157,
+          0.029085486641622756,
+          -0.03807951710076338,
+          0.03703465778147201,
+          0.01105758341244481,
+          0.00915779986089779,
+          -0.07690081851461862
+        ],
+        [
+          -0.000010457074767968033,
+          0.10572273034141597,
+          0.06094161291099985,
+          -0.021324955379432485,
+          0.0004745162640100427,
+          0.03140108722752626,
+          -0.024420355692803722,
+          0.13149496288313348
+        ],
+        [
+          0.07902822370637358,
+          -0.006073994599871804,
+          0.006346900724756138,
+          0.01675768829343999,
+          -0.032915215493149026,
+          0.05540217038085851,
+          -0.024259192644746894,
+          0.10755481247474595
+        ]
+      ],
+      "test_interaction_l2_norm": {
+        "min": 485.5104984191888,
+        "mean": 557.3704322084435,
+        "max": 609.1122634974971
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "post_image",
+      "primary": true,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.636485138403851,
+      "other_family_cosine_mean": 0.12605261606018348,
+      "mean_family_margin": 0.5104325223436676,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.5513358954374246,
+        "geometry_square_triangle_tiling": 0.4498237906317351,
+        "geometry_voronoi_hex_tiling": 0.4321253030521056,
+        "geometry_voronoi_quasicrystal": 0.38843421272579987,
+        "stochastic_blue_random_dots": 0.378728646872182,
+        "stochastic_sparse_dense_dots": 0.6307396258691627,
+        "stochastic_white_blue_noise": 0.5601602996590461,
+        "stochastic_white_random_dots": 0.6921124045018847
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2657995188431371,
+        "null_q975": 0.3086837786393391,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "holm_p_greater": 0.013888888888888888,
+      "holm_family_size": 8,
+      "reference_family_order": [
+        "geometry_checkerboard_hex_tiling",
+        "geometry_square_triangle_tiling",
+        "geometry_voronoi_hex_tiling",
+        "geometry_voronoi_quasicrystal",
+        "stochastic_blue_random_dots",
+        "stochastic_sparse_dense_dots",
+        "stochastic_white_blue_noise",
+        "stochastic_white_random_dots"
+      ],
+      "test_label_order": [
+        "geometry_checker_hex_r3",
+        "geometry_checker_hex_r4",
+        "geometry_square_triangle_r3",
+        "geometry_square_triangle_r4",
+        "geometry_voronoi_hex_r3",
+        "geometry_voronoi_hex_r4",
+        "geometry_vq_r3",
+        "geometry_vq_r4",
+        "stochastic_blue_dots_r3",
+        "stochastic_blue_dots_r4",
+        "stochastic_sparse_dense_r3",
+        "stochastic_sparse_dense_r4",
+        "stochastic_white_blue_r3",
+        "stochastic_white_blue_r4",
+        "stochastic_white_dots_r3",
+        "stochastic_white_dots_r4"
+      ],
+      "reference_cosine_matrix": [
+        [
+          0.8308480725748575,
+          0.6274973285958536,
+          0.31776945030999837,
+          -0.19002607184421202,
+          0.10716588087232037,
+          -0.0867474284090775,
+          -0.3234725513164523,
+          0.32871989784875977
+        ],
+        [
+          0.7725377886924306,
+          0.6512293147244893,
+          0.3731869400678797,
+          -0.2775147506766926,
+          0.08974984539859357,
+          -0.03088286510202324,
+          -0.24509916242816315,
+          0.25717182133872046
+        ],
+        [
+          0.6549910485347701,
+          0.7572087353710064,
+          0.4140747110713768,
+          -0.01907098780448367,
+          0.07039720974788889,
+          0.09906011352109707,
+          -0.2935296250808873,
+          0.2291805646937008
+        ],
+        [
+          0.6419758846947461,
+          0.7780465293331291,
+          0.28383539537531915,
+          -0.06898300154973261,
+          -0.015795631558359502,
+          -0.012743714449378406,
+          -0.3371893346663948,
+          0.25165220442203895
+        ],
+        [
+          0.42994478552267307,
+          0.3465375827908619,
+          0.7107455734060848,
+          0.0019339184257573519,
+          0.11568843953273192,
+          0.18289308772880858,
+          -0.10144340655128403,
+          0.13925927244126418
+        ],
+        [
+          0.3793618017164807,
+          0.325367205424627,
+          0.6949049503561657,
+          0.14105445909371778,
+          0.17643658567407033,
+          0.25520730987205414,
+          -0.16434017341437837,
+          0.1760495687830614
+        ],
+        [
+          0.012783189560175266,
+          -0.01804809408094703,
+          0.09792608349943628,
+          0.2546549250619803,
+          -0.06145290665403583,
+          -0.05969621743385553,
+          0.017483969460021197,
+          -0.018054322349188003
+        ],
+        [
+          -0.15623740842043965,
+          -0.1209750803900972,
+          0.17965852074584726,
+          0.5205825706942777,
+          -0.024380461150597204,
+          0.19164962155984366,
+          -0.03219981434485169,
+          -0.07330422918753066
+        ],
+        [
+          -0.011736184929794516,
+          0.08306589495510154,
+          0.09519204815486268,
+          0.08951119896342752,
+          0.48420736702024336,
+          0.047167946187488624,
+          -0.012798376100647747,
+          0.3891281109305979
+        ],
+        [
+          0.23865655829632865,
+          0.206907270308471,
+          0.12147763199486251,
+          0.002445380480120011,
+          0.4934703670532121,
+          -0.09710795652687262,
+          -0.12213858739471899,
+          0.4564101838914273
+        ],
+        [
+          0.0733999993336116,
+          0.05303202207069803,
+          0.34767000581807495,
+          0.2773947000660093,
+          0.2368490274696331,
+          0.6872686962826418,
+          -0.03154191647806301,
+          0.061146455563979615
+        ],
+        [
+          0.006525342764649908,
+          -0.05188145471595814,
+          0.3404871483891252,
+          0.29312293912269666,
+          0.30418250568796784,
+          0.7913093682712896,
+          0.1153667858188665,
+          -0.03470641961556639
+        ],
+        [
+          -0.21992427568631878,
+          -0.23377903439389505,
+          0.022858757077562727,
+          0.008713717328694356,
+          0.11975420868621144,
+          0.23351888721080355,
+          0.5373474093890838,
+          -0.37895750720313653
+        ],
+        [
+          -0.2914348865218071,
+          -0.23909696574348016,
+          -0.10126208807353673,
+          0.09995335555324182,
+          -0.02175514302035206,
+          0.17517618435231852,
+          0.5183211259120297,
+          -0.3216928220767812
+        ],
+        [
+          0.2766293098838052,
+          0.3099951490801599,
+          0.19077318889435438,
+          0.0022938268205853697,
+          0.3786212456930273,
+          -0.08959731911593988,
+          -0.43270269770095726,
+          0.706056533213296
+        ],
+        [
+          0.15703218853656353,
+          0.1090363139340343,
+          0.10737247601107427,
+          0.099791298692716,
+          0.28060788246004686,
+          0.049482126177944355,
+          -0.28215945939587506,
+          0.6462522018298889
+        ]
+      ],
+      "test_interaction_l2_norm": {
+        "min": 55.62804862936786,
+        "mean": 69.33503043043363,
+        "max": 89.29247008585986
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens",
+      "primary": true,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.11696231299872459,
+      "other_family_cosine_mean": 0.017353688604244667,
+      "mean_family_margin": 0.09960862439447993,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.2241607829482479,
+        "geometry_square_triangle_tiling": 0.22769833169134915,
+        "geometry_voronoi_hex_tiling": 0.1231985607182183,
+        "geometry_voronoi_quasicrystal": 0.06017877299791951,
+        "stochastic_blue_random_dots": 0.014248448295505759,
+        "stochastic_sparse_dense_dots": 0.0629557152037966,
+        "stochastic_white_blue_noise": 0.014089438728882152,
+        "stochastic_white_random_dots": 0.07033894457192005
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 12,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.044817050866648826,
+        "null_q975": 0.07641893819515129,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "holm_p_greater": 0.013888888888888888,
+      "holm_family_size": 8,
+      "reference_family_order": [
+        "geometry_checkerboard_hex_tiling",
+        "geometry_square_triangle_tiling",
+        "geometry_voronoi_hex_tiling",
+        "geometry_voronoi_quasicrystal",
+        "stochastic_blue_random_dots",
+        "stochastic_sparse_dense_dots",
+        "stochastic_white_blue_noise",
+        "stochastic_white_random_dots"
+      ],
+      "test_label_order": [
+        "geometry_checker_hex_r3",
+        "geometry_checker_hex_r4",
+        "geometry_square_triangle_r3",
+        "geometry_square_triangle_r4",
+        "geometry_voronoi_hex_r3",
+        "geometry_voronoi_hex_r4",
+        "geometry_vq_r3",
+        "geometry_vq_r4",
+        "stochastic_blue_dots_r3",
+        "stochastic_blue_dots_r4",
+        "stochastic_sparse_dense_r3",
+        "stochastic_sparse_dense_r4",
+        "stochastic_white_blue_r3",
+        "stochastic_white_blue_r4",
+        "stochastic_white_dots_r3",
+        "stochastic_white_dots_r4"
+      ],
+      "reference_cosine_matrix": [
+        [
+          0.2930104055215216,
+          0.04669461458099449,
+          0.0987958618578718,
+          0.0010330495877982218,
+          0.025042963813488434,
+          0.03265664370711095,
+          -0.015044847756403757,
+          0.015828286255888318
+        ],
+        [
+          0.25428684669037716,
+          0.06851203335378389,
+          0.10189721386490683,
+          -0.020005714299146465,
+          -0.007389240376513953,
+          0.02531104902715797,
+          -0.01963741583153122,
+          0.022486246064796003
+        ],
+        [
+          0.010372362444393789,
+          0.22086790721754979,
+          0.036086938908298435,
+          0.014174149506548108,
+          -0.007773683925422988,
+          -0.0011219078629849792,
+          0.01974735543224455,
+          -0.00032362976839045584
+        ],
+        [
+          0.03166729327580148,
+          0.28325490365835904,
+          0.04381774011030786,
+          0.010059958234281966,
+          -0.004943345359850543,
+          -0.015055325567200649,
+          -0.0014591320677291542,
+          0.018408070732873132
+        ],
+        [
+          0.08793212140734727,
+          0.012221278855838121,
+          0.1984911190597911,
+          0.007192498917070575,
+          0.006447027890066146,
+          -0.0013608096182078902,
+          -0.006871165946022737,
+          0.03349374809205273
+        ],
+        [
+          0.06993936836958278,
+          -0.00002270897784995788,
+          0.11645861601400885,
+          0.02839528234010124,
+          0.00041169705580635296,
+          -0.014419338981780726,
+          0.017073155323556743,
+          0.0017197442797506563
+        ],
+        [
+          0.016350802985531918,
+          -0.01731644317538487,
+          0.020971425284669803,
+          0.027702847640065052,
+          -0.02003337833200141,
+          -0.0029174118745169684,
+          -0.004411428962011501,
+          0.017471529963829023
+        ],
+        [
+          -0.011678680634269408,
+          0.0017773609868082752,
+          0.01797423561625181,
+          0.10201426537697647,
+          -0.010917911224735722,
+          0.03317974651520919,
+          0.025130367076165373,
+          -0.0010884792558041778
+        ],
+        [
+          0.026820190713164917,
+          -0.011521587262679918,
+          -0.00926506105871916,
+          -0.0020932790632303636,
+          0.024187247128413775,
+          0.020571877301754776,
+          -0.005736260095478439,
+          0.046998949106518736
+        ],
+        [
+          0.006736375136474893,
+          -0.009219681438783978,
+          0.012213078064140733,
+          0.027604113286329567,
+          0.04368091690790776,
+          0.007366018131088889,
+          -0.0008526503808569685,
+          0.049765868272903066
+        ],
+        [
+          0.00789567372756649,
+          -0.0029816759945012527,
+          0.026554382887551145,
+          -0.009647695046469404,
+          -0.012975094801035876,
+          0.048528322085982664,
+          0.013573630827327685,
+          0.006577011403568221
+        ],
+        [
+          0.027036863299037206,
+          -0.022104403097774356,
+          0.009028494376679484,
+          0.0010329504244453377,
+          -0.02096571873960606,
+          0.07940092011930537,
+          0.027323597872934927,
+          -0.00747999117010438
+        ],
+        [
+          -0.005098413450142398,
+          0.01696965623296159,
+          -0.0014925143065742858,
+          0.00738060583336627,
+          0.016967831637878156,
+          -0.02569093021312951,
+          0.010488608081681828,
+          0.0002575515502840312
+        ],
+        [
+          0.022458456088407387,
+          -0.002488122823448185,
+          0.01304502186135224,
+          -0.0242905337927255,
+          0.024237544856107428,
+          0.014688592167804571,
+          0.012491070646756471,
+          -0.04605818618692269
+        ],
+        [
+          -0.004399358148387082,
+          0.048675617242521896,
+          0.024610942761305384,
+          -0.005379294219163334,
+          0.03611322982106774,
+          0.026063533348800863,
+          -0.02661599086560501,
+          0.10496239109576432
+        ],
+        [
+          0.03469120581139029,
+          -0.008837186644147345,
+          0.027010374933475335,
+          0.02132741933117062,
+          -0.002372440739468778,
+          0.02326346763422944,
+          -0.008886431137854724,
+          0.05157062073513231
+        ]
+      ],
+      "test_interaction_l2_norm": {
+        "min": 341.04478816473033,
+        "mean": 366.6490019693638,
+        "max": 394.0311365489278
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "post_image",
+      "primary": true,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6243518915535893,
+      "other_family_cosine_mean": 0.14687741526042913,
+      "mean_family_margin": 0.4774744762931601,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.48379667055762104,
+        "geometry_square_triangle_tiling": 0.3551847313028059,
+        "geometry_voronoi_hex_tiling": 0.4656582162186207,
+        "geometry_voronoi_quasicrystal": 0.42395859672621294,
+        "stochastic_blue_random_dots": 0.3204195633476956,
+        "stochastic_sparse_dense_dots": 0.4961599058284887,
+        "stochastic_white_blue_noise": 0.5745264521211608,
+        "stochastic_white_random_dots": 0.7000916742426753
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2414847696634283,
+        "null_q975": 0.2840641079542065,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "holm_p_greater": 0.013888888888888888,
+      "holm_family_size": 8,
+      "reference_family_order": [
+        "geometry_checkerboard_hex_tiling",
+        "geometry_square_triangle_tiling",
+        "geometry_voronoi_hex_tiling",
+        "geometry_voronoi_quasicrystal",
+        "stochastic_blue_random_dots",
+        "stochastic_sparse_dense_dots",
+        "stochastic_white_blue_noise",
+        "stochastic_white_random_dots"
+      ],
+      "test_label_order": [
+        "geometry_checker_hex_r3",
+        "geometry_checker_hex_r4",
+        "geometry_square_triangle_r3",
+        "geometry_square_triangle_r4",
+        "geometry_voronoi_hex_r3",
+        "geometry_voronoi_hex_r4",
+        "geometry_vq_r3",
+        "geometry_vq_r4",
+        "stochastic_blue_dots_r3",
+        "stochastic_blue_dots_r4",
+        "stochastic_sparse_dense_r3",
+        "stochastic_sparse_dense_r4",
+        "stochastic_white_blue_r3",
+        "stochastic_white_blue_r4",
+        "stochastic_white_dots_r3",
+        "stochastic_white_dots_r4"
+      ],
+      "reference_cosine_matrix": [
+        [
+          0.813818220035617,
+          0.514387359073,
+          0.3652048837784019,
+          -0.014443682761004575,
+          0.1390738002345196,
+          0.08416003863386654,
+          -0.015469783738886465,
+          0.1706415458434063
+        ],
+        [
+          0.7629297007042375,
+          0.5981504952346378,
+          0.4475390961986683,
+          -0.08337441264986627,
+          0.0810132496519901,
+          0.08161057221530763,
+          -0.03702184644629164,
+          0.11935997280374033
+        ],
+        [
+          0.6055723832873596,
+          0.6745816303110055,
+          0.3969791363318034,
+          -0.003892113174972105,
+          0.07490969318850296,
+          0.14575948621759277,
+          -0.06462840613990192,
+          0.1514853304475911
+        ],
+        [
+          0.4270103672162031,
+          0.590338920430177,
+          0.21660777849814616,
+          0.021375712248171627,
+          -0.030054309235102272,
+          0.0419653782397412,
+          -0.10247640370694075,
+          0.049493207204704626
+        ],
+        [
+          0.34794295155938754,
+          0.1714897515575503,
+          0.730878844065443,
+          0.11404602493847453,
+          0.14680509903024508,
+          0.21527668057206614,
+          0.04454894139785187,
+          0.16804040593407552
+        ],
+        [
+          0.3332356597247031,
+          0.22867364404327806,
+          0.6715952405356778,
+          0.21808492466824447,
+          0.16505433991375767,
+          0.15266826917104712,
+          0.04328592223180481,
+          0.1253555422020176
+        ],
+        [
+          0.1478771084720666,
+          -0.00829976802688423,
+          0.19775935319417381,
+          0.43907119551357454,
+          0.010770450439333255,
+          0.0503340462454972,
+          0.10753104463422922,
+          -0.0004611525811181426
+        ],
+        [
+          0.0010311894087413963,
+          -0.060875709675617964,
+          0.1654248059918339,
+          0.5564849910602891,
+          -0.036569757069215066,
+          0.08475977485949307,
+          0.10861159647280831,
+          -0.09783738170514066
+        ],
+        [
+          0.032408220846644034,
+          0.04418451483251595,
+          0.08762895902249818,
+          -0.0010609144603675076,
+          0.41326840620731375,
+          0.14182892227492855,
+          -0.1051754803820265,
+          0.3873010309927747
+        ],
+        [
+          0.06367719097942517,
+          0.08683055491983507,
+          0.12724788711598056,
+          -0.030512984462302942,
+          0.5230594079503745,
+          0.05382997797123816,
+          -0.05436469681583153,
+          0.46304630834580796
+        ],
+        [
+          0.1297172547267995,
+          0.0638331508738243,
+          0.2513992725793223,
+          0.14671677282257856,
+          0.21058782848544044,
+          0.6459008728086897,
+          0.07449056612945318,
+          0.19391720235742338
+        ],
+        [
+          0.11505391871421605,
+          0.03544138801805195,
+          0.24828388172671362,
+          0.1910680659513443,
+          0.24416657865920416,
+          0.7071541806938639,
+          0.22489766191207408,
+          0.13414588799313357
+        ],
+        [
+          0.0426381049214742,
+          0.027802699801218113,
+          0.04830651248022215,
+          0.022058245170699837,
+          0.14871839689872457,
+          0.20672543591334075,
+          0.6127483358436064,
+          -0.35341354901941013
+        ],
+        [
+          -0.054946894331080784,
+          -0.0534205254372868,
+          -0.020511244945991887,
+          0.08171474099157162,
+          0.030377385576386702,
+          0.09991268369215883,
+          0.4721987053653386,
+          -0.3246379421613306
+        ],
+        [
+          -0.0046824616992630404,
+          0.04129166375239104,
+          0.13526208529617323,
+          -0.01739218558738249,
+          0.33783946434533696,
+          -0.008387203377151122,
+          -0.4109439634347979,
+          0.6758882800298056
+        ],
+        [
+          -0.016032680366046284,
+          -0.04093446567521025,
+          0.07247404441772598,
+          -0.002694892198713971,
+          0.2645929190418352,
+          0.1291287635035424,
+          -0.385975185538158,
+          0.6997133333024141
+        ]
+      ],
+      "test_interaction_l2_norm": {
+        "min": 45.33237650871558,
+        "mean": 56.84977023589474,
+        "max": 69.86330650410224
+      }
+    }
+  ],
+  "layouts": [
+    {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "layer_index": 33,
+      "tensor": "values",
+      "tensor_shape": [
+        1,
+        2,
+        241,
+        128
+      ],
+      "token_region_position_counts": {
+        "all_effective": 241,
+        "image_tokens": 99,
+        "non_image_tokens": 142,
+        "pre_image": 43,
+        "post_image": 99
+      },
+      "within_image_span_non_image_positions": []
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "tensor_shape": [
+        1,
+        8,
+        241,
+        128
+      ],
+      "token_region_position_counts": {
+        "all_effective": 241,
+        "image_tokens": 99,
+        "non_image_tokens": 142,
+        "pre_image": 38,
+        "post_image": 96
+      },
+      "within_image_span_non_image_positions": [
+        49,
+        61,
+        73,
+        85,
+        97,
+        109,
+        121,
+        133
+      ]
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "tensor_shape": [
+        1,
+        8,
+        241,
+        128
+      ],
+      "token_region_position_counts": {
+        "all_effective": 241,
+        "image_tokens": 99,
+        "non_image_tokens": 142,
+        "pre_image": 38,
+        "post_image": 96
+      },
+      "within_image_span_non_image_positions": [
+        49,
+        61,
+        73,
+        85,
+        97,
+        109,
+        121,
+        133
+      ]
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "tensor_shape": [
+        1,
+        8,
+        241,
+        128
+      ],
+      "token_region_position_counts": {
+        "all_effective": 241,
+        "image_tokens": 99,
+        "non_image_tokens": 142,
+        "pre_image": 38,
+        "post_image": 96
+      },
+      "within_image_span_non_image_positions": [
+        49,
+        61,
+        73,
+        85,
+        97,
+        109,
+        121,
+        133
+      ]
+    }
+  ],
+  "updated_aggregate": {
+    "valid_direct_factorials": 104,
+    "valid_direct_cells": 416,
+    "valid_direct_full_vocab_sidecars": 1664,
+    "selected_full_vector_source_cells": 488,
+    "selected_full_vector_tensor_sidecars": 1320,
+    "selected_full_vector_analyses": 330,
+    "partition_resolved_analyses": 318,
+    "pre_image_zero": "318/318",
+    "image_interaction_argmax": "312/318",
+    "image_energy_above_0_9": "312/318",
+    "calibration_cells_separately_counted": 8
+  },
+  "code_sha256": {
+    "src/fractal_vlm_state_probe/cache_direction_holdout.py": "e19a3c6ddecf888252ac0cd14c86dbc2e9a42ffb26ee7370f6228fc1e59d9554",
+    "src/fractal_vlm_state_probe/cli/run_pairing_seed_validation.py": "3c62ca87854cf93923f2d5b338f725d1757d6f32253b75244928f98eea0d2020",
+    "src/fractal_vlm_state_probe/cli/summarize_pairing_seed_validation.py": "0fb31c04b7164610924b885a0be5a6118c76c7dd4778cac0042f7ee4c2df1533",
+    "configs/generator_pairing_seed_holdout_v1.json": "5bb7a3b7f5f883505ed800737ff09b586e6ee551d08d8276f1ba2c5b793abe6e"
+  },
+  "claim_boundaries": [
+    "References use the two previously observed seeds; test seeds never tune targets or directions.",
+    "Inference is conditional on eight observed generator pairing families.",
+    "Holm correction covers primary target-region tests only; head and token-band views are exploratory.",
+    "New source-only runs do not add direct full-vocabulary factorials or establish persistence or mediation."
+  ],
+  "primary_artifacts": [
+    "runs/pairing_seed_validation_v1/panel",
+    "runs/pairing_seed_validation_v1/qwen",
+    "runs/pairing_seed_validation_v1/ministral3",
+    "runs/pairing_seed_validation_v1/study_summary.json"
+  ],
+  "exploratory_views": [
+    {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "layer_index": 33,
+      "tensor": "values",
+      "view": "image_tokens/head_0",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.17750430410385584,
+      "other_family_cosine_mean": 0.03387210509841941,
+      "mean_family_margin": 0.14363219900543645,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.255375918316348,
+        "geometry_square_triangle_tiling": 0.28627319712755905,
+        "geometry_voronoi_hex_tiling": 0.1723819087983272,
+        "geometry_voronoi_quasicrystal": 0.11650964410212185,
+        "stochastic_blue_random_dots": 0.10903565283715536,
+        "stochastic_sparse_dense_dots": 0.031504742454776566,
+        "stochastic_white_blue_noise": 0.08188361914805364,
+        "stochastic_white_random_dots": 0.09609290925914984
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 15,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.06205557282528291,
+        "null_q975": 0.10004447721009896,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.4606527693660657,
+        "mean": 0.4637997015253996,
+        "max": 0.4685723121743541
+      },
+      "test_interaction_l2_norm": {
+        "min": 533.7619217497883,
+        "mean": 630.8064646262123,
+        "max": 707.7500292869041
+      }
+    },
+    {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "layer_index": 33,
+      "tensor": "values",
+      "view": "image_tokens/head_1",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.17671893770241406,
+      "other_family_cosine_mean": 0.034213239827541014,
+      "mean_family_margin": 0.14250569787487305,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.25389063007384965,
+        "geometry_square_triangle_tiling": 0.2826102205597139,
+        "geometry_voronoi_hex_tiling": 0.16409372325160548,
+        "geometry_voronoi_quasicrystal": 0.11467527381977265,
+        "stochastic_blue_random_dots": 0.11429176503875027,
+        "stochastic_sparse_dense_dots": 0.028498308008294816,
+        "stochastic_white_blue_noise": 0.08143367050581561,
+        "stochastic_white_random_dots": 0.10055199174118215
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 15,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.06194592868043803,
+        "null_q975": 0.0977965681353956,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.5314276878256459,
+        "mean": 0.5362002984746004,
+        "max": 0.5393472306339343
+      },
+      "test_interaction_l2_norm": {
+        "min": 572.396488697593,
+        "mean": 678.4134350094073,
+        "max": 764.6197956689639
+      }
+    },
+    {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "layer_index": 33,
+      "tensor": "values",
+      "view": "image_tokens/band_0",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.25143235965774136,
+      "other_family_cosine_mean": 0.045881561073020175,
+      "mean_family_margin": 0.2055507985847212,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.2672852910204145,
+        "geometry_square_triangle_tiling": 0.3847085820209826,
+        "geometry_voronoi_hex_tiling": 0.20937309643751761,
+        "geometry_voronoi_quasicrystal": 0.17440681007010472,
+        "stochastic_blue_random_dots": 0.15017861890164452,
+        "stochastic_sparse_dense_dots": 0.11660995256082438,
+        "stochastic_white_blue_noise": 0.18879804956434582,
+        "stochastic_white_random_dots": 0.15304598810193537
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.08966852110424557,
+        "null_q975": 0.12398164338500742,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.2171177409514137,
+        "mean": 0.24565163637375165,
+        "max": 0.2703611160176003
+      },
+      "test_interaction_l2_norm": {
+        "min": 406.9479442973411,
+        "mean": 458.34549811678914,
+        "max": 529.4078617925948
+      }
+    },
+    {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "layer_index": 33,
+      "tensor": "values",
+      "view": "image_tokens/band_1",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.16929722174247092,
+      "other_family_cosine_mean": 0.037630931578577304,
+      "mean_family_margin": 0.1316662901638936,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.23148280325717463,
+        "geometry_square_triangle_tiling": 0.35033958583949226,
+        "geometry_voronoi_hex_tiling": 0.16709552072174844,
+        "geometry_voronoi_quasicrystal": 0.09219105299397255,
+        "stochastic_blue_random_dots": 0.08447923343329944,
+        "stochastic_sparse_dense_dots": 0.010391788762814314,
+        "stochastic_white_blue_noise": 0.011671315772858494,
+        "stochastic_white_random_dots": 0.10567902052978859
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.05805714437446835,
+        "null_q975": 0.10051402532417258,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.26219452469560256,
+        "mean": 0.2812118276496544,
+        "max": 0.31397174550230544
+      },
+      "test_interaction_l2_norm": {
+        "min": 425.1085524233981,
+        "mean": 491.1470061284621,
+        "max": 563.3777255656153
+      }
+    },
+    {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "layer_index": 33,
+      "tensor": "values",
+      "view": "image_tokens/band_2",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.12300888441691518,
+      "other_family_cosine_mean": 0.02587202579530332,
+      "mean_family_margin": 0.09713685862161187,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.2612039807795171,
+        "geometry_square_triangle_tiling": 0.12905846950331076,
+        "geometry_voronoi_hex_tiling": 0.12013272399129213,
+        "geometry_voronoi_quasicrystal": 0.05690730168548358,
+        "stochastic_blue_random_dots": 0.111729510528396,
+        "stochastic_sparse_dense_dots": -0.038057806037628636,
+        "stochastic_white_blue_noise": 0.04056116608722442,
+        "stochastic_white_random_dots": 0.09555952243529948
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 11,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.04474499086497141,
+        "null_q975": 0.06703277198953599,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.22959795187896248,
+        "mean": 0.2706842229294988,
+        "max": 0.31819101690393486
+      },
+      "test_interaction_l2_norm": {
+        "min": 375.02771169733717,
+        "mean": 482.00423097852286,
+        "max": 551.93657769591
+      }
+    },
+    {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "layer_index": 33,
+      "tensor": "values",
+      "view": "image_tokens/band_3",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.16278592260141786,
+      "other_family_cosine_mean": 0.024514965254015454,
+      "mean_family_margin": 0.1382709573474024,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.263719842785595,
+        "geometry_square_triangle_tiling": 0.22797379765586032,
+        "geometry_voronoi_hex_tiling": 0.19048959226480697,
+        "geometry_voronoi_quasicrystal": 0.14438718363404499,
+        "stochastic_blue_random_dots": 0.10175492828168012,
+        "stochastic_sparse_dense_dots": 0.052632360378352776,
+        "stochastic_white_blue_noise": 0.09883424851296332,
+        "stochastic_white_random_dots": 0.026375705265915754
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.07411592888469214,
+        "null_q975": 0.09936920618315721,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.17018075875458974,
+        "mean": 0.2024523130470951,
+        "max": 0.23245055130306475
+      },
+      "test_interaction_l2_norm": {
+        "min": 334.26509465357213,
+        "mean": 416.21908761949067,
+        "max": 477.5468089773546
+      }
+    },
+    {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "layer_index": 33,
+      "tensor": "values",
+      "view": "post_image/head_0",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.7273980967221172,
+      "other_family_cosine_mean": 0.22121225381349333,
+      "mean_family_margin": 0.5061858429086239,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.33582498293650037,
+        "geometry_square_triangle_tiling": 0.17121879813434443,
+        "geometry_voronoi_hex_tiling": 0.43437707531104874,
+        "geometry_voronoi_quasicrystal": 0.4993034606305805,
+        "stochastic_blue_random_dots": 0.48275168747768604,
+        "stochastic_sparse_dense_dots": 0.6169109708298979,
+        "stochastic_white_blue_noise": 0.8775450543593077,
+        "stochastic_white_random_dots": 0.6315547135896259
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 15,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.27140045105145166,
+        "null_q975": 0.32695670900419277,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.46553479296972766,
+        "mean": 0.4734561635752429,
+        "max": 0.4863942448389021
+      },
+      "test_interaction_l2_norm": {
+        "min": 22.814193163906562,
+        "mean": 32.28419614535111,
+        "max": 44.77704188553013
+      }
+    },
+    {
+      "model_id": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+      "layer_index": 33,
+      "tensor": "values",
+      "view": "post_image/head_1",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.7265226661171826,
+      "other_family_cosine_mean": 0.21882583807183886,
+      "mean_family_margin": 0.5076968280453438,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.334801751629422,
+        "geometry_square_triangle_tiling": 0.17103672762338212,
+        "geometry_voronoi_hex_tiling": 0.4398157887321133,
+        "geometry_voronoi_quasicrystal": 0.5034721716874961,
+        "stochastic_blue_random_dots": 0.48126989306569146,
+        "stochastic_sparse_dense_dots": 0.6316799735712169,
+        "stochastic_white_blue_noise": 0.872947447492071,
+        "stochastic_white_random_dots": 0.6265508705613573
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 15,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.27083481164533596,
+        "null_q975": 0.32659596561262894,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.513605755161098,
+        "mean": 0.5265438364247572,
+        "max": 0.5344652070302723
+      },
+      "test_interaction_l2_norm": {
+        "min": 24.32989026284624,
+        "mean": 34.04024021246146,
+        "max": 47.44472724274773
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens/head_0",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.24969202746173466,
+      "other_family_cosine_mean": 0.029618659094513156,
+      "mean_family_margin": 0.2200733683672215,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.4304285555384513,
+        "geometry_square_triangle_tiling": 0.43188528092055456,
+        "geometry_voronoi_hex_tiling": 0.2000218239673593,
+        "geometry_voronoi_quasicrystal": 0.1887772993296406,
+        "stochastic_blue_random_dots": 0.004338019817334372,
+        "stochastic_sparse_dense_dots": 0.09216698641022186,
+        "stochastic_white_blue_noise": 0.09566441963792954,
+        "stochastic_white_random_dots": 0.3173045613162804
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 14,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.09857124007389101,
+        "null_q975": 0.1485917600043476,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.10658227768844178,
+        "mean": 0.11996372309278523,
+        "max": 0.13039934545924006
+      },
+      "test_interaction_l2_norm": {
+        "min": 61.012721557750154,
+        "mean": 75.51117707882408,
+        "max": 89.90481539538906
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens/head_1",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.22707645446820696,
+      "other_family_cosine_mean": 0.02702125470030174,
+      "mean_family_margin": 0.2000551997679052,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.41402595816131926,
+        "geometry_square_triangle_tiling": 0.44811659499874923,
+        "geometry_voronoi_hex_tiling": 0.22985030470489204,
+        "geometry_voronoi_quasicrystal": 0.18357942360446367,
+        "stochastic_blue_random_dots": 0.0005964229375292548,
+        "stochastic_sparse_dense_dots": 0.09824279525839966,
+        "stochastic_white_blue_noise": -0.016626671853702618,
+        "stochastic_white_random_dots": 0.2426567703315913
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 3,
+        "p_greater": 0.005208333333333333,
+        "null_q025": -0.09576672996271282,
+        "null_q975": 0.1453773841779926,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.15437156078501102,
+        "mean": 0.16566344228428104,
+        "max": 0.17338291354700855
+      },
+      "test_interaction_l2_norm": {
+        "min": 75.01546868715322,
+        "mean": 88.73710502276916,
+        "max": 107.13721407703298
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens/head_2",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.22613928590796267,
+      "other_family_cosine_mean": 0.02117598959379134,
+      "mean_family_margin": 0.20496329631417134,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.41846402612212436,
+        "geometry_square_triangle_tiling": 0.443886399919807,
+        "geometry_voronoi_hex_tiling": 0.24252075109196325,
+        "geometry_voronoi_quasicrystal": 0.1794282124771655,
+        "stochastic_blue_random_dots": -0.013227315441540221,
+        "stochastic_sparse_dense_dots": 0.10616489986593189,
+        "stochastic_white_blue_noise": -0.0050768155664843865,
+        "stochastic_white_random_dots": 0.2675462120444034
+      },
+      "positive_family_margin_count": 6,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 3,
+        "p_greater": 0.005208333333333333,
+        "null_q025": -0.09701118937908328,
+        "null_q975": 0.14656088276410764,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.12791494814908555,
+        "mean": 0.13312388637148598,
+        "max": 0.13972345945381062
+      },
+      "test_interaction_l2_norm": {
+        "min": 65.89843592276448,
+        "mean": 79.55341753946605,
+        "max": 94.94786688208619
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens/head_3",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.22745891964139048,
+      "other_family_cosine_mean": 0.020521369914202073,
+      "mean_family_margin": 0.20693754972718836,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.4273924039289494,
+        "geometry_square_triangle_tiling": 0.4444227752441405,
+        "geometry_voronoi_hex_tiling": 0.23981353640253247,
+        "geometry_voronoi_quasicrystal": 0.202221783693808,
+        "stochastic_blue_random_dots": -0.01305389984390385,
+        "stochastic_sparse_dense_dots": 0.08672902162823765,
+        "stochastic_white_blue_noise": 0.013873889627332122,
+        "stochastic_white_random_dots": 0.2541008871364107
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 12,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 2,
+        "p_greater": 0.003472222222222222,
+        "null_q025": -0.10205086027471257,
+        "null_q975": 0.1541354528618708,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.08168525839644476,
+        "mean": 0.08597528154759171,
+        "max": 0.09155821977573046
+      },
+      "test_interaction_l2_norm": {
+        "min": 53.471559430111576,
+        "mean": 63.90528327475962,
+        "max": 76.19949508279933
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens/head_4",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.23718901296797704,
+      "other_family_cosine_mean": 0.032530103941575246,
+      "mean_family_margin": 0.20465890902640177,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.4105096342456722,
+        "geometry_square_triangle_tiling": 0.439719173804104,
+        "geometry_voronoi_hex_tiling": 0.17422227281704047,
+        "geometry_voronoi_quasicrystal": 0.19230090117999926,
+        "stochastic_blue_random_dots": 0.014348116047656352,
+        "stochastic_sparse_dense_dots": 0.10170958145535103,
+        "stochastic_white_blue_noise": 0.027511812953189704,
+        "stochastic_white_random_dots": 0.27694977970820117
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.0949149424593514,
+        "null_q975": 0.14496476697506885,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.14484053406354186,
+        "mean": 0.15729443965548126,
+        "max": 0.164703402086973
+      },
+      "test_interaction_l2_norm": {
+        "min": 69.05920654913534,
+        "mean": 86.51756573012051,
+        "max": 105.30162504674574
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens/head_5",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.2308806684725901,
+      "other_family_cosine_mean": 0.024197189023448452,
+      "mean_family_margin": 0.20668347944914167,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.41934223039166807,
+        "geometry_square_triangle_tiling": 0.4346762710379103,
+        "geometry_voronoi_hex_tiling": 0.227794451346268,
+        "geometry_voronoi_quasicrystal": 0.18702424658825184,
+        "stochastic_blue_random_dots": 0.0118075155117815,
+        "stochastic_sparse_dense_dots": 0.10427488818602916,
+        "stochastic_white_blue_noise": 0.013746893419042823,
+        "stochastic_white_random_dots": 0.2548013391121817
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 2,
+        "p_greater": 0.003472222222222222,
+        "null_q025": -0.09878484277889303,
+        "null_q975": 0.1475155625092702,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.09735358312986875,
+        "mean": 0.10249583648483351,
+        "max": 0.10712125836484107
+      },
+      "test_interaction_l2_norm": {
+        "min": 58.54913713676673,
+        "mean": 69.80727749319396,
+        "max": 85.51524211706457
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens/head_6",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.23926089827149224,
+      "other_family_cosine_mean": 0.026083066831143906,
+      "mean_family_margin": 0.21317783144034835,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.4292219171259214,
+        "geometry_square_triangle_tiling": 0.43855686276127154,
+        "geometry_voronoi_hex_tiling": 0.22391183799968942,
+        "geometry_voronoi_quasicrystal": 0.17366535019714946,
+        "stochastic_blue_random_dots": 0.0005641740669245707,
+        "stochastic_sparse_dense_dots": 0.13150678853460945,
+        "stochastic_white_blue_noise": 0.02878977364734073,
+        "stochastic_white_random_dots": 0.27920594718988007
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 2,
+        "p_greater": 0.003472222222222222,
+        "null_q025": -0.09953115062360819,
+        "null_q975": 0.14629210091862993,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.16273798188086297,
+        "mean": 0.1678537904266676,
+        "max": 0.18074995596238255
+      },
+      "test_interaction_l2_norm": {
+        "min": 75.50443993545721,
+        "mean": 89.25839516536902,
+        "max": 105.74722460151989
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens/head_7",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.21457171759315835,
+      "other_family_cosine_mean": 0.016660791215222345,
+      "mean_family_margin": 0.197910926377936,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.4068245495887749,
+        "geometry_square_triangle_tiling": 0.45498006571804467,
+        "geometry_voronoi_hex_tiling": 0.30405065998064346,
+        "geometry_voronoi_quasicrystal": 0.16786576961760105,
+        "stochastic_blue_random_dots": -0.021732107870272587,
+        "stochastic_sparse_dense_dots": 0.09439236070612507,
+        "stochastic_white_blue_noise": -0.05259578052603567,
+        "stochastic_white_random_dots": 0.22950189380860717
+      },
+      "positive_family_margin_count": 6,
+      "retrieval_correct_count": 12,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 4,
+        "p_greater": 0.006944444444444444,
+        "null_q025": -0.10819128716038905,
+        "null_q975": 0.151369170622714,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.06251115169388458,
+        "mean": 0.06762960013687366,
+        "max": 0.0747236870506418
+      },
+      "test_interaction_l2_norm": {
+        "min": 46.9987519020966,
+        "mean": 56.69602645393722,
+        "max": 68.31287982212962
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens/band_0",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.23298591879822061,
+      "other_family_cosine_mean": 0.027127820614592405,
+      "mean_family_margin": 0.2058580981836282,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.4732353354340888,
+        "geometry_square_triangle_tiling": 0.49180402567621595,
+        "geometry_voronoi_hex_tiling": 0.11993514247784415,
+        "geometry_voronoi_quasicrystal": 0.05764629628641118,
+        "stochastic_blue_random_dots": -0.09649695334300276,
+        "stochastic_sparse_dense_dots": 0.2269396166481914,
+        "stochastic_white_blue_noise": 0.05477290355465508,
+        "stochastic_white_random_dots": 0.3190284187346219
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 9,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 5,
+        "p_greater": 0.008680555555555556,
+        "null_q025": -0.11857092688531094,
+        "null_q975": 0.15631941603939067,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        62,
+        63,
+        64
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.16938463069303067,
+        "mean": 0.19335136277610074,
+        "max": 0.24744405920338977
+      },
+      "test_interaction_l2_norm": {
+        "min": 76.63800285934832,
+        "mean": 95.90408168189404,
+        "max": 118.04248854161038
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens/band_1",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.2561705397959457,
+      "other_family_cosine_mean": -0.005895090489160759,
+      "mean_family_margin": 0.26206563028510643,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.449782501907964,
+        "geometry_square_triangle_tiling": 0.5568287569111559,
+        "geometry_voronoi_hex_tiling": 0.2906301515819418,
+        "geometry_voronoi_quasicrystal": 0.2872059444865761,
+        "stochastic_blue_random_dots": 0.09342448966498525,
+        "stochastic_sparse_dense_dots": 0.07885444331170713,
+        "stochastic_white_blue_noise": 0.1697807777345835,
+        "stochastic_white_random_dots": 0.17001797668193802
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.12370039402355161,
+        "null_q975": 0.1924870643643821,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.2134963974644756,
+        "mean": 0.284247197809012,
+        "max": 0.3425404810304216
+      },
+      "test_interaction_l2_norm": {
+        "min": 96.37959795197727,
+        "mean": 116.00449485952663,
+        "max": 136.37951673883117
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens/band_2",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.2050786743671484,
+      "other_family_cosine_mean": 0.029860238609672417,
+      "mean_family_margin": 0.17521843575747595,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.38653908753067523,
+        "geometry_square_triangle_tiling": 0.45228819799324715,
+        "geometry_voronoi_hex_tiling": 0.26737431813813956,
+        "geometry_voronoi_quasicrystal": 0.1814211652886873,
+        "stochastic_blue_random_dots": -0.011208360799385576,
+        "stochastic_sparse_dense_dots": 0.020637415481962663,
+        "stochastic_white_blue_noise": -0.1475417716387414,
+        "stochastic_white_random_dots": 0.25223743406522287
+      },
+      "positive_family_margin_count": 6,
+      "retrieval_correct_count": 10,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 8,
+        "p_greater": 0.013888888888888888,
+        "null_q025": -0.10250007974584015,
+        "null_q975": 0.1548850967787328,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.21761311884821458,
+        "mean": 0.26581553910856415,
+        "max": 0.31375699631335563
+      },
+      "test_interaction_l2_norm": {
+        "min": 90.31678929383929,
+        "mean": 112.37728075249169,
+        "max": 129.23061010095475
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "image_tokens/band_3",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.24872386922220124,
+      "other_family_cosine_mean": 0.056017800130244294,
+      "mean_family_margin": 0.19270606909195692,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.4154096731760914,
+        "geometry_square_triangle_tiling": 0.24222700593978896,
+        "geometry_voronoi_hex_tiling": 0.1970051718511297,
+        "geometry_voronoi_quasicrystal": 0.17727462553549445,
+        "stochastic_blue_random_dots": -0.009117273577245136,
+        "stochastic_sparse_dense_dots": 0.1298401493992355,
+        "stochastic_white_blue_noise": 0.028637844322590707,
+        "stochastic_white_random_dots": 0.36037135608857007
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 10,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 3,
+        "p_greater": 0.005208333333333333,
+        "null_q025": -0.10241512885977382,
+        "null_q975": 0.12992511959974493,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        119,
+        120,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.20433834875543033,
+        "mean": 0.2565859003063231,
+        "max": 0.3147889504073067
+      },
+      "test_interaction_l2_norm": {
+        "min": 94.97570997979314,
+        "mean": 110.06260608205191,
+        "max": 139.28094128797085
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "post_image/head_0",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6401754286564388,
+      "other_family_cosine_mean": 0.1335233860251691,
+      "mean_family_margin": 0.5066520426312697,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.5703122781779977,
+        "geometry_square_triangle_tiling": 0.494394749691667,
+        "geometry_voronoi_hex_tiling": 0.33997180822108153,
+        "geometry_voronoi_quasicrystal": 0.15210234899858194,
+        "stochastic_blue_random_dots": 0.32352441512564745,
+        "stochastic_sparse_dense_dots": 0.5203258558365564,
+        "stochastic_white_blue_noise": 0.8592213727903786,
+        "stochastic_white_random_dots": 0.7933635122082474
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 14,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.26918137088892685,
+        "null_q975": 0.3267823612955504,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.14284056946954088,
+        "mean": 0.17282794630693848,
+        "max": 0.22025100000731251
+      },
+      "test_interaction_l2_norm": {
+        "min": 1.8281411230318925,
+        "mean": 2.485988182689031,
+        "max": 3.669837653249129
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "post_image/head_1",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.5161783892352516,
+      "other_family_cosine_mean": 0.08135479554694991,
+      "mean_family_margin": 0.43482359368830165,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.6397319583016379,
+        "geometry_square_triangle_tiling": 0.4306763204011631,
+        "geometry_voronoi_hex_tiling": 0.1953736364680362,
+        "geometry_voronoi_quasicrystal": 0.13861439367936954,
+        "stochastic_blue_random_dots": 0.2954117136698113,
+        "stochastic_sparse_dense_dots": 0.5512298864918169,
+        "stochastic_white_blue_noise": 0.5733111370943379,
+        "stochastic_white_random_dots": 0.6542397034002404
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.21823230952672626,
+        "null_q975": 0.27595067232050485,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.09362737467486996,
+        "mean": 0.10865151111044964,
+        "max": 0.12632106051531464
+      },
+      "test_interaction_l2_norm": {
+        "min": 1.4656461046884612,
+        "mean": 1.9667201768088938,
+        "max": 3.0408242130465992
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "post_image/head_2",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.5636986724453623,
+      "other_family_cosine_mean": 0.09658004737479564,
+      "mean_family_margin": 0.4671186250705666,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.639557446709178,
+        "geometry_square_triangle_tiling": 0.44209480686444197,
+        "geometry_voronoi_hex_tiling": 0.2537747443854863,
+        "geometry_voronoi_quasicrystal": 0.13530418485005527,
+        "stochastic_blue_random_dots": 0.22337536349146267,
+        "stochastic_sparse_dense_dots": 0.5541466793376396,
+        "stochastic_white_blue_noise": 0.7858892043203551,
+        "stochastic_white_random_dots": 0.702806570605914
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 14,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2365793520584287,
+        "null_q975": 0.2927470726600672,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.11749722846164438,
+        "mean": 0.13014025783019753,
+        "max": 0.1431393336019437
+      },
+      "test_interaction_l2_norm": {
+        "min": 1.6909435956776695,
+        "mean": 2.1537743111050984,
+        "max": 3.1366417776033595
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "post_image/head_3",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.5642507428197641,
+      "other_family_cosine_mean": 0.09957262292770805,
+      "mean_family_margin": 0.4646781198920561,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.6553154863516445,
+        "geometry_square_triangle_tiling": 0.4320806533011979,
+        "geometry_voronoi_hex_tiling": 0.26881064004669986,
+        "geometry_voronoi_quasicrystal": 0.13561090235060838,
+        "stochastic_blue_random_dots": 0.10457101264253102,
+        "stochastic_sparse_dense_dots": 0.5318289428715677,
+        "stochastic_white_blue_noise": 0.9541785822199831,
+        "stochastic_white_random_dots": 0.6350287393522163
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2323521433214344,
+        "null_q975": 0.29981193870312434,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.09373969664114547,
+        "mean": 0.11784755061516142,
+        "max": 0.16270973527161556
+      },
+      "test_interaction_l2_norm": {
+        "min": 1.6232071906569663,
+        "mean": 2.0355229313904473,
+        "max": 2.687697900684264
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "post_image/head_4",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6341078885375637,
+      "other_family_cosine_mean": 0.12844670128239005,
+      "mean_family_margin": 0.5056611872551736,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.6235633452067346,
+        "geometry_square_triangle_tiling": 0.48132775897778746,
+        "geometry_voronoi_hex_tiling": 0.348396508609675,
+        "geometry_voronoi_quasicrystal": 0.08791373445631312,
+        "stochastic_blue_random_dots": 0.3527417088396626,
+        "stochastic_sparse_dense_dots": 0.5360948647554022,
+        "stochastic_white_blue_noise": 0.8141394473476279,
+        "stochastic_white_random_dots": 0.801112129848186
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2675631268330967,
+        "null_q975": 0.31622475974435255,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.1275102985199871,
+        "mean": 0.15059518248479886,
+        "max": 0.20105642327221218
+      },
+      "test_interaction_l2_norm": {
+        "min": 1.6949596374358609,
+        "mean": 2.3155044755345076,
+        "max": 3.2986537921012116
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "post_image/head_5",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.528376365629776,
+      "other_family_cosine_mean": 0.08224290661192547,
+      "mean_family_margin": 0.4461334590178505,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.6624334972885955,
+        "geometry_square_triangle_tiling": 0.4421286635112907,
+        "geometry_voronoi_hex_tiling": 0.2064362938312721,
+        "geometry_voronoi_quasicrystal": 0.11419498089995447,
+        "stochastic_blue_random_dots": 0.28279372655953405,
+        "stochastic_sparse_dense_dots": 0.5478492384494937,
+        "stochastic_white_blue_noise": 0.6222330125695157,
+        "stochastic_white_random_dots": 0.690998259033148
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 14,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2296623968266493,
+        "null_q975": 0.2840642813777595,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.09692272196222429,
+        "mean": 0.11215772572111057,
+        "max": 0.12883450827359266
+      },
+      "test_interaction_l2_norm": {
+        "min": 1.4994105506066808,
+        "mean": 2.0006390966735426,
+        "max": 3.1509011762815673
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "post_image/head_6",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.5563043341083544,
+      "other_family_cosine_mean": 0.1007204553953377,
+      "mean_family_margin": 0.4555838787130167,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.6521891820949665,
+        "geometry_square_triangle_tiling": 0.4599327871276734,
+        "geometry_voronoi_hex_tiling": 0.26476539099331564,
+        "geometry_voronoi_quasicrystal": 0.11259746775510615,
+        "stochastic_blue_random_dots": 0.2843078372587866,
+        "stochastic_sparse_dense_dots": 0.5710845430993585,
+        "stochastic_white_blue_noise": 0.6437102852863508,
+        "stochastic_white_random_dots": 0.6560835360885762
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 14,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.22478995720710962,
+        "null_q975": 0.27499849945590304,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.10573823822345293,
+        "mean": 0.12729586997839445,
+        "max": 0.13879644063403096
+      },
+      "test_interaction_l2_norm": {
+        "min": 1.6909824019854591,
+        "mean": 2.1270474056272075,
+        "max": 3.176379863782868
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 1,
+      "tensor": "keys",
+      "view": "post_image/head_7",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.5155688476891549,
+      "other_family_cosine_mean": 0.10206103195287364,
+      "mean_family_margin": 0.4135078157362812,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.6796976111748599,
+        "geometry_square_triangle_tiling": 0.4041455427968104,
+        "geometry_voronoi_hex_tiling": 0.11914163662841971,
+        "geometry_voronoi_quasicrystal": 0.13848989519497715,
+        "stochastic_blue_random_dots": 0.2846914529253054,
+        "stochastic_sparse_dense_dots": 0.5071056442471656,
+        "stochastic_white_blue_noise": 0.60319018943509,
+        "stochastic_white_random_dots": 0.5716005534876214
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 14,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.20757711419745492,
+        "null_q975": 0.2642036621955167,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.07035426679129778,
+        "mean": 0.08048395595294905,
+        "max": 0.09625849749569872
+      },
+      "test_interaction_l2_norm": {
+        "min": 1.2432294353934223,
+        "mean": 1.6920509119408162,
+        "max": 2.527100432393335
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens/head_0",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.14499054642079315,
+      "other_family_cosine_mean": 0.02746501530506342,
+      "mean_family_margin": 0.11752553111572973,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.28021601202458635,
+        "geometry_square_triangle_tiling": 0.3126986308875625,
+        "geometry_voronoi_hex_tiling": 0.16373942027386948,
+        "geometry_voronoi_quasicrystal": 0.04146168893539805,
+        "stochastic_blue_random_dots": -0.03004502522500485,
+        "stochastic_sparse_dense_dots": 0.07945351700509651,
+        "stochastic_white_blue_noise": -0.019113262624058172,
+        "stochastic_white_random_dots": 0.111793267648388
+      },
+      "positive_family_margin_count": 6,
+      "retrieval_correct_count": 11,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 3,
+        "p_greater": 0.005208333333333333,
+        "null_q025": -0.05972019085937887,
+        "null_q975": 0.09348417622417246,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.15382288879504855,
+        "mean": 0.15717109552233804,
+        "max": 0.16017880005029309
+      },
+      "test_interaction_l2_norm": {
+        "min": 190.77774996286254,
+        "mean": 221.00508290201918,
+        "max": 242.74102076984022
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens/head_1",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.1535617134612153,
+      "other_family_cosine_mean": 0.026756304312374676,
+      "mean_family_margin": 0.12680540914884064,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.28617315929549336,
+        "geometry_square_triangle_tiling": 0.3051412116011244,
+        "geometry_voronoi_hex_tiling": 0.16439013778958328,
+        "geometry_voronoi_quasicrystal": 0.06338955333103305,
+        "stochastic_blue_random_dots": -0.024349370095995033,
+        "stochastic_sparse_dense_dots": 0.08403438310135569,
+        "stochastic_white_blue_noise": 0.003266762372248045,
+        "stochastic_white_random_dots": 0.13239743579588228
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 11,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 3,
+        "p_greater": 0.005208333333333333,
+        "null_q025": -0.059542306893185654,
+        "null_q975": 0.09511044077428953,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.14476870997564337,
+        "mean": 0.14760034325476232,
+        "max": 0.1517396535135991
+      },
+      "test_interaction_l2_norm": {
+        "min": 186.38368666492752,
+        "mean": 214.12486411178335,
+        "max": 232.825096091628
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens/head_2",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.15040327735163436,
+      "other_family_cosine_mean": 0.026181403873700528,
+      "mean_family_margin": 0.12422187347793384,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.3019491578934814,
+        "geometry_square_triangle_tiling": 0.315593855350897,
+        "geometry_voronoi_hex_tiling": 0.1542676633188581,
+        "geometry_voronoi_quasicrystal": 0.05558545727603129,
+        "stochastic_blue_random_dots": -0.03711963695686341,
+        "stochastic_sparse_dense_dots": 0.0744976140333108,
+        "stochastic_white_blue_noise": -0.00565314407429192,
+        "stochastic_white_random_dots": 0.13465402098204743
+      },
+      "positive_family_margin_count": 6,
+      "retrieval_correct_count": 11,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 3,
+        "p_greater": 0.005208333333333333,
+        "null_q025": -0.06249500078505794,
+        "null_q975": 0.09769405041669023,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.03662815760976565,
+        "mean": 0.0394932182216287,
+        "max": 0.0421845863873038
+      },
+      "test_interaction_l2_norm": {
+        "min": 97.0149994730919,
+        "mean": 110.74858678996313,
+        "max": 122.48765683801193
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens/head_3",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.14947287108485496,
+      "other_family_cosine_mean": 0.025175284863644704,
+      "mean_family_margin": 0.12429758622121026,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.2902554640278064,
+        "geometry_square_triangle_tiling": 0.30990878468011895,
+        "geometry_voronoi_hex_tiling": 0.16555915778986302,
+        "geometry_voronoi_quasicrystal": 0.05994722614413682,
+        "stochastic_blue_random_dots": -0.030825524737036814,
+        "stochastic_sparse_dense_dots": 0.08087368719468925,
+        "stochastic_white_blue_noise": 0.0077343634558024645,
+        "stochastic_white_random_dots": 0.110927531214302
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 11,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 3,
+        "p_greater": 0.005208333333333333,
+        "null_q025": -0.06085345009434326,
+        "null_q975": 0.09644365577032217,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.1366168992019563,
+        "mean": 0.13895093247034354,
+        "max": 0.14133663345692682
+      },
+      "test_interaction_l2_norm": {
+        "min": 180.11885903628968,
+        "mean": 207.76013529414084,
+        "max": 227.99784741167687
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens/head_4",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.15080065200941906,
+      "other_family_cosine_mean": 0.025072384034656787,
+      "mean_family_margin": 0.12572826797476228,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.3060346083852852,
+        "geometry_square_triangle_tiling": 0.31939065449437315,
+        "geometry_voronoi_hex_tiling": 0.16036162379404637,
+        "geometry_voronoi_quasicrystal": 0.06036976292922755,
+        "stochastic_blue_random_dots": -0.020474831597240215,
+        "stochastic_sparse_dense_dots": 0.06538737350392951,
+        "stochastic_white_blue_noise": -0.0029856843524128165,
+        "stochastic_white_random_dots": 0.11774263664088935
+      },
+      "positive_family_margin_count": 6,
+      "retrieval_correct_count": 12,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 3,
+        "p_greater": 0.005208333333333333,
+        "null_q025": -0.05925682509813677,
+        "null_q975": 0.0999549580095734,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.1848620928560778,
+        "mean": 0.19086849756965907,
+        "max": 0.1968469761309731
+      },
+      "test_interaction_l2_norm": {
+        "min": 213.2184779451741,
+        "mean": 243.5125081429182,
+        "max": 267.56056143172555
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens/head_5",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.15206836142862487,
+      "other_family_cosine_mean": 0.026081497375800632,
+      "mean_family_margin": 0.12598686405282425,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.290715655889338,
+        "geometry_square_triangle_tiling": 0.30777900424702254,
+        "geometry_voronoi_hex_tiling": 0.15043307344966947,
+        "geometry_voronoi_quasicrystal": 0.05253050519902723,
+        "stochastic_blue_random_dots": -0.025137760158757176,
+        "stochastic_sparse_dense_dots": 0.09803896357177058,
+        "stochastic_white_blue_noise": 0.014240780092546533,
+        "stochastic_white_random_dots": 0.11929469013197674
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 11,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 2,
+        "p_greater": 0.003472222222222222,
+        "null_q025": -0.0602109724652372,
+        "null_q975": 0.09552209683571733,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.13322876720596982,
+        "mean": 0.13584642185914816,
+        "max": 0.1391728756159071
+      },
+      "test_interaction_l2_norm": {
+        "min": 177.81840087012392,
+        "mean": 205.44129022780885,
+        "max": 225.14666076471244
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens/head_6",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.15422516525629243,
+      "other_family_cosine_mean": 0.02744511437490684,
+      "mean_family_margin": 0.12678005088138555,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.29866482246876214,
+        "geometry_square_triangle_tiling": 0.30218776026530925,
+        "geometry_voronoi_hex_tiling": 0.16769204246072467,
+        "geometry_voronoi_quasicrystal": 0.06595147507302165,
+        "stochastic_blue_random_dots": -0.02312633186661065,
+        "stochastic_sparse_dense_dots": 0.09536907549188929,
+        "stochastic_white_blue_noise": -0.008629685410749339,
+        "stochastic_white_random_dots": 0.11613124856873747
+      },
+      "positive_family_margin_count": 6,
+      "retrieval_correct_count": 11,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 2,
+        "p_greater": 0.003472222222222222,
+        "null_q025": -0.05884734439132813,
+        "null_q975": 0.09898262841859137,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.1467810247253827,
+        "mean": 0.152597486543712,
+        "max": 0.15848046294609686
+      },
+      "test_interaction_l2_norm": {
+        "min": 192.42573479144136,
+        "mean": 217.6488852741984,
+        "max": 233.4643532189461
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens/head_7",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.14284229680315894,
+      "other_family_cosine_mean": 0.024941436046743048,
+      "mean_family_margin": 0.1179008607564159,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.2845199425347004,
+        "geometry_square_triangle_tiling": 0.3202254179987558,
+        "geometry_voronoi_hex_tiling": 0.15336531956759836,
+        "geometry_voronoi_quasicrystal": 0.053838786952768565,
+        "stochastic_blue_random_dots": -0.045164338308601455,
+        "stochastic_sparse_dense_dots": 0.09666987523141175,
+        "stochastic_white_blue_noise": -0.03531216217931588,
+        "stochastic_white_random_dots": 0.11506404425400951
+      },
+      "positive_family_margin_count": 6,
+      "retrieval_correct_count": 11,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 4,
+        "p_greater": 0.006944444444444444,
+        "null_q025": -0.06378674106376514,
+        "null_q975": 0.0949352105039157,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.03566681216079483,
+        "mean": 0.03747200455840817,
+        "max": 0.04031774464630259
+      },
+      "test_interaction_l2_norm": {
+        "min": 92.8522245342406,
+        "mean": 107.88980836208684,
+        "max": 118.80866717314083
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens/band_0",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.15434277185289905,
+      "other_family_cosine_mean": 0.03522336631484463,
+      "mean_family_margin": 0.11911940553805443,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.4160353579910868,
+        "geometry_square_triangle_tiling": 0.35483432080632177,
+        "geometry_voronoi_hex_tiling": 0.04785035315320522,
+        "geometry_voronoi_quasicrystal": -0.018534534388427934,
+        "stochastic_blue_random_dots": -0.0960872238854224,
+        "stochastic_sparse_dense_dots": 0.1537617733106486,
+        "stochastic_white_blue_noise": 0.03630145387237059,
+        "stochastic_white_random_dots": 0.05879374344465287
+      },
+      "positive_family_margin_count": 6,
+      "retrieval_correct_count": 9,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 11,
+        "p_greater": 0.019097222222222224,
+        "null_q025": -0.07480398284151202,
+        "null_q975": 0.11469844849549678,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        62,
+        63,
+        64
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.13763497712969586,
+        "mean": 0.1846007231668063,
+        "max": 0.24682564865305093
+      },
+      "test_interaction_l2_norm": {
+        "min": 180.12045394484957,
+        "mean": 239.29156460355125,
+        "max": 302.61641841241385
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens/band_1",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.15985555779377572,
+      "other_family_cosine_mean": 0.010645616596835723,
+      "mean_family_margin": 0.14920994119693998,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.28342210512072524,
+        "geometry_square_triangle_tiling": 0.3065004419075713,
+        "geometry_voronoi_hex_tiling": 0.22503335473933228,
+        "geometry_voronoi_quasicrystal": 0.07647948557057974,
+        "stochastic_blue_random_dots": -0.014156606163316019,
+        "stochastic_sparse_dense_dots": 0.11071354901446817,
+        "stochastic_white_blue_noise": 0.06289341162030403,
+        "stochastic_white_random_dots": 0.1427937877658552
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 10,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 2,
+        "p_greater": 0.003472222222222222,
+        "null_q025": -0.06515682914260341,
+        "null_q975": 0.10582618384867887,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.22943860842329467,
+        "mean": 0.26721870493471617,
+        "max": 0.321788037271718
+      },
+      "test_interaction_l2_norm": {
+        "min": 272.5481615992017,
+        "mean": 287.5219769074663,
+        "max": 324.09432436437885
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens/band_2",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.12600690462148667,
+      "other_family_cosine_mean": 0.024893128531373057,
+      "mean_family_margin": 0.10111377609011359,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.3200611348260542,
+        "geometry_square_triangle_tiling": 0.25338713783248706,
+        "geometry_voronoi_hex_tiling": 0.23878640121165484,
+        "geometry_voronoi_quasicrystal": 0.04249654622600204,
+        "stochastic_blue_random_dots": -0.07136558511929428,
+        "stochastic_sparse_dense_dots": -0.0004021751332232912,
+        "stochastic_white_blue_noise": -0.06509475494134473,
+        "stochastic_white_random_dots": 0.09104150381857293
+      },
+      "positive_family_margin_count": 5,
+      "retrieval_correct_count": 9,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 16,
+        "p_greater": 0.027777777777777776,
+        "null_q025": -0.07756058363677458,
+        "null_q975": 0.1018589894697922,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.2535008396252105,
+        "mean": 0.2830918821518283,
+        "max": 0.32388195602261904
+      },
+      "test_interaction_l2_norm": {
+        "min": 250.7871921804283,
+        "mean": 296.4263907081257,
+        "max": 326.98214318082864
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "image_tokens/band_3",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.16844258351316826,
+      "other_family_cosine_mean": 0.037734192973692404,
+      "mean_family_margin": 0.1307083905394759,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.19524734128253812,
+        "geometry_square_triangle_tiling": 0.3486752239691264,
+        "geometry_voronoi_hex_tiling": 0.09175281783737978,
+        "geometry_voronoi_quasicrystal": 0.10712616075374813,
+        "stochastic_blue_random_dots": 0.04523864355582298,
+        "stochastic_sparse_dense_dots": 0.10661639050393247,
+        "stochastic_white_blue_noise": -0.017481416780759262,
+        "stochastic_white_random_dots": 0.16849196319401843
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 11,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.06099176078690111,
+        "null_q975": 0.09176212059493002,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        119,
+        120,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.2385481425887714,
+        "mean": 0.26508868974664923,
+        "max": 0.30194083383261944
+      },
+      "test_interaction_l2_norm": {
+        "min": 254.02919387427744,
+        "mean": 286.52617715646056,
+        "max": 311.1297697442207
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "post_image/head_0",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6483632619808251,
+      "other_family_cosine_mean": 0.12412302411160087,
+      "mean_family_margin": 0.5242402378692242,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.5551579160275972,
+        "geometry_square_triangle_tiling": 0.4578704790533372,
+        "geometry_voronoi_hex_tiling": 0.44392556305104863,
+        "geometry_voronoi_quasicrystal": 0.423607789988614,
+        "stochastic_blue_random_dots": 0.3871822731111562,
+        "stochastic_sparse_dense_dots": 0.6578320957888535,
+        "stochastic_white_blue_noise": 0.556077681221651,
+        "stochastic_white_random_dots": 0.7122681047115359
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.27999015263365623,
+        "null_q975": 0.3197410447249165,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.12021746131896668,
+        "mean": 0.12409315412175634,
+        "max": 0.13129309593736618
+      },
+      "test_interaction_l2_norm": {
+        "min": 19.554470808332166,
+        "mean": 24.438452770815193,
+        "max": 32.35458112089756
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "post_image/head_1",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6289160164327526,
+      "other_family_cosine_mean": 0.11531110071195745,
+      "mean_family_margin": 0.5136049157207953,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.5583039033123489,
+        "geometry_square_triangle_tiling": 0.4536721970705189,
+        "geometry_voronoi_hex_tiling": 0.4152967971636375,
+        "geometry_voronoi_quasicrystal": 0.3987992014677859,
+        "stochastic_blue_random_dots": 0.3888899293077496,
+        "stochastic_sparse_dense_dots": 0.6323241230311134,
+        "stochastic_white_blue_noise": 0.5731703746982658,
+        "stochastic_white_random_dots": 0.6883827997149418
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2653250689227201,
+        "null_q975": 0.3082164376447491,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.1492768413644232,
+        "mean": 0.15736453356600744,
+        "max": 0.1659405287926079
+      },
+      "test_interaction_l2_norm": {
+        "min": 22.238885727605965,
+        "mean": 27.49754459546815,
+        "max": 35.46806438146562
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "post_image/head_2",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6404504976706746,
+      "other_family_cosine_mean": 0.13700016526203532,
+      "mean_family_margin": 0.5034503324086392,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.5212441281399434,
+        "geometry_square_triangle_tiling": 0.4433443388488498,
+        "geometry_voronoi_hex_tiling": 0.4400875870359138,
+        "geometry_voronoi_quasicrystal": 0.4082501361136892,
+        "stochastic_blue_random_dots": 0.35387956184167857,
+        "stochastic_sparse_dense_dots": 0.6157920709526594,
+        "stochastic_white_blue_noise": 0.5646644520627192,
+        "stochastic_white_random_dots": 0.680340384273661
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.25732068723220786,
+        "null_q975": 0.3101133307612376,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.047913982174151916,
+        "mean": 0.05214390534642517,
+        "max": 0.05485650207209754
+      },
+      "test_interaction_l2_norm": {
+        "min": 13.02308673155872,
+        "mean": 15.829870813456935,
+        "max": 20.520032855956924
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "post_image/head_3",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6368831125885144,
+      "other_family_cosine_mean": 0.12888387515743957,
+      "mean_family_margin": 0.5079992374310749,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.5542827712595779,
+        "geometry_square_triangle_tiling": 0.45478147437977207,
+        "geometry_voronoi_hex_tiling": 0.4408708749445969,
+        "geometry_voronoi_quasicrystal": 0.34958233269696926,
+        "stochastic_blue_random_dots": 0.37446819917918767,
+        "stochastic_sparse_dense_dots": 0.6352800800059291,
+        "stochastic_white_blue_noise": 0.5516825317570119,
+        "stochastic_white_random_dots": 0.7030456352255536
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.26384545459903264,
+        "null_q975": 0.3064433198301698,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.1377745980654605,
+        "mean": 0.145462985131354,
+        "max": 0.15452982886848302
+      },
+      "test_interaction_l2_norm": {
+        "min": 20.834560725938818,
+        "mean": 26.449450565404476,
+        "max": 34.09482311227651
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "post_image/head_4",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6426549436342155,
+      "other_family_cosine_mean": 0.1264912489583423,
+      "mean_family_margin": 0.5161636946758732,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.5527044459312926,
+        "geometry_square_triangle_tiling": 0.46741141159051564,
+        "geometry_voronoi_hex_tiling": 0.45057063931353675,
+        "geometry_voronoi_quasicrystal": 0.3954765051780029,
+        "stochastic_blue_random_dots": 0.38183060485467285,
+        "stochastic_sparse_dense_dots": 0.6234245424159143,
+        "stochastic_white_blue_noise": 0.5596211004859538,
+        "stochastic_white_random_dots": 0.6982703076370965
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2656324854625795,
+        "null_q975": 0.31222615903391765,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.16516359516039467,
+        "mean": 0.17116005349888774,
+        "max": 0.1764637990823829
+      },
+      "test_interaction_l2_norm": {
+        "min": 23.115469510085813,
+        "mean": 28.66795881019449,
+        "max": 36.28874933482523
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "post_image/head_5",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6272274470531576,
+      "other_family_cosine_mean": 0.1301393287734621,
+      "mean_family_margin": 0.49708811827969557,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.5384958437528071,
+        "geometry_square_triangle_tiling": 0.42847756270565424,
+        "geometry_voronoi_hex_tiling": 0.40931257341535116,
+        "geometry_voronoi_quasicrystal": 0.38137424081427196,
+        "stochastic_blue_random_dots": 0.3775748173424883,
+        "stochastic_sparse_dense_dots": 0.6095793899929198,
+        "stochastic_white_blue_noise": 0.5570872022187521,
+        "stochastic_white_random_dots": 0.6748033159953194
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.25199785028563215,
+        "null_q975": 0.3021578790883111,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.1336207287376541,
+        "mean": 0.13860836704361856,
+        "max": 0.14964531984782797
+      },
+      "test_interaction_l2_norm": {
+        "min": 20.979725906272304,
+        "mean": 25.796207362523155,
+        "max": 33.11105583539607
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "post_image/head_6",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6346036618621742,
+      "other_family_cosine_mean": 0.12309552080681024,
+      "mean_family_margin": 0.5115081410553641,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.5665097184304368,
+        "geometry_square_triangle_tiling": 0.44347978790391757,
+        "geometry_voronoi_hex_tiling": 0.4348053746258595,
+        "geometry_voronoi_quasicrystal": 0.3870195973054415,
+        "stochastic_blue_random_dots": 0.3734896240580789,
+        "stochastic_sparse_dense_dots": 0.6419136635147623,
+        "stochastic_white_blue_noise": 0.5534898194141373,
+        "stochastic_white_random_dots": 0.6913575431902784
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2657719309053785,
+        "null_q975": 0.3062026383834402,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.16150685058372127,
+        "mean": 0.1710742800386237,
+        "max": 0.17859649600873778
+      },
+      "test_interaction_l2_norm": {
+        "min": 22.719424328241786,
+        "mean": 28.684916454472397,
+        "max": 36.94986805810574
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 16,
+      "tensor": "keys",
+      "view": "post_image/head_7",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6334343133506732,
+      "other_family_cosine_mean": 0.14409652230928405,
+      "mean_family_margin": 0.4893377910413892,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.5139526108667998,
+        "geometry_square_triangle_tiling": 0.43107290413979715,
+        "geometry_voronoi_hex_tiling": 0.4140062030733209,
+        "geometry_voronoi_quasicrystal": 0.3475526673085138,
+        "stochastic_blue_random_dots": 0.3698137051058832,
+        "stochastic_sparse_dense_dots": 0.5961183434765053,
+        "stochastic_white_blue_noise": 0.5866283357940816,
+        "stochastic_white_random_dots": 0.6555575585662118
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2506216333671572,
+        "null_q975": 0.2972801781989331,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.036058659976141993,
+        "mean": 0.04009272125332698,
+        "max": 0.04324497832558329
+      },
+      "test_interaction_l2_norm": {
+        "min": 11.099939057068132,
+        "mean": 13.88675804188472,
+        "max": 17.501596948814473
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens/head_0",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.12272795647521795,
+      "other_family_cosine_mean": 0.022647963767286148,
+      "mean_family_margin": 0.10007999270793182,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.2280980184481981,
+        "geometry_square_triangle_tiling": 0.2206179764679212,
+        "geometry_voronoi_hex_tiling": 0.12649866500567078,
+        "geometry_voronoi_quasicrystal": 0.047173445701288536,
+        "stochastic_blue_random_dots": 0.02026681329727847,
+        "stochastic_sparse_dense_dots": 0.05365435316866103,
+        "stochastic_white_blue_noise": 0.03706358654023309,
+        "stochastic_white_random_dots": 0.06726708303420328
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.04954004553091551,
+        "null_q975": 0.07434646725767897,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.15808042798335367,
+        "mean": 0.16435960148047335,
+        "max": 0.17088454329736857
+      },
+      "test_interaction_l2_norm": {
+        "min": 137.64300849990215,
+        "mean": 148.64968422842412,
+        "max": 160.49786049942747
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens/head_1",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.1207324686775392,
+      "other_family_cosine_mean": 0.016891867098766396,
+      "mean_family_margin": 0.10384060157877281,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.2298398865713795,
+        "geometry_square_triangle_tiling": 0.22888736711982338,
+        "geometry_voronoi_hex_tiling": 0.13025048679467824,
+        "geometry_voronoi_quasicrystal": 0.055039542805468994,
+        "stochastic_blue_random_dots": 0.01799146303536563,
+        "stochastic_sparse_dense_dots": 0.07635899805048069,
+        "stochastic_white_blue_noise": 0.011997973905008612,
+        "stochastic_white_random_dots": 0.08035909434797746
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 12,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.04563745181025179,
+        "null_q975": 0.07785414286041448,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.11987885683191057,
+        "mean": 0.12897327335167508,
+        "max": 0.13857424507186808
+      },
+      "test_interaction_l2_norm": {
+        "min": 121.35000089594213,
+        "mean": 131.62135265789897,
+        "max": 138.95824828201825
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens/head_2",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.11750251339746634,
+      "other_family_cosine_mean": 0.01916029806631251,
+      "mean_family_margin": 0.09834221533115382,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.2198945240396644,
+        "geometry_square_triangle_tiling": 0.22495996562483872,
+        "geometry_voronoi_hex_tiling": 0.12546110338825547,
+        "geometry_voronoi_quasicrystal": 0.06360842114760248,
+        "stochastic_blue_random_dots": 0.02167342674788573,
+        "stochastic_sparse_dense_dots": 0.05921126186566817,
+        "stochastic_white_blue_noise": -0.001478955680717178,
+        "stochastic_white_random_dots": 0.07340797551603281
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 12,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.043783412997322836,
+        "null_q975": 0.07590776477210734,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.10351043419395987,
+        "mean": 0.10682315283532409,
+        "max": 0.11125527928213455
+      },
+      "test_interaction_l2_norm": {
+        "min": 113.47701972012149,
+        "mean": 119.81076773930653,
+        "max": 128.2591249255357
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens/head_3",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.11300255921639955,
+      "other_family_cosine_mean": 0.01337586790195813,
+      "mean_family_margin": 0.09962669131444143,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.21299861030847458,
+        "geometry_square_triangle_tiling": 0.2326535767047056,
+        "geometry_voronoi_hex_tiling": 0.13652529368090732,
+        "geometry_voronoi_quasicrystal": 0.08432016758291928,
+        "stochastic_blue_random_dots": 0.020824461033953308,
+        "stochastic_sparse_dense_dots": 0.042459381988690446,
+        "stochastic_white_blue_noise": 0.0017256438639016176,
+        "stochastic_white_random_dots": 0.0655063953519793
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 10,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.0419946016812881,
+        "null_q975": 0.07972985767756742,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.09275354374627971,
+        "mean": 0.09450962076467986,
+        "max": 0.09679158930519259
+      },
+      "test_interaction_l2_norm": {
+        "min": 104.66699472947171,
+        "mean": 112.71258915634769,
+        "max": 121.25540204555203
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens/head_4",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.11996224571687165,
+      "other_family_cosine_mean": 0.01688560525531667,
+      "mean_family_margin": 0.10307664046155499,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.22372611154816222,
+        "geometry_square_triangle_tiling": 0.23084526040177408,
+        "geometry_voronoi_hex_tiling": 0.12823746539370492,
+        "geometry_voronoi_quasicrystal": 0.07395447986119943,
+        "stochastic_blue_random_dots": -0.006614955369537313,
+        "stochastic_sparse_dense_dots": 0.07201836575673029,
+        "stochastic_white_blue_noise": 0.024663345099225444,
+        "stochastic_white_random_dots": 0.07778305100118084
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.04496491519126519,
+        "null_q975": 0.07889706600718843,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.1265124638076868,
+        "mean": 0.13634711998240223,
+        "max": 0.14540941479508204
+      },
+      "test_interaction_l2_norm": {
+        "min": 124.665454911082,
+        "mean": 135.34225873330647,
+        "max": 141.9306273659664
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens/head_5",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.11151538992897428,
+      "other_family_cosine_mean": 0.018341349663397528,
+      "mean_family_margin": 0.09317404026557675,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.24614497776654368,
+        "geometry_square_triangle_tiling": 0.23483077335628777,
+        "geometry_voronoi_hex_tiling": 0.10924227307897216,
+        "geometry_voronoi_quasicrystal": 0.059800804529540605,
+        "stochastic_blue_random_dots": -0.004333907275070718,
+        "stochastic_sparse_dense_dots": 0.05282225455517232,
+        "stochastic_white_blue_noise": -0.008984093643520534,
+        "stochastic_white_random_dots": 0.055869239756688796
+      },
+      "positive_family_margin_count": 6,
+      "retrieval_correct_count": 10,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 3,
+        "p_greater": 0.005208333333333333,
+        "null_q025": -0.04826538828414117,
+        "null_q975": 0.07849668622342615,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.13547771743321166,
+        "mean": 0.14441047401761326,
+        "max": 0.15753405120514508
+      },
+      "test_interaction_l2_norm": {
+        "min": 127.58637347972736,
+        "mean": 139.33325073047885,
+        "max": 155.96299126672912
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens/head_6",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.11014515840791732,
+      "other_family_cosine_mean": 0.01461357459743131,
+      "mean_family_margin": 0.09553158381048599,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.20369985829367535,
+        "geometry_square_triangle_tiling": 0.21990029011039247,
+        "geometry_voronoi_hex_tiling": 0.11621216385331273,
+        "geometry_voronoi_quasicrystal": 0.04500020711505766,
+        "stochastic_blue_random_dots": 0.026023147414674222,
+        "stochastic_sparse_dense_dots": 0.07113311599029548,
+        "stochastic_white_blue_noise": 0.01888578871733715,
+        "stochastic_white_random_dots": 0.06339809898914293
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.042814328351666625,
+        "null_q975": 0.06955743704557693,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.16285098289650693,
+        "mean": 0.17522768825333052,
+        "max": 0.18549730118943003
+      },
+      "test_interaction_l2_norm": {
+        "min": 146.55725939650162,
+        "mean": 153.44545347514384,
+        "max": 165.6848859142125
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens/head_7",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.126949623327658,
+      "other_family_cosine_mean": 0.013888785479484753,
+      "mean_family_margin": 0.11306083784817325,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.2380280792270436,
+        "geometry_square_triangle_tiling": 0.24298435099878857,
+        "geometry_voronoi_hex_tiling": 0.12189936804192339,
+        "geometry_voronoi_quasicrystal": 0.0801918583457172,
+        "stochastic_blue_random_dots": 0.026184226359121765,
+        "stochastic_sparse_dense_dots": 0.08028759043083071,
+        "stochastic_white_blue_noise": 0.017206393155635658,
+        "stochastic_white_random_dots": 0.09770483622632509
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 13,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.04916729691600711,
+        "null_q975": 0.08126213712109498,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.04653602193230201,
+        "mean": 0.04934906931450161,
+        "max": 0.052816365620987356
+      },
+      "test_interaction_l2_norm": {
+        "min": 73.57089592384595,
+        "mean": 81.4502651717094,
+        "max": 87.92206869935988
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens/band_0",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.14256483250218938,
+      "other_family_cosine_mean": 0.03045233712337754,
+      "mean_family_margin": 0.11211249537881182,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.32105836280443756,
+        "geometry_square_triangle_tiling": 0.30407047963603195,
+        "geometry_voronoi_hex_tiling": 0.0544109998495643,
+        "geometry_voronoi_quasicrystal": 0.04813236233730489,
+        "stochastic_blue_random_dots": -0.03611222699397658,
+        "stochastic_sparse_dense_dots": 0.12843901528198953,
+        "stochastic_white_blue_noise": 0.018611013811486242,
+        "stochastic_white_random_dots": 0.058289956303656604
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 9,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 2,
+        "p_greater": 0.003472222222222222,
+        "null_q025": -0.06271406285707995,
+        "null_q975": 0.09489314722301133,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        62,
+        63,
+        64
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.15097988739863183,
+        "mean": 0.1956748547266859,
+        "max": 0.2547834013765484
+      },
+      "test_interaction_l2_norm": {
+        "min": 132.5168078014752,
+        "mean": 162.12964318778836,
+        "max": 198.89144679161728
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens/band_1",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.11317142048001459,
+      "other_family_cosine_mean": 0.008013635758070325,
+      "mean_family_margin": 0.10515778472194426,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.24812936777148248,
+        "geometry_square_triangle_tiling": 0.2250888909966039,
+        "geometry_voronoi_hex_tiling": 0.15689742508267415,
+        "geometry_voronoi_quasicrystal": 0.05642285765087253,
+        "stochastic_blue_random_dots": -0.019717607943106865,
+        "stochastic_sparse_dense_dots": 0.06353420763483582,
+        "stochastic_white_blue_noise": 0.043186560240420634,
+        "stochastic_white_random_dots": 0.06772057634177145
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 11,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 2,
+        "p_greater": 0.003472222222222222,
+        "null_q025": -0.045317728700018434,
+        "null_q975": 0.08213459655785887,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.2446917068399172,
+        "mean": 0.26781131970963135,
+        "max": 0.30179042573638515
+      },
+      "test_interaction_l2_norm": {
+        "min": 181.5232172653582,
+        "mean": 189.60118148336738,
+        "max": 199.5248809842748
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens/band_2",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.10177537325375068,
+      "other_family_cosine_mean": 0.017760129048224188,
+      "mean_family_margin": 0.08401524420552649,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.19860406687622087,
+        "geometry_square_triangle_tiling": 0.2072857639140432,
+        "geometry_voronoi_hex_tiling": 0.15278548332845104,
+        "geometry_voronoi_quasicrystal": 0.0447024071053561,
+        "stochastic_blue_random_dots": 0.030348034716559422,
+        "stochastic_sparse_dense_dots": 0.005433902445534187,
+        "stochastic_white_blue_noise": -0.015459757394055633,
+        "stochastic_white_random_dots": 0.04842205265210278
+      },
+      "positive_family_margin_count": 7,
+      "retrieval_correct_count": 9,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 6,
+        "p_greater": 0.010416666666666666,
+        "null_q025": -0.049852238836468395,
+        "null_q975": 0.07174257140907511,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.26128909651005555,
+        "mean": 0.27468538776617085,
+        "max": 0.30763877015154556
+      },
+      "test_interaction_l2_norm": {
+        "min": 176.79109889991855,
+        "mean": 192.0833578483143,
+        "max": 203.5368684499577
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "image_tokens/band_3",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.12189714215692925,
+      "other_family_cosine_mean": 0.017913888024135762,
+      "mean_family_margin": 0.1039832541327935,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.16189105561045017,
+        "geometry_square_triangle_tiling": 0.20440433984669246,
+        "geometry_voronoi_hex_tiling": 0.1084575008059176,
+        "geometry_voronoi_quasicrystal": 0.09192375531915198,
+        "stochastic_blue_random_dots": 0.06887543237232595,
+        "stochastic_sparse_dense_dots": 0.07900295061368652,
+        "stochastic_white_blue_noise": 0.013960790480363354,
+        "stochastic_white_random_dots": 0.10335020801376002
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 15,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.044056149313617586,
+        "null_q975": 0.06710192210321142,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "sequence_positions": [
+        119,
+        120,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144
+      ],
+      "test_parent_energy_fraction": {
+        "min": 0.232967459288329,
+        "mean": 0.2618284377975119,
+        "max": 0.29354861847917946
+      },
+      "test_interaction_l2_norm": {
+        "min": 179.85606269455667,
+        "mean": 187.4162862307549,
+        "max": 194.16419637670154
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "post_image/head_0",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6252561059129949,
+      "other_family_cosine_mean": 0.15060462819749448,
+      "mean_family_margin": 0.47465147771550026,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.48938413039911216,
+        "geometry_square_triangle_tiling": 0.3558050858577077,
+        "geometry_voronoi_hex_tiling": 0.4329685870367595,
+        "geometry_voronoi_quasicrystal": 0.3940876172733596,
+        "stochastic_blue_random_dots": 0.33155603655513366,
+        "stochastic_sparse_dense_dots": 0.48884211832234614,
+        "stochastic_white_blue_noise": 0.5740882687391595,
+        "stochastic_white_random_dots": 0.7304799775404239
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2389226165612143,
+        "null_q975": 0.28352458402839814,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.1370550765639369,
+        "mean": 0.14905578190281907,
+        "max": 0.1692198919655842
+      },
+      "test_interaction_l2_norm": {
+        "min": 17.57474521836278,
+        "mean": 21.963073845179615,
+        "max": 27.459253461385448
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "post_image/head_1",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6331185199950746,
+      "other_family_cosine_mean": 0.15027948383945222,
+      "mean_family_margin": 0.48283903615562235,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.5093106515687345,
+        "geometry_square_triangle_tiling": 0.3632792888198511,
+        "geometry_voronoi_hex_tiling": 0.49656993177309505,
+        "geometry_voronoi_quasicrystal": 0.4254135764867284,
+        "stochastic_blue_random_dots": 0.32337228256123307,
+        "stochastic_sparse_dense_dots": 0.5353737217612594,
+        "stochastic_white_blue_noise": 0.5428440601070137,
+        "stochastic_white_random_dots": 0.6665487761670637
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.24315905905326024,
+        "null_q975": 0.28940221144829203,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.13071221201438987,
+        "mean": 0.15342798334667154,
+        "max": 0.1784469396450616
+      },
+      "test_interaction_l2_norm": {
+        "min": 17.514701839405777,
+        "mean": 22.28263049650132,
+        "max": 29.161013300425928
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "post_image/head_2",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6208397175635803,
+      "other_family_cosine_mean": 0.15670733794872133,
+      "mean_family_margin": 0.464132379614859,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.4810945238776004,
+        "geometry_square_triangle_tiling": 0.3571456872514419,
+        "geometry_voronoi_hex_tiling": 0.46827706228044075,
+        "geometry_voronoi_quasicrystal": 0.4745141137156137,
+        "stochastic_blue_random_dots": 0.28749389712843115,
+        "stochastic_sparse_dense_dots": 0.47553094999708867,
+        "stochastic_white_blue_noise": 0.5194522607349426,
+        "stochastic_white_random_dots": 0.6495505419333125
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.22445376344331122,
+        "null_q975": 0.28248338476972706,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.10208455843134775,
+        "mean": 0.12020249302320934,
+        "max": 0.1300491300891564
+      },
+      "test_interaction_l2_norm": {
+        "min": 15.697789828753127,
+        "mean": 19.70695666038491,
+        "max": 24.91658348745663
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "post_image/head_3",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6073651048483675,
+      "other_family_cosine_mean": 0.1322964123185717,
+      "mean_family_margin": 0.4750686925297958,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.48526905602189085,
+        "geometry_square_triangle_tiling": 0.3530247581777392,
+        "geometry_voronoi_hex_tiling": 0.4866206377718636,
+        "geometry_voronoi_quasicrystal": 0.42701710970352097,
+        "stochastic_blue_random_dots": 0.294791617868591,
+        "stochastic_sparse_dense_dots": 0.49694981142769157,
+        "stochastic_white_blue_noise": 0.5664853419360447,
+        "stochastic_white_random_dots": 0.6903912073310242
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.24370461546075328,
+        "null_q975": 0.28065352232618435,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.09029090121721946,
+        "mean": 0.09960805025172173,
+        "max": 0.10324658244447081
+      },
+      "test_interaction_l2_norm": {
+        "min": 14.319829776496844,
+        "mean": 17.917583841682927,
+        "max": 21.2045754795084
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "post_image/head_4",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6450578656566225,
+      "other_family_cosine_mean": 0.14737055557910445,
+      "mean_family_margin": 0.497687310077518,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.4905951301550842,
+        "geometry_square_triangle_tiling": 0.3665421074070052,
+        "geometry_voronoi_hex_tiling": 0.48955541518708867,
+        "geometry_voronoi_quasicrystal": 0.4310276684405628,
+        "stochastic_blue_random_dots": 0.3638378346911279,
+        "stochastic_sparse_dense_dots": 0.5166574309766196,
+        "stochastic_white_blue_noise": 0.614181547410224,
+        "stochastic_white_random_dots": 0.7091013463524317
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2590033496632935,
+        "null_q975": 0.29737370688094655,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.12410650304484921,
+        "mean": 0.13506775721104342,
+        "max": 0.1451986209242997
+      },
+      "test_interaction_l2_norm": {
+        "min": 16.725143227129074,
+        "mean": 20.879553864598794,
+        "max": 25.131942328686346
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "post_image/head_5",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.620310020794697,
+      "other_family_cosine_mean": 0.14876581797828978,
+      "mean_family_margin": 0.47154420281640713,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.4594627744877901,
+        "geometry_square_triangle_tiling": 0.32774489541020413,
+        "geometry_voronoi_hex_tiling": 0.43872948797816524,
+        "geometry_voronoi_quasicrystal": 0.43079067467334764,
+        "stochastic_blue_random_dots": 0.31927943244243007,
+        "stochastic_sparse_dense_dots": 0.48525718811840624,
+        "stochastic_white_blue_noise": 0.6055011363894384,
+        "stochastic_white_random_dots": 0.7055880330314754
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2428469737071155,
+        "null_q975": 0.28720963925230886,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.10941513802735797,
+        "mean": 0.11885566177819815,
+        "max": 0.13320421715799838
+      },
+      "test_interaction_l2_norm": {
+        "min": 15.859817828901878,
+        "mean": 19.576220834334695,
+        "max": 23.59995707240267
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "post_image/head_6",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.6154446209381019,
+      "other_family_cosine_mean": 0.13882879575315873,
+      "mean_family_margin": 0.47661582518494316,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.46461402313942796,
+        "geometry_square_triangle_tiling": 0.3515077532541855,
+        "geometry_voronoi_hex_tiling": 0.44945232766394305,
+        "geometry_voronoi_quasicrystal": 0.39091468069576935,
+        "stochastic_blue_random_dots": 0.33458411711155167,
+        "stochastic_sparse_dense_dots": 0.47268601085612405,
+        "stochastic_white_blue_noise": 0.6095621338459963,
+        "stochastic_white_random_dots": 0.7396055549125478
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 16,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.24097849170358931,
+        "null_q975": 0.2850383423888664,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.14978691047076523,
+        "mean": 0.16932314962633369,
+        "max": 0.19941660285655094
+      },
+      "test_interaction_l2_norm": {
+        "min": 18.322694950490614,
+        "mean": 23.366970819924923,
+        "max": 27.962721210203746
+      }
+    },
+    {
+      "model_id": "mlx-community/Ministral-3-3B-Instruct-2512-4bit",
+      "layer_index": 25,
+      "tensor": "values",
+      "view": "post_image/head_7",
+      "primary": false,
+      "available": true,
+      "test_seed_count": 16,
+      "own_family_cosine_mean": 0.608933081475012,
+      "other_family_cosine_mean": 0.15176614206436198,
+      "mean_family_margin": 0.45716693941065,
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.4894082346365651,
+        "geometry_square_triangle_tiling": 0.36760299600201585,
+        "geometry_voronoi_hex_tiling": 0.4659789774595976,
+        "geometry_voronoi_quasicrystal": 0.44799364168747496,
+        "stochastic_blue_random_dots": 0.25734940673985685,
+        "stochastic_sparse_dense_dots": 0.4958237007775279,
+        "stochastic_white_blue_noise": 0.48743724986185105,
+        "stochastic_white_random_dots": 0.6457413081203109
+      },
+      "positive_family_margin_count": 8,
+      "retrieval_correct_count": 15,
+      "retrieval_tied_count": 0,
+      "exact_block_test": {
+        "assignment_count": 576,
+        "extreme_count": 1,
+        "p_greater": 0.001736111111111111,
+        "null_q025": -0.2282271843619907,
+        "null_q975": 0.26844377705303235,
+        "permutation_unit": "complete two-test-seed pairing-family block",
+        "multiplicity_adjusted": false
+      },
+      "test_parent_energy_fraction": {
+        "min": 0.04829755133269892,
+        "mean": 0.05445912286000301,
+        "max": 0.06020181140503251
+      },
+      "test_interaction_l2_norm": {
+        "min": 10.996562726419478,
+        "mean": 13.246404933419974,
+        "max": 16.168340868900103
+      }
+    }
+  ]
+}

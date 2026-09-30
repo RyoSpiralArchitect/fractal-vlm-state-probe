@@ -5,6 +5,10 @@ Date: 2026-07-14
 Status: completed for a two-class, eight-pairing-family, two-seed hierarchy in
 Qwen2.5-VL and Ministral 3.
 
+Follow-up: [Note 0042](0042_pairing_seed_validation_and_localization.md) freezes
+these two seeds as references, predicts two additional seeds, applies joint
+Holm correction, and resolves every fixed KV head and image-token order band.
+
 > This note supersedes the broad generator-class interpretation in
 > [Note 0039](0039_seeded_source_class_direction_permutation.md). Note 0039's
 > measurements remain valid, but its four seeds per class were nested inside

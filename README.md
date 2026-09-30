@@ -9,10 +9,12 @@ non-visual generation. A cache-prefix audit changed the valid protocol; a
 balanced seeded fixed-pairing panel changed the measured object again; a
 multi-pair generator hierarchy then changed what "replication" means. The
 newest result is narrower than either a fractal or broad-class story:
-full-vector interaction direction repeats strongly across seeds of the same
-ordered generator pairing, while transfer across different geometry or
-stochastic pairings is weak and target-dependent. Fractal identity, broad
-semantic class, and the generated label are not treated as the primary result.
+frozen full-vector references now predict interaction direction in two new
+seeds of each observed ordered generator pairing. All eight fixed Qwen/Ministral
+image/post-image tests pass joint Holm correction, while earlier transfer
+across different geometry or stochastic pairings remains weak and
+target-dependent. Fractal identity, broad semantic class, and the generated
+label are not treated as the primary result.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
@@ -141,6 +143,17 @@ assignments, only Qwen's image-region test has unadjusted `p < 0.05`, and no
 post-image test does. The current result is ordered-pairing-conditioned, with a
 weaker geometry-skewed transfer tendency.
 
+The held-out follow-up freezes those two seeds as references and adds two new
+seeds per pairing. Its 128 new source cells yield 256 tensors and 64 factorials.
+All eight target-region correspondence tests have Holm `p=0.013889`; all
+32 post-image family margins are positive, while three stochastic
+family-target image margins are negative. Every one of the 68 fixed head and
+token-band views has a positive average margin, reported as exploratory.
+Sixteen calibration tensors reproduce the historical references exactly, and
+the actual source suffix token IDs remain fixed within each model. This tests
+new seeds inside known pairings, not new-pairing transfer or semantic class
+generality.
+
 The prompt audit is likewise balanced over all eight models and four pairs: 32
 model/pair audit units, 128 cell runs, and 2,048 sidecars, with all 512 baseline
 sidecars reproducing bitwise. Across 64 fixed model-family-variant records,
@@ -158,12 +171,15 @@ features, mapping the saved 1,474-token history to 3,073 effective cache
 positions: 51 pre-image, 2,916 image, and 106 post-image. Unknown mismatches and
 multi-run layouts still fail closed.
 
-The selected full-vector surface now contains 360 source-only fresh forwards,
-1,064 target tensor sidecars, and 266 layer-by-pair analyses. Balanced
-spatial/palette/interaction dominance is 227/32/7. Of the 254 analyses with
-identified token partitions, 254/254 pre-image interactions are exactly zero,
-248/254 interaction argmaxes are image tokens, and 249/254 image-token energy
-fractions exceed 0.9.
+The selected full-vector surface now contains 488 source-only fresh forwards,
+1,320 target tensor sidecars, and 330 layer-by-pair analyses. Of the 318
+analyses with identified token partitions, 318/318 pre-image interactions are
+exactly zero, 312/318 interaction argmaxes are image tokens, and 312/318
+image-token energy fractions exceed 0.9. The eight calibration cells and
+16 repeated calibration tensors are counted separately. In the 64 new
+analyses, spatial/palette/interaction dominance is 54/10/0 in image regions
+and 56/8/0 over the whole effective tensor. Predictable interaction direction
+does not imply interaction-axis energy dominance.
 
 Direction is more specific than energy and more specific than broad visual
 class. The earlier near-zero pooled-control cosine mixed unlike controls; the
@@ -187,6 +203,12 @@ source cache to the direct probe, a prompt-invariant categorical visual readout,
 or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
+
+Start with [Note 0042](docs/research_notes/0042_pairing_seed_validation_and_localization.md)
+for completed frozen-reference new-seed prediction, joint Holm correction and
+all fixed head/token-band views. Its
+[registered protocol](docs/pairing_validation_protocol.md) separates this result
+from the next FastVLM hierarchy and processor-frequency controls.
 
 1. [Note 0041](docs/research_notes/0041_fastvlm_ninth_model_replication.md)
    for the ninth-model FastVLM expansion, `llava_qwen2` cache-coordinate map,
@@ -420,6 +442,13 @@ python3 scripts/analyze_cache_direction_hierarchy.py \
 The older class-permutation CLI remains available for protocol forensics, but a
 class containing seeds from only one ordered pairing cannot establish transfer
 to other generator pairings.
+
+To test the existing pairing directions on new seeds without fitting them to
+the test data, use `scripts/run_pairing_seed_validation.py` followed by
+`scripts/summarize_pairing_seed_validation.py`. The
+[registered execution protocol](docs/pairing_validation_protocol.md#execution-and-resume)
+contains the fixed split, all four targets, exact family-block test, joint Holm
+correction, historical-reference gate and checked resume commands.
 
 The original Null-vs-Stream ladder remains available for protocol development.
 Keep the seed, probe, frame count, and model fixed while changing only
@@ -845,6 +874,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0039: Seeded Source-Class Direction Permutation](docs/research_notes/0039_seeded_source_class_direction_permutation.md)
 - [Research Note 0040: Generator-Pairing Direction Hierarchy](docs/research_notes/0040_generator_pairing_direction_hierarchy.md)
 - [Research Note 0041: FastVLM Ninth-Model Replication](docs/research_notes/0041_fastvlm_ninth_model_replication.md)
+- [Research Note 0042: Held-Out Pairing Direction And Localization](docs/research_notes/0042_pairing_seed_validation_and_localization.md)
 
 ## Claim Boundary
 

@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "panel_id": "generator_pairing_seed_holdout_v1",
+  "max_frames": 1,
+  "source_defaults": {
+    "width": 320,
+    "height": 240,
+    "total_frames": 1,
+    "fps": 1,
+    "cell_size": 24,
+    "sites": 32,
+    "dot_density": 0.035,
+    "motion_speed": 1
+  },
+  "pairs": [
+    {
+      "pair_id": "geometry_vq_r3",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_voronoi_quasicrystal",
+      "replicate": 3,
+      "source_a": {
+        "kind": "voronoi",
+        "seed": 1001
+      },
+      "source_b": {
+        "kind": "quasicrystal",
+        "seed": 1002
+      }
+    },
+    {
+      "pair_id": "geometry_vq_r4",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_voronoi_quasicrystal",
+      "replicate": 4,
+      "source_a": {
+        "kind": "voronoi",
+        "seed": 1003
+      },
+      "source_b": {
+        "kind": "quasicrystal",
+        "seed": 1004
+      }
+    },
+    {
+      "pair_id": "geometry_checker_hex_r3",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_checkerboard_hex_tiling",
+      "replicate": 3,
+      "source_a": {
+        "kind": "checkerboard",
+        "seed": 1005,
+        "cell_size": 16
+      },
+      "source_b": {
+        "kind": "hex_tiling",
+        "seed": 1006,
+        "cell_size": 24
+      }
+    },
+    {
+      "pair_id": "geometry_checker_hex_r4",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_checkerboard_hex_tiling",
+      "replicate": 4,
+      "source_a": {
+        "kind": "checkerboard",
+        "seed": 1007,
+        "cell_size": 16
+      },
+      "source_b": {
+        "kind": "hex_tiling",
+        "seed": 1008,
+        "cell_size": 24
+      }
+    },
+    {
+      "pair_id": "geometry_square_triangle_r3",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_square_triangle_tiling",
+      "replicate": 3,
+      "source_a": {
+        "kind": "square_tiling",
+        "seed": 1009,
+        "cell_size": 24
+      },
+      "source_b": {
+        "kind": "triangle_tiling",
+        "seed": 1010,
+        "cell_size": 24
+      }
+    },
+    {
+      "pair_id": "geometry_square_triangle_r4",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_square_triangle_tiling",
+      "replicate": 4,
+      "source_a": {
+        "kind": "square_tiling",
+        "seed": 1011,
+        "cell_size": 24
+      },
+      "source_b": {
+        "kind": "triangle_tiling",
+        "seed": 1012,
+        "cell_size": 24
+      }
+    },
+    {
+      "pair_id": "geometry_voronoi_hex_r3",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_voronoi_hex_tiling",
+      "replicate": 3,
+      "source_a": {
+        "kind": "voronoi",
+        "seed": 1013,
+        "sites": 32
+      },
+      "source_b": {
+        "kind": "hex_tiling",
+        "seed": 1014,
+        "cell_size": 24
+      }
+    },
+    {
+      "pair_id": "geometry_voronoi_hex_r4",
+      "broad_class": "geometry",
+      "pairing_family": "geometry_voronoi_hex_tiling",
+      "replicate": 4,
+      "source_a": {
+        "kind": "voronoi",
+        "seed": 1015,
+        "sites": 32
+      },
+      "source_b": {
+        "kind": "hex_tiling",
+        "seed": 1016,
+        "cell_size": 24
+      }
+    },
+    {
+      "pair_id": "stochastic_white_blue_r3",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_white_blue_noise",
+      "replicate": 3,
+      "source_a": {
+        "kind": "white_noise",
+        "seed": 1017
+      },
+      "source_b": {
+        "kind": "blue_noise",
+        "seed": 1018
+      }
+    },
+    {
+      "pair_id": "stochastic_white_blue_r4",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_white_blue_noise",
+      "replicate": 4,
+      "source_a": {
+        "kind": "white_noise",
+        "seed": 1019
+      },
+      "source_b": {
+        "kind": "blue_noise",
+        "seed": 1020
+      }
+    },
+    {
+      "pair_id": "stochastic_white_dots_r3",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_white_random_dots",
+      "replicate": 3,
+      "source_a": {
+        "kind": "white_noise",
+        "seed": 1021
+      },
+      "source_b": {
+        "kind": "random_dots",
+        "seed": 1022,
+        "dot_density": 0.035
+      }
+    },
+    {
+      "pair_id": "stochastic_white_dots_r4",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_white_random_dots",
+      "replicate": 4,
+      "source_a": {
+        "kind": "white_noise",
+        "seed": 1023
+      },
+      "source_b": {
+        "kind": "random_dots",
+        "seed": 1024,
+        "dot_density": 0.035
+      }
+    },
+    {
+      "pair_id": "stochastic_blue_dots_r3",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_blue_random_dots",
+      "replicate": 3,
+      "source_a": {
+        "kind": "blue_noise",
+        "seed": 1025
+      },
+      "source_b": {
+        "kind": "random_dots",
+        "seed": 1026,
+        "dot_density": 0.035
+      }
+    },
+    {
+      "pair_id": "stochastic_blue_dots_r4",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_blue_random_dots",
+      "replicate": 4,
+      "source_a": {
+        "kind": "blue_noise",
+        "seed": 1027
+      },
+      "source_b": {
+        "kind": "random_dots",
+        "seed": 1028,
+        "dot_density": 0.035
+      }
+    },
+    {
+      "pair_id": "stochastic_sparse_dense_r3",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_sparse_dense_dots",
+      "replicate": 3,
+      "source_a": {
+        "kind": "random_dots",
+        "seed": 1029,
+        "dot_density": 0.015
+      },
+      "source_b": {
+        "kind": "random_dots",
+        "seed": 1030,
+        "dot_density": 0.12
+      }
+    },
+    {
+      "pair_id": "stochastic_sparse_dense_r4",
+      "broad_class": "stochastic",
+      "pairing_family": "stochastic_sparse_dense_dots",
+      "replicate": 4,
+      "source_a": {
+        "kind": "random_dots",
+        "seed": 1031,
+        "dot_density": 0.015
+      },
+      "source_b": {
+        "kind": "random_dots",
+        "seed": 1032,
+        "dot_density": 0.12
+      }
+    }
+  ]
+}
