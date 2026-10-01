@@ -284,7 +284,7 @@ def main() -> None:
                 step["token_id"]
                 for step in reference_run["stream_events"][0]["generation"]["steps"]
             ],
-            "runtime": reference_run["runtime"],
+            "runtime": _read(next(iter(run_paths.values()))["mm"])["runtime"],
         },
     )
     print(f"wrote pairing seed validation to {args.output_root}", flush=True)

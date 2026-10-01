@@ -243,7 +243,8 @@ def main() -> None:
                 s["token_id"]
                 for s in reference_run["stream_events"][0]["generation"]["steps"]
             ],
-            "runtime": reference_run["runtime"],
+            "runtime": _read(next(iter(run_paths.values()))["mm"])["runtime"],
+            "historical_reference_runtime": reference_run["runtime"],
         },
     )
     print(f"wrote frozen pairing references to {root}", flush=True)

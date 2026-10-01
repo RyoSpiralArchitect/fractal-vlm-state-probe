@@ -17,6 +17,9 @@ the tests. There are four geometry and four stochastic ordered pairing
 families. All 64 source first-frame hashes across the panels are distinct.
 References are the normalized sum of two individually normalized interaction
 vectors. Test seeds do not update references or select targets.
+The test images were already measured in Qwen/Ministral; they are newly
+measured for FastVLM, not a new image cohort unseen across the research program.
+Repeated architecture views do not create additional independent source pairs.
 
 FastVLM targets remain L1 keys, L12 keys and L23 values from Note 0041. Their
 image/post-image views comprise six primary tests with a separate joint Holm
@@ -54,6 +57,12 @@ The historical target shape is `[1, 2, 397, 64]`: 42 pre-image, 256 image and
 `llava_qwen2_single_image_run_replacement`. A failed source, shape, layout or
 bytewise calibration gate stops pooling instead of redefining the condition.
 Reference and test captures must share the same model snapshot fingerprint.
+The current Transformers resolver required native class registration; the
+adapter records `fastvlm_native_processor_class_registration` while retaining
+the loaded image settings, tokenizer, detokenizer and chat template. The
+historical bytewise gate still applies, and actual versus historical runtime
+records are saved separately rather than assigning the old compatibility tag
+to new captures.
 
 FastVLM's suffix, KV dimensions and coordinate basis differ from the other
 architectures. Cross-model score profiles are descriptive comparisons, not

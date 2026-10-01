@@ -240,6 +240,13 @@ Record the processor configuration and implementation hashes. This baseline
 checks whether the correspondence is already present in transformed inputs;
 it is not accepted frequency matching or a shared-coordinate model comparison.
 
+The current Transformers class resolver initially failed to register the
+MLX-VLM native image processor and silently selected the incompatible remote
+implementation. Before source forwards, the adapter registers the native
+class and preserves image settings, tokenizer, detokenizer and chat template.
+The actual runtime compatibility tag and native implementation hash are saved.
+This loader repair does not relax the historical exact-byte calibration gate.
+
 ```bash
 python3 scripts/analyze_pairing_input_holdout.py \
   --reference-panel runs/generator_pairing_transfer_v1/generator_pairing_panel_summary.json \
