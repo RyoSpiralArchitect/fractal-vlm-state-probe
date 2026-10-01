@@ -165,3 +165,85 @@ provenance.
 The current snapshot revision and SHA-256 hashes of model weights, processor,
 tokenizer and configuration files are recorded in `model_snapshot.json`.
 Reusing an output root with a changed snapshot fails before new forwards.
+
+## Stage 3 Execution Addendum
+
+Registered: 2026-10-01, before any FastVLM pairing reference/test forward.
+
+FastVLM has the four fractal-pair artifacts from Note 0041, but no measured
+generator-pairing references. Capture the unchanged r1/r2 inputs first and
+freeze those references before evaluating the unchanged r3/r4 inputs. Both
+panel hashes and the reference/test roles are locked before reference capture.
+The fixed targets remain L1 keys, L12 keys and L23 values; no target is chosen
+from this panel. The three targets times image/post-image give six primary
+tests with a separate, stage-specific Holm family of six. Do not retroactively
+change Note 0042's family of eight. There are 24 fixed exploratory head/band
+views, with unadjusted p-values.
+
+Before reference capture, replay all four historical `b_c` cells and require
+bytewise equality at all three targets. These 4 calibration cells / 12 tensors
+are separate from 64 new reference cells / 192 tensors / 48 factorials.
+The seed-validation runner then rechecks one new reference factorial (another
+4 calibration cells / 12 tensors), before 64 new test cells / 192 tensors /
+48 factorials. Only the r3/r4 cells enter the held-out test score.
+
+Require the historical source prompt, runtime, actual response `The image`,
+recorded generation-step token IDs, `[1, 2, 397, 64]` tensor shape and the
+validated 42 pre-image / 256 image / 99 post-image position partition.
+Historical generation-step traces include a repeated final step; compare the
+stored trace as-is, without calling it three distinct generated tokens.
+A changed response, unresolved layout, altered shape or failed calibration
+stops pooling; do not relax the gate based on observed held-out performance.
+The architecture comparison remains descriptive: Qwen/Ministral's `ACK`
+suffix, head dimensions and coordinates differ from FastVLM.
+Require the same model snapshot fingerprint for reference and test execution,
+including on an analysis-only resume.
+
+```bash
+python3 scripts/capture_pairing_references.py \
+  --model mlx-community/FastVLM-0.5B-bf16 \
+  --reference-panel runs/generator_pairing_transfer_v1/generator_pairing_panel_summary.json \
+  --test-panel runs/pairing_seed_validation_v1/panel/generator_pairing_panel_summary.json \
+  --historical-factorial 1:keys=runs/fastvlm_expansion/analyses/b_c/layer_001_keys/cache_tensor_factorial.json \
+  --historical-factorial 12:keys=runs/fastvlm_expansion/analyses/b_c/layer_012_keys/cache_tensor_factorial.json \
+  --historical-factorial 23:values=runs/fastvlm_expansion/analyses/b_c/layer_023_values/cache_tensor_factorial.json \
+  --output-root runs/fastvlm_pairing_seed_validation_v1/references
+
+python3 scripts/run_pairing_seed_validation.py \
+  --model mlx-community/FastVLM-0.5B-bf16 \
+  --reference-panel runs/generator_pairing_transfer_v1/generator_pairing_panel_summary.json \
+  --test-panel runs/pairing_seed_validation_v1/panel/generator_pairing_panel_summary.json \
+  --reference-replication 1:keys=runs/fastvlm_pairing_seed_validation_v1/references/replication/layer_001_keys.json \
+  --reference-replication 12:keys=runs/fastvlm_pairing_seed_validation_v1/references/replication/layer_012_keys.json \
+  --reference-replication 23:values=runs/fastvlm_pairing_seed_validation_v1/references/replication/layer_023_values.json \
+  --reference-model-snapshot runs/fastvlm_pairing_seed_validation_v1/references/model_snapshot.json \
+  --output-root runs/fastvlm_pairing_seed_validation_v1/tests
+
+python3 scripts/summarize_pairing_seed_validation.py \
+  --execution runs/fastvlm_pairing_seed_validation_v1/tests/validation_summary.json \
+  --expected-primary-tests 6 \
+  --output-json runs/fastvlm_pairing_seed_validation_v1/study_summary.json \
+  --output-md runs/fastvlm_pairing_seed_validation_v1/study_summary.md
+```
+
+Stage 4 remains input-only preparation until all four frequency-matched cells
+pass their registered processor gates. Stage 3 completion is not evidence that
+those frequency gates passed.
+
+An auxiliary input-space diagnostic is also fixed before FastVLM cache
+measurement: apply the same r1/r2 -> r3/r4 split to full raw RGB interaction
+vectors and native FastVLM processor-pixel interaction vectors. These two
+diagnostic views are exploratory, with unadjusted p-values; they do not extend
+the six-test confirmatory family or select cache targets. Verify that the
+native processor implementation matches the one used in actual model loading.
+Record the processor configuration and implementation hashes. This baseline
+checks whether the correspondence is already present in transformed inputs;
+it is not accepted frequency matching or a shared-coordinate model comparison.
+
+```bash
+python3 scripts/analyze_pairing_input_holdout.py \
+  --reference-panel runs/generator_pairing_transfer_v1/generator_pairing_panel_summary.json \
+  --test-panel runs/pairing_seed_validation_v1/panel/generator_pairing_panel_summary.json \
+  --fastvlm-processor-snapshot /path/to/the/frozen/FastVLM/snapshot \
+  --output-json runs/fastvlm_pairing_seed_validation_v1/input_holdout.json
+```

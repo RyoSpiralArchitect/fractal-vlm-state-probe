@@ -118,11 +118,15 @@ def test_snapshot_fingerprint_fails_closed_when_weights_are_absent(
         _freeze_model_snapshot("example/model", tmp_path / "output.json")
 
 
-def test_study_summary_corrects_all_eight_tests_and_rejects_incomplete_family(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+@pytest.mark.parametrize("target_count, primary_count", [(4, 8), (3, 6)])
+def test_study_summary_corrects_registered_tests_and_rejects_incomplete_family(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    target_count: int,
+    primary_count: int,
 ) -> None:
     paths = []
-    for layer in range(4):
+    for layer in range(target_count):
         path = tmp_path / f"holdout_{layer}.json"
         path.write_text(
             json.dumps(
@@ -163,28 +167,31 @@ def test_study_summary_corrects_all_eight_tests_and_rejects_incomplete_family(
     }
     execution.write_text(json.dumps(record))
     output = tmp_path / "summary.json"
-    monkeypatch.setattr(
-        sys,
-        "argv",
-        [
-            "summarize",
-            "--execution",
-            str(execution),
-            "--output-json",
-            str(output),
-            "--output-md",
-            str(tmp_path / "summary.md"),
-        ],
-    )
+    argv = [
+        "summarize",
+        "--execution",
+        str(execution),
+        "--output-json",
+        str(output),
+        "--output-md",
+        str(tmp_path / "summary.md"),
+    ]
+    if primary_count != 8:
+        argv.extend(["--expected-primary-tests", str(primary_count)])
+    monkeypatch.setattr(sys, "argv", argv)
     summarize_main()
     result = json.loads(output.read_text())
-    assert result["primary_test_count"] == 8
-    assert result["primary_holm_p_below_0_05"] == 8
+    assert result["primary_test_count"] == primary_count
+    assert result["primary_holm_p_below_0_05"] == primary_count
     assert all(
-        r["holm_p_greater"] == pytest.approx(8 / 576) for r in result["primary_tests"]
+        r["holm_p_greater"] == pytest.approx(primary_count / 576)
+        for r in result["primary_tests"]
     )
     assert result["reference_recheck_cells"] == 4
-    record["holdout_analyses"] = paths[:3]
+    record["holdout_analyses"] = paths[:-1]
     execution.write_text(json.dumps(record))
-    with pytest.raises(ValueError, match="requires 8 primary tests; received 6"):
+    with pytest.raises(
+        ValueError,
+        match=f"requires {primary_count} primary tests; received {primary_count - 2}",
+    ):
         summarize_main()

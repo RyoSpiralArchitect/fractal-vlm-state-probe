@@ -42,37 +42,12 @@ def main() -> None:
         metavar="LAYER:TENSOR=PATH",
     )
     parser.add_argument("--output-root", required=True, type=Path)
+    parser.add_argument("--reference-model-snapshot", type=Path)
     parser.add_argument("--analysis-only", action="store_true")
     args = parser.parse_args()
     reference_panel = _read(args.reference_panel)
     test_panel = _read(args.test_panel)
-    metadata = {}
-    for panel in (reference_panel, test_panel):
-        if panel.get("analysis_kind") != "generator_pairing_factorial_panel":
-            raise ValueError("expected generated panel summaries")
-        for record in panel["records"]:
-            label = record["pair_id"]
-            if label in metadata:
-                raise ValueError(f"duplicate reference/test label: {label}")
-            metadata[label] = {
-                k: record[k] for k in ("pairing_family", "broad_class", "replicate")
-            }
-    hashes = [
-        r[role]["first_frame_sha256"]
-        for p in (reference_panel, test_panel)
-        for r in p["records"]
-        for role in ("source_a", "source_b")
-    ]
-    if len(hashes) != len(set(hashes)):
-        raise ValueError(
-            "reference/test source images contain repeated first-frame hashes"
-        )
-    validate_pairing_holdout_metadata(metadata)
-    families = {r["pairing_family"]: r["broad_class"] for r in metadata.values()}
-    if len(families) != 8 or any(
-        list(families.values()).count(broad) != 4 for broad in set(families.values())
-    ):
-        raise ValueError("registered validation requires four families per broad class")
+    metadata, hashes = _validate_panel_split(reference_panel, test_panel)
     captures = []
     references = {}
     for spec in args.reference_replication:
@@ -110,6 +85,11 @@ def main() -> None:
         "reference_replicates": [1, 2],
         "test_replicates": [3, 4],
         "stream_seed": 20260604,
+        **(
+            {"reference_model_snapshot_sha256": _sha(args.reference_model_snapshot)}
+            if args.reference_model_snapshot is not None
+            else {}
+        ),
         "reference_artifact_hashes": {
             c.identifier: {
                 label: {
@@ -124,6 +104,8 @@ def main() -> None:
     frozen = args.output_root / "frozen_specification.json"
     if frozen.exists() and _read(frozen) != signature:
         raise ValueError("existing frozen specification differs; use a new output root")
+    if args.reference_model_snapshot is not None:
+        _freeze_model_snapshot(args.model, args.reference_model_snapshot)
     write_json(frozen, signature)
     reference_first = next(iter(references[captures[0].identifier].values()))
     reference_run = _read(Path(reference_first["cells"]["mm"]["source_path"]))
@@ -346,6 +328,39 @@ def _validate_run(run: dict, path: Path, manifest_path: Path, reference: dict) -
         raise ValueError(f"generated source suffix token IDs differ for {path}")
     for artifact in event["cache_tensor_artifacts"]:
         load_cache_tensor_artifact(path, artifact)
+
+
+def _validate_panel_split(reference_panel: dict, test_panel: dict) -> tuple[dict, list]:
+    metadata = {}
+    for panel, allowed in ((reference_panel, (1, 2)), (test_panel, (3, 4))):
+        if panel.get("analysis_kind") != "generator_pairing_factorial_panel":
+            raise ValueError("expected generated panel summaries")
+        for record in panel["records"]:
+            label = record["pair_id"]
+            if record["replicate"] not in allowed:
+                raise ValueError(f"reference/test replicate role differs: {label}")
+            if label in metadata:
+                raise ValueError(f"duplicate reference/test label: {label}")
+            metadata[label] = {
+                k: record[k] for k in ("pairing_family", "broad_class", "replicate")
+            }
+    hashes = [
+        r[role]["first_frame_sha256"]
+        for p in (reference_panel, test_panel)
+        for r in p["records"]
+        for role in ("source_a", "source_b")
+    ]
+    if len(hashes) != len(set(hashes)):
+        raise ValueError(
+            "reference/test source images contain repeated first-frame hashes"
+        )
+    validate_pairing_holdout_metadata(metadata)
+    families = {r["pairing_family"]: r["broad_class"] for r in metadata.values()}
+    if len(families) != 8 or any(
+        list(families.values()).count(broad) != 4 for broad in set(families.values())
+    ):
+        raise ValueError("registered validation requires four families per broad class")
+    return metadata, hashes
 
 
 def _response_counts(paths: dict) -> dict[str, int]:
