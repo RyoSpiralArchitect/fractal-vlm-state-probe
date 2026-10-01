@@ -16,13 +16,15 @@ the same four factorial cells are not independent samples.
 | Seeded fixed-pairing direction panel | Qwen and Ministral, fixed source-only tensor targets | 3 fixed ordered generator pairings x 4 seeds; 96 source cells, 192 tensors, 48 analyses | Exact source-level permutations find stronger alignment within each seeded group than between groups at all four targets and two regions (`p=6/34,650`), but every group contains only one ordered generator pairing | valid pairing-conditioned seed observation; broad-class interpretation superseded by Note 0040 | [Note 0039](research_notes/0039_seeded_source_class_direction_permutation.md) |
 | Generator-pairing direction hierarchy | Qwen and Ministral, fixed source-only tensor targets plus fresh direct probes | 2 broad classes x 4 ordered pairing families x 2 seeds; 128 source cells, 256 tensors, 64 vector analyses; 128 direct cells, 512 sidecars | All 8 exact matching tests support same-pairing seed repetition; under 70 pairing-family block assignments only Qwen image-region transfer is unadjusted `p < 0.05`, and no post-image test is | two-model hierarchical exact test separating seed repetition from pairing transfer | [Note 0040](research_notes/0040_generator_pairing_direction_hierarchy.md) |
 | Held-out pairing direction | Qwen and Ministral, unchanged four tensor targets | Eight pairings x two frozen reference seeds and two new test seeds; 128 new source cells, 256 tensors, 64 vector analyses; eight separate calibration cells | All eight primary correspondence tests have joint Holm `p=0.013889`; all 68 exploratory views have positive average margins, but three stochastic image-family margins are negative | new-seed prediction within known pairings, not unseen-pairing transfer | [Note 0042](research_notes/0042_pairing_seed_validation_and_localization.md) |
+| FastVLM held-out pairing direction | Same pre-existing split, L1 keys / L12 keys / L23 values | 64 new reference and 64 test cells, 384 tensors, 96 factorials; eight qualified and four failed calibration cells separately counted | All six primary tests have stage-specific Holm `p=0.010417`, 8/8 positive family margins and 16/16 own-family retrieval per view; 24 exploratory average margins are positive, with four band-family negatives retained | third-architecture known-pairing replication, not a new image cohort | [Note 0043](research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md) |
+| Input-coordinate pairing baseline | Full raw RGB and actual FastVLM model-processor pixels | Same frozen two-reference/two-test split; two exploratory full-vector views | Margins are 0.13603 / 0.13617, raw p 2/576 / 3/576 and retrieval 5/16 / 4/16; native alternative fails exact cache calibration despite nearly the same input score | correspondence already present in inputs; not frequency matching or causal processing gain | [Note 0043](research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
 | Gemma 3 direct factorial trajectory | Gemma-3-4B-it 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2; 24 cells total | All 6 direct after-factorials are non-identical; all four one-frame maxima are early `values`, but exact layer and sign vary; frequency readout can change sharply | component-level regularity plus pair-dependent exact locus | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
 | InternVL3 direct factorial replication | InternVL3-2B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All four direct after-factorials are non-identical; all ACK maxima are late layer 25-27 `values` with negative sign | component/sign/depth-band replication with pair-dependent exact layer | [Note 0029](research_notes/0029_cross_model_prompt_and_internvl_expansion.md) |
 | LFM2-VL direct factorial replication | LFM2-VL-1.6B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All after-cell distributions are distinct; visible family labels vary in 3/4 pairs while frequency labels stay fixed; balanced readout axes remain pair-dependent | fifth-architecture replication with deterministic artifact integrity | [Note 0031](research_notes/0031_balanced_contrasts_five_model_expansion.md) |
-| Selected full-vector source-cache surface | Nine VLMs, with fixed-target control, pairing-hierarchy and held-out-seed extensions, fresh source-context forwards | 488 cell runs, 1,320 tensors, 330 analyses; calibration repeats separately counted | In 318 partition-resolved analyses every pre-image effect is zero and 312 argmaxes are image tokens; new image/whole-effective dominance differs in 2/64 analyses | targeted vector localization plus frozen-reference pairing prediction | [Note 0042](research_notes/0042_pairing_seed_validation_and_localization.md) |
+| Selected full-vector source-cache surface | Nine VLMs, with fixed-target control, pairing-hierarchy and held-out-seed extensions, fresh source-context forwards | 616 cell runs, 1,704 tensors, 426 analyses; calibration repeats/failed attempts separately counted | In 414 partition-resolved analyses every pre-image effect is zero and 408 argmaxes are image tokens; the new 96 FastVLM analyses are 80/16/0 under both image/whole-effective dominance conventions | targeted vector localization plus frozen-reference pairing prediction | [Note 0043](research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md) |
 | Cross-model direct aggregate | Nine-model four-pair core, nested earlier lengths, and two-model control/pairing extensions, complete first-step vocabulary | 104 factorial points, 416 cells, 1,664 sidecars | Every direct after-factorial is non-identical; balanced readout dominance is model-, pair-, generator-, and probe-dependent | balanced nine-architecture core plus bounded two-model extensions | [Note 0041](research_notes/0041_fastvlm_ninth_model_replication.md) |
 | Four-pair prompt robustness core | Eight VLMs on `b_c`, `c_d`, `d_e`, and `e_f`, fresh direct probes | 32 model/source-pair audit units, 128 cell runs, 2,048 sidecars | All 512 baseline sidecars repeat bitwise; generated patterns agree over all four pairs in 39/64 records, balanced-axis dominance in 4/64, and both in 2/64 | eight-model four-pair categorical versus distributional replication matrix | [Note 0038](research_notes/0038_ministral3_eighth_model_replication.md) |
 | Phi-3.5 Vision full expansion | Phi-3.5 Vision 4bit on four source pairs, fresh direct probes and source-only ACK | 16 standard direct cells and 64 sidecars; 16 prompt cells and 256 sidecars; 16 ACK cells, 48 tensors, 12 full-vector analyses | Scalar ACK maxima are early positive `keys` in 4/4; all selected full tensors are spatial-dominant; cross-pair direction alignment is weak and image-token partition is unresolved | sixth-architecture scalar-locus versus vector-direction replication | [Note 0035](research_notes/0035_six_model_four_pair_completion_and_phi_full_vector.md) |
@@ -61,11 +63,13 @@ the same four factorial cells are not independent samples.
    layer/component/sign, LFM2 exposes six hybrid-attention cache entries, and
    Granite changes layer/component/sign across pairs. Ministral uses `keys` in
    4/4 while changing exact layer and sign.
-5. Across 330 selected full-vector cache analyses in nine VLMs, the 318
-   partition-resolved analyses have zero pre-image effects and 312 interaction
+5. Across 426 selected full-vector cache analyses in nine VLMs, the 414
+   partition-resolved analyses have zero pre-image effects and 408 interaction
    maxima in image tokens. In the new 64 analyses, image-region balanced
    dominance is spatial/palette/interaction in 54/10/0, versus 56/8/0 over the
    whole effective tensor; region conventions are not interchangeable.
+   FastVLM adds 96 qualified reference/test analyses, with 80/16/0 dominance
+   under both conventions and no interaction-dominant analysis.
 6. A generated letter or top-k set can remain fixed while the complete
    distribution changes; visible-label equality is not distribution equality.
 7. Across eight models and four prompt-audited source pairs, generated semantic
@@ -192,6 +196,12 @@ the same four factorial cells are not independent samples.
   broad class over 576 assignments. The eight primary target-region tests use
   joint Holm correction; 68 head/band views remain exploratory and unadjusted.
   Non-image gaps inside an image span are not silently included in post-image.
+- Note 0043 uses the same image split in FastVLM, with a separate six-test
+  Holm family and 24 unadjusted exploratory views. Repeated architectures are
+  not a new independent source cohort. Input baselines are exploratory and
+  show correspondence already present before VLM computation; their different
+  coordinate systems do not identify a causal processing gain. The failed
+  native calibration is excluded rather than absorbed by a wider tolerance.
 - Replay lengths are nested contexts, not independent stimulus replicates.
 - Source-context caches and direct probes come from separate fresh forwards
   with different prompts; their relationship is descriptive, not causal.
@@ -220,12 +230,14 @@ the same four factorial cells are not independent samples.
 
 ## Highest-Value Next Data
 
-1. Extend the frozen reference/test hierarchy to the three fixed FastVLM
-   targets; Qwen/Ministral new-seed prediction is now complete.
+1. Frequency-match all four actual processor-space cells before cache scoring,
+   using the registered acceptance gates; retain unmatched blocks explicitly.
+   The FastVLM/Qwen/Ministral known-pairing extensions are now complete.
 2. Add more stochastic, fractal, and provenance-controlled natural-image
    pairing families; evaluate leave-one-pairing-family-out transfer.
-3. Frequency-match all four processor-space cells before cache scoring, using
-   the registered acceptance gates; retain unmatched blocks explicitly.
+3. Compare input-conditioned direction profiles in accepted matched blocks;
+   matching a scalar input score or two spectral summaries is not full
+   computational equivalence or evidence of semantic specificity.
 4. Resolve model-specific two-dimensional patch coordinates and add
    FastVLM verbalizer/order controls. Existing head/token-order views are not
    causal attention-head or verified patch contributions.
@@ -264,6 +276,18 @@ Held-out extension:
 > image-family margins remained negative. Head and token-order-band views
 > were exploratory; neither unseen-pairing transfer nor semantic or causal
 > generality was established.
+
+FastVLM/input extension:
+
+> The same pre-existing image split gave own-pairing retrieval in all 16
+> held-out observations at each of three fixed FastVLM targets and two token
+> regions; six primary tests passed their separately registered Holm family
+> (`p=0.010417`). Exploratory raw RGB and actual-processor pixel baselines
+> already showed pairing correspondence, so its first emergence inside the
+> VLM was not established. Processor substitution failed exact calibration
+> and was excluded; the unchanged qualified model path reproduced all 24
+> historical/reference-recheck tensors. Architecture repetitions did not
+> create a new independent image cohort.
 
 Avoid:
 

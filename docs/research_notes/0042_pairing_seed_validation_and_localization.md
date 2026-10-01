@@ -226,3 +226,8 @@ four factorial cells, not only the two original images.
 Execution and checked-resume instructions are in the protocol. A fresh
 checkout must reconstruct full reference tensors; tracked historical summary
 JSONs alone are not sufficient to run this test.
+
+Follow-up: [Note 0043](0043_fastvlm_pairing_holdout_and_input_baseline.md)
+completes the FastVLM extension and actual-input baselines. Its six-test Holm
+family is separate from the eight tests above; the same test images do not
+become a new independent source cohort when measured in another architecture.

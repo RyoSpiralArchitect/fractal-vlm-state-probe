@@ -10,11 +10,14 @@ balanced seeded fixed-pairing panel changed the measured object again; a
 multi-pair generator hierarchy then changed what "replication" means. The
 newest result is narrower than either a fractal or broad-class story:
 frozen full-vector references now predict interaction direction in two new
-seeds of each observed ordered generator pairing. All eight fixed Qwen/Ministral
-image/post-image tests pass joint Holm correction, while earlier transfer
-across different geometry or stochastic pairings remains weak and
-target-dependent. Fractal identity, broad semantic class, and the generated
-label are not treated as the primary result.
+seeds of each observed ordered generator pairing. The eight Qwen/Ministral
+tests and six FastVLM tests pass their separately registered Holm families;
+FastVLM retrieves the own pairing in 16/16 held-out seeds at every fixed view.
+But correspondence is already present in full raw/processor input vectors,
+and earlier transfer across different pairings remains weak and target-dependent.
+The question is how input-conditioned correspondence is expressed across
+representations, not whether the VLM first creates it. Fractal identity,
+broad semantic class and the generated label are not the primary result.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
@@ -171,15 +174,16 @@ features, mapping the saved 1,474-token history to 3,073 effective cache
 positions: 51 pre-image, 2,916 image, and 106 post-image. Unknown mismatches and
 multi-run layouts still fail closed.
 
-The selected full-vector surface now contains 488 source-only fresh forwards,
-1,320 target tensor sidecars, and 330 layer-by-pair analyses. Of the 318
-analyses with identified token partitions, 318/318 pre-image interactions are
-exactly zero, 312/318 interaction argmaxes are image tokens, and 312/318
-image-token energy fractions exceed 0.9. The eight calibration cells and
-16 repeated calibration tensors are counted separately. In the 64 new
-analyses, spatial/palette/interaction dominance is 54/10/0 in image regions
-and 56/8/0 over the whole effective tensor. Predictable interaction direction
-does not imply interaction-axis energy dominance.
+The selected full-vector surface now contains 616 source-only fresh forwards,
+1,704 target tensor sidecars, and 426 layer-by-pair analyses. Of the 414
+analyses with identified token partitions, 414/414 pre-image interactions are
+exactly zero, 408/414 interaction argmaxes are image tokens, and 408/414
+image-token energy fractions exceed 0.9. Calibration repeats and failed
+calibration attempts are counted separately. In Note 0042's 64 analyses,
+spatial/palette/interaction dominance is 54/10/0 in image regions and 56/8/0
+over the whole tensor. The 96 new FastVLM reference/test analyses are 80/16/0
+under either convention; references are not additional held-out outcomes.
+Predictable interaction direction does not imply interaction-axis dominance.
 
 Direction is more specific than energy and more specific than broad visual
 class. The earlier near-zero pooled-control cosine mixed unlike controls; the
@@ -188,6 +192,16 @@ class transfer. With both levels present, same-pairing seed directions repeat
 strongly, while different-pairing transfer is much weaker. A shared suffix is
 still insufficient by itself; the strongest measured organization follows the
 ordered source-generator pairing.
+
+FastVLM's six primary image/post-image tests have stage-specific Holm
+`p=0.010417`; all 24 exploratory head/band average margins are positive, with
+four band-family exceptions retained. Raw/actual-processor input margins are
+also positive (`0.13603` / `0.13617`, exploratory), while their own-family
+retrieval is only 5/16 and 4/16. The native alternative failed exact historical
+calibration despite nearly the same input score. Qualified results use the
+unchanged full model processor, with all 24 historical/reference-recheck
+tensors reproduced bytewise. The test images already appeared in the other
+models; this is an architecture extension, not a new image cohort.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
@@ -204,11 +218,12 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0042](docs/research_notes/0042_pairing_seed_validation_and_localization.md)
-for completed frozen-reference new-seed prediction, joint Holm correction and
-all fixed head/token-band views. Its
-[registered protocol](docs/pairing_validation_protocol.md) separates this result
-from the next FastVLM hierarchy and processor-frequency controls.
+Start with [Note 0043](docs/research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md)
+for FastVLM's held-out pairing result, actual-input baseline and processor
+calibration audit. [Note 0042](docs/research_notes/0042_pairing_seed_validation_and_localization.md)
+contains the Qwen/Ministral split and localization. The
+[registered protocol](docs/pairing_validation_protocol.md) keeps both test
+families separate and defines the next all-four-cell frequency acceptance gates.
 
 1. [Note 0041](docs/research_notes/0041_fastvlm_ninth_model_replication.md)
    for the ninth-model FastVLM expansion, `llava_qwen2` cache-coordinate map,
@@ -875,6 +890,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0040: Generator-Pairing Direction Hierarchy](docs/research_notes/0040_generator_pairing_direction_hierarchy.md)
 - [Research Note 0041: FastVLM Ninth-Model Replication](docs/research_notes/0041_fastvlm_ninth_model_replication.md)
 - [Research Note 0042: Held-Out Pairing Direction And Localization](docs/research_notes/0042_pairing_seed_validation_and_localization.md)
+- [Research Note 0043: FastVLM Pairing Holdout And Input Baseline](docs/research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md)
 
 ## Claim Boundary
 

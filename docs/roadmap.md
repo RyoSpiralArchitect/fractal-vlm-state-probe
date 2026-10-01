@@ -142,9 +142,9 @@ generator-pairing extensions add independent fractal pairs, matched frequency
 and natural controls, and 16 two-seed geometry/stochastic pairing units. The
 wider valid direct surface contains 104 factorial points, 416 cell runs, and
 1,664 complete-vocabulary sidecars, with non-identical after-cell distributions
-in every factorial. The selected full-vector surface contains 330 analyses;
-318 have resolved token partitions, including 318/318 zero pre-image effects
-and 312/318 image-position interaction maxima. FastVLM's 12 fixed targets are
+in every factorial. The selected full-vector surface contains 426 analyses;
+414 have resolved token partitions, including 414/414 zero pre-image effects
+and 408/414 image-position interaction maxima. FastVLM's original 12 fixed targets are
 all spatial-dominant and image-localized under a validated `llava_qwen2`
 single-image map. In the Qwen/Ministral hierarchy, all eight exact matching
 tests support direction repetition across seeds of the same ordered pairing.
@@ -156,9 +156,16 @@ prompt audit remains balanced over all four pairs: generated patterns agree in
 frozen-reference follow-up now predicts two new seeds per pairing at all four
 targets, with joint Holm `p=0.013889` in eight primary tests and all 68 fixed
 head/token-band average margins positive. Three stochastic image-family
-margins remain negative. The next independent-evidence steps are the FastVLM
-hierarchy, held-out pairing-family transfer and accepted processor-frequency
-controls. Token-order bands are not yet verified two-dimensional patches.
+margins remain negative. FastVLM now adds 64 reference and 64 test cells at
+three fixed targets: all six primary tests pass their separate Holm family
+(`p=0.010417`), with 16/16 own-family retrieval per view. All 24 exploratory
+average margins are positive, while four band-family negatives remain visible.
+Raw/actual-processor baselines already have pairing correspondence, and the
+native alternative is excluded after failed exact calibration. The original
+model path reproduces all 24 qualified historical/reference-recheck tensors.
+This repeats known test images in another model, not a new source cohort.
+The next steps are all-four-cell processor-frequency acceptance gates and
+held-out pairing-family transfer. Token bands are not verified 2D patches.
 
 ## Phase 5: Research Report
 
@@ -168,13 +175,14 @@ controls. Token-order bands are not yet verified two-dimensional patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0042 encode the audited claim
+Status: the evidence matrix and Notes 0027-0043 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
 Exact seed-matching, frozen-reference new-seed prediction and fixed head/band
-decomposition are complete at the four Qwen/Ministral targets. The current
-priority is FastVLM hierarchy expansion, held-out pairing-family and
-frequency-matched transfer, neutral
+decomposition are complete at the four Qwen/Ministral targets and three fixed
+FastVLM targets. Input baselines and the processor-identity audit are also
+recorded. The current priority is accepted all-four-cell frequency matching,
+held-out pairing-family transfer, neutral
 wording/order/verbalizer controls, Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.
