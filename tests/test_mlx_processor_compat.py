@@ -1,9 +1,6 @@
 from __future__ import annotations
 
 from types import SimpleNamespace
-import sys
-
-import pytest
 
 from fractal_vlm_state_probe.mlx_processor_compat import (
     InternVLProcessorCompat,
@@ -153,61 +150,3 @@ def test_mlx_load_compat_reraises_unrelated_value_errors() -> None:
         assert str(exc) == "unrelated load failure"
     else:
         raise AssertionError("expected the unrelated load error to propagate")
-
-
-def test_fastvlm_registration_preserves_image_settings_and_tokenizer(
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    registrations = []
-
-    class ImageProcessor:
-        @classmethod
-        def from_dict(cls, config):
-            result = cls()
-            result.config = config
-            return result
-
-    class Processor:
-        def __init__(self, **kwargs):
-            self.__dict__.update(kwargs)
-
-    monkeypatch.setitem(
-        sys.modules,
-        "mlx_vlm.models.fastvlm",
-        SimpleNamespace(
-            FastVLMImageProcessor=ImageProcessor, FastVLMProcessor=Processor
-        ),
-    )
-    monkeypatch.setitem(
-        sys.modules,
-        "transformers",
-        SimpleNamespace(
-            PretrainedConfig=type("Config", (), {}),
-            AutoImageProcessor=SimpleNamespace(
-                register=lambda *args, **kwargs: registrations.append((args, kwargs))
-            ),
-        ),
-    )
-    settings = {
-        "size": {"shortest_edge": 1024},
-        "image_mean": [0.0, 0.0, 0.0],
-        "image_std": [1.0, 1.0, 1.0],
-    }
-    original = SimpleNamespace(
-        image_processor=SimpleNamespace(to_dict=lambda: settings),
-        tokenizer=object(),
-        chat_template="fixed template",
-        detokenizer=object(),
-    )
-    resolved, label = ensure_mlx_processor_compat(
-        original, {"model_type": "llava_qwen2"}
-    )
-    assert resolved.image_processor.config is settings
-    assert resolved.tokenizer is original.tokenizer
-    assert resolved.detokenizer is original.detokenizer
-    assert resolved.chat_template == original.chat_template
-    assert label == "fastvlm_native_processor_class_registration"
-    assert len(registrations) == 1
-    same, label = ensure_mlx_processor_compat(resolved, {"model_type": "llava_qwen2"})
-    assert same is resolved and label is None
-    assert len(registrations) == 1

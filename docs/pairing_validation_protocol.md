@@ -207,16 +207,16 @@ python3 scripts/capture_pairing_references.py \
   --historical-factorial 1:keys=runs/fastvlm_expansion/analyses/b_c/layer_001_keys/cache_tensor_factorial.json \
   --historical-factorial 12:keys=runs/fastvlm_expansion/analyses/b_c/layer_012_keys/cache_tensor_factorial.json \
   --historical-factorial 23:values=runs/fastvlm_expansion/analyses/b_c/layer_023_values/cache_tensor_factorial.json \
-  --output-root runs/fastvlm_pairing_seed_validation_v1/references
+  --output-root runs/fastvlm_pairing_seed_validation_v1/references_model_path
 
 python3 scripts/run_pairing_seed_validation.py \
   --model mlx-community/FastVLM-0.5B-bf16 \
   --reference-panel runs/generator_pairing_transfer_v1/generator_pairing_panel_summary.json \
   --test-panel runs/pairing_seed_validation_v1/panel/generator_pairing_panel_summary.json \
-  --reference-replication 1:keys=runs/fastvlm_pairing_seed_validation_v1/references/replication/layer_001_keys.json \
-  --reference-replication 12:keys=runs/fastvlm_pairing_seed_validation_v1/references/replication/layer_012_keys.json \
-  --reference-replication 23:values=runs/fastvlm_pairing_seed_validation_v1/references/replication/layer_023_values.json \
-  --reference-model-snapshot runs/fastvlm_pairing_seed_validation_v1/references/model_snapshot.json \
+  --reference-replication 1:keys=runs/fastvlm_pairing_seed_validation_v1/references_model_path/replication/layer_001_keys.json \
+  --reference-replication 12:keys=runs/fastvlm_pairing_seed_validation_v1/references_model_path/replication/layer_012_keys.json \
+  --reference-replication 23:values=runs/fastvlm_pairing_seed_validation_v1/references_model_path/replication/layer_023_values.json \
+  --reference-model-snapshot runs/fastvlm_pairing_seed_validation_v1/references_model_path/model_snapshot.json \
   --output-root runs/fastvlm_pairing_seed_validation_v1/tests
 
 python3 scripts/summarize_pairing_seed_validation.py \
@@ -230,27 +230,37 @@ Stage 4 remains input-only preparation until all four frequency-matched cells
 pass their registered processor gates. Stage 3 completion is not evidence that
 those frequency gates passed.
 
-An auxiliary input-space diagnostic is also fixed before FastVLM cache
+An auxiliary input-space diagnostic was fixed before FastVLM cache
 measurement: apply the same r1/r2 -> r3/r4 split to full raw RGB interaction
-vectors and native FastVLM processor-pixel interaction vectors. These two
-diagnostic views are exploratory, with unadjusted p-values; they do not extend
-the six-test confirmatory family or select cache targets. Verify that the
-native processor implementation matches the one used in actual model loading.
-Record the processor configuration and implementation hashes. This baseline
-checks whether the correspondence is already present in transformed inputs;
-it is not accepted frequency matching or a shared-coordinate model comparison.
+vectors and processor-pixel interaction vectors. These diagnostics are
+exploratory, with unadjusted p-values; they do not extend the six-test primary
+family or select cache targets. Record the processor configuration and
+implementation hashes and verify the actual model-loading path. This is not
+accepted frequency matching or a shared-coordinate model comparison.
 
-The current Transformers class resolver initially failed to register the
-MLX-VLM native image processor and silently selected the incompatible remote
-implementation. Before source forwards, the adapter registers the native
-class and preserves image settings, tokenizer, detokenizer and chat template.
-The actual runtime compatibility tag and native implementation hash are saved.
-This loader repair does not relax the historical exact-byte calibration gate.
+Audit correction, before any held-out forward: the initial native MLX
+processor substitution failed all 12 historical tensor comparisons despite
+matching shape, suffix and pre-image tensors. Keep that failed four-cell
+attempt under `references/`; exclude it from reference/test pooling. Direct
+image-processor calls with explicit tensor backends exposed an API error, but
+the original full model processor uses a different call path and works without
+substitution. Removing the substitution reproduced all 12 historical tensors
+bytewise under `references_model_path/`. The exact gate was not relaxed, and
+no held-out score selected this implementation. The six primary tests, targets,
+input seeds and direction formulas are unchanged.
+
+The native pixel baseline remains an ineligible alternative, not the actual
+model-input baseline. Recompute the pixel diagnostic through the unchanged
+full model processor with a pixel-only `<image>` text placeholder. Record and
+match its image-processor implementation hash to actual source captures. This
+correction precedes held-out cache forwards; all input diagnostics remain
+exploratory. The extra failed calibration contributes four cells / 12 tensors
+to the audit denominator, not the selected full-vector surface.
 
 ```bash
 python3 scripts/analyze_pairing_input_holdout.py \
   --reference-panel runs/generator_pairing_transfer_v1/generator_pairing_panel_summary.json \
   --test-panel runs/pairing_seed_validation_v1/panel/generator_pairing_panel_summary.json \
-  --fastvlm-processor-snapshot /path/to/the/frozen/FastVLM/snapshot \
-  --output-json runs/fastvlm_pairing_seed_validation_v1/input_holdout.json
+  --fastvlm-model-processor-snapshot /path/to/the/frozen/FastVLM/snapshot \
+  --output-json runs/fastvlm_pairing_seed_validation_v1/input_model_path_holdout.json
 ```

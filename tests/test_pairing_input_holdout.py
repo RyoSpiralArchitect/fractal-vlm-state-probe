@@ -3,7 +3,10 @@ from __future__ import annotations
 import numpy as np
 import pytest
 
-from fractal_vlm_state_probe.cli.analyze_pairing_input_holdout import input_interaction
+from fractal_vlm_state_probe.cli.analyze_pairing_input_holdout import (
+    _ModelProcessorPixelView,
+    input_interaction,
+)
 
 
 def test_input_interaction_preserves_signed_coordinate_contrast() -> None:
@@ -20,3 +23,16 @@ def test_input_interaction_preserves_signed_coordinate_contrast() -> None:
     cells["jm"] = np.array([1.0])
     with pytest.raises(ValueError, match="shapes differ"):
         input_interaction(cells)
+
+
+def test_pixel_view_uses_the_full_model_processor_image_path() -> None:
+    calls = []
+
+    def processor(**kwargs):
+        calls.append(kwargs)
+        return {"pixel_values": np.ones((1, 3, 4, 4))}
+
+    image = object()
+    result = _ModelProcessorPixelView(processor)(images=image, return_tensors="np")
+    assert result["pixel_values"].shape == (1, 3, 4, 4)
+    assert calls == [{"images": image, "text": ["<image>"], "return_tensors": "np"}]

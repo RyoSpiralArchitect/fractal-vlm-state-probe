@@ -23,28 +23,41 @@ def main() -> None:
     )
     parser.add_argument("--reference-panel", required=True, type=Path)
     parser.add_argument("--test-panel", required=True, type=Path)
-    parser.add_argument("--fastvlm-processor-snapshot", type=Path)
+    processors = parser.add_mutually_exclusive_group()
+    processors.add_argument("--fastvlm-processor-snapshot", type=Path)
+    processors.add_argument("--fastvlm-model-processor-snapshot", type=Path)
     parser.add_argument("--output-json", required=True, type=Path)
     args = parser.parse_args()
     reference, test = _read(args.reference_panel), _read(args.test_panel)
     metadata, hashes = _validate_panel_split(reference, test)
     processor = None
     provenance = None
-    if args.fastvlm_processor_snapshot is not None:
+    snapshot = args.fastvlm_processor_snapshot or args.fastvlm_model_processor_snapshot
+    if snapshot is not None:
         from mlx_vlm.models.fastvlm import FastVLMImageProcessor
 
-        snapshot = args.fastvlm_processor_snapshot
         if _read(snapshot / "config.json")["model_type"] != "llava_qwen2":
             raise ValueError(
                 "processor baseline requires the registered FastVLM model type"
             )
-        processor = FastVLMImageProcessor.from_pretrained(snapshot)
-        source = Path(inspect.getfile(FastVLMImageProcessor))
+        if args.fastvlm_model_processor_snapshot is not None:
+            from mlx_vlm.utils import load_processor
+
+            model_processor = load_processor(snapshot, add_detokenizer=False)
+            processor_type = type(model_processor.image_processor)
+            processor = _ModelProcessorPixelView(model_processor)
+        else:
+            processor = FastVLMImageProcessor.from_pretrained(snapshot)
+            processor_type = type(processor)
+        source = Path(inspect.getfile(processor_type))
         provenance = {
             "snapshot_revision": snapshot.name,
             "preprocessor_config_sha256": _sha(snapshot / "preprocessor_config.json"),
-            "implementation": f"{FastVLMImageProcessor.__module__}.{FastVLMImageProcessor.__name__}",
+            "implementation": f"{processor_type.__module__}.{processor_type.__name__}",
             "implementation_sha256": _sha(source),
+            "processor_mode": "model_loading_path"
+            if args.fastvlm_model_processor_snapshot is not None
+            else "native_alternative",
         }
     results = []
     for view in ("raw_rgb", "processor_pixel_values"):
@@ -118,6 +131,16 @@ def input_interaction(cells: dict[str, np.ndarray]) -> np.ndarray:
     if len({a.shape for a in cells.values()}) != 1:
         raise ValueError("input factorial shapes differ")
     return cells["jj"] - cells["jm"] - cells["mj"] + cells["mm"]
+
+
+class _ModelProcessorPixelView:
+    def __init__(self, processor) -> None:
+        self.processor = processor
+
+    def __call__(self, *, images, return_tensors):
+        return self.processor(
+            images=images, text=["<image>"], return_tensors=return_tensors
+        )
 
 
 if __name__ == "__main__":

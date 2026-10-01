@@ -98,7 +98,9 @@ def _load_mistral3_transformers4(model_path: Path) -> tuple[Any, Any]:
     )
     chat_template_path = model_path / "chat_template.jinja"
     if not chat_template_path.exists():
-        raise FileNotFoundError(f"mistral3 compatibility requires {chat_template_path}")
+        raise FileNotFoundError(
+            f"mistral3 compatibility requires {chat_template_path}"
+        )
     tokenizer.chat_template = chat_template_path.read_text(encoding="utf-8")
 
     image_processor = AutoImageProcessor.from_pretrained(model_path, use_fast=False)
@@ -137,8 +139,6 @@ def ensure_mlx_processor_compat(
     processor: Any,
     model_config: Any,
 ) -> tuple[Any, str | None]:
-    if _config_value(model_config, "model_type") in {"fastvlm", "llava_qwen2"}:
-        return _ensure_fastvlm_processor(processor)
     if _config_value(model_config, "model_type") != "internvl_chat":
         return processor, None
 
@@ -148,34 +148,6 @@ def ensure_mlx_processor_compat(
         InternVLProcessorCompat(tokenizer=tokenizer, inner=inner),
         "internvl_chat_custom_image_expansion",
     )
-
-
-def _ensure_fastvlm_processor(processor: Any) -> tuple[Any, str | None]:
-    from mlx_vlm.models.fastvlm import FastVLMImageProcessor, FastVLMProcessor
-
-    if isinstance(processor, FastVLMProcessor):
-        return processor, None
-    from transformers import AutoImageProcessor, PretrainedConfig
-
-    # This registry key only resolves the native processor class, not model weights.
-    class NativeProcessorRegistrationConfig(PretrainedConfig):
-        model_type = "fractal_probe_fastvlm_processor_registration"
-
-    AutoImageProcessor.register(
-        NativeProcessorRegistrationConfig,
-        slow_image_processor_class=FastVLMImageProcessor,
-        exist_ok=True,
-    )
-    image_processor = FastVLMImageProcessor.from_dict(
-        processor.image_processor.to_dict()
-    )
-    resolved = FastVLMProcessor(
-        image_processor=image_processor,
-        tokenizer=processor.tokenizer,
-        chat_template=getattr(processor, "chat_template", None),
-    )
-    resolved.detokenizer = getattr(processor, "detokenizer", None)
-    return resolved, "fastvlm_native_processor_class_registration"
 
 
 def ensure_mlx_chat_template_compat(
