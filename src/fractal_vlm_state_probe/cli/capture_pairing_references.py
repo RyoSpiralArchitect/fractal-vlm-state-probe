@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import inspect
 from pathlib import Path
 
 import numpy as np
@@ -124,6 +125,16 @@ def main() -> None:
             if runtime is None:
                 runtime = _load_mlx_runtime(args.model)
                 _freeze_model_snapshot(args.model, snapshot_path)
+                processor_type = type(runtime["processor"].image_processor)
+                write_json(
+                    root / "processor_implementation.json",
+                    {
+                        "implementation": f"{processor_type.__module__}.{processor_type.__name__}",
+                        "implementation_sha256": _sha(
+                            Path(inspect.getfile(processor_type))
+                        ),
+                    },
+                )
             run_cumulative_replay_probe(
                 CumulativeReplayRunConfig(
                     manifest_path=manifest,
@@ -226,6 +237,7 @@ def main() -> None:
             "historical_recheck": checks,
             "reference_replications": replications,
             "model_snapshot": _read(snapshot_path),
+            "processor_implementation": _read(root / "processor_implementation.json"),
             "source_response_counts": _response_counts(run_paths),
             "source_suffix_token_ids": [
                 s["token_id"]

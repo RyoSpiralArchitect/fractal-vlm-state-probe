@@ -4,6 +4,7 @@ import copy
 import json
 from pathlib import Path
 import sys
+from types import SimpleNamespace
 
 import numpy as np
 import pytest
@@ -140,7 +141,15 @@ def test_failed_historical_calibration_stops_before_reference_forward(
         config.output_path.write_text("{}")
 
     monkeypatch.setattr(cli, "run_cumulative_replay_probe", capture)
-    monkeypatch.setattr(cli, "_load_mlx_runtime", lambda model: {})
+
+    class FakeProcessor:
+        pass
+
+    monkeypatch.setattr(
+        cli,
+        "_load_mlx_runtime",
+        lambda model: {"processor": SimpleNamespace(image_processor=FakeProcessor())},
+    )
     monkeypatch.setattr(cli, "_freeze_model_snapshot", lambda *args: None)
     monkeypatch.setattr(cli, "_validate_run", lambda *args: None)
     monkeypatch.setattr(
