@@ -405,3 +405,66 @@ python3 scripts/run_padding_policy_study.py \
 Execution report (2026-10-07): [Note 0045](research_notes/0045_padding_policy_and_explicit_marginals.md)
 retains all nine conditions, explicit marginal changes, the complete accepted
 permutation/mean input panel, and the unresolved model-cache calibration gate.
+
+## Stage 4C: Padding Cache Calibration And Matched Panel
+
+Registered: 2026-10-07, before the new cache forwards.
+
+Use the unchanged qualified FastVLM snapshot and model path from Stage 3.
+Freeze the Note 0045 live and published receipt hashes, all selected image
+manifests, existing historical source runs/tensors, implementation hashes and
+`configs/padding_cache_fastvlm_v1.json` before measuring caches. The targets
+remain zero-based L1 keys, L12 keys and L23 values. Record actual prepared
+inputs inside the real generation path, including pixel hashes and all
+non-pixel fields. Instrumentation must itself reproduce historical tensors.
+
+Calibration precedes the new panel:
+
+1. Replay all 128 original cells in the existing 32-block panel and compare
+   each target with its qualified historical tensor, byte for byte: 384 checks.
+2. Run the explicit original-content black-square versions of the same 128
+   cells. Require identical actual prepared inputs except `image_sizes`, whose
+   values change from `[[320, 240]]` to `[[320, 320]]`. Compare the three full
+   tensors and their fixed token regions against the fresh rectangular runs.
+3. In the fixed `geometry_checker_hex_r1` four-cell anchor, cross size metadata
+   only: rectangular pixels with square size metadata and black-square pixels
+   with rectangular size metadata. These eight additional forwards must
+   reproduce the corresponding naturally prepared inputs exactly. Record the
+   full cache comparisons without substituting historical tensors.
+
+The 264 calibration forwards and 792 captured tensors are counted separately
+from the experimental panel. All runs retain the fixed source prompt, stream
+seed 20260604, temperature zero, two-token generation budget, actual response
+`The image`, generation trace `[785, 2168, 2168]`, tensor shape
+`[1, 2, 397, 64]` and identified 42/256/99 pre/image/post positions. The repeated
+last trace step is not a third generated token. A shape, source suffix,
+prepared-pixel or exact calibration mismatch stops panel capture; preserve the
+failure and do not widen numerical tolerances or force metadata in the panel.
+Equality supports this measured single-image path only, not all architectures.
+
+After calibration, capture two fixed square-input conditions for every block:
+common permutation with black padding, and common permutation with
+palette-mean padding. The mean condition is the 32/32 accepted input panel;
+black is an explicitly unmatched comparator (1/32 input blocks accepted).
+The same source pixels are permuted in both and both retain native square
+metadata. Record the changed full-image RGB marginal from Note 0045; no claim
+of a frequency-only intervention is permitted.
+
+Capture r1/r2 references for both conditions first and freeze their tensor
+hashes before r3/r4 test captures. This gives 256 panel source cells, 768 target
+tensors and 192 four-cell factorial analyses, including 96 reference and 96
+test analyses. No input, condition, target or view is selected using cache
+outcomes. Repeat the existing interaction-vector definition, two-unit-vector
+reference direction, equal-family score, 576 within-class complete-family
+assignments, and fixed image/post-image primary views. Correct all twelve
+primary tests together (two conditions x three targets x two regions) with
+Holm. Unavailable views retain a p-value of one for correction and remain
+unavailable in reports. Report all negative family margins and retrieval ties.
+
+All 48 fixed head/band views are exploratory and unadjusted. Cross-condition
+margin changes and vector cosines are descriptive paired measurements, not
+new independent tests or causal frequency mediation. Test seeds are held out
+from reference direction construction, but their images were used to select
+the input-matching condition in Note 0045; this is an input-selected diagnostic
+on an existing cohort, not fully untouched held-out validation. No new direct
+probe, persistence, unseen-family transfer or semantic steering is measured.

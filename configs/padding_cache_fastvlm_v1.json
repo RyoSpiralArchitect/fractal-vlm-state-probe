@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "study_id": "padding_cache_fastvlm_v1",
+  "registered_date": "2026-10-07",
+  "model_id": "mlx-community/FastVLM-0.5B-bf16",
+  "targets": ["1:keys", "12:keys", "23:values"],
+  "conditions": ["shared_pixel_permutation/black", "shared_pixel_permutation/palette_mean"],
+  "metadata_cross_anchor": "geometry_checker_hex_r1",
+  "reference_replicates": [1, 2],
+  "test_replicates": [3, 4],
+  "primary_test_family_size": 12,
+  "expected_calibration_cells": 264,
+  "expected_panel_cells": 256,
+  "expected_source_response": "The image",
+  "expected_generation_step_ids": [785, 2168, 2168],
+  "expected_tensor_shape": [1, 2, 397, 64]
+}
