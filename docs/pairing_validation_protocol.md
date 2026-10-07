@@ -473,3 +473,52 @@ Execution report (2026-10-07): [Note 0046](research_notes/0046_padding_cache_cal
 records exact calibration, both complete panels, all twelve primary tests and
 the negative multiplicity-adjusted result. The original registration above
 is unchanged by those outcomes.
+
+## Stage 4D: Graded Permutation Under Fixed Marginals
+
+Registered: 2026-10-08, before the new input measurements.
+
+Following Stage 4C, hold the palette-mean square padding and each cell's
+expanded joint RGB multiset fixed. Reuse the exact 32 four-cell source blocks,
+qualified processor, and historical common permutation from Stages 4A-4C.
+This is an input-only audit, with no model weights, cache forwards, new cache
+tests or additional independent image samples.
+
+Use selected-site fractions 0, 1/8, 1/4, 1/2, 3/4, 7/8 and 1, fixed in
+`configs/graded_permutation_fastvlm_v1.json`. Draw one panel-wide selection
+order with NumPy default_rng seed 20261008. For each level, select the first
+floor(fraction * 76800) positions. Restrict each cycle of the historical
+permutation to its selected positions, linking each to the next selected
+position in the original cycle and fixing every unselected position. Apply
+the resulting common bijection to all four cells and all 32 blocks.
+
+The zero endpoint is exactly identity; the full endpoint is exactly the
+historical permutation. Selected-site sets are nested, but destinations of
+already selected sites may change between levels. A one-selected-site cycle
+remains fixed. This is not alpha blending, a graded local block shuffle, or
+a guaranteed monotone spectral or semantic intervention. Record the actual
+moved-index fraction, changed-RGB-site fraction, spatial displacement and
+retained undirected nearest-neighbor grid edges separately.
+
+Require exact expanded RGB multisets, inverse pixel roundtrips, unchanged
+exterior fill, native square size metadata and all non-pixel processor fields
+at every level. Reproduce both historical mean-padding endpoints' raw pixels,
+processor pixel hashes, statistics and gates for every source cell (256
+endpoint checks). A structural, provenance or endpoint mismatch stops the
+study and is retained as a failure; numerical tolerances are not widened.
+Freeze all receipt, map, code and processor hashes before measurement.
+
+Audit all 896 input cells and all 224 four-cell gates using the unchanged
+whole-processor 5% centroid and 0.02 HF-spread tolerances, including the frozen
+moment check. Report every failed block and complete-family denominator.
+Only 32/32 passing blocks with all eight complete four-seed families make a
+level input-eligible. Report the full curve; do not adapt the grid, search
+additional seeds or use cache outcomes to choose levels. These gates compare
+the four cells within a level, not frequency equivalence between levels.
+
+Expanded marginals are fixed across levels, not equal across different
+palette donors and not equal to unpadded originals. All four input seeds are
+audited, so a later cache test remains input-selected, not fully untouched
+holdout. Input acceptance, spatial disruption and cache correspondence must
+remain separate observations. Any subsequent cache dose-response needs its
+own frozen design and multiplicity family after this input audit.

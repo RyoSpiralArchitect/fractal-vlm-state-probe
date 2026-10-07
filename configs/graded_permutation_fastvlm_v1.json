@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "study_id": "graded_permutation_fastvlm_v1",
+  "registered_date": "2026-10-08",
+  "level_numerators": [0, 1, 2, 4, 6, 7, 8],
+  "level_denominator": 8,
+  "selection_seed": 20261008,
+  "permutation_rule": "restrict_historical_cycles_to_nested_selected_sites",
+  "padding_policy": "palette_mean",
+  "source_shape_hwc": [240, 320, 3],
+  "centroid_relative_tolerance": 0.05,
+  "hf_absolute_tolerance": 0.02,
+  "expected_blocks": 32,
+  "expected_input_cells": 896,
+  "new_cache_forwards": 0
+}
