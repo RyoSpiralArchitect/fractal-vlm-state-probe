@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "study_id": "frequency_control_fastvlm_v1",
+  "arms": ["rank_low_pass", "shared_pixel_permutation"],
+  "low_pass_cutoffs": [0.02, 0.04, 0.08, 0.12, 0.2, 0.35, 0.6, 1.0],
+  "permutation_seed": 20261007,
+  "centroid_relative_tolerance": 0.05,
+  "hf_absolute_tolerance": 0.02
+}

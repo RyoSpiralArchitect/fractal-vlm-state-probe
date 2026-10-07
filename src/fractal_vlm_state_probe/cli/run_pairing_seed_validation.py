@@ -331,6 +331,14 @@ def _validate_run(run: dict, path: Path, manifest_path: Path, reference: dict) -
 
 
 def _validate_panel_split(reference_panel: dict, test_panel: dict) -> tuple[dict, list]:
+    from fractal_vlm_state_probe.frequency_control import validate_frequency_panel
+
+    controls = [p.get("frequency_control") for p in (reference_panel, test_panel)]
+    if any(c is not None for c in controls):
+        if controls[0] != controls[1]:
+            raise ValueError("reference/test frequency controls differ")
+        for panel in (reference_panel, test_panel):
+            validate_frequency_panel(panel)
     metadata = {}
     for panel, allowed in ((reference_panel, (1, 2)), (test_panel, (3, 4))):
         if panel.get("analysis_kind") != "generator_pairing_factorial_panel":

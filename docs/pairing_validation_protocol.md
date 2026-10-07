@@ -264,3 +264,82 @@ python3 scripts/analyze_pairing_input_holdout.py \
   --fastvlm-model-processor-snapshot /path/to/the/frozen/FastVLM/snapshot \
   --output-json runs/fastvlm_pairing_seed_validation_v1/input_model_path_holdout.json
 ```
+
+## Stage 4 Input Execution Addendum
+
+Registered: 2026-10-07, before the new input sweep or any stage-4 cache forward.
+
+Start with the same 32 FastVLM pairing units and qualified actual model
+processor. This is not an additional independent image cohort. The processor
+implementation, configuration and revision must match Note 0043's eligible
+input baseline. No model weights are loaded for input preparation.
+
+`configs/frequency_control_fastvlm_v1.json` fixes two distinct arms:
+
+- `rank_low_pass`: Fourier low-pass the original spatial donor's floating-point
+  luminance field, then assign each unchanged palette's full RGB pixels in
+  stable luminance order. The cutoff grid is 0.02, 0.04, 0.08, 0.12, 0.2, 0.35,
+  0.6 and 1.0 (identity). Source A and B may have different cutoffs; the same
+  field/order is shared by both palette cells of each spatial donor. There are
+  64 candidate cutoff pairs per source-pair block. Do not independently filter
+  the four cells or alter palette marginals.
+- `shared_pixel_permutation`: one bijection of all 76,800 positions, generated
+  by NumPy `default_rng(20261007)`, is shared by all four cells and all 32
+  pairings. This deliberately destroys geometry; it is a whitening comparator,
+  not a structure-preserving frequency intervention. A common permutation
+  commutes with the raw interaction and preserves raw full-vector cosine
+  correspondence mathematically. It must not be sold as isolating frequency.
+
+Each arm preserves joint RGB multisets exactly, not just separate channel
+histograms. An inverse-permutation roundtrip is serialized as a transform-only
+sham for every original cell and checked for identical decoded pixels.
+
+Processor-space frequency uses reconstructed RGB (undo recorded channel
+normalization) and luminance weights 0.2126 / 0.7152 / 0.0722. It uses the
+existing radial `rfft2` convention and HF cutoff at normalized radius 0.35.
+This is not the arithmetic-channel-mean diagnostic used by the older generic
+processor statistics. Retain raw and processor mean/std, 256-bin luminance
+entropy, colorfulness, shapes and tensor mean/std alongside the gate metrics.
+Finite nonzero luminance variance/spectral centroid are required; constant
+images cannot qualify as a trivial match.
+
+The operational common centroid target is the arithmetic mean of the four
+candidate cell centroids, fixed by this formula before the sweep. All four
+must be within 5% of that target. Require the largest pairwise HF difference
+to be at most 0.02. Record the common HF mean and every individual cell value.
+These are within-block targets, not a claim that matching retains original
+frequency values or equates spectra across different families.
+
+Prefer an accepted cutoff pair with the largest cutoff sum, then largest A
+and B cutoff, to avoid extra filtering. If none qualifies, retain the candidate
+with the smallest maximum normalized gate violation, breaking ties by the same
+cutoff order, and mark the block unmatched. Retain all 64 gate evaluations;
+no cache score or input correspondence score selects a candidate.
+
+Freeze both reference and test transformed manifests and the hashed input
+acceptance receipt before any cache measurement. A complete arm needs 32/32
+accepted blocks to reuse the registered eight-family reference/test design.
+Partial acceptance is an input-feasibility result, not a pooled held-out cache
+result. Both pairing capture entry points reject an unmatched or changed
+frequency receipt/image. Original and matched reference/test roles stay r1/r2
+and r3/r4; targets stay L1 keys, L12 keys and L23 values. A complete eligible
+arm has its own six-test Holm family; do not modify the earlier families.
+If both arms qualify, jointly correct their 12 primary tests rather than
+reporting two selected families. All head/band views remain exploratory.
+
+Recheck the four-cell historical factorial bytewise before matched references
+and one complete new reference before tests, with separate denominators.
+Require the same source suffix and layout as Note 0043. Stop on any changed
+source contract rather than widening it after looking at test scores.
+Failure to qualify the structured arm does not become a successful structured
+experiment merely because the geometry-destroying comparator qualifies.
+
+```bash
+python3 scripts/prepare_frequency_control_panel.py \
+  --reference-panel runs/generator_pairing_transfer_v1/generator_pairing_panel_summary.json \
+  --test-panel runs/pairing_seed_validation_v1/panel/generator_pairing_panel_summary.json \
+  --config configs/frequency_control_fastvlm_v1.json \
+  --fastvlm-model-processor-snapshot /path/to/the/frozen/FastVLM/snapshot \
+  --qualified-processor-provenance runs/fastvlm_pairing_seed_validation_v1/input_model_path_holdout.json \
+  --output-root runs/frequency_control_fastvlm_v1/input
+```
