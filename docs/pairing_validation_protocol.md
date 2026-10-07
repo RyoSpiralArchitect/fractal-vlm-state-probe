@@ -401,3 +401,7 @@ python3 scripts/run_padding_policy_study.py \
   --fastvlm-model-processor-snapshot /path/to/the/frozen/FastVLM/snapshot \
   --output-root runs/padding_policy_fastvlm_v1
 ```
+
+Execution report (2026-10-07): [Note 0045](research_notes/0045_padding_policy_and_explicit_marginals.md)
+retains all nine conditions, explicit marginal changes, the complete accepted
+permutation/mean input panel, and the unresolved model-cache calibration gate.

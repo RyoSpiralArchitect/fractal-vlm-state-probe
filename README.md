@@ -18,11 +18,14 @@ and earlier transfer across different pairings remains weak and target-dependent
 The question is how input-conditioned correspondence is expressed across
 representations, not whether the VLM first creates it. Fractal identity,
 broad semantic class and the generated label are not the primary result.
-The newest frequency-control attempt adds a prerequisite: matching raw images
-is not matching actual processor inputs. A bounded palette-preserving sweep
-qualifies only 4/32 blocks, and a geometry-destroying common permutation only
-1/32 in processor space despite 32/32 raw matches. Black-padding diagnostics
-expose a palette-coupled processor effect; no matched-cache result is claimed.
+The newest control makes the processor boundary explicit. Common permutation
+passes the whole-processor frequency-summary gates in only 1/32 blocks with
+black padding, 6/32 with fixed gray, and 32/32 with palette-mean padding.
+Original content passes 0/32 under every policy. This first complete accepted
+input panel combines spatial permutation with an explicitly changed RGB
+marginal: 75% original palette and 25% fill color. Pixel equality of black-pad
+shams does not establish model equivalence because `image_sizes` changes;
+matched-cache calibration and correspondence remain unmeasured.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
@@ -214,6 +217,15 @@ The unchanged processor's black exterior couples to palette mean/variance;
 support-only diagnostics are kept separate and never rescue a failed whole-image
 gate. This stage adds no cache forwards, tensors or primary tests.
 
+Note 0045 independently varies padding on all three fixed content states:
+1,152 input cells across nine conditions. Common permutation plus palette-mean
+padding qualifies all 32 blocks and eight complete four-seed families, with
+maximum centroid error 0.594% against the frozen 5% threshold. All added RGB
+mass is explicitly audited; this is not preservation of the original marginal
+or full-spectrum equality. Black-pad shams reproduce processor pixels in
+384/384 cases but change `image_sizes` in all 384. This input-only stage adds
+no cache observations and retains an independent float64-rounding caveat.
+
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
 processor-space frequency structure. The interaction and image localization
@@ -229,9 +241,12 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0044](docs/research_notes/0044_all_cell_frequency_control_feasibility.md)
-for the all-four-cell input acceptance sweep, unmatched blocks and separate
-black-padding audit. [Note 0043](docs/research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md)
+Start with [Note 0045](docs/research_notes/0045_padding_policy_and_explicit_marginals.md)
+for the completed padding-policy comparison, the first complete accepted
+input panel, explicit marginal changes and the remaining model-calibration
+gate. [Note 0044](docs/research_notes/0044_all_cell_frequency_control_feasibility.md)
+retains the initial unmatched sweep and its black-padding diagnostic.
+[Note 0043](docs/research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md)
 contains FastVLM's held-out result, input baseline and processor calibration.
 [Note 0042](docs/research_notes/0042_pairing_seed_validation_and_localization.md)
 contains the Qwen/Ministral split and localization. The
@@ -905,6 +920,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0042: Held-Out Pairing Direction And Localization](docs/research_notes/0042_pairing_seed_validation_and_localization.md)
 - [Research Note 0043: FastVLM Pairing Holdout And Input Baseline](docs/research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md)
 - [Research Note 0044: All-Cell Frequency Control Feasibility](docs/research_notes/0044_all_cell_frequency_control_feasibility.md)
+- [Research Note 0045: Padding Policy And Explicit Marginals](docs/research_notes/0045_padding_policy_and_explicit_marginals.md)
 
 ## Claim Boundary
 

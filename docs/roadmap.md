@@ -169,9 +169,13 @@ The first all-four-cell input sweep is now complete: only 4/32 low-pass and
 Raw permutation matches 32/32 blocks, but the actual processor includes a
 palette-coupled black exterior. The post-hoc support-only 29/32 diagnostic
 does not replace the original gate; no new cache observation is added.
-The next step is to register padding policy and changed marginals explicitly,
-then retry acceptance before held-out pairing-family transfer. Token bands
-are not verified 2D patches.
+The registered padding comparison is now complete: common permutation passes
+1/32 blocks with black fill, 6/32 with fixed gray, and 32/32 with palette-mean
+fill. Original content passes 0/32 with every policy. All expanded RGB
+marginals are explicitly changed and audited. Black-square shams reproduce
+384/384 processor pixel tensors but change `image_sizes`; the next gate is
+model-cache calibration before registered correspondence testing on the
+complete accepted panel. Token bands are not verified 2D patches.
 
 ## Phase 5: Research Report
 
@@ -181,16 +185,16 @@ are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0044 encode the audited claim
+Status: the evidence matrix and Notes 0027-0045 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
 Exact seed-matching, frozen-reference new-seed prediction and fixed head/band
 decomposition are complete at the four Qwen/Ministral targets and three fixed
 FastVLM targets. Input baselines and the processor-identity audit are also
-recorded. The first frequency sweep supplies input feasibility only, not an
-accepted matched-cache result. The current priority is an explicitly registered
-padding/marginal control and accepted all-four-cell frequency matching,
-held-out pairing-family transfer, neutral
-wording/order/verbalizer controls, Phi coordinate resolution, head/patch-level
+recorded. The frequency and padding studies now supply one complete accepted
+input panel, not an accepted matched-cache result or full-spectrum equality.
+The current priority is square-input model calibration and a registered cache
+test with explicit marginal changes, followed by held-out pairing-family
+transfer, neutral wording/order/verbalizer controls, Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.

@@ -149,6 +149,12 @@ input transformation and the actual processor path, not isolated macro geometry
 or semantic steering. No accepted matched cache correspondence, persistence,
 adaptation or causal mediation is established here.
 
+Follow-up: [Note 0045](0045_padding_policy_and_explicit_marginals.md) executes
+that registered comparison on all 32 blocks. Common permutation plus
+palette-mean padding qualifies 32/32 whole-processor input blocks, with changed
+RGB marginals explicitly retained. Black pixel shams reproduce exactly but
+change `image_sizes`; model-cache calibration remains unmeasured.
+
 ## Artifacts
 
 - `configs/frequency_control_fastvlm_v1.json`

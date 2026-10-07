@@ -1,6 +1,6 @@
 # Paper Evidence Matrix
 
-Last updated: 2026-07-14
+Last updated: 2026-10-07
 
 This file is the compact bridge from run artifacts to a manuscript draft. It
 separates valid observations, descriptive interpretation, withdrawn results,
@@ -19,6 +19,7 @@ the same four factorial cells are not independent samples.
 | FastVLM held-out pairing direction | Same pre-existing split, L1 keys / L12 keys / L23 values | 64 new reference and 64 test cells, 384 tensors, 96 factorials; eight qualified and four failed calibration cells separately counted | All six primary tests have stage-specific Holm `p=0.010417`, 8/8 positive family margins and 16/16 own-family retrieval per view; 24 exploratory average margins are positive, with four band-family negatives retained | third-architecture known-pairing replication, not a new image cohort | [Note 0043](research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md) |
 | Input-coordinate pairing baseline | Full raw RGB and actual FastVLM model-processor pixels | Same frozen two-reference/two-test split; two exploratory full-vector views | Margins are 0.13603 / 0.13617, raw p 2/576 / 3/576 and retrieval 5/16 / 4/16; native alternative fails exact cache calibration despite nearly the same input score | correspondence already present in inputs; not frequency matching or causal processing gain | [Note 0043](research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md) |
 | All-cell frequency feasibility | Qualified actual FastVLM processor; no model weights or cache forwards | Same 32 input blocks, 2,048 low-pass candidate pairs and a separate common permutation | Low-pass 4/32 and permutation 1/32 pass whole-processor gates; raw permutation 32/32 and post-hoc support-only 29/32 are separate diagnostics; no complete four-seed family qualifies | bounded input-feasibility failure, not matched-cache or no-effect evidence | [Note 0044](research_notes/0044_all_cell_frequency_control_feasibility.md) |
+| Registered padding-policy comparison | Unchanged qualified FastVLM processor; input-only | Same 32 blocks x three content states x three padding policies x four cells = 1,152 input cells | Common permutation passes 1/32 black, 6/32 gray and 32/32 palette-mean blocks; original content passes 0/32 throughout; expanded RGB mass is explicit; 384 black pixel shams match but change `image_sizes` | first complete input-eligible panel for two frequency summaries; no new cache result or original-marginal preservation | [Note 0045](research_notes/0045_padding_policy_and_explicit_marginals.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
@@ -125,6 +126,12 @@ the same four factorial cells are not independent samples.
     the same eight pairings at four fixed targets. All eight primary tests have
     joint Holm `p=0.013889`; image-family margins are positive in 29/32 and
     post-image margins in 32/32 dependent target-family summaries.
+19. With common permutation content fixed, palette-mean padding qualifies
+    32/32 whole-processor input blocks, versus 1/32 with black and 6/32 with
+    fixed gray. All eight four-seed families qualify. The input marginal is
+    explicitly 75% original palette plus 25% fill mass; original content
+    remains unmatched under every padding policy. This is two-summary input
+    acceptance, not full-spectrum or model-cache equivalence.
 
 ### Provisional
 
@@ -208,6 +215,13 @@ the same four factorial cells are not independent samples.
   bounded cutoff grid does not establish impossibility of all matching
   transforms; black-padding variance decomposition is not cache mediation or
   an additive spectral-centroid decomposition.
+- Note 0045 compares paired padding policies on the same fixed content. Added
+  RGB mass changes with padding, so a marginal-independent padding effect is
+  not identified. All 288 gates and 1,152 integer RGB histograms reproduce;
+  a separate moment oracle retains six float64 mean discrepancies just above
+  `1e-12` without changing the frozen gate. All 384 black pixel shams change
+  `image_sizes`, requiring later model calibration. No new cache forward,
+  independent image cohort or primary statistical test is added.
 - Replay lengths are nested contexts, not independent stimulus replicates.
 - Source-context caches and direct probes come from separate fresh forwards
   with different prompts; their relationship is descriptive, not causal.

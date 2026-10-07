@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "padding_policy_independent_artifact_verification",
+  "scope": "independent offline artifact audit; no processor or model forward",
+  "summary_sha256": "477d5492001c11ee090e43afaba9b5a6201430106c1e302e6c6042977ba4bfe6",
+  "cell_ledger_sha256": "13ebce12b696d1c0e8ad53a39b40ee85e348cd45dc51c1dd8f864ba59ea823e6",
+  "verifier_sha256": "e0cf837f2c9764ce4b65b7382a04dbeaef1a0b49890399af76cb3ca903dd3e5b",
+  "verified_cells": 1152,
+  "independently_recomputed_four_cell_gates": 288,
+  "integer_rgb_histogram_mixtures_exact": true,
+  "original_float64_moment_gate_reproduced": true,
+  "black_pixel_sham_receipts_verified": 384,
+  "accepted_blocks_by_condition": {
+    "original/black": 0,
+    "original/fixed_gray": 0,
+    "original/palette_mean": 0,
+    "frozen_low_pass/black": 4,
+    "frozen_low_pass/fixed_gray": 3,
+    "frozen_low_pass/palette_mean": 3,
+    "shared_pixel_permutation/black": 1,
+    "shared_pixel_permutation/fixed_gray": 6,
+    "shared_pixel_permutation/palette_mean": 32
+  },
+  "integer_sum_moment_oracle": {
+    "mean": {
+      "max_abs_error": 1.04594111149936e-12,
+      "cells_above_1e_12": 6,
+      "total_cells": 1152
+    },
+    "variance": {
+      "max_abs_error": 3.8731517992829367e-13,
+      "cells_above_1e_12": 0,
+      "total_cells": 1152
+    }
+  },
+  "numeric_caveat": "Stored float64-reduction moments have rounding drift relative to integer-sum moments. This additional diagnostic does not change the frozen moment gate or measured inputs; exact integer RGB histogram identities hold.",
+  "result": "PASS_WITH_FLOAT64_REDUCTION_CAVEAT",
+  "new_model_forwards": 0
+}
