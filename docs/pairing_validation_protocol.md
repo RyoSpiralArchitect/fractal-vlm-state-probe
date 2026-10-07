@@ -527,3 +527,71 @@ Execution report (2026-10-08): [Note 0047](research_notes/0047_graded_permutatio
 records all 896 input cells, 256 exact endpoint replays and complete input
 eligibility at 3/4, 7/8 and 1. It adds no cache forwards or primary cache tests.
 The registration above is unchanged by those outcomes.
+
+## Stage 4E: Graded Cache Correspondence, Transfer And Direction
+
+Registered: 2026-10-08, before new cache measurements.
+
+Use only the Stage 4D levels 3/4, 7/8 and 1, all 32 blocks and the unchanged
+qualified FastVLM snapshot. Freeze `configs/graded_cache_fastvlm_v1.json`,
+the live/published input receipts, historical Note 0046 endpoint run/tensor
+receipts, runtime identity and code hashes. Do not include the unmatched 1/2
+level or adapt levels, targets, views or tests after cache measurement. Note
+0047's within-level acceptance does not establish cross-level spectral equality.
+
+First replay all 128 full-permutation/mean-padding endpoint cells against
+Note 0046, requiring all 384 selected tensor comparisons to be byte-identical.
+Actual generation-path prepared inputs must also match exactly. These are
+separate calibration captures, including previously observed r3/r4 inputs;
+they do not enter reference construction or the experimental panel.
+
+After calibration, make 384 fresh panel captures (three levels x 32 blocks x
+four cells), 1,152 selected tensors and 288 factorial analyses. Freeze all
+192 r1/r2 panel captures before any r3/r4 panel capture. The 128 fresh full
+endpoint panel cells are repeated-condition observations, not new stimuli;
+require all 384 endpoint target rechecks to match Note 0046 as well. The two
+intermediate levels add 256 newly transformed cache cells and 192 factorials.
+All repeats, calibration captures and new transformed cells remain separately
+identifiable in the ledger and cumulative counts.
+
+Keep zero-based L1 keys / L12 keys / L23 values, source stream seed 20260604,
+temperature zero, two-token budget, source response `The image`, trace
+`[785, 2168, 2168]`, shape `[1, 2, 397, 64]`, native bfloat16 capture and
+42/256/99 pre/image/post positions. The repeated trace entry is not a third
+generated token. Intermediate prepared inputs may differ from the endpoint
+only in pixels. Provenance, source suffix, layout, metadata or exact endpoint
+mismatches stop capture; do not widen tolerances or force a replacement suffix.
+
+Decompose the measurements into three fixed questions:
+
+1. Within each level, repeat the existing frozen-reference pairing test:
+   independently unit-normalized r1/r2 references, r3/r4 tests, equal family
+   weights and all 576 within-class complete-family assignments. Correct the
+   18 primary tests (three levels x three targets x image/post-image) together
+   with Holm. Unavailable views retain p=1 for correction and remain unavailable.
+   Preserve every negative family margin and retrieval tie. All 72 fixed
+   head/band views are exploratory and unadjusted.
+2. For each intermediate level, replace only its r1/r2 reference vectors by
+   the full endpoint's r1/r2 vectors, leaving its r3/r4 tests unchanged. Report
+   all twelve image/post-image transfer views, their retrieval and the change
+   from native-reference margins descriptively. Do not introduce another
+   inferential test family or use transfer to rescue failed primary tests.
+3. For each of the three level pairs, fixed target, token region and source
+   block, report the interaction cosine, norm ratio and parallel/perpendicular
+   decomposition. With the higher-fraction vector `a` as reference and the
+   lower-fraction vector `b`, define `alpha = dot(a,b)/dot(a,a)`, parallel delta
+   `(alpha-1)*a`, and perpendicular delta `b-alpha*a`. Record their RMS values,
+   perpendicular share of total delta energy and the Pythagorean residual.
+   Zero-reference or zero-delta denominators remain unavailable/null. These
+   576 dependent records are split by reference/test phase, not independent
+   replications or geometry-only causal tests.
+
+Retain each factorial's spatial/palette/interaction effects, balanced energy
+shares and localization. Pairwise changes in primary family margins are
+descriptive; different significance labels do not test a between-level
+difference. Attach each block/level's input centroid and HF drift from Note
+0047 without treating dependent distances or three levels as independent
+correlation evidence. No cache-to-readout mediation, persistent state,
+unseen-family transfer or semantic mechanism is established by this design.
+All images informed input selection, so reference/test separation is specific
+to reference construction, not fully untouched validation.

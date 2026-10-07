@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "study_id": "graded_cache_fastvlm_v1",
+  "registered_date": "2026-10-08",
+  "model_id": "mlx-community/FastVLM-0.5B-bf16",
+  "targets": ["1:keys", "12:keys", "23:values"],
+  "levels": ["selected_06_of_08", "selected_07_of_08", "selected_08_of_08"],
+  "endpoint": "selected_08_of_08",
+  "reference_replicates": [1, 2],
+  "test_replicates": [3, 4],
+  "primary_test_family_size": 18,
+  "exploratory_head_band_views": 72,
+  "descriptive_endpoint_transfer_views": 12,
+  "expected_calibration_cells": 128,
+  "expected_panel_cells": 384,
+  "expected_source_response": "The image",
+  "expected_generation_step_ids": [785, 2168, 2168],
+  "expected_tensor_shape": [1, 2, 397, 64]
+}
