@@ -164,8 +164,14 @@ Raw/actual-processor baselines already have pairing correspondence, and the
 native alternative is excluded after failed exact calibration. The original
 model path reproduces all 24 qualified historical/reference-recheck tensors.
 This repeats known test images in another model, not a new source cohort.
-The next steps are all-four-cell processor-frequency acceptance gates and
-held-out pairing-family transfer. Token bands are not verified 2D patches.
+The first all-four-cell input sweep is now complete: only 4/32 low-pass and
+1/32 common-permutation blocks qualify, with no complete reference/test family.
+Raw permutation matches 32/32 blocks, but the actual processor includes a
+palette-coupled black exterior. The post-hoc support-only 29/32 diagnostic
+does not replace the original gate; no new cache observation is added.
+The next step is to register padding policy and changed marginals explicitly,
+then retry acceptance before held-out pairing-family transfer. Token bands
+are not verified 2D patches.
 
 ## Phase 5: Research Report
 
@@ -175,14 +181,16 @@ held-out pairing-family transfer. Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0043 encode the audited claim
+Status: the evidence matrix and Notes 0027-0044 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
 Exact seed-matching, frozen-reference new-seed prediction and fixed head/band
 decomposition are complete at the four Qwen/Ministral targets and three fixed
 FastVLM targets. Input baselines and the processor-identity audit are also
-recorded. The current priority is accepted all-four-cell frequency matching,
+recorded. The first frequency sweep supplies input feasibility only, not an
+accepted matched-cache result. The current priority is an explicitly registered
+padding/marginal control and accepted all-four-cell frequency matching,
 held-out pairing-family transfer, neutral
 wording/order/verbalizer controls, Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.

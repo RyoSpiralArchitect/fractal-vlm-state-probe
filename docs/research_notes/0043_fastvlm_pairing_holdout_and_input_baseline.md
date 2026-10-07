@@ -215,3 +215,7 @@ No accepted frequency-matched block is claimed here.
 
 Neither persistence, adaptation, semantic specificity, a universal layer nor
 cache-to-readout mediation is tested by these fresh source-only forwards.
+
+Follow-up: [Note 0044](0044_all_cell_frequency_control_feasibility.md) completes
+the first all-cell input acceptance sweep. Neither arm qualifies the full
+matched-cache study; black-padding diagnostics remain separate from the gate.

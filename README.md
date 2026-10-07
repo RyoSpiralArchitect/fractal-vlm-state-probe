@@ -8,7 +8,7 @@ This project began by asking whether controlled fractal streams change later
 non-visual generation. A cache-prefix audit changed the valid protocol; a
 balanced seeded fixed-pairing panel changed the measured object again; a
 multi-pair generator hierarchy then changed what "replication" means. The
-newest result is narrower than either a fractal or broad-class story:
+held-out result is narrower than either a fractal or broad-class story:
 frozen full-vector references now predict interaction direction in two new
 seeds of each observed ordered generator pairing. The eight Qwen/Ministral
 tests and six FastVLM tests pass their separately registered Holm families;
@@ -18,6 +18,11 @@ and earlier transfer across different pairings remains weak and target-dependent
 The question is how input-conditioned correspondence is expressed across
 representations, not whether the VLM first creates it. Fractal identity,
 broad semantic class and the generated label are not the primary result.
+The newest frequency-control attempt adds a prerequisite: matching raw images
+is not matching actual processor inputs. A bounded palette-preserving sweep
+qualifies only 4/32 blocks, and a geometry-destroying common permutation only
+1/32 in processor space despite 32/32 raw matches. Black-padding diagnostics
+expose a palette-coupled processor effect; no matched-cache result is claimed.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
@@ -203,6 +208,12 @@ unchanged full model processor, with all 24 historical/reference-recheck
 tensors reproduced bytewise. The test images already appeared in the other
 models; this is an architecture extension, not a new image cohort.
 
+Note 0044 tests all four cells before any cache measurement. Neither its rank
+low-pass nor common-permutation arm qualifies a complete reference/test family.
+The unchanged processor's black exterior couples to palette mean/variance;
+support-only diagnostics are kept separate and never rescue a failed whole-image
+gate. This stage adds no cache forwards, tensors or primary tests.
+
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
 processor-space frequency structure. The interaction and image localization
@@ -218,12 +229,14 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0043](docs/research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md)
-for FastVLM's held-out pairing result, actual-input baseline and processor
-calibration audit. [Note 0042](docs/research_notes/0042_pairing_seed_validation_and_localization.md)
+Start with [Note 0044](docs/research_notes/0044_all_cell_frequency_control_feasibility.md)
+for the all-four-cell input acceptance sweep, unmatched blocks and separate
+black-padding audit. [Note 0043](docs/research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md)
+contains FastVLM's held-out result, input baseline and processor calibration.
+[Note 0042](docs/research_notes/0042_pairing_seed_validation_and_localization.md)
 contains the Qwen/Ministral split and localization. The
 [registered protocol](docs/pairing_validation_protocol.md) keeps both test
-families separate and defines the next all-four-cell frequency acceptance gates.
+families separate and freezes the all-four-cell frequency acceptance gates.
 
 1. [Note 0041](docs/research_notes/0041_fastvlm_ninth_model_replication.md)
    for the ninth-model FastVLM expansion, `llava_qwen2` cache-coordinate map,
@@ -891,6 +904,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0041: FastVLM Ninth-Model Replication](docs/research_notes/0041_fastvlm_ninth_model_replication.md)
 - [Research Note 0042: Held-Out Pairing Direction And Localization](docs/research_notes/0042_pairing_seed_validation_and_localization.md)
 - [Research Note 0043: FastVLM Pairing Holdout And Input Baseline](docs/research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md)
+- [Research Note 0044: All-Cell Frequency Control Feasibility](docs/research_notes/0044_all_cell_frequency_control_feasibility.md)
 
 ## Claim Boundary
 

@@ -52,6 +52,7 @@ reading the current experiment logic and claim boundaries.
 | [0041 FastVLM Ninth-Model Replication](../docs/research_notes/0041_fastvlm_ninth_model_replication.md) | [summary.json](research_notes/0041_fastvlm_ninth_model/summary.json) | Ninth balanced architecture: complete-vocabulary direct probes, fixed early/middle/late source tensors, and a validated `llava_qwen2` single-image cache-coordinate map. |
 | [0042 Held-Out Pairing Direction And Localization](../docs/research_notes/0042_pairing_seed_validation_and_localization.md) | [summary.json](research_notes/0042_pairing_seed_validation/summary.json) | Two frozen reference seeds predict two new seeds in eight pairings at four targets; all eight primary tests pass joint Holm correction, with all fixed head/band views and image-family exceptions retained. |
 | [0043 FastVLM Pairing Holdout And Input Baseline](../docs/research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md) | [summary.json](research_notes/0043_fastvlm_pairing_holdout/summary.json) | Six fixed FastVLM tests pass their own Holm family; raw/actual-processor baselines, all exploratory views and rejected native calibration remain separately auditable. |
+| [0044 All-Cell Frequency Control Feasibility](../docs/research_notes/0044_all_cell_frequency_control_feasibility.md) | [summary.json](research_notes/0044_all_cell_frequency_control/summary.json) | Bounded all-cell input sweep qualifies no complete cache arm; raw/processor mismatches, every failed gate and a separate post-hoc black-padding audit are retained. |
 
 ## Reading Order
 
