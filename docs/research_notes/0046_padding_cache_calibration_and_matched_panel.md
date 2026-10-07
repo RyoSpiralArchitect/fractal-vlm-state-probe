@@ -211,6 +211,10 @@ at every level before deciding which comparisons qualify as matched. That
 would separate the current all-or-nothing scrambling step from the calibrated
 padding choice; it still must not be called a geometry-only intervention.
 
+Follow-up (2026-10-08): [Note 0047](0047_graded_permutation_under_fixed_marginals.md)
+completes that seven-level input audit with fixed marginals. Three levels
+qualify complete panels; new intermediate cache behavior is still unmeasured.
+
 ## Artifacts And Reproduction
 
 - [Registered configuration](../../configs/padding_cache_fastvlm_v1.json)

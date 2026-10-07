@@ -179,10 +179,14 @@ three fixed targets. Both complete permutation panels are measured: none of
 the twelve jointly corrected primary tests passes 0.05, despite positive
 average margins. Mean-padding retrieval is 3-7/16 versus the original 16/16.
 Image margins are similar between padding policies while post-image vectors
-change substantially. The next bounded experiment can hold expanded marginals
-and mean padding fixed while varying the amount or block scale of interior
-permutation, with fresh all-cell input audits at every level. Token bands are
-not verified 2D patches.
+change substantially. The graded input follow-up now holds expanded marginals
+and mean padding fixed across seven nested selected-site permutations. All
+896 cells and 256 historical endpoint checks reproduce; 3/4, 7/8 and 1 qualify
+complete 32-block panels. Intermediate cache behavior is unmeasured, and
+within-level acceptance does not establish cross-level spectral equality.
+The next bounded step is a separately registered cache comparison of those
+three levels with the same frozen targets and reference/test split. Token
+bands are not verified 2D patches.
 
 ## Phase 5: Research Report
 
@@ -192,7 +196,7 @@ not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0046 encode the audited claim
+Status: the evidence matrix and Notes 0027-0047 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -203,7 +207,8 @@ recorded. The frequency and padding studies now include exact square-input
 calibration and a complete input-eligible cache panel, without reconfirming
 the earlier strong pairing correspondence after permutation. Full-spectrum
 equality and a frequency-only explanation remain unsupported. The current
-priority is graded spatial-permutation controls under fixed marginals, then
+priority is cache comparison across the three input-eligible graded
+permutations under fixed marginals, with frequency differences explicit, then
 held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.

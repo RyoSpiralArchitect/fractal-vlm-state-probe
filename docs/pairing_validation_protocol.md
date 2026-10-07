@@ -522,3 +522,8 @@ audited, so a later cache test remains input-selected, not fully untouched
 holdout. Input acceptance, spatial disruption and cache correspondence must
 remain separate observations. Any subsequent cache dose-response needs its
 own frozen design and multiplicity family after this input audit.
+
+Execution report (2026-10-08): [Note 0047](research_notes/0047_graded_permutation_under_fixed_marginals.md)
+records all 896 input cells, 256 exact endpoint replays and complete input
+eligibility at 3/4, 7/8 and 1. It adds no cache forwards or primary cache tests.
+The registration above is unchanged by those outcomes.

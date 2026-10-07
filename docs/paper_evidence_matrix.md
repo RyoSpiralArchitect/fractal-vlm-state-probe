@@ -21,6 +21,7 @@ the same four factorial cells are not independent samples.
 | All-cell frequency feasibility | Qualified actual FastVLM processor; no model weights or cache forwards | Same 32 input blocks, 2,048 low-pass candidate pairs and a separate common permutation | Low-pass 4/32 and permutation 1/32 pass whole-processor gates; raw permutation 32/32 and post-hoc support-only 29/32 are separate diagnostics; no complete four-seed family qualifies | bounded input-feasibility failure, not matched-cache or no-effect evidence | [Note 0044](research_notes/0044_all_cell_frequency_control_feasibility.md) |
 | Registered padding-policy comparison | Unchanged qualified FastVLM processor; input-only | Same 32 blocks x three content states x three padding policies x four cells = 1,152 input cells | Common permutation passes 1/32 black, 6/32 gray and 32/32 palette-mean blocks; original content passes 0/32 throughout; expanded RGB mass is explicit; 384 black pixel shams match but change `image_sizes` | first complete input-eligible panel for two frequency summaries; no new cache result or original-marginal preservation | [Note 0045](research_notes/0045_padding_policy_and_explicit_marginals.md) |
 | Padding cache calibration and permutation panel | Same qualified FastVLM, fixed L1 keys / L12 keys / L23 values | 264 calibration cells / 792 tensors separately counted; two 32-block panels add 256 experimental cells / 768 tensors / 192 factorials | All 792 calibration comparisons are exact; both panels have weaker margins than original inputs and 0/12 primary tests pass joint Holm; mean-padding retrieval is 3-7/16, with 32/32 input blocks accepted | bounded metadata equivalence and measured input-selected cache diagnostic; not absence of residual correspondence or frequency-only causality | [Note 0046](research_notes/0046_padding_cache_calibration_and_matched_panel.md) |
+| Graded permutation input audit | Qualified FastVLM processor; fixed expanded RGB marginals, mean padding and square metadata | Seven registered levels x 32 blocks x four cells = 896 cells; 256 exact historical endpoint checks | Accepted blocks are 0/0/3/8/32/32/32; 3/4, 7/8 and 1 retain all eight complete families; all 117 rejections fail the centroid gate | three complete within-level input panels, not cross-level spectral equality, a universal transition or new cache evidence | [Note 0047](research_notes/0047_graded_permutation_under_fixed_marginals.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
@@ -143,6 +144,12 @@ the same four factorial cells are not independent samples.
     retrieval is 3-7/16, not the original 16/16. Similar image-region scores
     coexist with changed vectors: black/mean median post-image cosines span
     0.187-0.360 at the fixed targets.
+21. Under fixed palette-mean padding and exact expanded RGB counts, the
+    registered 3/4, 7/8 and full common-permutation levels each pass 32/32
+    within-level input gates. All 896 pixel controls and 256 original/full
+    endpoint checks reproduce. The first complete tested level retains 6.289%
+    of original grid adjacency, but does not identify a universal 75% threshold
+    or matched spectra between levels. Intermediate cache behavior is unmeasured.
 
 ### Provisional
 
@@ -243,6 +250,12 @@ the same four factorial cells are not independent samples.
   non-rejection and close aggregate margins do not establish no effect or
   equivalent vectors. Calibration captures are excluded from experimental
   counts and do not constitute a KV-cache intervention.
+- Note 0047 uses a fixed seven-level input grid and one shared selection order.
+  All failures remain in the 224-gate denominator; no levels or seeds were
+  added after measurement. Three levels are input-eligible, but their common
+  centroid targets differ. The 32 reused blocks are not independent spatial
+  randomizations, and no cache test, new cohort or semantic transition is
+  established. Selected-site, moved-index and changed-RGB fractions differ.
 - Replay lengths are nested contexts, not independent stimulus replicates.
 - Source-context caches and direct probes come from separate fresh forwards
   with different prompts; their relationship is descriptive, not causal.

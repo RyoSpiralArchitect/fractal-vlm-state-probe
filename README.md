@@ -18,7 +18,7 @@ and earlier transfer across different pairings remains weak and target-dependent
 The question is how input-conditioned correspondence is expressed across
 representations, not whether the VLM first creates it. Fractal identity,
 broad semantic class and the generated label are not the primary result.
-The newest control separates metadata from padding pixels. All 792 selected
+The calibrated control separates metadata from padding pixels. All 792 selected
 cache comparisons reproduce exactly through historical replay, black-square
 shams and size-metadata-only crossings. The accepted permutation/mean-padding
 panel is now measured alongside its black comparator: input-summary matching
@@ -27,6 +27,12 @@ and none of twelve primary tests passes joint Holm correction. Similar scores
 also hide substantial vector changes, especially after image positions.
 Changed RGB marginals and destroyed spatial arrangement remain explicit;
 this is not frequency-only or semantic causal evidence.
+The newest input-only extension grades the common permutation under fixed
+palette-mean padding and exact RGB marginals. Accepted blocks across seven
+levels are 0, 0, 3, 8, 32, 32 and 32: the 3/4, 7/8 and full levels qualify
+complete panels. All 896 cell controls and 256 historical endpoint checks
+reproduce. These are within-level gates, not cross-level spectral equality;
+cache behavior at the intermediate levels remains unmeasured.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
@@ -243,6 +249,14 @@ padding policies, while median paired post-image vector cosines are only
 different observations. These reused test images informed input-condition
 selection; they are not a fully untouched held-out cohort.
 
+Note 0047 holds padding, expanded joint RGB counts and square metadata fixed
+across seven nested selected-site permutations. Full-panel input eligibility
+first appears at 3/4 in the fixed grid, with only 6.289% of original grid
+adjacencies retained; 7/8 and 1 also qualify. The centroid gate alone accounts
+for all rejected blocks, while HF and moment checks pass throughout. The
+common centroid target still changes between levels. This input-only stage
+adds no cache observations or tests, and does not locate a semantic threshold.
+
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
 processor-space frequency structure. The interaction and image localization
@@ -258,9 +272,12 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0046](docs/research_notes/0046_padding_cache_calibration_and_matched_panel.md)
-for the completed metadata calibration, both measured permutation panels and
-the weaker correspondence result with all negative cases retained.
+Start with [Note 0047](docs/research_notes/0047_graded_permutation_under_fixed_marginals.md)
+for the graded input audit, three complete eligible levels, exact fixed
+marginals and the still-unmeasured intermediate cache behavior.
+[Note 0046](docs/research_notes/0046_padding_cache_calibration_and_matched_panel.md)
+contains the completed metadata calibration, both measured full-permutation
+panels and the weaker correspondence result with all negative cases retained.
 [Note 0045](docs/research_notes/0045_padding_policy_and_explicit_marginals.md)
 contains the input-policy comparison and explicit marginal changes.
 [Note 0044](docs/research_notes/0044_all_cell_frequency_control_feasibility.md)
@@ -941,6 +958,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0044: All-Cell Frequency Control Feasibility](docs/research_notes/0044_all_cell_frequency_control_feasibility.md)
 - [Research Note 0045: Padding Policy And Explicit Marginals](docs/research_notes/0045_padding_policy_and_explicit_marginals.md)
 - [Research Note 0046: Padding Cache Calibration And Matched Panel](docs/research_notes/0046_padding_cache_calibration_and_matched_panel.md)
+- [Research Note 0047: Graded Permutation Under Fixed Marginals](docs/research_notes/0047_graded_permutation_under_fixed_marginals.md)
 
 ## Claim Boundary
 
