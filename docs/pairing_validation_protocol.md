@@ -345,3 +345,59 @@ python3 scripts/prepare_frequency_control_panel.py \
   --qualified-processor-provenance runs/fastvlm_pairing_seed_validation_v1/input_model_path_holdout.json \
   --output-root runs/frequency_control_fastvlm_v1/input
 ```
+
+## Stage 4B: Padding Policy Comparison
+
+Registered: 2026-10-07, before measuring any of the new padding policies.
+
+This bounded input-only experiment crosses three fixed content states with
+three padding policies on all 32 Note 0044 source-pair blocks. Content states
+are original, the already selected low-pass cells (including failed blocks),
+and the already fixed common pixel permutation. The prior low-pass cutoffs
+remain frozen under their original black-padding selection; there is no new
+cutoff, fill-color or family search using these outcomes.
+
+Center each 320 x 240 image on a 320 x 320 canvas, retaining every content pixel
+at the same square-canvas location used by the actual processor. Fill the
+25,600 additional pixels using one of three policies:
+
+- Black: RGB `(0, 0, 0)`, an externally materialized pixel sham.
+- Fixed gray: RGB `(128, 128, 128)`, shared across every cell and family.
+- Palette mean: the corresponding original palette's mean RGB, rounded to
+  uint8 with NumPy round-to-nearest, ties-to-even. The same palette gives the
+  same fill in both spatial cells and all three content states of a block.
+
+Every whole-canvas marginal is explicitly
+`0.75 * original_palette + 0.25 * point_mass(fill)`.
+Verify unchanged content, exact constant fill, joint RGB multisets against
+the registered expanded palette, and analytical RGB mean/variance. Report
+the exact total-variation distance from the original RGB distribution.
+Do not call the expanded canvas's original RGB multiset preserved.
+
+Keep the actual FastVLM processor, normalization, full-image luminance metric,
+5% centroid tolerance and 0.02 HF tolerance. Preserve all nine condition
+results per block. A condition is input-eligible for the complete known-pairing
+design only if all 32 blocks pass and all eight families retain all four seeds.
+The processor comparison uses whole output images, without support cropping.
+
+Reproduce the prior rectangular-image processor statistics and require exact
+pixel-tensor equality with the explicit black-pad sham for all 384 content
+cells. Record non-pixel processor outputs too: external square images can
+change `image_sizes` despite equal pixel tensors. Such a sham does not establish
+model-cache equivalence. This stage loads no model weights and measures no new
+cache vectors. Any later cache experiment needs its own black-pad calibration,
+source-response/layout checks, frozen targets and test family.
+
+The crossed comparison identifies padding-policy effects on the measured
+input statistics for these fixed images. Padding color and the added RGB mass
+change together, so this does not identify a padding effect independent of
+marginals, a spectral-only intervention, or a semantic model effect.
+
+```bash
+python3 scripts/run_padding_policy_study.py \
+  --source-receipt runs/frequency_control_fastvlm_v1/input/input_acceptance.json \
+  --published-source examples/research_notes/0044_all_cell_frequency_control/summary.json \
+  --config configs/padding_policy_fastvlm_v1.json \
+  --fastvlm-model-processor-snapshot /path/to/the/frozen/FastVLM/snapshot \
+  --output-root runs/padding_policy_fastvlm_v1
+```

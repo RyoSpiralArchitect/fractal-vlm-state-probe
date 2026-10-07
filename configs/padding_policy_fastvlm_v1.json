@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "study_id": "padding_policy_fastvlm_v1",
+  "registered_date": "2026-10-07",
+  "policies": ["black", "fixed_gray", "palette_mean"],
+  "content_states": ["original", "frozen_low_pass", "shared_pixel_permutation"],
+  "source_shape_hwc": [240, 320, 3],
+  "centroid_relative_tolerance": 0.05,
+  "hf_absolute_tolerance": 0.02
+}
