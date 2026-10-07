@@ -9,7 +9,7 @@ non-visual generation. A cache-prefix audit changed the valid protocol; a
 balanced seeded fixed-pairing panel changed the measured object again; a
 multi-pair generator hierarchy then changed what "replication" means. The
 held-out result is narrower than either a fractal or broad-class story:
-frozen full-vector references now predict interaction direction in two new
+on unpermuted inputs, frozen full-vector references predict direction in two new
 seeds of each observed ordered generator pairing. The eight Qwen/Ministral
 tests and six FastVLM tests pass their separately registered Holm families;
 FastVLM retrieves the own pairing in 16/16 held-out seeds at every fixed view.
@@ -18,14 +18,15 @@ and earlier transfer across different pairings remains weak and target-dependent
 The question is how input-conditioned correspondence is expressed across
 representations, not whether the VLM first creates it. Fractal identity,
 broad semantic class and the generated label are not the primary result.
-The newest control makes the processor boundary explicit. Common permutation
-passes the whole-processor frequency-summary gates in only 1/32 blocks with
-black padding, 6/32 with fixed gray, and 32/32 with palette-mean padding.
-Original content passes 0/32 under every policy. This first complete accepted
-input panel combines spatial permutation with an explicitly changed RGB
-marginal: 75% original palette and 25% fill color. Pixel equality of black-pad
-shams does not establish model equivalence because `image_sizes` changes;
-matched-cache calibration and correspondence remain unmeasured.
+The newest control separates metadata from padding pixels. All 792 selected
+cache comparisons reproduce exactly through historical replay, black-square
+shams and size-metadata-only crossings. The accepted permutation/mean-padding
+panel is now measured alongside its black comparator: input-summary matching
+rises from 1/32 to 32/32 blocks, but both panels show weaker pairing margins
+and none of twelve primary tests passes joint Holm correction. Similar scores
+also hide substantial vector changes, especially after image positions.
+Changed RGB marginals and destroyed spatial arrangement remain explicit;
+this is not frequency-only or semantic causal evidence.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
@@ -182,27 +183,30 @@ features, mapping the saved 1,474-token history to 3,073 effective cache
 positions: 51 pre-image, 2,916 image, and 106 post-image. Unknown mismatches and
 multi-run layouts still fail closed.
 
-The selected full-vector surface now contains 616 source-only fresh forwards,
-1,704 target tensor sidecars, and 426 layer-by-pair analyses. Of the 414
-analyses with identified token partitions, 414/414 pre-image interactions are
-exactly zero, 408/414 interaction argmaxes are image tokens, and 408/414
+The selected full-vector surface now contains 872 source-only fresh forwards,
+2,472 target tensor sidecars, and 618 layer-by-pair analyses. Of the 606
+analyses with identified token partitions, 606/606 pre-image interactions are
+exactly zero, 600/606 interaction argmaxes are image tokens, and 600/606
 image-token energy fractions exceed 0.9. Calibration repeats and failed
 calibration attempts are counted separately. In Note 0042's 64 analyses,
 spatial/palette/interaction dominance is 54/10/0 in image regions and 56/8/0
-over the whole tensor. The 96 new FastVLM reference/test analyses are 80/16/0
+over the whole tensor. Note 0043's 96 FastVLM reference/test analyses are 80/16/0
 under either convention; references are not additional held-out outcomes.
+Note 0046's 192 permutation analyses are 44/52/0 with black padding and
+48/48/0 with palette-mean padding, under either region convention.
 Predictable interaction direction does not imply interaction-axis dominance.
 
 Direction is more specific than energy and more specific than broad visual
 class. The earlier near-zero pooled-control cosine mixed unlike controls; the
 next seeded panel then mistook nested repetition inside one pairing for broad
-class transfer. With both levels present, same-pairing seed directions repeat
-strongly, while different-pairing transfer is much weaker. A shared suffix is
-still insufficient by itself; the strongest measured organization follows the
-ordered source-generator pairing.
+class transfer. With both levels present in the unpermuted panels,
+same-pairing seed directions repeat strongly, while different-pairing transfer
+is much weaker. A shared suffix is still insufficient by itself; the strongest
+measured organization follows the ordered source-generator pairing.
 
-FastVLM's six primary image/post-image tests have stage-specific Holm
-`p=0.010417`; all 24 exploratory head/band average margins are positive, with
+In Note 0043's unpermuted FastVLM panel, the six primary image/post-image tests
+have stage-specific Holm `p=0.010417`; all 24 exploratory head/band average
+margins are positive, with
 four band-family exceptions retained. Raw/actual-processor input margins are
 also positive (`0.13603` / `0.13617`, exploratory), while their own-family
 retrieval is only 5/16 and 4/16. The native alternative failed exact historical
@@ -226,6 +230,19 @@ or full-spectrum equality. Black-pad shams reproduce processor pixels in
 384/384 cases but change `image_sizes` in all 384. This input-only stage adds
 no cache observations and retains an independent float64-rounding caveat.
 
+Note 0046 resolves the model-side metadata gate with 264 separate calibration
+captures and then measures both complete 32-block permutation panels. All
+384 historical, 384 black-sham and 24 metadata-only tensor comparisons match
+bytewise. The 256 experimental captures differ between padding policies only
+in prepared pixels, not tokens or size metadata. All twelve primary margins
+are positive, but Holm p-values are 0.22917-0.44271; 32/96 primary family-view
+margins are negative. The mean-padding panel retrieves only 3-7/16 own
+families, versus 16/16 in the unpermuted panel. Image margins are close across
+padding policies, while median paired post-image vector cosines are only
+0.187-0.360. Input matching, vector identity and pairing prediction are
+different observations. These reused test images informed input-condition
+selection; they are not a fully untouched held-out cohort.
+
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
 processor-space frequency structure. The interaction and image localization
@@ -241,10 +258,12 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0045](docs/research_notes/0045_padding_policy_and_explicit_marginals.md)
-for the completed padding-policy comparison, the first complete accepted
-input panel, explicit marginal changes and the remaining model-calibration
-gate. [Note 0044](docs/research_notes/0044_all_cell_frequency_control_feasibility.md)
+Start with [Note 0046](docs/research_notes/0046_padding_cache_calibration_and_matched_panel.md)
+for the completed metadata calibration, both measured permutation panels and
+the weaker correspondence result with all negative cases retained.
+[Note 0045](docs/research_notes/0045_padding_policy_and_explicit_marginals.md)
+contains the input-policy comparison and explicit marginal changes.
+[Note 0044](docs/research_notes/0044_all_cell_frequency_control_feasibility.md)
 retains the initial unmatched sweep and its black-padding diagnostic.
 [Note 0043](docs/research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md)
 contains FastVLM's held-out result, input baseline and processor calibration.
@@ -921,6 +940,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0043: FastVLM Pairing Holdout And Input Baseline](docs/research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md)
 - [Research Note 0044: All-Cell Frequency Control Feasibility](docs/research_notes/0044_all_cell_frequency_control_feasibility.md)
 - [Research Note 0045: Padding Policy And Explicit Marginals](docs/research_notes/0045_padding_policy_and_explicit_marginals.md)
+- [Research Note 0046: Padding Cache Calibration And Matched Panel](docs/research_notes/0046_padding_cache_calibration_and_matched_panel.md)
 
 ## Claim Boundary
 

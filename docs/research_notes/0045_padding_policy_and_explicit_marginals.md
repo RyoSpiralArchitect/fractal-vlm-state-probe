@@ -166,6 +166,12 @@ transfer experiment. No new p-value or cache correspondence is reported here.
 Selected source cells / tensors / factorials remain **616 / 1,704 / 426**;
 direct-probe counts are also unchanged.
 
+Follow-up: [Note 0046](0046_padding_cache_calibration_and_matched_panel.md)
+completes the model calibration and both permutation panels. All 792 selected
+calibration comparisons are exact; the twelve jointly corrected primary
+cache-correspondence tests do not reconfirm the earlier strong unpermuted
+result. This does not retroactively turn this input-only note into a cache run.
+
 ## Artifacts And Reproduction
 
 - [Input specification](../../configs/padding_policy_fastvlm_v1.json)

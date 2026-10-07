@@ -142,9 +142,9 @@ generator-pairing extensions add independent fractal pairs, matched frequency
 and natural controls, and 16 two-seed geometry/stochastic pairing units. The
 wider valid direct surface contains 104 factorial points, 416 cell runs, and
 1,664 complete-vocabulary sidecars, with non-identical after-cell distributions
-in every factorial. The selected full-vector surface contains 426 analyses;
-414 have resolved token partitions, including 414/414 zero pre-image effects
-and 408/414 image-position interaction maxima. FastVLM's original 12 fixed targets are
+in every factorial. The selected full-vector surface contains 618 analyses;
+606 have resolved token partitions, including 606/606 zero pre-image effects
+and 600/606 image-position interaction maxima. FastVLM's original 12 fixed targets are
 all spatial-dominant and image-localized under a validated `llava_qwen2`
 single-image map. In the Qwen/Ministral hierarchy, all eight exact matching
 tests support direction repetition across seeds of the same ordered pairing.
@@ -173,9 +173,16 @@ The registered padding comparison is now complete: common permutation passes
 1/32 blocks with black fill, 6/32 with fixed gray, and 32/32 with palette-mean
 fill. Original content passes 0/32 with every policy. All expanded RGB
 marginals are explicitly changed and audited. Black-square shams reproduce
-384/384 processor pixel tensors but change `image_sizes`; the next gate is
-model-cache calibration before registered correspondence testing on the
-complete accepted panel. Token bands are not verified 2D patches.
+384/384 processor pixel tensors but change `image_sizes`. Model-side calibration
+now passes all 792 historical, black-sham and metadata-only comparisons at the
+three fixed targets. Both complete permutation panels are measured: none of
+the twelve jointly corrected primary tests passes 0.05, despite positive
+average margins. Mean-padding retrieval is 3-7/16 versus the original 16/16.
+Image margins are similar between padding policies while post-image vectors
+change substantially. The next bounded experiment can hold expanded marginals
+and mean padding fixed while varying the amount or block scale of interior
+permutation, with fresh all-cell input audits at every level. Token bands are
+not verified 2D patches.
 
 ## Phase 5: Research Report
 
@@ -185,16 +192,18 @@ complete accepted panel. Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0045 encode the audited claim
+Status: the evidence matrix and Notes 0027-0046 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
 Exact seed-matching, frozen-reference new-seed prediction and fixed head/band
 decomposition are complete at the four Qwen/Ministral targets and three fixed
 FastVLM targets. Input baselines and the processor-identity audit are also
-recorded. The frequency and padding studies now supply one complete accepted
-input panel, not an accepted matched-cache result or full-spectrum equality.
-The current priority is square-input model calibration and a registered cache
-test with explicit marginal changes, followed by held-out pairing-family
-transfer, neutral wording/order/verbalizer controls, Phi coordinate resolution, head/patch-level
+recorded. The frequency and padding studies now include exact square-input
+calibration and a complete input-eligible cache panel, without reconfirming
+the earlier strong pairing correspondence after permutation. Full-spectrum
+equality and a frequency-only explanation remain unsupported. The current
+priority is graded spatial-permutation controls under fixed marginals, then
+held-out pairing-family transfer, neutral wording/order/verbalizer controls,
+Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.

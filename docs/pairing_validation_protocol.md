@@ -468,3 +468,8 @@ from reference direction construction, but their images were used to select
 the input-matching condition in Note 0045; this is an input-selected diagnostic
 on an existing cohort, not fully untouched held-out validation. No new direct
 probe, persistence, unseen-family transfer or semantic steering is measured.
+
+Execution report (2026-10-07): [Note 0046](research_notes/0046_padding_cache_calibration_and_matched_panel.md)
+records exact calibration, both complete panels, all twelve primary tests and
+the negative multiplicity-adjusted result. The original registration above
+is unchanged by those outcomes.

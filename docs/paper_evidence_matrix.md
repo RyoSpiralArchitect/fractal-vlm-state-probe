@@ -20,13 +20,14 @@ the same four factorial cells are not independent samples.
 | Input-coordinate pairing baseline | Full raw RGB and actual FastVLM model-processor pixels | Same frozen two-reference/two-test split; two exploratory full-vector views | Margins are 0.13603 / 0.13617, raw p 2/576 / 3/576 and retrieval 5/16 / 4/16; native alternative fails exact cache calibration despite nearly the same input score | correspondence already present in inputs; not frequency matching or causal processing gain | [Note 0043](research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md) |
 | All-cell frequency feasibility | Qualified actual FastVLM processor; no model weights or cache forwards | Same 32 input blocks, 2,048 low-pass candidate pairs and a separate common permutation | Low-pass 4/32 and permutation 1/32 pass whole-processor gates; raw permutation 32/32 and post-hoc support-only 29/32 are separate diagnostics; no complete four-seed family qualifies | bounded input-feasibility failure, not matched-cache or no-effect evidence | [Note 0044](research_notes/0044_all_cell_frequency_control_feasibility.md) |
 | Registered padding-policy comparison | Unchanged qualified FastVLM processor; input-only | Same 32 blocks x three content states x three padding policies x four cells = 1,152 input cells | Common permutation passes 1/32 black, 6/32 gray and 32/32 palette-mean blocks; original content passes 0/32 throughout; expanded RGB mass is explicit; 384 black pixel shams match but change `image_sizes` | first complete input-eligible panel for two frequency summaries; no new cache result or original-marginal preservation | [Note 0045](research_notes/0045_padding_policy_and_explicit_marginals.md) |
+| Padding cache calibration and permutation panel | Same qualified FastVLM, fixed L1 keys / L12 keys / L23 values | 264 calibration cells / 792 tensors separately counted; two 32-block panels add 256 experimental cells / 768 tensors / 192 factorials | All 792 calibration comparisons are exact; both panels have weaker margins than original inputs and 0/12 primary tests pass joint Holm; mean-padding retrieval is 3-7/16, with 32/32 input blocks accepted | bounded metadata equivalence and measured input-selected cache diagnostic; not absence of residual correspondence or frequency-only causality | [Note 0046](research_notes/0046_padding_cache_calibration_and_matched_panel.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
 | Gemma 3 direct factorial trajectory | Gemma-3-4B-it 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2; 24 cells total | All 6 direct after-factorials are non-identical; all four one-frame maxima are early `values`, but exact layer and sign vary; frequency readout can change sharply | component-level regularity plus pair-dependent exact locus | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
 | InternVL3 direct factorial replication | InternVL3-2B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All four direct after-factorials are non-identical; all ACK maxima are late layer 25-27 `values` with negative sign | component/sign/depth-band replication with pair-dependent exact layer | [Note 0029](research_notes/0029_cross_model_prompt_and_internvl_expansion.md) |
 | LFM2-VL direct factorial replication | LFM2-VL-1.6B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All after-cell distributions are distinct; visible family labels vary in 3/4 pairs while frequency labels stay fixed; balanced readout axes remain pair-dependent | fifth-architecture replication with deterministic artifact integrity | [Note 0031](research_notes/0031_balanced_contrasts_five_model_expansion.md) |
-| Selected full-vector source-cache surface | Nine VLMs, with fixed-target control, pairing-hierarchy and held-out-seed extensions, fresh source-context forwards | 616 cell runs, 1,704 tensors, 426 analyses; calibration repeats/failed attempts separately counted | In 414 partition-resolved analyses every pre-image effect is zero and 408 argmaxes are image tokens; the new 96 FastVLM analyses are 80/16/0 under both image/whole-effective dominance conventions | targeted vector localization plus frozen-reference pairing prediction | [Note 0043](research_notes/0043_fastvlm_pairing_holdout_and_input_baseline.md) |
+| Selected full-vector source-cache surface | Nine VLMs, with fixed-target control, pairing-hierarchy, held-out-seed and permutation extensions, fresh source-context forwards | 872 cell runs, 2,472 tensors, 618 analyses; calibration repeats/failed attempts separately counted | In 606 partition-resolved analyses every pre-image effect is zero and 600 argmaxes are image tokens; the new permutation analyses remain image-localized but do not reconfirm strong corrected pairing correspondence | targeted localization; direction repetition depends on the input condition | [Note 0046](research_notes/0046_padding_cache_calibration_and_matched_panel.md) |
 | Cross-model direct aggregate | Nine-model four-pair core, nested earlier lengths, and two-model control/pairing extensions, complete first-step vocabulary | 104 factorial points, 416 cells, 1,664 sidecars | Every direct after-factorial is non-identical; balanced readout dominance is model-, pair-, generator-, and probe-dependent | balanced nine-architecture core plus bounded two-model extensions | [Note 0041](research_notes/0041_fastvlm_ninth_model_replication.md) |
 | Four-pair prompt robustness core | Eight VLMs on `b_c`, `c_d`, `d_e`, and `e_f`, fresh direct probes | 32 model/source-pair audit units, 128 cell runs, 2,048 sidecars | All 512 baseline sidecars repeat bitwise; generated patterns agree over all four pairs in 39/64 records, balanced-axis dominance in 4/64, and both in 2/64 | eight-model four-pair categorical versus distributional replication matrix | [Note 0038](research_notes/0038_ministral3_eighth_model_replication.md) |
 | Phi-3.5 Vision full expansion | Phi-3.5 Vision 4bit on four source pairs, fresh direct probes and source-only ACK | 16 standard direct cells and 64 sidecars; 16 prompt cells and 256 sidecars; 16 ACK cells, 48 tensors, 12 full-vector analyses | Scalar ACK maxima are early positive `keys` in 4/4; all selected full tensors are spatial-dominant; cross-pair direction alignment is weak and image-token partition is unresolved | sixth-architecture scalar-locus versus vector-direction replication | [Note 0035](research_notes/0035_six_model_four_pair_completion_and_phi_full_vector.md) |
@@ -65,13 +66,15 @@ the same four factorial cells are not independent samples.
    layer/component/sign, LFM2 exposes six hybrid-attention cache entries, and
    Granite changes layer/component/sign across pairs. Ministral uses `keys` in
    4/4 while changing exact layer and sign.
-5. Across 426 selected full-vector cache analyses in nine VLMs, the 414
-   partition-resolved analyses have zero pre-image effects and 408 interaction
-   maxima in image tokens. In the new 64 analyses, image-region balanced
+5. Across 618 selected full-vector cache analyses in nine VLMs, the 606
+   partition-resolved analyses have zero pre-image effects and 600 interaction
+   maxima in image tokens. In Note 0042's 64 analyses, image-region balanced
    dominance is spatial/palette/interaction in 54/10/0, versus 56/8/0 over the
    whole effective tensor; region conventions are not interchangeable.
-   FastVLM adds 96 qualified reference/test analyses, with 80/16/0 dominance
-   under both conventions and no interaction-dominant analysis.
+   Note 0043 adds 96 qualified FastVLM reference/test analyses, with 80/16/0
+   dominance under both conventions and no interaction-dominant analysis.
+   The 192 permutation analyses add spatial/palette/interaction dominance
+   of 44/52/0 with black padding and 48/48/0 with palette-mean padding.
 6. A generated letter or top-k set can remain fixed while the complete
    distribution changes; visible-label equality is not distribution equality.
 7. Across eight models and four prompt-audited source pairs, generated semantic
@@ -132,6 +135,14 @@ the same four factorial cells are not independent samples.
     explicitly 75% original palette plus 25% fill mass; original content
     remains unmatched under every padding policy. This is two-summary input
     acceptance, not full-spectrum or model-cache equivalence.
+20. At the same three FastVLM targets, all 384 historical, 384 black-square and
+    24 metadata-only calibration comparisons reproduce exactly. Thus the
+    tested `image_sizes` change does not alter those tensors on this path.
+    All twelve primary permutation-panel margins remain positive but none
+    passes joint Holm (0.22917-0.44271); the accepted mean-padding panel's
+    retrieval is 3-7/16, not the original 16/16. Similar image-region scores
+    coexist with changed vectors: black/mean median post-image cosines span
+    0.187-0.360 at the fixed targets.
 
 ### Provisional
 
@@ -220,8 +231,18 @@ the same four factorial cells are not independent samples.
   not identified. All 288 gates and 1,152 integer RGB histograms reproduce;
   a separate moment oracle retains six float64 mean discrepancies just above
   `1e-12` without changing the frozen gate. All 384 black pixel shams change
-  `image_sizes`, requiring later model calibration. No new cache forward,
-  independent image cohort or primary statistical test is added.
+  `image_sizes`, motivating the later Note 0046 calibration. Note 0045 itself
+  adds no cache forward, independent image cohort or primary statistical test.
+- Note 0046 completes the metadata calibration before both permutation panels.
+  Its twelve primary tests share one Holm family, separate from Note 0043's
+  six. The 48 head/band views remain exploratory; negative family margins are
+  retained. Test-cache vectors never enter references, but their images were
+  used in input-condition selection. This is not fully untouched validation.
+  The black comparator is not a complete input-matched panel. Frequency,
+  spatial arrangement and altered RGB mass are not causally disentangled;
+  non-rejection and close aggregate margins do not establish no effect or
+  equivalent vectors. Calibration captures are excluded from experimental
+  counts and do not constitute a KV-cache intervention.
 - Replay lengths are nested contexts, not independent stimulus replicates.
 - Source-context caches and direct probes come from separate fresh forwards
   with different prompts; their relationship is descriptive, not causal.
@@ -309,6 +330,17 @@ FastVLM/input extension:
 > and was excluded; the unchanged qualified model path reproduced all 24
 > historical/reference-recheck tensors. Architecture repetitions did not
 > create a new independent image cohort.
+
+Calibrated permutation extension:
+
+> Exact historical, black-square and size-metadata-only comparisons reproduced
+> all 792 selected tensor checks before capturing two complete permutation
+> panels. Palette-mean padding qualified all 32 input blocks versus one with
+> black padding, but all twelve cache-correspondence tests failed to pass
+> joint Holm despite positive average margins. Image-region scores were close
+> between padding policies while post-image vectors changed substantially.
+> These input-selected observations on the existing cohort neither establish
+> absence of residual correspondence nor a frequency-only causal explanation.
 
 Avoid:
 

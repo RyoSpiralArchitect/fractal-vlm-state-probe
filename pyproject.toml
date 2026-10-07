@@ -48,6 +48,7 @@ prepare-generator-pairing-panel = "fractal_vlm_state_probe.cli.prepare_generator
 prepare-frequency-control-panel = "fractal_vlm_state_probe.cli.prepare_frequency_control_panel:main"
 run-padding-policy-study = "fractal_vlm_state_probe.cli.run_padding_policy_study:main"
 run-padding-cache-study = "fractal_vlm_state_probe.cli.run_padding_cache_study:main"
+summarize-padding-cache-study = "fractal_vlm_state_probe.cli.summarize_padding_cache_study:main"
 summarize-padding-policy-study = "fractal_vlm_state_probe.cli.summarize_padding_policy_study:main"
 analyze-frequency-padding-audit = "fractal_vlm_state_probe.cli.analyze_frequency_padding_audit:main"
 summarize-frequency-control-feasibility = "fractal_vlm_state_probe.cli.summarize_frequency_control_feasibility:main"
