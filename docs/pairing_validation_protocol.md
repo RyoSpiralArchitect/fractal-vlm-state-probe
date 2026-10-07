@@ -273,6 +273,8 @@ Start with the same 32 FastVLM pairing units and qualified actual model
 processor. This is not an additional independent image cohort. The processor
 implementation, configuration and revision must match Note 0043's eligible
 input baseline. No model weights are loaded for input preparation.
+The locally saved custom processor is explicitly trusted only after checking
+its source hash against the qualified implementation; there is no substitution.
 
 `configs/frequency_control_fastvlm_v1.json` fixes two distinct arms:
 

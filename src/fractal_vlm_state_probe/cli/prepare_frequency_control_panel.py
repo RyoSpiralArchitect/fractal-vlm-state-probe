@@ -36,8 +36,16 @@ def main() -> None:
     import torch
     from mlx_vlm.utils import load_processor
 
+    qualified = _read(args.qualified_processor_provenance)["processor_provenance"]
+    if (
+        sha256_file(snapshot / "processing_fastvlm.py")
+        != qualified["implementation_sha256"]
+    ):
+        raise ValueError("saved custom processor source differs from qualified code")
     torch.set_num_threads(1)
-    model_processor = load_processor(snapshot, add_detokenizer=False)
+    model_processor = load_processor(
+        snapshot, add_detokenizer=False, trust_remote_code=True
+    )
     cls = type(model_processor.image_processor)
     provenance = {
         "snapshot_revision": snapshot.name,
@@ -48,7 +56,6 @@ def main() -> None:
         "implementation_sha256": sha256_file(Path(inspect.getfile(cls))),
         "processor_mode": "model_loading_path",
     }
-    qualified = _read(args.qualified_processor_provenance)["processor_provenance"]
     if provenance != qualified:
         raise ValueError("processor differs from the qualified actual-input baseline")
     normalization = _read(snapshot / "preprocessor_config.json")
