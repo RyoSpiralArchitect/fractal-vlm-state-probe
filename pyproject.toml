@@ -50,6 +50,7 @@ run-padding-policy-study = "fractal_vlm_state_probe.cli.run_padding_policy_study
 run-padding-cache-study = "fractal_vlm_state_probe.cli.run_padding_cache_study:main"
 run-graded-permutation-study = "fractal_vlm_state_probe.cli.run_graded_permutation_study:main"
 run-graded-cache-study = "fractal_vlm_state_probe.cli.run_graded_cache_study:main"
+summarize-graded-cache-study = "fractal_vlm_state_probe.cli.summarize_graded_cache_study:main"
 summarize-graded-permutation-study = "fractal_vlm_state_probe.cli.summarize_graded_permutation_study:main"
 summarize-padding-cache-study = "fractal_vlm_state_probe.cli.summarize_padding_cache_study:main"
 summarize-padding-policy-study = "fractal_vlm_state_probe.cli.summarize_padding_policy_study:main"

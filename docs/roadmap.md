@@ -142,9 +142,11 @@ generator-pairing extensions add independent fractal pairs, matched frequency
 and natural controls, and 16 two-seed geometry/stochastic pairing units. The
 wider valid direct surface contains 104 factorial points, 416 cell runs, and
 1,664 complete-vocabulary sidecars, with non-identical after-cell distributions
-in every factorial. The selected full-vector surface contains 618 analyses;
-606 have resolved token partitions, including 606/606 zero pre-image effects
-and 600/606 image-position interaction maxima. FastVLM's original 12 fixed targets are
+in every factorial. The selected full-vector surface contains 906 analyses,
+including 96 repeated full-endpoint observations in Note 0048; these are not
+independent stimuli. Of these, 894 have resolved token partitions, including
+894/894 zero pre-image effects and 888/894 image-position interaction maxima.
+FastVLM's original 12 fixed targets are
 all spatial-dominant and image-localized under a validated `llava_qwen2`
 single-image map. In the Qwen/Ministral hierarchy, all eight exact matching
 tests support direction repetition across seeds of the same ordered pairing.
@@ -182,11 +184,17 @@ Image margins are similar between padding policies while post-image vectors
 change substantially. The graded input follow-up now holds expanded marginals
 and mean padding fixed across seven nested selected-site permutations. All
 896 cells and 256 historical endpoint checks reproduce; 3/4, 7/8 and 1 qualify
-complete 32-block panels. Intermediate cache behavior is unmeasured, and
-within-level acceptance does not establish cross-level spectral equality.
-The next bounded step is a separately registered cache comparison of those
-three levels with the same frozen targets and reference/test split. Token
-bands are not verified 2D patches.
+complete 32-block panels. Their separately registered cache comparison is now
+complete: all 768 endpoint tensor checks match exactly, and 3/18 jointly
+corrected primary tests pass 0.05, all post-image. Every intermediate average
+margin is lower with full-endpoint references than native references, while
+3/4 image norm ratios near 1.04 coexist with paired cosine medians of only
+0.07-0.08. Direction, amplitude and within-condition prediction separate.
+Within-level acceptance still does not establish cross-level spectral
+equality. The next bounded step is to vary the common selection/permutation
+seed at fixed 3/4 fraction and audit every new map before registering same-map
+versus cross-map reference transfer. This is proposed, not yet executed.
+Token bands are not verified 2D patches.
 
 ## Phase 5: Research Report
 
@@ -196,7 +204,7 @@ bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0047 encode the audited claim
+Status: the evidence matrix and Notes 0027-0048 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -206,9 +214,11 @@ FastVLM targets. Input baselines and the processor-identity audit are also
 recorded. The frequency and padding studies now include exact square-input
 calibration and a complete input-eligible cache panel, without reconfirming
 the earlier strong pairing correspondence after permutation. Full-spectrum
-equality and a frequency-only explanation remain unsupported. The current
-priority is cache comparison across the three input-eligible graded
-permutations under fixed marginals, with frequency differences explicit, then
+equality and a frequency-only explanation remain unsupported. The graded
+cache study now separates conditional pairing correspondence from
+cross-condition direction and amplitude, retaining all negative family margins
+and repeated endpoint counts. The current priority is generalization across
+common permutation maps at a fixed fraction, with spectral drift explicit, then
 held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.

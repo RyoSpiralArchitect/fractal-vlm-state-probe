@@ -595,3 +595,10 @@ correlation evidence. No cache-to-readout mediation, persistent state,
 unseen-family transfer or semantic mechanism is established by this design.
 All images informed input selection, so reference/test separation is specific
 to reference construction, not fully untouched validation.
+
+Execution report (2026-10-08): [Note 0048](research_notes/0048_graded_cache_correspondence_and_direction.md)
+records all 768 exact endpoint comparisons and the complete three-level panel.
+Three of 18 jointly corrected primary tests pass 0.05, all post-image; all
+twelve descriptive endpoint-reference transfer margins are lower than native
+margins. The registration above is unchanged; the report retains all negative
+family margins, endpoint repeats, dependent decompositions and spectral drift.

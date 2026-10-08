@@ -27,12 +27,15 @@ and none of twelve primary tests passes joint Holm correction. Similar scores
 also hide substantial vector changes, especially after image positions.
 Changed RGB marginals and destroyed spatial arrangement remain explicit;
 this is not frequency-only or semantic causal evidence.
-The newest input-only extension grades the common permutation under fixed
-palette-mean padding and exact RGB marginals. Accepted blocks across seven
-levels are 0, 0, 3, 8, 32, 32 and 32: the 3/4, 7/8 and full levels qualify
-complete panels. All 896 cell controls and 256 historical endpoint checks
-reproduce. These are within-level gates, not cross-level spectral equality;
-cache behavior at the intermediate levels remains unmeasured.
+The graded extension holds palette-mean padding and exact RGB marginals fixed.
+Its three input-eligible levels, 3/4, 7/8 and full permutation, are now measured:
+3/18 primary correspondence tests pass joint Holm, all post-image. Yet using
+full-endpoint references lowers all twelve intermediate-level average margins.
+At 3/4, image interaction lengths remain about 1.04 times the endpoint while
+paired cosine medians are only 0.07-0.08. Direction, length and within-condition
+prediction are different observations. All 768 endpoint tensor comparisons
+reproduce exactly. Within-level input matching is not cross-level spectral
+equality, and these reused images do not constitute an untouched cohort.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
@@ -189,10 +192,12 @@ features, mapping the saved 1,474-token history to 3,073 effective cache
 positions: 51 pre-image, 2,916 image, and 106 post-image. Unknown mismatches and
 multi-run layouts still fail closed.
 
-The selected full-vector surface now contains 872 source-only fresh forwards,
-2,472 target tensor sidecars, and 618 layer-by-pair analyses. Of the 606
-analyses with identified token partitions, 606/606 pre-image interactions are
-exactly zero, 600/606 interaction argmaxes are image tokens, and 600/606
+The selected full-vector surface now contains 1,256 source-only fresh forwards,
+3,624 target tensor sidecars, and 906 layer-by-pair analyses. These executed
+panel counts include Note 0048's 128 cells / 384 tensors / 96 analyses repeating
+the full endpoint; they are not counts of independent stimuli. Of the 894
+analyses with identified token partitions, 894/894 pre-image interactions are
+exactly zero, 888/894 interaction argmaxes are image tokens, and 888/894
 image-token energy fractions exceed 0.9. Calibration repeats and failed
 calibration attempts are counted separately. In Note 0042's 64 analyses,
 spatial/palette/interaction dominance is 54/10/0 in image regions and 56/8/0
@@ -200,6 +205,9 @@ over the whole tensor. Note 0043's 96 FastVLM reference/test analyses are 80/16/
 under either convention; references are not additional held-out outcomes.
 Note 0046's 192 permutation analyses are 44/52/0 with black padding and
 48/48/0 with palette-mean padding, under either region convention.
+Note 0048 adds 288 analyses: image-region dominance is 57/39/0 at 3/4,
+52/44/0 at 7/8 and 48/48/0 at the repeated full endpoint. At 7/8, whole-tensor
+dominance differs at 51/45/0; the other two levels agree across conventions.
 Predictable interaction direction does not imply interaction-axis dominance.
 
 Direction is more specific than energy and more specific than broad visual
@@ -257,6 +265,20 @@ for all rejected blocks, while HF and moment checks pass throughout. The
 common centroid target still changes between levels. This input-only stage
 adds no cache observations or tests, and does not locate a semantic threshold.
 
+Note 0048 decomposes the three eligible levels into within-level prediction,
+endpoint-reference transfer and vector direction/amplitude. All 384 pre-panel
+calibration and 384 panel-endpoint tensor comparisons are byte-identical.
+Post-image L12 keys and L23 values at 3/4, and L23 values at 7/8, pass the
+18-test joint Holm family (`p=0.03125`); L1 post-image at 3/4 does not
+(`p=0.052083`). All average primary margins are positive, with 37/144 negative
+family-view margins retained. Endpoint references lower all twelve average
+transfer margins, although 7/8 image retrieval improves at all three targets.
+Image interaction norm ratios near 1 coexist with weak cross-level cosines.
+These are transformation-conditioned directions, not a single direction
+whose strength only changes. Cross-level differences and 576 dependent vector
+decompositions remain descriptive; neither frequency nor the common map is
+isolated as a cause. No direct readout is added.
+
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
 processor-space frequency structure. The interaction and image localization
@@ -272,9 +294,12 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0047](docs/research_notes/0047_graded_permutation_under_fixed_marginals.md)
-for the graded input audit, three complete eligible levels, exact fixed
-marginals and the still-unmeasured intermediate cache behavior.
+Start with [Note 0048](docs/research_notes/0048_graded_cache_correspondence_and_direction.md)
+for the measured graded panel, three corrected post-image results, and the
+separation of within-condition prediction from cross-condition direction.
+[Note 0047](docs/research_notes/0047_graded_permutation_under_fixed_marginals.md)
+contains the preceding input audit, three complete eligible levels, exact fixed
+marginals and the remaining cross-level frequency confound.
 [Note 0046](docs/research_notes/0046_padding_cache_calibration_and_matched_panel.md)
 contains the completed metadata calibration, both measured full-permutation
 panels and the weaker correspondence result with all negative cases retained.
@@ -959,6 +984,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0045: Padding Policy And Explicit Marginals](docs/research_notes/0045_padding_policy_and_explicit_marginals.md)
 - [Research Note 0046: Padding Cache Calibration And Matched Panel](docs/research_notes/0046_padding_cache_calibration_and_matched_panel.md)
 - [Research Note 0047: Graded Permutation Under Fixed Marginals](docs/research_notes/0047_graded_permutation_under_fixed_marginals.md)
+- [Research Note 0048: Graded Cache Correspondence And Direction](docs/research_notes/0048_graded_cache_correspondence_and_direction.md)
 
 ## Claim Boundary
 
