@@ -1,6 +1,6 @@
 # Paper Evidence Matrix
 
-Last updated: 2026-10-08
+Last updated: 2026-10-16
 
 This file is the compact bridge from run artifacts to a manuscript draft. It
 separates valid observations, descriptive interpretation, withdrawn results,
@@ -23,13 +23,14 @@ the same four factorial cells are not independent samples.
 | Padding cache calibration and permutation panel | Same qualified FastVLM, fixed L1 keys / L12 keys / L23 values | 264 calibration cells / 792 tensors separately counted; two 32-block panels add 256 experimental cells / 768 tensors / 192 factorials | All 792 calibration comparisons are exact; both panels have weaker margins than original inputs and 0/12 primary tests pass joint Holm; mean-padding retrieval is 3-7/16, with 32/32 input blocks accepted | bounded metadata equivalence and measured input-selected cache diagnostic; not absence of residual correspondence or frequency-only causality | [Note 0046](research_notes/0046_padding_cache_calibration_and_matched_panel.md) |
 | Graded permutation input audit | Qualified FastVLM processor; fixed expanded RGB marginals, mean padding and square metadata | Seven registered levels x 32 blocks x four cells = 896 cells; 256 exact historical endpoint checks | Accepted blocks are 0/0/3/8/32/32/32; 3/4, 7/8 and 1 retain all eight complete families; all 117 rejections fail the centroid gate | three complete within-level input panels, not cross-level spectral equality, a universal transition or new cache evidence | [Note 0047](research_notes/0047_graded_permutation_under_fixed_marginals.md) |
 | Graded cache correspondence and direction | Same qualified FastVLM and three fixed tensor targets; 3/4, 7/8 and full permutation | 384 panel cells / 1,152 tensors / 288 factorials, including 128 / 384 / 96 repeated endpoint observations; 128 calibration cells separately counted | All 768 endpoint tensor checks match; 3/18 primary tests pass joint Holm, all post-image; endpoint references lower all twelve intermediate average margins, while 3/4 image norm ratios near 1.04 coexist with cosine medians 0.068-0.082 | transformation-conditioned known-pairing correspondence; descriptive transfer/decomposition, not an invariant axis or geometry-only cause | [Note 0048](research_notes/0048_graded_cache_correspondence_and_direction.md) |
+| Fixed-fraction map-seed transfer | Same qualified FastVLM and targets; historical 3/4 anchor plus three new common maps | 512 panel cells / 1,536 tensors / 384 factorials, including 128 / 384 / 96 anchor repeats; 128 calibration cells separately counted | All four maps pass 32/32 input blocks and all 768 anchor checks are exact; all twelve aggregate primary tests pass joint Holm; cross/same mean-margin ratios are 14.1%-15.7% in image positions and 94.1% / 91.5% at post-image L12/L23 | cross-map known-pairing correspondence in three new maps, not vector identity, a between-regime test or semantic invariance | [Note 0049](research_notes/0049_fixed_fraction_map_seed_transfer.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
 | Gemma 3 direct factorial trajectory | Gemma-3-4B-it 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2; 24 cells total | All 6 direct after-factorials are non-identical; all four one-frame maxima are early `values`, but exact layer and sign vary; frequency readout can change sharply | component-level regularity plus pair-dependent exact locus | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
 | InternVL3 direct factorial replication | InternVL3-2B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All four direct after-factorials are non-identical; all ACK maxima are late layer 25-27 `values` with negative sign | component/sign/depth-band replication with pair-dependent exact layer | [Note 0029](research_notes/0029_cross_model_prompt_and_internvl_expansion.md) |
 | LFM2-VL direct factorial replication | LFM2-VL-1.6B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All after-cell distributions are distinct; visible family labels vary in 3/4 pairs while frequency labels stay fixed; balanced readout axes remain pair-dependent | fifth-architecture replication with deterministic artifact integrity | [Note 0031](research_notes/0031_balanced_contrasts_five_model_expansion.md) |
-| Selected full-vector source-cache surface | Nine VLMs, with fixed-target control, pairing-hierarchy, held-out-seed and permutation extensions, fresh source-context forwards | 1,256 cell runs, 3,624 tensors, 906 analyses, including Note 0048's 128 / 384 / 96 endpoint repeats; calibration repeats/failed attempts separately counted | In 894 partition-resolved analyses every pre-image effect is zero and 888 argmaxes are image tokens; pairing prediction and cross-condition vector direction separate in the graded panel | targeted localization and transformation-conditioned repetition; executed counts are not independent stimuli | [Note 0048](research_notes/0048_graded_cache_correspondence_and_direction.md) |
+| Selected full-vector source-cache surface | Nine VLMs, with fixed-target control, pairing-hierarchy, held-out-seed and permutation extensions, fresh source-context forwards | 1,768 cell runs, 5,160 tensors, 1,290 analyses, including 96 repeated analyses each in Notes 0048 and 0049; calibration repeats/failed attempts separately counted | In 1,278 partition-resolved analyses every pre-image effect is zero and 1,272 argmaxes are image tokens; correspondence, vector length and direction remain distinct | targeted localization and transformation-conditioned repetition; executed counts are not independent stimuli | [Note 0049](research_notes/0049_fixed_fraction_map_seed_transfer.md) |
 | Cross-model direct aggregate | Nine-model four-pair core, nested earlier lengths, and two-model control/pairing extensions, complete first-step vocabulary | 104 factorial points, 416 cells, 1,664 sidecars | Every direct after-factorial is non-identical; balanced readout dominance is model-, pair-, generator-, and probe-dependent | balanced nine-architecture core plus bounded two-model extensions | [Note 0041](research_notes/0041_fastvlm_ninth_model_replication.md) |
 | Four-pair prompt robustness core | Eight VLMs on `b_c`, `c_d`, `d_e`, and `e_f`, fresh direct probes | 32 model/source-pair audit units, 128 cell runs, 2,048 sidecars | All 512 baseline sidecars repeat bitwise; generated patterns agree over all four pairs in 39/64 records, balanced-axis dominance in 4/64, and both in 2/64 | eight-model four-pair categorical versus distributional replication matrix | [Note 0038](research_notes/0038_ministral3_eighth_model_replication.md) |
 | Phi-3.5 Vision full expansion | Phi-3.5 Vision 4bit on four source pairs, fresh direct probes and source-only ACK | 16 standard direct cells and 64 sidecars; 16 prompt cells and 256 sidecars; 16 ACK cells, 48 tensors, 12 full-vector analyses | Scalar ACK maxima are early positive `keys` in 4/4; all selected full tensors are spatial-dominant; cross-pair direction alignment is weak and image-token partition is unresolved | sixth-architecture scalar-locus versus vector-direction replication | [Note 0035](research_notes/0035_six_model_four_pair_completion_and_phi_full_vector.md) |
@@ -68,8 +69,8 @@ the same four factorial cells are not independent samples.
    layer/component/sign, LFM2 exposes six hybrid-attention cache entries, and
    Granite changes layer/component/sign across pairs. Ministral uses `keys` in
    4/4 while changing exact layer and sign.
-5. Across 906 selected full-vector cache analyses in nine VLMs, the 894
-   partition-resolved analyses have zero pre-image effects and 888 interaction
+5. Across 1,290 selected full-vector cache analyses in nine VLMs, the 1,278
+   partition-resolved analyses have zero pre-image effects and 1,272 interaction
    maxima in image tokens. In Note 0042's 64 analyses, image-region balanced
    dominance is spatial/palette/interaction in 54/10/0, versus 56/8/0 over the
    whole effective tensor; region conventions are not interchangeable.
@@ -79,7 +80,11 @@ the same four factorial cells are not independent samples.
    of 44/52/0 with black padding and 48/48/0 with palette-mean padding.
    Note 0048's 288 analyses include 96 endpoint repeats; image dominance is
    57/39/0, 52/44/0 and 48/48/0 at 3/4, 7/8 and 1, respectively. Whole-tensor
-   dominance at 7/8 is 51/45/0. These are executed, dependent observations.
+   dominance at 7/8 is 51/45/0. Note 0049 adds 384 analyses, including 96
+   anchor repeats; both regions have dominance counts 222/161/1. The sole
+   interaction-dominant case is narrowly so, at L12 keys for
+   `stochastic_sparse_dense_r4` under map 20261018. These are executed,
+   dependent observations.
 6. A generated letter or top-k set can remain fixed while the complete
    distribution changes; visible-label equality is not distribution equality.
 7. Across eight models and four prompt-audited source pairs, generated semantic
@@ -164,6 +169,16 @@ the same four factorial cells are not independent samples.
     although all three 7/8 image retrieval counts improve. At 3/4, paired image
     norm-ratio medians are 1.036-1.046 while cosine medians are 0.068-0.082.
     Length, direction and within-condition prediction are distinct observations.
+23. At fixed 3/4 fraction, all three new maps and the historical anchor pass
+    complete input gates; 768 calibration/panel anchor tensor comparisons are
+    exact. All twelve aggregate same-map/cross-map tests pass their joint Holm
+    family (`p=0.020833` or `0.034722`). Cross-map mean margins retain
+    14.1%-15.7% of same-map margins in image positions and 94.1% / 91.5% at
+    post-image L12/L23. These ratios are descriptive: eight of 96 primary
+    family margins are negative, and 13/48 same-minus-cross family gaps reverse
+    the aggregate trend. Across new maps, image cosine medians are
+    0.066-0.076 despite near-unit norm ratios. Known-pairing correspondence
+    transfers across these maps without establishing vector identity.
 
 ### Provisional
 
@@ -280,6 +295,20 @@ the same four factorial cells are not independent samples.
   Endpoint-repeat panel cells remain identifiable rather than counted as new
   stimuli, and perpendicular energy is a share of the vector change, not of
   semantic variance. Neither pure rotation nor a shared causal axis is shown.
+- Note 0049 averages cosines over three new-map diagonals or six ordered
+  off-diagonals before computing margins and retrieval. Each regime retains
+  sixteen averaged test-seed rows; the 576 assignments move family blocks
+  synchronously across maps. Twelve primary tests share one Holm family;
+  all 96 individual matrix views and 1,152 decompositions are descriptive.
+  The historical anchor is excluded from primary inference. Comparing 12/12
+  here with Note 0048's 3/18 does not measure improvement: the estimand and
+  multiplicity family changed. All eight negative primary family margins
+  and 140 negative matrix family margins remain visible. Only three new maps
+  were tested on reused, input-selected images; selected masks and destinations
+  both change, and spectra are not identical. Margin-retention ratios are not
+  semantic-information retention or significance tests of regime differences.
+  The one interaction-dominant factorial does not establish a general
+  interaction-dominant mechanism.
 - Replay lengths are nested contexts, not independent stimulus replicates.
 - Source-context caches and direct probes come from separate fresh forwards
   with different prompts; their relationship is descriptive, not causal.
@@ -308,25 +337,27 @@ the same four factorial cells are not independent samples.
 
 ## Highest-Value Next Data
 
-1. Vary the common selection/permutation seed at fixed 3/4 fraction, expanded
-   RGB marginals and mean padding. Audit all new maps without relaxing input
-   gates, then register same-map versus cross-map reference transfer. Notes
-   0045-0048 complete the earlier padding/calibration/graded sequence; the new
-   question is dependence on the shared transformation template, not another
-   unregistered choice of a favorable fraction.
-2. Add more stochastic, fractal, and provenance-controlled natural-image
+1. Apply Note 0049's unchanged reference-map/test-map matrix to full raw RGB
+   and actual-processor input vectors. Preserve maps, split, dependency and
+   negative cases; determine what correspondence is already present in the
+   transformed inputs without calling input/cache score differences causal
+   processing gain. The fixed-fraction cache-map comparison is now complete.
+2. Separate selected-mask changes from permutation-destination changes in a
+   subsequent registered design, with unchanged input gates and explicit
+   between-map spectral drift.
+3. Add more stochastic, fractal, and provenance-controlled natural-image
    pairing families; evaluate leave-one-pairing-family-out transfer.
-3. Compare input-conditioned direction profiles in accepted matched blocks;
+4. Compare input-conditioned direction profiles in accepted matched blocks;
    matching a scalar input score or two spectral summaries is not full
    computational equivalence or evidence of semantic specificity.
-4. Resolve model-specific two-dimensional patch coordinates and add
+5. Resolve model-specific two-dimensional patch coordinates and add
    FastVLM verbalizer/order controls. Existing head/token-order views are not
    causal attention-head or verified patch contributions.
-5. Balance wording, candidate order, and token-to-semantics mapping as separate
+6. Balance wording, candidate order, and token-to-semantics mapping as separate
    factors, including neutral and non-forced readouts.
-6. Reconstruct Phi's processor-expanded image-token layout, then resolve
+7. Reconstruct Phi's processor-expanded image-token layout, then resolve
    balanced full-vector axes by KV head and token position.
-7. Rebuild intervention logic only on a multimodal suffix path that asserts
+8. Rebuild intervention logic only on a multimodal suffix path that asserts
    exact prefix and cache sequence-length compatibility before mutation.
 
 ## Manuscript-Safe Wording
@@ -392,6 +423,18 @@ Graded correspondence extension:
 > seed correspondence from cross-condition vector identity. Spectral drift,
 > one shared transformation map, reused images and repeated endpoint captures
 > limit causal and generalization claims.
+
+Fixed-fraction map extension:
+
+> After exact calibration, three new shared permutation maps at fixed 3/4
+> fraction yielded positive same-map and cross-map aggregate correspondence
+> under twelve jointly Holm-corrected tests. Cross-map mean margins were
+> much smaller in image positions but retained over 90% of same-map margins
+> at post-image L12 keys and L23 values. These descriptive ratios did not
+> imply equal vectors, and eight primary family margins remained negative.
+> The reused cohort, input-selected fraction, three new maps and coupled
+> changes to selected sites and destinations limit generalization. Input-level
+> cross-map correspondence and causal processing gain remain untested here.
 
 Avoid:
 

@@ -142,10 +142,11 @@ generator-pairing extensions add independent fractal pairs, matched frequency
 and natural controls, and 16 two-seed geometry/stochastic pairing units. The
 wider valid direct surface contains 104 factorial points, 416 cell runs, and
 1,664 complete-vocabulary sidecars, with non-identical after-cell distributions
-in every factorial. The selected full-vector surface contains 906 analyses,
-including 96 repeated full-endpoint observations in Note 0048; these are not
-independent stimuli. Of these, 894 have resolved token partitions, including
-894/894 zero pre-image effects and 888/894 image-position interaction maxima.
+in every factorial. The selected full-vector surface contains 1,290 analyses
+from 1,768 source cells and 5,160 tensors, including 96 repeated analyses each
+in Notes 0048 and 0049; these are not independent stimuli. Of these, 1,278
+have resolved token partitions, including 1,278/1,278 zero pre-image effects
+and 1,272/1,278 image-position interaction maxima.
 FastVLM's original 12 fixed targets are
 all spatial-dominant and image-localized under a validated `llava_qwen2`
 single-image map. In the Qwen/Ministral hierarchy, all eight exact matching
@@ -191,9 +192,19 @@ margin is lower with full-endpoint references than native references, while
 3/4 image norm ratios near 1.04 coexist with paired cosine medians of only
 0.07-0.08. Direction, amplitude and within-condition prediction separate.
 Within-level acceptance still does not establish cross-level spectral
-equality. The next bounded step is to vary the common selection/permutation
-seed at fixed 3/4 fraction and audit every new map before registering same-map
-versus cross-map reference transfer. This is proposed, not yet executed.
+equality. The fixed-3/4 map-seed follow-up is now complete: the historical
+anchor and three new maps each pass 32/32 input blocks, and all 768 anchor
+tensor checks reproduce. All twelve aggregate same-map/cross-map primary
+tests pass their joint Holm family, with eight negative family margins retained.
+Cross-map mean margins retain 14.1%-15.7% of same-map margins in image positions
+and 94.1% / 91.5% at post-image L12/L23. These are descriptive ratios, not
+between-regime tests or retained semantic information. Paired directions still
+change despite near-unit median norm ratios. One of 384 factorials is narrowly
+interaction-dominant; neither universal spatial dominance nor a general
+interaction-dominant mechanism follows. The next bounded audit applies the
+same map matrix and frozen split to raw RGB and actual-processor vectors,
+before separately manipulating selection masks and destinations. Those
+follow-ups are proposed, not executed.
 Token bands are not verified 2D patches.
 
 ## Phase 5: Research Report
@@ -204,7 +215,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0048 encode the audited claim
+Status: the evidence matrix and Notes 0027-0049 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -217,8 +228,10 @@ the earlier strong pairing correspondence after permutation. Full-spectrum
 equality and a frequency-only explanation remain unsupported. The graded
 cache study now separates conditional pairing correspondence from
 cross-condition direction and amplitude, retaining all negative family margins
-and repeated endpoint counts. The current priority is generalization across
-common permutation maps at a fixed fraction, with spectral drift explicit, then
+and repeated endpoint counts. The fixed-fraction map study now supports
+cross-map known-pairing correspondence without vector identity, retaining
+negative cases and all repeated-anchor counts. The current priority is its
+raw/processor input baseline, then separate mask/destination controls,
 held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.

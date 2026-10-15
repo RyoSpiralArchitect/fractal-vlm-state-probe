@@ -53,6 +53,7 @@ run-graded-cache-study = "fractal_vlm_state_probe.cli.run_graded_cache_study:mai
 run-map-seed-input-study = "fractal_vlm_state_probe.cli.run_map_seed_input_study:main"
 summarize-map-seed-input-study = "fractal_vlm_state_probe.cli.summarize_map_seed_input_study:main"
 run-map-seed-cache-study = "fractal_vlm_state_probe.cli.run_map_seed_cache_study:main"
+summarize-map-seed-cache-study = "fractal_vlm_state_probe.cli.summarize_map_seed_cache_study:main"
 summarize-graded-cache-study = "fractal_vlm_state_probe.cli.summarize_graded_cache_study:main"
 summarize-graded-permutation-study = "fractal_vlm_state_probe.cli.summarize_graded_permutation_study:main"
 summarize-padding-cache-study = "fractal_vlm_state_probe.cli.summarize_padding_cache_study:main"

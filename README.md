@@ -27,15 +27,16 @@ and none of twelve primary tests passes joint Holm correction. Similar scores
 also hide substantial vector changes, especially after image positions.
 Changed RGB marginals and destroyed spatial arrangement remain explicit;
 this is not frequency-only or semantic causal evidence.
-The graded extension holds palette-mean padding and exact RGB marginals fixed.
-Its three input-eligible levels, 3/4, 7/8 and full permutation, are now measured:
-3/18 primary correspondence tests pass joint Holm, all post-image. Yet using
-full-endpoint references lowers all twelve intermediate-level average margins.
-At 3/4, image interaction lengths remain about 1.04 times the endpoint while
-paired cosine medians are only 0.07-0.08. Direction, length and within-condition
-prediction are different observations. All 768 endpoint tensor comparisons
-reproduce exactly. Within-level input matching is not cross-level spectral
-equality, and these reused images do not constitute an untouched cohort.
+The graded extension separated within-condition prediction from vector length
+and cross-condition direction. The newest study fixes the fraction at 3/4 and
+varies the common map: all twelve same-map/cross-map aggregate tests pass joint
+Holm across three new maps. Cross-map margins retain about 94% and 91% of
+same-map margins at post-image L12 keys and L23 values, versus only 14%-16%
+in image positions. These are descriptive score ratios, not retained semantics
+or tests of the regime difference. All 768 anchor tensor comparisons reproduce
+exactly. The correspondence is not confined to one map, but between-map spectra
+still differ, negative family margins remain, and reused images do not form an
+untouched cohort. Cross-map input-vector baselines are the next audit.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
@@ -192,12 +193,12 @@ features, mapping the saved 1,474-token history to 3,073 effective cache
 positions: 51 pre-image, 2,916 image, and 106 post-image. Unknown mismatches and
 multi-run layouts still fail closed.
 
-The selected full-vector surface now contains 1,256 source-only fresh forwards,
-3,624 target tensor sidecars, and 906 layer-by-pair analyses. These executed
-panel counts include Note 0048's 128 cells / 384 tensors / 96 analyses repeating
-the full endpoint; they are not counts of independent stimuli. Of the 894
-analyses with identified token partitions, 894/894 pre-image interactions are
-exactly zero, 888/894 interaction argmaxes are image tokens, and 888/894
+The selected full-vector surface now contains 1,768 source-only fresh forwards,
+5,160 target tensor sidecars, and 1,290 layer-by-pair analyses. These executed
+panel counts include 128 cells / 384 tensors / 96 analyses repeated in each
+of Notes 0048 and 0049; they are not counts of independent stimuli. Of the 1,278
+analyses with identified token partitions, 1,278/1,278 pre-image interactions are
+exactly zero, 1,272/1,278 interaction argmaxes are image tokens, and 1,272/1,278
 image-token energy fractions exceed 0.9. Calibration repeats and failed
 calibration attempts are counted separately. In Note 0042's 64 analyses,
 spatial/palette/interaction dominance is 54/10/0 in image regions and 56/8/0
@@ -208,6 +209,9 @@ Note 0046's 192 permutation analyses are 44/52/0 with black padding and
 Note 0048 adds 288 analyses: image-region dominance is 57/39/0 at 3/4,
 52/44/0 at 7/8 and 48/48/0 at the repeated full endpoint. At 7/8, whole-tensor
 dominance differs at 51/45/0; the other two levels agree across conventions.
+Note 0049 adds 384 analyses with dominance 222/161/1 under both conventions.
+The narrowly interaction-dominant case is map 20261018, sparse/dense dots r4,
+L12 keys; it is retained rather than generalized into a dominant mechanism.
 Predictable interaction direction does not imply interaction-axis dominance.
 
 Direction is more specific than energy and more specific than broad visual
@@ -279,6 +283,20 @@ whose strength only changes. Cross-level differences and 576 dependent vector
 decompositions remain descriptive; neither frequency nor the common map is
 isolated as a cause. No direct readout is added.
 
+Note 0049 fixes 3/4 and audits three new shared maps plus the historical anchor.
+All four maps accept 32/32 input blocks; all 512 pixel controls and 128 anchor
+cell checks reproduce. After 768 exact cache comparisons, all twelve aggregate
+same-map/cross-map tests pass joint Holm (`p=0.020833` or `0.034722`). Complete
+family assignments move synchronously across maps, retaining sixteen averaged
+test-seed rows rather than inflating the sample size. All 96 descriptive matrix
+mean margins are positive, with 140/768 negative family-view margins; primary
+family margins are negative in 8/96. Post-image L12/L23 retain substantial
+cross-map margins, but paired cosine medians are only 0.404/0.376, not vector
+identity. Image cosines are 0.066-0.076 with near-unit norm ratios. Aggregate
+prediction, raw direction and amplitude remain distinct. This changes the
+question from dependence on one map to how cross-map input correspondence is
+represented; it does not establish semantic invariance or causal processing gain.
+
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
 processor-space frequency structure. The interaction and image localization
@@ -294,9 +312,12 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0048](docs/research_notes/0048_graded_cache_correspondence_and_direction.md)
-for the measured graded panel, three corrected post-image results, and the
-separation of within-condition prediction from cross-condition direction.
+Start with [Note 0049](docs/research_notes/0049_fixed_fraction_map_seed_transfer.md)
+for the fixed-fraction map-seed experiment, synchronized same-map/cross-map
+tests, full map matrices and the surviving post-image correspondence.
+[Note 0048](docs/research_notes/0048_graded_cache_correspondence_and_direction.md)
+contains the measured graded panel and separates within-condition prediction
+from cross-condition direction and amplitude.
 [Note 0047](docs/research_notes/0047_graded_permutation_under_fixed_marginals.md)
 contains the preceding input audit, three complete eligible levels, exact fixed
 marginals and the remaining cross-level frequency confound.
@@ -985,6 +1006,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0046: Padding Cache Calibration And Matched Panel](docs/research_notes/0046_padding_cache_calibration_and_matched_panel.md)
 - [Research Note 0047: Graded Permutation Under Fixed Marginals](docs/research_notes/0047_graded_permutation_under_fixed_marginals.md)
 - [Research Note 0048: Graded Cache Correspondence And Direction](docs/research_notes/0048_graded_cache_correspondence_and_direction.md)
+- [Research Note 0049: Fixed-Fraction Map-Seed Transfer](docs/research_notes/0049_fixed_fraction_map_seed_transfer.md)
 
 ## Claim Boundary
 

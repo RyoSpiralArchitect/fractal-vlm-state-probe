@@ -695,3 +695,11 @@ effects, balanced dominance, localization and every block's spectral drift.
 The same 32 images and input-selected 3/4 fraction are reused. Three new maps
 do not establish a population-level map law, geometry-only cause, semantic
 mechanism, state persistence or cache-to-readout mediation.
+
+Execution report (2026-10-16): [Note 0049](research_notes/0049_fixed_fraction_map_seed_transfer.md)
+records the completed fixed-fraction study. All 768 anchor tensor comparisons
+reproduce exactly, and all twelve registered aggregate tests pass joint Holm.
+The 96 descriptive matrix views, 1,152 dependent directional records and all
+negative margins remain separate from the primary test family. Post-image
+L12/L23 retain substantial cross-map margins; this is not a test of the
+same-versus-cross gap or proof of vector/semantic invariance.
