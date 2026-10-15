@@ -639,3 +639,59 @@ This retains map dependence rather than treating maps or pairwise cells as
 new independent images. Historical-anchor comparisons and the full map matrix
 will be descriptive. Exact capture counts, calibration and multiplicity will
 be registered before any new cache forward, not inferred from these input gates.
+
+Execution receipt (2026-10-16): all four maps accept 32/32 blocks. Independent
+publication checks reproduce all 512 pixel/marginal controls, 128 four-cell
+gates and 128 historical-anchor cell checks. No model-cache forward was used
+for this eligibility decision.
+
+## Stage 4G: Same-Map And Cross-Map Cache Correspondence
+
+Registered: 2026-10-16, after Stage 4F input eligibility and before new cache
+forwards. Freeze `configs/map_seed_cache_fastvlm_v1.json` and the published
+input receipt. Do not modify the maps, fraction, gates, targets or test split.
+
+First replay all 128 historical 3/4 cells from Note 0048, with 384 byte-exact
+tensor comparisons at zero-based L1 keys / L12 keys / L23 values. Actual
+prepared inputs, model snapshot, runtime, response `The image`, trace
+`[785,2168,2168]`, native bfloat16 dtype, `[1,2,397,64]` tensor shape and
+42/256/99 token partitions must match. Stop on any mismatch without widening
+tolerances. These calibration captures do not become panel references.
+
+Capture four maps x 32 blocks x four cells = 512 fresh panel cells, 1,536
+tensors and 384 factorials. All 256 r1/r2 panel captures must be frozen before
+any r3/r4 panel capture. Recheck the 128 historical-anchor panel cells against
+another 384 exact tensor comparisons; they are repeated-condition observations,
+not new stimuli. The three new maps contribute 384 newly transformed cells,
+1,152 tensors and 288 factorials. All prepared non-pixel fields stay identical
+to the anchor; only `pixel_values` may change. No direct probe is added.
+
+For each target and image/post-image region, form a 4x4 matrix of reference-map
+by test-map scores using the unchanged unit-normalized r1/r2 family references
+and r3/r4 tests. Keep all 96 matrix views descriptive, including historical
+anchor comparisons. Do not select a best map or add head/band tests.
+
+The twelve primary tests are two regimes x three targets x two regions:
+
+1. Same-map: equally average cosine scores across the three new-map diagonal
+   views, before computing family margins and all-family retrieval.
+2. Cross-map: equally average cosine scores across all six ordered off-diagonal
+   new-map pairs. Exclude the already observed historical map from both regimes.
+
+In each exact test, assign complete two-test-seed family blocks within broad
+class, using the same assignment synchronously in every map pair. Enumerate
+all 576 assignments, preserving dependence across maps. Compare equal-family
+mean margins to this null and apply Holm jointly to all twelve tests.
+Unavailable views retain p=1 for correction; never drop a required map pair.
+Retrieval is over the sixteen averaged test-seed score rows, not 48 or 96
+independent examples. Preserve negative family margins and ties.
+
+Report same-minus-cross margins descriptively, including each family's gap.
+Significance in one regime but not the other is not a test of their difference.
+Retain all six unordered map-pair vector comparisons per block/target/region
+(1,152 dependent directional decompositions), using the earlier-listed map
+as reference, and split reference/test phases. Carry forward scalar factorial
+effects, balanced dominance, localization and every block's spectral drift.
+The same 32 images and input-selected 3/4 fraction are reused. Three new maps
+do not establish a population-level map law, geometry-only cause, semantic
+mechanism, state persistence or cache-to-readout mediation.

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "study_id": "map_seed_cache_fastvlm_v1",
+  "registered_date": "2026-10-16",
+  "model_id": "mlx-community/FastVLM-0.5B-bf16",
+  "maps": ["historical_3q", "seed_20261016", "seed_20261017", "seed_20261018"],
+  "targets": ["1:keys", "12:keys", "23:values"],
+  "reference_replicates": [1, 2],
+  "test_replicates": [3, 4],
+  "primary_test_family_size": 12,
+  "primary_regimes": ["same_map", "cross_map"],
+  "primary_map_scope": "three_new_maps_only",
+  "descriptive_matrix_views": 96,
+  "expected_calibration_cells": 128,
+  "expected_panel_cells": 512,
+  "expected_source_response": "The image",
+  "expected_generation_step_ids": [785, 2168, 2168],
+  "expected_tensor_shape": [1, 2, 397, 64]
+}
