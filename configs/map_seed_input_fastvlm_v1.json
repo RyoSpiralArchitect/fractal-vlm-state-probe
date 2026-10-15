@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "study_id": "map_seed_input_fastvlm_v1",
+  "registered_date": "2026-10-16",
+  "selected_numerator": 6,
+  "selected_denominator": 8,
+  "anchor_level": "selected_06_of_08",
+  "new_map_seeds": [20261016, 20261017, 20261018],
+  "rng_rule": "SeedSequence_spawn_2_selection_then_full_PCG64",
+  "permutation_rule": "restrict_cycles_to_selected_sites",
+  "padding_policy": "palette_mean",
+  "source_shape_hwc": [240, 320, 3],
+  "centroid_relative_tolerance": 0.05,
+  "hf_absolute_tolerance": 0.02,
+  "expected_blocks": 32,
+  "expected_input_cells": 512,
+  "cache_gate": "all_three_new_maps_and_anchor_accept_all_32_blocks",
+  "new_cache_forwards": 0
+}

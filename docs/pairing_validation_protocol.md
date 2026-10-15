@@ -602,3 +602,40 @@ Three of 18 jointly corrected primary tests pass 0.05, all post-image; all
 twelve descriptive endpoint-reference transfer margins are lower than native
 margins. The registration above is unchanged; the report retains all negative
 family margins, endpoint repeats, dependent decompositions and spectral drift.
+
+## Stage 4F: Fixed-Fraction Map-Seed Input Audit
+
+Registered: 2026-10-16, before new map measurements.
+
+Fix the selected-site fraction at 3/4, all 32 source blocks, the qualified
+FastVLM processor, palette-mean padding and the expanded RGB marginals from
+Note 0047. Retain its historical 3/4 map as an exact anchor. Draw exactly three
+new panel-wide maps with seeds 20261016, 20261017 and 20261018. Each seed uses
+`SeedSequence(seed).spawn(2)`: child zero generates the selection order and
+child one the full permutation, using explicit PCG64 generators. Restrict full
+permutation cycles to the first 57,600 selected positions. The same map applies
+to every source block and all four cells. Both the selected set and destinations
+change; this does not separate those two aspects of a map.
+
+Freeze `configs/map_seed_input_fastvlm_v1.json`, code/runtime/source hashes,
+map arrays and the registration commit before measuring. Audit all 512 cells
+(four maps x 32 blocks x four cells), retaining failed gates. Require all 128
+anchor cells to reproduce historical pixels and statistics exactly. Verify
+inverse mapping, expanded joint RGB counts, padding, non-pixel processor fields
+and serialized pixels. Use the unchanged centroid-relative 5% and HF-absolute
+0.02 gates in every block. Record mapping overlap and spectral drift; passing
+within-map gates does not establish between-map spectral equality.
+
+Do not replace seeds, relax tolerances, drop failing blocks or select a subset
+of maps. Proceed to a separately registered cache comparison only if all four
+maps accept all 32 blocks. Otherwise publish the complete input result and stop
+before model-cache capture. This stage loads the processor but not model weights.
+
+The intended cache comparison, conditional on this gate, will freeze all r1/r2
+references before r3/r4 captures. Aggregate same-map scores across the three
+new maps and cross-map scores across their six ordered off-diagonal pairs;
+move family blocks synchronously across maps in the same 576 assignments.
+This retains map dependence rather than treating maps or pairwise cells as
+new independent images. Historical-anchor comparisons and the full map matrix
+will be descriptive. Exact capture counts, calibration and multiplicity will
+be registered before any new cache forward, not inferred from these input gates.
