@@ -1,6 +1,6 @@
 # Paper Evidence Matrix
 
-Last updated: 2026-10-16
+Last updated: 2026-10-26
 
 This file is the compact bridge from run artifacts to a manuscript draft. It
 separates valid observations, descriptive interpretation, withdrawn results,
@@ -24,6 +24,7 @@ the same four factorial cells are not independent samples.
 | Graded permutation input audit | Qualified FastVLM processor; fixed expanded RGB marginals, mean padding and square metadata | Seven registered levels x 32 blocks x four cells = 896 cells; 256 exact historical endpoint checks | Accepted blocks are 0/0/3/8/32/32/32; 3/4, 7/8 and 1 retain all eight complete families; all 117 rejections fail the centroid gate | three complete within-level input panels, not cross-level spectral equality, a universal transition or new cache evidence | [Note 0047](research_notes/0047_graded_permutation_under_fixed_marginals.md) |
 | Graded cache correspondence and direction | Same qualified FastVLM and three fixed tensor targets; 3/4, 7/8 and full permutation | 384 panel cells / 1,152 tensors / 288 factorials, including 128 / 384 / 96 repeated endpoint observations; 128 calibration cells separately counted | All 768 endpoint tensor checks match; 3/18 primary tests pass joint Holm, all post-image; endpoint references lower all twelve intermediate average margins, while 3/4 image norm ratios near 1.04 coexist with cosine medians 0.068-0.082 | transformation-conditioned known-pairing correspondence; descriptive transfer/decomposition, not an invariant axis or geometry-only cause | [Note 0048](research_notes/0048_graded_cache_correspondence_and_direction.md) |
 | Fixed-fraction map-seed transfer | Same qualified FastVLM and targets; historical 3/4 anchor plus three new common maps | 512 panel cells / 1,536 tensors / 384 factorials, including 128 / 384 / 96 anchor repeats; 128 calibration cells separately counted | All four maps pass 32/32 input blocks and all 768 anchor checks are exact; all twelve aggregate primary tests pass joint Holm; cross/same mean-margin ratios are 14.1%-15.7% in image positions and 94.1% / 91.5% at post-image L12/L23 | cross-map known-pairing correspondence in three new maps, not vector identity, a between-regime test or semantic invariance | [Note 0049](research_notes/0049_fixed_fraction_map_seed_transfer.md) |
+| Fixed-map input-coordinate baseline | Full raw RGB and qualified actual-processor pixels; no model forward | Same four maps x 32 blocks x four cells; 512 raw/processor checks, 256 interaction vectors | All four aggregate tests pass their separate joint Holm family; cross/same mean-margin ratios are 6.004% / 8.652%, with cross-map retrieval 6/16 / 4/16; 96 raw inverse checks are exact | cross-map correspondence already exists in inputs; raw same-map agreement is algebraic, not learned invariance or causal gain | [Note 0050](research_notes/0050_cross_map_correspondence_in_input_coordinates.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
@@ -179,6 +180,14 @@ the same four factorial cells are not independent samples.
     the aggregate trend. Across new maps, image cosine medians are
     0.066-0.076 despite near-unit norm ratios. Known-pairing correspondence
     transfers across these maps without establishing vector identity.
+24. On the unchanged maps and split, full raw RGB and actual-processor input
+    vectors already support cross-map correspondence. Their four aggregate
+    tests pass a separate Holm family (`p=0.013889`-`0.020833`), while 8/32
+    primary family margins are negative. Cross-map margins are 0.008167 and
+    0.011811, versus 0.136035 and 0.136509 within-map. All 512 raw canvases and
+    processor outputs reproduce; 96 inverse-permutation raw interactions are
+    exact. Same-map raw scores agree to `2.22e-16`, as expected from a common
+    coordinate isometry. No new cache observation is added.
 
 ### Provisional
 
@@ -309,6 +318,15 @@ the same four factorial cells are not independent samples.
   semantic-information retention or significance tests of regime differences.
   The one interaction-dominant factorial does not establish a general
   interaction-dominant mechanism.
+- Note 0050 is an input follow-up selected after the cache results, not new
+  validation images. Four input primary tests have a separate Holm family;
+  input/cache significance differences are not tests of score differences.
+  All 32 matrix views and 384 directional records remain descriptive, with
+  63/256 negative matrix family margins retained. Exact raw same-map agreement
+  is guaranteed by coordinate permutation, not independent map replication.
+  The 6.004% / 8.652% cross/same margin ratios cannot be interpreted as
+  semantic retention or compared causally with cache ratios. Coincident
+  source-coordinate contributions have not yet been isolated.
 - Replay lengths are nested contexts, not independent stimulus replicates.
 - Source-context caches and direct probes come from separate fresh forwards
   with different prompts; their relationship is descriptive, not causal.
@@ -337,11 +355,11 @@ the same four factorial cells are not independent samples.
 
 ## Highest-Value Next Data
 
-1. Apply Note 0049's unchanged reference-map/test-map matrix to full raw RGB
-   and actual-processor input vectors. Preserve maps, split, dependency and
-   negative cases; determine what correspondence is already present in the
-   transformed inputs without calling input/cache score differences causal
-   processing gain. The fixed-fraction cache-map comparison is now complete.
+1. Decompose raw reference/test dot products into coincident-source-coordinate
+   and noncoincident-coordinate contributions, holding the existing norms
+   fixed. Carry the additive terms through family margins across all maps and
+   blocks. Note 0050 completes the full input baseline; the numerical proximity
+   of raw cross-map cosine to map overlap is a question, not a causal result.
 2. Separate selected-mask changes from permutation-destination changes in a
    subsequent registered design, with unchanged input gates and explicit
    between-map spectral drift.
@@ -433,8 +451,20 @@ Fixed-fraction map extension:
 > at post-image L12 keys and L23 values. These descriptive ratios did not
 > imply equal vectors, and eight primary family margins remained negative.
 > The reused cohort, input-selected fraction, three new maps and coupled
-> changes to selected sites and destinations limit generalization. Input-level
-> cross-map correspondence and causal processing gain remain untested here.
+> changes to selected sites and destinations limit generalization. This cache
+> study alone did not test input-level cross-map correspondence or causal gain.
+
+Input-coordinate extension:
+
+> The same fixed maps and images already showed cross-map correspondence in
+> full raw RGB and actual-processor input vectors under four separately
+> Holm-corrected aggregate tests. Cross/same mean-margin ratios were 6.004%
+> and 8.652%, while cross-map retrieval was 6/16 and 4/16. Eight primary
+> family margins remained negative. Raw same-map agreement followed the
+> isometry of a shared pixel permutation. These input results rule out first
+> emergence of the measured correspondence in cache in this assay, but do not
+> establish semantic extraction or causal processing gain from larger cache
+> score ratios in different coordinates. No new model forward was performed.
 
 Avoid:
 

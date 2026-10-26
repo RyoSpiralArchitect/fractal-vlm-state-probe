@@ -754,3 +754,12 @@ all negative cases. Their coordinate systems and separate multiplicity
 families differ: score differences, significance differences or margin ratios
 cannot establish causal processing gain, semantic extraction or mediation.
 The raw/processor baseline adds no new images, maps or cache observations.
+
+Execution report (2026-10-26): [Note 0050](research_notes/0050_cross_map_correspondence_in_input_coordinates.md)
+records complete reproduction of all 512 raw/processor cells, 256 input
+interaction vectors and 96 exact raw inverse checks. All four input tests
+pass their separate Holm family, while 8/32 primary family margins are
+negative. Cross-map mean margins retain 6.004% / 8.652% of same-map margins
+in raw/processor coordinates. Independent score, exact-test and direction
+recomputation passes. This establishes input correspondence, not a causal
+explanation of the larger post-image cache score ratios.

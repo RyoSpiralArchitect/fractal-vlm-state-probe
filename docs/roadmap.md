@@ -201,10 +201,16 @@ and 94.1% / 91.5% at post-image L12/L23. These are descriptive ratios, not
 between-regime tests or retained semantic information. Paired directions still
 change despite near-unit median norm ratios. One of 384 factorials is narrowly
 interaction-dominant; neither universal spatial dominance nor a general
-interaction-dominant mechanism follows. The next bounded audit applies the
-same map matrix and frozen split to raw RGB and actual-processor vectors,
-before separately manipulating selection masks and destinations. Those
-follow-ups are proposed, not executed.
+interaction-dominant mechanism follows. The full raw/processor input baseline
+is now complete on the same maps and split: all four aggregate tests pass
+their separate Holm family, with cross/same margin ratios 6.004% / 8.652% and
+cross-map retrieval 6/16 / 4/16. All 512 raw/processor input checks reproduce;
+96 inverse raw comparisons are exact. Raw same-map agreement is an algebraic
+isometry, not learned invariance. Input correspondence already exists, while
+larger post-image cache score ratios do not identify causal gain. The next
+bounded diagnostic separates coincident-source-coordinate and other raw
+dot-product contributions, before independently varying selection masks and
+destinations. Those follow-ups remain proposed, not executed.
 Token bands are not verified 2D patches.
 
 ## Phase 5: Research Report
@@ -215,7 +221,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0049 encode the audited claim
+Status: the evidence matrix and Notes 0027-0050 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -230,8 +236,10 @@ cache study now separates conditional pairing correspondence from
 cross-condition direction and amplitude, retaining all negative family margins
 and repeated endpoint counts. The fixed-fraction map study now supports
 cross-map known-pairing correspondence without vector identity, retaining
-negative cases and all repeated-anchor counts. The current priority is its
-raw/processor input baseline, then separate mask/destination controls,
+negative cases and all repeated-anchor counts. Its raw/processor input
+baseline now shows correspondence before any model forward. The current
+priority is additive source-coordinate-overlap diagnostics, then separate
+mask/destination controls,
 held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.

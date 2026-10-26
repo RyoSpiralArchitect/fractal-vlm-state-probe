@@ -36,7 +36,13 @@ in image positions. These are descriptive score ratios, not retained semantics
 or tests of the regime difference. All 768 anchor tensor comparisons reproduce
 exactly. The correspondence is not confined to one map, but between-map spectra
 still differ, negative family margins remain, and reused images do not form an
-untouched cohort. Cross-map input-vector baselines are the next audit.
+untouched cohort. The input-vector baseline now finds cross-map correspondence
+before any model forward: all four raw/processor aggregate tests pass their
+separate Holm family. Their cross/same mean-margin ratios are only 6.0% and
+8.7%, with cross-map retrieval of 6/16 and 4/16. Raw same-map agreement follows
+coordinate-permutation isometry, not learned invariance. The question is now
+how existing input correspondence is represented, not whether it first appears
+inside cache. Input/cache score differences do not establish causal gain.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
@@ -297,6 +303,20 @@ prediction, raw direction and amplitude remain distinct. This changes the
 question from dependence on one map to how cross-map input correspondence is
 represented; it does not establish semantic invariance or causal processing gain.
 
+Note 0050 applies the same maps and split to full raw RGB and actual-processor
+input interaction vectors. All 512 raw canvases and 512 regenerated processor
+outputs match their receipts; 256 input vectors are saved, without new model
+forwards. All four primary tests pass their separate Holm family
+(`p=0.013889`-`0.020833`), with eight negative family margins out of 32 retained.
+Cross-map mean margins are 0.008167 in raw RGB and 0.011811 in processor space,
+versus same-map margins of 0.136035 and 0.136509. All 96 inverse-permutation
+raw checks are exact; same-map raw cosine differences are at most `2.22e-16`.
+That invariance is an algebraic property of the common pixel permutation.
+Input correspondence exists already, while post-image cache margins are less
+map-dependent descriptively. The next audit separates coincident source
+coordinates from other dot-product contributions before new mask/destination
+controls. Cache/direct-probe counts remain unchanged.
+
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
 processor-space frequency structure. The interaction and image localization
@@ -312,7 +332,10 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0049](docs/research_notes/0049_fixed_fraction_map_seed_transfer.md)
+Start with [Note 0050](docs/research_notes/0050_cross_map_correspondence_in_input_coordinates.md)
+for correspondence already present in raw/processor inputs, exact permutation
+isometry checks, and the noncausal comparison with cache scores.
+[Note 0049](docs/research_notes/0049_fixed_fraction_map_seed_transfer.md)
 for the fixed-fraction map-seed experiment, synchronized same-map/cross-map
 tests, full map matrices and the surviving post-image correspondence.
 [Note 0048](docs/research_notes/0048_graded_cache_correspondence_and_direction.md)
@@ -1007,6 +1030,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0047: Graded Permutation Under Fixed Marginals](docs/research_notes/0047_graded_permutation_under_fixed_marginals.md)
 - [Research Note 0048: Graded Cache Correspondence And Direction](docs/research_notes/0048_graded_cache_correspondence_and_direction.md)
 - [Research Note 0049: Fixed-Fraction Map-Seed Transfer](docs/research_notes/0049_fixed_fraction_map_seed_transfer.md)
+- [Research Note 0050: Cross-Map Correspondence In Input Coordinates](docs/research_notes/0050_cross_map_correspondence_in_input_coordinates.md)
 
 ## Claim Boundary
 
