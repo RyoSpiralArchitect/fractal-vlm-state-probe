@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "study_id": "map_seed_input_baseline_fastvlm_v1",
+  "registered_date": "2026-10-26",
+  "maps": ["historical_3q", "seed_20261016", "seed_20261017", "seed_20261018"],
+  "views": ["raw_rgb", "processor_pixel_values"],
+  "raw_coordinates": "full_320_square_rgb_float64_div_255_including_padding",
+  "processor_coordinates": "full_native_pixel_values_promoted_to_float64",
+  "interaction": "jj_minus_jm_minus_mj_plus_mm",
+  "reference_replicates": [1, 2],
+  "test_replicates": [3, 4],
+  "primary_map_scope": "three_new_maps_only",
+  "primary_regimes": ["same_map", "cross_map"],
+  "primary_test_family_size": 4,
+  "descriptive_matrix_views": 32,
+  "directional_records": 384,
+  "expected_cells": 512,
+  "expected_interaction_vectors": 256,
+  "raw_equivariance_tolerance": 1e-12,
+  "new_cache_forwards": 0,
+  "model_weights_loaded": false
+}

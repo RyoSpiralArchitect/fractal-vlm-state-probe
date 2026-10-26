@@ -703,3 +703,54 @@ The 96 descriptive matrix views, 1,152 dependent directional records and all
 negative margins remain separate from the primary test family. Post-image
 L12/L23 retain substantial cross-map margins; this is not a test of the
 same-versus-cross gap or proof of vector/semantic invariance.
+
+## Stage 4H: Fixed-Map Input-Vector Baseline
+
+Registered: 2026-10-26, after Note 0049 cache results and before computing this
+input correspondence matrix. This is a targeted explanatory follow-up, not
+an untouched confirmation cohort. Freeze
+`configs/map_seed_input_baseline_fastvlm_v1.json` and implementation in Git
+before execution. Preserve all four existing maps, all 32 blocks, all four
+cells, the selected-site fraction, palette-mean padding and r1/r2 versus r3/r4.
+
+Use two full coordinate systems: 320x320 RGB canvases including padding,
+converted to float64 and divided by 255; and actual model-loading-processor
+`pixel_values` of shape [1,3,1024,1024], promoted from native float32 to
+float64 without centering, whitening, projection, downsampling or feature
+selection. Compute `jj - jm - mj + mm` in each space. Do not use cache
+coordinates, generated labels or spectral summaries as substitute vectors.
+
+Every one of 512 raw canvases must match its saved manifest and byte hash.
+Every regenerated processor tensor must match both the Note 0049 input audit
+and its actual cache-input pixel hash, with unchanged processor identity,
+runtime and non-pixel input-audit payload. No model weights or cache forwards
+are needed. Save 256 interaction vectors and hashes locally; freeze all 128
+reference vectors before materializing test vectors. Stop on any mismatch
+without changing the processor or widening tolerances.
+
+Reuse the existing individually normalized r1/r2 reference directions and
+r3/r4 scoring rule. Publish all 32 descriptive reference-map by test-map
+views (4x4x2). Exclude the historical anchor from the four primary tests:
+same-map and cross-map averages for each input space. Average cosine scores
+over three diagonals or six ordered off-diagonals before computing margins
+and retrieval. Move complete test-family blocks synchronously across maps
+under the same 576 within-class assignments. Holm-correct these four input
+tests jointly, separately from the already measured twelve cache tests.
+Unavailable primary views stay in the correction with p=1; zero vectors,
+cancelling references, ties and negative family margins remain explicit.
+Sixteen averaged test-seed rows are not 48 or 96 independent examples.
+
+As a deterministic calibration, inverse-permuted raw interaction arrays must
+be exactly equal across maps for every block (96 comparisons to the anchor).
+The four same-map raw cosine matrices must agree within 1e-12. This follows
+from a common coordinate permutation being an isometry; it is not evidence
+of learned invariance or independent map replication. Record all 384 paired
+directional decompositions (six map pairs x 32 blocks x two spaces), ordered
+as in Note 0049 and identified by reference/test phase. Norm, direction,
+retrieval and same-minus-cross gaps remain distinct descriptive quantities.
+
+Compare input and published cache margins and retrieval descriptively, with
+all negative cases. Their coordinate systems and separate multiplicity
+families differ: score differences, significance differences or margin ratios
+cannot establish causal processing gain, semantic extraction or mediation.
+The raw/processor baseline adds no new images, maps or cache observations.
