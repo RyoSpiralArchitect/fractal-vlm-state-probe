@@ -251,3 +251,25 @@ all-cell processor gates before cache comparisons, then
 held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.
+
+### Preprint Work Packages
+
+[Note 0052](research_notes/0052_preprint_scope_and_confirmation_boundaries.md)
+records the approved scope, with unresolved launch requirements in
+[`preprint_scope_v1.json`](../configs/preprint_scope_v1.json). No study is
+launched by this record. Note 0051 remains the latest measured evidence.
+
+| Notes | Package | Status |
+| --- | --- | --- |
+| 0052-0056 | Controlled fixed-overlap construction, oracle and input audit | Scope recorded; construction and measurement pending |
+| 0057-0061 | Calibrated FastVLM cache comparison | Not started |
+| 0062-0066 | Simple-processing baselines and representation path | Not started |
+| 0067-0071 | Prompt/suffix/readout controls and final registration | Not started |
+| 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed |
+| 0076-0080 | Independent replay, negative-case audit and manuscript | Not started |
+
+Ministral is optional. Notes 0056 and 0061 are decision points, not reasons to
+expand sample size until significance. The immediate next task is synthetic
+coordinate-map construction and an independent oracle, without source-image
+scoring. Counts, seeds, shared moved-coincidence policy, paired inference,
+equivalence width and budget must be registered before affected measurements.

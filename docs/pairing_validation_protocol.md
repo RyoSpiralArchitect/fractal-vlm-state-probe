@@ -829,3 +829,29 @@ family-margin signs reverse in opposite directions. The largest independent
 component error is `2.45e-13` (rounded upward), below the unchanged `1e-12`
 tolerance. No new input vectors, processor calls, model forwards or statistical
 tests are added. Fixed-overlap mask/destination controls remain proposed.
+
+## Stage 4J: Controlled Overlap Design Scope
+
+Scope recorded: 2026-10-29. Measurement registration remains incomplete.
+[Note 0052](research_notes/0052_preprint_scope_and_confirmation_boundaries.md)
+and [the scope record](../configs/preprint_scope_v1.json) define the next
+question and planned endpoints, not a launchable experiment. The candidate
+shared-fixed fractions are 0, 1/16 and 1/4 of content, with selected fraction
+3/4 and target actual fixed fraction 1/4. Shared moved coincidence must be
+audited separately; zero fixed overlap does not imply zero total coincidence.
+
+Keep reference maps common across overlap levels within each construction
+replicate. Register mask/destination construction, coupling, seeds, counts,
+retry bounds and the analysis contract before new input scoring. Preserve
+all four factorial cells and the existing all-cell processor gates, and audit
+between-level spectra separately. The planned input endpoints are zero-overlap
+mean margin and the paired high-minus-zero margin, each in raw and actual
+processor space. The old correspondence-label permutation test does not by
+itself test the overlap effect.
+
+All existing images/maps are development material for this follow-up. No
+confirmation cohort has been generated or sealed. Sample sizes, inference,
+equivalence width, multiplicity policy, compute budget and confirmation release
+remain open; do not invent defaults. The design record is not a runtime
+enforcement mechanism. No new observation is added, and the next bounded work
+is coordinate-only construction/oracle testing for Note 0053.

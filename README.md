@@ -50,6 +50,10 @@ padding contribute zero. This is signed accounting, not a causal percentage.
 Noncoincident terms are positive in 3/8 families, and two family margins change
 sign in opposite directions. The next control must vary fixed-coordinate
 overlap separately from permutation destinations before returning to cache.
+The preprint scope is now recorded in Note 0052: six work packages through
+approximately Note 0080, with development and untouched confirmation kept
+separate. This is a design record, not a new measurement registration or a
+sealed cohort. Note 0051 remains the latest measured result.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
@@ -351,7 +355,10 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0051](docs/research_notes/0051_raw_correspondence_and_shared_fixed_coordinates.md)
+Read [Note 0052](docs/research_notes/0052_preprint_scope_and_confirmation_boundaries.md)
+for the preprint question, candidate overlap design, planned estimands and
+still-open registration gates. It adds no observations and launches no study.
+Start the measured evidence with [Note 0051](docs/research_notes/0051_raw_correspondence_and_shared_fixed_coordinates.md)
 for the raw score's shared-fixed-coordinate accounting, signed cancellation
 and family-level counterexamples, without causal-ablation claims.
 [Note 0050](docs/research_notes/0050_cross_map_correspondence_in_input_coordinates.md)
@@ -1054,6 +1061,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0049: Fixed-Fraction Map-Seed Transfer](docs/research_notes/0049_fixed_fraction_map_seed_transfer.md)
 - [Research Note 0050: Cross-Map Correspondence In Input Coordinates](docs/research_notes/0050_cross_map_correspondence_in_input_coordinates.md)
 - [Research Note 0051: Raw Correspondence And Shared Fixed Coordinates](docs/research_notes/0051_raw_correspondence_and_shared_fixed_coordinates.md)
+- [Research Note 0052: Preprint Scope And Confirmation Boundaries](docs/research_notes/0052_preprint_scope_and_confirmation_boundaries.md)
 
 ## Claim Boundary
 

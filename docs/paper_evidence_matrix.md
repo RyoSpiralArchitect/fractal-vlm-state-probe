@@ -1,6 +1,6 @@
 # Paper Evidence Matrix
 
-Last updated: 2026-10-28
+Last updated: 2026-10-29 (design update; measured evidence unchanged)
 
 This file is the compact bridge from run artifacts to a manuscript draft. It
 separates valid observations, descriptive interpretation, withdrawn results,
@@ -371,6 +371,13 @@ the same four factorial cells are not independent samples.
   source response differs from the requested and cross-model-typical suffix.
 
 ## Highest-Value Next Data
+
+The approved preprint scope is recorded in
+[Note 0052](research_notes/0052_preprint_scope_and_confirmation_boundaries.md).
+It is not an evidence unit or a completed measurement registration. Its
+confirmation cohort is not generated or sealed; all existing images/maps are
+development material for the new overlap study. Note 0051 remains the latest
+measurement, and all direct/cache observation counts above are unchanged.
 
 1. Explicitly vary shared fixed-coordinate overlap at fixed selected fraction,
    expanded RGB marginals and padding. Note 0051 completes the raw additive

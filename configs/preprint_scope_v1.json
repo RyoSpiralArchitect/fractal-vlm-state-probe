@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "scope_id": "input_conditioned_correspondence_preprint_v1",
+  "date": "2026-10-29",
+  "artifact_kind": "design_only",
+  "status": "scope_recorded_measurement_registration_pending",
+  "evidence_through_commit": "f8036f0f158b1eda764a7b8a5671eb4737816f27",
+  "execution_authorized_by_this_file": false,
+  "execution_runner": null,
+  "question": "Where and under which controls does input-conditioned pairing correspondence persist across VLM representations and differ from visible output?",
+  "models": {
+    "development": "FastVLM",
+    "confirmation": ["FastVLM", "Qwen2.5-VL"],
+    "optional_extension": "Ministral3",
+    "universal_model_claim": false
+  },
+  "explanations": [
+    "source_coordinate_overlap_dependence",
+    "simple_processing_and_pooling_sufficiency",
+    "residual_correspondence_beyond_tested_baselines"
+  ],
+  "input_design": {
+    "status": "candidate_construction_not_frozen",
+    "content_shape_hw": [240, 320],
+    "canvas_shape_hwc": [320, 320, 3],
+    "content_rows": [40, 280],
+    "selected_fraction": [3, 4],
+    "target_actual_fixed_fraction": [1, 4],
+    "candidate_shared_fixed_fractions": [[0, 1], [1, 16], [1, 4]],
+    "overlap_denominator": "content_pixels",
+    "same_mask_destination_replicates_required": true,
+    "shared_moved_coincidences_must_be_audited": true,
+    "fixed_overlap_zero_implies_total_coincidence_zero": false,
+    "reference_map_shared_across_overlap_levels": true,
+    "padding_policy": "palette_mean",
+    "expanded_rgb_multisets_fixed_within_cell": true,
+    "existing_gate_config": "configs/map_seed_input_fastvlm_v1.json",
+    "within_condition_gate_implies_between_level_spectral_equality": false,
+    "construction_algorithm": null,
+    "shared_moved_coincidence_policy": null,
+    "construction_retry_limit": null,
+    "map_seed_manifest": null,
+    "mask_replicates": null,
+    "destination_replicates": null
+  },
+  "estimands": {
+    "interaction": "jj-jm-mj+mm",
+    "reference": "unit(unit(reference_r1)+unit(reference_r2))",
+    "normalization": "full_vector_before_partition",
+    "margin": "own_family_cosine_minus_mean_other_family_cosine_within_broad_class",
+    "aggregation": "average_map_scores_then_test_seeds_within_family_then_equal_weight_families",
+    "input_views": ["raw_rgb", "actual_processor_pixels"],
+    "primary_input_endpoints": ["margin_at_zero_shared_fixed_overlap", "high_minus_zero_shared_fixed_overlap_margin"],
+    "primary_input_endpoint_count_if_candidate_design_adopted": 4,
+    "cache_targets": [[1, "keys"], [12, "keys"], [23, "values"]],
+    "cache_regions": ["image", "post_image"],
+    "secondary": ["retrieval", "norm", "direction_cosine", "additive_raw_components", "all_family_signs"],
+    "input_cache_ratios_are_causal_gain": false
+  },
+  "confirmation": {
+    "status": "not_generated_not_sealed",
+    "existing_r1_r4_role": "development_only_for_new_overlap_study",
+    "fresh_reference_and_test_sources_required": true,
+    "fresh_map_seeds_required": true,
+    "cohort_manifest": null,
+    "cohort_manifest_sha256": null,
+    "sample_size": null,
+    "registration_commit": null,
+    "release_receipt": null,
+    "family_specific_references_imply_zero_shot_transfer": false,
+    "adapt_design_after_confirmation_scores": false
+  },
+  "inference": {
+    "scope": "conditional_on_declared_families_and_map_construction",
+    "dependence_units": ["pairing_family", "source_seed", "mask_seed", "destination_seed"],
+    "four_cells_are_independent_replicates": false,
+    "paired_difference_requires_paired_inference": true,
+    "absence_from_nonsignificance": false,
+    "interval_and_resampling_specification": null,
+    "multiplicity_family": null,
+    "equivalence_margin": null,
+    "precision_and_compute_budget": null
+  },
+  "stages": [
+    {"notes": [52, 56], "id": "overlap_input_design", "status": "scope_only"},
+    {"notes": [57, 61], "id": "fastvlm_cache_panel", "status": "not_started"},
+    {"notes": [62, 66], "id": "processing_baselines_and_representation_path", "status": "not_started"},
+    {"notes": [67, 71], "id": "prompt_suffix_readout_controls", "status": "not_started"},
+    {"notes": [72, 75], "id": "untouched_confirmation", "status": "not_started"},
+    {"notes": [76, 80], "id": "independent_audit_and_manuscript", "status": "not_started"}
+  ],
+  "gates": {
+    "input_measurement": "pending_committed_construction_seeds_counts_and_analysis_contract",
+    "cache_measurement": "pending_all_cell_input_checks_and_exact_runtime_calibration",
+    "confirmation": "pending_complete_registration_and_cohort_release_receipt",
+    "causal_intervention": "excluded_without_verified_multimodal_execution_path"
+  },
+  "amendment_rule": "Version and commit before affected outcomes; retain prior designs, failures and exclusions. No outcome-selected replacement maps or optional stopping for significance.",
+  "new_observations": {
+    "images": 0,
+    "maps": 0,
+    "processor_calls": 0,
+    "model_forwards": 0,
+    "statistical_tests": 0
+  }
+}
