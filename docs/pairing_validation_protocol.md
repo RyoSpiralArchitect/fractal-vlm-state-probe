@@ -763,3 +763,58 @@ negative. Cross-map mean margins retain 6.004% / 8.652% of same-map margins
 in raw/processor coordinates. Independent score, exact-test and direction
 recomputation passes. This establishes input correspondence, not a causal
 explanation of the larger post-image cache score ratios.
+
+## Stage 4I: Raw Source-Coordinate Overlap Decomposition
+
+Registered: 2026-10-28, after Note 0050 and before inspecting the decomposition.
+Freeze `configs/source_coordinate_overlap_v1.json` and its implementation in
+Git. This is a descriptive accounting of the existing raw score, not a new
+statistical test, an untouched validation cohort or a pixel/model intervention.
+
+Reuse all 128 raw interaction vectors, all four maps, eight families and the
+unchanged r1/r2 reference versus r3/r4 split. Verify original file hashes and
+reproduce every raw matrix/aggregate score from Note 0050 within 1e-12. Do not
+call the processor, load model weights, generate images or capture new caches.
+
+At each content output site u, a map stores the source-coordinate index p(u).
+Coincidence means p_a(u) = p_b(u), not equal RGB values, identical source images
+or necessarily an unmoved pixel. Partition the full canvas into four disjoint
+terms, each including all three RGB channels:
+
+1. Shared fixed content: p_a(u) = p_b(u) = u.
+2. Shared moved content: p_a(u) = p_b(u), but p_a(u) != u.
+3. Noncoincident content: p_a(u) != p_b(u).
+4. Padding: rows outside the original [40,280) content span.
+
+Keep padding separate: its 25% canvas area must not inflate the content-only
+coincidence denominator. Report exact map-specific counts, including shared
+moved sites. The source-coordinate identity refers to corresponding positions
+in different source images; it does not imply identical observed pixel values.
+
+Normalize reference inputs, their summed family reference, and test vectors
+using the unchanged full-vector norms **before** partitioning. Sum elementwise
+products within each component. Never re-normalize the masked vectors. The
+four signed contributions must reconstruct the original full cosine, test-seed
+margin, family margin and mean family margin within 1e-12. Empty components
+contribute zero; zero full vectors or cancelling references remain unavailable.
+
+Retain all 16 ordered reference-map/test-map combinations, 16 test-seed rows
+and eight reference-family scores: 2,048 planned dot products with 8,192
+primitive additive terms. Diagonal maps have zero noncoincident content and
+serve as a control. Aggregate the three new-map diagonals and six ordered
+new-map off-diagonals separately, with exactly the Note 0050 weights, excluding
+the historical anchor from these aggregates. Preserve all per-family signs.
+
+Report the two coincident content terms separately and their sum. Ratios of
+component mean margins to the full mean margin are signed descriptive ratios,
+not percentages constrained to [0,100], energy shares, significance evidence
+or causal contributions. Keep ratios null when |denominator| <= 1e-12; do not
+drop the corresponding scores or families. Retrieval is nonlinear and must
+not be additively decomposed or reinterpreted as component accuracy.
+
+Independently reload raw cells and verify the saved raw interactions, derive
+the coordinate partition through a separate implementation, and recompute
+the score contributions and their aggregation. No new p-values are added.
+Processor resampling and cache coordinates are outside this decomposition;
+the result cannot identify their mechanisms or predict the effect of a
+future pixel-mask intervention with different inputs and normalization.
