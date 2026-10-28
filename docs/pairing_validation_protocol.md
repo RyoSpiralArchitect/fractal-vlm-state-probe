@@ -818,3 +818,14 @@ the score contributions and their aggregation. No new p-values are added.
 Processor resampling and cache coordinates are outside this decomposition;
 the result cannot identify their mechanisms or predict the effect of a
 future pixel-mask intervention with different inputs and normalization.
+
+Execution report (2026-10-28): [Note 0051](research_notes/0051_raw_correspondence_and_shared_fixed_coordinates.md)
+completes the accounting registered at `f208698`. All 2,048 dot products and
+8,192 additive terms are available and independently verified from all 512
+raw cells. Shared fixed coordinates contribute 102.703% of the cross-map
+mean margin, noncoincident coordinates -2.703%, and shared moved/padding
+terms zero. Three of eight families have positive noncoincident terms; two
+family-margin signs reverse in opposite directions. The largest independent
+component error is `2.45e-13` (rounded upward), below the unchanged `1e-12`
+tolerance. No new input vectors, processor calls, model forwards or statistical
+tests are added. Fixed-overlap mask/destination controls remain proposed.

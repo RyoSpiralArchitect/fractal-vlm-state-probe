@@ -1,0 +1,1926 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "raw_source_coordinate_overlap_source_vectors",
+  "vectors": [
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_vq_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_vq_r1.npy",
+      "sha256": "822af47d550333cd204b3ea180032218e10b92b7d7fab346d07c87ad9ef92e2a",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 175.90247061809612
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_vq_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_vq_r1.npy",
+      "sha256": "6d50969e161c4064af246ccc01a5465a2d035f2c1fc4db82aa187cb81bbd3e25",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 175.90247061809612
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_vq_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_vq_r1.npy",
+      "sha256": "06de73a4db6dc0d83383aa03604e047e964fcbb8ee19fb2ace318e28e5f7b351",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 175.90247061809612
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_vq_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_vq_r1.npy",
+      "sha256": "9ed6f5774eb2cc27b859dfde92d6906f18c10539ce5e96ebe20062d2421a7167",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 175.90247061809612
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_vq_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_vq_r2.npy",
+      "sha256": "2e1dd7f12d7f9110f37b1ec855660af7bb6b4027fe94582dfd41c7330b3176d4",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 187.8115164346902
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_vq_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_vq_r2.npy",
+      "sha256": "017c76e1b8f11f532c0ee373d2697791fec9a8993279b129056d2694405bb763",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 187.8115164346902
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_vq_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_vq_r2.npy",
+      "sha256": "1b0a6cbee817809b53e18c76565a7f1102412024448d76e426e6bf0e53e3e126",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 187.81151643469016
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_vq_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_vq_r2.npy",
+      "sha256": "5e2d5d961a4c39d93c7fed79b365eece6c8f1dcbfd1fffb8959e814028ab4089",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 187.8115164346902
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_checker_hex_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_checker_hex_r1.npy",
+      "sha256": "617b7f6b59b8db69d0a60903e732e0652abc905ba2b14d59d6cbdb00af73e8f4",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 130.1620908862605
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_checker_hex_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_checker_hex_r1.npy",
+      "sha256": "268b6819c472316c9b4ff546b6cdbf00b63b7be9865266ba91316d2599cb7078",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 130.1620908862605
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_checker_hex_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_checker_hex_r1.npy",
+      "sha256": "86999657ea701a7ae0874aa927024729e590d46fc725f6eef357a8287728b217",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 130.1620908862605
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_checker_hex_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_checker_hex_r1.npy",
+      "sha256": "1713b7a47e5c78e2c300e72295f383d6b307c95ae40c5270583cf6f2c37ae615",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 130.1620908862605
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_checker_hex_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_checker_hex_r2.npy",
+      "sha256": "42578ea074206828423e39440cb7809430977c6d15f8be061e38a9684fbc5291",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 128.57270224130076
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_checker_hex_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_checker_hex_r2.npy",
+      "sha256": "d6f881c486ef9a6e3e374ccc2bbfe33feb59f05e85c141754a5c6291989c6817",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 128.57270224130076
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_checker_hex_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_checker_hex_r2.npy",
+      "sha256": "d2d3bd073778047b10c0a0d51d3ebbaaa779ce890475d442dda1358860ff9e79",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 128.57270224130076
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_checker_hex_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_checker_hex_r2.npy",
+      "sha256": "313cb6b473b4e64d3b5f16ca4598c8bf42ebd6d755ac105cdb7d24b200512640",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 128.57270224130076
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_square_triangle_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_square_triangle_r1.npy",
+      "sha256": "b47d63d06fcebc60ecf25ccd8ece7c563af6c4c74f21635be6653992c374ed41",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 105.08383310484868
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_square_triangle_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_square_triangle_r1.npy",
+      "sha256": "45201b746a55e050a824fe2d45454ae74a954446ebe4e42384929ab844a4611c",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 105.08383310484868
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_square_triangle_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_square_triangle_r1.npy",
+      "sha256": "d70a2965fea783e47d5258c7c833a9b0c3aabab4da86bc0ac26cee0a3542f9ca",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 105.0838331048487
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_square_triangle_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_square_triangle_r1.npy",
+      "sha256": "0a6fbfdf7ab70b68d6c14349b30835ca636b7499e92699cf5ae3965cb4f063a1",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 105.08383310484871
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_square_triangle_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_square_triangle_r2.npy",
+      "sha256": "7b27df6647b49cc4603f9d08c900d2993d543058ed371846ee886a283d6438c3",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 125.4192383945823
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_square_triangle_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_square_triangle_r2.npy",
+      "sha256": "5ac7e865508f93d18f3f2a15cba33a18833b258bc6e3305922e6fc8ffbb582b2",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 125.4192383945823
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_square_triangle_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_square_triangle_r2.npy",
+      "sha256": "199dd7d24dde03194c9ca51674dcd825c5a6898b4b3dda1e143f26a0725d5a03",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 125.4192383945823
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_square_triangle_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_square_triangle_r2.npy",
+      "sha256": "f924bca8d3bfb5f0975a9fa2ac9ff2f136645230482f1aa6a33e2b537c1e7fd3",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 125.4192383945823
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_voronoi_hex_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_voronoi_hex_r1.npy",
+      "sha256": "48eff21402edfcee13a779758acf523c53b71ade9adc831f0b58639c9e75fe02",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 126.26914590970303
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_voronoi_hex_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_voronoi_hex_r1.npy",
+      "sha256": "de6a904620661084cf2439af6ee9a2a6f52caee68bc9d539ed2ba0594705bcdc",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 126.26914590970303
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_voronoi_hex_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_voronoi_hex_r1.npy",
+      "sha256": "3aa6d21ecbbc45cde2841a1aa1bd50dd82524e1e44d3a4497a55aa4bcab52b40",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 126.26914590970303
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_voronoi_hex_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_voronoi_hex_r1.npy",
+      "sha256": "bc7338f311c9ad5d2c87ab6406714ed64803ca8f76ee7bf873d394496216d3bf",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 126.26914590970303
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_voronoi_hex_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_voronoi_hex_r2.npy",
+      "sha256": "23b828429661b63c773b328778984da3c82813602594f011e3775b799e9f972d",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 175.26131227883502
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_voronoi_hex_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_voronoi_hex_r2.npy",
+      "sha256": "e9bfb04313cc32b4413c26b37096d5e093d84f7336b3063e11ef9a439eb7dee0",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 175.261312278835
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_voronoi_hex_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_voronoi_hex_r2.npy",
+      "sha256": "eb4cf2549fad56b05b66e70ede36b061a330285c3e7122471fc2123534e0ac67",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 175.26131227883502
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_voronoi_hex_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_voronoi_hex_r2.npy",
+      "sha256": "dd1cd0791dd48ed18d5ba824e13da52406fcc1fccca579964a2ef297cb3d3279",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 175.26131227883502
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_white_blue_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_white_blue_r1.npy",
+      "sha256": "2c81d1ac0ecb3e47c6528aa1c11e303f6042a181d7a1e411852ccae324214f1b",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 194.4513784011096
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_white_blue_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_white_blue_r1.npy",
+      "sha256": "93d5937c0dd96f7a20bffda74d008183ad318d67643cab5ed1f05f560f5023bd",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 194.4513784011096
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_white_blue_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_white_blue_r1.npy",
+      "sha256": "bda86461ac2195b7122db132dd2cffd47d1b2ca7d8e4a5abc7b4c534c515572e",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 194.4513784011096
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_white_blue_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_white_blue_r1.npy",
+      "sha256": "cb0fdf38f3e62187c8c948601d2d659f807b1cbbfe5b2995e286e323bdbe9965",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 194.4513784011096
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_white_blue_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_white_blue_r2.npy",
+      "sha256": "50118bda51987ca0a990e828c68d8cfba113bf5636ea4b7f7d7bb5cb8cf5efab",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 194.1777565084249
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_white_blue_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_white_blue_r2.npy",
+      "sha256": "415e2972e97b73a53c08f9b489f5236c9bf63aa517b2a676e9b80f5d0e5de8a7",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 194.1777565084249
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_white_blue_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_white_blue_r2.npy",
+      "sha256": "2bbb047fcf283f9d27fc5975c23badb359f4ded8598d5fd78a9b664f33059b1e",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 194.1777565084249
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_white_blue_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_white_blue_r2.npy",
+      "sha256": "56fbaf9d51dc8bedc25d63e4227e50efe4f42ec45a70236d707e74938ce2cd81",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 194.1777565084249
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_white_dots_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_white_dots_r1.npy",
+      "sha256": "62327e6158332c77ef2dfa6864957fed2ad6d58d5dd0cba219d9b389ed324858",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 219.0589852782622
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_white_dots_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_white_dots_r1.npy",
+      "sha256": "ed6d696a07b4b1c8786f96b5d62dd065326f2a74ebdb693dac259163498956dc",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 219.0589852782622
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_white_dots_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_white_dots_r1.npy",
+      "sha256": "f57b9cd260f7678579434fa8a15acfafdcdf10b17d31031497c38a8881f39833",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 219.0589852782622
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_white_dots_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_white_dots_r1.npy",
+      "sha256": "cd2bc25c8073e3c7ae4b09e0e2ac6c401561edb3f9f4093cb9217e992f3ba6ca",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 219.05898527826218
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_white_dots_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_white_dots_r2.npy",
+      "sha256": "fccc5e8bb55b23969faab8a687d485a36b7f5dbc7e2907940090610b8679d0f8",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 218.99700229155525
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_white_dots_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_white_dots_r2.npy",
+      "sha256": "adebc14ffb9e537c9e3d82b8a58bfb705985fc1b1f03c58feab77031e21c2631",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 218.99700229155525
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_white_dots_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_white_dots_r2.npy",
+      "sha256": "861177be5f1683348a1dd6741be5cd2f832565c9a7b27209e4923be6be5bf421",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 218.99700229155525
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_white_dots_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_white_dots_r2.npy",
+      "sha256": "9572222ab3d619023fffaabb383f2df4bcd9be17c3c9cc9d7c9a419713fe3d8c",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 218.99700229155528
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_blue_dots_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_blue_dots_r1.npy",
+      "sha256": "237557ed7b8815d186a69e6fc9e382ff7aaebcf2654a78f137a3e7dc8b0052b2",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 190.7985782709184
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_blue_dots_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_blue_dots_r1.npy",
+      "sha256": "a5c39047c2692bf1c5725a292c9b4660ea82b0eec70a3cba29f76b58056f97de",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 190.7985782709184
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_blue_dots_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_blue_dots_r1.npy",
+      "sha256": "c4bde00df0c5d3dcd1418212353b5ddc40be886bf1386e9fb4d4411144da1a5a",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 190.7985782709184
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_blue_dots_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_blue_dots_r1.npy",
+      "sha256": "9d19a7cab04f983a19f3ebef28b2c6cbaa59b130ebecc8a5098b2e7fab66510e",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 190.7985782709184
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_blue_dots_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_blue_dots_r2.npy",
+      "sha256": "122b02db3414153cfa978e63635f2c1e324d109b1bc0c9646ac5990e54b43f09",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 191.1305217380764
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_blue_dots_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_blue_dots_r2.npy",
+      "sha256": "0c81baf9f1cd7f45734875770fd165bc659d1921f570b5973f84408e6852a79b",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 191.13052173807637
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_blue_dots_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_blue_dots_r2.npy",
+      "sha256": "91414e31e20b9e7c06a9e67f1e465a6481d5f59cc890ced2d42a4f3d14736397",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 191.1305217380764
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_blue_dots_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_blue_dots_r2.npy",
+      "sha256": "4f2bc3c48df57d96087ad96830895de553de728adfe2ef3db2f8571519c0c63c",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 191.1305217380764
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_sparse_dense_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_sparse_dense_r1.npy",
+      "sha256": "af63336e163b017371476548615b314eb99ba57fc7c7b413b1a96b6b31a33e54",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 187.0879120721639
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_sparse_dense_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_sparse_dense_r1.npy",
+      "sha256": "69fd118a775ca2215a123876c1b1b96ecbc2b3ecc162e311decfc58d719c586e",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 187.08791207216387
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_sparse_dense_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_sparse_dense_r1.npy",
+      "sha256": "f8428abc17fb7cdc8f8f519eb6f7764664f5681ce9f9a6dca1b255d831b60d95",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 187.0879120721639
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_sparse_dense_r1",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_sparse_dense_r1.npy",
+      "sha256": "618b2b57216ea430ba935c378f0ae9ac74e9709050c198a71c2695d8bdc31eca",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 187.08791207216387
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_sparse_dense_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_sparse_dense_r2.npy",
+      "sha256": "2b99810b666c37bcf3d1d6ec2165d5c6180d404eeb25cbc260b3398a7a440611",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 188.0363500977751
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_sparse_dense_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_sparse_dense_r2.npy",
+      "sha256": "5f2c60c3e012e8b3199db2bf78c40e4e19d9b6d4a797b8859bf614332e165041",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 188.03635009777508
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_sparse_dense_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_sparse_dense_r2.npy",
+      "sha256": "842e4a12653f34ae47a829a5d8dca79c457454a8e3960d442e4c543e1f87fd27",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 188.03635009777508
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_sparse_dense_r2",
+      "phase": "reference",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_sparse_dense_r2.npy",
+      "sha256": "9309cfe690d9f5a482d55f045084bef4bad8d8c9cc31410692fa26d08ea32c4b",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 188.0363500977751
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_vq_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_vq_r3.npy",
+      "sha256": "aa1ebb33c2dfe20556f13da0d5b549e3341c0313a3b3917398c9a3458420dac5",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 197.62647613026527
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_vq_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_vq_r3.npy",
+      "sha256": "52dd9aab855a2cba8c5e2ccf51b7409e2e36931df7a23b4e7f9b31e3f8134697",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 197.62647613026527
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_vq_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_vq_r3.npy",
+      "sha256": "4a62da1120cfda890319324c563e2cf6688abaf394b97ba3f6b706c960facc5c",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 197.62647613026527
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_vq_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_vq_r3.npy",
+      "sha256": "3284bef6efed80e1d8c1370e2023723cd5116b01ac62b6cef193e96b806e02c7",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 197.62647613026525
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_vq_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_vq_r4.npy",
+      "sha256": "1bfaf35174e21389ae80011cda11a57bdca0907b5b5fde46becd29693e62b606",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 237.1666341071565
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_vq_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_vq_r4.npy",
+      "sha256": "0aea02a42b54f0584e5657686017965fa2cc6f17170a4fe309fc8cc677ef0e60",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 237.1666341071565
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_vq_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_vq_r4.npy",
+      "sha256": "b463838f79d201a36155fbddccd766ffe25bd9be9d9d27e42a93fb915a9d2b3e",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 237.16663410715648
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_vq_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_vq_r4.npy",
+      "sha256": "ee4c9a198ecc7f5f176e95ece617074aee3404935a8281a2335cb1238241ec48",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 237.16663410715648
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_checker_hex_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_checker_hex_r3.npy",
+      "sha256": "8c69d9f5b6d70e637babf641d660de36d1684649d5945ed32cbbabcaba788723",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 156.78849311244784
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_checker_hex_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_checker_hex_r3.npy",
+      "sha256": "a3f5949bf4dad30e884464d505d557be53b76e5da8cde8637671241a6db49593",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 156.78849311244784
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_checker_hex_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_checker_hex_r3.npy",
+      "sha256": "fa67cce8429195335f9dc0ed0a391c00e5ee9d692cb96efe51e7d942386e08e5",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 156.78849311244784
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_checker_hex_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_checker_hex_r3.npy",
+      "sha256": "f3a8640526e95991cbc8e32d632d282ee5ab14dd08535d12ef938ee4fd0b96de",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 156.78849311244784
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_checker_hex_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_checker_hex_r4.npy",
+      "sha256": "bb85dbe47100050162ccfae2f58df2a8ed41cd48a3dad9dfcf719dde0795b377",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 161.28410041213462
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_checker_hex_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_checker_hex_r4.npy",
+      "sha256": "d7f9c1747571c58206a2baee92979b15f9eae33c12af62a54591f4fa52425817",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 161.28410041213462
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_checker_hex_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_checker_hex_r4.npy",
+      "sha256": "8d3d954fd1b75b70ab6887d9ed5f8b9d9da05b6ea1ba89df602a4b1d4d8181bf",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 161.28410041213462
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_checker_hex_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_checker_hex_r4.npy",
+      "sha256": "8c4318294d22ff074b41ae5c178b72101b1f7dea64a7d55b8d76f35e895d7387",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 161.28410041213462
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_square_triangle_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_square_triangle_r3.npy",
+      "sha256": "3a68792fa873e36e7cd1ccb83cb3ab8312c07dce0841b19440418ec97e04d87e",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 86.57716485781556
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_square_triangle_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_square_triangle_r3.npy",
+      "sha256": "1d9c9483d0245c753f781acdee0cbe63fa13f2699d2a3cb98b31046d4ba87998",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 86.57716485781556
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_square_triangle_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_square_triangle_r3.npy",
+      "sha256": "3fede0727534700dce7234f7e9ae180e7d0d7244ef4550167057e1f8f836ac43",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 86.57716485781556
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_square_triangle_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_square_triangle_r3.npy",
+      "sha256": "778024435659b61ca7e97d226350a30dfffffc7ba3cb08a9d0c64878b71284b9",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 86.57716485781556
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_square_triangle_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_square_triangle_r4.npy",
+      "sha256": "8c0eed35b978965eea1b3822bc77e67873442b2f64cb71dabd5bc57c2f9894ef",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 143.9452018849991
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_square_triangle_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_square_triangle_r4.npy",
+      "sha256": "4fa6f6e00fcab01e5caf45a52a1a2d4748f2160b211b928c10f3750e9f3abf70",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 143.9452018849991
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_square_triangle_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_square_triangle_r4.npy",
+      "sha256": "88769e4642c9be664ec970641672e7f3a2082d15c49e385dc79c1c46b6193b35",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 143.9452018849991
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_square_triangle_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_square_triangle_r4.npy",
+      "sha256": "0665f11f0d458b11dd9482562a96ccf809f5d7bc54463482b1489232d6ef7ecb",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 143.9452018849991
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_voronoi_hex_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_voronoi_hex_r3.npy",
+      "sha256": "74f6446956a9b68ee15a85bcf645cf69cc6d7975c57a9590b813f05191d94c70",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 125.4428479303854
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_voronoi_hex_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_voronoi_hex_r3.npy",
+      "sha256": "651cd3ecd1c6dcfa7791d16210f9ef2e1ad8a7001fdde48b49a6c9e7590c621e",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 125.44284793038541
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_voronoi_hex_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_voronoi_hex_r3.npy",
+      "sha256": "28219be6b4debfb50743b6f6d555d9d8d58a242cba5fb1b65e5976f16ff1d3cb",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 125.44284793038541
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_voronoi_hex_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_voronoi_hex_r3.npy",
+      "sha256": "f208108a4de0b495fb7537da56dfc9d62b68865446fc0d06e19b6c736e6e2027",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 125.44284793038541
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "geometry_voronoi_hex_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/geometry_voronoi_hex_r4.npy",
+      "sha256": "6bcb6be184f79459200ee1ffd423c071e92a5cc3e90eec77228c5f0d1c68bbb8",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 172.47461925400148
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "geometry_voronoi_hex_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/geometry_voronoi_hex_r4.npy",
+      "sha256": "be781a7f8d245c1b7d246390bb2a04f65b6b75f41db7222508e019ea09204299",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 172.47461925400148
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "geometry_voronoi_hex_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/geometry_voronoi_hex_r4.npy",
+      "sha256": "557b9b00c45161b28be2c520533eaa2d9288caf8fed03b58a437ca63aa81fc84",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 172.47461925400148
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "geometry_voronoi_hex_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/geometry_voronoi_hex_r4.npy",
+      "sha256": "8319e66ed5faff0cf15a963c65aaf4c9bba7f30deaabb19e9f89c6a3fb72c74c",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 172.47461925400148
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_white_blue_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_white_blue_r3.npy",
+      "sha256": "c1ac97c49296759d4acacc34a2b852e43f6cc39baac0a039e3ad5381c2b6a259",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 192.98081204555652
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_white_blue_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_white_blue_r3.npy",
+      "sha256": "5737186bd2f58c54f49ac686a84bcff8bc49f6f89e8fc6dd784ddd0d682e43ca",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 192.9808120455565
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_white_blue_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_white_blue_r3.npy",
+      "sha256": "e6b84de2543f09e5f24fad28c29e18d2d9b437f3f79073396ec02101d763cb0a",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 192.98081204555655
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_white_blue_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_white_blue_r3.npy",
+      "sha256": "fffb795c1cb54fe3192ceeebb679248d0672b0105e6cb5ae6b32f49b813f8cc4",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 192.9808120455565
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_white_blue_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_white_blue_r4.npy",
+      "sha256": "d1736b182193b961336a3e745c5909ecb4b7846e01dbd3a0d58cc541168df68a",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 193.47229067426332
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_white_blue_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_white_blue_r4.npy",
+      "sha256": "2a31fe338d16230c0bf2fab9b127ac5d259a0743b0faa658992519795a33bd68",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 193.47229067426335
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_white_blue_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_white_blue_r4.npy",
+      "sha256": "5d9e0b848a7b6e517fd56440c97cb71cb3538092051e976b4cd040f17d4b8499",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 193.47229067426335
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_white_blue_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_white_blue_r4.npy",
+      "sha256": "6cfd7b5f5f3c6f53cb60a5ea631f0faad95c0772d2575a1d81df52237e661a14",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 193.47229067426335
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_white_dots_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_white_dots_r3.npy",
+      "sha256": "6289d5c0b3357ac6d243cf7d3d6ae1a3f1b9b2e01b192880040638d4d9fb025f",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 220.02271875984292
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_white_dots_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_white_dots_r3.npy",
+      "sha256": "a083126c56c9742422cbf02abb154d1a569f7f0a5e92b98585a4411201ff29f9",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 220.02271875984292
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_white_dots_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_white_dots_r3.npy",
+      "sha256": "84df411db4a7412d75476af3486ed4d2e3bcff15c9c6b7e7688c794d6006841f",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 220.02271875984292
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_white_dots_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_white_dots_r3.npy",
+      "sha256": "694292778d7aca3a827bd16b1b00a72c3a2e822c59aaa9a91ea7770addc2977d",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 220.02271875984292
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_white_dots_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_white_dots_r4.npy",
+      "sha256": "4d741dd03db487685af9bc7e54e84537021f49314e9d845912334a7b0b8a5852",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 219.62187357141562
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_white_dots_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_white_dots_r4.npy",
+      "sha256": "a71b9886bec80cea187b239877049a330b7efd916ced0c1da102528a26b60664",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 219.62187357141565
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_white_dots_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_white_dots_r4.npy",
+      "sha256": "4c80c4ccc49dca83d50361d40166943bb1407750edbb95eb6386dfe5e720f6f1",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 219.62187357141562
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_white_dots_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_white_dots_r4.npy",
+      "sha256": "1db78d76c45cd718b6c9c29bfa7bf1ed781daa7fb649f6c0052b2353ffe34067",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 219.62187357141562
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_blue_dots_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_blue_dots_r3.npy",
+      "sha256": "4164d412a5e9a2351dc8811fea058e0f73566abac9ae6ae39d1aa08d4df6f0ea",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 190.29319881383572
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_blue_dots_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_blue_dots_r3.npy",
+      "sha256": "b7f375a7d011cabdc3297a80347819fe094a77713173e17df9fdeac8537b8269",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 190.29319881383572
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_blue_dots_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_blue_dots_r3.npy",
+      "sha256": "88e243fd6e2ce32da065155670afa242c50c20a71467e92f3be725165a11829f",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 190.29319881383572
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_blue_dots_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_blue_dots_r3.npy",
+      "sha256": "461796cc36c45479c89df6402ac06b330827742a89aa1bf98e02264131ffff98",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 190.29319881383572
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_blue_dots_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_blue_dots_r4.npy",
+      "sha256": "3eb53567a64eaef5a97a7594bb7b4c60f6e952a359ef572513a94a157d5e1cc0",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 192.98578903961254
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_blue_dots_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_blue_dots_r4.npy",
+      "sha256": "fe6d117f4ad57f82db307c9ad2310e2e8fb101e5842fd8f544bcad27410fff2b",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 192.98578903961257
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_blue_dots_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_blue_dots_r4.npy",
+      "sha256": "a0baa56656410f2769e6706f8501c164824ab3cb1165855c9105829b8e84d45a",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 192.98578903961254
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_blue_dots_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_blue_dots_r4.npy",
+      "sha256": "e7e196167dbaf1fcc065264ce3bb6c7df173feabaf50949e43af7afef4d3da4d",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 192.98578903961254
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_sparse_dense_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_sparse_dense_r3.npy",
+      "sha256": "26c64c780cd040720c2882b756c7c95b9d3944bceba475ec73270e09af504e3d",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 189.72470401639836
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_sparse_dense_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_sparse_dense_r3.npy",
+      "sha256": "6c031eb57ec8f11e98b32fae7650062f614277227076dc7a65e14a069b7ec85e",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 189.72470401639836
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_sparse_dense_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_sparse_dense_r3.npy",
+      "sha256": "a3a83cc73cac741d39842c678dad046f9fd57e4218a4dd1ed7690920151a1c59",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 189.72470401639836
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_sparse_dense_r3",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_sparse_dense_r3.npy",
+      "sha256": "e75512805ec4c0657559b059657b06dd349735aa6e0638ea275fde81114d2da6",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 189.72470401639836
+    },
+    {
+      "view": "raw_rgb",
+      "map": "historical_3q",
+      "pair_id": "stochastic_sparse_dense_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/historical_3q/stochastic_sparse_dense_r4.npy",
+      "sha256": "27fd859f9f00676172cce8857dccaabdab54ddf73c0e42326771c19a1b6b1007",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 190.2222192668528
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261016",
+      "pair_id": "stochastic_sparse_dense_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261016/stochastic_sparse_dense_r4.npy",
+      "sha256": "49980e0282f20e975449a3aed5f1a32ffa8a18e8466522641e9d4e41f980ceec",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 190.2222192668528
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261017",
+      "pair_id": "stochastic_sparse_dense_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261017/stochastic_sparse_dense_r4.npy",
+      "sha256": "e9403aae6772acfe0d0d29e76303b8c515c361bb056f52ce521cd836727cbc0b",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 190.2222192668528
+    },
+    {
+      "view": "raw_rgb",
+      "map": "seed_20261018",
+      "pair_id": "stochastic_sparse_dense_r4",
+      "phase": "test",
+      "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_baseline_fastvlm_v1/vectors/raw_rgb/seed_20261018/stochastic_sparse_dense_r4.npy",
+      "sha256": "a7baebb910579d9eb9740afc605b0463f95b1fada7678d19578eee3714116f4f",
+      "shape": [
+        320,
+        320,
+        3
+      ],
+      "dtype": "float64",
+      "l2_norm": 190.2222192668528
+    }
+  ]
+}

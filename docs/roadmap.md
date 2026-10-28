@@ -207,10 +207,15 @@ their separate Holm family, with cross/same margin ratios 6.004% / 8.652% and
 cross-map retrieval 6/16 / 4/16. All 512 raw/processor input checks reproduce;
 96 inverse raw comparisons are exact. Raw same-map agreement is an algebraic
 isometry, not learned invariance. Input correspondence already exists, while
-larger post-image cache score ratios do not identify causal gain. The next
-bounded diagnostic separates coincident-source-coordinate and other raw
-dot-product contributions, before independently varying selection masks and
-destinations. Those follow-ups remain proposed, not executed.
+larger post-image cache score ratios do not identify causal gain. Raw
+source-coordinate accounting is now complete with full norms unchanged:
+shared fixed coordinates contribute 102.703% of the cross-map mean margin,
+noncoincident coordinates -2.703%, and shared moved/padding terms zero.
+All 8,192 additive terms pass independent recomputation. Positive noncoincident
+contributions remain in 3/8 families, and two family margins reverse sign in
+opposite directions. No new statistical test, processor call or model forward
+is added. Independently varying fixed-coordinate overlap, selection masks and
+destinations is the next proposed input control, not an executed intervention.
 Token bands are not verified 2D patches.
 
 ## Phase 5: Research Report
@@ -221,7 +226,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0050 encode the audited claim
+Status: the evidence matrix and Notes 0027-0051 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -237,9 +242,12 @@ cross-condition direction and amplitude, retaining all negative family margins
 and repeated endpoint counts. The fixed-fraction map study now supports
 cross-map known-pairing correspondence without vector identity, retaining
 negative cases and all repeated-anchor counts. Its raw/processor input
-baseline now shows correspondence before any model forward. The current
-priority is additive source-coordinate-overlap diagnostics, then separate
-mask/destination controls,
+baseline now shows correspondence before any model forward. Additive raw
+source-coordinate accounting now identifies a positive shared-fixed aggregate
+with a negative noncoincident remainder, without erasing family exceptions.
+The current priority is separately controlled fixed-site overlap and
+mask/destination changes, with pre-registered construction and unchanged
+all-cell processor gates before cache comparisons, then
 held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.

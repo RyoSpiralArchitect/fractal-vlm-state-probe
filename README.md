@@ -28,7 +28,7 @@ also hide substantial vector changes, especially after image positions.
 Changed RGB marginals and destroyed spatial arrangement remain explicit;
 this is not frequency-only or semantic causal evidence.
 The graded extension separated within-condition prediction from vector length
-and cross-condition direction. The newest study fixes the fraction at 3/4 and
+and cross-condition direction. The map-seed study fixes the fraction at 3/4 and
 varies the common map: all twelve same-map/cross-map aggregate tests pass joint
 Holm across three new maps. Cross-map margins retain about 94% and 91% of
 same-map margins at post-image L12 keys and L23 values, versus only 14%-16%
@@ -43,6 +43,13 @@ separate Holm family. Their cross/same mean-margin ratios are only 6.0% and
 coordinate-permutation isometry, not learned invariance. The question is now
 how existing input correspondence is represented, not whether it first appears
 inside cache. Input/cache score differences do not establish causal gain.
+The raw score is now decomposed without changing its normalization. Shared
+fixed coordinates contribute 102.7% of the cross-map mean margin, while
+noncoincident coordinates contribute -2.7%; shared moved coordinates and
+padding contribute zero. This is signed accounting, not a causal percentage.
+Noncoincident terms are positive in 3/8 families, and two family margins change
+sign in opposite directions. The next control must vary fixed-coordinate
+overlap separately from permutation destinations before returning to cache.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
@@ -313,9 +320,21 @@ versus same-map margins of 0.136035 and 0.136509. All 96 inverse-permutation
 raw checks are exact; same-map raw cosine differences are at most `2.22e-16`.
 That invariance is an algebraic property of the common pixel permutation.
 Input correspondence exists already, while post-image cache margins are less
-map-dependent descriptively. The next audit separates coincident source
-coordinates from other dot-product contributions before new mask/destination
-controls. Cache/direct-probe counts remain unchanged.
+map-dependent descriptively. Cache/direct-probe counts remain unchanged.
+
+Note 0051 decomposes all 2,048 raw reference/test dot products into 8,192
+additive terms, retaining the original full-vector norms. In every distinct
+map pair, coincident content consists only of shared fixed coordinates,
+covering 6.09%-6.26% of the content. In the cross-map aggregate, their
+mean-margin contribution is +0.008387936, versus -0.000220742 from
+noncoincident content, summing to the original +0.008167193. Shared moved
+and padding terms are zero. Noncoincident terms nevertheless contribute
+positively in 3/8 families and reverse two family-margin signs in opposite
+directions. All terms pass independent reconstruction from the 512 raw cells.
+This explains the algebraic composition of the raw score, not the causal
+effect of removing pixels or the source of post-image cache correspondence.
+No new statistical test, processor call or model forward is added. Separately
+controlling fixed-site overlap and permutation destinations remains unmeasured.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
@@ -332,7 +351,10 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0050](docs/research_notes/0050_cross_map_correspondence_in_input_coordinates.md)
+Start with [Note 0051](docs/research_notes/0051_raw_correspondence_and_shared_fixed_coordinates.md)
+for the raw score's shared-fixed-coordinate accounting, signed cancellation
+and family-level counterexamples, without causal-ablation claims.
+[Note 0050](docs/research_notes/0050_cross_map_correspondence_in_input_coordinates.md)
 for correspondence already present in raw/processor inputs, exact permutation
 isometry checks, and the noncausal comparison with cache scores.
 [Note 0049](docs/research_notes/0049_fixed_fraction_map_seed_transfer.md)
@@ -1031,6 +1053,7 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0048: Graded Cache Correspondence And Direction](docs/research_notes/0048_graded_cache_correspondence_and_direction.md)
 - [Research Note 0049: Fixed-Fraction Map-Seed Transfer](docs/research_notes/0049_fixed_fraction_map_seed_transfer.md)
 - [Research Note 0050: Cross-Map Correspondence In Input Coordinates](docs/research_notes/0050_cross_map_correspondence_in_input_coordinates.md)
+- [Research Note 0051: Raw Correspondence And Shared Fixed Coordinates](docs/research_notes/0051_raw_correspondence_and_shared_fixed_coordinates.md)
 
 ## Claim Boundary
 

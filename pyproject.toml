@@ -55,6 +55,7 @@ summarize-map-seed-input-study = "fractal_vlm_state_probe.cli.summarize_map_seed
 run-map-seed-cache-study = "fractal_vlm_state_probe.cli.run_map_seed_cache_study:main"
 run-map-seed-input-baseline = "fractal_vlm_state_probe.cli.run_map_seed_input_baseline:main"
 run-source-coordinate-overlap = "fractal_vlm_state_probe.cli.run_source_coordinate_overlap:main"
+summarize-source-coordinate-overlap = "fractal_vlm_state_probe.cli.summarize_source_coordinate_overlap:main"
 summarize-map-seed-input-baseline = "fractal_vlm_state_probe.cli.summarize_map_seed_input_baseline:main"
 summarize-map-seed-cache-study = "fractal_vlm_state_probe.cli.summarize_map_seed_cache_study:main"
 summarize-graded-cache-study = "fractal_vlm_state_probe.cli.summarize_graded_cache_study:main"
