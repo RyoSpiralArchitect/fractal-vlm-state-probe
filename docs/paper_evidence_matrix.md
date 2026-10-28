@@ -1,6 +1,6 @@
 # Paper Evidence Matrix
 
-Last updated: 2026-10-29 (design update; measured evidence unchanged)
+Last updated: 2026-10-29 (controlled-overlap input Phase 1 complete; cache/direct counts unchanged)
 
 This file is the compact bridge from run artifacts to a manuscript draft. It
 separates valid observations, descriptive interpretation, withdrawn results,
@@ -26,6 +26,8 @@ the same four factorial cells are not independent samples.
 | Fixed-fraction map-seed transfer | Same qualified FastVLM and targets; historical 3/4 anchor plus three new common maps | 512 panel cells / 1,536 tensors / 384 factorials, including 128 / 384 / 96 anchor repeats; 128 calibration cells separately counted | All four maps pass 32/32 input blocks and all 768 anchor checks are exact; all twelve aggregate primary tests pass joint Holm; cross/same mean-margin ratios are 14.1%-15.7% in image positions and 94.1% / 91.5% at post-image L12/L23 | cross-map known-pairing correspondence in three new maps, not vector identity, a between-regime test or semantic invariance | [Note 0049](research_notes/0049_fixed_fraction_map_seed_transfer.md) |
 | Fixed-map input-coordinate baseline | Full raw RGB and qualified actual-processor pixels; no model forward | Same four maps x 32 blocks x four cells; 512 raw/processor checks, 256 interaction vectors | All four aggregate tests pass their separate joint Holm family; cross/same mean-margin ratios are 6.004% / 8.652%, with cross-map retrieval 6/16 / 4/16; 96 raw inverse checks are exact | cross-map correspondence already exists in inputs; raw same-map agreement is algebraic, not learned invariance or causal gain | [Note 0050](research_notes/0050_cross_map_correspondence_in_input_coordinates.md) |
 | Raw source-coordinate overlap accounting | Existing full raw RGB vectors; unchanged full-vector norms | Four existing maps, 128 vectors, 2,048 dot products / 8,192 additive terms; no new samples | Shared fixed coordinates contribute +0.008387936 (102.703%) and noncoincident coordinates -0.000220742 (-2.703%) to the cross-map mean margin; shared moved and padding terms are zero; noncoincident terms are positive in 3/8 families | exact descriptive score accounting with family exceptions, not pixel ablation, new significance evidence or a cache mechanism | [Note 0051](research_notes/0051_raw_correspondence_and_shared_fixed_coordinates.md) |
+| Controlled-overlap input qualification | Qualified FastVLM processor, no weights or forward | 28 maps x 32 reused source blocks x four cells = 3,584 cells; 128 historical checks; 1,024 saved interactions | All 896 four-cell gates pass; actual fixed fraction is exactly 25%, with total content coincidence 0%, 6.25% or 25%; all 3,584 cells reproduce in verification | complete input eligibility under fixed expanded marginals, not between-level spectral equivalence or cache evidence | [Note 0055](research_notes/0055_controlled_overlap_input_qualification.md) |
+| Controlled-overlap input correspondence | Full raw RGB and actual processor vectors; frozen descriptive endpoints | Four masks x two destinations, eight reused families, two reference/two test seeds; 56 score matrices | Zero-overlap means -0.000316 / +0.003353; paired high-minus-zero means +0.034846 / +0.033964; D positive in 6/8 families each; both zero-level exploratory ranges cross zero | registered development description with independent replay; no p-values, absence, equivalence, causal processing gain or confirmation claim | [Note 0056](research_notes/0056_controlled_overlap_input_correspondence.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
@@ -198,6 +200,16 @@ the same four factorial cells are not independent samples.
     directions. Independent raw-cell and term recomputation passes for all
     128 vectors and 8,192 terms. No processor/model call or new test is added.
 
+26. The controlled-overlap panel fixes exactly 25% of content sites in every
+    map, with exact 0%, 6.25% or 25% content coincidence against its reference
+    and no shared moved coincidence. All 896 four-cell blocks pass unchanged
+    gates. At zero overlap, raw/processor margins are -0.000315703 /
+    +0.003352657; the paired 25%-minus-zero differences are +0.034846370 /
+    +0.033963924. All 56 score matrices and the registered exploratory bootstrap
+    reproduce independently. D is positive in 6/8 families in each view, not
+    all eight. Both zero-level ranges include zero. No absence, equivalence,
+    new significance or cache mechanism follows.
+
 ### Provisional
 
 - The measured object is distribution-coupled visual perturbation under fresh
@@ -345,6 +357,13 @@ the same four factorial cells are not independent samples.
   off-diagonal map contributions are positive. The raw partition cannot be
   transferred directly to resampled processor pixels or cache coordinates.
 - Replay lengths are nested contexts, not independent stimulus replicates.
+- Notes 0055-0056 reuse development sources and change spatial arrangement
+  with overlap. The 28 maps are coupled within four mask blocks, not 28
+  independent images. Within-block gates do not remove between-level spectral
+  drift. Zero coordinate coincidence does not force processor correspondence
+  to zero. Four registered exploratory percentile ranges have Bonferroni tail
+  allocation but no guaranteed coverage, with references held fixed; no
+  p-values, equivalence widths, absence claims or confirmed residual are added.
 - Source-context caches and direct probes come from separate fresh forwards
   with different prompts; their relationship is descriptive, not causal.
 - The full-vector surface retains selected target tensors but does not make
@@ -376,16 +395,19 @@ The approved preprint scope is recorded in
 [Note 0052](research_notes/0052_preprint_scope_and_confirmation_boundaries.md).
 It is not an evidence unit or a completed measurement registration. Its
 confirmation cohort is not generated or sealed; all existing images/maps are
-development material for the new overlap study. Note 0051 remains the latest
-measurement, and all direct/cache observation counts above are unchanged.
+development material for the overlap study. Its bounded input Phase 1 is now
+registered and complete in Notes 0053-0056; all direct/cache observation counts
+above are unchanged. Input eligibility is not authorization by itself to skip
+the next pre-measurement registration.
 
-1. Explicitly vary shared fixed-coordinate overlap at fixed selected fraction,
-   expanded RGB marginals and padding. Note 0051 completes the raw additive
-   accounting; the next input panel must register construction and seeds
-   before scores, count incidental fixed points, and keep all family signs.
-2. Separate selected-mask changes from permutation-destination changes in that
-   design. Pass unchanged all-cell processor gates before any cache comparison;
-   retain between-map spectral drift and do not select maps by favorable scores.
+1. Register and execute the calibrated FastVLM cache comparison on the complete
+   eligible controlled-overlap panel, preserving all masks, levels, source
+   identities and family signs. Zero-overlap and paired difference endpoints
+   must not be selected after cache outcomes.
+2. Carry input/processor baselines, between-level spectra and the nonzero
+   processor zero-overlap point estimate into that comparison. Later isolate
+   simple resizing/mixing baselines before attributing larger cache scores to
+   learning or a specifically multimodal mechanism.
 3. Add more stochastic, fractal, and provenance-controlled natural-image
    pairing families; evaluate leave-one-pairing-family-out transfer.
 4. Compare input-conditioned direction profiles in accepted matched blocks;

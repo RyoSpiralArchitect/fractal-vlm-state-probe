@@ -1,0 +1,4477 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "controlled_overlap_phase1_publication",
+  "input_summary_sha256": "4a820a3bcfe81f99336fcb705eef0593784cd6c9c4c00b9a24ef2a119c98f748",
+  "scores_sha256": "49c7eeca387a848f6c105a7f47ce29c04937498d440158598866110124b02eff",
+  "score_views": 56,
+  "aggregates": [
+    {
+      "view": "raw_rgb",
+      "q_sixteenths": 0,
+      "available": true,
+      "test_seed_count": 16,
+      "test_seed_margins": [
+        {
+          "label": "geometry_checker_hex_r3",
+          "pairing_family": "geometry_checkerboard_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": -6.622362603147803e-05,
+          "other_family_cosine_contribution": -0.00041584403180851265,
+          "margin": 0.0003496204057770346
+        },
+        {
+          "label": "geometry_checker_hex_r4",
+          "pairing_family": "geometry_checkerboard_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": -0.0014487919048432494,
+          "other_family_cosine_contribution": -0.0007103654392071828,
+          "margin": -0.0007384264656360666
+        },
+        {
+          "label": "geometry_square_triangle_r3",
+          "pairing_family": "geometry_square_triangle_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": -0.0019706021259778004,
+          "other_family_cosine_contribution": 0.0004949461519606488,
+          "margin": -0.0024655482779384493
+        },
+        {
+          "label": "geometry_square_triangle_r4",
+          "pairing_family": "geometry_square_triangle_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": -0.0018375748516636578,
+          "other_family_cosine_contribution": 0.0002947842932601378,
+          "margin": -0.0021323591449237955
+        },
+        {
+          "label": "geometry_voronoi_hex_r3",
+          "pairing_family": "geometry_voronoi_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": -0.0011858393825704375,
+          "other_family_cosine_contribution": -0.0001322726152894229,
+          "margin": -0.0010535667672810147
+        },
+        {
+          "label": "geometry_voronoi_hex_r4",
+          "pairing_family": "geometry_voronoi_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.001235040300582163,
+          "other_family_cosine_contribution": 0.0002650922249185543,
+          "margin": 0.0009699480756636088
+        },
+        {
+          "label": "geometry_vq_r3",
+          "pairing_family": "geometry_voronoi_quasicrystal",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": -0.0009627794480048225,
+          "other_family_cosine_contribution": 0.00023864857385351562,
+          "margin": -0.001201428021858338
+        },
+        {
+          "label": "geometry_vq_r4",
+          "pairing_family": "geometry_voronoi_quasicrystal",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.0011842715109727903,
+          "other_family_cosine_contribution": -0.0007302016044987255,
+          "margin": 0.001914473115471516
+        },
+        {
+          "label": "stochastic_blue_dots_r3",
+          "pairing_family": "stochastic_blue_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": -0.0007573973008985954,
+          "other_family_cosine_contribution": -4.402093603785108e-05,
+          "margin": -0.0007133763648607443
+        },
+        {
+          "label": "stochastic_blue_dots_r4",
+          "pairing_family": "stochastic_blue_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": -0.0004031103268781308,
+          "other_family_cosine_contribution": -0.0010532099689648377,
+          "margin": 0.0006500996420867068
+        },
+        {
+          "label": "stochastic_sparse_dense_r3",
+          "pairing_family": "stochastic_sparse_dense_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 9.426534890489267e-05,
+          "other_family_cosine_contribution": -9.77833699970138e-05,
+          "margin": 0.00019204871890190649
+        },
+        {
+          "label": "stochastic_sparse_dense_r4",
+          "pairing_family": "stochastic_sparse_dense_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": -0.0014834061868805144,
+          "other_family_cosine_contribution": 0.0004154732262961933,
+          "margin": -0.0018988794131767077
+        },
+        {
+          "label": "stochastic_white_blue_r3",
+          "pairing_family": "stochastic_white_blue_noise",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.001473259026762304,
+          "other_family_cosine_contribution": -1.523418878491352e-05,
+          "margin": 0.0014884932155472175
+        },
+        {
+          "label": "stochastic_white_blue_r4",
+          "pairing_family": "stochastic_white_blue_noise",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": -0.0007222813013563813,
+          "other_family_cosine_contribution": -0.00034118462901993376,
+          "margin": -0.00038109667233644757
+        },
+        {
+          "label": "stochastic_white_dots_r3",
+          "pairing_family": "stochastic_white_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0001666172527249687,
+          "other_family_cosine_contribution": 0.00031060715156595414,
+          "margin": -0.00014398989884098544
+        },
+        {
+          "label": "stochastic_white_dots_r4",
+          "pairing_family": "stochastic_white_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.0001171771274408587,
+          "other_family_cosine_contribution": 4.432055856761722e-06,
+          "margin": 0.00011274507158409697
+        }
+      ],
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": -0.000194403029929516,
+        "geometry_square_triangle_tiling": -0.0022989537114311226,
+        "geometry_voronoi_hex_tiling": -4.180934580870293e-05,
+        "geometry_voronoi_quasicrystal": 0.0003565225468065889,
+        "stochastic_blue_random_dots": -3.163836138701874e-05,
+        "stochastic_sparse_dense_dots": -0.0008534153471374006,
+        "stochastic_white_blue_noise": 0.0005536982716053849,
+        "stochastic_white_random_dots": -1.5622413628444234e-05
+      },
+      "mean_family_margin": -0.00031570267386377897,
+      "positive_family_margin_count": 2,
+      "negative_family_margin_count": 6,
+      "retrieval_correct_count": 2,
+      "retrieval_tied_count": 0,
+      "components": {
+        "shared_fixed_content": {
+          "test_seed_count": 16,
+          "test_seed_margins": [
+            {
+              "label": "geometry_checker_hex_r3",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_checker_hex_r4",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r3",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r4",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r3",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r4",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r3",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r4",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r3",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r4",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r3",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r4",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r3",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r4",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r3",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r4",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            }
+          ],
+          "family_margins": {
+            "geometry_checkerboard_hex_tiling": 0.0,
+            "geometry_square_triangle_tiling": 0.0,
+            "geometry_voronoi_hex_tiling": 0.0,
+            "geometry_voronoi_quasicrystal": 0.0,
+            "stochastic_blue_random_dots": 0.0,
+            "stochastic_sparse_dense_dots": 0.0,
+            "stochastic_white_blue_noise": 0.0,
+            "stochastic_white_random_dots": 0.0
+          },
+          "mean_family_margin": 0.0,
+          "positive_family_margin_count": 0,
+          "negative_family_margin_count": 0,
+          "retrieval_correct_count": 0,
+          "retrieval_tied_count": 16
+        },
+        "shared_moved_content": {
+          "test_seed_count": 16,
+          "test_seed_margins": [
+            {
+              "label": "geometry_checker_hex_r3",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_checker_hex_r4",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r3",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r4",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r3",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r4",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r3",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r4",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r3",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r4",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r3",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r4",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r3",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r4",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r3",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r4",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            }
+          ],
+          "family_margins": {
+            "geometry_checkerboard_hex_tiling": 0.0,
+            "geometry_square_triangle_tiling": 0.0,
+            "geometry_voronoi_hex_tiling": 0.0,
+            "geometry_voronoi_quasicrystal": 0.0,
+            "stochastic_blue_random_dots": 0.0,
+            "stochastic_sparse_dense_dots": 0.0,
+            "stochastic_white_blue_noise": 0.0,
+            "stochastic_white_random_dots": 0.0
+          },
+          "mean_family_margin": 0.0,
+          "positive_family_margin_count": 0,
+          "negative_family_margin_count": 0,
+          "retrieval_correct_count": 0,
+          "retrieval_tied_count": 16
+        },
+        "noncoincident_content": {
+          "test_seed_count": 16,
+          "test_seed_margins": [
+            {
+              "label": "geometry_checker_hex_r3",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": -6.622362603147803e-05,
+              "other_family_cosine_contribution": -0.00041584403180851265,
+              "margin": 0.0003496204057770346
+            },
+            {
+              "label": "geometry_checker_hex_r4",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": -0.0014487919048432494,
+              "other_family_cosine_contribution": -0.0007103654392071828,
+              "margin": -0.0007384264656360666
+            },
+            {
+              "label": "geometry_square_triangle_r3",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": -0.0019706021259778004,
+              "other_family_cosine_contribution": 0.0004949461519606488,
+              "margin": -0.0024655482779384493
+            },
+            {
+              "label": "geometry_square_triangle_r4",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": -0.0018375748516636578,
+              "other_family_cosine_contribution": 0.0002947842932601378,
+              "margin": -0.0021323591449237955
+            },
+            {
+              "label": "geometry_voronoi_hex_r3",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": -0.0011858393825704375,
+              "other_family_cosine_contribution": -0.0001322726152894229,
+              "margin": -0.0010535667672810147
+            },
+            {
+              "label": "geometry_voronoi_hex_r4",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.001235040300582163,
+              "other_family_cosine_contribution": 0.0002650922249185543,
+              "margin": 0.0009699480756636088
+            },
+            {
+              "label": "geometry_vq_r3",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": -0.0009627794480048225,
+              "other_family_cosine_contribution": 0.00023864857385351562,
+              "margin": -0.001201428021858338
+            },
+            {
+              "label": "geometry_vq_r4",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0011842715109727903,
+              "other_family_cosine_contribution": -0.0007302016044987255,
+              "margin": 0.001914473115471516
+            },
+            {
+              "label": "stochastic_blue_dots_r3",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": -0.0007573973008985954,
+              "other_family_cosine_contribution": -4.402093603785108e-05,
+              "margin": -0.0007133763648607443
+            },
+            {
+              "label": "stochastic_blue_dots_r4",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": -0.0004031103268781308,
+              "other_family_cosine_contribution": -0.0010532099689648377,
+              "margin": 0.0006500996420867068
+            },
+            {
+              "label": "stochastic_sparse_dense_r3",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 9.426534890489267e-05,
+              "other_family_cosine_contribution": -9.77833699970138e-05,
+              "margin": 0.00019204871890190649
+            },
+            {
+              "label": "stochastic_sparse_dense_r4",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": -0.0014834061868805144,
+              "other_family_cosine_contribution": 0.0004154732262961933,
+              "margin": -0.0018988794131767077
+            },
+            {
+              "label": "stochastic_white_blue_r3",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.001473259026762304,
+              "other_family_cosine_contribution": -1.523418878491352e-05,
+              "margin": 0.0014884932155472175
+            },
+            {
+              "label": "stochastic_white_blue_r4",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": -0.0007222813013563813,
+              "other_family_cosine_contribution": -0.00034118462901993376,
+              "margin": -0.00038109667233644757
+            },
+            {
+              "label": "stochastic_white_dots_r3",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0001666172527249687,
+              "other_family_cosine_contribution": 0.00031060715156595414,
+              "margin": -0.00014398989884098544
+            },
+            {
+              "label": "stochastic_white_dots_r4",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0001171771274408587,
+              "other_family_cosine_contribution": 4.432055856761722e-06,
+              "margin": 0.00011274507158409697
+            }
+          ],
+          "family_margins": {
+            "geometry_checkerboard_hex_tiling": -0.000194403029929516,
+            "geometry_square_triangle_tiling": -0.0022989537114311226,
+            "geometry_voronoi_hex_tiling": -4.180934580870293e-05,
+            "geometry_voronoi_quasicrystal": 0.0003565225468065889,
+            "stochastic_blue_random_dots": -3.163836138701874e-05,
+            "stochastic_sparse_dense_dots": -0.0008534153471374006,
+            "stochastic_white_blue_noise": 0.0005536982716053849,
+            "stochastic_white_random_dots": -1.5622413628444234e-05
+          },
+          "mean_family_margin": -0.00031570267386377897,
+          "positive_family_margin_count": 2,
+          "negative_family_margin_count": 6,
+          "retrieval_correct_count": 2,
+          "retrieval_tied_count": 0
+        },
+        "padding": {
+          "test_seed_count": 16,
+          "test_seed_margins": [
+            {
+              "label": "geometry_checker_hex_r3",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_checker_hex_r4",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r3",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r4",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r3",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r4",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r3",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r4",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r3",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r4",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r3",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r4",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r3",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r4",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r3",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r4",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            }
+          ],
+          "family_margins": {
+            "geometry_checkerboard_hex_tiling": 0.0,
+            "geometry_square_triangle_tiling": 0.0,
+            "geometry_voronoi_hex_tiling": 0.0,
+            "geometry_voronoi_quasicrystal": 0.0,
+            "stochastic_blue_random_dots": 0.0,
+            "stochastic_sparse_dense_dots": 0.0,
+            "stochastic_white_blue_noise": 0.0,
+            "stochastic_white_random_dots": 0.0
+          },
+          "mean_family_margin": 0.0,
+          "positive_family_margin_count": 0,
+          "negative_family_margin_count": 0,
+          "retrieval_correct_count": 0,
+          "retrieval_tied_count": 16
+        }
+      }
+    },
+    {
+      "view": "raw_rgb",
+      "q_sixteenths": 1,
+      "available": true,
+      "test_seed_count": 16,
+      "test_seed_margins": [
+        {
+          "label": "geometry_checker_hex_r3",
+          "pairing_family": "geometry_checkerboard_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.014631293130993869,
+          "other_family_cosine_contribution": 0.009686803496219603,
+          "margin": 0.004944489634774266
+        },
+        {
+          "label": "geometry_checker_hex_r4",
+          "pairing_family": "geometry_checkerboard_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.026342638477102484,
+          "other_family_cosine_contribution": 0.010895168780350283,
+          "margin": 0.015447469696752201
+        },
+        {
+          "label": "geometry_square_triangle_r3",
+          "pairing_family": "geometry_square_triangle_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.04771198499319488,
+          "other_family_cosine_contribution": 0.009569418841802738,
+          "margin": 0.03814256615139214
+        },
+        {
+          "label": "geometry_square_triangle_r4",
+          "pairing_family": "geometry_square_triangle_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.047365730891105046,
+          "other_family_cosine_contribution": 0.006703477911441839,
+          "margin": 0.04066225297966321
+        },
+        {
+          "label": "geometry_voronoi_hex_r3",
+          "pairing_family": "geometry_voronoi_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.019703344133319964,
+          "other_family_cosine_contribution": 0.010907704914883243,
+          "margin": 0.008795639218436721
+        },
+        {
+          "label": "geometry_voronoi_hex_r4",
+          "pairing_family": "geometry_voronoi_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.019974779872765754,
+          "other_family_cosine_contribution": 0.011394790777538298,
+          "margin": 0.008579989095227456
+        },
+        {
+          "label": "geometry_vq_r3",
+          "pairing_family": "geometry_voronoi_quasicrystal",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0014401578838459808,
+          "other_family_cosine_contribution": 0.0012510237631445944,
+          "margin": 0.00018913412070138648
+        },
+        {
+          "label": "geometry_vq_r4",
+          "pairing_family": "geometry_voronoi_quasicrystal",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.013059107118482693,
+          "other_family_cosine_contribution": 0.002467612815926692,
+          "margin": 0.010591494302556001
+        },
+        {
+          "label": "stochastic_blue_dots_r3",
+          "pairing_family": "stochastic_blue_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0005492777124416378,
+          "other_family_cosine_contribution": 0.0001246459101947164,
+          "margin": 0.0004246318022469214
+        },
+        {
+          "label": "stochastic_blue_dots_r4",
+          "pairing_family": "stochastic_blue_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": -0.001109376579224574,
+          "other_family_cosine_contribution": 0.0003427427950652144,
+          "margin": -0.0014521193742897884
+        },
+        {
+          "label": "stochastic_sparse_dense_r3",
+          "pairing_family": "stochastic_sparse_dense_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.006378985994863575,
+          "other_family_cosine_contribution": 0.0011828010137991828,
+          "margin": 0.0051961849810643924
+        },
+        {
+          "label": "stochastic_sparse_dense_r4",
+          "pairing_family": "stochastic_sparse_dense_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.005083323270457443,
+          "other_family_cosine_contribution": 0.0008527847542879603,
+          "margin": 0.004230538516169483
+        },
+        {
+          "label": "stochastic_white_blue_r3",
+          "pairing_family": "stochastic_white_blue_noise",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": -0.00041200218049795183,
+          "other_family_cosine_contribution": -0.0005274319575421393,
+          "margin": 0.00011542977704418747
+        },
+        {
+          "label": "stochastic_white_blue_r4",
+          "pairing_family": "stochastic_white_blue_noise",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": -0.0007573007890849235,
+          "other_family_cosine_contribution": -1.7426148372422278e-05,
+          "margin": -0.0007398746407125012
+        },
+        {
+          "label": "stochastic_white_dots_r3",
+          "pairing_family": "stochastic_white_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0008252932367133155,
+          "other_family_cosine_contribution": -0.00015318157685207233,
+          "margin": 0.0009784748135653878
+        },
+        {
+          "label": "stochastic_white_dots_r4",
+          "pairing_family": "stochastic_white_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.0021823018715353888,
+          "other_family_cosine_contribution": 0.0002948770515967918,
+          "margin": 0.001887424819938597
+        }
+      ],
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.010195979665763234,
+        "geometry_square_triangle_tiling": 0.03940240956552767,
+        "geometry_voronoi_hex_tiling": 0.008687814156832088,
+        "geometry_voronoi_quasicrystal": 0.005390314211628694,
+        "stochastic_blue_random_dots": -0.0005137437860214335,
+        "stochastic_sparse_dense_dots": 0.004713361748616938,
+        "stochastic_white_blue_noise": -0.0003122224318341569,
+        "stochastic_white_random_dots": 0.0014329498167519924
+      },
+      "mean_family_margin": 0.00862460786840813,
+      "positive_family_margin_count": 6,
+      "negative_family_margin_count": 2,
+      "retrieval_correct_count": 5,
+      "retrieval_tied_count": 0,
+      "components": {
+        "shared_fixed_content": {
+          "test_seed_count": 16,
+          "test_seed_margins": [
+            {
+              "label": "geometry_checker_hex_r3",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.015378113656510737,
+              "other_family_cosine_contribution": 0.010058278418747202,
+              "margin": 0.005319835237763535
+            },
+            {
+              "label": "geometry_checker_hex_r4",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.02661640461606353,
+              "other_family_cosine_contribution": 0.010914315665558007,
+              "margin": 0.015702088950505524
+            },
+            {
+              "label": "geometry_square_triangle_r3",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.04893223420823256,
+              "other_family_cosine_contribution": 0.009081662351120331,
+              "margin": 0.03985057185711223
+            },
+            {
+              "label": "geometry_square_triangle_r4",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0486323563565345,
+              "other_family_cosine_contribution": 0.0063580033480019026,
+              "margin": 0.04227435300853259
+            },
+            {
+              "label": "geometry_voronoi_hex_r3",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.01818273166796209,
+              "other_family_cosine_contribution": 0.010288485044147736,
+              "margin": 0.007894246623814353
+            },
+            {
+              "label": "geometry_voronoi_hex_r4",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.019382455775825095,
+              "other_family_cosine_contribution": 0.011560154514191267,
+              "margin": 0.007822301261633828
+            },
+            {
+              "label": "geometry_vq_r3",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0005056233241367705,
+              "other_family_cosine_contribution": 0.0012693753535528256,
+              "margin": -0.0007637520294160551
+            },
+            {
+              "label": "geometry_vq_r4",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.01313081440272581,
+              "other_family_cosine_contribution": 0.0021880046553928016,
+              "margin": 0.01094280974733301
+            },
+            {
+              "label": "stochastic_blue_dots_r3",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 7.806789272096128e-05,
+              "other_family_cosine_contribution": 0.0005101976458600273,
+              "margin": -0.00043212975313906604
+            },
+            {
+              "label": "stochastic_blue_dots_r4",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": -0.0004955996517304435,
+              "other_family_cosine_contribution": 0.0006049356615355704,
+              "margin": -0.001100535313266014
+            },
+            {
+              "label": "stochastic_sparse_dense_r3",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.004873400850895674,
+              "other_family_cosine_contribution": 0.0009772895395807777,
+              "margin": 0.0038961113113148964
+            },
+            {
+              "label": "stochastic_sparse_dense_r4",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.005164011919093169,
+              "other_family_cosine_contribution": 0.0012041837040974931,
+              "margin": 0.003959828214995676
+            },
+            {
+              "label": "stochastic_white_blue_r3",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.00010843196776453315,
+              "other_family_cosine_contribution": -0.00013491534732572316,
+              "margin": 0.0002433473150902563
+            },
+            {
+              "label": "stochastic_white_blue_r4",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.00027283531731561093,
+              "other_family_cosine_contribution": -2.178515742686115e-05,
+              "margin": 0.0002946204747424721
+            },
+            {
+              "label": "stochastic_white_dots_r3",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.00021279847734413808,
+              "other_family_cosine_contribution": 0.0007023724152735632,
+              "margin": -0.0004895739379294251
+            },
+            {
+              "label": "stochastic_white_dots_r4",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0009247562992794175,
+              "other_family_cosine_contribution": 0.0006422736610937628,
+              "margin": 0.00028248263818565474
+            }
+          ],
+          "family_margins": {
+            "geometry_checkerboard_hex_tiling": 0.010510962094134529,
+            "geometry_square_triangle_tiling": 0.04106246243282241,
+            "geometry_voronoi_hex_tiling": 0.00785827394272409,
+            "geometry_voronoi_quasicrystal": 0.005089528858958477,
+            "stochastic_blue_random_dots": -0.0007663325332025401,
+            "stochastic_sparse_dense_dots": 0.003927969763155286,
+            "stochastic_white_blue_noise": 0.0002689838949163642,
+            "stochastic_white_random_dots": -0.00010354564987188517
+          },
+          "mean_family_margin": 0.00848103785045459,
+          "positive_family_margin_count": 6,
+          "negative_family_margin_count": 2,
+          "retrieval_correct_count": 5,
+          "retrieval_tied_count": 0
+        },
+        "shared_moved_content": {
+          "test_seed_count": 16,
+          "test_seed_margins": [
+            {
+              "label": "geometry_checker_hex_r3",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_checker_hex_r4",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r3",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r4",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r3",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r4",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r3",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r4",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r3",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r4",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r3",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r4",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r3",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r4",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r3",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r4",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            }
+          ],
+          "family_margins": {
+            "geometry_checkerboard_hex_tiling": 0.0,
+            "geometry_square_triangle_tiling": 0.0,
+            "geometry_voronoi_hex_tiling": 0.0,
+            "geometry_voronoi_quasicrystal": 0.0,
+            "stochastic_blue_random_dots": 0.0,
+            "stochastic_sparse_dense_dots": 0.0,
+            "stochastic_white_blue_noise": 0.0,
+            "stochastic_white_random_dots": 0.0
+          },
+          "mean_family_margin": 0.0,
+          "positive_family_margin_count": 0,
+          "negative_family_margin_count": 0,
+          "retrieval_correct_count": 0,
+          "retrieval_tied_count": 16
+        },
+        "noncoincident_content": {
+          "test_seed_count": 16,
+          "test_seed_margins": [
+            {
+              "label": "geometry_checker_hex_r3",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": -0.0007468205255166816,
+              "other_family_cosine_contribution": -0.0003714749225276503,
+              "margin": -0.00037534560298903134
+            },
+            {
+              "label": "geometry_checker_hex_r4",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": -0.00027376613896066995,
+              "other_family_cosine_contribution": -1.914688520773583e-05,
+              "margin": -0.0002546192537529341
+            },
+            {
+              "label": "geometry_square_triangle_r3",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": -0.0012202492150376724,
+              "other_family_cosine_contribution": 0.00048775649068225573,
+              "margin": -0.001708005705719928
+            },
+            {
+              "label": "geometry_square_triangle_r4",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": -0.0012666254654293946,
+              "other_family_cosine_contribution": 0.00034547456344010416,
+              "margin": -0.0016121000288694988
+            },
+            {
+              "label": "geometry_voronoi_hex_r3",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0015206124653578549,
+              "other_family_cosine_contribution": 0.0006192198707357721,
+              "margin": 0.0009013925946220828
+            },
+            {
+              "label": "geometry_voronoi_hex_r4",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0005923240969407679,
+              "other_family_cosine_contribution": -0.00016536373665282746,
+              "margin": 0.0007576878335935954
+            },
+            {
+              "label": "geometry_vq_r3",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0009345345597092146,
+              "other_family_cosine_contribution": -1.8351590408219873e-05,
+              "margin": 0.0009528861501174346
+            },
+            {
+              "label": "geometry_vq_r4",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": -7.170728424306394e-05,
+              "other_family_cosine_contribution": 0.0002796081605338883,
+              "margin": -0.00035131544477695224
+            },
+            {
+              "label": "stochastic_blue_dots_r3",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.00047120981972067165,
+              "other_family_cosine_contribution": -0.00038555173566529825,
+              "margin": 0.0008567615553859699
+            },
+            {
+              "label": "stochastic_blue_dots_r4",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": -0.0006137769274941289,
+              "other_family_cosine_contribution": -0.00026219286647035365,
+              "margin": -0.0003515840610237753
+            },
+            {
+              "label": "stochastic_sparse_dense_r3",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0015055851439679127,
+              "other_family_cosine_contribution": 0.00020551147421841846,
+              "margin": 0.0013000736697494943
+            },
+            {
+              "label": "stochastic_sparse_dense_r4",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": -8.068864863573622e-05,
+              "other_family_cosine_contribution": -0.00035139894980952286,
+              "margin": 0.0002707103011737866
+            },
+            {
+              "label": "stochastic_white_blue_r3",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": -0.0005204341482624644,
+              "other_family_cosine_contribution": -0.00039251661021641183,
+              "margin": -0.0001279175380460526
+            },
+            {
+              "label": "stochastic_white_blue_r4",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": -0.0010301361064005462,
+              "other_family_cosine_contribution": 4.359009054438084e-06,
+              "margin": -0.0010344951154549844
+            },
+            {
+              "label": "stochastic_white_dots_r3",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.000612494759369181,
+              "other_family_cosine_contribution": -0.0008555539921256452,
+              "margin": 0.0014680487514948262
+            },
+            {
+              "label": "stochastic_white_dots_r4",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0012575455722559502,
+              "other_family_cosine_contribution": -0.0003473966094969611,
+              "margin": 0.0016049421817529114
+            }
+          ],
+          "family_margins": {
+            "geometry_checkerboard_hex_tiling": -0.00031498242837098273,
+            "geometry_square_triangle_tiling": -0.0016600528672947134,
+            "geometry_voronoi_hex_tiling": 0.000829540214107839,
+            "geometry_voronoi_quasicrystal": 0.00030078535267024113,
+            "stochastic_blue_random_dots": 0.0002525887471810973,
+            "stochastic_sparse_dense_dots": 0.0007853919854616404,
+            "stochastic_white_blue_noise": -0.0005812063267505185,
+            "stochastic_white_random_dots": 0.0015364954666238688
+          },
+          "mean_family_margin": 0.00014357001795355895,
+          "positive_family_margin_count": 5,
+          "negative_family_margin_count": 3,
+          "retrieval_correct_count": 3,
+          "retrieval_tied_count": 0
+        },
+        "padding": {
+          "test_seed_count": 16,
+          "test_seed_margins": [
+            {
+              "label": "geometry_checker_hex_r3",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_checker_hex_r4",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r3",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r4",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r3",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r4",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r3",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r4",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r3",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r4",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r3",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r4",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r3",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r4",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r3",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r4",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            }
+          ],
+          "family_margins": {
+            "geometry_checkerboard_hex_tiling": 0.0,
+            "geometry_square_triangle_tiling": 0.0,
+            "geometry_voronoi_hex_tiling": 0.0,
+            "geometry_voronoi_quasicrystal": 0.0,
+            "stochastic_blue_random_dots": 0.0,
+            "stochastic_sparse_dense_dots": 0.0,
+            "stochastic_white_blue_noise": 0.0,
+            "stochastic_white_random_dots": 0.0
+          },
+          "mean_family_margin": 0.0,
+          "positive_family_margin_count": 0,
+          "negative_family_margin_count": 0,
+          "retrieval_correct_count": 0,
+          "retrieval_tied_count": 16
+        }
+      }
+    },
+    {
+      "view": "raw_rgb",
+      "q_sixteenths": 4,
+      "available": true,
+      "test_seed_count": 16,
+      "test_seed_margins": [
+        {
+          "label": "geometry_checker_hex_r3",
+          "pairing_family": "geometry_checkerboard_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.061440809564635164,
+          "other_family_cosine_contribution": 0.03831702186569893,
+          "margin": 0.023123787698936235
+        },
+        {
+          "label": "geometry_checker_hex_r4",
+          "pairing_family": "geometry_checkerboard_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.10933719116299997,
+          "other_family_cosine_contribution": 0.04408520109774187,
+          "margin": 0.06525199006525811
+        },
+        {
+          "label": "geometry_square_triangle_r3",
+          "pairing_family": "geometry_square_triangle_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.1923952554331218,
+          "other_family_cosine_contribution": 0.03717546634365737,
+          "margin": 0.15521978908946443
+        },
+        {
+          "label": "geometry_square_triangle_r4",
+          "pairing_family": "geometry_square_triangle_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.19205903043395156,
+          "other_family_cosine_contribution": 0.025970382983779242,
+          "margin": 0.16608864745017232
+        },
+        {
+          "label": "geometry_voronoi_hex_r3",
+          "pairing_family": "geometry_voronoi_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.07364528807452662,
+          "other_family_cosine_contribution": 0.04081840672819275,
+          "margin": 0.032826881346333874
+        },
+        {
+          "label": "geometry_voronoi_hex_r4",
+          "pairing_family": "geometry_voronoi_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.07917392028866446,
+          "other_family_cosine_contribution": 0.046275312217370836,
+          "margin": 0.03289860807129363
+        },
+        {
+          "label": "geometry_vq_r3",
+          "pairing_family": "geometry_voronoi_quasicrystal",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0017535277581754874,
+          "other_family_cosine_contribution": 0.004663259525552504,
+          "margin": -0.0029097317673770166
+        },
+        {
+          "label": "geometry_vq_r4",
+          "pairing_family": "geometry_voronoi_quasicrystal",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.05308701161310483,
+          "other_family_cosine_contribution": 0.008721622511109339,
+          "margin": 0.04436538910199549
+        },
+        {
+          "label": "stochastic_blue_dots_r3",
+          "pairing_family": "stochastic_blue_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0007667544567778947,
+          "other_family_cosine_contribution": 0.001840180014999183,
+          "margin": -0.0010734255582212882
+        },
+        {
+          "label": "stochastic_blue_dots_r4",
+          "pairing_family": "stochastic_blue_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.0006469810552622779,
+          "other_family_cosine_contribution": 0.001293228946518394,
+          "margin": -0.0006462478912561162
+        },
+        {
+          "label": "stochastic_sparse_dense_r3",
+          "pairing_family": "stochastic_sparse_dense_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.020177100622084124,
+          "other_family_cosine_contribution": 0.0028175583268093053,
+          "margin": 0.017359542295274817
+        },
+        {
+          "label": "stochastic_sparse_dense_r4",
+          "pairing_family": "stochastic_sparse_dense_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.021848069115674683,
+          "other_family_cosine_contribution": 0.003493992561986206,
+          "margin": 0.018354076553688477
+        },
+        {
+          "label": "stochastic_white_blue_r3",
+          "pairing_family": "stochastic_white_blue_noise",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0007936854980647007,
+          "other_family_cosine_contribution": -0.0008226402331055973,
+          "margin": 0.001616325731170298
+        },
+        {
+          "label": "stochastic_white_blue_r4",
+          "pairing_family": "stochastic_white_blue_noise",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.00125219820179936,
+          "other_family_cosine_contribution": -0.0004942932137161259,
+          "margin": 0.001746491415515486
+        },
+        {
+          "label": "stochastic_white_dots_r3",
+          "pairing_family": "stochastic_white_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0017828023157008036,
+          "other_family_cosine_contribution": 0.0021790696049161485,
+          "margin": -0.0003962672892153449
+        },
+        {
+          "label": "stochastic_white_dots_r4",
+          "pairing_family": "stochastic_white_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.001598566816201598,
+          "other_family_cosine_contribution": 0.0029337434538584135,
+          "margin": -0.0013351766376568156
+        }
+      ],
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.044187888882097175,
+        "geometry_square_triangle_tiling": 0.16065421826981838,
+        "geometry_voronoi_hex_tiling": 0.03286274470881375,
+        "geometry_voronoi_quasicrystal": 0.020727828667309236,
+        "stochastic_blue_random_dots": -0.0008598367247387022,
+        "stochastic_sparse_dense_dots": 0.017856809424481646,
+        "stochastic_white_blue_noise": 0.001681408573342892,
+        "stochastic_white_random_dots": -0.0008657219634360802
+      },
+      "mean_family_margin": 0.034530667479711036,
+      "positive_family_margin_count": 6,
+      "negative_family_margin_count": 2,
+      "retrieval_correct_count": 5,
+      "retrieval_tied_count": 0,
+      "components": {
+        "shared_fixed_content": {
+          "test_seed_count": 16,
+          "test_seed_margins": [
+            {
+              "label": "geometry_checker_hex_r3",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.062469324627396294,
+              "other_family_cosine_contribution": 0.03884327947384605,
+              "margin": 0.023626045153550247
+            },
+            {
+              "label": "geometry_checker_hex_r4",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.10874462536386534,
+              "other_family_cosine_contribution": 0.04363934649891884,
+              "margin": 0.06510527886494649
+            },
+            {
+              "label": "geometry_square_triangle_r3",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.1926400362464159,
+              "other_family_cosine_contribution": 0.03606676614854591,
+              "margin": 0.15657327009786998
+            },
+            {
+              "label": "geometry_square_triangle_r4",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.19207003066060233,
+              "other_family_cosine_contribution": 0.025396938242730344,
+              "margin": 0.16667309241787198
+            },
+            {
+              "label": "geometry_voronoi_hex_r3",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0738604710933629,
+              "other_family_cosine_contribution": 0.04119547065435777,
+              "margin": 0.03266500043900513
+            },
+            {
+              "label": "geometry_voronoi_hex_r4",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.07955199487426293,
+              "other_family_cosine_contribution": 0.04636763709281707,
+              "margin": 0.03318435778144586
+            },
+            {
+              "label": "geometry_vq_r3",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.00102537726512986,
+              "other_family_cosine_contribution": 0.004605655066608612,
+              "margin": -0.003580277801478752
+            },
+            {
+              "label": "geometry_vq_r4",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.05155752112578846,
+              "other_family_cosine_contribution": 0.0091901144024908,
+              "margin": 0.042367406723297654
+            },
+            {
+              "label": "stochastic_blue_dots_r3",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0006430958264690142,
+              "other_family_cosine_contribution": 0.0015735608817237276,
+              "margin": -0.0009304650552547134
+            },
+            {
+              "label": "stochastic_blue_dots_r4",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 4.922899851747953e-05,
+              "other_family_cosine_contribution": 0.0017717782621493549,
+              "margin": -0.0017225492636318753
+            },
+            {
+              "label": "stochastic_sparse_dense_r3",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.018809125195750558,
+              "other_family_cosine_contribution": 0.0037485420920038426,
+              "margin": 0.015060583103746715
+            },
+            {
+              "label": "stochastic_sparse_dense_r4",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.020905586211599353,
+              "other_family_cosine_contribution": 0.003625935392644671,
+              "margin": 0.017279650818954682
+            },
+            {
+              "label": "stochastic_white_blue_r3",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.00040341674099064024,
+              "other_family_cosine_contribution": -0.0004808708772524319,
+              "margin": 0.0008842876182430721
+            },
+            {
+              "label": "stochastic_white_blue_r4",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.00037238152968823487,
+              "other_family_cosine_contribution": -0.00046370973874160963,
+              "margin": 0.0008360912684298445
+            },
+            {
+              "label": "stochastic_white_dots_r3",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0021887219984060074,
+              "other_family_cosine_contribution": 0.0028365112876303313,
+              "margin": -0.0006477892892243239
+            },
+            {
+              "label": "stochastic_white_dots_r4",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.002732135571339764,
+              "other_family_cosine_contribution": 0.002811024209411103,
+              "margin": -7.88886380713393e-05
+            }
+          ],
+          "family_margins": {
+            "geometry_checkerboard_hex_tiling": 0.044365662009248366,
+            "geometry_square_triangle_tiling": 0.16162318125787098,
+            "geometry_voronoi_hex_tiling": 0.032924679110225494,
+            "geometry_voronoi_quasicrystal": 0.01939356446090945,
+            "stochastic_blue_random_dots": -0.0013265071594432943,
+            "stochastic_sparse_dense_dots": 0.0161701169613507,
+            "stochastic_white_blue_noise": 0.0008601894433364583,
+            "stochastic_white_random_dots": -0.0003633389636478316
+          },
+          "mean_family_margin": 0.03420594338998129,
+          "positive_family_margin_count": 6,
+          "negative_family_margin_count": 2,
+          "retrieval_correct_count": 4,
+          "retrieval_tied_count": 0
+        },
+        "shared_moved_content": {
+          "test_seed_count": 16,
+          "test_seed_margins": [
+            {
+              "label": "geometry_checker_hex_r3",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_checker_hex_r4",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r3",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r4",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r3",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r4",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r3",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r4",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r3",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r4",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r3",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r4",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r3",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r4",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r3",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r4",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            }
+          ],
+          "family_margins": {
+            "geometry_checkerboard_hex_tiling": 0.0,
+            "geometry_square_triangle_tiling": 0.0,
+            "geometry_voronoi_hex_tiling": 0.0,
+            "geometry_voronoi_quasicrystal": 0.0,
+            "stochastic_blue_random_dots": 0.0,
+            "stochastic_sparse_dense_dots": 0.0,
+            "stochastic_white_blue_noise": 0.0,
+            "stochastic_white_random_dots": 0.0
+          },
+          "mean_family_margin": 0.0,
+          "positive_family_margin_count": 0,
+          "negative_family_margin_count": 0,
+          "retrieval_correct_count": 0,
+          "retrieval_tied_count": 16
+        },
+        "noncoincident_content": {
+          "test_seed_count": 16,
+          "test_seed_margins": [
+            {
+              "label": "geometry_checker_hex_r3",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": -0.001028515062758994,
+              "other_family_cosine_contribution": -0.0005262576081471199,
+              "margin": -0.0005022574546118741
+            },
+            {
+              "label": "geometry_checker_hex_r4",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0005925657991438854,
+              "other_family_cosine_contribution": 0.0004458545988230075,
+              "margin": 0.00014671120032087789
+            },
+            {
+              "label": "geometry_square_triangle_r3",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": -0.00024478081329427714,
+              "other_family_cosine_contribution": 0.0011087001951113945,
+              "margin": -0.0013534810084056717
+            },
+            {
+              "label": "geometry_square_triangle_r4",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": -1.100022665049405e-05,
+              "other_family_cosine_contribution": 0.0005734447410488723,
+              "margin": -0.0005844449676993663
+            },
+            {
+              "label": "geometry_voronoi_hex_r3",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": -0.00021518301883541928,
+              "other_family_cosine_contribution": -0.00037706392616471845,
+              "margin": 0.00016188090732929917
+            },
+            {
+              "label": "geometry_voronoi_hex_r4",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": -0.0003780745855988032,
+              "other_family_cosine_contribution": -9.232487544557964e-05,
+              "margin": -0.00028574971015322357
+            },
+            {
+              "label": "geometry_vq_r3",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0007281504930455936,
+              "other_family_cosine_contribution": 5.7604458943854294e-05,
+              "margin": 0.0006705460341017393
+            },
+            {
+              "label": "geometry_vq_r4",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0015294904873164343,
+              "other_family_cosine_contribution": -0.0004684918913814935,
+              "margin": 0.0019979823786979278
+            },
+            {
+              "label": "stochastic_blue_dots_r3",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.00012365863030889724,
+              "other_family_cosine_contribution": 0.00026661913327544933,
+              "margin": -0.0001429605029665521
+            },
+            {
+              "label": "stochastic_blue_dots_r4",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0005977520567447696,
+              "other_family_cosine_contribution": -0.00047854931563096905,
+              "margin": 0.0010763013723757387
+            },
+            {
+              "label": "stochastic_sparse_dense_r3",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0013679754263335698,
+              "other_family_cosine_contribution": -0.0009309837651945268,
+              "margin": 0.0022989591915280965
+            },
+            {
+              "label": "stochastic_sparse_dense_r4",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0009424829040755238,
+              "other_family_cosine_contribution": -0.00013194283065850616,
+              "margin": 0.0010744257347340299
+            },
+            {
+              "label": "stochastic_white_blue_r3",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.00039026875707407643,
+              "other_family_cosine_contribution": -0.00034176935585316596,
+              "margin": 0.0007320381129272424
+            },
+            {
+              "label": "stochastic_white_blue_r4",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.000879816672111114,
+              "other_family_cosine_contribution": -3.058347497450877e-05,
+              "margin": 0.0009104001470856228
+            },
+            {
+              "label": "stochastic_white_dots_r3",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": -0.00040591968270521514,
+              "other_family_cosine_contribution": -0.000657441682714183,
+              "margin": 0.0002515220000089678
+            },
+            {
+              "label": "stochastic_white_dots_r4",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": -0.0011335687551382472,
+              "other_family_cosine_contribution": 0.0001227192444473034,
+              "margin": -0.0012562879995855506
+            }
+          ],
+          "family_margins": {
+            "geometry_checkerboard_hex_tiling": -0.0001777731271454981,
+            "geometry_square_triangle_tiling": -0.000968962988052519,
+            "geometry_voronoi_hex_tiling": -6.19344014119622e-05,
+            "geometry_voronoi_quasicrystal": 0.0013342642063998336,
+            "stochastic_blue_random_dots": 0.0004666704347045933,
+            "stochastic_sparse_dense_dots": 0.001686692463131063,
+            "stochastic_white_blue_noise": 0.0008212191300064326,
+            "stochastic_white_random_dots": -0.0005023829997882914
+          },
+          "mean_family_margin": 0.00032472408973045644,
+          "positive_family_margin_count": 4,
+          "negative_family_margin_count": 4,
+          "retrieval_correct_count": 4,
+          "retrieval_tied_count": 0
+        },
+        "padding": {
+          "test_seed_count": 16,
+          "test_seed_margins": [
+            {
+              "label": "geometry_checker_hex_r3",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_checker_hex_r4",
+              "pairing_family": "geometry_checkerboard_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r3",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_square_triangle_r4",
+              "pairing_family": "geometry_square_triangle_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r3",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_voronoi_hex_r4",
+              "pairing_family": "geometry_voronoi_hex_tiling",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r3",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "geometry_vq_r4",
+              "pairing_family": "geometry_voronoi_quasicrystal",
+              "broad_class": "geometry",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r3",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_blue_dots_r4",
+              "pairing_family": "stochastic_blue_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r3",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_sparse_dense_r4",
+              "pairing_family": "stochastic_sparse_dense_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r3",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_blue_r4",
+              "pairing_family": "stochastic_white_blue_noise",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r3",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 3,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            },
+            {
+              "label": "stochastic_white_dots_r4",
+              "pairing_family": "stochastic_white_random_dots",
+              "broad_class": "stochastic",
+              "replicate": 4,
+              "own_family_cosine_contribution": 0.0,
+              "other_family_cosine_contribution": 0.0,
+              "margin": 0.0
+            }
+          ],
+          "family_margins": {
+            "geometry_checkerboard_hex_tiling": 0.0,
+            "geometry_square_triangle_tiling": 0.0,
+            "geometry_voronoi_hex_tiling": 0.0,
+            "geometry_voronoi_quasicrystal": 0.0,
+            "stochastic_blue_random_dots": 0.0,
+            "stochastic_sparse_dense_dots": 0.0,
+            "stochastic_white_blue_noise": 0.0,
+            "stochastic_white_random_dots": 0.0
+          },
+          "mean_family_margin": 0.0,
+          "positive_family_margin_count": 0,
+          "negative_family_margin_count": 0,
+          "retrieval_correct_count": 0,
+          "retrieval_tied_count": 16
+        }
+      }
+    },
+    {
+      "view": "processor_pixel_values",
+      "q_sixteenths": 0,
+      "available": true,
+      "test_seed_count": 16,
+      "test_seed_margins": [
+        {
+          "label": "geometry_checker_hex_r3",
+          "pairing_family": "geometry_checkerboard_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.007456880513828569,
+          "other_family_cosine_contribution": 0.004549755889964453,
+          "margin": 0.0029071246238641163
+        },
+        {
+          "label": "geometry_checker_hex_r4",
+          "pairing_family": "geometry_checkerboard_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.010336309064829411,
+          "other_family_cosine_contribution": 0.004127512435022533,
+          "margin": 0.0062087966298068785
+        },
+        {
+          "label": "geometry_square_triangle_r3",
+          "pairing_family": "geometry_square_triangle_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.019017010018325987,
+          "other_family_cosine_contribution": 0.004817801935100502,
+          "margin": 0.014199208083225485
+        },
+        {
+          "label": "geometry_square_triangle_r4",
+          "pairing_family": "geometry_square_triangle_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.01921208860386041,
+          "other_family_cosine_contribution": 0.003374867399746368,
+          "margin": 0.01583722120411404
+        },
+        {
+          "label": "geometry_voronoi_hex_r3",
+          "pairing_family": "geometry_voronoi_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.00701772056402452,
+          "other_family_cosine_contribution": 0.004741360687041293,
+          "margin": 0.002276359876983227
+        },
+        {
+          "label": "geometry_voronoi_hex_r4",
+          "pairing_family": "geometry_voronoi_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.00967266262623806,
+          "other_family_cosine_contribution": 0.005521774896169338,
+          "margin": 0.004150887730068722
+        },
+        {
+          "label": "geometry_vq_r3",
+          "pairing_family": "geometry_voronoi_quasicrystal",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": -0.00050496906057052,
+          "other_family_cosine_contribution": 0.0009277246961887467,
+          "margin": -0.0014326937567592669
+        },
+        {
+          "label": "geometry_vq_r4",
+          "pairing_family": "geometry_voronoi_quasicrystal",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.00848351433261211,
+          "other_family_cosine_contribution": 0.0002883594456973086,
+          "margin": 0.008195154886914802
+        },
+        {
+          "label": "stochastic_blue_dots_r3",
+          "pairing_family": "stochastic_blue_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": -0.0008548864607525223,
+          "other_family_cosine_contribution": 8.585931587682496e-05,
+          "margin": -0.0009407457766293473
+        },
+        {
+          "label": "stochastic_blue_dots_r4",
+          "pairing_family": "stochastic_blue_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": -0.0012241007295381902,
+          "other_family_cosine_contribution": -0.0009555945690261214,
+          "margin": -0.00026850616051206876
+        },
+        {
+          "label": "stochastic_sparse_dense_r3",
+          "pairing_family": "stochastic_sparse_dense_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0023656168742741766,
+          "other_family_cosine_contribution": 0.0003580932914907216,
+          "margin": 0.002007523582783455
+        },
+        {
+          "label": "stochastic_sparse_dense_r4",
+          "pairing_family": "stochastic_sparse_dense_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.0007066466651303079,
+          "other_family_cosine_contribution": 0.0010474077929639952,
+          "margin": -0.0003407611278336873
+        },
+        {
+          "label": "stochastic_white_blue_r3",
+          "pairing_family": "stochastic_white_blue_noise",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0014579677063657457,
+          "other_family_cosine_contribution": -0.00016573070964062174,
+          "margin": 0.0016236984160063674
+        },
+        {
+          "label": "stochastic_white_blue_r4",
+          "pairing_family": "stochastic_white_blue_noise",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": -0.00135059451311485,
+          "other_family_cosine_contribution": -0.0001952407429223809,
+          "margin": -0.001155353770192469
+        },
+        {
+          "label": "stochastic_white_dots_r3",
+          "pairing_family": "stochastic_white_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0004213193977640797,
+          "other_family_cosine_contribution": 0.0008027414941723386,
+          "margin": -0.0003814220964082589
+        },
+        {
+          "label": "stochastic_white_dots_r4",
+          "pairing_family": "stochastic_white_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.0009140977228008827,
+          "other_family_cosine_contribution": 0.00015807746557505478,
+          "margin": 0.0007560202572258279
+        }
+      ],
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.004557960626835497,
+        "geometry_square_triangle_tiling": 0.015018214643669762,
+        "geometry_voronoi_hex_tiling": 0.0032136238035259746,
+        "geometry_voronoi_quasicrystal": 0.0033812305650777674,
+        "stochastic_blue_random_dots": -0.000604625968570708,
+        "stochastic_sparse_dense_dots": 0.0008333812274748838,
+        "stochastic_white_blue_noise": 0.00023417232290694917,
+        "stochastic_white_random_dots": 0.0001872990804087845
+      },
+      "mean_family_margin": 0.0033526570376661135,
+      "positive_family_margin_count": 7,
+      "negative_family_margin_count": 1,
+      "retrieval_correct_count": 7,
+      "retrieval_tied_count": 0
+    },
+    {
+      "view": "processor_pixel_values",
+      "q_sixteenths": 1,
+      "available": true,
+      "test_seed_count": 16,
+      "test_seed_margins": [
+        {
+          "label": "geometry_checker_hex_r3",
+          "pairing_family": "geometry_checkerboard_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.02194132154383563,
+          "other_family_cosine_contribution": 0.014174471263486199,
+          "margin": 0.00776685028034943
+        },
+        {
+          "label": "geometry_checker_hex_r4",
+          "pairing_family": "geometry_checkerboard_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.037843753317846826,
+          "other_family_cosine_contribution": 0.015430670221930967,
+          "margin": 0.02241308309591586
+        },
+        {
+          "label": "geometry_square_triangle_r3",
+          "pairing_family": "geometry_square_triangle_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.06729969135259342,
+          "other_family_cosine_contribution": 0.013747570304188583,
+          "margin": 0.05355212104840484
+        },
+        {
+          "label": "geometry_square_triangle_r4",
+          "pairing_family": "geometry_square_triangle_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.0669810837842209,
+          "other_family_cosine_contribution": 0.009675208862015231,
+          "margin": 0.057305874922205666
+        },
+        {
+          "label": "geometry_voronoi_hex_r3",
+          "pairing_family": "geometry_voronoi_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.027731003102656738,
+          "other_family_cosine_contribution": 0.01566595706445989,
+          "margin": 0.012065046038196848
+        },
+        {
+          "label": "geometry_voronoi_hex_r4",
+          "pairing_family": "geometry_voronoi_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.028128866657294575,
+          "other_family_cosine_contribution": 0.016498486240007604,
+          "margin": 0.011630380417286972
+        },
+        {
+          "label": "geometry_vq_r3",
+          "pairing_family": "geometry_voronoi_quasicrystal",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0014627500187060778,
+          "other_family_cosine_contribution": 0.0019107321659628147,
+          "margin": -0.00044798214725673695
+        },
+        {
+          "label": "geometry_vq_r4",
+          "pairing_family": "geometry_voronoi_quasicrystal",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.019700659241046938,
+          "other_family_cosine_contribution": 0.003767169866806759,
+          "margin": 0.01593348937424018
+        },
+        {
+          "label": "stochastic_blue_dots_r3",
+          "pairing_family": "stochastic_blue_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0007960540590655448,
+          "other_family_cosine_contribution": 4.728452459695866e-05,
+          "margin": 0.0007487695344685862
+        },
+        {
+          "label": "stochastic_blue_dots_r4",
+          "pairing_family": "stochastic_blue_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": -0.001273946637357964,
+          "other_family_cosine_contribution": 0.00045041360192537823,
+          "margin": -0.0017243602392833421
+        },
+        {
+          "label": "stochastic_sparse_dense_r3",
+          "pairing_family": "stochastic_sparse_dense_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.008541331646987664,
+          "other_family_cosine_contribution": 0.0016606524729893223,
+          "margin": 0.0068806791739983416
+        },
+        {
+          "label": "stochastic_sparse_dense_r4",
+          "pairing_family": "stochastic_sparse_dense_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.0077986766802635235,
+          "other_family_cosine_contribution": 0.001545852720844004,
+          "margin": 0.00625282395941952
+        },
+        {
+          "label": "stochastic_white_blue_r3",
+          "pairing_family": "stochastic_white_blue_noise",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": -0.0003454672618454092,
+          "other_family_cosine_contribution": -0.0006262366505317946,
+          "margin": 0.0002807693886863854
+        },
+        {
+          "label": "stochastic_white_blue_r4",
+          "pairing_family": "stochastic_white_blue_noise",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": -0.0008724282480712668,
+          "other_family_cosine_contribution": 4.929850490684799e-05,
+          "margin": -0.0009217267529781149
+        },
+        {
+          "label": "stochastic_white_dots_r3",
+          "pairing_family": "stochastic_white_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0005573471122310431,
+          "other_family_cosine_contribution": 0.0002087467547549837,
+          "margin": 0.0003486003574760594
+        },
+        {
+          "label": "stochastic_white_dots_r4",
+          "pairing_family": "stochastic_white_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.002321393371585157,
+          "other_family_cosine_contribution": 0.0009384930845710761,
+          "margin": 0.0013829002870140807
+        }
+      ],
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.015089966688132644,
+        "geometry_square_triangle_tiling": 0.05542899798530525,
+        "geometry_voronoi_hex_tiling": 0.01184771322774191,
+        "geometry_voronoi_quasicrystal": 0.007742753613491721,
+        "stochastic_blue_random_dots": -0.000487795352407378,
+        "stochastic_sparse_dense_dots": 0.006566751566708931,
+        "stochastic_white_blue_noise": -0.0003204786821458647,
+        "stochastic_white_random_dots": 0.00086575032224507
+      },
+      "mean_family_margin": 0.012091707421134034,
+      "positive_family_margin_count": 6,
+      "negative_family_margin_count": 2,
+      "retrieval_correct_count": 5,
+      "retrieval_tied_count": 0
+    },
+    {
+      "view": "processor_pixel_values",
+      "q_sixteenths": 4,
+      "available": true,
+      "test_seed_count": 16,
+      "test_seed_margins": [
+        {
+          "label": "geometry_checker_hex_r3",
+          "pairing_family": "geometry_checkerboard_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.06762086740192272,
+          "other_family_cosine_contribution": 0.04195266283693902,
+          "margin": 0.0256682045649837
+        },
+        {
+          "label": "geometry_checker_hex_r4",
+          "pairing_family": "geometry_checkerboard_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.11757524940121743,
+          "other_family_cosine_contribution": 0.04758647390705711,
+          "margin": 0.06998877549416033
+        },
+        {
+          "label": "geometry_square_triangle_r3",
+          "pairing_family": "geometry_square_triangle_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.2075252766013935,
+          "other_family_cosine_contribution": 0.040271660947283135,
+          "margin": 0.16725361565411037
+        },
+        {
+          "label": "geometry_square_triangle_r4",
+          "pairing_family": "geometry_square_triangle_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.2072092757971845,
+          "other_family_cosine_contribution": 0.028288750597125708,
+          "margin": 0.1789205252000588
+        },
+        {
+          "label": "geometry_voronoi_hex_r3",
+          "pairing_family": "geometry_voronoi_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.07969860854623557,
+          "other_family_cosine_contribution": 0.04449910698843981,
+          "margin": 0.03519950155779576
+        },
+        {
+          "label": "geometry_voronoi_hex_r4",
+          "pairing_family": "geometry_voronoi_hex_tiling",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.08523086541564581,
+          "other_family_cosine_contribution": 0.04992027699768217,
+          "margin": 0.03531058841796364
+        },
+        {
+          "label": "geometry_vq_r3",
+          "pairing_family": "geometry_voronoi_quasicrystal",
+          "broad_class": "geometry",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0022731398657108667,
+          "other_family_cosine_contribution": 0.005121821458906744,
+          "margin": -0.002848681593195877
+        },
+        {
+          "label": "geometry_vq_r4",
+          "pairing_family": "geometry_voronoi_quasicrystal",
+          "broad_class": "geometry",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.05937545290717962,
+          "other_family_cosine_contribution": 0.009408730686112032,
+          "margin": 0.049966722221067586
+        },
+        {
+          "label": "stochastic_blue_dots_r3",
+          "pairing_family": "stochastic_blue_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0007654796140487128,
+          "other_family_cosine_contribution": 0.0017695498920000453,
+          "margin": -0.0010040702779513324
+        },
+        {
+          "label": "stochastic_blue_dots_r4",
+          "pairing_family": "stochastic_blue_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.0008229036082782706,
+          "other_family_cosine_contribution": 0.00151489536321641,
+          "margin": -0.0006919917549381393
+        },
+        {
+          "label": "stochastic_sparse_dense_r3",
+          "pairing_family": "stochastic_sparse_dense_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.021544840012695562,
+          "other_family_cosine_contribution": 0.0033558630519502568,
+          "margin": 0.018188976960745305
+        },
+        {
+          "label": "stochastic_sparse_dense_r4",
+          "pairing_family": "stochastic_sparse_dense_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.023807836798946286,
+          "other_family_cosine_contribution": 0.003926609990660027,
+          "margin": 0.01988122680828626
+        },
+        {
+          "label": "stochastic_white_blue_r3",
+          "pairing_family": "stochastic_white_blue_noise",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.0007351459685846042,
+          "other_family_cosine_contribution": -0.0007185800515012829,
+          "margin": 0.0014537260200858872
+        },
+        {
+          "label": "stochastic_white_blue_r4",
+          "pairing_family": "stochastic_white_blue_noise",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.0010838482968855683,
+          "other_family_cosine_contribution": -0.0009277445558598064,
+          "margin": 0.0020115928527453747
+        },
+        {
+          "label": "stochastic_white_dots_r3",
+          "pairing_family": "stochastic_white_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 3,
+          "own_family_cosine_contribution": 0.001357473763695963,
+          "other_family_cosine_contribution": 0.0025437729855955194,
+          "margin": -0.0011862992218995565
+        },
+        {
+          "label": "stochastic_white_dots_r4",
+          "pairing_family": "stochastic_white_random_dots",
+          "broad_class": "stochastic",
+          "replicate": 4,
+          "own_family_cosine_contribution": 0.0021556254193676287,
+          "other_family_cosine_contribution": 0.003202745743411618,
+          "margin": -0.0010471203240439895
+        }
+      ],
+      "family_margins": {
+        "geometry_checkerboard_hex_tiling": 0.04782849002957201,
+        "geometry_square_triangle_tiling": 0.1730870704270846,
+        "geometry_voronoi_hex_tiling": 0.0352550449878797,
+        "geometry_voronoi_quasicrystal": 0.023559020313935853,
+        "stochastic_blue_random_dots": -0.0008480310164447359,
+        "stochastic_sparse_dense_dots": 0.019035101884515782,
+        "stochastic_white_blue_noise": 0.001732659436415631,
+        "stochastic_white_random_dots": -0.001116709772971773
+      },
+      "mean_family_margin": 0.03731658078624838,
+      "positive_family_margin_count": 6,
+      "negative_family_margin_count": 2,
+      "retrieval_correct_count": 5,
+      "retrieval_tied_count": 0
+    }
+  ],
+  "primary_endpoints": [
+    {
+      "view": "raw_rgb",
+      "endpoint": "zero_overlap_margin",
+      "available": true,
+      "mean": -0.00031570267386377897,
+      "family_values": {
+        "geometry_checkerboard_hex_tiling": -0.00019440302992951614,
+        "geometry_square_triangle_tiling": -0.0022989537114311226,
+        "geometry_voronoi_hex_tiling": -4.18093458087029e-05,
+        "geometry_voronoi_quasicrystal": 0.00035652254680658884,
+        "stochastic_blue_random_dots": -3.163836138701879e-05,
+        "stochastic_sparse_dense_dots": -0.0008534153471374004,
+        "stochastic_white_blue_noise": 0.0005536982716053849,
+        "stochastic_white_random_dots": -1.5622413628444237e-05
+      },
+      "mask_values": [
+        -0.0006055063647698296,
+        -0.0003185471311026635,
+        -0.000216296881929554,
+        -0.00012246031765306874
+      ],
+      "exploratory_range": [
+        -0.001652600599912622,
+        0.0010284797196235403
+      ],
+      "p_value": null,
+      "equivalence_tested": false
+    },
+    {
+      "view": "raw_rgb",
+      "endpoint": "high_minus_zero_margin",
+      "available": true,
+      "mean": 0.034846370153574814,
+      "family_values": {
+        "geometry_checkerboard_hex_tiling": 0.04438229191202668,
+        "geometry_square_triangle_tiling": 0.1629531719812495,
+        "geometry_voronoi_hex_tiling": 0.03290455405462245,
+        "geometry_voronoi_quasicrystal": 0.02037130612050265,
+        "stochastic_blue_random_dots": -0.0008281983633516834,
+        "stochastic_sparse_dense_dots": 0.018710224771619047,
+        "stochastic_white_blue_noise": 0.001127710301737507,
+        "stochastic_white_random_dots": -0.0008500995498076355
+      },
+      "mask_values": [
+        0.03557404848892295,
+        0.03408481079736916,
+        0.035070616208804826,
+        0.034656005119202325
+      ],
+      "exploratory_range": [
+        0.004228507025848571,
+        0.08652224889802163
+      ],
+      "p_value": null,
+      "equivalence_tested": false
+    },
+    {
+      "view": "processor_pixel_values",
+      "endpoint": "zero_overlap_margin",
+      "available": true,
+      "mean": 0.0033526570376661135,
+      "family_values": {
+        "geometry_checkerboard_hex_tiling": 0.004557960626835498,
+        "geometry_square_triangle_tiling": 0.015018214643669762,
+        "geometry_voronoi_hex_tiling": 0.0032136238035259737,
+        "geometry_voronoi_quasicrystal": 0.003381230565077768,
+        "stochastic_blue_random_dots": -0.0006046259685707079,
+        "stochastic_sparse_dense_dots": 0.0008333812274748839,
+        "stochastic_white_blue_noise": 0.0002341723229069491,
+        "stochastic_white_random_dots": 0.0001872990804087846
+      },
+      "mask_values": [
+        0.00278248564859747,
+        0.003186259112743335,
+        0.003674038496624725,
+        0.003767844892698925
+      ],
+      "exploratory_range": [
+        -6.99538281128387e-05,
+        0.008368726327041331
+      ],
+      "p_value": null,
+      "equivalence_tested": false
+    },
+    {
+      "view": "processor_pixel_values",
+      "endpoint": "high_minus_zero_margin",
+      "available": true,
+      "mean": 0.03396392374858227,
+      "family_values": {
+        "geometry_checkerboard_hex_tiling": 0.04327052940273652,
+        "geometry_square_triangle_tiling": 0.15806885578341484,
+        "geometry_voronoi_hex_tiling": 0.03204142118435374,
+        "geometry_voronoi_quasicrystal": 0.02017778974885809,
+        "stochastic_blue_random_dots": -0.0002434050478740279,
+        "stochastic_sparse_dense_dots": 0.0182017206570409,
+        "stochastic_white_blue_noise": 0.001498487113508682,
+        "stochastic_white_random_dots": -0.0013040088533805578
+      },
+      "mask_values": [
+        0.03499049574951873,
+        0.03358072398620576,
+        0.03382472803988276,
+        0.033459747218721844
+      ],
+      "exploratory_range": [
+        0.004038887370939621,
+        0.08401953870083949
+      ],
+      "p_value": null,
+      "equivalence_tested": false
+    }
+  ],
+  "bootstrap": {
+    "draws": 10000,
+    "quantiles": [
+      0.00625,
+      0.99375
+    ],
+    "ranges": [
+      [
+        [
+          -0.001652600599912622,
+          0.0010284797196235403
+        ],
+        [
+          0.004228507025848571,
+          0.08652224889802163
+        ]
+      ],
+      [
+        [
+          -6.99538281128387e-05,
+          0.008368726327041331
+        ],
+        [
+          0.004038887370939621,
+          0.08401953870083949
+        ]
+      ]
+    ],
+    "interpretation": "exploratory_percentile_ranges_with_Bonferroni_tail_allocation_not_guaranteed_coverage"
+  },
+  "paired_margins_sha256": "403eb9989d9b04386843d433967917d44bfd2f15baf302f61888a5c27bf3b9d9",
+  "cache_panel_eligible": true,
+  "new_model_forwards": 0,
+  "new_p_values": 0,
+  "confirmation_cohort": "not_generated_not_sealed",
+  "frozen_specification": {
+    "config": {
+      "schema_version": 1,
+      "study_id": "controlled_overlap_phase1_v1",
+      "registered_date": "2026-10-29",
+      "scope": "development_input_only_no_confirmation",
+      "content_shape": [
+        240,
+        320
+      ],
+      "fixed_fraction": [
+        1,
+        4
+      ],
+      "overlap_sixteenths": [
+        0,
+        1,
+        4
+      ],
+      "mask_seeds": [
+        2026102901,
+        2026102902,
+        2026102903,
+        2026102904
+      ],
+      "destination_seeds": [
+        2026102911,
+        2026102912
+      ],
+      "reference_seed": 2026102910,
+      "construction": "nested_fixed_sets_and_random_single_cycles",
+      "shared_moved_policy": "reject_coordinate_coincidences_against_reference_only",
+      "maximum_attempts_per_test_map": 128,
+      "rng": "PCG64_SeedSequence_explicit_integer_keys",
+      "reference_replicates": [
+        1,
+        2
+      ],
+      "test_replicates": [
+        3,
+        4
+      ],
+      "source_blocks": 32,
+      "map_count": 28,
+      "input_cells": 3584,
+      "historical_processor_checks": 128,
+      "vectors_per_view": 512,
+      "views": [
+        "raw_rgb",
+        "processor_pixel_values"
+      ],
+      "padding": "palette_mean",
+      "centroid_relative_tolerance": 0.05,
+      "hf_absolute_tolerance": 0.02,
+      "cache_gate": "all_28_maps_accept_all_32_blocks",
+      "primary_endpoints": [
+        "zero_overlap_margin",
+        "high_minus_zero_margin"
+      ],
+      "primary_endpoint_count": 4,
+      "bootstrap": {
+        "seed": 2026102920,
+        "draws": 10000,
+        "quantiles": [
+          0.00625,
+          0.99375
+        ],
+        "units": "crossed_family_and_mask_blocks_then_destination_within_mask_and_test_seed_within_family",
+        "paired_across_levels_and_views": true,
+        "references": "fixed_not_resampled",
+        "interpretation": "exploratory_percentile_ranges_with_Bonferroni_tail_allocation_not_guaranteed_coverage"
+      },
+      "p_values": "none_no_validated_overlap_randomization_null",
+      "equivalence": "not_attempted_no_absence_claim",
+      "budget": "fixed_4_masks_2_destinations_32_existing_blocks_no_outcome_based_expansion",
+      "minimum_resolvable_effect": "not_guaranteed_budget_bound_development_study_report_interval_widths",
+      "minimum_free_disk_gib": 20,
+      "new_model_forwards": 0,
+      "confirmation_cohort": "not_generated_not_sealed"
+    },
+    "registered_design_commit": "1e19014a54a999f14b091f9ce0467b4aa034afdf",
+    "code_sha256": {
+      "src/fractal_vlm_state_probe/cli/run_map_seed_cache_study.py": "9a480a28fbca89888ac5dc27718081870b3193fd274b2b9fa2f932ff6cb3aac6",
+      "src/fractal_vlm_state_probe/map_seed_cache.py": "55175e73173e140d7382c750beb2f717d20e3125864b657e220d1d5c94c45351",
+      "src/fractal_vlm_state_probe/permutation_maps.py": "5a64c1c05efcb5d01a116198ebd731c329009de7547a8314fb08174ca5db3787",
+      "src/fractal_vlm_state_probe/cli/run_map_seed_input_study.py": "34927b3132e9c64120cdc909217f42563348f568314818f1bf9696780e33ffed",
+      "src/fractal_vlm_state_probe/graded_permutation.py": "9761f29ec72be8f071af2d6c9b2dee39b9f9f2fcdcef8b6e170ccadc45617381",
+      "src/fractal_vlm_state_probe/cli/run_graded_permutation_study.py": "10c51939d6dccdd0fc9900fdde264e620374bdc5e45182a8b1a0fee70c42fce5",
+      "src/fractal_vlm_state_probe/stimulus.py": "cf872df4837c3baaf229eba1b21fcab554dbf09eccc648938bea63d9d2ff7fe5",
+      "src/fractal_vlm_state_probe/padding_policy.py": "5c48392b917eeed237f4eb8b3ba332b74add6d23fdad543cc36b8d5242e707d6",
+      "src/fractal_vlm_state_probe/frequency_control.py": "66b7ca9c1d1e765d7e63e878e2903e9d3af73de3e36670b42954da3b4eed6e04",
+      "src/fractal_vlm_state_probe/image_stats.py": "285a2eab99f9d3f8dc81afc613998476a16cab33d3951ba3450734008baa448a",
+      "src/fractal_vlm_state_probe/cli/run_padding_policy_study.py": "1978d8a39d0a1ceca468897232a5985cc31ca5423acd9b360adeae26f37e6ef2",
+      "src/fractal_vlm_state_probe/cli/run_graded_cache_study.py": "a98bd53a6aa3ead38a86e8ec77dac5988ef41c4c47a077f4378b1d08b962e794",
+      "src/fractal_vlm_state_probe/graded_cache.py": "00a455fb865111c464cd5e880e51f926964abca213972cf2fcdaeac3d299fa85",
+      "src/fractal_vlm_state_probe/cli/run_padding_cache_study.py": "8530af9484d5ecd5e6e0338b77f3fb155ab39ba3cda7fb73653899fbe8a62897",
+      "src/fractal_vlm_state_probe/padding_cache.py": "3289c4fbcf2ad5e903576917846e493e548bafd29b705a2108daec408f31744c",
+      "src/fractal_vlm_state_probe/cache_tensor_artifact.py": "98a0c0fb9ff429ad496222257713cdf2fe11f6adde9baf99fe2e2241d25bc8fb",
+      "src/fractal_vlm_state_probe/cache_tensor_factorial.py": "95bffcf55d584c2f43966ab27b03cdc1d05d1156f80fde077cc106eec1799c9f",
+      "src/fractal_vlm_state_probe/cache_direction_holdout.py": "e19a3c6ddecf888252ac0cd14c86dbc2e9a42ffb26ee7370f6228fc1e59d9554",
+      "src/fractal_vlm_state_probe/mlx_stream.py": "3f2a02f9b7794a5403a6cb32afa290eac16b7b6493aed021e5912343800535f6",
+      "src/fractal_vlm_state_probe/mlx_cumulative_replay.py": "c64829e9b3fcb3c6ae514e02082d21bf64a74fa1f2bbe4e79fe705bac64e41f1",
+      "src/fractal_vlm_state_probe/cli/capture_pairing_references.py": "9ba9de9ba25cef3c13ab05e5826b5e1f2fb175a140733fa3cd0b28b64a3ebd93",
+      "src/fractal_vlm_state_probe/cli/run_pairing_seed_validation.py": "7d1f3d98848b6afbc49d2adad1b0fd839692d2fa5d30d169c95803dc32f7b06a",
+      "src/fractal_vlm_state_probe/map_seed_input_baseline.py": "ce451b938062a569de05bac1a8dbb80b801e88b08188b11a69fd27981a1b43b1",
+      "src/fractal_vlm_state_probe/cli/run_map_seed_input_baseline.py": "ffa78793d21755fc0f941058e203aecb24e6af5423315025fd91ea42e1c94d38",
+      "src/fractal_vlm_state_probe/cli/analyze_pairing_input_holdout.py": "c6e6d843183ffcd645eae8b93e778c7765bdb6422c66d71caa34c5724683a0ef",
+      "src/fractal_vlm_state_probe/cli/summarize_map_seed_input_study.py": "454f7562cd0ff13c2fca83ef5edf9aa8c4da49c00ff5e3113e1f8d3d3b77db86",
+      "src/fractal_vlm_state_probe/source_coordinate_overlap.py": "571f2054f9bec782c6c6aa8bcebcf0edccd76c84b6cff49952584a8f6070b498",
+      "src/fractal_vlm_state_probe/controlled_overlap.py": "a1c12d6ffa60952be2c02ecd2c30bbe9cf4eef24e973e17c91cf6c6b34aa6c0f",
+      "src/fractal_vlm_state_probe/cli/run_controlled_overlap.py": "a5f37e744dd82692c44a4bd3acc17af5e875790670baf815962d84b4ec7b956e",
+      "src/fractal_vlm_state_probe/cli/analyze_controlled_overlap.py": "44e042087a8eb2cc628240f279e43bd4ee4bdbff3949f02fe02a2d8334ba4df2"
+    },
+    "source_sha256": {
+      "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/examples/research_notes/0050_map_seed_input_baseline/summary.json": "68e4248f0b31ec8a00dc1af0255a644f735049aa7a2d2dd021c30b7d229a9519",
+      "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/map_seed_input_fastvlm_v1/map_seed_input_summary.json": "df6e8ada2fc52767c716d5c49059547a63f6cca4e75a6ad1b5209f12552473f0",
+      "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/graded_permutation_fastvlm_v1/graded_permutation_summary.json": "8091408899247fef78ae014cf23d45c9d2128bc8250b3d4472c6e9c3a4b0fb0c",
+      "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/padding_policy_fastvlm_v1/padding_policy_summary.json": "37e1f1e0cc4c1e3fdcb78e984bd279429948933f768392ffa79c36cd8ebe5759"
+    },
+    "map_report": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/coordinate_report.json",
+    "map_report_sha256": "910c3e31cc37eb7eb2319a2b16aa0215055817ec7ddc1a3067cf1e263561e3a9",
+    "hierarchy_metadata": {
+      "geometry_vq_r1": {
+        "pairing_family": "geometry_voronoi_quasicrystal",
+        "broad_class": "geometry",
+        "replicate": 1
+      },
+      "geometry_vq_r2": {
+        "pairing_family": "geometry_voronoi_quasicrystal",
+        "broad_class": "geometry",
+        "replicate": 2
+      },
+      "geometry_checker_hex_r1": {
+        "pairing_family": "geometry_checkerboard_hex_tiling",
+        "broad_class": "geometry",
+        "replicate": 1
+      },
+      "geometry_checker_hex_r2": {
+        "pairing_family": "geometry_checkerboard_hex_tiling",
+        "broad_class": "geometry",
+        "replicate": 2
+      },
+      "geometry_square_triangle_r1": {
+        "pairing_family": "geometry_square_triangle_tiling",
+        "broad_class": "geometry",
+        "replicate": 1
+      },
+      "geometry_square_triangle_r2": {
+        "pairing_family": "geometry_square_triangle_tiling",
+        "broad_class": "geometry",
+        "replicate": 2
+      },
+      "geometry_voronoi_hex_r1": {
+        "pairing_family": "geometry_voronoi_hex_tiling",
+        "broad_class": "geometry",
+        "replicate": 1
+      },
+      "geometry_voronoi_hex_r2": {
+        "pairing_family": "geometry_voronoi_hex_tiling",
+        "broad_class": "geometry",
+        "replicate": 2
+      },
+      "stochastic_white_blue_r1": {
+        "pairing_family": "stochastic_white_blue_noise",
+        "broad_class": "stochastic",
+        "replicate": 1
+      },
+      "stochastic_white_blue_r2": {
+        "pairing_family": "stochastic_white_blue_noise",
+        "broad_class": "stochastic",
+        "replicate": 2
+      },
+      "stochastic_white_dots_r1": {
+        "pairing_family": "stochastic_white_random_dots",
+        "broad_class": "stochastic",
+        "replicate": 1
+      },
+      "stochastic_white_dots_r2": {
+        "pairing_family": "stochastic_white_random_dots",
+        "broad_class": "stochastic",
+        "replicate": 2
+      },
+      "stochastic_blue_dots_r1": {
+        "pairing_family": "stochastic_blue_random_dots",
+        "broad_class": "stochastic",
+        "replicate": 1
+      },
+      "stochastic_blue_dots_r2": {
+        "pairing_family": "stochastic_blue_random_dots",
+        "broad_class": "stochastic",
+        "replicate": 2
+      },
+      "stochastic_sparse_dense_r1": {
+        "pairing_family": "stochastic_sparse_dense_dots",
+        "broad_class": "stochastic",
+        "replicate": 1
+      },
+      "stochastic_sparse_dense_r2": {
+        "pairing_family": "stochastic_sparse_dense_dots",
+        "broad_class": "stochastic",
+        "replicate": 2
+      },
+      "geometry_vq_r3": {
+        "pairing_family": "geometry_voronoi_quasicrystal",
+        "broad_class": "geometry",
+        "replicate": 3
+      },
+      "geometry_vq_r4": {
+        "pairing_family": "geometry_voronoi_quasicrystal",
+        "broad_class": "geometry",
+        "replicate": 4
+      },
+      "geometry_checker_hex_r3": {
+        "pairing_family": "geometry_checkerboard_hex_tiling",
+        "broad_class": "geometry",
+        "replicate": 3
+      },
+      "geometry_checker_hex_r4": {
+        "pairing_family": "geometry_checkerboard_hex_tiling",
+        "broad_class": "geometry",
+        "replicate": 4
+      },
+      "geometry_square_triangle_r3": {
+        "pairing_family": "geometry_square_triangle_tiling",
+        "broad_class": "geometry",
+        "replicate": 3
+      },
+      "geometry_square_triangle_r4": {
+        "pairing_family": "geometry_square_triangle_tiling",
+        "broad_class": "geometry",
+        "replicate": 4
+      },
+      "geometry_voronoi_hex_r3": {
+        "pairing_family": "geometry_voronoi_hex_tiling",
+        "broad_class": "geometry",
+        "replicate": 3
+      },
+      "geometry_voronoi_hex_r4": {
+        "pairing_family": "geometry_voronoi_hex_tiling",
+        "broad_class": "geometry",
+        "replicate": 4
+      },
+      "stochastic_white_blue_r3": {
+        "pairing_family": "stochastic_white_blue_noise",
+        "broad_class": "stochastic",
+        "replicate": 3
+      },
+      "stochastic_white_blue_r4": {
+        "pairing_family": "stochastic_white_blue_noise",
+        "broad_class": "stochastic",
+        "replicate": 4
+      },
+      "stochastic_white_dots_r3": {
+        "pairing_family": "stochastic_white_random_dots",
+        "broad_class": "stochastic",
+        "replicate": 3
+      },
+      "stochastic_white_dots_r4": {
+        "pairing_family": "stochastic_white_random_dots",
+        "broad_class": "stochastic",
+        "replicate": 4
+      },
+      "stochastic_blue_dots_r3": {
+        "pairing_family": "stochastic_blue_random_dots",
+        "broad_class": "stochastic",
+        "replicate": 3
+      },
+      "stochastic_blue_dots_r4": {
+        "pairing_family": "stochastic_blue_random_dots",
+        "broad_class": "stochastic",
+        "replicate": 4
+      },
+      "stochastic_sparse_dense_r3": {
+        "pairing_family": "stochastic_sparse_dense_dots",
+        "broad_class": "stochastic",
+        "replicate": 3
+      },
+      "stochastic_sparse_dense_r4": {
+        "pairing_family": "stochastic_sparse_dense_dots",
+        "broad_class": "stochastic",
+        "replicate": 4
+      }
+    },
+    "runtime": {
+      "numpy": "2.4.4",
+      "Pillow": "10.4.0",
+      "torch": "2.11.0",
+      "torchvision": "0.26.0",
+      "transformers": "4.57.6",
+      "mlx-vlm": "0.4.4",
+      "python": "3.13.13"
+    },
+    "processor_provenance": {
+      "snapshot_revision": "81ffe929046666c43de53691147b1669ba0f3a4c",
+      "preprocessor_config_sha256": "1d5f2ff72cc04005b39937f5d30c45f50fd0c5bb38665981d3dc3e3530504a5d",
+      "implementation": "transformers_modules._81ffe929046666c43de53691147b1669ba0f3a4c.processing_fastvlm.FastVLMImageProcessor",
+      "implementation_sha256": "1fc2d894a8128c713980c69e544d434a5cbe82f5c6c938260bd9c689b3c37de2",
+      "processor_mode": "model_loading_path"
+    }
+  },
+  "source_analysis_sha256": "5b23931dcf3c7933883912b66849f2ad032acb86b884fb6dd15a473a2b8df948",
+  "map_construction": {
+    "schema_version": 1,
+    "analysis_kind": "controlled_overlap_coordinate_construction",
+    "config": {
+      "schema_version": 1,
+      "study_id": "controlled_overlap_phase1_v1",
+      "registered_date": "2026-10-29",
+      "scope": "development_input_only_no_confirmation",
+      "content_shape": [
+        240,
+        320
+      ],
+      "fixed_fraction": [
+        1,
+        4
+      ],
+      "overlap_sixteenths": [
+        0,
+        1,
+        4
+      ],
+      "mask_seeds": [
+        2026102901,
+        2026102902,
+        2026102903,
+        2026102904
+      ],
+      "destination_seeds": [
+        2026102911,
+        2026102912
+      ],
+      "reference_seed": 2026102910,
+      "construction": "nested_fixed_sets_and_random_single_cycles",
+      "shared_moved_policy": "reject_coordinate_coincidences_against_reference_only",
+      "maximum_attempts_per_test_map": 128,
+      "rng": "PCG64_SeedSequence_explicit_integer_keys",
+      "reference_replicates": [
+        1,
+        2
+      ],
+      "test_replicates": [
+        3,
+        4
+      ],
+      "source_blocks": 32,
+      "map_count": 28,
+      "input_cells": 3584,
+      "historical_processor_checks": 128,
+      "vectors_per_view": 512,
+      "views": [
+        "raw_rgb",
+        "processor_pixel_values"
+      ],
+      "padding": "palette_mean",
+      "centroid_relative_tolerance": 0.05,
+      "hf_absolute_tolerance": 0.02,
+      "cache_gate": "all_28_maps_accept_all_32_blocks",
+      "primary_endpoints": [
+        "zero_overlap_margin",
+        "high_minus_zero_margin"
+      ],
+      "primary_endpoint_count": 4,
+      "bootstrap": {
+        "seed": 2026102920,
+        "draws": 10000,
+        "quantiles": [
+          0.00625,
+          0.99375
+        ],
+        "units": "crossed_family_and_mask_blocks_then_destination_within_mask_and_test_seed_within_family",
+        "paired_across_levels_and_views": true,
+        "references": "fixed_not_resampled",
+        "interpretation": "exploratory_percentile_ranges_with_Bonferroni_tail_allocation_not_guaranteed_coverage"
+      },
+      "p_values": "none_no_validated_overlap_randomization_null",
+      "equivalence": "not_attempted_no_absence_claim",
+      "budget": "fixed_4_masks_2_destinations_32_existing_blocks_no_outcome_based_expansion",
+      "minimum_resolvable_effect": "not_guaranteed_budget_bound_development_study_report_interval_widths",
+      "minimum_free_disk_gib": 20,
+      "new_model_forwards": 0,
+      "confirmation_cohort": "not_generated_not_sealed"
+    },
+    "registered_design_commit": "1e19014a54a999f14b091f9ce0467b4aa034afdf",
+    "code_sha256": {
+      "src/fractal_vlm_state_probe/cli/run_map_seed_cache_study.py": "9a480a28fbca89888ac5dc27718081870b3193fd274b2b9fa2f932ff6cb3aac6",
+      "src/fractal_vlm_state_probe/map_seed_cache.py": "55175e73173e140d7382c750beb2f717d20e3125864b657e220d1d5c94c45351",
+      "src/fractal_vlm_state_probe/permutation_maps.py": "5a64c1c05efcb5d01a116198ebd731c329009de7547a8314fb08174ca5db3787",
+      "src/fractal_vlm_state_probe/cli/run_map_seed_input_study.py": "34927b3132e9c64120cdc909217f42563348f568314818f1bf9696780e33ffed",
+      "src/fractal_vlm_state_probe/graded_permutation.py": "9761f29ec72be8f071af2d6c9b2dee39b9f9f2fcdcef8b6e170ccadc45617381",
+      "src/fractal_vlm_state_probe/cli/run_graded_permutation_study.py": "10c51939d6dccdd0fc9900fdde264e620374bdc5e45182a8b1a0fee70c42fce5",
+      "src/fractal_vlm_state_probe/stimulus.py": "cf872df4837c3baaf229eba1b21fcab554dbf09eccc648938bea63d9d2ff7fe5",
+      "src/fractal_vlm_state_probe/padding_policy.py": "5c48392b917eeed237f4eb8b3ba332b74add6d23fdad543cc36b8d5242e707d6",
+      "src/fractal_vlm_state_probe/frequency_control.py": "66b7ca9c1d1e765d7e63e878e2903e9d3af73de3e36670b42954da3b4eed6e04",
+      "src/fractal_vlm_state_probe/image_stats.py": "285a2eab99f9d3f8dc81afc613998476a16cab33d3951ba3450734008baa448a",
+      "src/fractal_vlm_state_probe/cli/run_padding_policy_study.py": "1978d8a39d0a1ceca468897232a5985cc31ca5423acd9b360adeae26f37e6ef2",
+      "src/fractal_vlm_state_probe/cli/run_graded_cache_study.py": "a98bd53a6aa3ead38a86e8ec77dac5988ef41c4c47a077f4378b1d08b962e794",
+      "src/fractal_vlm_state_probe/graded_cache.py": "00a455fb865111c464cd5e880e51f926964abca213972cf2fcdaeac3d299fa85",
+      "src/fractal_vlm_state_probe/cli/run_padding_cache_study.py": "8530af9484d5ecd5e6e0338b77f3fb155ab39ba3cda7fb73653899fbe8a62897",
+      "src/fractal_vlm_state_probe/padding_cache.py": "3289c4fbcf2ad5e903576917846e493e548bafd29b705a2108daec408f31744c",
+      "src/fractal_vlm_state_probe/cache_tensor_artifact.py": "98a0c0fb9ff429ad496222257713cdf2fe11f6adde9baf99fe2e2241d25bc8fb",
+      "src/fractal_vlm_state_probe/cache_tensor_factorial.py": "95bffcf55d584c2f43966ab27b03cdc1d05d1156f80fde077cc106eec1799c9f",
+      "src/fractal_vlm_state_probe/cache_direction_holdout.py": "e19a3c6ddecf888252ac0cd14c86dbc2e9a42ffb26ee7370f6228fc1e59d9554",
+      "src/fractal_vlm_state_probe/mlx_stream.py": "3f2a02f9b7794a5403a6cb32afa290eac16b7b6493aed021e5912343800535f6",
+      "src/fractal_vlm_state_probe/mlx_cumulative_replay.py": "c64829e9b3fcb3c6ae514e02082d21bf64a74fa1f2bbe4e79fe705bac64e41f1",
+      "src/fractal_vlm_state_probe/cli/capture_pairing_references.py": "9ba9de9ba25cef3c13ab05e5826b5e1f2fb175a140733fa3cd0b28b64a3ebd93",
+      "src/fractal_vlm_state_probe/cli/run_pairing_seed_validation.py": "7d1f3d98848b6afbc49d2adad1b0fd839692d2fa5d30d169c95803dc32f7b06a",
+      "src/fractal_vlm_state_probe/map_seed_input_baseline.py": "ce451b938062a569de05bac1a8dbb80b801e88b08188b11a69fd27981a1b43b1",
+      "src/fractal_vlm_state_probe/cli/run_map_seed_input_baseline.py": "ffa78793d21755fc0f941058e203aecb24e6af5423315025fd91ea42e1c94d38",
+      "src/fractal_vlm_state_probe/cli/analyze_pairing_input_holdout.py": "c6e6d843183ffcd645eae8b93e778c7765bdb6422c66d71caa34c5724683a0ef",
+      "src/fractal_vlm_state_probe/cli/summarize_map_seed_input_study.py": "454f7562cd0ff13c2fca83ef5edf9aa8c4da49c00ff5e3113e1f8d3d3b77db86",
+      "src/fractal_vlm_state_probe/source_coordinate_overlap.py": "571f2054f9bec782c6c6aa8bcebcf0edccd76c84b6cff49952584a8f6070b498",
+      "src/fractal_vlm_state_probe/controlled_overlap.py": "a1c12d6ffa60952be2c02ecd2c30bbe9cf4eef24e973e17c91cf6c6b34aa6c0f",
+      "src/fractal_vlm_state_probe/cli/run_controlled_overlap.py": "a5f37e744dd82692c44a4bd3acc17af5e875790670baf815962d84b4ec7b956e",
+      "src/fractal_vlm_state_probe/cli/analyze_controlled_overlap.py": "44e042087a8eb2cc628240f279e43bd4ee4bdbff3949f02fe02a2d8334ba4df2"
+    },
+    "maps": {
+      "m0_reference": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m0_reference.npy",
+        "sha256": "feaf16f281e94c859cc32bae89a8ac83934c1ff2793cf7f7bf1c509fee47ec73",
+        "recipe": {
+          "mask": 0,
+          "q": null,
+          "destination": null,
+          "reference": "m0_reference",
+          "attempt_shared_moved": []
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 19200,
+          "shared_moved": 57600,
+          "noncoincident": 0,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 109.74512376131185,
+          "mean_displacement_over_diagonal": 0.2753264173272466,
+          "retained_undirected_grid_edge_fraction": 0.06263068478829065
+        }
+      },
+      "m0_q0_d0": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m0_q0_d0.npy",
+        "sha256": "c93c8e2c0bfbd76ce7732fd20f8a008e77cfe5d6e1c90b3fda42ff580b9f034b",
+        "recipe": {
+          "mask": 0,
+          "q": 0,
+          "destination": 0,
+          "reference": "m0_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 0,
+          "shared_moved": 0,
+          "noncoincident": 76800,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 109.85542140101975,
+          "mean_displacement_over_diagonal": 0.27560312988576063,
+          "retained_undirected_grid_edge_fraction": 0.06216675378985886
+        }
+      },
+      "m0_q0_d1": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m0_q0_d1.npy",
+        "sha256": "2032fb99303d433bc7648f19d6b52c8900b69658d37bcb916d319f1cbe41e2c3",
+        "recipe": {
+          "mask": 0,
+          "q": 0,
+          "destination": 1,
+          "reference": "m0_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 0,
+          "shared_moved": 0,
+          "noncoincident": 76800,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.13310351864476,
+          "mean_displacement_over_diagonal": 0.2762997733445426,
+          "retained_undirected_grid_edge_fraction": 0.062186356508102454
+        }
+      },
+      "m0_q1_d0": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m0_q1_d0.npy",
+        "sha256": "effd5303fdaf9cd9b2731010cbcadfc36e9dc8d0b203d7d83c59733a97b6ee0c",
+        "recipe": {
+          "mask": 0,
+          "q": 1,
+          "destination": 0,
+          "reference": "m0_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 4800,
+          "shared_moved": 0,
+          "noncoincident": 72000,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 109.89885240168549,
+          "mean_displacement_over_diagonal": 0.2757120887297111,
+          "retained_undirected_grid_edge_fraction": 0.06236931521170936
+        }
+      },
+      "m0_q1_d1": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m0_q1_d1.npy",
+        "sha256": "677400644044cdd006c540fe92e581b40c096483fd7f459776ed2e147f68902c",
+        "recipe": {
+          "mask": 0,
+          "q": 1,
+          "destination": 1,
+          "reference": "m0_reference",
+          "attempt_shared_moved": [
+            1,
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 4800,
+          "shared_moved": 0,
+          "noncoincident": 72000,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 109.76858892208533,
+          "mean_displacement_over_diagonal": 0.27538528626307124,
+          "retained_undirected_grid_edge_fraction": 0.0623170412963931
+        }
+      },
+      "m0_q4_d0": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m0_q4_d0.npy",
+        "sha256": "da34cb4b3b3fba6d12f02b41d47f46b53fae7e393f029fa271aa35ab5c8b6752",
+        "recipe": {
+          "mask": 0,
+          "q": 4,
+          "destination": 0,
+          "reference": "m0_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 19200,
+          "shared_moved": 0,
+          "noncoincident": 57600,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 109.72134575305698,
+          "mean_displacement_over_diagonal": 0.2752667635257872,
+          "retained_undirected_grid_edge_fraction": 0.06261108207004705
+        }
+      },
+      "m0_q4_d1": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m0_q4_d1.npy",
+        "sha256": "be55459aad79f8b024c937a7336e189b1407d1f7a26133c7070466fac979423d",
+        "recipe": {
+          "mask": 0,
+          "q": 4,
+          "destination": 1,
+          "reference": "m0_reference",
+          "attempt_shared_moved": [
+            1,
+            1,
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 19200,
+          "shared_moved": 0,
+          "noncoincident": 57600,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.06104207151269,
+          "mean_displacement_over_diagonal": 0.2761189869971743,
+          "retained_undirected_grid_edge_fraction": 0.06262415054887611
+        }
+      },
+      "m1_reference": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m1_reference.npy",
+        "sha256": "16084f5ed43b4fd69dbd82b53faed682cd1b1371401f7691812d3244db28f579",
+        "recipe": {
+          "mask": 1,
+          "q": null,
+          "destination": null,
+          "reference": "m1_reference",
+          "attempt_shared_moved": []
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 19200,
+          "shared_moved": 57600,
+          "noncoincident": 0,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.29621426154884,
+          "mean_displacement_over_diagonal": 0.27670898238210345,
+          "retained_undirected_grid_edge_fraction": 0.0615656037637219
+        }
+      },
+      "m1_q0_d0": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m1_q0_d0.npy",
+        "sha256": "e543a7fbac442eb4df9d941c474a891c0de43f2a90d47e58ff7b6ec19d6d6bf2",
+        "recipe": {
+          "mask": 1,
+          "q": 0,
+          "destination": 0,
+          "reference": "m1_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 0,
+          "shared_moved": 0,
+          "noncoincident": 76800,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 109.92374482243268,
+          "mean_displacement_over_diagonal": 0.2757745383474074,
+          "retained_undirected_grid_edge_fraction": 0.06263068478829065
+        }
+      },
+      "m1_q0_d1": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m1_q0_d1.npy",
+        "sha256": "a28760e6c02d468a723f54a8321a3737f7c4dd3f36951d6f566f878554b92c10",
+        "recipe": {
+          "mask": 1,
+          "q": 0,
+          "destination": 1,
+          "reference": "m1_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 0,
+          "shared_moved": 0,
+          "noncoincident": 76800,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 109.83618684897971,
+          "mean_displacement_over_diagonal": 0.2755548746182774,
+          "retained_undirected_grid_edge_fraction": 0.06264375326711971
+        }
+      },
+      "m1_q1_d0": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m1_q1_d0.npy",
+        "sha256": "8d3dcbe39a290d53264d259aead42ceb4d79a410b9b7818e855cbbf11c8854e6",
+        "recipe": {
+          "mask": 1,
+          "q": 1,
+          "destination": 0,
+          "reference": "m1_reference",
+          "attempt_shared_moved": [
+            1,
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 4800,
+          "shared_moved": 0,
+          "noncoincident": 72000,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.36505167067102,
+          "mean_displacement_over_diagonal": 0.27688168032604965,
+          "retained_undirected_grid_edge_fraction": 0.06263721902770518
+        }
+      },
+      "m1_q1_d1": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m1_q1_d1.npy",
+        "sha256": "86481c007c422bef84337b687a0d7740b7883c6bbdada73dbc4d014cb262c2c2",
+        "recipe": {
+          "mask": 1,
+          "q": 1,
+          "destination": 1,
+          "reference": "m1_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 4800,
+          "shared_moved": 0,
+          "noncoincident": 72000,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.2584073623115,
+          "mean_displacement_over_diagonal": 0.27661413317367844,
+          "retained_undirected_grid_edge_fraction": 0.06264375326711971
+        }
+      },
+      "m1_q4_d0": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m1_q4_d0.npy",
+        "sha256": "e08634d66d1049eded0f6755ac5271238ef5c36ba4c3fc7d62cada949af54fe7",
+        "recipe": {
+          "mask": 1,
+          "q": 4,
+          "destination": 0,
+          "reference": "m1_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 19200,
+          "shared_moved": 0,
+          "noncoincident": 57600,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.06783901348521,
+          "mean_displacement_over_diagonal": 0.2761360390320888,
+          "retained_undirected_grid_edge_fraction": 0.06159174072138003
+        }
+      },
+      "m1_q4_d1": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m1_q4_d1.npy",
+        "sha256": "a9266939a70742931aca0c9b1ff7ad73c2ed4c5c5717bfab70018a725664366d",
+        "recipe": {
+          "mask": 1,
+          "q": 4,
+          "destination": 1,
+          "reference": "m1_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 19200,
+          "shared_moved": 0,
+          "noncoincident": 57600,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.00797462895416,
+          "mean_displacement_over_diagonal": 0.2759858524365159,
+          "retained_undirected_grid_edge_fraction": 0.0615852064819655
+        }
+      },
+      "m2_reference": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m2_reference.npy",
+        "sha256": "0b1502f6b713e797d72184d3fd05c5256e914efaf7a3eb2709689d3f4375699a",
+        "recipe": {
+          "mask": 2,
+          "q": null,
+          "destination": null,
+          "reference": "m2_reference",
+          "attempt_shared_moved": []
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 19200,
+          "shared_moved": 57600,
+          "noncoincident": 0,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 109.9947089140802,
+          "mean_displacement_over_diagonal": 0.2759525716708258,
+          "retained_undirected_grid_edge_fraction": 0.062434657605854676
+        }
+      },
+      "m2_q0_d0": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m2_q0_d0.npy",
+        "sha256": "049c33776f89a549ccd13ceb190603da06f1d4952608e460e028281a4995571d",
+        "recipe": {
+          "mask": 2,
+          "q": 0,
+          "destination": 0,
+          "reference": "m2_reference",
+          "attempt_shared_moved": [
+            1,
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 0,
+          "shared_moved": 0,
+          "noncoincident": 76800,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.08798925731962,
+          "mean_displacement_over_diagonal": 0.2761865915692135,
+          "retained_undirected_grid_edge_fraction": 0.06187924725561945
+        }
+      },
+      "m2_q0_d1": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m2_q0_d1.npy",
+        "sha256": "77ac67dba8f5a007d10fdc24308e1b25a5cbea74258dd846f0afc097cd337578",
+        "recipe": {
+          "mask": 2,
+          "q": 0,
+          "destination": 1,
+          "reference": "m2_reference",
+          "attempt_shared_moved": [
+            1,
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 0,
+          "shared_moved": 0,
+          "noncoincident": 76800,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.09303544350885,
+          "mean_displacement_over_diagonal": 0.2761992513423044,
+          "retained_undirected_grid_edge_fraction": 0.061872713016204915
+        }
+      },
+      "m2_q1_d0": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m2_q1_d0.npy",
+        "sha256": "1fa2211fa779840d51d4de9e1b0a66b28c148d5f3c4ce51263b0c96ab88446c9",
+        "recipe": {
+          "mask": 2,
+          "q": 1,
+          "destination": 0,
+          "reference": "m2_reference",
+          "attempt_shared_moved": [
+            1,
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 4800,
+          "shared_moved": 0,
+          "noncoincident": 72000,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.13122742014993,
+          "mean_displacement_over_diagonal": 0.27629506662537884,
+          "retained_undirected_grid_edge_fraction": 0.06247386304234187
+        }
+      },
+      "m2_q1_d1": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m2_q1_d1.npy",
+        "sha256": "a31c7228fc67876bfbee4a2439d1781903d984853c3eaf057dff81ae9085de85",
+        "recipe": {
+          "mask": 2,
+          "q": 1,
+          "destination": 1,
+          "reference": "m2_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 4800,
+          "shared_moved": 0,
+          "noncoincident": 72000,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.17737397726283,
+          "mean_displacement_over_diagonal": 0.27641083820416457,
+          "retained_undirected_grid_edge_fraction": 0.06244772608468374
+        }
+      },
+      "m2_q4_d0": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m2_q4_d0.npy",
+        "sha256": "d80e766747465689ab6f94a650185608791aa4898c52c29f27bf51b910b288bf",
+        "recipe": {
+          "mask": 2,
+          "q": 4,
+          "destination": 0,
+          "reference": "m2_reference",
+          "attempt_shared_moved": [
+            1,
+            2,
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 19200,
+          "shared_moved": 0,
+          "noncoincident": 57600,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.22517536295243,
+          "mean_displacement_over_diagonal": 0.27653076138447663,
+          "retained_undirected_grid_edge_fraction": 0.062401986408782015
+        }
+      },
+      "m2_q4_d1": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m2_q4_d1.npy",
+        "sha256": "5c51ed5848a7d01804fb05ce5a1e3fffe4303d901c41efb23417f65975df2585",
+        "recipe": {
+          "mask": 2,
+          "q": 4,
+          "destination": 1,
+          "reference": "m2_reference",
+          "attempt_shared_moved": [
+            1,
+            1,
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 19200,
+          "shared_moved": 0,
+          "noncoincident": 57600,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.18611339861161,
+          "mean_displacement_over_diagonal": 0.2764327634932982,
+          "retained_undirected_grid_edge_fraction": 0.062460794563512806
+        }
+      },
+      "m3_reference": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m3_reference.npy",
+        "sha256": "6e5b8e359cf06505f065b784b56370ef8c57e53ecb064e97e1ca2afc4d01a571",
+        "recipe": {
+          "mask": 3,
+          "q": null,
+          "destination": null,
+          "reference": "m3_reference",
+          "attempt_shared_moved": []
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 19200,
+          "shared_moved": 57600,
+          "noncoincident": 0,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 109.70066848037877,
+          "mean_displacement_over_diagonal": 0.2752148887890201,
+          "retained_undirected_grid_edge_fraction": 0.06180737062205959
+        }
+      },
+      "m3_q0_d0": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m3_q0_d0.npy",
+        "sha256": "813587e80bda7f91b140e615a124ca012792bc2e57c6f4d1a7f47afa67857dc7",
+        "recipe": {
+          "mask": 3,
+          "q": 0,
+          "destination": 0,
+          "reference": "m3_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 0,
+          "shared_moved": 0,
+          "noncoincident": 76800,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.2569882916507,
+          "mean_displacement_over_diagonal": 0.2766105730369946,
+          "retained_undirected_grid_edge_fraction": 0.06238891792995295
+        }
+      },
+      "m3_q0_d1": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m3_q0_d1.npy",
+        "sha256": "11a52ba1a69dea76001b680200bc130bd216f576bc1af76abfa110e70585d43c",
+        "recipe": {
+          "mask": 3,
+          "q": 0,
+          "destination": 1,
+          "reference": "m3_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 0,
+          "shared_moved": 0,
+          "noncoincident": 76800,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 109.99895479546704,
+          "mean_displacement_over_diagonal": 0.275963223654901,
+          "retained_undirected_grid_edge_fraction": 0.062356246732880295
+        }
+      },
+      "m3_q1_d0": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m3_q1_d0.npy",
+        "sha256": "b9c9e18b15866509be0432ab05cf9c8bd89a2777d79775c5d977bdb26969069d",
+        "recipe": {
+          "mask": 3,
+          "q": 1,
+          "destination": 0,
+          "reference": "m3_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 4800,
+          "shared_moved": 0,
+          "noncoincident": 72000,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.15923044012894,
+          "mean_displacement_over_diagonal": 0.27636532005351233,
+          "retained_undirected_grid_edge_fraction": 0.06263721902770518
+        }
+      },
+      "m3_q1_d1": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m3_q1_d1.npy",
+        "sha256": "cb4e501451bcd4f32a98111669fff596f4b40d00a021b2a18d3849738225d9cb",
+        "recipe": {
+          "mask": 3,
+          "q": 1,
+          "destination": 1,
+          "reference": "m3_reference",
+          "attempt_shared_moved": [
+            3,
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 4800,
+          "shared_moved": 0,
+          "noncoincident": 72000,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 109.9604936593651,
+          "mean_displacement_over_diagonal": 0.2758667331098421,
+          "retained_undirected_grid_edge_fraction": 0.06263068478829065
+        }
+      },
+      "m3_q4_d0": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m3_q4_d0.npy",
+        "sha256": "6f0dd74c6b94e09c3d2cfd41f57cfcf918fc193d6d980d02326cafdf6015a251",
+        "recipe": {
+          "mask": 3,
+          "q": 4,
+          "destination": 0,
+          "reference": "m3_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 19200,
+          "shared_moved": 0,
+          "noncoincident": 57600,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 109.97901877558537,
+          "mean_displacement_over_diagonal": 0.27591320855863377,
+          "retained_undirected_grid_edge_fraction": 0.06179430214323053
+        }
+      },
+      "m3_q4_d1": {
+        "path": "/Users/ryohiga/SpiralReality/fractal-vlm-state-probe/runs/controlled_overlap_maps_v1/m3_q4_d1.npy",
+        "sha256": "e771f2b3f3c5f3c0648c54e18ab9ad1a160738383170f880c2fbcca1e281735e",
+        "recipe": {
+          "mask": 3,
+          "q": 4,
+          "destination": 1,
+          "reference": "m3_reference",
+          "attempt_shared_moved": [
+            0
+          ]
+        },
+        "counts": {
+          "left_fixed": 19200,
+          "right_fixed": 19200,
+          "shared_fixed": 19200,
+          "shared_moved": 0,
+          "noncoincident": 57600,
+          "content_pixels": 76800
+        },
+        "metrics": {
+          "moved_index_fraction": 0.75,
+          "mean_displacement_pixels": 110.4610581994509,
+          "mean_displacement_over_diagonal": 0.27712253962533373,
+          "retained_undirected_grid_edge_fraction": 0.06184004181913225
+        }
+      }
+    },
+    "independent_verification": {
+      "maps_verified": 28,
+      "source_images_used": 0
+    },
+    "new_images": 0,
+    "new_processor_calls": 0,
+    "new_model_forwards": 0
+  },
+  "input_gate_counts": {
+    "m0_reference": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m0_q0_d0": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m0_q0_d1": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m0_q1_d0": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m0_q1_d1": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m0_q4_d0": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m0_q4_d1": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m1_reference": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m1_q0_d0": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m1_q0_d1": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m1_q1_d0": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m1_q1_d1": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m1_q4_d0": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m1_q4_d1": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m2_reference": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m2_q0_d0": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m2_q0_d1": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m2_q1_d0": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m2_q1_d1": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m2_q4_d0": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m2_q4_d1": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m3_reference": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m3_q0_d0": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m3_q0_d1": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m3_q1_d0": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m3_q1_d1": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m3_q4_d0": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    },
+    "m3_q4_d1": {
+      "accepted_blocks": 32,
+      "total_blocks": 32
+    }
+  },
+  "input_cells": 3584,
+  "measurement_processor_calls": 3712,
+  "historical_processor_checks": 128,
+  "independent_verification": {
+    "coordinate_maps": 28,
+    "input_cells": 3584,
+    "four_cell_gates": 896,
+    "vector_recomputations": 1024,
+    "maximum_vector_oracle_abs_error": 4.440892098500626e-16,
+    "full_score_matrices": 56,
+    "maximum_score_oracle_abs_error": 6.70463684571132e-13,
+    "bootstrap_verified": true,
+    "verification_processor_calls": 3584
+  },
+  "ledgers": {
+    "cells.jsonl": {
+      "rows": 3584,
+      "sha256": "63a2628a9772686c85d888ea080b380a3e358b5cd1f96e363c5603f108e0543b"
+    },
+    "vectors.jsonl": {
+      "rows": 1024,
+      "sha256": "54d2e778117de247aca8bb713ab4e29ad397ca6bd0fb8359aebbd7ff94c196ff"
+    },
+    "scores.jsonl": {
+      "rows": 56,
+      "sha256": "49c7eeca387a848f6c105a7f47ce29c04937498d440158598866110124b02eff"
+    },
+    "between_level_spectra.jsonl": {
+      "rows": 512,
+      "sha256": "307a5f7232c02d4acbd637c24df60090434ff46317175f699d393da4be37fe77"
+    }
+  },
+  "exporter_sha256": "055e93d821b3ee4ce7a31a35c09de2a3b9e95e860bfae50fbfd14111e00ab6cd",
+  "claim_boundaries": [
+    "Development only; all existing sources reused; no confirmation cohort released.",
+    "Bootstrap ranges are exploratory, conditional on fixed references and do not guarantee coverage.",
+    "No p-values, equivalence tests, causal gain, model forwards or cache observations are added.",
+    "Within-condition input gates do not imply between-level spectral matching."
+  ],
+  "figures": {
+    "endpoint_ranges.png": "c30b552bcd1e05285d8b466243a05fd55af6e1608ebe93d2508838228bce8a06",
+    "overlap_profiles.png": "bf0f1e8108d74603d420e82ad89bd95d964a520d3d97f5e660f6b15599fa004c"
+  }
+}

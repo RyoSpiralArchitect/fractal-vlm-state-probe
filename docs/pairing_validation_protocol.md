@@ -832,6 +832,9 @@ tests are added. Fixed-overlap mask/destination controls remain proposed.
 
 ## Stage 4J: Controlled Overlap Design Scope
 
+Current status: Phase 1 is complete; see the registration and execution report
+below. The following scope paragraph preserves the pre-registration state.
+
 Scope recorded: 2026-10-29. Measurement registration remains incomplete.
 [Note 0052](research_notes/0052_preprint_scope_and_confirmation_boundaries.md)
 and [the scope record](../configs/preprint_scope_v1.json) define the next
@@ -855,3 +858,40 @@ equivalence width, multiplicity policy, compute budget and confirmation release
 remain open; do not invent defaults. The design record is not a runtime
 enforcement mechanism. No new observation is added, and the next bounded work
 is coordinate-only construction/oracle testing for Note 0053.
+
+### Phase 1 Registration And Execution
+
+The preceding scope text records the state before registration. It is refined,
+not retroactively rewritten, by [Note 0053](research_notes/0053_controlled_overlap_coordinate_construction.md),
+[Note 0054](research_notes/0054_controlled_overlap_phase1_registration.md) and
+[`controlled_overlap_phase1_v1.json`](../configs/controlled_overlap_phase1_v1.json),
+committed with the measurement/analysis code at `1e19014` before any full-size
+map generation or new scores. Four mask seeds, two destination identities,
+three q levels and one reference per mask give 28 maps. Exact single-cycle
+construction fixes 25% of content; coordinate-only rejection removes shared
+moved coincidence against the reference with a fixed 128-attempt cap.
+
+The fixed budget is 32 existing source blocks x 28 maps x four cells, with
+128 historical processor checks, 512 retained vectors per input view and no
+model forwards. All maps enter input diagnostics even if spectral eligibility
+fails. All 896 blocks must pass unchanged gates for cache eligibility; no
+threshold relaxation or outcome-driven replacement is allowed.
+
+The four primary descriptive endpoints are raw/processor zero-overlap margin
+and paired high-minus-zero margin. No p-values or equivalence tests are
+attempted. The registered 10,000-draw crossed-block bootstrap gives exploratory
+ranges with Bonferroni tail allocation, fixed references and no guaranteed
+coverage. This resolves the Phase 1 inference/budget fields before outcomes;
+confirmation precision and its untouched cohort remain open, not defaulted.
+
+Execution report (2026-10-29): [Note 0055](research_notes/0055_controlled_overlap_input_qualification.md)
+records 896/896 accepted blocks and 128/128 exact historical processor checks.
+[Note 0056](research_notes/0056_controlled_overlap_input_correspondence.md)
+records zero-overlap raw/processor means -0.000315703 / +0.003352657 and paired
+increases +0.034846370 / +0.033963924. Both zero-level exploratory ranges
+include zero, while two of eight family increases are negative in each view.
+Independent replay verifies all 3,584 cells, 1,024 interactions, 56 matrices
+and the bootstrap. Measurement uses 3,712 processor calls; publication replay
+uses a separate 3,584. No model/cache observation or new p-value is added.
+Phase 1 ends here. Phase 2 requires its own calibration/endpoint/budget
+registration; confirmation remains not generated and not sealed.

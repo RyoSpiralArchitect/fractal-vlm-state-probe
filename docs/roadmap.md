@@ -214,8 +214,13 @@ noncoincident coordinates -2.703%, and shared moved/padding terms zero.
 All 8,192 additive terms pass independent recomputation. Positive noncoincident
 contributions remain in 3/8 families, and two family margins reverse sign in
 opposite directions. No new statistical test, processor call or model forward
-is added. Independently varying fixed-coordinate overlap, selection masks and
-destinations is the next proposed input control, not an executed intervention.
+was added by that accounting stage. The subsequent controlled-overlap input
+panel is complete: 28 coordinate maps, 3,584 cells and 1,024 interactions pass
+verification; all 896 four-cell gates accept. Zero-coincidence raw/processor
+margins are -0.000316 / +0.003353, with paired 25%-minus-zero differences
++0.034846 / +0.033964. Both zero-level exploratory ranges include zero;
+two of eight family differences are negative in each view. There are no new
+p-values, model/cache forwards, equivalence tests or confirmation images.
 Token bands are not verified 2D patches.
 
 ## Phase 5: Research Report
@@ -226,7 +231,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0051 encode the audited claim
+Status: the evidence matrix and Notes 0027-0056 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -245,9 +250,10 @@ negative cases and all repeated-anchor counts. Its raw/processor input
 baseline now shows correspondence before any model forward. Additive raw
 source-coordinate accounting now identifies a positive shared-fixed aggregate
 with a negative noncoincident remainder, without erasing family exceptions.
-The current priority is separately controlled fixed-site overlap and
-mask/destination changes, with pre-registered construction and unchanged
-all-cell processor gates before cache comparisons, then
+The controlled fixed-site overlap and mask/destination input study is complete,
+with pre-measurement registration and all unchanged processor gates passed.
+The current priority is separately registered cache calibration/comparison
+on this eligible panel, retaining the input residuals and spectral drift, then
 held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.
@@ -257,19 +263,23 @@ vector analysis, and a valid intervention path before causal prose is promoted.
 [Note 0052](research_notes/0052_preprint_scope_and_confirmation_boundaries.md)
 records the approved scope, with unresolved launch requirements in
 [`preprint_scope_v1.json`](../configs/preprint_scope_v1.json). No study is
-launched by this record. Note 0051 remains the latest measured evidence.
+launched by that historical record. Notes 0053-0054 subsequently register the
+bounded Phase 1 design; Notes 0055-0056 report its completed input measurements.
 
 | Notes | Package | Status |
 | --- | --- | --- |
-| 0052-0056 | Controlled fixed-overlap construction, oracle and input audit | Scope recorded; construction and measurement pending |
-| 0057-0061 | Calibrated FastVLM cache comparison | Not started |
+| 0052-0056 | Controlled fixed-overlap construction, oracle and input audit | Complete; 896/896 blocks eligible; four descriptive endpoints independently verified |
+| 0057-0061 | Calibrated FastVLM cache comparison | Input-eligible; registration and execution not started |
 | 0062-0066 | Simple-processing baselines and representation path | Not started |
 | 0067-0071 | Prompt/suffix/readout controls and final registration | Not started |
 | 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed |
 | 0076-0080 | Independent replay, negative-case audit and manuscript | Not started |
 
 Ministral is optional. Notes 0056 and 0061 are decision points, not reasons to
-expand sample size until significance. The immediate next task is synthetic
-coordinate-map construction and an independent oracle, without source-image
-scoring. Counts, seeds, shared moved-coincidence policy, paired inference,
-equivalence width and budget must be registered before affected measurements.
+expand sample size until significance. The Note 0056 decision is to retain
+all conditions for a separately registered cache stage, without launching it.
+Phase 1 used no p-values or equivalence test; exploratory uncertainty and its
+limits were fixed before outcomes. Cache estimands, calibration, uncertainty,
+budget and confirmation precision requirements remain to be registered before
+their affected measurements. The original scope JSON is a historical design
+record and is not rewritten to claim completed confirmation.

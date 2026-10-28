@@ -48,12 +48,18 @@ fixed coordinates contribute 102.7% of the cross-map mean margin, while
 noncoincident coordinates contribute -2.7%; shared moved coordinates and
 padding contribute zero. This is signed accounting, not a causal percentage.
 Noncoincident terms are positive in 3/8 families, and two family margins change
-sign in opposite directions. The next control must vary fixed-coordinate
-overlap separately from permutation destinations before returning to cache.
-The preprint scope is now recorded in Note 0052: six work packages through
-approximately Note 0080, with development and untouched confirmation kept
-separate. This is a design record, not a new measurement registration or a
-sealed cohort. Note 0051 remains the latest measured result.
+sign in opposite directions. The controlled-overlap input study now completes
+Phase 1 of the preprint scope: exact content coincidence is 0%, 6.25% or 25%,
+with exactly 25% fixed sites per map and separately replicated destinations.
+All 896 four-cell audits pass. At zero coincidence, raw/processor mean margins
+are -0.000316 / +0.003353; increasing overlap to 25% adds +0.034846 / +0.033964.
+Both zero-overlap exploratory ranges include zero, and both increases are
+negative in two of eight families. Zero raw-coordinate coincidence does not
+force a zero processor-space margin. This is reused-data input evidence,
+not absence, semantic invariance or a cache mechanism. Notes 0055-0056 are the
+latest measurements; Phase 2 cache work is eligible but not started. The
+Note 0052 plan continues toward approximately Note 0080, with an untouched
+confirmation cohort still neither generated nor sealed.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
@@ -337,8 +343,21 @@ positively in 3/8 families and reverse two family-margin signs in opposite
 directions. All terms pass independent reconstruction from the 512 raw cells.
 This explains the algebraic composition of the raw score, not the causal
 effect of removing pixels or the source of post-image cache correspondence.
-No new statistical test, processor call or model forward is added. Separately
-controlling fixed-site overlap and permutation destinations remains unmeasured.
+No new statistical test, processor call or model forward was added by that
+accounting stage.
+
+Notes 0053-0056 then construct and measure a registered controlled-overlap
+input panel. All 28 coordinate maps, 3,584 cells, 1,024 interactions and 56
+score matrices pass publication verification; 128 historical processor checks
+are exact. Every map qualifies on all 32 blocks. The four primary descriptive
+endpoints separate the zero-overlap margin from the paired 25%-minus-zero
+difference in raw and actual-processor space. The zero-overlap margins are
+-0.000316 / +0.003353; paired increases are +0.034846 / +0.033964, positive in
+6/8 families each. Exploratory bootstrap ranges for both zero-overlap means
+cross zero, without equivalence or absence claims. Between-level spectra are
+not identical. No new p-value, model forward, cache tensor or confirmation
+cohort is added. The next stage must register cache calibration and endpoints
+before measurement; input/cache score differences alone are not causal gain.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
@@ -355,10 +374,17 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Read [Note 0052](docs/research_notes/0052_preprint_scope_and_confirmation_boundaries.md)
-for the preprint question, candidate overlap design, planned estimands and
-still-open registration gates. It adds no observations and launches no study.
-Start the measured evidence with [Note 0051](docs/research_notes/0051_raw_correspondence_and_shared_fixed_coordinates.md)
+Start with [Note 0056](docs/research_notes/0056_controlled_overlap_input_correspondence.md)
+for the completed Phase 1 result, four descriptive endpoints, family exceptions
+and the boundary before cache measurement.
+[Note 0055](docs/research_notes/0055_controlled_overlap_input_qualification.md)
+contains all-cell eligibility and remaining spectral drift;
+[Note 0053](docs/research_notes/0053_controlled_overlap_coordinate_construction.md)
+and [Note 0054](docs/research_notes/0054_controlled_overlap_phase1_registration.md)
+record construction and the pre-measurement registration.
+[Note 0052](docs/research_notes/0052_preprint_scope_and_confirmation_boundaries.md)
+remains the historical preprint scope, not a confirmation seal.
+[Note 0051](docs/research_notes/0051_raw_correspondence_and_shared_fixed_coordinates.md)
 for the raw score's shared-fixed-coordinate accounting, signed cancellation
 and family-level counterexamples, without causal-ablation claims.
 [Note 0050](docs/research_notes/0050_cross_map_correspondence_in_input_coordinates.md)
@@ -1062,6 +1088,10 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0050: Cross-Map Correspondence In Input Coordinates](docs/research_notes/0050_cross_map_correspondence_in_input_coordinates.md)
 - [Research Note 0051: Raw Correspondence And Shared Fixed Coordinates](docs/research_notes/0051_raw_correspondence_and_shared_fixed_coordinates.md)
 - [Research Note 0052: Preprint Scope And Confirmation Boundaries](docs/research_notes/0052_preprint_scope_and_confirmation_boundaries.md)
+- [Research Note 0053: Controlled Overlap Coordinate Construction](docs/research_notes/0053_controlled_overlap_coordinate_construction.md)
+- [Research Note 0054: Controlled Overlap Phase 1 Registration](docs/research_notes/0054_controlled_overlap_phase1_registration.md)
+- [Research Note 0055: Controlled Overlap Input Qualification](docs/research_notes/0055_controlled_overlap_input_qualification.md)
+- [Research Note 0056: Controlled Overlap Input Correspondence](docs/research_notes/0056_controlled_overlap_input_correspondence.md)
 
 ## Claim Boundary
 

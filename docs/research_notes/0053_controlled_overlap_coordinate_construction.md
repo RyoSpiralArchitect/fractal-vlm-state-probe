@@ -2,9 +2,10 @@
 
 Date: 2026-10-29
 
-Status: construction implemented and unit-tested; full-size receipt is produced
-only after committing the measurement specification. No source-image scores
-are used to construct maps.
+Status: construction implemented and unit-tested; all 28 full-size maps now
+pass independent reconstruction. Specification/code were committed at
+`1e19014` before full-size construction. No source-image scores are used
+to construct maps.
 
 ## Construction
 
@@ -53,3 +54,9 @@ There are four mask replicates, each with one reference plus six test maps:
 0 / 4,800 / 19,200 shared fixed sites against its reference. All four cells
 of a source factorial receive the same map. No source-image observations are
 added by this coordinate-only stage.
+
+Execution: all maps have the stated counts at N = 76,800; test maps require
+1-3 coordinate-only attempts each. The complete maps, hashes, recipes and
+rejection counts are retained under `map_construction` in the
+[Phase 1 summary](../../examples/research_notes/0056_controlled_overlap_phase1/summary.json).
+Input audit and score results follow separately in Notes 0055 and 0056.

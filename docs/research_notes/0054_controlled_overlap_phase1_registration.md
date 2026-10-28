@@ -2,7 +2,8 @@
 
 Date: 2026-10-29
 
-Status: specification to be committed before the first new input score.
+Status: specification/code committed at `1e19014` before full-size construction
+and the first new input score. The contract below is unchanged by execution.
 This is a bounded development study, not the untouched confirmation stage.
 
 ## Frozen Inputs And Budget
@@ -113,5 +114,8 @@ python3 scripts/analyze_controlled_overlap.py \
 
 No confirmation images, reference/test cohort manifest, seal or release receipt
 is created by this phase. No cache study, causal intervention or baseline
-selection is launched. Notes 0055 and 0056 will separately report input
-eligibility and correspondence, including failures and negative families.
+selection is launched by this registration. Execution reports are now complete:
+[Note 0055](0055_controlled_overlap_input_qualification.md) records input
+eligibility and [Note 0056](0056_controlled_overlap_input_correspondence.md)
+records correspondence, including all negative families. All registered maps,
+sources, endpoints and budget limits were retained. Phase 2 is not executed.
