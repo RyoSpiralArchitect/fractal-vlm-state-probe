@@ -57,8 +57,11 @@ Both zero-overlap exploratory ranges include zero, and both increases are
 negative in two of eight families. Zero raw-coordinate coincidence does not
 force a zero processor-space margin. This is reused-data input evidence,
 not absence, semantic invariance or a cache mechanism. Notes 0055-0056 are the
-latest measurements; Phase 2 cache work is eligible but not started. The
-Note 0052 plan continues toward approximately Note 0080, with an untouched
+latest experimental input results. Phase 2 is now registered in Note 0057,
+and Note 0058 reproduces all 384 historical tensors across 128 calibration
+cells exactly, including prepared inputs and suffix/layout checks. The new
+controlled-overlap cache panel is not started or automatically released.
+The Note 0052 plan continues toward approximately Note 0080, with an untouched
 confirmation cohort still neither generated nor sealed.
 The current target is directly measurable:
 
@@ -356,8 +359,14 @@ difference in raw and actual-processor space. The zero-overlap margins are
 6/8 families each. Exploratory bootstrap ranges for both zero-overlap means
 cross zero, without equivalence or absence claims. Between-level spectra are
 not identical. No new p-value, model forward, cache tensor or confirmation
-cohort is added. The next stage must register cache calibration and endpoints
-before measurement; input/cache score differences alone are not causal gain.
+cohort was added by that input stage. Notes 0057-0058 then register twelve
+descriptive cache endpoints and replay 128 historical calibration cells.
+All 384 selected tensors match exactly, including independent NPZ-byte checks;
+all prepared inputs and source suffixes reproduce. These are separately
+counted calibration forwards, not new experimental cache observations.
+The 2,048-cell controlled-overlap panel is planned but not implemented or
+released; it requires its own tested implementation and fresh in-process
+calibration before capture. Input/cache score differences alone are not causal gain.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
@@ -374,7 +383,11 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0056](docs/research_notes/0056_controlled_overlap_input_correspondence.md)
+Start with [Note 0058](docs/research_notes/0058_controlled_overlap_cache_calibration.md)
+for the completed historical cache calibration and the still-closed experimental
+panel boundary. [Note 0057](docs/research_notes/0057_controlled_overlap_cache_registration.md)
+records its pre-outcome gate, planned budget and twelve descriptive endpoints.
+[Note 0056](docs/research_notes/0056_controlled_overlap_input_correspondence.md)
 for the completed Phase 1 result, four descriptive endpoints, family exceptions
 and the boundary before cache measurement.
 [Note 0055](docs/research_notes/0055_controlled_overlap_input_qualification.md)
@@ -1092,6 +1105,8 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0054: Controlled Overlap Phase 1 Registration](docs/research_notes/0054_controlled_overlap_phase1_registration.md)
 - [Research Note 0055: Controlled Overlap Input Qualification](docs/research_notes/0055_controlled_overlap_input_qualification.md)
 - [Research Note 0056: Controlled Overlap Input Correspondence](docs/research_notes/0056_controlled_overlap_input_correspondence.md)
+- [Research Note 0057: Controlled Overlap Cache Registration](docs/research_notes/0057_controlled_overlap_cache_registration.md)
+- [Research Note 0058: Controlled Overlap Cache Calibration](docs/research_notes/0058_controlled_overlap_cache_calibration.md)
 
 ## Claim Boundary
 

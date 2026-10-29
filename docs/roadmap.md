@@ -231,7 +231,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0056 encode the audited claim
+Status: the evidence matrix and Notes 0027-0058 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -252,8 +252,11 @@ source-coordinate accounting now identifies a positive shared-fixed aggregate
 with a negative noncoincident remainder, without erasing family exceptions.
 The controlled fixed-site overlap and mask/destination input study is complete,
 with pre-measurement registration and all unchanged processor gates passed.
-The current priority is separately registered cache calibration/comparison
-on this eligible panel, retaining the input residuals and spectral drift, then
+Phase 2 registration and historical calibration are now complete: all 128
+source cells / 384 tensors reproduce exactly, independently verified. The
+experimental controlled-overlap panel is not implemented or launched. The
+current priority is its tested capture/analysis implementation under Note 0057,
+followed by fresh in-process calibration before experimental capture, then
 held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.
@@ -269,7 +272,7 @@ bounded Phase 1 design; Notes 0055-0056 report its completed input measurements.
 | Notes | Package | Status |
 | --- | --- | --- |
 | 0052-0056 | Controlled fixed-overlap construction, oracle and input audit | Complete; 896/896 blocks eligible; four descriptive endpoints independently verified |
-| 0057-0061 | Calibrated FastVLM cache comparison | Input-eligible; registration and execution not started |
+| 0057-0061 | Calibrated FastVLM cache comparison | Registration complete; 128-cell/384-tensor calibration PASS; experimental panel not implemented or released |
 | 0062-0066 | Simple-processing baselines and representation path | Not started |
 | 0067-0071 | Prompt/suffix/readout controls and final registration | Not started |
 | 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed |
@@ -279,7 +282,9 @@ Ministral is optional. Notes 0056 and 0061 are decision points, not reasons to
 expand sample size until significance. The Note 0056 decision is to retain
 all conditions for a separately registered cache stage, without launching it.
 Phase 1 used no p-values or equivalence test; exploratory uncertainty and its
-limits were fixed before outcomes. Cache estimands, calibration, uncertainty,
-budget and confirmation precision requirements remain to be registered before
-their affected measurements. The original scope JSON is a historical design
-record and is not rewritten to claim completed confirmation.
+limits were fixed before outcomes. Note 0057 now fixes the twelve cache
+endpoints, exploratory uncertainty, calibration and 2,048-cell experimental
+budget. Note 0058 qualifies historical replay only, with no automatic release.
+The later panel needs a committed/tested implementation and its own fresh
+128-cell calibration. Confirmation precision requirements remain open.
+The original scope JSON remains a historical record, not completed confirmation.

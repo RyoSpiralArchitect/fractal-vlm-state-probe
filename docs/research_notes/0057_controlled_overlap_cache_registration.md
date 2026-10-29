@@ -2,7 +2,8 @@
 
 Date: 2026-10-29
 
-Status: pre-outcome registration for Phase 2. Only historical calibration is
+Status: registration/code committed at `526950d` before new calibration calls.
+The contract below is unchanged by execution. Only historical calibration is
 implemented for this step; controlled-overlap cache capture is not released.
 
 ## Scope And Order
@@ -159,4 +160,6 @@ python3 scripts/run_controlled_overlap_cache_calibration.py calibrate \
   --output-root runs/controlled_overlap_cache_calibration_v1
 ```
 
-Note 0058 will report actual calibration counts and verification separately.
+[Note 0058](0058_controlled_overlap_cache_calibration.md) now reports actual
+calibration counts and verification separately: all 128 cells / 384 tensor
+pairs pass. The experimental panel is still not released.

@@ -895,3 +895,41 @@ and the bootstrap. Measurement uses 3,712 processor calls; publication replay
 uses a separate 3,584. No model/cache observation or new p-value is added.
 Phase 1 ends here. Phase 2 requires its own calibration/endpoint/budget
 registration; confirmation remains not generated and not sealed.
+
+## Stage 4K: Controlled Overlap Cache Registration And Calibration
+
+Registered before new calibration forwards at `526950d` on 2026-10-29:
+[Note 0057](research_notes/0057_controlled_overlap_cache_registration.md) and
+[`controlled_overlap_cache_phase2_v1.json`](../configs/controlled_overlap_cache_phase2_v1.json).
+This is reused-data development after input outcomes, not untouched confirmation.
+No-model preflight verifies all input gates, images, source/code hashes and
+the qualified weight fingerprint before loading a model. Historical calibration
+then requires all 128 Note 0049 anchor cells / 384 tensors to match exactly,
+including actual prepared inputs, suffix IDs, dtype, shape and token partition.
+No retry/resume, relaxed tolerance, cell replacement or automatic panel release.
+
+The future panel retains 512 factorial blocks: all 32 sources on four reference
+maps and 16 test sources on 24 test maps. Its 2,048 experimental cells / 6,144
+tensors are planned, not executed here. Commit and fixture-test capture and
+analysis before panel outcomes. Freeze 256 reference-source cell receipts
+before test-source capture, and repeat 128-cell calibration in the same process
+before the experimental panel. The complete future run budget including that
+calibration is 2,176 cells / 6,528 tensors, excluding today's calibration.
+
+Three targets x image/post-image regions give six views and twelve primary
+descriptive endpoints: zero-overlap margin and paired high-minus-zero margin.
+Keep the same family references across q, complete-region normalization and
+all families/maps. Use 10,000 paired crossed-block bootstrap draws, seed
+2026102930, with fixed references and tails 0.025/12 and 1-0.025/12. The
+exploratory ranges do not guarantee coverage and add no p-values, equivalence
+or absence claims. Any unavailable primary score leaves both endpoints for
+that view unavailable without filtering. Protocol/nonfinite/suffix failures
+stop capture and withhold primary panel results. See Note 0057 for full rules.
+
+Execution report: [Note 0058](research_notes/0058_controlled_overlap_cache_calibration.md)
+records PASS for no-model preflight and historical calibration. All 384 tensor
+pairs and all 128 prepared inputs/suffixes/layouts are exact; an independent
+NPZ reload verifies 19,513,344 scalar pairs with maximum difference zero.
+There were 128 calibration source-context forwards, zero experimental panel
+cells and zero direct probes. The experimental cache panel remains unimplemented
+and unstarted; confirmation remains not generated and not sealed.
