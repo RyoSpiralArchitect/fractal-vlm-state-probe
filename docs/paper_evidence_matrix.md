@@ -1,6 +1,6 @@
 # Paper Evidence Matrix
 
-Last updated: 2026-10-29 (Phase 2 historical calibration complete; experimental cache/direct counts unchanged)
+Last updated: 2026-10-29 (Phase 2 controlled-overlap cache complete; direct counts unchanged)
 
 This file is the compact bridge from run artifacts to a manuscript draft. It
 separates valid observations, descriptive interpretation, withdrawn results,
@@ -28,14 +28,15 @@ the same four factorial cells are not independent samples.
 | Raw source-coordinate overlap accounting | Existing full raw RGB vectors; unchanged full-vector norms | Four existing maps, 128 vectors, 2,048 dot products / 8,192 additive terms; no new samples | Shared fixed coordinates contribute +0.008387936 (102.703%) and noncoincident coordinates -0.000220742 (-2.703%) to the cross-map mean margin; shared moved and padding terms are zero; noncoincident terms are positive in 3/8 families | exact descriptive score accounting with family exceptions, not pixel ablation, new significance evidence or a cache mechanism | [Note 0051](research_notes/0051_raw_correspondence_and_shared_fixed_coordinates.md) |
 | Controlled-overlap input qualification | Qualified FastVLM processor, no weights or forward | 28 maps x 32 reused source blocks x four cells = 3,584 cells; 128 historical checks; 1,024 saved interactions | All 896 four-cell gates pass; actual fixed fraction is exactly 25%, with total content coincidence 0%, 6.25% or 25%; all 3,584 cells reproduce in verification | complete input eligibility under fixed expanded marginals, not between-level spectral equivalence or cache evidence | [Note 0055](research_notes/0055_controlled_overlap_input_qualification.md) |
 | Controlled-overlap input correspondence | Full raw RGB and actual processor vectors; frozen descriptive endpoints | Four masks x two destinations, eight reused families, two reference/two test seeds; 56 score matrices | Zero-overlap means -0.000316 / +0.003353; paired high-minus-zero means +0.034846 / +0.033964; D positive in 6/8 families each; both zero-level exploratory ranges cross zero | registered development description with independent replay; no p-values, absence, equivalence, causal processing gain or confirmation claim | [Note 0056](research_notes/0056_controlled_overlap_input_correspondence.md) |
-| Controlled-overlap Phase 2 historical calibration | Qualified FastVLM, unchanged L1 keys / L12 keys / L23 values, old 3/4 anchor only | 128 replay source cells / 384 tensors, separately counted; no new controlled-overlap cache cell | 384/384 tensor pairs and 128/128 prepared inputs/suffixes/layouts reproduce exactly; independent reload verifies 19,513,344 scalar pairs with zero difference | point-in-time measurement-path qualification, not experimental correspondence; panel implementation and fresh in-process calibration still required | [Note 0058](research_notes/0058_controlled_overlap_cache_calibration.md) |
+| Controlled-overlap Phase 2 historical calibration | Qualified FastVLM, unchanged L1 keys / L12 keys / L23 values, old 3/4 anchor only | 128 replay source cells / 384 tensors, separately counted; no new controlled-overlap cache cell | 384/384 tensor pairs and 128/128 prepared inputs/suffixes/layouts reproduce exactly; independent reload verifies 19,513,344 scalar pairs with zero difference | point-in-time qualification, not experimental correspondence; separately repeated in the Note 0060 panel process | [Note 0058](research_notes/0058_controlled_overlap_cache_calibration.md) |
+| Controlled-overlap cache correspondence | Qualified FastVLM, three fixed targets x image/post-image regions, fresh source contexts | Four masks x two destinations x three overlaps, eight reused families; 2,048 experimental cells / 6,144 tensors / 1,536 factorials; 128 calibration cells separate | All 384 calibration comparisons exact; twelve endpoints independently verify; five M(0) exploratory ranges above zero, all six high-minus-zero ranges spanning zero; 28/48 family differences negative | registered development correspondence without exact content-coordinate coincidence, not equivalence, semantic invariance, causal processing gain or confirmation | [Note 0060](research_notes/0060_controlled_overlap_cache_correspondence.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
 | Gemma 3 direct factorial trajectory | Gemma-3-4B-it 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2; 24 cells total | All 6 direct after-factorials are non-identical; all four one-frame maxima are early `values`, but exact layer and sign vary; frequency readout can change sharply | component-level regularity plus pair-dependent exact locus | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
 | InternVL3 direct factorial replication | InternVL3-2B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All four direct after-factorials are non-identical; all ACK maxima are late layer 25-27 `values` with negative sign | component/sign/depth-band replication with pair-dependent exact layer | [Note 0029](research_notes/0029_cross_model_prompt_and_internvl_expansion.md) |
 | LFM2-VL direct factorial replication | LFM2-VL-1.6B 4bit, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 16 cells, 64 sidecars | All after-cell distributions are distinct; visible family labels vary in 3/4 pairs while frequency labels stay fixed; balanced readout axes remain pair-dependent | fifth-architecture replication with deterministic artifact integrity | [Note 0031](research_notes/0031_balanced_contrasts_five_model_expansion.md) |
-| Selected full-vector source-cache surface | Nine VLMs, with fixed-target control, pairing-hierarchy, held-out-seed and permutation extensions, fresh source-context forwards | 1,768 cell runs, 5,160 tensors, 1,290 analyses, including 96 repeated analyses each in Notes 0048 and 0049; calibration repeats/failed attempts separately counted | In 1,278 partition-resolved analyses every pre-image effect is zero and 1,272 argmaxes are image tokens; correspondence, vector length and direction remain distinct | targeted localization and transformation-conditioned repetition; executed counts are not independent stimuli | [Note 0049](research_notes/0049_fixed_fraction_map_seed_transfer.md) |
+| Selected full-vector source-cache surface | Nine VLMs, with fixed-target control, pairing-hierarchy, held-out-seed and permutation extensions, fresh source-context forwards | 3,816 cell runs, 11,304 tensors, 2,826 analyses, including 96 repeated analyses each in Notes 0048 and 0049; calibration repeats/failed attempts separately counted | In 2,814 partition-resolved analyses every pre-image effect is zero and 2,808 argmaxes are image tokens; correspondence, vector length and direction remain distinct | targeted localization and transformation-conditioned repetition; executed counts are not independent stimuli | [Note 0060](research_notes/0060_controlled_overlap_cache_correspondence.md) |
 | Cross-model direct aggregate | Nine-model four-pair core, nested earlier lengths, and two-model control/pairing extensions, complete first-step vocabulary | 104 factorial points, 416 cells, 1,664 sidecars | Every direct after-factorial is non-identical; balanced readout dominance is model-, pair-, generator-, and probe-dependent | balanced nine-architecture core plus bounded two-model extensions | [Note 0041](research_notes/0041_fastvlm_ninth_model_replication.md) |
 | Four-pair prompt robustness core | Eight VLMs on `b_c`, `c_d`, `d_e`, and `e_f`, fresh direct probes | 32 model/source-pair audit units, 128 cell runs, 2,048 sidecars | All 512 baseline sidecars repeat bitwise; generated patterns agree over all four pairs in 39/64 records, balanced-axis dominance in 4/64, and both in 2/64 | eight-model four-pair categorical versus distributional replication matrix | [Note 0038](research_notes/0038_ministral3_eighth_model_replication.md) |
 | Phi-3.5 Vision full expansion | Phi-3.5 Vision 4bit on four source pairs, fresh direct probes and source-only ACK | 16 standard direct cells and 64 sidecars; 16 prompt cells and 256 sidecars; 16 ACK cells, 48 tensors, 12 full-vector analyses | Scalar ACK maxima are early positive `keys` in 4/4; all selected full tensors are spatial-dominant; cross-pair direction alignment is weak and image-token partition is unresolved | sixth-architecture scalar-locus versus vector-direction replication | [Note 0035](research_notes/0035_six_model_four_pair_completion_and_phi_full_vector.md) |
@@ -74,8 +75,8 @@ the same four factorial cells are not independent samples.
    layer/component/sign, LFM2 exposes six hybrid-attention cache entries, and
    Granite changes layer/component/sign across pairs. Ministral uses `keys` in
    4/4 while changing exact layer and sign.
-5. Across 1,290 selected full-vector cache analyses in nine VLMs, the 1,278
-   partition-resolved analyses have zero pre-image effects and 1,272 interaction
+5. Across 2,826 selected full-vector cache analyses in nine VLMs, the 2,814
+   partition-resolved analyses have zero pre-image effects and 2,808 interaction
    maxima in image tokens. In Note 0042's 64 analyses, image-region balanced
    dominance is spatial/palette/interaction in 54/10/0, versus 56/8/0 over the
    whole effective tensor; region conventions are not interchangeable.
@@ -89,7 +90,9 @@ the same four factorial cells are not independent samples.
    anchor repeats; both regions have dominance counts 222/161/1. The sole
    interaction-dominant case is narrowly so, at L12 keys for
    `stochastic_sparse_dense_r4` under map 20261018. These are executed,
-   dependent observations.
+   dependent observations. Note 0060 adds 1,536 target analyses: image-region
+   dominance is 894/642/0, versus 893/643/0 over the whole tensor. All new
+   pre-image effects are zero and all new interaction maxima are image tokens.
 6. A generated letter or top-k set can remain fixed while the complete
    distribution changes; visible-label equality is not distribution equality.
 7. Across eight models and four prompt-audited source pairs, generated semantic
@@ -217,7 +220,19 @@ the same four factorial cells are not independent samples.
     effective token partitions also match. Independent saved-array verification
     observes zero difference over 19,513,344 scalar pairs. These are separately
     counted calibration repeats, not new experimental factorials or evidence
-    of correspondence at zero overlap. No experimental panel is launched.
+    of correspondence at zero overlap. That Note 0058 calibration-only stage
+    did not launch the experimental panel.
+
+28. The registered controlled-overlap cache panel completes all 2,048 cells
+    after 384 exact same-process calibration comparisons. Five of six M(0)
+    exploratory ranges are above zero, including all image views and
+    post-image L12/L23 (+0.261395 / +0.218293). All six D ranges span zero,
+    with 28/48 family differences negative. Image intermediate means dip
+    below both endpoints, and same-map margins remain larger. Zero exact
+    content-coordinate coincidence does not eliminate this measured
+    development correspondence; it does not establish learned or semantic
+    invariance. Similar endpoint scores coexist with image direction cosine
+    medians of 0.069-0.081 and near-unit norm ratios.
 
 ### Provisional
 
@@ -367,11 +382,18 @@ the same four factorial cells are not independent samples.
   transferred directly to resampled processor pixels or cache coordinates.
 - Replay lengths are nested contexts, not independent stimulus replicates.
 - Note 0058's 128 forwards / 384 tensors are historical calibration replays,
-  excluded from experimental selected-cache counts. Passing that gate does
-  not execute or automatically release the registered 2,048-cell panel. Repeat
-  the full calibration in the later panel process; today's qualification does
-  not license runtime drift. Twelve cache endpoints are registered before new
-  overlap-cache outcomes, but their implementation is still a launch gate.
+  excluded from experimental selected-cache counts. Note 0059 separately
+  released the tested implementation before outcomes, and Note 0060 repeated
+  all 128 cells / 384 tensors in the panel process before its 2,048 experimental
+  cells. These two calibration runs are distinct, separately counted repeats.
+  Thirty-eight measurement/config files remained unchanged after release.
+- Note 0060's twelve ranges are registered development summaries, not
+  validated coverage or untouched confirmation. All six D ranges spanning
+  zero do not establish equivalence or no overlap effect. Zero exact source
+  coincidence does not remove shared local statistics, repeated colors or
+  receptive-field mixing; each map still fixes 25% of its own content.
+  The intermediate dips and 29/96 negative primary family values remain
+  visible. No score ratio or range-exclusion difference proves causal gain.
 - Notes 0055-0056 reuse development sources and change spatial arrangement
   with overlap. The 28 maps are coupled within four mask blocks, not 28
   independent images. Within-block gates do not remove between-level spectral
@@ -411,18 +433,19 @@ The approved preprint scope is recorded in
 It is not an evidence unit or a completed measurement registration. Its
 confirmation cohort is not generated or sealed; all existing images/maps are
 development material for the overlap study. Its bounded input Phase 1 is now
-registered and complete in Notes 0053-0056; all direct/cache observation counts
-above are unchanged. Notes 0057-0058 now register the cache study and complete
-historical calibration, without experimental panel capture or automatic release.
+registered and complete in Notes 0053-0056. Notes 0057-0061 now complete the
+calibrated cache study and independently verified panel. Direct-probe counts
+remain unchanged. Phase 3 is eligible for separate specification, not launched.
 
-1. Implement and fixture-test the registered FastVLM panel capture/analysis,
-   commit before outcomes, then repeat calibration in the panel process before
-   capture. Preserve all masks, levels, source identities, family signs and
-   twelve endpoints from Note 0057; do not select them after cache outcomes.
-2. Carry input/processor baselines, between-level spectra and the nonzero
-   processor zero-overlap point estimate into that comparison. Later isolate
-   simple resizing/mixing baselines before attributing larger cache scores to
-   learning or a specifically multimodal mechanism.
+1. Register a compact non-learned local-feature/pooling baseline package and
+   no-model calibration, retaining all six cache views and family exceptions
+   from Note 0060. Fix definitions, scales, normalization and budget before
+   scoring; raw permutation-invariant features provide a zero-interaction
+   negative calibration, with direction unavailable rather than scored zero.
+2. Carry raw/processor baselines and between-level spectra into that comparison.
+   Qualify encoder/projector observations separately before interpreting
+   representation-path profiles. Neither larger cache scores nor a baseline
+   gap alone identifies learning or a specifically multimodal mechanism.
 3. Add more stochastic, fractal, and provenance-controlled natural-image
    pairing families; evaluate leave-one-pairing-family-out transfer.
 4. Compare input-conditioned direction profiles in accepted matched blocks;

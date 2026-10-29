@@ -142,11 +142,12 @@ generator-pairing extensions add independent fractal pairs, matched frequency
 and natural controls, and 16 two-seed geometry/stochastic pairing units. The
 wider valid direct surface contains 104 factorial points, 416 cell runs, and
 1,664 complete-vocabulary sidecars, with non-identical after-cell distributions
-in every factorial. The selected full-vector surface contains 1,290 analyses
-from 1,768 source cells and 5,160 tensors, including 96 repeated analyses each
-in Notes 0048 and 0049; these are not independent stimuli. Of these, 1,278
-have resolved token partitions, including 1,278/1,278 zero pre-image effects
-and 1,272/1,278 image-position interaction maxima.
+in every factorial. The selected full-vector surface contains 2,826 analyses
+from 3,816 source cells and 11,304 tensors, including 96 repeated analyses each
+in Notes 0048 and 0049; these are not independent stimuli. Of these, 2,814
+have resolved token partitions, including 2,814/2,814 zero pre-image effects
+and 2,808/2,814 image-position interaction maxima. Calibration repeats remain
+separate from these experimental counts.
 FastVLM's original 12 fixed targets are
 all spatial-dominant and image-localized under a validated `llava_qwen2`
 single-image map. In the Qwen/Ministral hierarchy, all eight exact matching
@@ -231,7 +232,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0058 encode the audited claim
+Status: the evidence matrix and Notes 0027-0061 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -252,12 +253,14 @@ source-coordinate accounting now identifies a positive shared-fixed aggregate
 with a negative noncoincident remainder, without erasing family exceptions.
 The controlled fixed-site overlap and mask/destination input study is complete,
 with pre-measurement registration and all unchanged processor gates passed.
-Phase 2 registration and historical calibration are now complete: all 128
-source cells / 384 tensors reproduce exactly, independently verified. The
-experimental controlled-overlap panel is not implemented or launched. The
-current priority is its tested capture/analysis implementation under Note 0057,
-followed by fresh in-process calibration before experimental capture, then
-held-out pairing-family transfer, neutral wording/order/verbalizer controls,
+Phase 2 is complete after fresh same-process calibration: all 384 historical
+tensors reproduce exactly, followed by 2,048 experimental cells and independent
+verification of twelve endpoints. Five zero-overlap ranges lie above zero;
+all six overlap-difference ranges span zero without establishing absence.
+The current priority is a separately registered simple-processing baseline
+package and calibrated representation-path observations, followed by the
+planned prompt/suffix controls and untouched confirmation. Longer-term work
+includes held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.
 
@@ -272,7 +275,7 @@ bounded Phase 1 design; Notes 0055-0056 report its completed input measurements.
 | Notes | Package | Status |
 | --- | --- | --- |
 | 0052-0056 | Controlled fixed-overlap construction, oracle and input audit | Complete; 896/896 blocks eligible; four descriptive endpoints independently verified |
-| 0057-0061 | Calibrated FastVLM cache comparison | Registration complete; 128-cell/384-tensor calibration PASS; experimental panel not implemented or released |
+| 0057-0061 | Calibrated FastVLM cache comparison | Complete; fresh 384-tensor calibration exact; 2,048 experimental cells / twelve endpoints independently verified |
 | 0062-0066 | Simple-processing baselines and representation path | Not started |
 | 0067-0071 | Prompt/suffix/readout controls and final registration | Not started |
 | 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed |
@@ -284,7 +287,10 @@ all conditions for a separately registered cache stage, without launching it.
 Phase 1 used no p-values or equivalence test; exploratory uncertainty and its
 limits were fixed before outcomes. Note 0057 now fixes the twelve cache
 endpoints, exploratory uncertainty, calibration and 2,048-cell experimental
-budget. Note 0058 qualifies historical replay only, with no automatic release.
-The later panel needs a committed/tested implementation and its own fresh
-128-cell calibration. Confirmation precision requirements remain open.
+budget. Note 0058 qualified historical replay only. Note 0059 separately
+released the committed/tested implementation; Note 0060 completes its fresh
+128-cell calibration and experimental panel. Note 0061 retains all views and
+family exceptions and moves to baseline registration, without expanding the
+overlap sample or automatically launching Phase 3. Confirmation precision
+requirements remain open.
 The original scope JSON remains a historical record, not completed confirmation.

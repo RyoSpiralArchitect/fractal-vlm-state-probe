@@ -65,6 +65,21 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+The latest measured cache package is
+[0060 Controlled Overlap Cache Correspondence](../docs/research_notes/0060_controlled_overlap_cache_correspondence.md):
+[summary](research_notes/0060_controlled_overlap_cache_panel/summary.json),
+[cells](research_notes/0060_controlled_overlap_cache_panel/cells.jsonl),
+[calibration](research_notes/0060_controlled_overlap_cache_panel/calibration.jsonl),
+[factorials](research_notes/0060_controlled_overlap_cache_panel/factorials.jsonl),
+[vectors](research_notes/0060_controlled_overlap_cache_panel/vectors.jsonl),
+[scores](research_notes/0060_controlled_overlap_cache_panel/scores.jsonl), and
+[directions](research_notes/0060_controlled_overlap_cache_panel/directions.jsonl).
+All 2,048 cells and twelve endpoints independently verify after fresh exact
+calibration. Five zero-overlap ranges lie above zero; all six overlap-difference
+ranges span zero. This is development evidence, not equivalence, causal gain
+or confirmation. Tensor/image/model payloads remain local. The bounded next
+stage is recorded in [Note 0061](../docs/research_notes/0061_controlled_overlap_phase2_decision.md).
+
 1. Read the note first.
 2. Open the linked example JSON for the machine-readable evidence shape.
 3. Treat paths inside JSON as provenance from the original local `runs/`

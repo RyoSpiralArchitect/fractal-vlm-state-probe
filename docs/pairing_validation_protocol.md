@@ -908,8 +908,8 @@ then requires all 128 Note 0049 anchor cells / 384 tensors to match exactly,
 including actual prepared inputs, suffix IDs, dtype, shape and token partition.
 No retry/resume, relaxed tolerance, cell replacement or automatic panel release.
 
-The future panel retains 512 factorial blocks: all 32 sources on four reference
-maps and 16 test sources on 24 test maps. Its 2,048 experimental cells / 6,144
+At registration, the planned panel retains 512 factorial blocks: all 32 sources
+on four reference maps and 16 test sources on 24 test maps. Its 2,048 experimental cells / 6,144
 tensors are planned, not executed here. Commit and fixture-test capture and
 analysis before panel outcomes. Freeze 256 reference-source cell receipts
 before test-source capture, and repeat 128-cell calibration in the same process
@@ -931,5 +931,30 @@ records PASS for no-model preflight and historical calibration. All 384 tensor
 pairs and all 128 prepared inputs/suffixes/layouts are exact; an independent
 NPZ reload verifies 19,513,344 scalar pairs with maximum difference zero.
 There were 128 calibration source-context forwards, zero experimental panel
-cells and zero direct probes. The experimental cache panel remains unimplemented
-and unstarted; confirmation remains not generated and not sealed.
+cells and zero direct probes at that calibration-only stage. Confirmation
+remains not generated and not sealed.
+
+### Stage 4L: Controlled-Overlap Cache Panel Execution
+
+[Note 0059](research_notes/0059_controlled_overlap_cache_panel_release.md) and
+[`controlled_overlap_cache_release_v1.json`](../configs/controlled_overlap_cache_release_v1.json)
+release the unchanged Stage 4K design with tested capture/analysis at `3be6645`,
+before panel outcomes. The original Phase 2 config remains byte-identical.
+Required q levels are zero and 1/4; a missing intermediate or diagonal score
+does not remove complete primary endpoints. Exact-zero vectors and cancelling
+references remain unavailable. There is no retry, resume or confirmation launch.
+
+[Note 0060](research_notes/0060_controlled_overlap_cache_correspondence.md)
+reports COMPLETE: 128 same-process calibration cells / 384 tensors exact,
+then 256 frozen reference cells and 1,792 test cells. The reference seal is
+after total ordinal 384; first test ordinal 385. All 2,048 experimental cells,
+6,144 tensor sidecars, 1,536 target factorials, 3,072 region vectors and 168
+score matrices pass independent verification. All twelve endpoints are
+available, with no family/map filtering. Actual source suffix is `The image`
+in every panel cell; no direct probe is added.
+
+Five of six M(0) exploratory ranges lie above zero; all six high-minus-zero
+ranges span zero. These do not establish confirmation, absence, equivalence
+or causal processing gain. [Note 0061](research_notes/0061_controlled_overlap_phase2_decision.md)
+retains the full result surface and calls for separately registered
+non-learned processing baselines. That next package remains unlaunched.

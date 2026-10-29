@@ -57,10 +57,16 @@ Both zero-overlap exploratory ranges include zero, and both increases are
 negative in two of eight families. Zero raw-coordinate coincidence does not
 force a zero processor-space margin. This is reused-data input evidence,
 not absence, semantic invariance or a cache mechanism. Notes 0055-0056 are the
-latest experimental input results. Phase 2 is now registered in Note 0057,
-and Note 0058 reproduces all 384 historical tensors across 128 calibration
-cells exactly, including prepared inputs and suffix/layout checks. The new
-controlled-overlap cache panel is not started or automatically released.
+latest experimental input results. Phase 2 is now complete in Notes 0059-0061:
+after 384 exact same-process calibration comparisons, all 2,048 experimental
+cells and twelve registered endpoints pass independent verification. At zero
+coordinate coincidence, five of six cache-margin exploratory ranges lie above
+zero; post-image L12/L23 means are +0.261395 / +0.218293. All six paired
+25%-minus-zero ranges span zero, without establishing equivalence or absence.
+Similar endpoint margins coexist with markedly changed vector directions and
+larger same-map image margins. The next question is which profiles already
+follow non-learned local processing and pooling, not whether these scores
+establish semantic invariance or causal gain. Phase 3 is not launched.
 The Note 0052 plan continues toward approximately Note 0080, with an untouched
 confirmation cohort still neither generated nor sealed.
 The current target is directly measurable:
@@ -219,12 +225,12 @@ features, mapping the saved 1,474-token history to 3,073 effective cache
 positions: 51 pre-image, 2,916 image, and 106 post-image. Unknown mismatches and
 multi-run layouts still fail closed.
 
-The selected full-vector surface now contains 1,768 source-only fresh forwards,
-5,160 target tensor sidecars, and 1,290 layer-by-pair analyses. These executed
+The selected full-vector surface now contains 3,816 source-only fresh forwards,
+11,304 target tensor sidecars, and 2,826 layer-by-pair analyses. These executed
 panel counts include 128 cells / 384 tensors / 96 analyses repeated in each
-of Notes 0048 and 0049; they are not counts of independent stimuli. Of the 1,278
-analyses with identified token partitions, 1,278/1,278 pre-image interactions are
-exactly zero, 1,272/1,278 interaction argmaxes are image tokens, and 1,272/1,278
+of Notes 0048 and 0049; they are not counts of independent stimuli. Of the 2,814
+analyses with identified token partitions, 2,814/2,814 pre-image interactions are
+exactly zero, 2,808/2,814 interaction argmaxes are image tokens, and 2,808/2,814
 image-token energy fractions exceed 0.9. Calibration repeats and failed
 calibration attempts are counted separately. In Note 0042's 64 analyses,
 spatial/palette/interaction dominance is 54/10/0 in image regions and 56/8/0
@@ -239,6 +245,9 @@ Note 0049 adds 384 analyses with dominance 222/161/1 under both conventions.
 The narrowly interaction-dominant case is map 20261018, sparse/dense dots r4,
 L12 keys; it is retained rather than generalized into a dominant mechanism.
 Predictable interaction direction does not imply interaction-axis dominance.
+Note 0060 adds 1,536 controlled-overlap analyses: image-region dominance is
+894/642/0, versus 893/643/0 over the whole effective tensor. Its calibration
+repeats are separately counted, as are Note 0058's earlier qualification cells.
 
 Direction is more specific than energy and more specific than broad visual
 class. The earlier near-zero pooled-control cosine mixed unlike controls; the
@@ -364,9 +373,20 @@ descriptive cache endpoints and replay 128 historical calibration cells.
 All 384 selected tensors match exactly, including independent NPZ-byte checks;
 all prepared inputs and source suffixes reproduce. These are separately
 counted calibration forwards, not new experimental cache observations.
-The 2,048-cell controlled-overlap panel is planned but not implemented or
-released; it requires its own tested implementation and fresh in-process
-calibration before capture. Input/cache score differences alone are not causal gain.
+Notes 0059-0061 now complete the tested and committed panel implementation,
+fresh same-process calibration and all 2,048 experimental cells. All 3,072
+region vectors, 168 score matrices and twelve primary endpoints independently
+reproduce. Zero-overlap margins are positive at all six cache views; five
+exploratory ranges exclude zero, with L1 post-image imprecise. Increasing
+overlap to 25% has four negative and two positive mean differences, with all
+six ranges spanning zero and 28/48 family differences negative. No equivalence
+or absence claim follows. Image-region intermediate means dip below both
+endpoints; the same-map controls remain much stronger descriptively. Near-unit
+image norm ratios coexist with cross-level direction cosine medians of
+0.069-0.081. These are conditional correspondence profiles, not invariant
+vectors. Note 0061 moves the scope to separately registered simple-processing
+baselines; no Phase 3 or confirmation run is launched. Input/cache score
+differences alone are not causal gain.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
@@ -383,10 +403,16 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0058](docs/research_notes/0058_controlled_overlap_cache_calibration.md)
-for the completed historical cache calibration and the still-closed experimental
-panel boundary. [Note 0057](docs/research_notes/0057_controlled_overlap_cache_registration.md)
-records its pre-outcome gate, planned budget and twelve descriptive endpoints.
+Start with [Note 0060](docs/research_notes/0060_controlled_overlap_cache_correspondence.md)
+for the complete calibrated cache panel, all twelve endpoints and retained
+exceptions. [Note 0061](docs/research_notes/0061_controlled_overlap_phase2_decision.md)
+separates what the result resolves from the next, still-unlaunched baseline stage.
+[Note 0059](docs/research_notes/0059_controlled_overlap_cache_panel_release.md)
+records the pre-outcome implementation release;
+[Note 0058](docs/research_notes/0058_controlled_overlap_cache_calibration.md)
+contains the earlier historical calibration.
+[Note 0057](docs/research_notes/0057_controlled_overlap_cache_registration.md)
+records the original gate, budget and twelve descriptive endpoints.
 [Note 0056](docs/research_notes/0056_controlled_overlap_input_correspondence.md)
 for the completed Phase 1 result, four descriptive endpoints, family exceptions
 and the boundary before cache measurement.
@@ -1107,6 +1133,9 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0056: Controlled Overlap Input Correspondence](docs/research_notes/0056_controlled_overlap_input_correspondence.md)
 - [Research Note 0057: Controlled Overlap Cache Registration](docs/research_notes/0057_controlled_overlap_cache_registration.md)
 - [Research Note 0058: Controlled Overlap Cache Calibration](docs/research_notes/0058_controlled_overlap_cache_calibration.md)
+- [Research Note 0059: Controlled Overlap Cache Panel Release](docs/research_notes/0059_controlled_overlap_cache_panel_release.md)
+- [Research Note 0060: Controlled Overlap Cache Correspondence](docs/research_notes/0060_controlled_overlap_cache_correspondence.md)
+- [Research Note 0061: Controlled Overlap Phase 2 Decision](docs/research_notes/0061_controlled_overlap_phase2_decision.md)
 
 ## Claim Boundary
 

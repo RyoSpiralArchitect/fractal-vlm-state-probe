@@ -2,8 +2,8 @@
 
 Date: 2026-10-29
 
-Status: implementation and release contract to be committed before new panel
-outcomes. This releases one bounded development study, not confirmation.
+Status: implementation and release contract committed at `3be6645` before
+new panel outcomes. This releases one bounded development study, not confirmation.
 
 ## Unchanged Design
 
@@ -105,3 +105,14 @@ python3 scripts/analyze_controlled_overlap_cache_panel.py \
 Every output root must be fresh. Confirmation remains not generated and not
 sealed. Notes 0060-0061 will report results and the bounded next-stage decision,
 including failures or unavailable endpoints if they occur.
+
+The pre-outcome implementation passed 445 repository tests. The new no-model
+preflight passed with zero forwards and no model weights loaded. Its frozen
+specification SHA-256 is
+`fc6e340ef9b0a770c86a2f6104a967f7ef8b0f0c7d56a679b3c91277cf7a1579`.
+The registration includes 38 measurement/analysis code or config hashes.
+
+Completed execution: [Note 0060](0060_controlled_overlap_cache_correspondence.md)
+reports the full calibrated panel and independent verification;
+[Note 0061](0061_controlled_overlap_phase2_decision.md) records the next-stage
+decision. No registered measurement or analysis file was changed after release.
