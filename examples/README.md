@@ -65,6 +65,20 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+The measured non-learned panel is
+[0065 Non-Learned Processing Correspondence](../docs/research_notes/0065_nonlearned_processing_correspondence.md):
+[summary](research_notes/0065_nonlearned_processing_panel/summary.json),
+[portable interactions](research_notes/0065_nonlearned_processing_panel/interaction_vectors.npz),
+[vector receipts](research_notes/0065_nonlearned_processing_panel/vectors.jsonl),
+[scores](research_notes/0065_nonlearned_processing_panel/scores.jsonl), and
+[regenerated feature checks](research_notes/0065_nonlearned_processing_panel/feature_checks.jsonl).
+All 2,048 cells and 24 endpoints are retained; 22 endpoints are available.
+Simple pooling has positive zero-overlap correspondence, without establishing
+a full cache-profile match, equivalence or learning attribution. The complete
+small-vector archive supports primary replay without original images/weights;
+full feature reconstruction needs the qualified source and processor inventory.
+See [Note 0066](../docs/research_notes/0066_nonlearned_baseline_decision.md) for the scope decision.
+
 The first Phase 3 calibration package is
 [0063 Non-Learned Processing Calibration](../docs/research_notes/0063_nonlearned_processing_calibration.md):
 [summary](research_notes/0063_nonlearned_processing_calibration/summary.json),

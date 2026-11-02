@@ -2,8 +2,8 @@
 
 Date: 2026-11-03
 
-Status: capture, analysis and independent publication implementation to be
-committed before new real-image baseline scores. One bounded development
+Status: capture, analysis and independent publication implementation committed
+at `99fb45c` before new real-image baseline scores. One bounded development
 panel is released; encoder/projector paths and confirmation remain closed.
 
 ## Merge And Unchanged Registration
@@ -141,3 +141,18 @@ analysis and independent numerical oracle, missingness, same-map controls,
 reference ordering, altered metadata, hash failures and no-resume behavior.
 Notes 0065-0066 will report actual results and the bounded decision, including
 failure or unavailable views. No new confirmation cohort is generated/sealed.
+
+Completed execution: [Note 0065](0065_nonlearned_processing_correspondence.md)
+reports the full measured and independently regenerated panel;
+[Note 0066](0066_nonlearned_baseline_decision.md) records its scope decision.
+All 492 tests passed before release, and all 51 frozen files remained unchanged.
+The no-processor preflight passed with frozen specification SHA-256
+`5c8ab20ad760449bd293440a2ebb3fbbe242e6fd2f124499ebe39d4569e3a346`.
+
+For the actual publication command, `--output-root` was
+`runs/nonlearned_processing_panel_verified_v1`, keeping its live progress
+record local. The eleven completed summary/ledger/archive/figure files were
+then copied byte-for-byte to the example directory above, without changing
+any result or adding a processor call. The progress/export receipts are
+retained alongside verification. This is artifact transport, not a rerun or
+an amendment to any registered feature or estimator.
