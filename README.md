@@ -66,7 +66,11 @@ zero; post-image L12/L23 means are +0.261395 / +0.218293. All six paired
 Similar endpoint margins coexist with markedly changed vector directions and
 larger same-map image margins. The next question is which profiles already
 follow non-learned local processing and pooling, not whether these scores
-establish semantic invariance or causal gain. Phase 3 is not launched.
+establish semantic invariance or causal gain. Phase 3 now begins with Notes
+0062-0063: six non-learned feature paths on raw/processor starts are fixed,
+all 84 synthetic oracle checks pass and 128 historical processor outputs
+reproduce exactly. No model forward or real-image baseline correspondence
+score is added. The full baseline panel still needs its separate release.
 The Note 0052 plan continues toward approximately Note 0080, with an untouched
 confirmation cohort still neither generated nor sealed.
 The current target is directly measurable:
@@ -385,7 +389,11 @@ endpoints; the same-map controls remain much stronger descriptively. Near-unit
 image norm ratios coexist with cross-level direction cosine medians of
 0.069-0.081. These are conditional correspondence profiles, not invariant
 vectors. Note 0061 moves the scope to separately registered simple-processing
-baselines; no Phase 3 or confirmation run is launched. Input/cache score
+baselines. Notes 0062-0063 now complete their definitions and no-model
+calibration: 84 synthetic feature comparisons and 128 exact processor checks,
+with raw global-moment zero directions retained as unavailable. This does not
+measure baseline correspondence or release encoder/projector/confirmation
+paths. Input/cache score
 differences alone are not causal gain.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
@@ -403,7 +411,12 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0060](docs/research_notes/0060_controlled_overlap_cache_correspondence.md)
+Start with [Note 0063](docs/research_notes/0063_nonlearned_processing_calibration.md)
+for the completed first Phase 3 calibration and still-closed real-image panel.
+[Note 0062](docs/research_notes/0062_nonlearned_processing_registration.md)
+fixes the six feature paths, two input starts and 24 future endpoints.
+
+For the latest measured cache results, read [Note 0060](docs/research_notes/0060_controlled_overlap_cache_correspondence.md)
 for the complete calibrated cache panel, all twelve endpoints and retained
 exceptions. [Note 0061](docs/research_notes/0061_controlled_overlap_phase2_decision.md)
 separates what the result resolves from the next, still-unlaunched baseline stage.
@@ -1136,6 +1149,8 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0059: Controlled Overlap Cache Panel Release](docs/research_notes/0059_controlled_overlap_cache_panel_release.md)
 - [Research Note 0060: Controlled Overlap Cache Correspondence](docs/research_notes/0060_controlled_overlap_cache_correspondence.md)
 - [Research Note 0061: Controlled Overlap Phase 2 Decision](docs/research_notes/0061_controlled_overlap_phase2_decision.md)
+- [Research Note 0062: Non-Learned Processing Baseline Registration](docs/research_notes/0062_nonlearned_processing_registration.md)
+- [Research Note 0063: Non-Learned Processing Calibration](docs/research_notes/0063_nonlearned_processing_calibration.md)
 
 ## Claim Boundary
 

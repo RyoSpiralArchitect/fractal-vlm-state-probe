@@ -957,4 +957,27 @@ Five of six M(0) exploratory ranges lie above zero; all six high-minus-zero
 ranges span zero. These do not establish confirmation, absence, equivalence
 or causal processing gain. [Note 0061](research_notes/0061_controlled_overlap_phase2_decision.md)
 retains the full result surface and calls for separately registered
-non-learned processing baselines. That next package remains unlaunched.
+non-learned processing baselines. That package was not launched by the
+Phase 2 report; its subsequent calibration-only release is Stage 4M below.
+
+### Stage 4M: Non-Learned Feature Definitions And Calibration
+
+[Note 0062](research_notes/0062_nonlearned_processing_registration.md) and
+[`nonlearned_processing_phase3_v1.json`](../configs/nonlearned_processing_phase3_v1.json)
+fix six feature paths on two starts at `5b44429`, before new baseline scores.
+The release is calibration only. Future M(0) and high-minus-zero endpoints
+retain all twelve views, including algebraically zero raw global moments,
+with fixed 24-endpoint exploratory tail allocation. Paired subtraction is a
+new numerical convention for these features, not a rewrite of earlier vectors.
+
+[Note 0063](research_notes/0063_nonlearned_processing_calibration.md) records
+passing no-processor/no-model preflight, 84 synthetic feature/oracle pairs,
+six linear checks, four nonlinear-order witnesses and one exact raw zero
+control. All 128 historical processor cells reproduce pixel hashes and
+non-pixel payloads exactly. No baseline feature is computed on those source
+images; new model forwards and experimental baseline scores are zero.
+Synthetic arrays are independently reloaded, while historical processor
+pixels have receipt verification rather than a second tensor reload.
+Passing does not release the real-image panel, encoder/projector extraction
+or confirmation. The full capture/analysis/publication paths still need a
+separate committed/tested release and fresh processor calibration.
