@@ -232,7 +232,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0061 encode the audited claim
+Status: the evidence matrix and Notes 0027-0063 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -257,8 +257,12 @@ Phase 2 is complete after fresh same-process calibration: all 384 historical
 tensors reproduce exactly, followed by 2,048 experimental cells and independent
 verification of twelve endpoints. Five zero-overlap ranges lie above zero;
 all six overlap-difference ranges span zero without establishing absence.
-The current priority is a separately registered simple-processing baseline
-package and calibrated representation-path observations, followed by the
+The non-learned baseline definitions and no-model calibration are now complete:
+84 synthetic oracle checks and 128 exact historical processor comparisons,
+with zero new real-image baseline scores or model forwards. The current
+priority is the separately released full-panel capture/analysis/verification
+implementation with fresh processor calibration, then qualified
+representation-path observations, followed by the
 planned prompt/suffix controls and untouched confirmation. Longer-term work
 includes held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
@@ -276,7 +280,7 @@ bounded Phase 1 design; Notes 0055-0056 report its completed input measurements.
 | --- | --- | --- |
 | 0052-0056 | Controlled fixed-overlap construction, oracle and input audit | Complete; 896/896 blocks eligible; four descriptive endpoints independently verified |
 | 0057-0061 | Calibrated FastVLM cache comparison | Complete; fresh 384-tensor calibration exact; 2,048 experimental cells / twelve endpoints independently verified |
-| 0062-0066 | Simple-processing baselines and representation path | Not started |
+| 0062-0066 | Simple-processing baselines and representation path | Definitions and no-model calibration complete; real-image panel and encoder/projector paths not released |
 | 0067-0071 | Prompt/suffix/readout controls and final registration | Not started |
 | 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed |
 | 0076-0080 | Independent replay, negative-case audit and manuscript | Not started |
@@ -291,6 +295,8 @@ budget. Note 0058 qualified historical replay only. Note 0059 separately
 released the committed/tested implementation; Note 0060 completes its fresh
 128-cell calibration and experimental panel. Note 0061 retains all views and
 family exceptions and moves to baseline registration, without expanding the
-overlap sample or automatically launching Phase 3. Confirmation precision
+overlap sample. Notes 0062-0063 then register six paths on two input starts
+and complete their bounded calibration, without automatically releasing the
+future real-image panel. Confirmation precision
 requirements remain open.
 The original scope JSON remains a historical record, not completed confirmation.

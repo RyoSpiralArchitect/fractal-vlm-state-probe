@@ -65,6 +65,17 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+The first Phase 3 calibration package is
+[0063 Non-Learned Processing Calibration](../docs/research_notes/0063_nonlearned_processing_calibration.md):
+[summary](research_notes/0063_nonlearned_processing_calibration/summary.json),
+[84 feature checks](research_notes/0063_nonlearned_processing_calibration/feature_checks.jsonl),
+[85 synthetic arrays](research_notes/0063_nonlearned_processing_calibration/synthetic_features.npz),
+and [128 processor receipts](research_notes/0063_nonlearned_processing_calibration/processor_checks.jsonl).
+These qualify the registered feature implementation and processor path, not
+baseline correspondence. No model forwards or real-image baseline scoring;
+the full panel is not released. Synthetic arrays are included; historical
+processor pixel arrays are not stored or independently reloaded.
+
 The latest measured cache package is
 [0060 Controlled Overlap Cache Correspondence](../docs/research_notes/0060_controlled_overlap_cache_correspondence.md):
 [summary](research_notes/0060_controlled_overlap_cache_panel/summary.json),

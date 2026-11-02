@@ -182,3 +182,49 @@ def test_design_keeps_baseline_panel_and_confirmation_closed(config):
     assert config["planned_panel"]["interaction_vectors"] == 512 * 12
     assert config["confirmation_cohort"] == "not_generated_not_sealed"
     assert config["new_model_forwards"] == 0
+
+
+def test_processor_failure_retains_attempt_and_does_not_resume(
+    tmp_path, monkeypatch, config
+):
+    for key in ("HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE"):
+        monkeypatch.setenv(key, "1")
+    frozen = {
+        "config": config,
+        "code_sha256": {},
+        "source_sha256": {},
+        "processor_jobs": [{"artifact": {}, "pair_id": "example_r1", "cell": "mm"}],
+    }
+    monkeypatch.setattr(runner, "specification", lambda: copy.deepcopy(frozen))
+    preflight, root = tmp_path / "preflight", tmp_path / "calibration"
+    runner.run("preflight", preflight)
+    monkeypatch.setattr(
+        runner, "synthetic_calibration", lambda c: ({"feature_checks": []}, {})
+    )
+    monkeypatch.setattr(
+        runner, "qualified_sources", lambda: ({}, None, None, None, None)
+    )
+    monkeypatch.setattr(
+        runner,
+        "_checked_artifact",
+        lambda a: (np.zeros((320, 320, 3), dtype=np.uint8), {}),
+    )
+    attempts = []
+
+    def failing_processor(**kwargs):
+        attempts.append(1)
+        raise ValueError("injected processor failure")
+
+    monkeypatch.setattr(
+        runner, "qualified_processor", lambda b: (failing_processor, {})
+    )
+    with pytest.raises(ValueError, match="injected processor failure"):
+        runner.run("calibrate", root, preflight)
+    failure = json.loads((root / "execution_failure.json").read_text())
+    assert failure["attempted_processor_calls"] == 1
+    assert failure["completed_processor_checks"] == 0
+    assert failure["experimental_results_withheld"]
+    assert not (root / "summary.json").exists()
+    with pytest.raises(FileExistsError):
+        runner.run("calibrate", root, preflight)
+    assert len(attempts) == 1

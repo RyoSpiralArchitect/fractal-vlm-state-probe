@@ -2,8 +2,8 @@
 
 Date: 2026-11-02
 
-Status: feature definitions, future estimands and bounded calibration to be
-committed before new experimental baseline scores. This release executes
+Status: feature definitions, future estimands and bounded calibration committed
+at `5b44429` before new experimental baseline scores. This release executes
 calibration only, not the real-image correspondence panel.
 
 ## Question And Scope
@@ -146,3 +146,8 @@ python3 scripts/run_nonlearned_processing_calibration.py calibrate \
 Each output root must be fresh. Note 0063 will report success or failure with
 the actual denominators. Confirmation is still not generated and not sealed.
 This is the first bounded Phase 3 step, not completion of the whole package.
+
+Execution report: [Note 0063](0063_nonlearned_processing_calibration.md)
+records passing preflight, all 84 synthetic feature/oracle comparisons and
+all 128 exact historical processor comparisons. No real-image baseline
+correspondence panel was released, and no registered measurement file changed.
