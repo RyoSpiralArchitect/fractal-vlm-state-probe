@@ -232,7 +232,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0068 encode the audited claim
+Status: the evidence matrix and Notes 0027-0070 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -265,9 +265,11 @@ zero-overlap correspondence; all eleven available D ranges span zero. The
 full cache profile is not reproduced, and no new model forward is added.
 Read-only encoder/projector observation is now qualified on 128 historical
 cells with 384 OFF/ON/OFF contexts, exact selected-cache parity and independent
-sidecar reload. The current priority is a separately registered/released
-representation panel with fresh same-process calibration, followed by the
-planned prompt/suffix controls and untouched confirmation. Longer-term work
+sidecar reload. The separately registered representation panel is now complete
+after fresh same-process calibration: both full visual sites exhibit positive
+zero-overlap correspondence with low within-site cross-level direction cosines.
+The current priority is registration and calibration of prompt/suffix/readout
+controls, before untouched confirmation. Longer-term work
 includes held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.
@@ -285,7 +287,7 @@ bounded Phase 1 design; Notes 0055-0056 report its completed input measurements.
 | 0052-0056 | Controlled fixed-overlap construction, oracle and input audit | Complete; 896/896 blocks eligible; four descriptive endpoints independently verified |
 | 0057-0061 | Calibrated FastVLM cache comparison | Complete; fresh 384-tensor calibration exact; 2,048 experimental cells / twelve endpoints independently verified |
 | 0062-0066 | Simple-processing baselines | Non-learned panel complete with portable replay |
-| 0067-0071 | Representation qualification, prompt/suffix controls and final registration | Historical observation calibration complete; representation scoring and prompt controls not released |
+| 0067-0071 | Representation path, prompt/suffix controls and final registration | Observation qualification and two-site panel complete; prompt/suffix controls and final confirmation registration still open |
 | 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed |
 | 0076-0080 | Independent replay, negative-case audit and manuscript | Not started |
 
@@ -303,8 +305,9 @@ overlap sample. Notes 0062-0063 then register six paths on two input starts
 and complete their bounded calibration, without automatically releasing the
 future real-image panel. Notes 0064-0066 separately release and complete that
 panel, retaining every baseline and all unavailable directions. Representation-
-path qualification is complete for historical calibration in Notes 0067-0068,
-while representation scoring remains unreleased before later prompt/confirmation work;
+path qualification is complete in Notes 0067-0068; Notes 0069-0070 separately
+release and verify the two-site correspondence panel. The next package is
+prompt/suffix control, with teacher forcing requiring its own parity gate;
 note ranges are approximate work packages. Confirmation precision
 requirements remain open.
 The original scope JSON remains a historical record, not completed confirmation.

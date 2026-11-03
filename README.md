@@ -1,8 +1,14 @@
 # Fractal VLM State Probe
 
 Deterministic visual controls, audited multimodal protocols, full-vocabulary
-factorial readouts, and full-vector source-cache contrasts for separating what
+factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
+
+**Latest measurement:** [Note 0070](docs/research_notes/0070_representation_correspondence.md)
+finds positive zero-overlap family margins at both FastVLM visual sites on
+eight development families (encoder +0.035765 / projector +0.034240), despite weak cross-level vector-direction
+preservation (median cosines 0.0868 / 0.0853). This combination is visible
+before language-model cache; it does not establish a causal effect of training.
 
 This project began by asking whether controlled fractal streams change later
 non-visual generation. A cache-prefix audit changed the valid protocol; a
@@ -76,24 +82,27 @@ cache processing. The full cache profile is not reproduced: intermediate
 profiles and cross-level directions differ. Notes 0067-0068 now qualify
 read-only encoder/projector observation: 384 historical OFF/ON/OFF contexts
 preserve prepared inputs, suffix and all selected cache bytes exactly.
-Representation correspondence is not yet measured; its panel needs a separate
-release. This is an observation-path gate, not a claim that learning adds nothing.
+Notes 0069-0070 then measure the two complete visual representations on all
+2,048 cells. Both sites dip at the intermediate overlap, and both high-minus-zero
+exploratory ranges span zero. All 6,144 selected-cache parity pairs match the
+earlier panel exactly. The next gate is prompt/suffix control, not confirmation.
 The Note 0052 plan continues toward approximately Note 0080, with an untouched
 confirmation cohort still neither generated nor sealed.
 The current target is directly measurable:
 
 > Under fresh multimodal forwards, how do controlled input transformations
-> decompose into spatial, palette, and interaction effects across complete
-> prompt-conditioned readout distributions and selected source-cache tensors,
+> decompose into spatial, palette, and interaction effects across qualified
+> visual representations, complete prompt-conditioned readout distributions
+> and selected source-cache tensors,
 > and which marginal effects, categorical patterns, scalar loci, or vector
 > directions actually repeat across models, ordered generator pairings,
 > pairing families, source pairs, and probe formulations?
 
 A generated candidate is the visible answer, not the measured state. The main
 measured object is the aligned source-A/source-B 2x2 contrast itself: first in
-raw and processor space, then over complete readout distributions and selected
-cache tensors. Token roles are used only when the processor-expanded layout is
-identified. An unchanged label therefore does not imply an unchanged
+raw and processor space, then in the qualified visual sites, complete readout
+distributions and selected cache tensors. Token roles are used only when the
+processor-expanded layout is identified. An unchanged label therefore does not imply an unchanged
 distribution, a repeated scalar locus does not imply one vector mechanism, and
 image-token localization does not imply one generator-independent direction.
 
@@ -105,14 +114,15 @@ tensor/cache traces.
 ## Research Shape
 
 The program compares controlled stimulus conditions within the same model and
-keeps four objects separate:
+keeps five objects separate:
 
-1. the transformed input and processor-space perturbation,
-2. the complete first-step readout distribution from a fresh direct probe,
-3. the cache summary or selected full tensor from a separate fresh multimodal
-   source-context forward, retaining the actual response even when it is not
-   the requested `ACK`,
-4. whether any cache reuse path preserves the full multimodal prefix and has a
+1. the transformed input, processor-space perturbation and fixed non-learned features,
+2. the complete encoder/projector tensors observed on a qualified source forward,
+3. the complete first-step readout distribution from a fresh direct probe,
+4. the cache summary or selected full tensor from a fresh multimodal source
+   forward, separate from the direct probe and retaining the actual response
+   even when it is not the requested `ACK`,
+5. whether any cache reuse path preserves the full multimodal prefix and has a
    cache sequence length compatible with its token history.
 
 Every condition is represented as a manifest with frame timestamps, relative
@@ -408,8 +418,11 @@ All eleven D ranges span zero, without equivalence or absence conclusions.
 Local-feature cross-level cosine medians of 0.892-0.920 and their decreasing
 overlap profiles do not reproduce the entire image-cache pattern. A portable
 archive supports score/margin/bootstrap replay without model weights or
-original images. Encoder/projector observation is now calibrated on historical
-cells in Note 0068, but its correspondence panel and confirmation remain unreleased.
+original images. Note 0068 qualifies observation; Note 0070 measures the two
+sites after a fresh same-process calibration. All 16 site-family M(0) means
+are positive, while 7/16 paired overlap differences are negative. Near-unit
+norm ratios coexist with q=0-to-25% cosine medians of 0.0868 / 0.0853.
+The compact score ledgers replay primary summaries; full site arrays remain local.
 Input/cache score differences alone are not causal gain.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
@@ -427,13 +440,14 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0068](docs/research_notes/0068_representation_observation_calibration.md)
-for the latest observation-path calibration and its still-closed representation
-panel. [Note 0067](docs/research_notes/0067_representation_observation_registration.md)
-fixes the exact encoder/projector sites and OFF/ON/OFF acceptance rules.
-The latest measured correspondence result remains
+Start with [Note 0070](docs/research_notes/0070_representation_correspondence.md)
+for all four visual-site endpoints, family exceptions and directional comparisons.
+[Note 0069](docs/research_notes/0069_representation_correspondence_registration.md)
+fixes the panel and its lossless storage budget. [Note 0068](docs/research_notes/0068_representation_observation_calibration.md)
+and [Note 0067](docs/research_notes/0067_representation_observation_registration.md)
+record the separate historical qualification of the two sites.
 [Note 0065](docs/research_notes/0065_nonlearned_processing_correspondence.md)
-with the non-learned panel and its portable interaction archive.
+contains the non-learned panel and its portable interaction archive.
 [Note 0066](docs/research_notes/0066_nonlearned_baseline_decision.md) explains
 what simple pooling resolves and what remains unqualified.
 [Note 0064](docs/research_notes/0064_nonlearned_processing_panel_release.md)
@@ -444,7 +458,7 @@ retain calibration and the original feature/endpoint definitions.
 For the latest measured cache results, read [Note 0060](docs/research_notes/0060_controlled_overlap_cache_correspondence.md)
 for the complete calibrated cache panel, all twelve endpoints and retained
 exceptions. [Note 0061](docs/research_notes/0061_controlled_overlap_phase2_decision.md)
-separates what the result resolves from the next, still-unlaunched baseline stage.
+explains why the cache result motivated the non-learned baseline stage.
 [Note 0059](docs/research_notes/0059_controlled_overlap_cache_panel_release.md)
 records the pre-outcome implementation release;
 [Note 0058](docs/research_notes/0058_controlled_overlap_cache_calibration.md)
@@ -1181,6 +1195,8 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0066: Non-Learned Baseline Decision](docs/research_notes/0066_nonlearned_baseline_decision.md)
 - [Research Note 0067: Representation Observation Registration](docs/research_notes/0067_representation_observation_registration.md)
 - [Research Note 0068: Representation Observation Calibration](docs/research_notes/0068_representation_observation_calibration.md)
+- [Research Note 0069: Representation Correspondence Registration](docs/research_notes/0069_representation_correspondence_registration.md)
+- [Research Note 0070: Full Encoder/Projector Correspondence](docs/research_notes/0070_representation_correspondence.md)
 
 ## Claim Boundary
 

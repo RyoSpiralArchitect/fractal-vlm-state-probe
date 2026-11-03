@@ -6,6 +6,9 @@ Status: one development panel. Freeze the complete capture, analysis,
 independent verifier, fixtures and configuration in Git before any new model
 replay. This registration is not a result or an untouched confirmation.
 
+Registration commit: `996656c4263a716af3ac7e48eb84ae3c10c39371`, with
+544 local tests passing. All 58 previously frozen files stayed unchanged.
+
 ## Question And Fixed Comparison
 
 [PR #6](https://github.com/RyoSpiralArchitect/fractal-vlm-state-probe/pull/6)
@@ -21,7 +24,8 @@ The [configuration](../../configs/representation_correspondence_panel_v1.json)
 retains the 32 reused source pairs, eight families, four reference maps,
 24 test maps, three shared fixed-site levels (0%, 6.25%, 25%) and two
 destinations per level/mask. Shared moved-coordinate coincidence is zero;
-the underlying source is still shared. Every map fixes 25% of its own
+the same test-source IDs recur across q, while reference and test IDs are
+disjoint. Every map fixes 25% of its own
 content. Spectra need not match between levels. No new images/maps are drawn.
 
 Observe exactly the Note 0067 sites on the same qualified FastVLM path:
@@ -157,3 +161,7 @@ python3 scripts/summarize_representation_panel.py --run-root runs/representation
 Each output root is fresh. A passing panel would describe these development
 sources and this runtime. It cannot establish semantic invariance, causal
 learning gain, unique emergence, prompt robustness or untouched replication.
+
+Execution report: [Note 0070](0070_representation_correspondence.md) records
+the completed capture, all four endpoints, independent full-tensor replay and
+the boundary before prompt/suffix controls.
