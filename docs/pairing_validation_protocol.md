@@ -981,3 +981,27 @@ pixels have receipt verification rather than a second tensor reload.
 Passing does not release the real-image panel, encoder/projector extraction
 or confirmation. The full capture/analysis/publication paths still need a
 separate committed/tested release and fresh processor calibration.
+
+### Stage 4N: Non-Learned Real-Image Panel
+
+[Note 0064](research_notes/0064_nonlearned_processing_panel_release.md) fixes
+the separately released implementation at `99fb45c`, after the Note 0062-0063
+PR merged and before any real-image baseline score. All 51 code/config files
+remain unchanged. The original Phase 3 configuration is byte-identical.
+
+[Note 0065](research_notes/0065_nonlearned_processing_correspondence.md)
+reports COMPLETE: 128 exact fresh processor calibrations, 256 sealed reference
+cells then 1,792 test cells; 24,576 feature arrays, 6,144 interactions, 336
+score matrices and 3,072 direction records. Independent verification repeats
+128 historical and all 2,048 experimental processor calls, checking hashes
+and every feature with the convolution/explicit-pooling oracle. Combined
+processor budget is 4,352, with zero learned-model forwards.
+
+All 24 endpoints are retained: raw global moments have exact-zero directions
+in all 512 blocks and two unavailable endpoints. The other eleven M(0) ranges
+are above zero, while every D range spans zero. All 88 available M(0) family
+margins are positive; 38/88 D values are negative. No equivalence, causal gain
+or learned-versus-unlearned attribution follows. The portable archive includes
+all vectors for primary-score replay, not the original processor pixels.
+[Note 0066](research_notes/0066_nonlearned_baseline_decision.md) keeps all
+baselines and calls for separately qualified representation-path observation.

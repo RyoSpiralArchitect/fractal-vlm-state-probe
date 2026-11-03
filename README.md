@@ -66,11 +66,15 @@ zero; post-image L12/L23 means are +0.261395 / +0.218293. All six paired
 Similar endpoint margins coexist with markedly changed vector directions and
 larger same-map image margins. The next question is which profiles already
 follow non-learned local processing and pooling, not whether these scores
-establish semantic invariance or causal gain. Phase 3 now begins with Notes
-0062-0063: six non-learned feature paths on raw/processor starts are fixed,
-all 84 synthetic oracle checks pass and 128 historical processor outputs
-reproduce exactly. No model forward or real-image baseline correspondence
-score is added. The full baseline panel still needs its separate release.
+establish semantic invariance or causal gain. The non-learned baseline panel
+is now complete in Notes 0064-0066, without new model forwards. Raw 8 x 8 mean
+pooling alone gives zero-overlap margin +0.236247. All eleven available baseline
+views have exploratory M(0) ranges above zero; every high-minus-zero range
+spans zero. Raw global moments cancel exactly and remain unavailable. Thus
+positive zero-overlap correspondence is not uniquely diagnostic of learned
+cache processing. The full cache profile is not reproduced: intermediate
+profiles and cross-level directions differ. The next gate is calibrated
+representation-path observation, not a claim that learning adds nothing.
 The Note 0052 plan continues toward approximately Note 0080, with an untouched
 confirmation cohort still neither generated nor sealed.
 The current target is directly measurable:
@@ -389,12 +393,20 @@ endpoints; the same-map controls remain much stronger descriptively. Near-unit
 image norm ratios coexist with cross-level direction cosine medians of
 0.069-0.081. These are conditional correspondence profiles, not invariant
 vectors. Note 0061 moves the scope to separately registered simple-processing
-baselines. Notes 0062-0063 now complete their definitions and no-model
-calibration: 84 synthetic feature comparisons and 128 exact processor checks,
-with raw global-moment zero directions retained as unavailable. This does not
-measure baseline correspondence or release encoder/projector/confirmation
-paths. Input/cache score
-differences alone are not causal gain.
+baselines. Notes 0062-0063 fixed their definitions and calibration; Notes
+0064-0066 now complete 2,048 real-image feature cells, 6,144 interaction
+vectors and 24 retained endpoints, of which 22 are available. Independent
+regeneration reproduces all processor hashes and all 24,576 feature arrays
+within fixed tolerances. All 88 available zero-overlap family margins are
+positive, while 38/88 overlap differences are negative. The ten local-feature
+M(0) means are 0.236-0.242; processor global moments give 0.674669 despite
+small interaction norms. The raw moment zero direction remains unavailable.
+All eleven D ranges span zero, without equivalence or absence conclusions.
+Local-feature cross-level cosine medians of 0.892-0.920 and their decreasing
+overlap profiles do not reproduce the entire image-cache pattern. A portable
+archive supports score/margin/bootstrap replay without model weights or
+original images. Encoder/projector/confirmation paths remain unqualified.
+Input/cache score differences alone are not causal gain.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
 creates a nonlinear interaction among palette donor, spatial rank field, and
@@ -411,10 +423,14 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0063](docs/research_notes/0063_nonlearned_processing_calibration.md)
-for the completed first Phase 3 calibration and still-closed real-image panel.
-[Note 0062](docs/research_notes/0062_nonlearned_processing_registration.md)
-fixes the six feature paths, two input starts and 24 future endpoints.
+Start with [Note 0065](docs/research_notes/0065_nonlearned_processing_correspondence.md)
+for the measured non-learned panel and its portable interaction archive.
+[Note 0066](docs/research_notes/0066_nonlearned_baseline_decision.md) explains
+what simple pooling resolves and what remains unqualified.
+[Note 0064](docs/research_notes/0064_nonlearned_processing_panel_release.md)
+records its pre-outcome release; [Note 0063](docs/research_notes/0063_nonlearned_processing_calibration.md)
+and [Note 0062](docs/research_notes/0062_nonlearned_processing_registration.md)
+retain calibration and the original feature/endpoint definitions.
 
 For the latest measured cache results, read [Note 0060](docs/research_notes/0060_controlled_overlap_cache_correspondence.md)
 for the complete calibrated cache panel, all twelve endpoints and retained
@@ -1151,6 +1167,9 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0061: Controlled Overlap Phase 2 Decision](docs/research_notes/0061_controlled_overlap_phase2_decision.md)
 - [Research Note 0062: Non-Learned Processing Baseline Registration](docs/research_notes/0062_nonlearned_processing_registration.md)
 - [Research Note 0063: Non-Learned Processing Calibration](docs/research_notes/0063_nonlearned_processing_calibration.md)
+- [Research Note 0064: Non-Learned Processing Panel Release](docs/research_notes/0064_nonlearned_processing_panel_release.md)
+- [Research Note 0065: Non-Learned Processing Correspondence](docs/research_notes/0065_nonlearned_processing_correspondence.md)
+- [Research Note 0066: Non-Learned Baseline Decision](docs/research_notes/0066_nonlearned_baseline_decision.md)
 
 ## Claim Boundary
 

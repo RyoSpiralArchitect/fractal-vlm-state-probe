@@ -1,6 +1,6 @@
 # Paper Evidence Matrix
 
-Last updated: 2026-11-02 (Phase 3 baseline definitions and calibration complete; experimental cache/direct counts unchanged)
+Last updated: 2026-11-03 (Non-learned baseline panel independently verified; experimental cache/direct counts unchanged)
 
 This file is the compact bridge from run artifacts to a manuscript draft. It
 separates valid observations, descriptive interpretation, withdrawn results,
@@ -30,7 +30,8 @@ the same four factorial cells are not independent samples.
 | Controlled-overlap input correspondence | Full raw RGB and actual processor vectors; frozen descriptive endpoints | Four masks x two destinations, eight reused families, two reference/two test seeds; 56 score matrices | Zero-overlap means -0.000316 / +0.003353; paired high-minus-zero means +0.034846 / +0.033964; D positive in 6/8 families each; both zero-level exploratory ranges cross zero | registered development description with independent replay; no p-values, absence, equivalence, causal processing gain or confirmation claim | [Note 0056](research_notes/0056_controlled_overlap_input_correspondence.md) |
 | Controlled-overlap Phase 2 historical calibration | Qualified FastVLM, unchanged L1 keys / L12 keys / L23 values, old 3/4 anchor only | 128 replay source cells / 384 tensors, separately counted; no new controlled-overlap cache cell | 384/384 tensor pairs and 128/128 prepared inputs/suffixes/layouts reproduce exactly; independent reload verifies 19,513,344 scalar pairs with zero difference | point-in-time qualification, not experimental correspondence; separately repeated in the Note 0060 panel process | [Note 0058](research_notes/0058_controlled_overlap_cache_calibration.md) |
 | Controlled-overlap cache correspondence | Qualified FastVLM, three fixed targets x image/post-image regions, fresh source contexts | Four masks x two destinations x three overlaps, eight reused families; 2,048 experimental cells / 6,144 tensors / 1,536 factorials; 128 calibration cells separate | All 384 calibration comparisons exact; twelve endpoints independently verify; five M(0) exploratory ranges above zero, all six high-minus-zero ranges spanning zero; 28/48 family differences negative | registered development correspondence without exact content-coordinate coincidence, not equivalence, semantic invariance, causal processing gain or confirmation | [Note 0060](research_notes/0060_controlled_overlap_cache_correspondence.md) |
-| Non-learned baseline calibration | Six fixed feature paths on raw and qualified processor starts; no model forward | 84 synthetic feature/oracle pairs, six linear and four nonlinear-order checks, one raw zero control; 128 historical processor replays | All feature errors <= 1.0701e-12 against fixed 1e-10 tolerance; raw moment direction exactly zero/unavailable; all 128 pixel hashes and non-pixel payloads exact | implementation and input-path qualification, not baseline correspondence, equivalence or learned-versus-unlearned attribution; real-image panel not released | [Note 0063](research_notes/0063_nonlearned_processing_calibration.md) |
+| Non-learned baseline calibration | Six fixed feature paths on raw and qualified processor starts; no model forward | 84 synthetic feature/oracle pairs, six linear and four nonlinear-order checks, one raw zero control; 128 historical processor replays | All feature errors <= 1.0701e-12 against fixed 1e-10 tolerance; raw moment direction exactly zero/unavailable; all 128 pixel hashes and non-pixel payloads exact | calibration-only qualification; real-image panel separately released in Note 0064 | [Note 0063](research_notes/0063_nonlearned_processing_calibration.md) |
+| Non-learned processing correspondence | Six fixed feature paths x raw/processor starts; same development split/maps, no learned-model forward | 2,048 cells / 24,576 feature arrays / 6,144 interactions / 336 matrices; 4,352 processor calls including independent regeneration | Raw 8 x 8 means give M(0)=+0.236247; all eleven available M(0) ranges above zero and all eleven D ranges spanning zero; raw global moments exactly cancel in 512 blocks; all 24 endpoints retained | simple processing already exhibits the coarse correspondence signature, not a full cache-profile match, equivalence, causal gain or learning attribution | [Note 0065](research_notes/0065_nonlearned_processing_correspondence.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
@@ -235,6 +236,16 @@ the same four factorial cells are not independent samples.
     invariance. Similar endpoint scores coexist with image direction cosine
     medians of 0.069-0.081 and near-unit norm ratios.
 
+29. The registered non-learned panel verifies all 2,048 feature cells and
+    all 24 endpoints, retaining two unavailable raw-moment endpoints. Raw
+    8 x 8 mean pooling alone has M(0)=+0.236247, without blur, squaring or
+    learned feature weights. All 88 available M(0) family margins are positive;
+    38/88 D values are negative and every D range spans zero. Processor global
+    moments yield +0.674669 despite small nonzero interaction norms. The
+    coarse signature is not unique to learned cache processing. Baseline
+    intermediate profiles, same-map effects and direction cosines differ
+    from cache, so no complete explanation or equivalence follows.
+
 ### Provisional
 
 - The measured object is distribution-coupled visual perturbation under fresh
@@ -410,6 +421,14 @@ the same four factorial cells are not independent samples.
   Its 128 processor calls are neither model forwards nor new baseline scores.
   The raw global-moment zero control is unavailable, not a zero performance
   result. No feature path has yet been shown sufficient or insufficient.
+- Note 0065 separately regenerates all 128 historical and 2,048 experimental
+  processor returns, checking actual native hashes and every feature with
+  the oracle. Its 6,144 small interactions are included for portable primary
+  replay; original cell features and full pixel tensors are not distributed.
+  Baseline vectors are input-derived, not additions to cache or direct-probe
+  denominators. All results remain reused-data development. Positive M(0)
+  under a fixed projection does not identify semantic or learned mechanisms;
+  different feature dimensions/normalizations prevent causal score ratios.
 - The full-vector surface retains selected target tensors but does not make
   different layer or model coordinate bases comparable. Dominance counts are
   within-target summaries, not cross-model vector alignment.
@@ -442,18 +461,18 @@ confirmation cohort is not generated or sealed; all existing images/maps are
 development material for the overlap study. Its bounded input Phase 1 is now
 registered and complete in Notes 0053-0056. Notes 0057-0061 now complete the
 calibrated cache study and independently verified panel. Direct-probe counts
-remain unchanged. Notes 0062-0063 now fix baseline definitions and complete
-no-model calibration; the real-image baseline panel remains unreleased.
+remain unchanged. Notes 0062-0066 now fix and measure the non-learned panel,
+with complete independent feature regeneration and portable primary replay.
+Encoder/projector observations still require their own qualification.
 
-1. Implement, test and separately release the already specified real-image
-   baseline panel, with fresh processor calibration and reference sealing
-   before test scoring. Preserve all twelve feature/start views, 24 endpoints
-   and the six cache comparison views. Keep raw permutation-invariant zero
-   interactions unavailable rather than treating them as zero scores.
-2. Carry raw/processor baselines and between-level spectra into that comparison.
-   Qualify encoder/projector observations separately before interpreting
-   representation-path profiles. Neither larger cache scores nor a baseline
-   gap alone identifies learning or a specifically multimodal mechanism.
+1. Register and qualify read-only encoder/projector observation sites before
+   new representation scores. Prove that enabling extraction leaves prepared
+   inputs, the original execution path, actual suffix and selected cache
+   tensors unchanged. Keep the complete non-learned comparison surface.
+2. Carry raw/processor starts, baseline profiles, numerical-sensitivity
+   diagnostics and between-level spectra into that comparison. Neither a
+   larger cache score nor a baseline gap identifies learning or specifically
+   multimodal computation without the appropriate additional design.
 3. Add more stochastic, fractal, and provenance-controlled natural-image
    pairing families; evaluate leave-one-pairing-family-out transfer.
 4. Compare input-conditioned direction profiles in accepted matched blocks;
