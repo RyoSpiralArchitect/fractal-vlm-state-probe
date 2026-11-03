@@ -65,6 +65,17 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+The latest observation calibration is
+[0068 Representation Observation Calibration](../docs/research_notes/0068_representation_observation_calibration.md):
+[summary](research_notes/0068_representation_observation_calibration/summary.json),
+[384 context receipts](research_notes/0068_representation_observation_calibration/cells.jsonl),
+[1,152 historical comparisons](research_notes/0068_representation_observation_calibration/historical_comparisons.jsonl),
+[768 ON/OFF comparisons](research_notes/0068_representation_observation_calibration/on_off_comparisons.jsonl), and
+[two-site representation receipts](research_notes/0068_representation_observation_calibration/representations.jsonl).
+All selected cache bytes remain exact across historical OFF/ON/OFF replays.
+The 256 full representation arrays were independently reloaded locally, not
+included here. This is calibration, not encoder/projector correspondence.
+
 The measured non-learned panel is
 [0065 Non-Learned Processing Correspondence](../docs/research_notes/0065_nonlearned_processing_correspondence.md):
 [summary](research_notes/0065_nonlearned_processing_panel/summary.json),

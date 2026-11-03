@@ -6,6 +6,9 @@ Status: historical calibration implementation and acceptance criteria only.
 Commit this complete measurement/verifier path before the first model replay.
 No encoder/projector correspondence panel or confirmation cohort is released.
 
+Execution report: [Note 0068](0068_representation_observation_calibration.md).
+Registration commit: `7ad7d8219e4ff4ad3c760c3e508e746ea2c16ffd`.
+
 ## Why This Gate Comes First
 
 [PR #5](https://github.com/RyoSpiralArchitect/fractal-vlm-state-probe/pull/5)
