@@ -73,8 +73,11 @@ views have exploratory M(0) ranges above zero; every high-minus-zero range
 spans zero. Raw global moments cancel exactly and remain unavailable. Thus
 positive zero-overlap correspondence is not uniquely diagnostic of learned
 cache processing. The full cache profile is not reproduced: intermediate
-profiles and cross-level directions differ. The next gate is calibrated
-representation-path observation, not a claim that learning adds nothing.
+profiles and cross-level directions differ. Notes 0067-0068 now qualify
+read-only encoder/projector observation: 384 historical OFF/ON/OFF contexts
+preserve prepared inputs, suffix and all selected cache bytes exactly.
+Representation correspondence is not yet measured; its panel needs a separate
+release. This is an observation-path gate, not a claim that learning adds nothing.
 The Note 0052 plan continues toward approximately Note 0080, with an untouched
 confirmation cohort still neither generated nor sealed.
 The current target is directly measurable:
@@ -405,7 +408,8 @@ All eleven D ranges span zero, without equivalence or absence conclusions.
 Local-feature cross-level cosine medians of 0.892-0.920 and their decreasing
 overlap profiles do not reproduce the entire image-cache pattern. A portable
 archive supports score/margin/bootstrap replay without model weights or
-original images. Encoder/projector/confirmation paths remain unqualified.
+original images. Encoder/projector observation is now calibrated on historical
+cells in Note 0068, but its correspondence panel and confirmation remain unreleased.
 Input/cache score differences alone are not causal gain.
 
 The cross-palette input result remains intact: luminance-rank palette transfer
@@ -423,8 +427,13 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0065](docs/research_notes/0065_nonlearned_processing_correspondence.md)
-for the measured non-learned panel and its portable interaction archive.
+Start with [Note 0068](docs/research_notes/0068_representation_observation_calibration.md)
+for the latest observation-path calibration and its still-closed representation
+panel. [Note 0067](docs/research_notes/0067_representation_observation_registration.md)
+fixes the exact encoder/projector sites and OFF/ON/OFF acceptance rules.
+The latest measured correspondence result remains
+[Note 0065](docs/research_notes/0065_nonlearned_processing_correspondence.md)
+with the non-learned panel and its portable interaction archive.
 [Note 0066](docs/research_notes/0066_nonlearned_baseline_decision.md) explains
 what simple pooling resolves and what remains unqualified.
 [Note 0064](docs/research_notes/0064_nonlearned_processing_panel_release.md)
@@ -1170,6 +1179,8 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0064: Non-Learned Processing Panel Release](docs/research_notes/0064_nonlearned_processing_panel_release.md)
 - [Research Note 0065: Non-Learned Processing Correspondence](docs/research_notes/0065_nonlearned_processing_correspondence.md)
 - [Research Note 0066: Non-Learned Baseline Decision](docs/research_notes/0066_nonlearned_baseline_decision.md)
+- [Research Note 0067: Representation Observation Registration](docs/research_notes/0067_representation_observation_registration.md)
+- [Research Note 0068: Representation Observation Calibration](docs/research_notes/0068_representation_observation_calibration.md)
 
 ## Claim Boundary
 

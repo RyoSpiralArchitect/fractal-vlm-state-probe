@@ -1005,3 +1005,32 @@ or learned-versus-unlearned attribution follows. The portable archive includes
 all vectors for primary-score replay, not the original processor pixels.
 [Note 0066](research_notes/0066_nonlearned_baseline_decision.md) keeps all
 baselines and calls for separately qualified representation-path observation.
+
+### Stage 4O: Read-Only Encoder/Projector Observation Calibration
+
+[Note 0067](research_notes/0067_representation_observation_registration.md) and
+[`representation_observation_calibration_v1.json`](../configs/representation_observation_calibration_v1.json)
+were committed at `7ad7d82` before model replays. The previous 51 measurement
+files are unchanged; this stage freezes 58 files including its verifier.
+Observe the existing projector input `[1,256,3072]` and exact return
+`[1,256,896]`, holding lazy references only and restoring the original method.
+Materialize full bfloat16-to-float32 arrays only after original replay/cache
+capture. No pooling, normalization, extra model invocation or representation
+correspondence score is introduced by the observer.
+
+[Note 0068](research_notes/0068_representation_observation_calibration.md)
+reports PASS: 128 historical source cells each run OFF-before/ON/OFF-after,
+for 384 fresh source contexts. All prepared-input/suffix/layout receipts and
+1,152 historical cache pairs are exact, as are 768 direct ON/OFF tensor pairs.
+Independent reload verifies all cache comparisons and 256 representation
+arrays without model/processor calls; a fresh verification output reproduces
+all five public receipt files byte-for-byte. Original sidecars remain local.
+The pre-registration uncommitted-code rejection is separately retained at
+zero model calls, not hidden as passing preflight or a replaced model replay.
+
+Qualification is bounded to the measured inputs/runtime/suffix/selected
+caches, not all hidden activations or execution performance. Experimental
+cache/direct denominators do not change. A representation panel needs its
+own committed/tested capture, reference seal, endpoints, analysis and verifier,
+plus fresh observation calibration in the same process. No panel, prompt
+control, causal learning claim or untouched confirmation is released here.
