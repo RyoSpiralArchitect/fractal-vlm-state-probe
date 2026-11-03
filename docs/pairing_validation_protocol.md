@@ -1055,3 +1055,19 @@ family differences. Full-tensor directions change: q=0-to-25% median cosines
 are 0.086800 / 0.085254 at near-unit norm ratios. Public score ledgers support
 primary replay but do not distribute the native tensors. No site equivalence,
 causal learning effect, prompt control or untouched confirmation is established.
+
+### Stage 4Q: Single-Token Source-Prompt Calibration
+
+[Note 0071](research_notes/0071_prompt_only_source_registration.md) freezes
+32 existing inputs x ACK/YES/ACK at `2ca3632`. Compare one actual post-image
+token, not just strings or visible answers. Assert all other prepared fields
+and full visual-site bytes equal the matched anchor. Recover the realized
+suffix from the actual fresh cache state's IDs after the completed stream;
+require per-context effective offsets before assigning the six regions.
+Neither equal length nor a repeated stream notification identifies equal suffixes.
+
+[Note 0072](research_notes/0072_prompt_only_source_calibration.md) reports
+96/96 verified contexts. First difference at cache position 387 for 32/32
+pairs at each target, exact bytes before the edit, differences in the seven
+subsequent identical prompt/template IDs. Matched-suffix comparisons were
+available for 2/32, not 32/32. No teacher-forced or direct readout forward.

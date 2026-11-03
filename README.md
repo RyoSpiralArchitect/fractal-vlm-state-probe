@@ -4,11 +4,14 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
-**Latest measurement:** [Note 0070](docs/research_notes/0070_representation_correspondence.md)
-finds positive zero-overlap family margins at both FastVLM visual sites on
-eight development families (encoder +0.035765 / projector +0.034240), despite weak cross-level vector-direction
-preservation (median cosines 0.0868 / 0.0853). This combination is visible
-before language-model cache; it does not establish a causal effect of training.
+**Latest measurement:** [Note 0072](docs/research_notes/0072_prompt_only_source_calibration.md)
+changes one instruction token on the same 32 FastVLM images. Both full visual
+sites stayed byte-identical; L1 keys, L12 keys and L23 values first differed
+at the edited token in all 32 pairs. The visible answer changed on 30 images.
+On the other two, even identical generated IDs had different cache values.
+[Note 0070](docs/research_notes/0070_representation_correspondence.md) gives
+the preceding visual correspondence result; this new control tests a prompt
+change, not correspondence or cache-to-answer mediation.
 
 This project began by asking whether controlled fractal streams change later
 non-visual generation. A cache-prefix audit changed the valid protocol; a
@@ -85,7 +88,9 @@ preserve prepared inputs, suffix and all selected cache bytes exactly.
 Notes 0069-0070 then measure the two complete visual representations on all
 2,048 cells. Both sites dip at the intermediate overlap, and both high-minus-zero
 exploratory ranges span zero. All 6,144 selected-cache parity pairs match the
-earlier panel exactly. The next gate is prompt/suffix control, not confirmation.
+earlier panel exactly. Notes 0071-0072 isolate a single post-image prompt
+edit on 32 existing cells. Natural suffix IDs match for only 2/32 pairs; a
+teacher-forced comparison needs its own native-path calibration.
 The Note 0052 plan continues toward approximately Note 0080, with an untouched
 confirmation cohort still neither generated nor sealed.
 The current target is directly measurable:
@@ -440,8 +445,12 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with [Note 0070](docs/research_notes/0070_representation_correspondence.md)
-for all four visual-site endpoints, family exceptions and directional comparisons.
+Start with [Note 0072](docs/research_notes/0072_prompt_only_source_calibration.md)
+for the one-token prompt control, its cache boundary and two unchanged answers.
+[Note 0071](docs/research_notes/0071_prompt_only_source_registration.md) fixes
+the paired design and suffix-availability rule. For visual correspondence,
+[Note 0070](docs/research_notes/0070_representation_correspondence.md) gives
+all four visual-site endpoints, family exceptions and directional comparisons.
 [Note 0069](docs/research_notes/0069_representation_correspondence_registration.md)
 fixes the panel and its lossless storage budget. [Note 0068](docs/research_notes/0068_representation_observation_calibration.md)
 and [Note 0067](docs/research_notes/0067_representation_observation_registration.md)
@@ -455,7 +464,7 @@ records its pre-outcome release; [Note 0063](docs/research_notes/0063_nonlearned
 and [Note 0062](docs/research_notes/0062_nonlearned_processing_registration.md)
 retain calibration and the original feature/endpoint definitions.
 
-For the latest measured cache results, read [Note 0060](docs/research_notes/0060_controlled_overlap_cache_correspondence.md)
+For controlled-overlap cache correspondence, read [Note 0060](docs/research_notes/0060_controlled_overlap_cache_correspondence.md)
 for the complete calibrated cache panel, all twelve endpoints and retained
 exceptions. [Note 0061](docs/research_notes/0061_controlled_overlap_phase2_decision.md)
 explains why the cache result motivated the non-learned baseline stage.
@@ -1197,6 +1206,8 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0068: Representation Observation Calibration](docs/research_notes/0068_representation_observation_calibration.md)
 - [Research Note 0069: Representation Correspondence Registration](docs/research_notes/0069_representation_correspondence_registration.md)
 - [Research Note 0070: Full Encoder/Projector Correspondence](docs/research_notes/0070_representation_correspondence.md)
+- [Research Note 0071: Single-Token Prompt Control Registration](docs/research_notes/0071_prompt_only_source_registration.md)
+- [Research Note 0072: Where A One-Token Prompt Edit First Appears](docs/research_notes/0072_prompt_only_source_calibration.md)
 
 ## Claim Boundary
 
