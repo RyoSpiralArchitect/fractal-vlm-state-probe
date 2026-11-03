@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "study_id": "representation_observation_calibration_v1",
+  "registered_date": "2026-11-03",
+  "scope": "historical_read_only_observation_calibration_only",
+  "preceding_merge_commit": "dff3101fb2c0abf54048547a50d9e4d7942101e0",
+  "baseline_publication": "examples/research_notes/0065_nonlearned_processing_panel/summary.json",
+  "baseline_publication_sha256": "01420d73cb0f67920b794a0a28c0a167c379fe6c63954e8c57a65ad3070f3b85",
+  "projector_class": "mlx_vlm.models.fastvlm.vision.CallableModuleList",
+  "projector_components": ["Linear", "GELU", "Linear"],
+  "installed_sources": {
+    "mlx_vlm.models.fastvlm.vision": "ecd4611b4716553fd459ebfa8f0ddcf62c9fdad66103da03cebde892ff9f5417",
+    "mlx_vlm.models.fastvlm.fastvlm": "ad6b44d7b609b3c1bd2c400c1b48df02fb44179db7237283aaad435056360a42",
+    "mlx_vlm.models.fastvlm.config": "6da6a975827043340f022f2fe825caf51847ca813759be256671900a010e9fd4"
+  },
+  "sites": {
+    "encoder": {"site": "mm_projector_positional_input_0_after_existing_tower_reshape", "shape": [1, 256, 3072]},
+    "projector": {"site": "mm_projector_return_before_multimodal_insertion", "shape": [1, 256, 896]}
+  },
+  "source_dtype": "mlx.core.bfloat16",
+  "saved_dtype": "float32",
+  "storage": "complete_batch_token_channel_tensor_no_pooling_crop_or_normalization",
+  "observer": "retain_input_and_exact_return_object_only_no_eval_cast_copy_or_extra_forward_inside_wrapper",
+  "stages": ["off_before", "on", "off_after"],
+  "historical_source_cells": 128,
+  "new_source_contexts": 384,
+  "historical_tensor_comparisons": 1152,
+  "on_off_tensor_comparisons": 768,
+  "observed_source_cells": 128,
+  "representation_arrays": 256,
+  "minimum_free_disk_gib": 8,
+  "retry_or_resume": false,
+  "acceptance": "all_inputs_suffix_layout_and_selected_cache_bytes_exact_all_sites_finite_expected_layout_dtype_and_one_target_call_restoration_exact",
+  "new_correspondence_scores": 0,
+  "new_direct_probe_cells": 0,
+  "experimental_panel_released": false,
+  "confirmation_cohort": "not_generated_not_sealed",
+  "future_representation_convention": "full_tensor_C_order_float64_paired_cell_contrast_then_complete_vector_L2_normalization_no_cross_site_alignment",
+  "future_panel_status": "not_implemented_not_released_requalify_in_same_process_before_any_panel"
+}
