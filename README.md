@@ -4,14 +4,13 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
-**Latest calibration:** [Note 0076](docs/research_notes/0076_native_suffix_replay_parity.md)
-feeds each prompt its own two naturally generated token IDs, one at a time.
-Across 96 historical rows, all 24 layers' effective keys and values matched
-fresh native generation bit-for-bit at prefill and after each token:
-13,824/13,824 tensor pairs. End-of-turn and punctuation were included.
-This qualifies own-suffix replay, not cross-prompt suffixes or causal mediation.
-The [v1 entry failure](docs/research_notes/0074_native_suffix_replay_entry_failure.md)
-remains recorded separately.
+**Latest control:** [Note 0078](docs/research_notes/0078_common_suffix_prompt_control.md)
+holds the suffix IDs fixed under the two instructions on all 32 images.
+Both supplied positions differ in L1 keys, L12 keys and L23 values on 32/32
+pairs; L0 keys/values at those same positions are exactly identical on 32/32.
+The first cache difference is the edited instruction token, not an image
+position. The supplied text is not a natural readout, and this comparison
+does not identify cache-to-answer mediation.
 
 **Latest prompt measurement:** [Note 0072](docs/research_notes/0072_prompt_only_source_calibration.md)
 changes one instruction token on the same 32 FastVLM images. Both full visual
@@ -100,8 +99,9 @@ exploratory ranges span zero. All 6,144 selected-cache parity pairs match the
 earlier panel exactly. Notes 0071-0072 isolate a single post-image prompt
 edit on 32 existing cells. Natural suffix IDs match for only 2/32 pairs; a
 cross-prompt forced comparison therefore needed its own native-path calibration.
-Note 0076 now supplies the own-suffix parity prerequisite; the crossed
-comparison has not been run.
+Note 0076 supplies the own-suffix parity prerequisite. Notes 0077-0078 now
+complete the fixed common-suffix comparison after a fresh same-process
+96-row calibration. Token equality is distinct from later-layer state equality.
 The Note 0052 plan continues toward approximately Note 0080, with an untouched
 confirmation cohort still neither generated nor sealed.
 The current target is directly measurable:
@@ -456,7 +456,9 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-For native-suffix replay, start with the [verified v2 result](docs/research_notes/0076_native_suffix_replay_parity.md)
+Start with the [common-suffix prompt result](docs/research_notes/0078_common_suffix_prompt_control.md)
+and its [registration](docs/research_notes/0077_common_suffix_prompt_registration.md).
+For native-suffix replay, read the [verified v2 result](docs/research_notes/0076_native_suffix_replay_parity.md)
 and its [registration](docs/research_notes/0075_native_suffix_v2_registration.md).
 The [original contract](docs/research_notes/0073_native_suffix_replay_registration.md)
 and [v1 failure](docs/research_notes/0074_native_suffix_replay_entry_failure.md)
@@ -1228,6 +1230,8 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0074: Own-Suffix Replay Stopped Before Decoding](docs/research_notes/0074_native_suffix_replay_entry_failure.md)
 - [Research Note 0075: Own-Suffix Calibration v2 Registration](docs/research_notes/0075_native_suffix_v2_registration.md)
 - [Research Note 0076: All-Layer Native-Suffix Replay Parity](docs/research_notes/0076_native_suffix_replay_parity.md)
+- [Research Note 0077: Fixed Common-Suffix Prompt Registration](docs/research_notes/0077_common_suffix_prompt_registration.md)
+- [Research Note 0078: Same Suffix IDs, Different Contextual Cache](docs/research_notes/0078_common_suffix_prompt_control.md)
 
 ## Claim Boundary
 

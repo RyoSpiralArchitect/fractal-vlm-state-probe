@@ -1088,3 +1088,15 @@ verifies 96/96 rows, 288 fresh contexts, 192 explicit token calls and all
 13,824 all-layer native/forced tensor pairs across the three checkpoints.
 Three old selected targets are historical; the 48-tensor reference is a
 fresh native run. No real prompt was given another condition's suffix.
+
+### Stage 4S: Common-Suffix Prompt Control
+
+[Note 0077](research_notes/0077_common_suffix_prompt_registration.md) freezes
+[785,2168] under ACK and YES for all 32 images, after a fresh 96-row/288-context
+own-suffix calibration on the same model instance. No new cache swap or readout.
+[Note 0078](research_notes/0078_common_suffix_prompt_control.md) reports all
+64 panel contexts and 12,288 target/region records. Both fixed positions
+differ at all three registered targets on 32/32 images, but L0 suffix K/V
+are exactly equal on 32/32. Every full-cache first difference is position 387.
+All layers, raw metrics, shams, actual decoder IDs and the v1 failure remain
+visible. Forced strings do not measure the natural answer distribution.

@@ -65,6 +65,15 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0078 Fixed Common-Suffix Prompt Control](../docs/research_notes/0078_common_suffix_prompt_control.md):
+[summary](research_notes/0078_common_suffix_prompt_control/summary.json),
+[64 conditions](research_notes/0078_common_suffix_prompt_control/panel_cells.jsonl),
+[12,288 paired region records](research_notes/0078_common_suffix_prompt_control/regions.jsonl),
+[192 actual decoder boundaries](research_notes/0078_common_suffix_prompt_control/decoder_boundaries.jsonl)
+and [independent word audit](research_notes/0078_common_suffix_prompt_control/independent_word_check.json).
+Includes all layers, including L0's word-exact suffix K/V. Supplied text
+is not a natural readout; full word arrays remain local.
+
 [0076 Native-Suffix Replay Parity](../docs/research_notes/0076_native_suffix_replay_parity.md):
 [summary](research_notes/0076_native_suffix_replay_parity/summary.json),
 [288 arms](research_notes/0076_native_suffix_replay_parity/arms.jsonl),

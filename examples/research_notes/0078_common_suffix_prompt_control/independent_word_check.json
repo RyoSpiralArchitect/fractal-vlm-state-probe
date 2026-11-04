@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "common_suffix_independent_word_audit",
+  "status": "PASS",
+  "verified_summary_sha256": "e6b7740cf7c4b15d775756f296989b48a104a62cf7640ad07a403baa16ef727c",
+  "contexts": 64,
+  "actual_decoder_boundaries": 192,
+  "two_singleton_calls_per_context": 128,
+  "sham_tensor_comparisons_including_prefill": 6336,
+  "matching_own_suffix_exact_tensor_comparisons": 4896,
+  "independent_paired_region_byte_and_metric_checks": 12288,
+  "decoder_boundaries_sha256": "cf9e993f5dfc84693e25a59a7c29a61bf0db13e259b033db256d1c126c62e894",
+  "model_calls": 0,
+  "processor_calls": 0
+}
