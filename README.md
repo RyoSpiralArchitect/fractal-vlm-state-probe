@@ -4,10 +4,14 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
-**Latest calibration:** [Note 0074](docs/research_notes/0074_native_suffix_replay_entry_failure.md)
-records an own-suffix replay that stopped before its first forced decoder
-call. The first image's two native paths agreed on all 48 terminal K/V
-tensors, but **no native/forced comparison was obtained**.
+**Latest calibration:** [Note 0076](docs/research_notes/0076_native_suffix_replay_parity.md)
+feeds each prompt its own two naturally generated token IDs, one at a time.
+Across 96 historical rows, all 24 layers' effective keys and values matched
+fresh native generation bit-for-bit at prefill and after each token:
+13,824/13,824 tensor pairs. End-of-turn and punctuation were included.
+This qualifies own-suffix replay, not cross-prompt suffixes or causal mediation.
+The [v1 entry failure](docs/research_notes/0074_native_suffix_replay_entry_failure.md)
+remains recorded separately.
 
 **Latest prompt measurement:** [Note 0072](docs/research_notes/0072_prompt_only_source_calibration.md)
 changes one instruction token on the same 32 FastVLM images. Both full visual
@@ -95,7 +99,9 @@ Notes 0069-0070 then measure the two complete visual representations on all
 exploratory ranges span zero. All 6,144 selected-cache parity pairs match the
 earlier panel exactly. Notes 0071-0072 isolate a single post-image prompt
 edit on 32 existing cells. Natural suffix IDs match for only 2/32 pairs; a
-teacher-forced comparison needs its own native-path calibration.
+cross-prompt forced comparison therefore needed its own native-path calibration.
+Note 0076 now supplies the own-suffix parity prerequisite; the crossed
+comparison has not been run.
 The Note 0052 plan continues toward approximately Note 0080, with an untouched
 confirmation cohort still neither generated nor sealed.
 The current target is directly measurable:
@@ -450,9 +456,11 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-For the native-suffix calibration gate, see its
-[registration](docs/research_notes/0073_native_suffix_replay_registration.md)
-and [retained v1 entry failure](docs/research_notes/0074_native_suffix_replay_entry_failure.md).
+For native-suffix replay, start with the [verified v2 result](docs/research_notes/0076_native_suffix_replay_parity.md)
+and its [registration](docs/research_notes/0075_native_suffix_v2_registration.md).
+The [original contract](docs/research_notes/0073_native_suffix_replay_registration.md)
+and [v1 failure](docs/research_notes/0074_native_suffix_replay_entry_failure.md)
+explain the interface change and why v1 is outside the passing denominator.
 Start with [Note 0072](docs/research_notes/0072_prompt_only_source_calibration.md)
 for the one-token prompt control, its cache boundary and two unchanged answers.
 [Note 0071](docs/research_notes/0071_prompt_only_source_registration.md) fixes
@@ -1218,6 +1226,8 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0072: Where A One-Token Prompt Edit First Appears](docs/research_notes/0072_prompt_only_source_calibration.md)
 - [Research Note 0073: Native-Suffix Replay Parity Registration](docs/research_notes/0073_native_suffix_replay_registration.md)
 - [Research Note 0074: Own-Suffix Replay Stopped Before Decoding](docs/research_notes/0074_native_suffix_replay_entry_failure.md)
+- [Research Note 0075: Own-Suffix Calibration v2 Registration](docs/research_notes/0075_native_suffix_v2_registration.md)
+- [Research Note 0076: All-Layer Native-Suffix Replay Parity](docs/research_notes/0076_native_suffix_replay_parity.md)
 
 ## Claim Boundary
 

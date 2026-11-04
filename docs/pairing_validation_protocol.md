@@ -1080,3 +1080,11 @@ checkpoints. [Note 0074](research_notes/0074_native_suffix_replay_entry_failure.
 retains the v1 adapter entry failure: the first two native arms completed,
 but no forced decoder call ran. No native/forced comparison or intervention
 is qualified by that run. Its partial native control is not a passing panel.
+
+[Note 0075](research_notes/0075_native_suffix_v2_registration.md) registers
+v2 with a fresh attempt and actual outer-stream fixtures. Only the inactive
+keyword binding changes. [Note 0076](research_notes/0076_native_suffix_replay_parity.md)
+verifies 96/96 rows, 288 fresh contexts, 192 explicit token calls and all
+13,824 all-layer native/forced tensor pairs across the three checkpoints.
+Three old selected targets are historical; the 48-tensor reference is a
+fresh native run. No real prompt was given another condition's suffix.

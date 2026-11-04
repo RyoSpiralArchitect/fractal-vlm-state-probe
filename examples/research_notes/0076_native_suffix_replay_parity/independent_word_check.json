@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "independent_native_suffix_word_file_check",
+  "status": "PASS",
+  "verified_summary_sha256": "6fc71b836429bcc080bbe2221d391cfec0d840c2b494b83f75d863cebb9b44f4",
+  "anchor_rows": 96,
+  "direct_historical_terminal_checks": 288,
+  "native_forced_tensor_pairs_by_offset": {
+    "395": 4608,
+    "396": 4608,
+    "397": 4608
+  },
+  "native_forced_scalar_pairs_by_offset": {
+    "395": 232980480,
+    "396": 233570304,
+    "397": 234160128
+  },
+  "actual_model_calls": 0,
+  "processor_calls": 0
+}

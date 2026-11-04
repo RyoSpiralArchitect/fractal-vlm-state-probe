@@ -232,7 +232,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0074 encode the audited claim
+Status: the evidence matrix and Notes 0027-0076 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -270,8 +270,9 @@ after fresh same-process calibration: both full visual sites exhibit positive
 zero-overlap correspondence with low within-site cross-level direction cosines.
 Notes 0071-0072 now isolate a single post-image prompt token. Both full
 visual sites are identical, but only 2/32 free suffixes have identical IDs.
-The next priority is native-suffix replay calibration before any forced
-suffix comparison; full-vocabulary readout remains separate. Longer-term work
+Own-suffix replay is now calibrated in Note 0076. A fixed common suffix
+across prompts still needs separate registration; full-vocabulary readout
+remains separate. Longer-term work
 includes held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
 vector analysis, and a valid intervention path before causal prose is promoted.
@@ -289,7 +290,7 @@ bounded Phase 1 design; Notes 0055-0056 report its completed input measurements.
 | 0052-0056 | Controlled fixed-overlap construction, oracle and input audit | Complete; 896/896 blocks eligible; four descriptive endpoints independently verified |
 | 0057-0061 | Calibrated FastVLM cache comparison | Complete; fresh 384-tensor calibration exact; 2,048 experimental cells / twelve endpoints independently verified |
 | 0062-0066 | Simple-processing baselines | Non-learned panel complete with portable replay |
-| 0067-0074 so far | Representation path, prompt/suffix controls and final registration | Two-site panel and one-token source-prompt gate complete; own-suffix v1 stopped before forced decoding; parity, direct readout controls and final registration still open |
+| 0067-0076 so far | Representation path, prompt/suffix controls and final registration | Two-site panel, one-token prompt control and v2 own-suffix parity complete; v1 failure retained. Cross-prompt common suffix, direct readout controls and final registration still open |
 | Originally planned around 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed; Note 0072 is a development calibration, not confirmation |
 | 0076-0080 | Independent replay, negative-case audit and manuscript | Not started |
 
@@ -309,7 +310,8 @@ future real-image panel. Notes 0064-0066 separately release and complete that
 panel, retaining every baseline and all unavailable directions. Representation-
 path qualification is complete in Notes 0067-0068; Notes 0069-0070 separately
 release and verify the two-site correspondence panel. Notes 0071-0072
-complete its first prompt-only control, with teacher forcing still requiring its own parity gate;
+complete its first prompt-only control. Notes 0073-0076 retain the failed v1
+entry and qualify the v2 own-suffix replay; no crossed condition was measured;
 note ranges are approximate work packages. Confirmation precision
 requirements remain open.
 The original scope JSON remains a historical record, not completed confirmation.

@@ -65,6 +65,14 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0076 Native-Suffix Replay Parity](../docs/research_notes/0076_native_suffix_replay_parity.md):
+[summary](research_notes/0076_native_suffix_replay_parity/summary.json),
+[288 arms](research_notes/0076_native_suffix_replay_parity/arms.jsonl),
+[288 decoder boundaries](research_notes/0076_native_suffix_replay_parity/boundaries.jsonl)
+and [independent word-file check](research_notes/0076_native_suffix_replay_parity/independent_word_check.json).
+The ledger compares actual prefill and singleton decoder inputs for all 96
+historical rows. Full word arrays remain local.
+
 [0074 Own-Suffix Replay Entry Failure](../docs/research_notes/0074_native_suffix_replay_entry_failure.md):
 [zero-model failure audit](research_notes/0074_native_suffix_replay_entry_failure/summary.json)
 and [two native arm receipts](research_notes/0074_native_suffix_replay_entry_failure/arms.jsonl).
