@@ -1034,3 +1034,40 @@ cache/direct denominators do not change. A representation panel needs its
 own committed/tested capture, reference seal, endpoints, analysis and verifier,
 plus fresh observation calibration in the same process. No panel, prompt
 control, causal learning claim or untouched confirmation is released here.
+
+### Stage 4P: Full Encoder/Projector Correspondence
+
+[Note 0069](research_notes/0069_representation_correspondence_registration.md)
+and [the panel configuration](../configs/representation_correspondence_panel_v1.json)
+were frozen at `996656c` before any new model replay. The two full sites use
+lossless bfloat16 words and C-order float64 paired factorial contrasts. Budget
+for uncompressed primary data, bounded working vectors and an 8 GiB reserve.
+Repeat the 384-context observation calibration on the same model/processor,
+including exact equality of all 256 site arrays to Note 0068. Seal all 256
+reference cells before test ordinal 641; no retry, resume or filtering.
+
+[Note 0070](research_notes/0070_representation_correspondence.md) reports
+COMPLETE: 2,048 experimental representation cells, 4,096 site arrays, 1,024
+full-vector byte reconstructions, 56 cosine matrices and 512 direction records.
+All 6,144 panel cache pairs match Note 0060 exactly. Both zero-overlap means
+are positive in 8/8 families; both D ranges span zero, with 7/16 negative
+family differences. Full-tensor directions change: q=0-to-25% median cosines
+are 0.086800 / 0.085254 at near-unit norm ratios. Public score ledgers support
+primary replay but do not distribute the native tensors. No site equivalence,
+causal learning effect, prompt control or untouched confirmation is established.
+
+### Stage 4Q: Single-Token Source-Prompt Calibration
+
+[Note 0071](research_notes/0071_prompt_only_source_registration.md) freezes
+32 existing inputs x ACK/YES/ACK at `2ca3632`. Compare one actual post-image
+token, not just strings or visible answers. Assert all other prepared fields
+and full visual-site bytes equal the matched anchor. Recover the realized
+suffix from the actual fresh cache state's IDs after the completed stream;
+require per-context effective offsets before assigning the six regions.
+Neither equal length nor a repeated stream notification identifies equal suffixes.
+
+[Note 0072](research_notes/0072_prompt_only_source_calibration.md) reports
+96/96 verified contexts. First difference at cache position 387 for 32/32
+pairs at each target, exact bytes before the edit, differences in the seven
+subsequent identical prompt/template IDs. Matched-suffix comparisons were
+available for 2/32, not 32/32. No teacher-forced or direct readout forward.

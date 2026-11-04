@@ -1,6 +1,6 @@
 # Paper Evidence Matrix
 
-Last updated: 2026-11-03 (Encoder/projector observation calibration independently reloaded; experimental cache/direct counts unchanged)
+Last updated: 2026-11-03 (Full encoder/projector panel independently verified; parity replays separate from experimental cache/direct counts)
 
 This file is the compact bridge from run artifacts to a manuscript draft. It
 separates valid observations, descriptive interpretation, withdrawn results,
@@ -33,6 +33,8 @@ the same four factorial cells are not independent samples.
 | Non-learned baseline calibration | Six fixed feature paths on raw and qualified processor starts; no model forward | 84 synthetic feature/oracle pairs, six linear and four nonlinear-order checks, one raw zero control; 128 historical processor replays | All feature errors <= 1.0701e-12 against fixed 1e-10 tolerance; raw moment direction exactly zero/unavailable; all 128 pixel hashes and non-pixel payloads exact | calibration-only qualification; real-image panel separately released in Note 0064 | [Note 0063](research_notes/0063_nonlearned_processing_calibration.md) |
 | Non-learned processing correspondence | Six fixed feature paths x raw/processor starts; same development split/maps, no learned-model forward | 2,048 cells / 24,576 feature arrays / 6,144 interactions / 336 matrices; 4,352 processor calls including independent regeneration | Raw 8 x 8 means give M(0)=+0.236247; all eleven available M(0) ranges above zero and all eleven D ranges spanning zero; raw global moments exactly cancel in 512 blocks; all 24 endpoints retained | simple processing already exhibits the coarse correspondence signature, not a full cache-profile match, equivalence, causal gain or learning attribution | [Note 0065](research_notes/0065_nonlearned_processing_correspondence.md) |
 | Encoder/projector observation calibration | Original projector input and return, qualified FastVLM; no representation scores | 128 historical cells x OFF/ON/OFF = 384 contexts; 1,152 historical and 768 direct ON/OFF cache pairs; 256 full representation arrays | All selected cache bytes, prepared inputs, suffix and layout exact; all representation sidecars independently reloaded; five public receipt files reproduce byte-for-byte | bounded observation-path qualification, not representation correspondence, every-hidden-state/performance equality or training attribution | [Note 0068](research_notes/0068_representation_observation_calibration.md) |
+| Full encoder/projector correspondence | Same two qualified visual sites; complete tensors, no pooling or cross-site alignment | 384 fresh calibration contexts then 2,048 experimental cells, 4,096 site arrays, 1,024 interactions, 56 matrices; 6,144 cache parity pairs exact | M(0)=+0.035765/+0.034240, positive in all 16 site-family values; both D ranges span zero, 7/16 family D values negative. q=0-to-25% direction medians 0.086800/0.085254 | correspondence and low directional persistence already visible before language-model cache; not equivalent stages, causal gain or confirmation | [Note 0070](research_notes/0070_representation_correspondence.md) |
+| Single post-image source-prompt token | Same FastVLM image/pixels and full encoder/projector bytes, ACK/YES/ACK; cache state IDs audited | 32 images, 96 fresh source contexts, 3 selected tensors, 576 paired regional records | First cache difference at edited position 387 for all 32 images at each target; B responses: 20 Yes, 10 Yes with comma, 2 The image. Only those two natural suffixes align; their caches still differ | prompt-localized change and suffix comparability on these development cells; not a fixed-suffix panel, full-vocabulary readout or mediation | [Note 0072](research_notes/0072_prompt_only_source_calibration.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
@@ -246,6 +248,13 @@ the same four factorial cells are not independent samples.
     coarse signature is not unique to learned cache processing. Baseline
     intermediate profiles, same-map effects and direction cosines differ
     from cache, so no complete explanation or equivalence follows.
+
+30. The qualified encoder and projector show positive zero-overlap family
+    correspondence and an intermediate dip, with low q=0-to-25% direction
+    cosines despite near-unit norm ratios. This combination is not confined
+    to image-cache positions. Both visual D means are slightly positive;
+    the three image-cache D means are negative, and all those ranges span
+    zero. The profiles are not identical or tested for equivalence.
 
 ### Provisional
 
@@ -464,14 +473,16 @@ registered and complete in Notes 0053-0056. Notes 0057-0061 now complete the
 calibrated cache study and independently verified panel. Direct-probe counts
 remain unchanged. Notes 0062-0066 now fix and measure the non-learned panel,
 with complete independent feature regeneration and portable primary replay.
-Notes 0067-0068 now qualify historical encoder/projector observation, with
-all selected cache tensors exactly preserved. Representation scoring remains unreleased.
+Notes 0067-0068 qualify historical encoder/projector observation; Notes
+0069-0070 complete the separately registered panel with all four descriptive
+endpoints and exact selected-cache parity at all experimental cells. Notes
+0071-0072 qualify the first prompt-only comparison without adding a direct probe.
 
-1. Separately register and release full encoder/projector correspondence,
-   with fixed complete-tensor contrast/normalization, endpoint family, budget,
-   reference seal and independent analysis before scores. Repeat observation
-   calibration in that same process. Keep the complete non-learned comparison
-   surface; do not select sites or pooling from calibration arrays.
+1. Register native-suffix replay parity before imposing a suffix across
+   prompts. The one-token control kept visual bytes identical but only 2/32
+   natural suffixes matched. Include the native end-of-turn and punctuation
+   cases; distinguish actual cache-state IDs from stream notifications.
+   Keep any first-step full-vocabulary direct probe a separate fresh forward.
 2. Carry raw/processor starts, baseline profiles, numerical-sensitivity
    diagnostics and between-level spectra into that comparison. Neither a
    larger cache score nor a baseline gap identifies learning or specifically

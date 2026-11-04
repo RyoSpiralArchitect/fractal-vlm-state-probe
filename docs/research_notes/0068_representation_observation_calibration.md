@@ -6,6 +6,10 @@ Status: PASS for the registered historical OFF/ON/OFF calibration and
 independent artifact reload. Encoder/projector correspondence is **not
 measured**, and its experimental panel remains unreleased.
 
+Subsequent work: [Note 0069](0069_representation_correspondence_registration.md)
+separately released that panel; [Note 0070](0070_representation_correspondence.md)
+reports the results. The evidence unit in this note remains calibration only.
+
 ## Registration And Provenance
 
 [PR #5](https://github.com/RyoSpiralArchitect/fractal-vlm-state-probe/pull/5)

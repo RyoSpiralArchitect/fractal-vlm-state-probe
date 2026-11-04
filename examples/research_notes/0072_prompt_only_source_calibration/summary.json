@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "study_id": "prompt_only_source_calibration_v1",
+  "status": "VERIFIED",
+  "registered_commit": "2ca36328caed9afd2569e50d5e2380719d046a9e",
+  "preflight_sha256": "23b473a2c1c15abe1026496b875ef8eb89b4f09e425ce13628ba172035f19fab",
+  "registration_sha256": "3084fa6122ff4090b1e8635a828ea2db921b548eb6dd50699f22fab912a711ba",
+  "capture_sha256": "1400a15fa3b4847a7d4c418f7f7dc5b63e475e4979135a92a3922d84a069d8e3",
+  "source_publication_sha256": "40327bc266271e300b436cd8d1125a81222d209fe1bef37c464bbecf93d500a4",
+  "config_sha256": "d08924d9bec79a3f9b3d9ef4a8980ee3845382eecb4ecced65ffb0c9b3e57169",
+  "code_sha256": {
+    "src/fractal_vlm_state_probe/cli/run_map_seed_cache_study.py": "9a480a28fbca89888ac5dc27718081870b3193fd274b2b9fa2f932ff6cb3aac6",
+    "src/fractal_vlm_state_probe/map_seed_cache.py": "55175e73173e140d7382c750beb2f717d20e3125864b657e220d1d5c94c45351",
+    "src/fractal_vlm_state_probe/permutation_maps.py": "5a64c1c05efcb5d01a116198ebd731c329009de7547a8314fb08174ca5db3787",
+    "src/fractal_vlm_state_probe/cli/run_map_seed_input_study.py": "34927b3132e9c64120cdc909217f42563348f568314818f1bf9696780e33ffed",
+    "src/fractal_vlm_state_probe/graded_permutation.py": "9761f29ec72be8f071af2d6c9b2dee39b9f9f2fcdcef8b6e170ccadc45617381",
+    "src/fractal_vlm_state_probe/cli/run_graded_permutation_study.py": "10c51939d6dccdd0fc9900fdde264e620374bdc5e45182a8b1a0fee70c42fce5",
+    "src/fractal_vlm_state_probe/stimulus.py": "cf872df4837c3baaf229eba1b21fcab554dbf09eccc648938bea63d9d2ff7fe5",
+    "src/fractal_vlm_state_probe/padding_policy.py": "5c48392b917eeed237f4eb8b3ba332b74add6d23fdad543cc36b8d5242e707d6",
+    "src/fractal_vlm_state_probe/frequency_control.py": "66b7ca9c1d1e765d7e63e878e2903e9d3af73de3e36670b42954da3b4eed6e04",
+    "src/fractal_vlm_state_probe/image_stats.py": "285a2eab99f9d3f8dc81afc613998476a16cab33d3951ba3450734008baa448a",
+    "src/fractal_vlm_state_probe/cli/run_padding_policy_study.py": "1978d8a39d0a1ceca468897232a5985cc31ca5423acd9b360adeae26f37e6ef2",
+    "src/fractal_vlm_state_probe/cli/run_graded_cache_study.py": "a98bd53a6aa3ead38a86e8ec77dac5988ef41c4c47a077f4378b1d08b962e794",
+    "src/fractal_vlm_state_probe/graded_cache.py": "00a455fb865111c464cd5e880e51f926964abca213972cf2fcdaeac3d299fa85",
+    "src/fractal_vlm_state_probe/cli/run_padding_cache_study.py": "8530af9484d5ecd5e6e0338b77f3fb155ab39ba3cda7fb73653899fbe8a62897",
+    "src/fractal_vlm_state_probe/padding_cache.py": "3289c4fbcf2ad5e903576917846e493e548bafd29b705a2108daec408f31744c",
+    "src/fractal_vlm_state_probe/cache_tensor_artifact.py": "98a0c0fb9ff429ad496222257713cdf2fe11f6adde9baf99fe2e2241d25bc8fb",
+    "src/fractal_vlm_state_probe/cache_tensor_factorial.py": "95bffcf55d584c2f43966ab27b03cdc1d05d1156f80fde077cc106eec1799c9f",
+    "src/fractal_vlm_state_probe/cache_direction_holdout.py": "e19a3c6ddecf888252ac0cd14c86dbc2e9a42ffb26ee7370f6228fc1e59d9554",
+    "src/fractal_vlm_state_probe/mlx_stream.py": "3f2a02f9b7794a5403a6cb32afa290eac16b7b6493aed021e5912343800535f6",
+    "src/fractal_vlm_state_probe/mlx_cumulative_replay.py": "c64829e9b3fcb3c6ae514e02082d21bf64a74fa1f2bbe4e79fe705bac64e41f1",
+    "src/fractal_vlm_state_probe/cli/capture_pairing_references.py": "9ba9de9ba25cef3c13ab05e5826b5e1f2fb175a140733fa3cd0b28b64a3ebd93",
+    "src/fractal_vlm_state_probe/cli/run_pairing_seed_validation.py": "7d1f3d98848b6afbc49d2adad1b0fd839692d2fa5d30d169c95803dc32f7b06a",
+    "src/fractal_vlm_state_probe/map_seed_input_baseline.py": "ce451b938062a569de05bac1a8dbb80b801e88b08188b11a69fd27981a1b43b1",
+    "src/fractal_vlm_state_probe/cli/run_map_seed_input_baseline.py": "ffa78793d21755fc0f941058e203aecb24e6af5423315025fd91ea42e1c94d38",
+    "src/fractal_vlm_state_probe/cli/analyze_pairing_input_holdout.py": "c6e6d843183ffcd645eae8b93e778c7765bdb6422c66d71caa34c5724683a0ef",
+    "src/fractal_vlm_state_probe/cli/summarize_map_seed_input_study.py": "454f7562cd0ff13c2fca83ef5edf9aa8c4da49c00ff5e3113e1f8d3d3b77db86",
+    "src/fractal_vlm_state_probe/source_coordinate_overlap.py": "571f2054f9bec782c6c6aa8bcebcf0edccd76c84b6cff49952584a8f6070b498",
+    "src/fractal_vlm_state_probe/controlled_overlap.py": "a1c12d6ffa60952be2c02ecd2c30bbe9cf4eef24e973e17c91cf6c6b34aa6c0f",
+    "src/fractal_vlm_state_probe/cli/run_controlled_overlap.py": "a5f37e744dd82692c44a4bd3acc17af5e875790670baf815962d84b4ec7b956e",
+    "src/fractal_vlm_state_probe/cli/analyze_controlled_overlap.py": "44e042087a8eb2cc628240f279e43bd4ee4bdbff3949f02fe02a2d8334ba4df2",
+    "src/fractal_vlm_state_probe/controlled_overlap_cache.py": "b07fbe9a3355b23b92b8239793b3fb0534453142ecf4515e69f2bdaebd4235bc",
+    "src/fractal_vlm_state_probe/cli/run_controlled_overlap_cache_calibration.py": "50dc1ace4a0d81a99e1413adf66322319d7b7282cee3e1834de0d8ada758b3c4",
+    "src/fractal_vlm_state_probe/controlled_overlap_cache_panel.py": "80fd7bf7f9c8b0e5195ad27b0008f5aee434ac4265b77f31b36ca584c56f9cf4",
+    "src/fractal_vlm_state_probe/cli/run_controlled_overlap_cache_panel.py": "e244d89d194f89705f8cd0e13f42ccb3dfb9233f695d7b3c78d3d9cde50fb555",
+    "src/fractal_vlm_state_probe/cli/analyze_controlled_overlap_cache_panel.py": "4914fac0401f684b2d340fa3ecfc7e12d17ef2c1682a21ad52b3b3364a0df662",
+    "scripts/run_controlled_overlap_cache_panel.py": "00ff5a6f82119e149432e02cbb0513dc3d871f048d8fa6c38146564f7c1f9708",
+    "scripts/analyze_controlled_overlap_cache_panel.py": "e5e3e87cf0d382fef5e50af17368ef48bfd07055fe9b1c493a89fffae52d5dea",
+    "configs/controlled_overlap_cache_release_v1.json": "7f2d24cac186d872f1872d8cb60324735b835e96887d541c0a75562799d2b3b9",
+    "configs/nonlearned_processing_phase3_v1.json": "f60ce7c3cd3dd4677b4a7e378d31558b642c5248521a497f6dd9b5af38978d3c",
+    "src/fractal_vlm_state_probe/nonlearned_processing.py": "bff7b15736204557151225717303ed92dcce262fd19555a0ed687ac7d00ebed9",
+    "src/fractal_vlm_state_probe/nonlearned_processing_calibration.py": "9686e0b011a1f64c899774e698c0c40bb51f8a91f12477491e7c1943df0608ee",
+    "src/fractal_vlm_state_probe/cli/run_nonlearned_processing_calibration.py": "0060444ca580a579ce814ec363749e23996bd443e62a752aa8bb49647224a9f6",
+    "scripts/run_nonlearned_processing_calibration.py": "78568f2743402ba401fd16f0d932bb98d037c01e416a26b3f71eaf6cba2364b4",
+    "src/fractal_vlm_state_probe/nonlearned_processing_panel.py": "03de849240d51a755eadac46555f2ecdd56927b7bd04791f487ba46f4bb3ea9e",
+    "src/fractal_vlm_state_probe/cli/run_nonlearned_processing_panel.py": "0db4ca93dbb81c1ef444b2177c4df259dd5991a17d9eefd1f769673d530f2679",
+    "src/fractal_vlm_state_probe/cli/analyze_nonlearned_processing_panel.py": "c2e9d10c9603e3d8e84835d70648a8b94008e6b65d37a4a84c62511d2c190384",
+    "src/fractal_vlm_state_probe/cli/summarize_nonlearned_processing_panel.py": "5ad935e609b7b5e75eb3b934dab2f4ffe47b27b3b99719a9623360a04e3f2d59",
+    "scripts/run_nonlearned_processing_panel.py": "aa949c2a5780f1068fcd7325adc81748cba7f9ccecc0b8cbf48391b5f5b006f6",
+    "scripts/analyze_nonlearned_processing_panel.py": "7eac2f5f67ce07e46f3c66e9a85f596d7027bec27a5818df4fb6782de9a6737e",
+    "scripts/summarize_nonlearned_processing_panel.py": "e4a503b0aa826a4ef3bce6a302d47410e3722347bed0235bdf570b026140f3e2",
+    "configs/nonlearned_processing_panel_release_v1.json": "91365eb19869d85c428b7bd5353f7878ac0258ddf11b17ed624c382b969d07cb",
+    "configs/representation_observation_calibration_v1.json": "f6338233550b6b021559209b388cd5aed9b60a3ba85bc984a608846693bc43d0",
+    "src/fractal_vlm_state_probe/representation_observation.py": "d2be9be9fd28b4a3fb01f95123e184d63861cdd7d3389e7ae32646a78f7da3ef",
+    "src/fractal_vlm_state_probe/cli/run_representation_observation_calibration.py": "0dfc6508f36e6ecff5297cdea7ebbccdeaa63dfff4834521654734a9e1ba4dfa",
+    "src/fractal_vlm_state_probe/cli/summarize_representation_observation_calibration.py": "50e710f284724ba5feed807e25710eac4ae75d2ec1dd123e735b72fc05abeab4",
+    "scripts/run_representation_observation_calibration.py": "3b06d31ca6ad97d5a6676dd1a949d19cb01a2ae03c3420cbff4e958d0968e524",
+    "scripts/summarize_representation_observation_calibration.py": "872f31cfe32fc97f39352c46418e499568233dd7fe7e42291c7682bc05da4e82",
+    "src/fractal_vlm_state_probe/cli/summarize_controlled_overlap_cache_calibration.py": "82cbd1604c98426b77a324193d7da6c5a351ba8a5544f0282cbdf509b781fff2",
+    "configs/representation_correspondence_panel_v1.json": "b89423d12d079d7eed45746e24e26340e57d75c13e3051116c8aedb4fafe3b57",
+    "src/fractal_vlm_state_probe/representation_panel.py": "608baa22035b8e9f6fffecc0c686b5707552bd5d809475522f8119ca2e023c8b",
+    "src/fractal_vlm_state_probe/cli/run_representation_panel.py": "00603577a646a9786c6ee57f6aa4362528ba6d79f4f2d74c8b7433d5908e6b98",
+    "src/fractal_vlm_state_probe/cli/analyze_representation_panel.py": "ce35fe83d7c93310d482871477199826a8b972ffd2cc6349bb3b0e109e25114c",
+    "src/fractal_vlm_state_probe/cli/summarize_representation_panel.py": "91737323b25bc8dc1dc311d3d61ca64f9e3c9b634d999c07adbec604a8e92903",
+    "scripts/run_representation_panel.py": "31d19d637b33e85f58540cb71d5a58ab647bf36f75179dea67f2b77411a7cca7",
+    "scripts/analyze_representation_panel.py": "46f354108d6650a14b6a38e4f7a4bbc348ec8f7445325309b50cd9888094cf4d",
+    "scripts/summarize_representation_panel.py": "9e3ec2a6e9f5875635f170591ba7780b337e958b15daba4de78531feddba0a6e",
+    "src/fractal_vlm_state_probe/cli/summarize_controlled_overlap.py": "055e93d821b3ee4ce7a31a35c09de2a3b9e95e860bfae50fbfd14111e00ab6cd",
+    "configs/prompt_only_source_calibration_v1.json": "d08924d9bec79a3f9b3d9ef4a8980ee3845382eecb4ecced65ffb0c9b3e57169",
+    "src/fractal_vlm_state_probe/prompt_only.py": "a9bf206be038f72d7564144f9071ad3c817b2bc3e3dba5826bd91d6410f8d0a6",
+    "src/fractal_vlm_state_probe/cli/run_prompt_only_source.py": "35a716be986daecfe728181c387fdb727f52170b88b40c2f228da29b7677cc50",
+    "scripts/run_prompt_only_source.py": "6a69466f35f4431440e328fccf91507405a04f223be66c8d12f21da8c506fec1",
+    "tests/test_prompt_only_source.py": "9e55cb5e0006e378b7df20076c6dd80f5005b93cee980331aa43f2b06659c061",
+    "docs/research_notes/0071_prompt_only_source_registration.md": "e2b185a06286fe59e1f8a4fe1c5ab6ec6c5c222825692da21249ada7da24b903"
+  },
+  "model_revision": "81ffe929046666c43de53691147b1669ba0f3a4c",
+  "source_contexts": 96,
+  "verification_model_calls": 0,
+  "image_pairs": 32,
+  "paired_pixel_and_geometry_exact": 32,
+  "paired_word_edit_only": 32,
+  "site_arrays_checked_against_anchor": 192,
+  "paired_visual_sites_exact": 64,
+  "historical_ack_cache_pairs_exact": 192,
+  "return_ack_cache_pairs_exact": 96,
+  "ack_response_counts": {
+    "The image": 32
+  },
+  "edited_response_counts": {
+    "Yes": 20,
+    "Yes,": 10,
+    "The image": 2
+  },
+  "aligned_suffix_pairs": 2,
+  "cache_regions": {
+    "1:keys": {
+      "regions": {
+        "pre_image": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 32,
+          "median_cell_rms": 0.0,
+          "maximum_abs": 0.0
+        },
+        "image": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 32,
+          "median_cell_rms": 0.0,
+          "maximum_abs": 0.0
+        },
+        "post_image_before_edit": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 32,
+          "median_cell_rms": 0.0,
+          "maximum_abs": 0.0
+        },
+        "edit": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 0,
+          "median_cell_rms": 1.709369658988289,
+          "maximum_abs": 6.125
+        },
+        "prompt_tail": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 0,
+          "median_cell_rms": 0.05956491344597303,
+          "maximum_abs": 0.5
+        },
+        "suffix": {
+          "planned": 32,
+          "available": 2,
+          "unavailable": 30,
+          "bitwise_exact": 0,
+          "median_cell_rms": 0.013088859714736103,
+          "maximum_abs": 0.125
+        }
+      },
+      "first_changed_position_counts": {
+        "387": 32
+      }
+    },
+    "12:keys": {
+      "regions": {
+        "pre_image": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 32,
+          "median_cell_rms": 0.0,
+          "maximum_abs": 0.0
+        },
+        "image": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 32,
+          "median_cell_rms": 0.0,
+          "maximum_abs": 0.0
+        },
+        "post_image_before_edit": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 32,
+          "median_cell_rms": 0.0,
+          "maximum_abs": 0.0
+        },
+        "edit": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 0,
+          "median_cell_rms": 0.8848154438165676,
+          "maximum_abs": 3.3046875
+        },
+        "prompt_tail": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 0,
+          "median_cell_rms": 0.3035702752776205,
+          "maximum_abs": 1.828125
+        },
+        "suffix": {
+          "planned": 32,
+          "available": 2,
+          "unavailable": 30,
+          "bitwise_exact": 0,
+          "median_cell_rms": 0.07206904654429516,
+          "maximum_abs": 0.34375
+        }
+      },
+      "first_changed_position_counts": {
+        "387": 32
+      }
+    },
+    "23:values": {
+      "regions": {
+        "pre_image": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 32,
+          "median_cell_rms": 0.0,
+          "maximum_abs": 0.0
+        },
+        "image": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 32,
+          "median_cell_rms": 0.0,
+          "maximum_abs": 0.0
+        },
+        "post_image_before_edit": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 32,
+          "median_cell_rms": 0.0,
+          "maximum_abs": 0.0
+        },
+        "edit": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 0,
+          "median_cell_rms": 1.5484417104297796,
+          "maximum_abs": 5.03125
+        },
+        "prompt_tail": {
+          "planned": 32,
+          "available": 32,
+          "unavailable": 0,
+          "bitwise_exact": 0,
+          "median_cell_rms": 0.520578194566788,
+          "maximum_abs": 2.96875
+        },
+        "suffix": {
+          "planned": 32,
+          "available": 2,
+          "unavailable": 30,
+          "bitwise_exact": 0,
+          "median_cell_rms": 0.1696856886198103,
+          "maximum_abs": 0.5380859375
+        }
+      },
+      "first_changed_position_counts": {
+        "387": 32
+      }
+    }
+  },
+  "ledgers": {
+    "contexts.jsonl": {
+      "rows": 96,
+      "sha256": "b616ef2f3d5b9d982f1521e07bc29e8353c87b8873382891ff3d0480e30f3523"
+    },
+    "pairs.jsonl": {
+      "rows": 32,
+      "sha256": "5f5a3c3b7bbd7071cbdf717ea7846fca046d76f74df2420d685ff75b88c9fa69"
+    },
+    "regions.jsonl": {
+      "rows": 576,
+      "sha256": "72d7cebdfd7d3effd36acb20a49593e4b1804d3cc5e57057fde60f8a097461cb"
+    }
+  },
+  "direct_readout_contexts": 0,
+  "teacher_forced_contexts": 0,
+  "correspondence_scores": 0,
+  "confirmation_cohort": "not_generated_not_sealed",
+  "analysis_kind": "prompt_only_source_calibration",
+  "verified_summary_sha256": "afdc6d94330505f485aaade7f1a3321a9a5bb182085251415571858118d9ed23"
+}

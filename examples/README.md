@@ -65,7 +65,27 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
-The latest observation calibration is
+[0072 Single-Token Prompt Control](../docs/research_notes/0072_prompt_only_source_calibration.md):
+[summary](research_notes/0072_prompt_only_source_calibration/summary.json),
+[96 contexts with token IDs](research_notes/0072_prompt_only_source_calibration/contexts.jsonl),
+[32 A/B pairs](research_notes/0072_prompt_only_source_calibration/pairs.jsonl) and
+[576 target/region rows](research_notes/0072_prompt_only_source_calibration/regions.jsonl).
+The first changed cache position was 387 on all three targets for every
+image. Thirty different-suffix pairs are unavailable for a matched-suffix
+comparison, not missing from the prompt comparisons. Raw tensors stay local.
+
+The latest correspondence panel is
+[0070 Full Encoder/Projector Correspondence](../docs/research_notes/0070_representation_correspondence.md):
+[summary](research_notes/0070_representation_correspondence/summary.json),
+[56 score matrices](research_notes/0070_representation_correspondence/scores.jsonl),
+[512 directions](research_notes/0070_representation_correspondence/directions.jsonl),
+[1,024 vector receipts](research_notes/0070_representation_correspondence/vectors.jsonl),
+and [per-cell cache parity](research_notes/0070_representation_correspondence/cache_parity.jsonl).
+All four endpoints are retained. Both sites show positive M(0) despite low
+cross-level direction cosines. Score matrices replay the primary summaries;
+full activation/contrast verification needs the local packed primary arrays.
+
+The preceding observation calibration is
 [0068 Representation Observation Calibration](../docs/research_notes/0068_representation_observation_calibration.md):
 [summary](research_notes/0068_representation_observation_calibration/summary.json),
 [384 context receipts](research_notes/0068_representation_observation_calibration/cells.jsonl),
