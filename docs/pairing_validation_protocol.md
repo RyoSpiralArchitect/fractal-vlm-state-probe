@@ -1071,3 +1071,12 @@ Neither equal length nor a repeated stream notification identifies equal suffixe
 pairs at each target, exact bytes before the edit, differences in the seven
 subsequent identical prompt/template IDs. Matched-suffix comparisons were
 available for 2/32, not 32/32. No teacher-forced or direct readout forward.
+
+### Stage 4R: Own-Suffix Replay Qualification
+
+[Note 0073](research_notes/0073_native_suffix_replay_registration.md) fixes
+three fresh arms per historical row, all 24 layers' effective K/V and three
+checkpoints. [Note 0074](research_notes/0074_native_suffix_replay_entry_failure.md)
+retains the v1 adapter entry failure: the first two native arms completed,
+but no forced decoder call ran. No native/forced comparison or intervention
+is qualified by that run. Its partial native control is not a passing panel.

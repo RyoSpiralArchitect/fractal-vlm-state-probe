@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "native_suffix_replay_v1_failure_audit",
+  "status": "NOT_QUALIFIED",
+  "registered_commit": "2cdc19600d0fc6ea6a285e5d6e13fbcb5f96cb4b",
+  "preflight_sha256": "d08c8a2b2646ed507c49064d4de05ef08527f39d657b7371f92f558b3dcf03c3",
+  "failure_sha256": "f14262ad86faf6dfaf18492212ab4aeda134803f1300a4df9b6298aa09bbe804",
+  "failure": {
+    "status": "FAILED",
+    "mode": "capture",
+    "attempted": 3,
+    "completed": 2,
+    "matched_rows": 0,
+    "ordinal": 1,
+    "arm": "forced_own",
+    "stage": "ack_before",
+    "pair_id": "geometry_checker_hex_r1",
+    "cell": "mm",
+    "type": "TypeError",
+    "message": "forced_stepper.<locals>.generate() missing 1 required keyword-only argument: 'thinking_budget_criteria'",
+    "retry": false
+  },
+  "partial_arms_sha256": "52bb6241b5b6d732cb4a9b291fd45680c292acbef9513297415c797516d71a20",
+  "native_controls_one_row": [
+    {
+      "offset": 395,
+      "matched_tensors": 48,
+      "whole_sha256": "fa74768a32d128e6bef914bf2606538f2a3855544cf179d90e7a53afe1cdd0d4"
+    },
+    {
+      "offset": 396,
+      "matched_tensors": 48,
+      "whole_sha256": "8f37943a46af274b120bfe39e24dd22b8598d03ff2fb9493f8bbc60c252aca42"
+    },
+    {
+      "offset": 397,
+      "matched_tensors": 48,
+      "whole_sha256": "57b1c0c199b5682cf8d05e01ae27b2aa1d48155008b1dc716164f597831ab5fc"
+    }
+  ],
+  "native_terminal_exact_pairs": 48,
+  "historical_selected_pairs_in_two_admitted_arms": 6,
+  "planned_anchor_rows": 96,
+  "completed_native_forced_comparisons": 0,
+  "forced_decoder_calls": 0,
+  "parity_result": null,
+  "retry": false,
+  "audit_model_calls": 0,
+  "actual_outer_stream_step_kwargs_in_synthetic_fixture": [
+    "image_sizes",
+    "max_tokens",
+    "prompt_cache",
+    "temperature"
+  ],
+  "signature_bind_error": "missing a required argument: 'thinking_budget_criteria'",
+  "explicit_none_binds": true,
+  "forced_input_audit_sha256": "1e6555ec6ecb39ab814cafde5e2916fad3ae79afe8560a7afbf4e223d3301705",
+  "generator_source_sha256": "f1575dde0ad1278250e3dd8b2d9c4775f973115d3e51ca7683cb4d5c5c6e532c"
+}

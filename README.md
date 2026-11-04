@@ -4,7 +4,12 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
-**Latest measurement:** [Note 0072](docs/research_notes/0072_prompt_only_source_calibration.md)
+**Latest calibration:** [Note 0074](docs/research_notes/0074_native_suffix_replay_entry_failure.md)
+records an own-suffix replay that stopped before its first forced decoder
+call. The first image's two native paths agreed on all 48 terminal K/V
+tensors, but **no native/forced comparison was obtained**.
+
+**Latest prompt measurement:** [Note 0072](docs/research_notes/0072_prompt_only_source_calibration.md)
 changes one instruction token on the same 32 FastVLM images. Both full visual
 sites stayed byte-identical; L1 keys, L12 keys and L23 values first differed
 at the edited token in all 32 pairs. The visible answer changed on 30 images.
@@ -445,6 +450,9 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
+For the native-suffix calibration gate, see its
+[registration](docs/research_notes/0073_native_suffix_replay_registration.md)
+and [retained v1 entry failure](docs/research_notes/0074_native_suffix_replay_entry_failure.md).
 Start with [Note 0072](docs/research_notes/0072_prompt_only_source_calibration.md)
 for the one-token prompt control, its cache boundary and two unchanged answers.
 [Note 0071](docs/research_notes/0071_prompt_only_source_registration.md) fixes
@@ -1208,6 +1216,8 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0070: Full Encoder/Projector Correspondence](docs/research_notes/0070_representation_correspondence.md)
 - [Research Note 0071: Single-Token Prompt Control Registration](docs/research_notes/0071_prompt_only_source_registration.md)
 - [Research Note 0072: Where A One-Token Prompt Edit First Appears](docs/research_notes/0072_prompt_only_source_calibration.md)
+- [Research Note 0073: Native-Suffix Replay Parity Registration](docs/research_notes/0073_native_suffix_replay_registration.md)
+- [Research Note 0074: Own-Suffix Replay Stopped Before Decoding](docs/research_notes/0074_native_suffix_replay_entry_failure.md)
 
 ## Claim Boundary
 

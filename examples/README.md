@@ -65,6 +65,11 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0074 Own-Suffix Replay Entry Failure](../docs/research_notes/0074_native_suffix_replay_entry_failure.md):
+[zero-model failure audit](research_notes/0074_native_suffix_replay_entry_failure/summary.json)
+and [two native arm receipts](research_notes/0074_native_suffix_replay_entry_failure/arms.jsonl).
+The first native sham was exact; there is no forced-cache result in v1.
+
 [0072 Single-Token Prompt Control](../docs/research_notes/0072_prompt_only_source_calibration.md):
 [summary](research_notes/0072_prompt_only_source_calibration/summary.json),
 [96 contexts with token IDs](research_notes/0072_prompt_only_source_calibration/contexts.jsonl),

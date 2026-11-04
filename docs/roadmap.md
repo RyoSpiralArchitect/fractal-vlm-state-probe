@@ -232,7 +232,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0072 encode the audited claim
+Status: the evidence matrix and Notes 0027-0074 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -289,7 +289,7 @@ bounded Phase 1 design; Notes 0055-0056 report its completed input measurements.
 | 0052-0056 | Controlled fixed-overlap construction, oracle and input audit | Complete; 896/896 blocks eligible; four descriptive endpoints independently verified |
 | 0057-0061 | Calibrated FastVLM cache comparison | Complete; fresh 384-tensor calibration exact; 2,048 experimental cells / twelve endpoints independently verified |
 | 0062-0066 | Simple-processing baselines | Non-learned panel complete with portable replay |
-| 0067-0072 so far | Representation path, prompt/suffix controls and final registration | Two-site panel and one-token source-prompt gate complete; forced-suffix parity, direct readout controls and final registration still open |
+| 0067-0074 so far | Representation path, prompt/suffix controls and final registration | Two-site panel and one-token source-prompt gate complete; own-suffix v1 stopped before forced decoding; parity, direct readout controls and final registration still open |
 | Originally planned around 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed; Note 0072 is a development calibration, not confirmation |
 | 0076-0080 | Independent replay, negative-case audit and manuscript | Not started |
 
