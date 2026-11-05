@@ -1100,3 +1100,16 @@ differ at all three registered targets on 32/32 images, but L0 suffix K/V
 are exactly equal on 32/32. Every full-cache first difference is position 387.
 All layers, raw metrics, shams, actual decoder IDs and the v1 failure remain
 visible. Forced strings do not measure the natural answer distribution.
+
+### Stage 4T: Suffix-Free First-Step Readout Qualification
+
+[Note 0079](research_notes/0079_first_step_readout_registration.md) registers
+96 x (native stream-only / decoder observed / independent prefix-only)
+contexts, complete native score and raw-logit identity, all-layer prefix
+cache and an explicit float64 probability definition.
+[Note 0080](research_notes/0080_first_step_readout_calibration.md) reports
+PASS: 288/288 contexts, 96/96 complete score/logit comparisons and 4,608
+prefix K/V tensor matches, with zero suffix decoder calls in the direct
+prefill path. Native bf16 score mass is not unit-normalized; retain it
+separately from the defined float64 probabilities. No ACK/YES effect
+summary or experimental readout panel is released by calibration.

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "first_step_readout_independent_file_audit",
+  "status": "PASS",
+  "verified_summary_sha256": "bddeced0371297b702e2accbf5d762ddb39e84bfbdadde85ba8f6f939f70562b",
+  "rows": 96,
+  "score_coordinate_pairs": 29171712,
+  "raw_logit_coordinate_pairs": 14585856,
+  "prefix_cache_tensor_pairs": 4608,
+  "prefix_boundaries_sha256": "a578cbae22096470f81107e98b9bfdfa2d74e79bb42a5b1ea07ac3f9af640c6d",
+  "actual_prefix_decoder_calls": 96,
+  "prefix_suffix_calls": 0,
+  "model_calls": 0,
+  "processor_calls": 0,
+  "interprompt_effects_computed": 0
+}

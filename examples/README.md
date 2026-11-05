@@ -65,6 +65,15 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0080 Suffix-Free First-Step Calibration](../docs/research_notes/0080_first_step_readout_calibration.md):
+[summary](research_notes/0080_first_step_readout_calibration/summary.json),
+[288 arm receipts](research_notes/0080_first_step_readout_calibration/arms.jsonl),
+[96 identity/normalization checks](research_notes/0080_first_step_readout_calibration/comparisons.jsonl),
+[actual prefix calls](research_notes/0080_first_step_readout_calibration/prefix_boundaries.jsonl)
+and [independent file audit](research_notes/0080_first_step_readout_calibration/independent_file_check.json).
+Complete native scores/logits remain local. No inter-prompt readout effect
+is reported by these calibration receipts.
+
 [0078 Fixed Common-Suffix Prompt Control](../docs/research_notes/0078_common_suffix_prompt_control.md):
 [summary](research_notes/0078_common_suffix_prompt_control/summary.json),
 [64 conditions](research_notes/0078_common_suffix_prompt_control/panel_cells.jsonl),

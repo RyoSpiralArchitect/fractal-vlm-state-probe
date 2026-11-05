@@ -4,6 +4,13 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
+**Latest qualification:** [Note 0080](docs/research_notes/0080_first_step_readout_calibration.md)
+recovers native first-step scores from an independent suffix-free prefill:
+all 151,936 vocabulary coordinates and all-layer prefix K/V match on 96/96
+historical rows. Native bf16 score mass ranges from 0.9398 to 1.0634, so
+the future probability definition explicitly renormalizes in float64.
+This is calibration; the inter-prompt readout effect is not measured yet.
+
 **Latest control:** [Note 0078](docs/research_notes/0078_common_suffix_prompt_control.md)
 holds the suffix IDs fixed under the two instructions on all 32 images.
 Both supplied positions differ in L1 keys, L12 keys and L23 values on 32/32
@@ -456,7 +463,11 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
-Start with the [common-suffix prompt result](docs/research_notes/0078_common_suffix_prompt_control.md)
+For suffix-free first-token readout, start with the
+[calibration result](docs/research_notes/0080_first_step_readout_calibration.md)
+and [its registration](docs/research_notes/0079_first_step_readout_registration.md).
+For the latest prompt-control experiment, read the
+[common-suffix prompt result](docs/research_notes/0078_common_suffix_prompt_control.md)
 and its [registration](docs/research_notes/0077_common_suffix_prompt_registration.md).
 For native-suffix replay, read the [verified v2 result](docs/research_notes/0076_native_suffix_replay_parity.md)
 and its [registration](docs/research_notes/0075_native_suffix_v2_registration.md).
@@ -1232,6 +1243,8 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0076: All-Layer Native-Suffix Replay Parity](docs/research_notes/0076_native_suffix_replay_parity.md)
 - [Research Note 0077: Fixed Common-Suffix Prompt Registration](docs/research_notes/0077_common_suffix_prompt_registration.md)
 - [Research Note 0078: Same Suffix IDs, Different Contextual Cache](docs/research_notes/0078_common_suffix_prompt_control.md)
+- [Research Note 0079: Suffix-Free Full-Vocabulary Readout Registration](docs/research_notes/0079_first_step_readout_registration.md)
+- [Research Note 0080: Full First-Step Readout Calibration](docs/research_notes/0080_first_step_readout_calibration.md)
 
 ## Claim Boundary
 
