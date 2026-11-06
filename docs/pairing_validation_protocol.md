@@ -1143,3 +1143,19 @@ have YES-side two-ID ties; retain the complete sets. Two zero-model
 verifications produce all six publication outputs byte-for-byte, including
 the complete 64 x 151,936 native-score archive. This is a development
 instruction control, not visual semantics, cache mediation or confirmation.
+
+### Stage 4V: Statistically Matched Input Construction
+
+[Note 0085](research_notes/0085_stat_matched_input_calibration_registration.md)
+registers only the guarded-tile construction and synthetic calibration
+design. Fixed tile cycles move 9% of content within existing pools; they
+are not whole-structure destruction or zero-coordinate-overlap controls.
+Actual processor matching is a future gate, not a consequence assumed from
+the support argument. All twelve feature paths and joint per-pool RGB
+multisets must match, with a mandatory nonmatching sentinel.
+
+The fixed future budget is 25 synthetic images, 128 historical processor
+replays, 216 matched feature-vector comparisons and 300 oracle comparisons.
+No model, source cohort, representation or readout is released. Implementation,
+independent oracle, tests and a separate release receipt are still required.
+The registration itself adds no images, maps, processor calls or scores.

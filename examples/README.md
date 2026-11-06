@@ -65,6 +65,11 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0085 Guarded-Tile Input Matching Registration](../docs/research_notes/0085_stat_matched_input_calibration_registration.md):
+[design configuration](../configs/stat_matched_input_calibration_v1.json).
+No result artifacts exist for this design-only registration. It does not
+release the planned synthetic calibration or an untouched source cohort.
+
 [0084 Paired First-Token Prompt Distributions](../docs/research_notes/0084_first_token_prompt_panel.md):
 [summary](research_notes/0084_first_token_prompt_panel/summary.json),
 [32 paired results](research_notes/0084_first_token_prompt_panel/pairs.jsonl),
