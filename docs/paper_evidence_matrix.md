@@ -40,7 +40,8 @@ the same four factorial cells are not independent samples.
 | Fixed common-suffix prompt control | Same 32 images, ACK vs YES, forced [785,2168]; same full visual bytes | 288 fresh calibration contexts + 64 panel contexts, 12,288 complete target/region records | Both fixed positions differ in L1 keys/L12 keys/L23 values on all 32 pairs; L0 suffix K/V exact; first difference is the edited prompt token in all 48 targets | token-matched prompt-conditioned cache, not natural readout, visual steering, independent replication or cache-to-answer mediation | [Note 0078](research_notes/0078_common_suffix_prompt_control.md) |
 | Suffix-free first-step readout calibration | Same 96 historical rows, three fresh paths, no direct suffix input | 192 native source + 96 independent prefix contexts; all 151,936 score/logit coordinates, 4,608 prefix K/V matches | All native/independent prefix score and raw-logit arrays word-exact; raw bf16 score mass 0.9398-1.0634; registered float64 renormalization sums to one | qualifies first-token score measurement and numerical definition, not an inter-prompt effect panel, full-answer distribution or confirmation | [Note 0080](research_notes/0080_first_step_readout_calibration.md) |
 | Paired first-token prompt panel preflight | Registered same 32 development images, TV primary and full portable score archive | 0/288 calibration and 0/64 experimental contexts; weights not loaded | Launch disk gate rejected the available space before qualification; paired effects remain null | infrastructure stop only, no evidence of a prompt effect or its absence | [Note 0082](research_notes/0082_first_token_prompt_preflight_stop.md) |
-| Paired first-token panel v2 registration | Same scientific design, separate canonical paths after approved pip HTTP-cache cleanup | Planned 288 calibration + 64 panel contexts; none acquired in v2 | 103 preceding files unchanged; local build wheels hash-identical; full launch reserve retained | registration and bounded storage receipt only, no effect or passing-preflight claim | [Note 0083](research_notes/0083_first_token_prompt_panel_v2_registration.md) |
+| Paired first-token panel v2 registration | Same scientific design, separate canonical paths after approved pip HTTP-cache cleanup | At registration: planned 288 calibration + 64 panel contexts, no v2 acquisition | 103 preceding files unchanged; local build wheels hash-identical; full launch reserve retained | registration and bounded storage receipt only, not an experimental result | [Note 0083](research_notes/0083_first_token_prompt_panel_v2_registration.md) |
+| Paired first-token prompt distributions | Same 32 development images, ACK/YES, all 151,936 native-score coordinates with registered float64 probabilities | 288 fresh calibration + 64 suffix-free panel contexts; 32 paired distances, complete portable score archive | Mean TV 0.619766, observed range 0.590613-0.644582; 2/32 argmax sets overlap, both YES-side two-ID ties; two byte-identical verifications | instruction-conditioned next-token distributions, not visual specificity, full-answer distribution, cache mediation or confirmation | [Note 0084](research_notes/0084_first_token_prompt_panel.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
@@ -484,13 +485,14 @@ Notes 0067-0068 qualify historical encoder/projector observation; Notes
 endpoints and exact selected-cache parity at all experimental cells. Notes
 0071-0072 qualify the first prompt-only comparison without adding a direct probe.
 
-1. Meet the full storage gate for the separately released first-token prompt panel v2.
-   Note 0081 fixes paired endpoints/aggregation, full float64 probabilities
-   and fresh calibration; Note 0082 stopped before any model call.
-   Note 0083 registers the unchanged v2 after approved HTTP-cache recovery;
-   registration is not passing qualification or acquisition.
-   Do not substitute earlier calibration-score effects or shrink the reserve.
-   Keep source-cache and direct-probe forwards separate; no mediation claim.
+1. Separately register controls that distinguish low-level statistics,
+   learned structural processing and ordinary instruction contextualization.
+   Notes 0081-0084 now complete the bounded first-token prompt panel after
+   fresh calibration; the v1 storage stop remains visible, not substituted.
+   Candidate controls include new statistically matched inputs, matched
+   learned/unlearned representations and image-by-instruction crossings.
+   None is launched by these proposals. Keep source-cache and direct-probe
+   forwards separate; the completed readout does not identify mediation.
 2. Carry raw/processor starts, baseline profiles, numerical-sensitivity
    diagnostics and between-level spectra into that comparison. Neither a
    larger cache score nor a baseline gap identifies learning or specifically

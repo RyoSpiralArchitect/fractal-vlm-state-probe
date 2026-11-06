@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "first_token_prompt_panel_v2_verification_replay",
+  "status": "PASS",
+  "verification_model_calls": 0,
+  "registered_commit": "175b30229f6938722d47947ad2a1c002f4d3b9dc",
+  "verification_roots": [
+    "runs/first_token_prompt_verified_v2",
+    "runs/first_token_prompt_verified_replay_v2"
+  ],
+  "byte_identical_files": {
+    "summary.json": "b565632eb64dc9887dc7cdd7ff5c6c5a233a2d12459b8a51e3fe377a3b397285",
+    "pairs.jsonl": "dced6ffc94cb79703939d2a69ac82614bcb9b17b31008681e2c695fcc68eb383",
+    "panel_cells.jsonl": "6007733c0d865c87c43e72617c045327faf06aac1553e7cbd6613bd5b435cbc1",
+    "calibration_arms.jsonl": "b81392094240a5c5e86a487f378ed0c26c844387867cdfe545f0b0a2adb5ba27",
+    "calibration_comparisons.jsonl": "eac4b44a9ec9c29c67358047c5610c12f7d25b4020a83494ded9611448de34ef",
+    "native_scores.npz": "aa2ccca10d0e45f115c254bc0a01ae2fb7995fb7a2d518c2f76ab05bd3d99196"
+  },
+  "registered_outputs": 6,
+  "score_shape": [
+    64,
+    151936
+  ],
+  "score_coordinates": 9723904,
+  "note": "Two file-only verifications through the frozen implementation, including the separately formulated arithmetic oracle; not a second model implementation or confirmation sample."
+}
