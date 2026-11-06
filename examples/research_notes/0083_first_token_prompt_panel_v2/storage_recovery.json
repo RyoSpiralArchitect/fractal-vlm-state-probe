@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "operator_approved_pip_http_cleanup",
+  "status": "COMPLETE",
+  "approved_scope": [
+    "pip/http-v2",
+    "pip/http"
+  ],
+  "before_http_caches": {
+    "http-v2": {
+      "exists": true,
+      "files": 2768,
+      "logical_bytes": 1509438207,
+      "allocated_bytes": 1515945984
+    },
+    "http": {
+      "exists": true,
+      "files": 15,
+      "logical_bytes": 2005982,
+      "allocated_bytes": 2027520
+    }
+  },
+  "after_http_caches": {
+    "http-v2": {
+      "exists": false,
+      "files": 0,
+      "logical_bytes": 0,
+      "allocated_bytes": 0
+    },
+    "http": {
+      "exists": false,
+      "files": 0,
+      "logical_bytes": 0,
+      "allocated_bytes": 0
+    }
+  },
+  "locally_built_wheels_preserved": 13,
+  "preserved_wheel_artifact_count": 25,
+  "preserved_wheel_manifest_sha256": "fe415d6c1a8cc0bea5cec7bbc5c17931113c7588cd2e1a340355d4f3f64c9989",
+  "before_local_receipt_sha256": "54cf8c4067db9cb7a36113de0d92fd12487c01d410b684612469b30d24229229",
+  "after_local_receipt_sha256": "10eda8aff615f5289a94b4dcb82074a0dafcefe330ad4b676a6be1054ef6ae8b",
+  "free_before_bytes": 11920412672,
+  "free_after_bytes": 13437239296,
+  "installed_packages_modified": false,
+  "model_cache_modified": false,
+  "research_runs_modified": false,
+  "note": "Free-byte changes may also reflect other processes; no precise attribution is inferred."
+}
