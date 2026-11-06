@@ -71,6 +71,8 @@ All 13 locally built wheels and 25 total wheel artifacts are hash-identical.
 The later [separately approved npm content-cache receipt](research_notes/0083_first_token_prompt_panel_v2/npm_storage_recovery.json)
 records only that target's removal, with `_npx`/sibling paths retained;
 its inode checks do not prove recursive installed-content identity.
+The [timestamped capacity check](research_notes/0083_first_token_prompt_panel_v2/launch_capacity_check.json)
+records fluctuating free space, with both v2 canonical paths still uncreated.
 This is storage provenance and registration, not a passing preflight or readout result.
 
 [0082 Paired Readout Preflight Stop](../docs/research_notes/0082_first_token_prompt_preflight_stop.md):

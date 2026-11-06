@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "pre_launch_capacity_observation_not_registered_preflight",
+  "status": "WAITING_FOR_CAPACITY",
+  "frozen_files_verified": 108,
+  "frozen_manifest_sha256": "5c4a467e0a9ad908b51b02fbccbc9c1bfb642ba3d55ae87145193a73da5246aa",
+  "registered_commit": "175b30229f6938722d47947ad2a1c002f4d3b9dc",
+  "required_free_bytes": 12041764864,
+  "reserve_bytes": 8589934592,
+  "launch_allowance_bytes": 3451830272,
+  "samples": [
+    {
+      "observed_utc": "2026-11-06T06:26:21.209695+00:00",
+      "free_bytes": 13515018240,
+      "launch_threshold_met": true
+    },
+    {
+      "observed_utc": "2026-11-06T06:26:41.214578+00:00",
+      "free_bytes": 13377396736,
+      "launch_threshold_met": true
+    },
+    {
+      "observed_utc": "2026-11-06T06:27:01.221352+00:00",
+      "free_bytes": 12552523776,
+      "launch_threshold_met": true
+    },
+    {
+      "observed_utc": "2026-11-06T06:27:21.226616+00:00",
+      "free_bytes": 10915561472,
+      "launch_threshold_met": false
+    }
+  ],
+  "last_shortfall_bytes": 1126203392,
+  "preflight_namespace_created": false,
+  "capture_namespace_created": false,
+  "model_weights_loaded": false,
+  "new_contexts": 0,
+  "effect_estimate": null,
+  "storage_receipts": {
+    "storage_recovery.json": "99a753669c3bc74c0437508132434921e15167c0481593aea61d7c31ef30d666",
+    "npm_storage_recovery.json": "b590462ee4c3a3a766e1e68e9d3c67b984d0d83e6ab6a563dc7fe55727d98ab9"
+  },
+  "note": "This is a timestamped capacity observation before the registered attempt, not a failed v2 preflight. No further deletion or reserve relaxation is authorized."
+}
