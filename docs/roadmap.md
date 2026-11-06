@@ -232,7 +232,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0082 encode the audited claim
+Status: the evidence matrix and Notes 0027-0083 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -276,6 +276,8 @@ full-vocabulary readout is path-qualified in Notes 0079-0080, with native
 score identity and explicit float64 renormalization. Its inter-prompt
 experimental panel is registered in Note 0081 but its first preflight
 stopped at the disk gate in Note 0082, with zero model calls.
+Note 0083 separately registers unchanged v2 after approved pip HTTP-cache
+cleanup; acquisition remains gated by the full launch reserve.
 Longer-term work
 includes held-out pairing-family transfer, neutral wording/order/verbalizer controls,
 Phi coordinate resolution, head/patch-level
@@ -294,7 +296,7 @@ bounded Phase 1 design; Notes 0055-0056 report its completed input measurements.
 | 0052-0056 | Controlled fixed-overlap construction, oracle and input audit | Complete; 896/896 blocks eligible; four descriptive endpoints independently verified |
 | 0057-0061 | Calibrated FastVLM cache comparison | Complete; fresh 384-tensor calibration exact; 2,048 experimental cells / twelve endpoints independently verified |
 | 0062-0066 | Simple-processing baselines | Non-learned panel complete with portable replay |
-| 0067-0082 so far | Representation path, prompt/suffix controls and final registration | Two-site/cache controls and suffix-free first-token qualification complete. Paired readout registered but storage-blocked before model loading; final confirmation still open |
+| 0067-0083 so far | Representation path, prompt/suffix controls and final registration | Two-site/cache controls and suffix-free first-token qualification complete. Paired readout v1 retained as a zero-forward stop; unchanged v2 registered, launch reserve still required; final confirmation still open |
 | Originally planned around 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed; Note 0072 is a development calibration, not confirmation |
 | 0076-0080 | Independent replay, negative-case audit and manuscript | Not started |
 

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "operator_approved_npm_content_cache_cleanup",
+  "status": "COMPLETE",
+  "observed_utc": "2026-11-06T06:23:49.105374+00:00",
+  "approved_scope": [
+    "npm/_cacache"
+  ],
+  "before_local_receipt_sha256": "e7833d021d7befb35c0b8777122d77bad17a2362608f7625eb637a7dc4272db2",
+  "before_cache": {
+    "exists": true,
+    "files": 2604,
+    "logical_bytes": 2055000874,
+    "allocated_bytes": 2062610432
+  },
+  "after_cache": {
+    "exists": false,
+    "files": 0,
+    "logical_bytes": 0,
+    "allocated_bytes": 0
+  },
+  "retained_sibling_entries": {
+    "_npx": {
+      "inode": 9643224,
+      "is_directory": true,
+      "is_symlink": false
+    },
+    "_logs": {
+      "inode": 617965,
+      "is_directory": true,
+      "is_symlink": false
+    },
+    "_update-notifier-last-checked": {
+      "inode": 617967,
+      "is_directory": false,
+      "is_symlink": false
+    }
+  },
+  "retained_sibling_check": "immediate_path_and_inode_only_not_recursive_content_hash",
+  "free_before_bytes": 9241272320,
+  "free_after_bytes": 10233638912,
+  "node_modules_modified": false,
+  "installed_tools_modified": false,
+  "model_cache_modified": false,
+  "research_runs_modified": false,
+  "note": "Only the approved cache path was removed; free-byte changes may also reflect other processes. Sibling inode checks are not full installed-content verification."
+}

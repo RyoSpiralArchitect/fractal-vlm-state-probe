@@ -1123,3 +1123,14 @@ fresh in-process calibration and portable complete score archive.
 records the launch storage rejection: no weights loaded, 0/288 calibration
 and 0/64 panel contexts. The endpoint is unavailable, not zero. Preserve
 this failure and the full reserve when planning any separately released retry.
+
+[Note 0083](research_notes/0083_first_token_prompt_panel_v2_registration.md)
+registers v2 with fresh canonical paths and a hash-bound, explicitly approved
+pip HTTP-cache recovery receipt. All 103 preceding frozen files and every
+scientific setting stay unchanged. This is a new release, not a successful
+preflight or an experimental result. Keep the full 12,041,764,864-byte launch
+gate; capacity fluctuations do not authorize further file deletion.
+After registration, an additional explicit operator approval removed only
+the npm content cache; its [separate receipt](../examples/research_notes/0083_first_token_prompt_panel_v2/npm_storage_recovery.json)
+does not change the registered model, inputs, endpoints or reserve. The
+retained `_npx`/sibling path checks are inode checks, not recursive installed-content hashes.

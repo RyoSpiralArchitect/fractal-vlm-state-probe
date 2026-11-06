@@ -4,10 +4,12 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
-**Current panel status:** [Note 0082](docs/research_notes/0082_first_token_prompt_preflight_stop.md)
-records the paired readout panel's storage-gate stop: zero model calls,
-zero new paired effects. The [registered design](docs/research_notes/0081_first_token_prompt_panel_registration.md)
-is retained; results are unavailable, not zero.
+**Current panel status:** [Note 0083](docs/research_notes/0083_first_token_prompt_panel_v2_registration.md)
+separately registers the unchanged paired readout panel after approved
+pip HTTP-cache cleanup. A [separately approved npm-cache cleanup](examples/research_notes/0083_first_token_prompt_panel_v2/npm_storage_recovery.json)
+also preserves installed environments. Launch still requires the full 11.215 GiB disk gate;
+v2 has not started. The [v1 storage stop](docs/research_notes/0082_first_token_prompt_preflight_stop.md)
+remains fixed with zero model calls. Paired effects are unavailable, not zero.
 
 **Latest qualification:** [Note 0080](docs/research_notes/0080_first_step_readout_calibration.md)
 recovers native first-step scores from an independent suffix-free prefill:
