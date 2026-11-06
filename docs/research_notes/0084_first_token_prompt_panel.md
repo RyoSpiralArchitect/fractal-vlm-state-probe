@@ -164,6 +164,12 @@ Score archive: `aa2ccca10d0e45f115c254bc0a01ae2fb7995fb7a2d518c2f76ab05bd3d99196
 Capture: `1744e0ecda396cc41010b7e95467ac2bdac066938491137f703cf7eefbf74f2b`.
 Preflight: `496814d9ccba56445fb6ff0c4f50f4a1a6cc3f35b5cd24e41323889a3f4cb40b`.
 
+All **671 local tests** pass. The two public-only publication tests also
+pass from a clean Git archive of `5101348b08f39cc566d9befcabcdc8e116dd5152`,
+without local runs, model weights or source images. The 108 frozen file
+hashes, scoped Ruff, whitespace checks and 475 local documentation links
+pass. These are local checks, not GitHub CI or untouched confirmation.
+
 ## Next Boundary
 
 Low-level/statistical structure, learned structural processing and ordinary
