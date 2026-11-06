@@ -65,6 +65,20 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0084 Paired First-Token Prompt Distributions](../docs/research_notes/0084_first_token_prompt_panel.md):
+[summary](research_notes/0084_first_token_prompt_panel/summary.json),
+[32 paired results](research_notes/0084_first_token_prompt_panel/pairs.jsonl),
+[64 experimental receipts](research_notes/0084_first_token_prompt_panel/panel_cells.jsonl),
+[288 calibration arms](research_notes/0084_first_token_prompt_panel/calibration_arms.jsonl),
+[96 calibration comparisons](research_notes/0084_first_token_prompt_panel/calibration_comparisons.jsonl),
+[complete native-score archive](research_notes/0084_first_token_prompt_panel/native_scores.npz)
+and [byte-identical verification receipt](research_notes/0084_first_token_prompt_panel/verification_replay.json).
+All 64 x 151,936 bf16 score words are retained losslessly; probabilities
+are reconstructed with the registered float64 renormalization. Mean TV
+0.619766 is descriptive over 32 reused images, not accuracy or confirmation.
+Weights/source images are not required for paired endpoint replay; full
+raw logits and cache arrays remain local.
+
 [0083 Paired Readout v2 Registration](../docs/research_notes/0083_first_token_prompt_panel_v2_registration.md):
 [HTTP-only recovery receipt](research_notes/0083_first_token_prompt_panel_v2/storage_recovery.json).
 All 13 locally built wheels and 25 total wheel artifacts are hash-identical.

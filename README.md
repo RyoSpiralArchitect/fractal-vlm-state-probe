@@ -4,21 +4,23 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
-**Current panel status:** [Note 0083](docs/research_notes/0083_first_token_prompt_panel_v2_registration.md)
-separately registers the unchanged paired readout panel after approved
-pip HTTP-cache cleanup. A [separately approved npm-cache cleanup](examples/research_notes/0083_first_token_prompt_panel_v2/npm_storage_recovery.json)
-also preserves installed environments. Launch still requires the full 11.215 GiB disk gate;
-v2 has not started. A [timestamped capacity check](examples/research_notes/0083_first_token_prompt_panel_v2/launch_capacity_check.json)
-records the remaining launch hold, not a failed v2 attempt.
-The [v1 storage stop](docs/research_notes/0082_first_token_prompt_preflight_stop.md)
-remains fixed with zero model calls. Paired effects are unavailable, not zero.
+**Latest readout measurement:** [Note 0084](docs/research_notes/0084_first_token_prompt_panel.md)
+completes 64 suffix-free ACK/YES conditions after 288 fresh calibration
+contexts. Mean paired full-vocabulary TV is **0.619766** over 32 development
+images; all distances are 0.590613-0.644582. Argmax sets overlap on only
+2/32 pairs, both with a YES-side two-ID tie rather than identical sets.
+The complete lossless score archive and all six verification outputs replay
+byte-for-byte. This is an instruction-conditioned next-token result, not
+visual semantic steering or cache-to-answer mediation. The
+[v1 zero-forward storage stop](docs/research_notes/0082_first_token_prompt_preflight_stop.md)
+remains separately retained.
 
 **Latest qualification:** [Note 0080](docs/research_notes/0080_first_step_readout_calibration.md)
 recovers native first-step scores from an independent suffix-free prefill:
 all 151,936 vocabulary coordinates and all-layer prefix K/V match on 96/96
 historical rows. Native bf16 score mass ranges from 0.9398 to 1.0634, so
-the future probability definition explicitly renormalizes in float64.
-This is calibration; the inter-prompt readout effect is not measured yet.
+the registered probability definition explicitly renormalizes in float64.
+This remains calibration; the separate inter-prompt measurement is Note 0084.
 
 **Latest control:** [Note 0078](docs/research_notes/0078_common_suffix_prompt_control.md)
 holds the suffix IDs fixed under the two instructions on all 32 images.
@@ -118,7 +120,9 @@ cross-prompt forced comparison therefore needed its own native-path calibration.
 Note 0076 supplies the own-suffix parity prerequisite. Notes 0077-0078 now
 complete the fixed common-suffix comparison after a fresh same-process
 96-row calibration. Token equality is distinct from later-layer state equality.
-The Note 0052 plan continues toward approximately Note 0080, with an untouched
+Notes 0081-0084 separately register and complete the source-prompt readout
+panel, preserving the first storage rejection and the fresh calibration gate.
+The Note 0052 plan extended beyond approximately Note 0080, with an untouched
 confirmation cohort still neither generated nor sealed.
 The current target is directly measurable:
 

@@ -1134,3 +1134,12 @@ After registration, an additional explicit operator approval removed only
 the npm content cache; its [separate receipt](../examples/research_notes/0083_first_token_prompt_panel_v2/npm_storage_recovery.json)
 does not change the registered model, inputs, endpoints or reserve. The
 retained `_npx`/sibling path checks are inode checks, not recursive installed-content hashes.
+
+[Note 0084](research_notes/0084_first_token_prompt_panel.md) completes v2:
+288 fresh calibration contexts precede 64 suffix-free experimental conditions.
+All 32 paired distributions differ; mean full-vocabulary TV is 0.619766,
+with observed per-image range 0.590613-0.644582. Both argmax-overlap cases
+have YES-side two-ID ties; retain the complete sets. Two zero-model
+verifications produce all six publication outputs byte-for-byte, including
+the complete 64 x 151,936 native-score archive. This is a development
+instruction control, not visual semantics, cache mediation or confirmation.
