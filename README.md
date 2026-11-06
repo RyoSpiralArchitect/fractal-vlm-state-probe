@@ -4,6 +4,11 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
+**Current panel status:** [Note 0082](docs/research_notes/0082_first_token_prompt_preflight_stop.md)
+records the paired readout panel's storage-gate stop: zero model calls,
+zero new paired effects. The [registered design](docs/research_notes/0081_first_token_prompt_panel_registration.md)
+is retained; results are unavailable, not zero.
+
 **Latest qualification:** [Note 0080](docs/research_notes/0080_first_step_readout_calibration.md)
 recovers native first-step scores from an independent suffix-free prefill:
 all 151,936 vocabulary coordinates and all-layer prefix K/V match on 96/96
@@ -463,6 +468,9 @@ or full-distribution equality inferred from an unchanged generated label.
 
 ## Start Here
 
+For the paired prompt-readout plan, see its
+[registration](docs/research_notes/0081_first_token_prompt_panel_registration.md)
+and [zero-forward preflight stop](docs/research_notes/0082_first_token_prompt_preflight_stop.md).
 For suffix-free first-token readout, start with the
 [calibration result](docs/research_notes/0080_first_step_readout_calibration.md)
 and [its registration](docs/research_notes/0079_first_step_readout_registration.md).
@@ -1245,6 +1253,8 @@ python3 scripts/analyze_factorial_cache_trajectory.py \
 - [Research Note 0078: Same Suffix IDs, Different Contextual Cache](docs/research_notes/0078_common_suffix_prompt_control.md)
 - [Research Note 0079: Suffix-Free Full-Vocabulary Readout Registration](docs/research_notes/0079_first_step_readout_registration.md)
 - [Research Note 0080: Full First-Step Readout Calibration](docs/research_notes/0080_first_step_readout_calibration.md)
+- [Research Note 0081: Paired First-Token Prompt Panel Registration](docs/research_notes/0081_first_token_prompt_panel_registration.md)
+- [Research Note 0082: Readout Panel Storage-Gate Stop](docs/research_notes/0082_first_token_prompt_preflight_stop.md)
 
 ## Claim Boundary
 

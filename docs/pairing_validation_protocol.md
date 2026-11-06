@@ -1113,3 +1113,13 @@ prefix K/V tensor matches, with zero suffix decoder calls in the direct
 prefill path. Native bf16 score mass is not unit-normalized; retain it
 separately from the defined float64 probabilities. No ACK/YES effect
 summary or experimental readout panel is released by calibration.
+
+### Stage 4U: Paired First-Token Prompt Panel
+
+[Note 0081](research_notes/0081_first_token_prompt_panel_registration.md)
+fixes the mean paired TV endpoint, all 32 images, full probability definition,
+fresh in-process calibration and portable complete score archive.
+[Note 0082](research_notes/0082_first_token_prompt_preflight_stop.md)
+records the launch storage rejection: no weights loaded, 0/288 calibration
+and 0/64 panel contexts. The endpoint is unavailable, not zero. Preserve
+this failure and the full reserve when planning any separately released retry.

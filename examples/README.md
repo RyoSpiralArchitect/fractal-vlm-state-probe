@@ -65,6 +65,11 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0082 Paired Readout Preflight Stop](../docs/research_notes/0082_first_token_prompt_preflight_stop.md):
+[zero-forward failure audit](research_notes/0082_first_token_prompt_preflight_stop/summary.json)
+and [post-failure storage snapshot](research_notes/0082_first_token_prompt_preflight_stop/storage_snapshot.json).
+No paired score archive or effect estimate exists for this stopped attempt.
+
 [0080 Suffix-Free First-Step Calibration](../docs/research_notes/0080_first_step_readout_calibration.md):
 [summary](research_notes/0080_first_step_readout_calibration/summary.json),
 [288 arm receipts](research_notes/0080_first_step_readout_calibration/arms.jsonl),

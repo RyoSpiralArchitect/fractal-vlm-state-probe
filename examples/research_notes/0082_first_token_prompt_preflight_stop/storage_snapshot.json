@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "post_preflight_storage_observation",
+  "observed_utc": "2026-11-06T05:33:20.495864+00:00",
+  "observed_after_failure": true,
+  "free_bytes": 9137606656,
+  "required_bytes": 12041764864,
+  "shortfall_bytes": 2904158208,
+  "free_at_failure_bytes": null,
+  "note": "The original failure did not record free bytes; this is a later observation."
+}
