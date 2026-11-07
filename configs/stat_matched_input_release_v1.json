@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "release_id": "stat_matched_input_release_v1",
+  "registered_date": "2026-11-07",
+  "design_commit": "ee1bed56409ff90fc0296f76383b18481c5a1b7d",
+  "design_config_sha256": "b8cf80d020997953c6bffb68f0f2c66287f54009dce3d92e336c1f0787ea6003",
+  "execution_authorized": true,
+  "calibration_only": true,
+  "model_forwards": 0,
+  "retry_or_resume": false,
+  "preflight_root": "runs/stat_matched_input_preflight_v1",
+  "capture_root": "runs/stat_matched_input_calibration_v1",
+  "verification_roots": [
+    "runs/stat_matched_input_verified_v1",
+    "runs/stat_matched_input_verified_replay_v1"
+  ],
+  "scope": "fixed_guarded_tile_synthetic_calibration_only_no_real_source_or_model_release"
+}

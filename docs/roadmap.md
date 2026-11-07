@@ -232,7 +232,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0084 encode the audited claim
+Status: the evidence matrix and Notes 0027-0087 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -302,6 +302,9 @@ bounded Phase 1 design; Notes 0055-0056 report its completed input measurements.
 | 0057-0061 | Calibrated FastVLM cache comparison | Complete; fresh 384-tensor calibration exact; 2,048 experimental cells / twelve endpoints independently verified |
 | 0062-0066 | Simple-processing baselines | Non-learned panel complete with portable replay |
 | 0067-0084 so far | Representation path, prompt/suffix controls and readout | Two-site/cache controls and suffix-free first-token panel complete, with full portable scores; v1 retained as a zero-forward stop; final confirmation still open |
+| 0085 | Matched-input construction/calibration design | Recipe/gates fixed before data; implementation and synthetic calibration reported separately in 0086-0087; no real-source release |
+| 0086 | Matched-input calibration implementation | Constructor, independent oracle, failure retention and file replay implemented; native calibration reported separately, no model release |
+| 0087 | Native matched-input synthetic calibration | All fixed gates pass on 25 inputs / 153 processor calls; eight outputs byte-identical; real-source/model panel remains unreleased |
 | Originally planned around 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed; Note 0072 is a development calibration, not confirmation |
 | 0076-0080 | Independent replay, negative-case audit and manuscript | Not started |
 

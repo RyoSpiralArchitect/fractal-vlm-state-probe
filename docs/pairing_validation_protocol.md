@@ -1143,3 +1143,36 @@ have YES-side two-ID ties; retain the complete sets. Two zero-model
 verifications produce all six publication outputs byte-for-byte, including
 the complete 64 x 151,936 native-score archive. This is a development
 instruction control, not visual semantics, cache mediation or confirmation.
+
+### Stage 4V: Statistically Matched Input Construction
+
+[Note 0085](research_notes/0085_stat_matched_input_calibration_registration.md)
+registers only the guarded-tile construction and synthetic calibration
+design. Fixed tile cycles move 9% of content within existing pools; they
+are not whole-structure destruction or zero-coordinate-overlap controls.
+Actual processor matching is a future gate, not a consequence assumed from
+the support argument. All twelve feature paths and joint per-pool RGB
+multisets must match, with a mandatory nonmatching sentinel.
+
+The fixed future budget is 25 synthetic images, 128 historical processor
+replays, 216 matched feature-vector comparisons and 300 oracle comparisons.
+No model, source cohort, representation or readout is released. Implementation,
+independent oracle, tests and a separate release receipt are still required.
+The registration itself adds no images, maps, processor calls or scores.
+
+[Note 0086](research_notes/0086_stat_matched_input_calibration_release.md)
+implements the constructor, explicit-site oracle, immutable capture and
+file-only verification. Commit all 118 selected files before real candidate
+generation. Toy tests use a separate 80px geometry and fake processor.
+Retain the first unexpected failure and stop acquisition; its subsequent
+file audit may report FAILED_CALIBRATION_AUDITED, never calibration PASS.
+No model or real source cohort is authorized by this implementation.
+
+[Note 0087](research_notes/0087_stat_matched_input_calibration.md) reports
+calibration PASS: all 153 calls complete, 128 historical matches, 216 matched
+feature-vector comparisons and 2,340 exact joint-multiset comparisons.
+Maximum feature residual is 8.66e-15 against the fixed 1e-10 gate; the
+sentinel is correctly rejected. Eight outputs replay byte-for-byte through
+zero-processor verification. This qualifies only the fixed synthetic
+construction; no learned representation, source cohort or confirmation
+panel is released.

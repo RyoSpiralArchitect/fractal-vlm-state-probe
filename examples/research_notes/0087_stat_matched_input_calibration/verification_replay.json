@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "stat_matched_input_calibration_verification_replay",
+  "status": "PASS",
+  "registered_outputs": 8,
+  "registered_commit": "b3325507b704f535182f3ee3f01948646186d73b",
+  "verification_processor_calls": 0,
+  "model_forwards": 0,
+  "verification_roots": [
+    "runs/stat_matched_input_verified_v1",
+    "runs/stat_matched_input_verified_replay_v1"
+  ],
+  "byte_identical_files": {
+    "summary.json": "e2b856dc67d67ee7898a2d39240160b8a6c099b9b8f65d980825022d2cd38270",
+    "coordinate_maps.jsonl": "abb770966cd0c6cbf01daa65f8c2def9a9a0f0bb8bdf64a31fe875a09b5f7796",
+    "raw_inputs.jsonl": "ef309f04cc2e938b21a74e437749de8c7226d91fb8b29ee9d32df6f9e071905f",
+    "historical_processor.jsonl": "71d6c6cfbb31fee7fd94b88e7d3dc7359acaba049bc7a487db070f999c53df74",
+    "synthetic_processor.jsonl": "025eb8a8657eb1332236a5449b68ee2488b052f63e36b8ad9c72447bfb22f681",
+    "cases.jsonl": "a11e906fd9398ee3ee5d586c6d407f0a9c1ca6bdebc1f906c5f1f61af976c729",
+    "features.npz": "5e4816df48310462988ec16a5cc2b4302c010623308824b2ba000dc1a93e9cd5",
+    "residuals.npz": "01be6ab36abe3a60d4bc610f39af7d99257de262b912f99d50df3c850612656a"
+  },
+  "note": "Two file-only verifications through the frozen implementation and explicit raw/index plus independent feature oracles; not independent processor regeneration or confirmation."
+}

@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "study_id": "stat_matched_input_calibration_v1",
+  "registered_date": "2026-11-07",
+  "parent_commit": "f2ff0e9172824bfc12411f7b6790481dc5692ca6",
+  "scope": "construction_and_synthetic_calibration_design_only",
+  "status_at_registration": "not_implemented_not_released",
+  "execution_authorized_by_this_file": false,
+  "execution_runner": null,
+  "registration_files": [
+    "configs/stat_matched_input_calibration_v1.json",
+    "docs/research_notes/0085_stat_matched_input_calibration_registration.md",
+    "tests/test_stat_matched_input_registration.py"
+  ],
+  "passing_calibration_releases_panel": false,
+  "question": "Can guarded within-pool tile rearrangements preserve the registered raw/processor joint RGB multisets and all twelve non-learned feature views while changing tile placement?",
+  "pinned_artifacts": {
+    "configs/nonlearned_processing_phase3_v1.json": "f60ce7c3cd3dd4677b4a7e378d31558b642c5248521a497f6dd9b5af38978d3c",
+    "src/fractal_vlm_state_probe/nonlearned_processing.py": "bff7b15736204557151225717303ed92dcce262fd19555a0ed687ac7d00ebed9",
+    "src/fractal_vlm_state_probe/nonlearned_processing_calibration.py": "9686e0b011a1f64c899774e698c0c40bb51f8a91f12477491e7c1943df0608ee",
+    "examples/research_notes/0063_nonlearned_processing_calibration/summary.json": "d78a58db2470f71239c515e684db120ca8a066c8c9a5460e219e5db7c6c5affc",
+    "examples/research_notes/0065_nonlearned_processing_panel/summary.json": "01420d73cb0f67920b794a0a28c0a167c379fe6c63954e8c57a65ad3070f3b85",
+    "examples/research_notes/0084_first_token_prompt_panel/summary.json": "b565632eb64dc9887dc7cdd7ff5c6c5a233a2d12459b8a51e3fe377a3b397285"
+  },
+  "inherited_feature_config": "configs/nonlearned_processing_phase3_v1.json",
+  "preserve_inherited_frozen_hashes_from": "examples/research_notes/0084_first_token_prompt_panel/summary.json",
+  "inherited_frozen_files": 108,
+  "construction": {
+    "raw_shape_hwc": [
+      320,
+      320,
+      3
+    ],
+    "content_rows": [
+      40,
+      280
+    ],
+    "grid": [
+      8,
+      8
+    ],
+    "cell_shape_hw": [
+      40,
+      40
+    ],
+    "active_grid_rows": [
+      1,
+      7
+    ],
+    "active_grid_cols": [
+      0,
+      8
+    ],
+    "tile_shape_hw": [
+      6,
+      6
+    ],
+    "tile_offsets_yx": [
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        27
+      ],
+      [
+        27,
+        7
+      ],
+      [
+        27,
+        27
+      ]
+    ],
+    "tile_ids": "row_major_0_to_3",
+    "arrangement_shifts": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "assignment": "output_tile[k,u,v,:]=identity_tile[(k+shift)%4,u,v,:]",
+    "map_direction": "output_site_to_identity_canvas_source_site",
+    "outside_tiles": "identity_coordinates_and_fixture_constant_background",
+    "map_dtype": "uint32",
+    "map_shape": [
+      320,
+      320
+    ],
+    "maps": 4,
+    "moved_sites_nonidentity": 6912,
+    "fixed_sites_nonidentity": 95488,
+    "content_moved_fraction": [
+      9,
+      100
+    ],
+    "canvas_moved_fraction": [
+      27,
+      400
+    ],
+    "padding": "constant_fixture_background_not_palette_mean",
+    "construction_uses_image_scores": false,
+    "search_or_rejection_sampling": false,
+    "phase_hypothesis": {
+      "processor_shape_nchw": [
+        1,
+        3,
+        1024,
+        1024
+      ],
+      "resize_ratio": [
+        16,
+        5
+      ],
+      "tile_translation_raw": 20,
+      "tile_translation_processor": 64,
+      "candidate_resize_support_radius_raw": [
+        2,
+        1
+      ],
+      "largest_processor_box_radius": 14,
+      "combined_candidate_radius_raw": [
+        51,
+        8
+      ],
+      "minimum_tile_guard_raw": 7,
+      "qualification_status": "conditional_support_reasoning_only_actual_processor_must_pass_all_gates"
+    }
+  },
+  "fixtures": {
+    "order": [
+      "zero",
+      "constant",
+      "ramp",
+      "checkerboard",
+      "impulse",
+      "noise"
+    ],
+    "variables": "r=0..5,c=0..7 content-cell indices; k=0..3 tile index; u,v=0..5 local row,column; all formulas before uint8 conversion",
+    "background_rgb": {
+      "zero": [
+        0,
+        0,
+        0
+      ],
+      "constant": [
+        51,
+        128,
+        204
+      ],
+      "ramp": [
+        128,
+        128,
+        128
+      ],
+      "checkerboard": [
+        128,
+        128,
+        128
+      ],
+      "impulse": [
+        0,
+        0,
+        0
+      ],
+      "noise": [
+        128,
+        128,
+        128
+      ]
+    },
+    "payloads": {
+      "zero": "all channels zero",
+      "constant": "all pixels [51,128,204]",
+      "ramp": [
+        "(41*k+11*r+3*c+5*u+v)%256",
+        "(17*k+7*r+13*c+3*v)%256",
+        "(29*k+5*r+19*c+7*u)%256"
+      ],
+      "checkerboard": "a=15+32*k+128*((u+v+r+c)%2); RGB=[a,255-a,a]",
+      "impulse": "zeros except (u=k,v=(2*k)%6) has RGB=[255,128,64]",
+      "noise": "Generator(PCG64(SeedSequence([2026110701,r,c,k]))).integers(0,256,size=(6,6,3),dtype=uint8)"
+    },
+    "noise_seed": 2026110701,
+    "arrays_per_fixture": 4,
+    "matched_canvases": 24,
+    "sentinel": {
+      "source": "noise_shift_0",
+      "raw_rows": [
+        40,
+        80
+      ],
+      "raw_cols": [
+        0,
+        40
+      ],
+      "overwrite_rgb": [
+        255,
+        255,
+        255
+      ],
+      "canvases": 1,
+      "expected": "reject_match_not_a_failed_integrity_check"
+    },
+    "new_synthetic_canvases_planned": 25,
+    "serialization": "lossless_RGB_uint8_PNG_and_decoded_array_hash_no_resampling_alpha_or_color_profile"
+  },
+  "feature_contract": {
+    "starts": [
+      "raw_rgb",
+      "processor_pixel_values"
+    ],
+    "features": [
+      "global_moments",
+      "grid_mean",
+      "small_mean",
+      "small_energy",
+      "large_mean",
+      "large_energy"
+    ],
+    "energy_order": "grid_pool(square(box_mean(image)))_not_box_mean(square(image))",
+    "feature_dimensions": {
+      "global_moments": 6,
+      "grid_mean": 192,
+      "small_mean": 192,
+      "small_energy": 192,
+      "large_mean": 192,
+      "large_energy": 192
+    },
+    "grid": [
+      8,
+      8
+    ],
+    "windows": {
+      "raw_rgb": {
+        "small": 3,
+        "large": 9
+      },
+      "processor_pixel_values": {
+        "small": 9,
+        "large": 29
+      }
+    },
+    "feature_definitions_and_scaling": "unchanged_from_inherited_feature_config_and_pinned_implementations",
+    "oracle": "reuse_pinned_separable_convolution_and_explicit_grid_slice_oracle",
+    "absolute_tolerance": 1e-10,
+    "relative_tolerance": 0,
+    "normalized_factorial_direction_equality_implied": false,
+    "coordinate_oracle": "explicit_source_successor_dictionary_and_per_pixel_assignment_not_constructor_copy"
+  },
+  "future_calibration": {
+    "release_required": true,
+    "release_gate": "commit registration_files and complete constructor_oracle_capture_verifier_tests; preserve inherited hashes; separate release may bind paths but not alter recipe thresholds or budgets",
+    "implementation_commit": null,
+    "independent_constructor_oracle_required": true,
+    "fixture_tests_required": true,
+    "preflight": "file_only_pins_old_108_hashes_committed_code_runtime_disk_and_release_no_new_arrays_or_processor",
+    "execution_order": [
+      "coordinate_maps_and_25_raw_fixtures_audited_and_sealed",
+      "all_128_historical_processor_replays",
+      "25_synthetic_processor_calls_in_fixture_then_shift_order_sentinel_last",
+      "file_only_two_identical_verifications"
+    ],
+    "historical_processor_checks": 128,
+    "historical_processor_contract": "Note0063 frozen_specification.processor_jobs in recorded order; exact native pixel hash and complete non-pixel payload, no real-image feature scoring",
+    "synthetic_processor_calls": 25,
+    "total_processor_calls": 153,
+    "verification_processor_calls": 0,
+    "model_forwards": 0,
+    "model_weights_loaded": false,
+    "processor": "same_qualified_processor_only_path_no_chat_template_resize_normalization_crop_or_metadata_override",
+    "processor_call": {
+      "images": "PIL_RGB_from_exact_uint8_canvas",
+      "text": ["<image>"],
+      "return_tensors": "np",
+      "add_detokenizer": false,
+      "model_chat_template": false
+    },
+    "synthetic_non_pixel_reference": "Note0063 frozen_specification.processor_jobs[0].processor_non_pixel_payload",
+    "synthetic_non_pixel_expected": {
+      "input_ids": [[-200]],
+      "attention_mask": [[1]],
+      "image_sizes": [[320, 320]]
+    },
+    "processor_shape_nchw": [
+      1,
+      3,
+      1024,
+      1024
+    ],
+    "processor_dtype": "float32",
+    "raw_dtype": "uint8",
+    "feature_oracle_vector_pairs": 300,
+    "matched_pairs": 18,
+    "matched_feature_vector_comparisons": 216,
+    "joint_multiset_comparisons": 2340,
+    "nonconstant_changed_array_checks": 24,
+    "constant_or_zero_word_exact_shams": 12,
+    "positive_gates": [
+      "four coordinate maps are independently reconstructed bijections with fixed moved/fixed counts",
+      "all matched raw and native processor full-canvas and 64 pooled joint RGB multisets are byte-identical",
+      "all 216 matched feature vector comparisons have maximum absolute coordinate error <= 1e-10",
+      "all 300 feature versus oracle vector pairs have maximum absolute coordinate error <= 1e-10",
+      "raw and processor arrays differ for every nonzero shift on ramp checkerboard impulse noise",
+      "raw and processor arrays are word-exact for every nonzero shift on zero and constant",
+      "historical processor parity and all synthetic shape dtype finiteness and non-pixel payload gates pass"
+    ],
+    "joint_multiset_encoding": "lexicographically_sort_joint_RGB_rows_raw_uint8_or_native_little_endian_float32_words_per_full_canvas_and_each_8x8_grid_cell",
+    "sentinel_gate": "both raw and processor grid_mean maximum absolute change > 1e-3 and full joint RGB multiset differs; retain all twelve residuals",
+    "matched_feature_audit": "save all vectors, norms, signed coordinate residuals, max_abs and L2 residuals; no normalized directions or family scores",
+    "reserve_bytes": 8589934592,
+    "payload_allowance_bytes": 536870912,
+    "overhead_allowance_bytes": 536870912,
+    "required_launch_free_bytes": 9663676416,
+    "save": "four full coordinate maps; all 25 raw and native processor arrays; all actual/oracle feature arrays; all input/native-word/metadata hashes; every comparison and partial failure",
+    "historical_replay_storage": "new hash and complete non-pixel receipts, not 128 duplicate pixel arrays",
+    "retry_or_resume": false,
+    "outcome_based_replacement": false,
+    "on_failure": "retain_partial_outputs_and_first_failure_stop_no_relaxed_tolerance_changed_guard_shift_fixture_or_seed",
+    "verification": "reconstruct_maps_and_raw_fixtures_independently_and_read_all_saved_arrays_no_processor_or_model_calls",
+    "passing_does_not_authorize": [
+      "real_source_cohort_generation",
+      "representation_panel",
+      "cache_or_readout_measurement",
+      "confirmation"
+    ]
+  },
+  "claim_ceiling": {
+    "calibration_only": true,
+    "statistical_tests": 0,
+    "confidence_intervals": 0,
+    "practical_equivalence_tests": 0,
+    "matching_applies_only_to_named_features_and_fixture_orbits": true,
+    "preserves_all_low_level_statistics": false,
+    "destroys_all_structure": false,
+    "identifies_learning_or_semantics": false,
+    "identifies_cache_mediation": false,
+    "guard_and_phase_argument_is_not_empirical_qualification": true
+  },
+  "confirmation": {
+    "status": "not_generated_not_sealed",
+    "cohort_manifest": null,
+    "cohort_manifest_sha256": null,
+    "sample_size": null,
+    "execution_released": false
+  },
+  "new_observations_at_registration": {
+    "images": 0,
+    "maps": 0,
+    "processor_calls": 0,
+    "model_forwards": 0,
+    "scientific_scores": 0
+  },
+  "amendment_rule": "new_version_committed_before_affected_outcomes_keep_original_and_failures_no_posthoc_seed_guard_tolerance_or_feature_selection"
+}
