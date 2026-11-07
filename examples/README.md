@@ -65,6 +65,20 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0087 Guarded-Tile Native Input Matching](../docs/research_notes/0087_stat_matched_input_calibration.md):
+[summary](research_notes/0087_stat_matched_input_calibration/summary.json),
+[case audits](research_notes/0087_stat_matched_input_calibration/cases.jsonl),
+[map](research_notes/0087_stat_matched_input_calibration/coordinate_maps.jsonl)
+and [raw receipts](research_notes/0087_stat_matched_input_calibration/raw_inputs.jsonl),
+[historical](research_notes/0087_stat_matched_input_calibration/historical_processor.jsonl)
+and [synthetic processor receipts](research_notes/0087_stat_matched_input_calibration/synthetic_processor.jsonl),
+[all feature arrays](research_notes/0087_stat_matched_input_calibration/features.npz),
+[signed residuals](research_notes/0087_stat_matched_input_calibration/residuals.npz)
+and [eight-file replay](research_notes/0087_stat_matched_input_calibration/verification_replay.json).
+The archives replay all numerical matching/oracle checks without a processor.
+Native tensor word-level re-auditing still needs the full local arrays.
+This is synthetic construction calibration, not learned-model evidence.
+
 [0085 Guarded-Tile Input Matching Registration](../docs/research_notes/0085_stat_matched_input_calibration_registration.md):
 [design configuration](../configs/stat_matched_input_calibration_v1.json).
 No result artifacts exist for this design-only registration. It does not

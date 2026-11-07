@@ -4,6 +4,16 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
+**Latest input calibration:** [Note 0087](docs/research_notes/0087_stat_matched_input_calibration.md)
+realizes the guarded-tile candidate on the native processor: all twelve
+baseline feature views match (maximum residual 8.66e-15), and all 2,340
+raw/native joint-multiset comparisons are exact. Historical parity and the
+mandatory nonmatching sentinel pass. The 153 processor calls use no model
+forward; this qualifies synthetic construction, not VLM response, learning
+or confirmation. [Design](docs/research_notes/0085_stat_matched_input_calibration_registration.md)
+and [implementation release](docs/research_notes/0086_stat_matched_input_calibration_release.md)
+remain fixed.
+
 **Latest readout measurement:** [Note 0084](docs/research_notes/0084_first_token_prompt_panel.md)
 completes 64 suffix-free ACK/YES conditions after 288 fresh calibration
 contexts. Mean paired full-vocabulary TV is **0.619766** over 32 development
@@ -14,13 +24,6 @@ byte-for-byte. This is an instruction-conditioned next-token result, not
 visual semantic steering or cache-to-answer mediation. The
 [v1 zero-forward storage stop](docs/research_notes/0082_first_token_prompt_preflight_stop.md)
 remains separately retained.
-
-**Next calibration release:** [Note 0086](docs/research_notes/0086_stat_matched_input_calibration_release.md)
-implements the unchanged [Note 0085](docs/research_notes/0085_stat_matched_input_calibration_registration.md)
-guarded-tile candidate for matching all twelve raw/processor baseline views.
-The fixed budget is 25 synthetic canvases and 153 processor calls, with zero
-model forwards. Implementation/toy tests are not a native matching result;
-calibration must pass separately before any further measurement release.
 
 **Latest qualification:** [Note 0080](docs/research_notes/0080_first_step_readout_calibration.md)
 recovers native first-step scores from an independent suffix-free prefill:

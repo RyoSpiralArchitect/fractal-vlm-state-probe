@@ -1167,3 +1167,12 @@ generation. Toy tests use a separate 80px geometry and fake processor.
 Retain the first unexpected failure and stop acquisition; its subsequent
 file audit may report FAILED_CALIBRATION_AUDITED, never calibration PASS.
 No model or real source cohort is authorized by this implementation.
+
+[Note 0087](research_notes/0087_stat_matched_input_calibration.md) reports
+calibration PASS: all 153 calls complete, 128 historical matches, 216 matched
+feature-vector comparisons and 2,340 exact joint-multiset comparisons.
+Maximum feature residual is 8.66e-15 against the fixed 1e-10 gate; the
+sentinel is correctly rejected. Eight outputs replay byte-for-byte through
+zero-processor verification. This qualifies only the fixed synthetic
+construction; no learned representation, source cohort or confirmation
+panel is released.
