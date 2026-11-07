@@ -232,7 +232,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0087 encode the audited claim
+Status: the evidence matrix and Notes 0027-0088 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -305,6 +305,7 @@ bounded Phase 1 design; Notes 0055-0056 report its completed input measurements.
 | 0085 | Matched-input construction/calibration design | Recipe/gates fixed before data; implementation and synthetic calibration reported separately in 0086-0087; no real-source release |
 | 0086 | Matched-input calibration implementation | Constructor, independent oracle, failure retention and file replay implemented; native calibration reported separately, no model release |
 | 0087 | Native matched-input synthetic calibration | All fixed gates pass on 25 inputs / 153 processor calls; eight outputs byte-identical; real-source/model panel remains unreleased |
+| 0088 | Fresh-source matched-input panel design | New r5/r6 references and r7/r8 tests allocated; payload-first quartet, paired margin changes and low-norm policy fixed; no acquisition release |
 | Originally planned around 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed; Note 0072 is a development calibration, not confirmation |
 | 0076-0080 | Independent replay, negative-case audit and manuscript | Not started |
 

@@ -65,6 +65,12 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0088 Fresh-Source Matched-Input Registration](../docs/research_notes/0088_stat_matched_source_registration.md):
+[design configuration](../configs/stat_matched_source_panel_v1.json).
+New reference/test seeds, paired estimands and low-norm rules are allocated;
+there are no new result artifacts, generated sources or model observations.
+This design does not release acquisition or the untouched confirmation cohort.
+
 [0087 Guarded-Tile Native Input Matching](../docs/research_notes/0087_stat_matched_input_calibration.md):
 [summary](research_notes/0087_stat_matched_input_calibration/summary.json),
 [case audits](research_notes/0087_stat_matched_input_calibration/cases.jsonl),

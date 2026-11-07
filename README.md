@@ -14,6 +14,12 @@ or confirmation. [Design](docs/research_notes/0085_stat_matched_input_calibratio
 and [implementation release](docs/research_notes/0086_stat_matched_input_calibration_release.md)
 remain fixed.
 
+**Next design, not execution:** [Note 0088](docs/research_notes/0088_stat_matched_source_registration.md)
+allocates fresh reference/test seeds and a payload-first palette quartet.
+It asks how encoder/projector directions change under rearrangements matched
+on all twelve baseline views. Low-norm directions remain unavailable;
+source generation and model acquisition await a separate release.
+
 **Latest readout measurement:** [Note 0084](docs/research_notes/0084_first_token_prompt_panel.md)
 completes 64 suffix-free ACK/YES conditions after 288 fresh calibration
 contexts. Mean paired full-vocabulary TV is **0.619766** over 32 development

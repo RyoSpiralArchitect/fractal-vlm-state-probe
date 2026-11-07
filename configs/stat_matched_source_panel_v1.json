@@ -1,0 +1,921 @@
+{
+  "schema_version": 1,
+  "study_id": "stat_matched_source_panel_v1",
+  "registered_date": "2026-11-08",
+  "preceding_merge_commit": "9a4a27c96d6bac3fbc6dbed4d0421b2a55dc6787",
+  "scope": "fresh_seed_known_family_development_design_only",
+  "status_at_registration": "not_implemented_not_released",
+  "execution_authorized_by_this_file": false,
+  "execution_runner": null,
+  "new_observations_at_registration": {
+    "sources": 0,
+    "candidate_images": 0,
+    "coordinate_maps": 0,
+    "processor_calls": 0,
+    "model_contexts": 0,
+    "scores": 0
+  },
+  "cohort_status": "identities_allocated_not_generated_not_sealed",
+  "preserve_inherited_frozen_hashes_from": "examples/research_notes/0087_stat_matched_input_calibration/summary.json",
+  "inherited_frozen_files": 118,
+  "pinned_artifacts": {
+    "examples/research_notes/0087_stat_matched_input_calibration/summary.json": "e2b856dc67d67ee7898a2d39240160b8a6c099b9b8f65d980825022d2cd38270",
+    "docs/research_notes/0087_stat_matched_input_calibration.md": "1b04095073a2e5422156f398b2491338538f7024d2c89ab03dbc80d9774d2a38",
+    "configs/generator_pairing_transfer_v1.json": "3bc690c349b701cc9d9ba4d8342fc69ababac65a42f7460a290f782d41093aea",
+    "configs/generator_pairing_seed_holdout_v1.json": "5bb7a3b7f5f883505ed800737ff09b586e6ee551d08d8276f1ba2c5b793abe6e",
+    "src/fractal_vlm_state_probe/generator_pairing_panel.py": "59154ab255305b18c04e26fb030e87c9516d347006deb11c32919d2a82200d85",
+    "src/fractal_vlm_state_probe/control_stimulus.py": "1c7f3f3650cf79cdffd3b0623cfae7bdcd9d3c32fa28a3f1398d39663b51b97b",
+    "configs/representation_observation_calibration_v1.json": "f6338233550b6b021559209b388cd5aed9b60a3ba85bc984a608846693bc43d0",
+    "configs/representation_correspondence_panel_v1.json": "b89423d12d079d7eed45746e24e26340e57d75c13e3051116c8aedb4fafe3b57",
+    "configs/nonlearned_processing_phase3_v1.json": "f60ce7c3cd3dd4677b4a7e378d31558b642c5248521a497f6dd9b5af38978d3c"
+  },
+  "sources": {
+    "defaults": {
+      "width": 320,
+      "height": 240,
+      "total_frames": 1,
+      "fps": 1,
+      "cell_size": 24,
+      "sites": 32,
+      "dot_density": 0.035,
+      "motion_speed": 1
+    },
+    "pairs": [
+      {
+        "pair_id": "geometry_vq_r5",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_voronoi_quasicrystal",
+        "replicate": 5,
+        "source_a": {
+          "kind": "voronoi",
+          "seed": 2026110801
+        },
+        "source_b": {
+          "kind": "quasicrystal",
+          "seed": 2026111810
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "geometry_vq_r6",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_voronoi_quasicrystal",
+        "replicate": 6,
+        "source_a": {
+          "kind": "voronoi",
+          "seed": 2026112819
+        },
+        "source_b": {
+          "kind": "quasicrystal",
+          "seed": 2026113828
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "geometry_vq_r7",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_voronoi_quasicrystal",
+        "replicate": 7,
+        "source_a": {
+          "kind": "voronoi",
+          "seed": 2026114837
+        },
+        "source_b": {
+          "kind": "quasicrystal",
+          "seed": 2026115846
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "geometry_vq_r8",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_voronoi_quasicrystal",
+        "replicate": 8,
+        "source_a": {
+          "kind": "voronoi",
+          "seed": 2026116855
+        },
+        "source_b": {
+          "kind": "quasicrystal",
+          "seed": 2026117864
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "geometry_checker_hex_r5",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_checkerboard_hex_tiling",
+        "replicate": 5,
+        "source_a": {
+          "kind": "checkerboard",
+          "seed": 2026118873,
+          "cell_size": 16
+        },
+        "source_b": {
+          "kind": "hex_tiling",
+          "seed": 2026119882,
+          "cell_size": 24
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "geometry_checker_hex_r6",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_checkerboard_hex_tiling",
+        "replicate": 6,
+        "source_a": {
+          "kind": "checkerboard",
+          "seed": 2026120891,
+          "cell_size": 16
+        },
+        "source_b": {
+          "kind": "hex_tiling",
+          "seed": 2026121900,
+          "cell_size": 24
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "geometry_checker_hex_r7",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_checkerboard_hex_tiling",
+        "replicate": 7,
+        "source_a": {
+          "kind": "checkerboard",
+          "seed": 2026122909,
+          "cell_size": 16
+        },
+        "source_b": {
+          "kind": "hex_tiling",
+          "seed": 2026123918,
+          "cell_size": 24
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "geometry_checker_hex_r8",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_checkerboard_hex_tiling",
+        "replicate": 8,
+        "source_a": {
+          "kind": "checkerboard",
+          "seed": 2026124927,
+          "cell_size": 16
+        },
+        "source_b": {
+          "kind": "hex_tiling",
+          "seed": 2026125936,
+          "cell_size": 24
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "geometry_square_triangle_r5",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_square_triangle_tiling",
+        "replicate": 5,
+        "source_a": {
+          "kind": "square_tiling",
+          "seed": 2026126945,
+          "cell_size": 24
+        },
+        "source_b": {
+          "kind": "triangle_tiling",
+          "seed": 2026127954,
+          "cell_size": 24
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "geometry_square_triangle_r6",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_square_triangle_tiling",
+        "replicate": 6,
+        "source_a": {
+          "kind": "square_tiling",
+          "seed": 2026128963,
+          "cell_size": 24
+        },
+        "source_b": {
+          "kind": "triangle_tiling",
+          "seed": 2026129972,
+          "cell_size": 24
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "geometry_square_triangle_r7",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_square_triangle_tiling",
+        "replicate": 7,
+        "source_a": {
+          "kind": "square_tiling",
+          "seed": 2026130981,
+          "cell_size": 24
+        },
+        "source_b": {
+          "kind": "triangle_tiling",
+          "seed": 2026131990,
+          "cell_size": 24
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "geometry_square_triangle_r8",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_square_triangle_tiling",
+        "replicate": 8,
+        "source_a": {
+          "kind": "square_tiling",
+          "seed": 2026132999,
+          "cell_size": 24
+        },
+        "source_b": {
+          "kind": "triangle_tiling",
+          "seed": 2026134008,
+          "cell_size": 24
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "geometry_voronoi_hex_r5",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_voronoi_hex_tiling",
+        "replicate": 5,
+        "source_a": {
+          "kind": "voronoi",
+          "seed": 2026135017,
+          "sites": 32
+        },
+        "source_b": {
+          "kind": "hex_tiling",
+          "seed": 2026136026,
+          "cell_size": 24
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "geometry_voronoi_hex_r6",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_voronoi_hex_tiling",
+        "replicate": 6,
+        "source_a": {
+          "kind": "voronoi",
+          "seed": 2026137035,
+          "sites": 32
+        },
+        "source_b": {
+          "kind": "hex_tiling",
+          "seed": 2026138044,
+          "cell_size": 24
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "geometry_voronoi_hex_r7",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_voronoi_hex_tiling",
+        "replicate": 7,
+        "source_a": {
+          "kind": "voronoi",
+          "seed": 2026139053,
+          "sites": 32
+        },
+        "source_b": {
+          "kind": "hex_tiling",
+          "seed": 2026140062,
+          "cell_size": 24
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "geometry_voronoi_hex_r8",
+        "broad_class": "geometry",
+        "pairing_family": "geometry_voronoi_hex_tiling",
+        "replicate": 8,
+        "source_a": {
+          "kind": "voronoi",
+          "seed": 2026141071,
+          "sites": 32
+        },
+        "source_b": {
+          "kind": "hex_tiling",
+          "seed": 2026142080,
+          "cell_size": 24
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "stochastic_white_blue_r5",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_white_blue_noise",
+        "replicate": 5,
+        "source_a": {
+          "kind": "white_noise",
+          "seed": 2026143089
+        },
+        "source_b": {
+          "kind": "blue_noise",
+          "seed": 2026144098
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "stochastic_white_blue_r6",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_white_blue_noise",
+        "replicate": 6,
+        "source_a": {
+          "kind": "white_noise",
+          "seed": 2026145107
+        },
+        "source_b": {
+          "kind": "blue_noise",
+          "seed": 2026146116
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "stochastic_white_blue_r7",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_white_blue_noise",
+        "replicate": 7,
+        "source_a": {
+          "kind": "white_noise",
+          "seed": 2026147125
+        },
+        "source_b": {
+          "kind": "blue_noise",
+          "seed": 2026148134
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "stochastic_white_blue_r8",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_white_blue_noise",
+        "replicate": 8,
+        "source_a": {
+          "kind": "white_noise",
+          "seed": 2026149143
+        },
+        "source_b": {
+          "kind": "blue_noise",
+          "seed": 2026150152
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "stochastic_white_dots_r5",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_white_random_dots",
+        "replicate": 5,
+        "source_a": {
+          "kind": "white_noise",
+          "seed": 2026151161
+        },
+        "source_b": {
+          "kind": "random_dots",
+          "seed": 2026152170,
+          "dot_density": 0.035
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "stochastic_white_dots_r6",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_white_random_dots",
+        "replicate": 6,
+        "source_a": {
+          "kind": "white_noise",
+          "seed": 2026153179
+        },
+        "source_b": {
+          "kind": "random_dots",
+          "seed": 2026154188,
+          "dot_density": 0.035
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "stochastic_white_dots_r7",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_white_random_dots",
+        "replicate": 7,
+        "source_a": {
+          "kind": "white_noise",
+          "seed": 2026155197
+        },
+        "source_b": {
+          "kind": "random_dots",
+          "seed": 2026156206,
+          "dot_density": 0.035
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "stochastic_white_dots_r8",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_white_random_dots",
+        "replicate": 8,
+        "source_a": {
+          "kind": "white_noise",
+          "seed": 2026157215
+        },
+        "source_b": {
+          "kind": "random_dots",
+          "seed": 2026158224,
+          "dot_density": 0.035
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "stochastic_blue_dots_r5",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_blue_random_dots",
+        "replicate": 5,
+        "source_a": {
+          "kind": "blue_noise",
+          "seed": 2026159233
+        },
+        "source_b": {
+          "kind": "random_dots",
+          "seed": 2026160242,
+          "dot_density": 0.035
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "stochastic_blue_dots_r6",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_blue_random_dots",
+        "replicate": 6,
+        "source_a": {
+          "kind": "blue_noise",
+          "seed": 2026161251
+        },
+        "source_b": {
+          "kind": "random_dots",
+          "seed": 2026162260,
+          "dot_density": 0.035
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "stochastic_blue_dots_r7",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_blue_random_dots",
+        "replicate": 7,
+        "source_a": {
+          "kind": "blue_noise",
+          "seed": 2026163269
+        },
+        "source_b": {
+          "kind": "random_dots",
+          "seed": 2026164278,
+          "dot_density": 0.035
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "stochastic_blue_dots_r8",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_blue_random_dots",
+        "replicate": 8,
+        "source_a": {
+          "kind": "blue_noise",
+          "seed": 2026165287
+        },
+        "source_b": {
+          "kind": "random_dots",
+          "seed": 2026166296,
+          "dot_density": 0.035
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "stochastic_sparse_dense_r5",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_sparse_dense_dots",
+        "replicate": 5,
+        "source_a": {
+          "kind": "random_dots",
+          "seed": 2026167305,
+          "dot_density": 0.015
+        },
+        "source_b": {
+          "kind": "random_dots",
+          "seed": 2026168314,
+          "dot_density": 0.12
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "stochastic_sparse_dense_r6",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_sparse_dense_dots",
+        "replicate": 6,
+        "source_a": {
+          "kind": "random_dots",
+          "seed": 2026169323,
+          "dot_density": 0.015
+        },
+        "source_b": {
+          "kind": "random_dots",
+          "seed": 2026170332,
+          "dot_density": 0.12
+        },
+        "split": "reference"
+      },
+      {
+        "pair_id": "stochastic_sparse_dense_r7",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_sparse_dense_dots",
+        "replicate": 7,
+        "source_a": {
+          "kind": "random_dots",
+          "seed": 2026171341,
+          "dot_density": 0.015
+        },
+        "source_b": {
+          "kind": "random_dots",
+          "seed": 2026172350,
+          "dot_density": 0.12
+        },
+        "split": "test"
+      },
+      {
+        "pair_id": "stochastic_sparse_dense_r8",
+        "broad_class": "stochastic",
+        "pairing_family": "stochastic_sparse_dense_dots",
+        "replicate": 8,
+        "source_a": {
+          "kind": "random_dots",
+          "seed": 2026173359,
+          "dot_density": 0.015
+        },
+        "source_b": {
+          "kind": "random_dots",
+          "seed": 2026174368,
+          "dot_density": 0.12
+        },
+        "split": "test"
+      }
+    ],
+    "reference_replicates": [
+      5,
+      6
+    ],
+    "test_replicates": [
+      7,
+      8
+    ],
+    "seed_range_inclusive": [
+      2026110801,
+      2026174368
+    ],
+    "seed_base": 2026110801,
+    "seed_stride": 1009,
+    "derived_rng_frame_index": 0,
+    "derived_rng_frame_formula": "(seed*1000003+frame_index*9176+salt)%4294967295",
+    "derived_rng_rules": {
+      "voronoi": {
+        "direct_offsets": [
+          0,
+          3
+        ],
+        "frame_salts": []
+      },
+      "quasicrystal": {
+        "direct_offsets": [
+          5
+        ],
+        "frame_salts": []
+      },
+      "checkerboard": {
+        "direct_offsets": [
+          0
+        ],
+        "frame_salts": []
+      },
+      "square_tiling": {
+        "direct_offsets": [
+          0,
+          17
+        ],
+        "frame_salts": []
+      },
+      "triangle_tiling": {
+        "direct_offsets": [
+          1,
+          17
+        ],
+        "frame_salts": []
+      },
+      "hex_tiling": {
+        "direct_offsets": [
+          2,
+          17
+        ],
+        "frame_salts": []
+      },
+      "white_noise": {
+        "direct_offsets": [],
+        "frame_salts": [
+          101
+        ]
+      },
+      "blue_noise": {
+        "direct_offsets": [],
+        "frame_salts": [
+          211
+        ]
+      },
+      "random_dots": {
+        "direct_offsets": [
+          0
+        ],
+        "frame_salts": [
+          307
+        ]
+      }
+    },
+    "split_policy": "two_new_reference_and_two_new_test_pairs_per_known_ordered_family_no_role_swap_replication",
+    "historical_inventory_required_before_generation": true,
+    "collision_policy": "stop_without_replacement_on_spec_derived_rng_seed_or_decoded_source_RGB_hash_collision_with_prior_or_within_cohort",
+    "inventory_scope": "all_existing_configured_source_specs_and_available_source_receipts_record_missing_inventory_no_untouched_claim"
+  },
+  "construction": {
+    "inherited_geometry": "configs/stat_matched_input_calibration_v1.json",
+    "raw_shape_hwc": [
+      320,
+      320,
+      3
+    ],
+    "background_rgb": [
+      128,
+      128,
+      128
+    ],
+    "payload_source_shape_hwc": [
+      240,
+      320,
+      3
+    ],
+    "source_tile_top_left": "(40*r+dy,40*c+dx)_r0..5_c0..7_offsets_in_inherited_order",
+    "payload_order": [
+      "cell_row",
+      "cell_col",
+      "tile",
+      "u",
+      "v",
+      "channel"
+    ],
+    "payload_pixels": 6912,
+    "packed_shape_hwc": [
+      72,
+      96,
+      3
+    ],
+    "palette_function": "fractal_vlm_state_probe.control_stimulus.luminance_quantile_match_rgb",
+    "palette_order": "sample_source_payloads_then_pack_C_order_then_rank_match_then_embed_then_shift",
+    "cells": [
+      "mm",
+      "mj",
+      "jm",
+      "jj"
+    ],
+    "payload_cells": {
+      "mm": "A",
+      "mj": "luminance_quantile_match_rgb(A,reference=B)",
+      "jm": "luminance_quantile_match_rgb(B,reference=A)",
+      "jj": "B"
+    },
+    "unpack": "inverse_of_registered_payload_order_without_resampling",
+    "embed_tile_top_left": "(40+40*r+dy,40*c+dx)",
+    "shifts": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "map_rule": "output_tile[k,u,v]=identity_tile[(k+s)%4,u,v]",
+    "map_reused_from": "examples/research_notes/0087_stat_matched_input_calibration/coordinate_maps.jsonl",
+    "recompute_palette_after_shift": false,
+    "search_or_rejection_sampling": false,
+    "exact_raw_palette_pairs": [
+      [
+        "mm",
+        "jm"
+      ],
+      [
+        "mj",
+        "jj"
+      ]
+    ],
+    "palette_equality_scope": "full_canvas_joint_RGB_multiset_not_within_pool_or_native_cross_spatial_equality"
+  },
+  "input_gates": {
+    "synthetic_requalification": "repeat_all_153_calls_and_all_Note0087_gates_before_first_source_processor_call",
+    "processor_call": "unchanged_Note0086_processor_only_path_no_chat_template",
+    "expected_native_shape": [
+      1,
+      3,
+      1024,
+      1024
+    ],
+    "expected_native_dtype": "float32",
+    "non_pixel_payload": "exact_Note0087_synthetic_payload_including_image_sizes_320x320",
+    "views": "all_six_features_at_both_starts_from_pinned_nonlearned_config",
+    "feature_absolute_tolerance": 1e-10,
+    "feature_relative_tolerance": 0,
+    "matched_vector_comparisons": 4608,
+    "joint_word_multiset_comparisons": 49920,
+    "oracle_vector_pairs": 6144,
+    "raw_palette_multiset_comparisons": 256,
+    "match_units": "each_pair_cell_nonidentity_vs_identity_all_64_pools_plus_full_canvas_at_both_starts",
+    "changed_value_policy": "record_raw_and_native_changed_pixels_and_words_for_every_shift_no_minimum_no_replacement",
+    "unexpected_failure": "retain_first_failure_and_all_acquired_rows_stop_whole_release_no_accepted_subset"
+  },
+  "observation": {
+    "model_id": "mlx-community/FastVLM-0.5B-bf16",
+    "inherited_observer_config": "configs/representation_observation_calibration_v1.json",
+    "inherited_source_config": "configs/controlled_overlap_cache_phase2_v1.json",
+    "sites": {
+      "encoder": [
+        1,
+        256,
+        3072
+      ],
+      "projector": [
+        1,
+        256,
+        896
+      ]
+    },
+    "contrast": "full_C_order_float64_(JJ-MJ)-(JM-MM)_no_pooling_centering_whitening_or_alignment",
+    "source_max_tokens": 2,
+    "source_seed": 20260604,
+    "temperature": 0,
+    "source_prompt": "unchanged_ACK_source_prompt_from_qualified_path",
+    "new_source_suffix_policy": "natural_bounded_generation_record_actual_IDs_and_layout_no_forced_The_image",
+    "historical_calibration_contexts": 384,
+    "sham_contexts": 24,
+    "sham_inputs": 8,
+    "sham_order": "zero_s0..s3_then_constant_s0..s3_each_OFF_ON_OFF",
+    "sham_acceptance": "prepared_inputs_natural_suffix_and_selected_cache_exact_OFF_ON_OFF_and_across_shifts_within_fixture_both_ON_sites_exact_across_shifts",
+    "sham_cache_targets": [
+      "1:keys",
+      "12:keys",
+      "23:values"
+    ],
+    "same_process_calibration_and_single_model_load": true,
+    "fresh_candidate_path_parity": "one_observed_projector_call_restoration_exact_prepared_native_words_equal_processor_only_seal_record_nonpixel_payload",
+    "storage": "lossless_upper_bfloat16_words_uncompressed_npz_with_exact_float32_roundtrip",
+    "experimental_cache_role": "retain_selected_tensors_and_layout_receipts_for_audit_not_a_new_cache_endpoint"
+  },
+  "sequence": [
+    "commit_design_then_implementation_oracles_tests_and_separate_release_before_any_new_source",
+    "file_only_preflight_fingerprints_inventory_disk_and_existing_four_maps",
+    "repeat_128_historical_plus_25_synthetic_processor_gates",
+    "generate_reference_sources_and_256_reference_cells_audit_processor_features_and_seal",
+    "single_model_load_historical_OFF_ON_OFF_384_then_shams_OFF_ON_OFF_24",
+    "capture_all_256_reference_cells_then_seal_arrays_norms_and_fixed_s0_family_references",
+    "only_after_reference_seal_generate_test_sources_and_256_test_cells_audit_and_seal",
+    "capture_256_test_cells_without_scores",
+    "independent_file_only_verification_twice_then_all_prespecified_analysis"
+  ],
+  "references": {
+    "shifts_used": [
+      0
+    ],
+    "replicates": [
+      5,
+      6
+    ],
+    "rule": "unit(unit(z_r5_s0)+unit(z_r6_s0))",
+    "cancellation_threshold": 1e-12,
+    "other_reference_shifts": "retain_for_input_and_representation_audits_never_reselect_or_refit",
+    "seal_before_test_source_generation": true,
+    "reference_context_last_ordinal": 664,
+    "first_test_context_ordinal": 665
+  },
+  "analysis": {
+    "views": [
+      "encoder",
+      "projector",
+      "raw_rgb/global_moments",
+      "raw_rgb/grid_mean",
+      "raw_rgb/small_mean",
+      "raw_rgb/small_energy",
+      "raw_rgb/large_mean",
+      "raw_rgb/large_energy",
+      "processor_pixel_values/global_moments",
+      "processor_pixel_values/grid_mean",
+      "processor_pixel_values/small_mean",
+      "processor_pixel_values/small_energy",
+      "processor_pixel_values/large_mean",
+      "processor_pixel_values/large_energy"
+    ],
+    "margin": "cosine(test,own_reference)-mean(cosine(test,other_three_same_broad_class_references))",
+    "primary_endpoints": [
+      "encoder_mean_s1_s2_s3_margin_minus_s0_margin",
+      "projector_mean_s1_s2_s3_margin_minus_s0_margin"
+    ],
+    "aggregation": "equal_mean_three_nonidentity_shifts_then_two_test_pairs_per_family_then_eight_families",
+    "secondaries": [
+      "all_shift_margins",
+      "all_8x8_score_matrices",
+      "z_s0_vs_z_s_cosine",
+      "interaction_norms_and_ratios",
+      "relative_change_norm(z_s-z_0)/(norm(z_s)+norm(z_0))",
+      "all_12_baseline_profiles_and_paired_changes",
+      "sham_and_sentinel_residuals",
+      "raw_native_spectra_descriptive_only"
+    ],
+    "missingness": "retain_all_rows_fixed_denominators_endpoint_unavailable_if_any_required_margin_missing_no_complete_case_promotion",
+    "score_matrices": 56,
+    "primary_test_pairs": 16,
+    "primary_families": 8,
+    "p_values": 0,
+    "confidence_intervals": 0,
+    "equivalence_tested": false,
+    "dependency_unit": "source_pair_within_known_family_four_cells_and_shifts_are_repeated_measures_not_samples",
+    "precision": "bounded_development_panel_no_power_or_population_precision_guarantee"
+  },
+  "low_norm": {
+    "expected_structural_unavailability": "raw_rgb/global_moments_exact_zero_interaction_from_full_raw_palette_marginals_not_a_failed_input_gate",
+    "exact_zero": "unavailable_never_impute_direction",
+    "baseline_contrast_error_envelope": "4*1e-10*sqrt(d)_from_four_coordinate_error_budgets",
+    "baseline_direction_minimum": "norm(z)>100*4*1e-10*sqrt(d)",
+    "baseline_shift_contrast_bound": "4*1e-10*sqrt(d)_from_four_matched_cell_differences_not_a_statistical_CI",
+    "learned_primary_minimum": "norm(z)>1e-6*sum_cell_L2_norms",
+    "learned_sensitivity_relative_floors": [
+      1e-8,
+      0.000001,
+      0.0001
+    ],
+    "learned_floor_interpretation": "predeclared_amplitude_guard_not_calibrated_numeric_error_bound_or_practical_equivalence",
+    "reference_requires_both_replicates": true,
+    "report": "unnormalized_vectors_hashes_norms_cell_scale_thresholds_availability_and_all_fixed_sensitivity_results_no_winner"
+  },
+  "budget": {
+    "source_pairs": 32,
+    "raw_sources": 64,
+    "raw_source_frames": 64,
+    "reference_cells": 256,
+    "test_cells": 256,
+    "candidate_cells": 512,
+    "coordinate_maps_reused": 4,
+    "new_coordinate_maps": 0,
+    "historical_processor_calls": 128,
+    "synthetic_processor_calls": 25,
+    "candidate_processor_calls": 512,
+    "processor_only_calls": 665,
+    "historical_model_contexts": 384,
+    "sham_model_contexts": 24,
+    "experimental_model_contexts": 512,
+    "total_model_contexts": 920,
+    "experimental_representation_arrays": 1024,
+    "experimental_interaction_vectors": 256,
+    "source_generation_limit": "one_attempt_per_context_max_two_output_tokens_no_retry_resume_or_new_model_load",
+    "processor_model_preparations": "920_normal_multimodal_context_preparations_separate_from_665_processor_only_calls_record_actual_internal_calls",
+    "reserve_bytes": 8589934592,
+    "payload_allowance_bytes": 17179869184,
+    "overhead_allowance_bytes": 4294967296,
+    "required_launch_free_bytes": 30064771072,
+    "scratch_vector_limit": 64,
+    "compression_savings_assumed": false,
+    "shortage_policy": "stop_retain_no_cleanup_of_existing_runs_models_or_user_files"
+  },
+  "release": {
+    "implementation_commit": null,
+    "public_registration_receipt": null,
+    "public_freeze_required_before_acquisition": true,
+    "conditions": [
+      "data_free_contract_tests",
+      "independent_toy_constructor_and_contrast_oracles",
+      "all_118_frozen_hashes_unchanged",
+      "separate_committed_release_and_public_registration_timestamp",
+      "explicit_execution_authorization",
+      "fresh_roots_and_file_only_preflight"
+    ],
+    "failed_or_unavailable_record": "retain_no_retry_retune_seed_replacement_or_view_removal_new_version_before_affected_acquisition"
+  },
+  "confirmation": {
+    "status": "not_generated_not_sealed",
+    "cohort_manifest": null,
+    "sample_size": null
+  },
+  "claim_ceiling": {
+    "within_known_generator_families_only": true,
+    "preserves_all_low_level_statistics": false,
+    "whole_structure_destruction": false,
+    "baseline_sufficiency": false,
+    "identifies_learning": false,
+    "semantic_steering": false,
+    "cache_mediation": false,
+    "unseen_family_transfer": false,
+    "untouched_confirmation": false
+  }
+}
