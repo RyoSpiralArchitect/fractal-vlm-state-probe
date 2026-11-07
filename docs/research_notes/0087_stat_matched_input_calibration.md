@@ -14,6 +14,11 @@ recipe, fixtures, acceptance criteria and budget. The separate
 committed at `b3325507b704f535182f3ee3f01948646186d73b` before preflight
 or any registered map/image. All 118 selected files remain byte-identical.
 
+These are local Git freezes preceding acquisition. The public result PR
+is published after calibration; no independent third-party preregistration
+timestamp is claimed. This distinction does not turn the synthetic design
+into an untouched confirmation study.
+
 The file-only preflight passed without new candidate arrays, processor
 instantiation or model weights. Four coordinate maps and all 25 raw inputs
 were then constructed, independently reconstructed and sealed with zero
