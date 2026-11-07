@@ -69,6 +69,9 @@ reading the current experiment logic and claim boundaries.
 [design configuration](../configs/stat_matched_input_calibration_v1.json).
 No result artifacts exist for this design-only registration. It does not
 release the planned synthetic calibration or an untouched source cohort.
+[Note 0086](../docs/research_notes/0086_stat_matched_input_calibration_release.md)
+supplies the separate implementation release; toy checks are not native
+calibration results.
 
 [0084 Paired First-Token Prompt Distributions](../docs/research_notes/0084_first_token_prompt_panel.md):
 [summary](research_notes/0084_first_token_prompt_panel/summary.json),

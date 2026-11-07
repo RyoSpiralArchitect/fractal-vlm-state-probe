@@ -1159,3 +1159,11 @@ replays, 216 matched feature-vector comparisons and 300 oracle comparisons.
 No model, source cohort, representation or readout is released. Implementation,
 independent oracle, tests and a separate release receipt are still required.
 The registration itself adds no images, maps, processor calls or scores.
+
+[Note 0086](research_notes/0086_stat_matched_input_calibration_release.md)
+implements the constructor, explicit-site oracle, immutable capture and
+file-only verification. Commit all 118 selected files before real candidate
+generation. Toy tests use a separate 80px geometry and fake processor.
+Retain the first unexpected failure and stop acquisition; its subsequent
+file audit may report FAILED_CALIBRATION_AUDITED, never calibration PASS.
+No model or real source cohort is authorized by this implementation.

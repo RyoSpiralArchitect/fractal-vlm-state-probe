@@ -15,11 +15,12 @@ visual semantic steering or cache-to-answer mediation. The
 [v1 zero-forward storage stop](docs/research_notes/0082_first_token_prompt_preflight_stop.md)
 remains separately retained.
 
-**Next registered step:** [Note 0085](docs/research_notes/0085_stat_matched_input_calibration_registration.md)
-fixes a guarded-tile construction/calibration candidate for matching all
-twelve raw/processor baseline views. This is design-only: 25 synthetic
-canvases and 153 processor calls are planned for a later separate release,
-with zero model forwards. No new inputs or measurements have run.
+**Next calibration release:** [Note 0086](docs/research_notes/0086_stat_matched_input_calibration_release.md)
+implements the unchanged [Note 0085](docs/research_notes/0085_stat_matched_input_calibration_registration.md)
+guarded-tile candidate for matching all twelve raw/processor baseline views.
+The fixed budget is 25 synthetic canvases and 153 processor calls, with zero
+model forwards. Implementation/toy tests are not a native matching result;
+calibration must pass separately before any further measurement release.
 
 **Latest qualification:** [Note 0080](docs/research_notes/0080_first_step_readout_calibration.md)
 recovers native first-step scores from an independent suffix-free prefill:
