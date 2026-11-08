@@ -65,6 +65,12 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0090 Capture And Independent Saved-Data Verification](../docs/research_notes/0090_stat_matched_source_capture_preparation.md):
+[preparation profile](../configs/stat_matched_source_capture_preparation_v1.json).
+Software-only lifecycle and adversarial file checks; no scientific result
+archive, native-path qualification or acquisition release. All 126 preceding
+selected files stay unchanged; actual source/model acquisition remains gated.
+
 [0089 Matched-Source Core Software](../docs/research_notes/0089_stat_matched_source_core.md):
 [implementation profile](../configs/stat_matched_source_core_v1.json).
 Toy-only construction/scalar-score checks; no new scientific result archive,

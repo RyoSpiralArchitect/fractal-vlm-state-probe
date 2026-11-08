@@ -1200,3 +1200,12 @@ checks. File qualification and reference seals here are metadata-only,
 explicitly not native/runtime or artifact-byte qualification. Capture,
 same-process calibration and independent complete file replay still need
 their own implementation and execution release. No source is generated.
+
+[Note 0090](research_notes/0090_stat_matched_source_capture_preparation.md)
+adds capture orchestration and independent saved-data verification. The
+reference seal now requires reconstructed inputs, full sites/caches and
+independently recomputed family references at context 664 before any test
+source generation. Complete captures remain unverified until two fresh,
+byte-identical file replays; failed partial captures never yield primary
+results. Software fixtures do not qualify the native path. No execution
+release is created and no registered source/model acquisition is started.

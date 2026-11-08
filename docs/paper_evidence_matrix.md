@@ -1,6 +1,6 @@
 # Paper Evidence Matrix
 
-Last updated: 2026-11-03 (Full encoder/projector panel independently verified; parity replays separate from experimental cache/direct counts)
+Last updated: 2026-11-08 (Matched-source capture preparation added; no new scientific acquisition)
 
 This file is the compact bridge from run artifacts to a manuscript draft. It
 separates valid observations, descriptive interpretation, withdrawn results,
@@ -45,6 +45,7 @@ the same four factorial cells are not independent samples.
 | Guarded-tile input matching design | Fixed within-pool tile cycles and all twelve inherited raw/processor feature views | At registration: planned 25 synthetic images / 153 processor calls / zero model forwards, no new observations | Construction and acceptance rules registered, not an observed matching result | feasibility design only, not baseline sufficiency, learned structure or confirmation | [Note 0085](research_notes/0085_stat_matched_input_calibration_registration.md) |
 | Guarded-tile native input matching calibration | Same fixed synthetic recipe, all twelve views; 9% of content source coordinates move | 25 synthetic inputs, 128 historical replays, 153 processor calls and zero model forwards | All 216 vector matches pass, max residual 8.66e-15; 2,340 exact joint-multiset matches; oracle and sentinel pass; eight byte-identical outputs | synthetic feasibility only, not all-statistic matching, VLM response, learning, semantics or confirmation | [Note 0087](research_notes/0087_stat_matched_input_calibration.md) |
 | Fresh-source matched-input panel design | Payload-first palette quartet on fixed gray canvas; four qualified arrangements; all twelve baselines and both full visual sites | Allocated 32 fresh pairs, split references/tests; zero new images, processor calls or model contexts | Paired margin-change estimands, low-norm guards, missingness and 28 GiB budget fixed before acquisition | design only; known-family development, not learning identification or untouched confirmation | [Note 0088](research_notes/0088_stat_matched_source_registration.md) |
+| Matched-source capture preparation | Reference-first acquisition, full saved-data reconstruction and separately committed authorization gate | Software fixtures only; zero registered sources, native processor calls or model contexts | Complete simulated schedule, artifact-backed seals and adversarial file checks are implemented; native path remains unmeasured | implementation evidence, not scientific observations or acquisition release | [Note 0090](research_notes/0090_stat_matched_source_capture_preparation.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
@@ -502,7 +503,9 @@ endpoints and exact selected-cache parity at all experimental cells. Notes
    Note 0088 allocates the fresh-source split and payload-first design;
    implementation, public freeze and a separate execution release remain gates.
    Note 0089 implements toy-verified construction and scoring components;
-   capture orchestration and independent complete capture replay remain open.
+   Note 0090 adds capture orchestration and independent complete file replay
+   with software fixtures. Native qualification, public freeze and a separate
+   acquisition release remain required; no new scientific data are added.
 2. Carry raw/processor starts, baseline profiles, numerical-sensitivity
    diagnostics and between-level spectra into that comparison. Neither a
    larger cache score nor a baseline gap identifies learning or specifically
