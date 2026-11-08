@@ -59,7 +59,8 @@ contrasts, `math.hypot` norms and `math.fsum` dot products/aggregation rather
 than the production NumPy path. Only specified formulas/tie behavior are shared.
 
 [Tests](../../tests/test_stat_matched_source.py) use 80 x 80 software fixtures,
-2 x 2 pools, 576 payload pixels and analytic three-coordinate vectors.
+2 x 2 pools, 576 payload pixels and analytic three-coordinate learned vectors.
+Baseline profile fixtures use the registered six or 192 coordinates.
 They do not call a registered generator. A pointwise fake native tensor
 checks feature plumbing, not actual processor behavior.
 
@@ -71,6 +72,18 @@ relative zero, on the software fixtures at all three learned floors.
 Missing references/tests remain in fixed denominators. Invalid maps/shapes,
 nonfinite/overflow/underflow values, altered registration bytes and incomplete
 reference metadata fail closed. These are software observations only.
+
+A pre-publication read-only agent review found that a truncated baseline
+reference could silently broadcast while forming a family reference. Before
+acquisition, the fix requires the registered one-dimensional shape at every
+baseline cell: six coordinates for global moments, 192 for each other view.
+Family-reference addition also rejects mismatched or non-vector shapes.
+Regressions cover every baseline with one bad reference, one bad test and
+an entirely wrong-width input set. No scientific measurement was acquired
+under the earlier implementation; the design and inherited files are unchanged.
+Follow-up read-only review confirmed this finding resolved, checked all twelve
+valid baseline profiles against the scalar oracle within 1e-12, and found no
+remaining actionable issue in the correction.
 
 ## Remaining Acquisition Gates
 
@@ -90,7 +103,7 @@ Confirmation remains not generated and not sealed.
 
 ## Local Validation
 
-All 26 new software checks and all 731 local tests pass. Scoped Ruff,
+All 64 new software checks and all 769 local tests pass. Scoped Ruff,
 whitespace and 500 local link targets in the six touched Markdown documents
 pass. File qualification confirms all 118 inherited and three registration
 files unchanged. These are local software checks, not CI, a native processor

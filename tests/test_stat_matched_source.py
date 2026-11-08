@@ -227,6 +227,8 @@ def loader_for(s):
         vector = np.array([1 + f, 2 + (f % 3), 1 + f * f], dtype=float)
         if p["split"] == "test":
             vector += shift * np.array([0.2, -0.1, 0.3]) + (p["replicate"] - 7) * 0.01
+        if view in m.BASELINE_SHAPES:
+            vector = np.resize(vector, m.BASELINE_SHAPES[view])
         return cells(vector)
 
     return load
@@ -388,3 +390,42 @@ def test_baseline_profile_matches_scalar_oracle_and_bad_site_shapes_fail(toy):
     s["observation"]["sites"]["encoder"] = [4]
     with pytest.raises(ValueError, match="full learned site shape"):
         m.analyze_view(load, s, "encoder")
+
+
+@pytest.mark.parametrize("view", m.BASELINE_SHAPES)
+@pytest.mark.parametrize("phase", ["reference", "test", "all"])
+def test_baseline_wrong_dimensions_fail_before_reference_or_test_scoring(
+    toy, view, phase
+):
+    s, _, _, _ = toy
+    base = loader_for(s)
+    target = (
+        None
+        if phase == "all"
+        else next(p["pair_id"] for p in s["sources"]["pairs"] if p["split"] == phase)
+    )
+
+    def load(pair_id, shift, name):
+        result = base(pair_id, shift, name)
+        if phase == "all" or (pair_id == target and shift == 0):
+            return {k: v[:1] for k, v in result.items()}
+        return result
+
+    with pytest.raises(ValueError, match="registered baseline shape"):
+        m.analyze_view(load, s, view)
+
+
+def test_family_reference_cannot_broadcast_different_or_nonvector_shapes():
+    for units in ([np.ones(1), np.ones(192)], [np.ones((1, 3)), np.ones((1, 3))]):
+        with pytest.raises(ValueError, match="reference direction shapes"):
+            m.family_reference(units)
+
+
+def test_baseline_shapes_match_the_unchanged_registered_feature_contract():
+    cfg = read("configs/nonlearned_processing_phase3_v1.json")
+    for start in cfg["starts"]:
+        for feature in cfg["features"]:
+            expected = (
+                (6,) if feature == "global_moments" else (3 * np.prod(cfg["grid"]),)
+            )
+            assert m.BASELINE_SHAPES[f"{start}/{feature}"] == expected

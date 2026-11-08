@@ -11,11 +11,16 @@ from pathlib import Path
 import numpy as np
 
 from .control_stimulus import luminance_quantile_match_rgb
-from .nonlearned_processing import factorial_interaction
+from .nonlearned_processing import FEATURES, STARTS, factorial_interaction
 from .stat_matched_input import joint_multisets, word_sha
 
 CELLS = ("mm", "mj", "jm", "jj")
 FLOORS = (1e-8, 1e-6, 1e-4)
+BASELINE_SHAPES = {
+    f"{start}/{feature}": (6,) if feature == "global_moments" else (192,)
+    for start in STARTS
+    for feature in FEATURES
+}
 RNG_RULES = {
     "voronoi": ([0, 3], []),
     "quasicrystal": ([5], []),
@@ -371,6 +376,14 @@ def family_reference(units):
         raise ValueError("two reference replicates required")
     if any(v is None for v in units):
         return None, "unavailable_reference_replicate"
+    units = [np.asarray(v, dtype=np.float64) for v in units]
+    if (
+        units[0].shape != units[1].shape
+        or units[0].ndim != 1
+        or not units[0].size
+        or any(not np.isfinite(v).all() for v in units)
+    ):
+        raise ValueError("reference direction shapes or finiteness differ")
     total = units[0] + units[1]
     norm = checked_norm(total)
     if norm <= 1e-12:
@@ -388,6 +401,9 @@ def analyze_view(load_cells, spec, view, *, relative_floor=1e-6):
     if view not in spec["analysis"]["views"]:
         raise ValueError("unregistered view")
     learned = view in ("encoder", "projector")
+    expected_shape = (
+        tuple(spec["observation"]["sites"][view]) if learned else BASELINE_SHAPES[view]
+    )
     if not learned and relative_floor != 1e-6:
         raise ValueError("baseline does not have learned sensitivity floors")
     pairs = spec["sources"]["pairs"]
@@ -397,11 +413,9 @@ def analyze_view(load_cells, spec, view, *, relative_floor=1e-6):
 
     def read(pair, shift):
         cells = load_cells(pair["pair_id"], shift, view)
-        if learned and any(
-            list(np.shape(v)) != spec["observation"]["sites"][view]
-            for v in cells.values()
-        ):
-            raise ValueError("full learned site shape differs")
+        if any(np.shape(v) != expected_shape for v in cells.values()):
+            label = "full learned site" if learned else "registered baseline"
+            raise ValueError(f"{label} shape differs")
         z, unit, row = contrast_direction(
             cells, learned=learned, relative_floor=relative_floor
         )
