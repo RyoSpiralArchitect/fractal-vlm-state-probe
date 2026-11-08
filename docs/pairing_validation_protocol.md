@@ -1193,3 +1193,10 @@ subsets from becoming substitute endpoints. The planned 665 processor-only
 calls and 920 model contexts are not executed by registration. Implementation,
 independent toy oracles, a public freeze, separate release and explicit
 execution approval remain required. Confirmation is not generated or sealed.
+
+[Note 0089](research_notes/0089_stat_matched_source_core.md) implements the
+payload, inventory and numerical-analysis core with independent scalar toy
+checks. File qualification and reference seals here are metadata-only,
+explicitly not native/runtime or artifact-byte qualification. Capture,
+same-process calibration and independent complete file replay still need
+their own implementation and execution release. No source is generated.

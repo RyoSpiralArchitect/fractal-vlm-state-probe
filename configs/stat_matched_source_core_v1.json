@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "study_id": "stat_matched_source_core_v1",
+  "date": "2026-11-08",
+  "scope": "construction_inventory_and_scoring_core_software_checks_only",
+  "design_config": "configs/stat_matched_source_panel_v1.json",
+  "design_commit": "5e5dab4fdb55161609015e9c9bfb888f51e9f08d",
+  "registration_sha256": {
+    "configs/stat_matched_source_panel_v1.json": "bb69e12b171afb7853df939da049436a41ca539531b23fddf8b8b63059a87305",
+    "docs/research_notes/0088_stat_matched_source_registration.md": "27d1f3aa9a129adb7003dd6270512ffbb294057b23cdfe6a5de3778d65f68f89",
+    "tests/test_stat_matched_source_registration.py": "84d06c4e28f3582fef5fe03c01977ae032d25c9931e5af71703e8c50f0f46b9e"
+  },
+  "implementation_files": [
+    "configs/stat_matched_source_core_v1.json",
+    "src/fractal_vlm_state_probe/stat_matched_source.py",
+    "src/fractal_vlm_state_probe/stat_matched_source_oracle.py",
+    "tests/test_stat_matched_source.py",
+    "docs/research_notes/0089_stat_matched_source_core.md"
+  ],
+  "toy_canvas_shape_hwc": [80, 80, 3],
+  "toy_payload_pixels": 576,
+  "toy_generator_calls": 0,
+  "native_processor_calls": 0,
+  "model_contexts": 0,
+  "registered_sources_generated": 0,
+  "acquisition_released": false,
+  "execution_runner": null,
+  "remaining_before_acquisition": [
+    "bounded_capture_runner_and_immutable_partial_failure_receipts",
+    "complete_historical_source_inventory_and_decoded_collision_audit",
+    "actual_map_receipt_and_all_native_input_gate_enforcement",
+    "same_process_calibration_shams_and_reference_before_test_seal",
+    "independent_file_replay_of_all_capture_artifacts",
+    "separate_committed_release_public_freeze_and_explicit_execution_approval"
+  ]
+}

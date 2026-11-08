@@ -65,6 +65,11 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0089 Matched-Source Core Software](../docs/research_notes/0089_stat_matched_source_core.md):
+[implementation profile](../configs/stat_matched_source_core_v1.json).
+Toy-only construction/scalar-score checks; no new scientific result archive,
+registered source, native processor measurement or acquisition release.
+
 [0088 Fresh-Source Matched-Input Registration](../docs/research_notes/0088_stat_matched_source_registration.md):
 [design configuration](../configs/stat_matched_source_panel_v1.json).
 New reference/test seeds, paired estimands and low-norm rules are allocated;

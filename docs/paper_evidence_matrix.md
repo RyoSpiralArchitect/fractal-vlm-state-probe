@@ -501,6 +501,8 @@ endpoints and exact selected-cache parity at all experimental cells. Notes
    Real-source generation and learned comparisons remain unreleased.
    Note 0088 allocates the fresh-source split and payload-first design;
    implementation, public freeze and a separate execution release remain gates.
+   Note 0089 implements toy-verified construction and scoring components;
+   capture orchestration and independent complete capture replay remain open.
 2. Carry raw/processor starts, baseline profiles, numerical-sensitivity
    diagnostics and between-level spectra into that comparison. Neither a
    larger cache score nor a baseline gap identifies learning or specifically
