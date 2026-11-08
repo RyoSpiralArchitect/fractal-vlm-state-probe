@@ -30,7 +30,8 @@ All eighteen original profiles and all rows remain present. Missing required
 scores make the corresponding fixed-denominator aggregate unavailable; do
 not remove a family or fill a direction with zero. There are no new reference
 fits, transform selections, hypothesis tests, p-values, confidence intervals,
-equivalence tests or ratio-attribution endpoints. Note 0093 remains unchanged.
+equivalence tests or ratio-attribution endpoints. Note 0093's source tables,
+primary results and claim ceiling remain unchanged.
 
 ## Implementation And Replay Boundary
 

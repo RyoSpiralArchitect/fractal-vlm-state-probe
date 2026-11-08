@@ -85,6 +85,10 @@ Matched twelve-view inputs coexist with encoder/projector margin changes
 eleven available baselines and the unavailable raw global view are retained.
 Portable aggregates replay without a model; full native-word audits require
 the retained local capture. No learning-specific, semantic or confirmation claim.
+The [independent public checker](../scripts/verify_stat_matched_source_publication.py)
+reconstructs score aggregates and missingness with standard-library Decimal
+arithmetic. The descriptive spectra vary across arrangements; their three
+patch-relative diagnostics remain undefined.
 
 [0092 Bounded Execution Release](../docs/research_notes/0092_stat_matched_source_execution_release.md):
 [authorization](../configs/stat_matched_source_acquisition_release_v1.json),
