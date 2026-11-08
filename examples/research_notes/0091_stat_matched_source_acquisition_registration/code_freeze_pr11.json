@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "code_freeze_publication_receipt",
+  "baseRefName": "main",
+  "headRefOid": "c21cfcdc049e7651bb69bf6932c13d7b079cc9aa",
+  "mergeCommit": {
+    "oid": "45ad7db162194ebe7cb596526ec1953605af6700"
+  },
+  "mergedAt": "2026-11-08T09:44:34Z",
+  "number": 11,
+  "state": "MERGED",
+  "url": "https://github.com/RyoSpiralArchitect/fractal-vlm-state-probe/pull/11"
+}
