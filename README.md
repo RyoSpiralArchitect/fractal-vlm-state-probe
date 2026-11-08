@@ -29,6 +29,10 @@ native qualification is unmeasured and acquisition still requires a separate rel
 registers the 135-file freeze and fixed acquisition budget, with start withheld.
 Only zero-call preparation is approved; `PREPARED_NOT_RELEASED` is not an
 executable preflight or a new measurement.
+[Note 0092](docs/research_notes/0092_stat_matched_source_execution_release.md)
+then records explicit approval for one bounded acquisition, with the 135-file
+implementation unchanged. Public execution authorization and a fresh approved
+preflight must precede acquisition; the first unexpected failure stops the run.
 
 **Latest readout measurement:** [Note 0084](docs/research_notes/0084_first_token_prompt_panel.md)
 completes 64 suffix-free ACK/YES conditions after 288 fresh calibration
