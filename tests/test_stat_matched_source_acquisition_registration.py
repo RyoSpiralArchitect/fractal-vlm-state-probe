@@ -84,6 +84,8 @@ def test_code_publication_receipt_is_bound_to_the_merged_implementation():
     receipt = read(r["public_receipt"])
     assert digest(r["public_receipt"]) == r["public_receipt_sha256"]
     assert receipt == {
+        "schema_version": 1,
+        "analysis_kind": "code_freeze_publication_receipt",
         "baseRefName": "main",
         "headRefOid": "c21cfcdc049e7651bb69bf6932c13d7b079cc9aa",
         "mergeCommit": {"oid": "45ad7db162194ebe7cb596526ec1953605af6700"},

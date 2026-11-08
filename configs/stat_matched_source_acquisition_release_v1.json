@@ -11,7 +11,7 @@
   "implementation_commit": "45ad7db162194ebe7cb596526ec1953605af6700",
   "preparation_sha256": "0876dc6745ab37f83c786a2274af601c3f3af47d8e06649b9fbe0a4f485de3df",
   "public_receipt": "examples/research_notes/0091_stat_matched_source_acquisition_registration/code_freeze_pr11.json",
-  "public_receipt_sha256": "2d779d83fd8fcd205ab8662ace984972c8904508f666a36808a90c2dc3abc375",
+  "public_receipt_sha256": "f7c02b0333fda07afa0b73f5bd011b173a538345d100441f2e09eec17eea1d1e",
   "code_sha256": {
     "configs/common_suffix_prompt_control_v1.json": "38f34685ab9990b0c8750eead9daea0e3a1a35efdb024ad28a191522b7ef94be",
     "configs/controlled_overlap_cache_release_v1.json": "7f2d24cac186d872f1872d8cb60324735b835e96887d541c0a75562799d2b3b9",

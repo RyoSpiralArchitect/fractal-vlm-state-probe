@@ -17,6 +17,8 @@ The [saved publication receipt](../../examples/research_notes/0091_stat_matched_
 is separately hash-bound. No frozen scientific or implementation file is
 changed by this registration. Current software evidence is the 810-test
 clean-archive and merged-main checks recorded on PR 11, not native calibration.
+The receipt preserves the queried GitHub fields and adds only this repository's
+`schema_version` and `analysis_kind` metadata; it is not raw API-response bytes.
 
 The canonical file uses the future acquisition-release ID, but
 `approved_for_execution=false`. Its filename and public merge are not start

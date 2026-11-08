@@ -1,4 +1,6 @@
 {
+  "schema_version": 1,
+  "analysis_kind": "code_freeze_publication_receipt",
   "baseRefName": "main",
   "headRefOid": "c21cfcdc049e7651bb69bf6932c13d7b079cc9aa",
   "mergeCommit": {
