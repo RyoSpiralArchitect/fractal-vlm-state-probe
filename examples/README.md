@@ -65,6 +65,12 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0091 Acquisition Plan, Start Withheld](../docs/research_notes/0091_stat_matched_source_acquisition_registration.md):
+[registration](../configs/stat_matched_source_acquisition_release_v1.json),
+[code-freeze publication receipt](research_notes/0091_stat_matched_source_acquisition_registration/code_freeze_pr11.json).
+All 135 selected implementation files are bound; execution stays disabled.
+Only file/fingerprint preparation is approved, with no new scientific data.
+
 [0090 Capture And Independent Saved-Data Verification](../docs/research_notes/0090_stat_matched_source_capture_preparation.md):
 [preparation profile](../configs/stat_matched_source_capture_preparation_v1.json).
 Software-only lifecycle and adversarial file checks; no scientific result

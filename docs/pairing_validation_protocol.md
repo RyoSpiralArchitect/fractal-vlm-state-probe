@@ -1209,3 +1209,12 @@ source generation. Complete captures remain unverified until two fresh,
 byte-identical file replays; failed partial captures never yield primary
 results. Software fixtures do not qualify the native path. No execution
 release is created and no registered source/model acquisition is started.
+
+[Note 0091](research_notes/0091_stat_matched_source_acquisition_registration.md)
+binds the publicly merged 135-file implementation and planned acquisition
+budget while retaining `approved_for_execution=false`. The approved action
+is zero-call preparation at its separate root, not native calibration or
+capture. A `PREPARED_NOT_RELEASED` outcome is not an executable preflight;
+report it before a separate operator start decision. Future acquisition still
+requires committed/public execution authorization, a fresh matching approved
+preflight and all unchanged calibration/reference-seal gates.

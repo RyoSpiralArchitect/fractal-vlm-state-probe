@@ -25,6 +25,10 @@ the construction/analysis core with separate scalar oracles and toy checks.
 adds capture orchestration, artifact-backed reference seals and independent
 saved-data verification. These are software preparations, not new observations:
 native qualification is unmeasured and acquisition still requires a separate release.
+[Note 0091](docs/research_notes/0091_stat_matched_source_acquisition_registration.md)
+registers the 135-file freeze and fixed acquisition budget, with start withheld.
+Only zero-call preparation is approved; `PREPARED_NOT_RELEASED` is not an
+executable preflight or a new measurement.
 
 **Latest readout measurement:** [Note 0084](docs/research_notes/0084_first_token_prompt_panel.md)
 completes 64 suffix-free ACK/YES conditions after 288 fresh calibration
