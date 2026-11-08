@@ -65,6 +65,16 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0094 Own/Other Margin Accounting](../docs/research_notes/0094_margin_decomposition.md):
+[plan](research_notes/0094_margin_decomposition/plan.json),
+[summary](research_notes/0094_margin_decomposition/summary.json),
+[decompositions](research_notes/0094_margin_decomposition/decomposition.jsonl),
+[oracle checks](research_notes/0094_margin_decomposition/oracle_checks.jsonl),
+[verification/provenance](research_notes/0094_margin_decomposition/verification_receipts.json).
+Post-hoc signed accounting from the unchanged Note 0093 scores. Overall own
+agreement falls while reduced other agreement partly offsets the margin loss.
+All 18 profiles and unavailable cases remain; no new acquisition or mechanism claim.
+
 [0093 Matched-Input Encoder/Projector Correspondence](../docs/research_notes/0093_stat_matched_source_results.md):
 [summary](research_notes/0093_stat_matched_source_results/summary.json),
 [all profiles](research_notes/0093_stat_matched_source_results/profiles.jsonl),

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "matched_margin_decomposition_results",
+  "status": "VERIFIED_POSTHOC_SCORE_ACCOUNTING",
+  "posthoc": true,
+  "not_preregistered_before_note0093": true,
+  "date": "2026-11-09",
+  "implementation_commit": "d72e6f4228f1e20c4c37d2453351f9658cfa3f70",
+  "plan_sha256": "7ae616f0c69d51fca6f234eac83f9bbc94639fb6d774fe4273a31a245fbf076d",
+  "parent_capture_sha256": "fd2ac478506f69c1320fed7a26a9af02e2e3bf251b76fb14bacb2334a30e67e9",
+  "source_run_summary_sha256": "4ec1da8d2bd691f1f4444a648d6655e9c2b2f3b9f5e37b873bc0d4dbf60cb4b2",
+  "profiles": 18,
+  "pair_rows": 288,
+  "family_rows": 144,
+  "shift_summary_rows": 72,
+  "primary_profiles": [
+    {
+      "view": "encoder",
+      "relative_floor": 0.000001,
+      "available": true,
+      "available_test_pairs": 16,
+      "closure_residual": 0,
+      "delta_other": -0.00846723860519043,
+      "delta_own": -0.1041243644886229,
+      "margin_change": -0.09565712588343248,
+      "other_contribution": 0.00846723860519043,
+      "source_margin_change": -0.09565712588343249
+    },
+    {
+      "view": "projector",
+      "relative_floor": 0.000001,
+      "available": true,
+      "available_test_pairs": 16,
+      "closure_residual": 0,
+      "delta_other": -0.0078843935409991,
+      "delta_own": -0.10293861516264867,
+      "margin_change": -0.09505422162164957,
+      "other_contribution": 0.0078843935409991,
+      "source_margin_change": -0.09505422162164956
+    }
+  ],
+  "unavailable_profiles": [
+    {
+      "view": "raw_rgb/global_moments",
+      "relative_floor": null,
+      "available_test_pairs": 0
+    }
+  ],
+  "maximum_absolute_closure_residual": 5.551115123125783e-17,
+  "maximum_absolute_source_reconstruction_difference": 3.3306690738754696e-16,
+  "maximum_absolute_oracle_difference": 2.220446049250313e-16,
+  "verification_runs": 2,
+  "byte_identical_verifications": true,
+  "source_generation": 0,
+  "processor_calls": 0,
+  "model_contexts": 0,
+  "native_array_reads": 0,
+  "reference_reselection": false,
+  "new_reference_fits": false,
+  "ratio_attribution": false,
+  "p_values": null,
+  "confidence_intervals": null,
+  "equivalence_tested": false,
+  "output_sha256": {
+    "decomposition.jsonl": "d1d53804daaecc8b93332726c15b675278e39df44b10a81f64f24fcc79c1b82b",
+    "oracle_checks.jsonl": "d100d88841e2d9569123819d8bf5c575850300dd29e1e21a7f75e878b8b67075"
+  },
+  "claim_ceiling": "algebraic_score_accounting_not_a_causal_rotation_semantic_or_learning_specific_mechanism"
+}
