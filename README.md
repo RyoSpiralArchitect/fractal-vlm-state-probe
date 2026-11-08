@@ -4,6 +4,13 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
+**Latest score accounting:** [Note 0094](docs/research_notes/0094_margin_decomposition.md)
+splits the existing margin change without new images or model calls. Average
+own-family cosine changes by **-0.104124 / -0.102939** at encoder/projector;
+the other-family terms contribute **+0.008467 / +0.007884**, partly offsetting
+the decline. All families and missingness remain present. This is post-hoc
+algebra over Note 0093 scores, not a causal explanation or new experiment.
+
 **Latest matched-input measurement:** [Note 0093](docs/research_notes/0093_stat_matched_source_results.md)
 completes 512 candidate cells and all 920 registered model source contexts.
 All twelve baseline views match across guarded-tile arrangements (maximum

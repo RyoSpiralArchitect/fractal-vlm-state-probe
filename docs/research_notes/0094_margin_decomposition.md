@@ -64,3 +64,73 @@ been produced. At that checkpoint execution/publication awaited the separate
 operator scope decision. The operator subsequently approved the saved-score
 decomposition, independent review and PR/main integration, with all new
 acquisition forbidden. This approval is not an experiment or result itself.
+
+Before real-score computation, the parent implementation ledger was added as
+a fifth pinned input. The omission guard brings toy coverage to 23 tests;
+46 focused checks pass. The six plan/code/test files were committed and
+publicly pushed at `d72e6f4228f1e20c4c37d2453351f9658cfa3f70` before the
+single real-score run. No preceding file was changed by this hardening.
+
+## Verified Result
+
+The score-only run completed once. Both fresh exact-rational checks returned
+`VERIFIED_SCORE_DECOMPOSITION`; their complete output trees are byte-identical.
+The [summary](../../examples/research_notes/0094_margin_decomposition/summary.json),
+[all decompositions](../../examples/research_notes/0094_margin_decomposition/decomposition.jsonl),
+[oracle checks](../../examples/research_notes/0094_margin_decomposition/oracle_checks.jsonl)
+and [provenance/verification receipts](../../examples/research_notes/0094_margin_decomposition/verification_receipts.json)
+retain every original profile and all rows.
+
+| Site | Change in own cosine | Other contribution = -change in other cosine | Reconstructed D |
+| --- | ---: | ---: | ---: |
+| Encoder | -0.104124 | +0.008467 | -0.095657 |
+| Projector | -0.102939 | +0.007884 | -0.095054 |
+
+The exact own-cosine changes are -0.1041243644886229 and
+-0.10293861516264867. The other-cosine changes are also negative,
+-0.00846723860519043 and -0.0078843935409991, so their signed contributions
+to the margin are positive. **In the overall average, decreased own-family
+agreement is the larger negative term; decreased other-family agreement
+partly offsets it.** The average is not an increased-other-agreement pattern.
+These are arithmetic descriptions, not causal contributions or percentage
+attributions.
+
+The original Note 0093 D values are retained separately. Reconstructing them
+through a different floating-point operation order can change final bits:
+maximum difference from source D is **3.3306690738754696e-16** across all
+pairs, families and profiles. Maximum component-closure residual is
+**5.551115123125783e-17**, and maximum difference from the exact-rational
+oracle is **2.220446049250313e-16**, all within the fixed 1e-12 check.
+
+## Every Family, Both Signed Terms
+
+| Family | Encoder own | Encoder other contribution | Encoder D | Projector own | Projector other contribution | Projector D |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Voronoi / quasicrystal | -0.066906 | +0.001748 | -0.065158 | -0.073202 | -0.001441 | -0.074642 |
+| Checkerboard / hex | -0.397330 | +0.042569 | -0.354761 | -0.398552 | +0.041871 | -0.356681 |
+| Square / triangle | -0.240213 | -0.012328 | -0.252540 | -0.246633 | -0.008834 | -0.255467 |
+| Voronoi / hex | -0.116615 | +0.026055 | -0.090559 | -0.114819 | +0.025461 | -0.089357 |
+| White / blue noise | -0.045455 | -0.007512 | -0.052967 | -0.042974 | -0.009435 | -0.052408 |
+| White noise / random dots | -0.001358 | +0.019956 | +0.018599 | +0.009684 | +0.020722 | +0.030406 |
+| Blue noise / random dots | -0.016417 | +0.001920 | -0.014497 | -0.019812 | +0.001103 | -0.018708 |
+| Sparse / dense dots | +0.051298 | -0.004672 | +0.046626 | +0.062797 | -0.006373 | +0.056425 |
+
+The positive families are not one pattern. At encoder, white-noise/random-dots
+has slightly decreased own agreement, but a larger decrease in other agreement
+leaves a positive margin change. At projector both signed terms support its
+positive D. Sparse/dense dots has increased own agreement at both sites, partly
+offset by increased other agreement. Some negative-D families instead have
+increased other agreement, adding a negative term. No exception is removed.
+
+All 18 profiles, including all original learned floors, remain present.
+The raw global-moment profile remains unavailable on 0/16 test pairs, not zero.
+The 288 pair rows, 144 family rows and 72 shift-summary rows include repeated
+views/floors and are not additional independent samples. The underlying sample
+remains the original sixteen test pairs in eight known families.
+
+No source image, native array, processor or model is used for this follow-up;
+all new acquisition counts are zero. This adds an algebraic reading of existing
+cosines, not a new experiment or independent confirmation. Common rotation,
+information loss, trained/untrained specificity, semantic effects and causal
+mechanisms remain untested here. Note 0093's primary results and claim ceiling
+are unchanged.

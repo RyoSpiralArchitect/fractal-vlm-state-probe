@@ -1239,3 +1239,12 @@ two increase. Eleven available baseline changes remain at numerical scale;
 raw global moments stay unavailable. This is a registered descriptive
 separation from fixed views, not an equivalence, learned-specificity,
 semantic, causal-processing-gain or untouched-confirmation result.
+
+[Note 0094](research_notes/0094_margin_decomposition.md) adds explicitly
+post-hoc saved-score accounting: D = change in own-family cosine minus change
+in the other-three same-class mean cosine. Both average cosine terms decline;
+the larger negative own term and positive signed other contribution reconstruct
+the Note 0093 D values. All 18 profiles, 16 test pairs, eight families and
+missingness remain fixed. Two exact-rational file checks are byte-identical,
+with maximum numeric difference 2.22e-16 against the 1e-12 gate. No source,
+processor, model, reference refit, inferential test or causal mechanism is added.
