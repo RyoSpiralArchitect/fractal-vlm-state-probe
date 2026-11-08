@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "stat_matched_source_verification_receipts",
+  "preflight": {
+    "available_bytes": 53308350464,
+    "frozen_sha256": "0de29c4aa83157e8f7a68245bf92dffbe4c377e51716436a9c140255a1ddcddd",
+    "model_weights_loaded": false,
+    "new_model_contexts": 0,
+    "new_processor_calls": 0,
+    "status": "PASS_FOR_APPROVED_RELEASE"
+  },
+  "preflight_sha256": "37218b3645fdcaa269693abcec4facdb644d4018c8d110b4816fe8b40bb27856",
+  "first_summary": {
+    "capture_sha256": "fd2ac478506f69c1320fed7a26a9af02e2e3bf251b76fb14bacb2334a30e67e9",
+    "counts": {
+      "model": {
+        "attempted": 920,
+        "returned": 920
+      },
+      "processor": {
+        "attempted": 665,
+        "returned": 665
+      },
+      "source": {
+        "attempted": 64,
+        "returned": 64
+      }
+    },
+    "new_model_contexts": 0,
+    "new_processor_calls": 0,
+    "primary_results_withheld": true,
+    "proof": {
+      "candidate_cells": 512,
+      "historical_processor_cells": 128,
+      "independent_saved_array_checks": true,
+      "model_cells": 536,
+      "new_model_contexts": 0,
+      "new_processor_calls": 0,
+      "saved_binary_artifacts_checked": 24794,
+      "source_frames": 64,
+      "synthetic_cells": 25
+    },
+    "status": "VERIFIED"
+  },
+  "second_summary": {
+    "capture_sha256": "fd2ac478506f69c1320fed7a26a9af02e2e3bf251b76fb14bacb2334a30e67e9",
+    "counts": {
+      "model": {
+        "attempted": 920,
+        "returned": 920
+      },
+      "processor": {
+        "attempted": 665,
+        "returned": 665
+      },
+      "source": {
+        "attempted": 64,
+        "returned": 64
+      }
+    },
+    "new_model_contexts": 0,
+    "new_processor_calls": 0,
+    "primary_results_withheld": true,
+    "proof": {
+      "candidate_cells": 512,
+      "historical_processor_cells": 128,
+      "independent_saved_array_checks": true,
+      "model_cells": 536,
+      "new_model_contexts": 0,
+      "new_processor_calls": 0,
+      "saved_binary_artifacts_checked": 24794,
+      "source_frames": 64,
+      "synthetic_cells": 25
+    },
+    "status": "VERIFIED"
+  },
+  "first_tree_sha256": {
+    "legacy_calibration/cells.jsonl": "ce9730f8f4fa32f8861ad1d7c1a442d6e97be2e1a6d21d3be8e47999a192e021",
+    "legacy_calibration/historical_comparisons.jsonl": "6215e3b9aa61e8886d260f86e5bb8f76459bab95859f987301e4c93dcf4eaf3c",
+    "legacy_calibration/on_off_comparisons.jsonl": "3a690bfb683e283950e578d2d7c74e7d2728af3f2863a22fc729383710fdf1cb",
+    "legacy_calibration/representations.jsonl": "bc9204a8d51459ac4ddcd713de64141654ab6c675132b333083ba4ec931525f5",
+    "legacy_calibration/summary.json": "7222032050a5ac8f65b89a9f43b10c80ca77ab1b2a5c74018469cc133644f241",
+    "summary.json": "c3261d5aed58f4f4f94a95138116b6f7367ca1297f830adaa1df73947a540042"
+  },
+  "second_tree_sha256": {
+    "legacy_calibration/cells.jsonl": "ce9730f8f4fa32f8861ad1d7c1a442d6e97be2e1a6d21d3be8e47999a192e021",
+    "legacy_calibration/historical_comparisons.jsonl": "6215e3b9aa61e8886d260f86e5bb8f76459bab95859f987301e4c93dcf4eaf3c",
+    "legacy_calibration/on_off_comparisons.jsonl": "3a690bfb683e283950e578d2d7c74e7d2728af3f2863a22fc729383710fdf1cb",
+    "legacy_calibration/representations.jsonl": "bc9204a8d51459ac4ddcd713de64141654ab6c675132b333083ba4ec931525f5",
+    "legacy_calibration/summary.json": "7222032050a5ac8f65b89a9f43b10c80ca77ab1b2a5c74018469cc133644f241",
+    "summary.json": "c3261d5aed58f4f4f94a95138116b6f7367ca1297f830adaa1df73947a540042"
+  },
+  "byte_identical": true
+}
