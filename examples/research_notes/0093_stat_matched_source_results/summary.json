@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "stat_matched_source_results",
+  "status": "DESCRIPTIVE_PROFILES_VERIFIED",
+  "date": "2026-11-08",
+  "execution_merge_commit": "f036a0822bae2d4c4f1eea1d6679b73a6d858c68",
+  "implementation_commit": "45ad7db162194ebe7cb596526ec1953605af6700",
+  "execution_pr": "https://github.com/RyoSpiralArchitect/fractal-vlm-state-probe/pull/13",
+  "capture_sha256": "fd2ac478506f69c1320fed7a26a9af02e2e3bf251b76fb14bacb2334a30e67e9",
+  "source_analysis_summary_sha256": "76ced262d1ce2c655c9348bd6c1f1fe5f8d017018e3739e4c862b45f0c261c5a",
+  "frozen_sha256": "c6e55a8662adc19837a8778d05adc48a96e3db178919ed23b0979393d2512f56",
+  "selected_frozen_files_exact": 135,
+  "counts": {
+    "source_frames": 64,
+    "processor_only_calls": 665,
+    "model_source_contexts": 920,
+    "decoder_calls": 2760,
+    "historical_model_contexts": 384,
+    "sham_model_contexts": 24,
+    "experimental_model_contexts": 512,
+    "candidate_cells": 512,
+    "primary_test_pairs": 16,
+    "known_pairing_families": 8
+  },
+  "reference_seal": {
+    "sha256": "92eb78b367135d38f173629bc00f03e818e506bc9864800c1fd93b78d338bd41",
+    "last_context": 664,
+    "first_test_context": 665,
+    "counts": {
+      "model": {
+        "attempted": 664,
+        "returned": 664
+      },
+      "processor": {
+        "attempted": 409,
+        "returned": 409
+      },
+      "source": {
+        "attempted": 32,
+        "returned": 32
+      }
+    },
+    "artifact_bytes_independently_verified": true
+  },
+  "input_matching": {
+    "raw_shape": [
+      320,
+      320,
+      3
+    ],
+    "native_shape": [
+      1,
+      3,
+      1024,
+      1024
+    ],
+    "absolute_tolerance": 1e-10,
+    "matched_feature_vectors": 4608,
+    "maximum_matched_residual": 3.4638958368304884e-14,
+    "oracle_vector_pairs": 6144,
+    "maximum_oracle_error": 3.0253577421035516e-14,
+    "joint_multiset_comparisons": 49920,
+    "palette_comparisons": 256,
+    "all_palette_comparisons_exact": true
+  },
+  "verification": {
+    "status": "VERIFIED",
+    "runs": 2,
+    "byte_identical": true,
+    "receipted_files": 27838,
+    "binary_artifacts_checked": 24794,
+    "new_model_contexts": 0,
+    "new_processor_calls": 0
+  },
+  "profiles": 18,
+  "primary_endpoints": [
+    {
+      "view": "encoder",
+      "relative_floor": 0.000001,
+      "available": true,
+      "available_test_pairs": 16,
+      "mean_identity_margin": 0.2221216965375348,
+      "mean_nonidentity_margin": 0.12646457065410233,
+      "paired_margin_change": -0.09565712588343249,
+      "negative_family_deltas": 6,
+      "positive_family_deltas": 2,
+      "mean_direction_cosine": 0.18217002405492647,
+      "norm_ratio_min": 0.9476682823620081,
+      "norm_ratio_max": 1.0976439481460074
+    },
+    {
+      "view": "projector",
+      "relative_floor": 0.000001,
+      "available": true,
+      "available_test_pairs": 16,
+      "mean_identity_margin": 0.2246462449370032,
+      "mean_nonidentity_margin": 0.1295920233153536,
+      "paired_margin_change": -0.09505422162164956,
+      "negative_family_deltas": 6,
+      "positive_family_deltas": 2,
+      "mean_direction_cosine": 0.17955571952984709,
+      "norm_ratio_min": 0.9474260307209492,
+      "norm_ratio_max": 1.0990378323791474
+    }
+  ],
+  "available_baseline_profiles": 11,
+  "maximum_absolute_baseline_D": 1.628829449790148e-14,
+  "unavailable_profiles": [
+    {
+      "view": "raw_rgb/global_moments",
+      "available_test_pairs": 0,
+      "reason": "required_margin_unavailable_no_filtering"
+    }
+  ],
+  "learned_floors": [
+    1e-8,
+    0.000001,
+    0.0001
+  ],
+  "all_learned_floors_same_primary_results": true,
+  "output_sha256": {
+    "profiles.jsonl": "3eb43312c639847ccdea65de29b0e66cc358614e49d6d066459ae8ed5677b375",
+    "spectra.jsonl": "243107ca77b5ef3ce72cd23c7ca69576f6a199da24098dd2089103dcd1fa7a99"
+  },
+  "new_analysis_model_contexts": 0,
+  "new_analysis_processor_calls": 0,
+  "p_values": null,
+  "confidence_intervals": null,
+  "equivalence_tested": false,
+  "confirmation_cohort": "not_generated_not_sealed",
+  "full_native_payloads_published": false,
+  "public_replay_scope": "aggregate_score_and_missingness_reconstruction_only_full_native_word_audit_requires_local_capture"
+}

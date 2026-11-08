@@ -4,6 +4,16 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
+**Latest matched-input measurement:** [Note 0093](docs/research_notes/0093_stat_matched_source_results.md)
+completes 512 candidate cells and all 920 registered model source contexts.
+All twelve baseline views match across guarded-tile arrangements (maximum
+residual 3.46e-14), while fixed-reference correspondence margins change by
+**-0.095657 at encoder / -0.095054 at projector**. Six of eight families decrease;
+two increase. Eleven available baseline changes stay on the numerical scale,
+and raw global-moment directions remain unavailable. Two complete file
+verifications are byte-identical. This is conditional known-family development,
+not learning identification, semantic steering, equivalence or confirmation.
+
 **Latest input calibration:** [Note 0087](docs/research_notes/0087_stat_matched_input_calibration.md)
 realizes the guarded-tile candidate on the native processor: all twelve
 baseline feature views match (maximum residual 8.66e-15), and all 2,340
@@ -14,21 +24,20 @@ or confirmation. [Design](docs/research_notes/0085_stat_matched_input_calibratio
 and [implementation release](docs/research_notes/0086_stat_matched_input_calibration_release.md)
 remain fixed.
 
-**Next design, not execution:** [Note 0088](docs/research_notes/0088_stat_matched_source_registration.md)
-allocates fresh reference/test seeds and a payload-first palette quartet.
-It asks how encoder/projector directions change under rearrangements matched
-on all twelve baseline views. Low-norm directions remain unavailable;
-source generation and model acquisition await a separate release.
+**Design And Release Trail:** [Note 0088](docs/research_notes/0088_stat_matched_source_registration.md)
+allocated fresh reference/test seeds and a payload-first palette quartet.
+It fixed how encoder/projector directions would be compared under rearrangements
+matched on all twelve baseline views, with low-norm directions left unavailable.
 [Note 0089](docs/research_notes/0089_stat_matched_source_core.md) implements
 the construction/analysis core with separate scalar oracles and toy checks.
 [Note 0090](docs/research_notes/0090_stat_matched_source_capture_preparation.md)
 adds capture orchestration, artifact-backed reference seals and independent
-saved-data verification. These are software preparations, not new observations:
-native qualification is unmeasured and acquisition still requires a separate release.
+saved-data verification. These were software preparations, not new observations;
+the subsequent native qualification and acquisition are reported in Note 0093.
 [Note 0091](docs/research_notes/0091_stat_matched_source_acquisition_registration.md)
-registers the 135-file freeze and fixed acquisition budget, with start withheld.
-Only zero-call preparation is approved; `PREPARED_NOT_RELEASED` is not an
-executable preflight or a new measurement.
+registered the 135-file freeze and fixed acquisition budget, with start withheld.
+It approved only zero-call preparation; `PREPARED_NOT_RELEASED` is not an
+executable preflight or a scientific measurement.
 [Note 0092](docs/research_notes/0092_stat_matched_source_execution_release.md)
 then records explicit approval for one bounded acquisition, with the 135-file
 implementation unchanged. Public execution authorization and a fresh approved

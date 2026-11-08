@@ -1,6 +1,6 @@
 # Paper Evidence Matrix
 
-Last updated: 2026-11-08 (Matched-source acquisition plan registered with start withheld; no new scientific acquisition)
+Last updated: 2026-11-08 (Matched-input visual correspondence acquired and independently verified; no confirmation)
 
 This file is the compact bridge from run artifacts to a manuscript draft. It
 separates valid observations, descriptive interpretation, withdrawn results,
@@ -48,6 +48,7 @@ the same four factorial cells are not independent samples.
 | Matched-source capture preparation | Reference-first acquisition, full saved-data reconstruction and separately committed authorization gate | Software fixtures only; zero registered sources, native processor calls or model contexts | Complete simulated schedule, artifact-backed seals and adversarial file checks are implemented; native path remains unmeasured | implementation evidence, not scientific observations or acquisition release | [Note 0090](research_notes/0090_stat_matched_source_capture_preparation.md) |
 | Matched-source acquisition plan, start withheld | Same immutable 135-file implementation and Note 0088 scientific design | Planned 64 sources / 665 processor-only calls / 920 model contexts; no new observations at registration | Public code-freeze receipt bound; execution flag false and only zero-call preparation approved | registration/authority evidence, not native calibration, acquisition or confirmation | [Note 0091](research_notes/0091_stat_matched_source_acquisition_registration.md) |
 | Bounded matched-source execution authorization | Same 135-file implementation, scientific design and planned budgets | No new observations in the release; actual acquisition must be reported separately | Operator start approved; public authorization and fresh approved preflight gate one no-retry acquisition | authority record, not a scientific outcome or confirmation | [Note 0092](research_notes/0092_stat_matched_source_execution_release.md) |
+| Matched-input encoder/projector correspondence | All twelve raw/native baseline views numerically matched; full visual interaction vectors and frozen shift-0 family references | 32 source pairs / 64 donors; 512 experimental + 384 historical + 24 sham model source contexts; 16 primary test pairs across eight known families | D=-0.095657/-0.095054; all floors identical, six negative/two positive families; eleven available baseline D at numerical scale, raw global direction unavailable; two byte-identical full file checks | conditional registered development description, not learned specificity, semantic steering, equivalence or confirmation | [Note 0093](research_notes/0093_stat_matched_source_results.md) |
 | Cache-prefix audit | MLX-VLM `0.4.4`, Qwen and SmolVLM reuse paths | 2 audit runs, 7 available checks | No checked incremental or text-only branch reuse path retained a safe full prefix/cache-length relation | direct protocol-failure observation | [Note 0027](research_notes/0027_cache_prefix_audit_and_direct_full_vocab.md) |
 | Qwen direct factorial trajectory | Qwen2.5-VL-3B 4bit, fresh ACK plus fresh direct probes | 6 fractal pairs at 1 frame; 2 of them extend to 2/4/8/16; 56 cells total | All 14 direct after-factorials are non-identical; fresh ACK scalar argmax is layer 33 `values` at all 14 points, while the added `g_h` point leaves the sign negative in 13/14 and 5/6 one-frame pairs | exact scalar-locus replication with a revised sign boundary | [Note 0037](research_notes/0037_control_specificity_panel_and_conditional_cache_directions.md) |
 | SmolVLM direct factorial trajectory | SmolVLM2-2.2B, fresh ACK plus fresh direct probes | 4 pairs at 1 frame; 2 of them extend to 2/4; 32 cells total | All 8 direct after-factorials are non-identical; one-frame ACK argmax spans layers 1/21/22 and keys/values | replicated pair-dependence under the valid protocol | [Note 0028](research_notes/0028_source_pair_replication_and_prompt_robustness.md) |
@@ -501,13 +502,18 @@ endpoints and exact selected-cache parity at all experimental cells. Notes
    forwards separate; the completed readout does not identify mediation.
    Note 0085 now fixes only the guarded-tile construction/calibration design;
    Notes 0086-0087 implement and pass its native synthetic calibration.
-   Real-source generation and learned comparisons remain unreleased.
+   Those notes did not release real-source generation or learned comparisons.
    Note 0088 allocates the fresh-source split and payload-first design;
    implementation, public freeze and a separate execution release remain gates.
    Note 0089 implements toy-verified construction and scoring components;
    Note 0090 adds capture orchestration and independent complete file replay
-   with software fixtures. Native qualification, public freeze and a separate
-   acquisition release remain required; no new scientific data are added.
+   with software fixtures and did not itself add scientific observations.
+   Notes 0091-0092 subsequently bind the public freeze and explicit execution
+   authorization. Note 0093 completes fresh native qualification and the
+   matched-source panel: all twelve input views match while full visual
+   correspondence margins change, with family exceptions retained. Matched
+   learned/unlearned architectures and causal or semantic identification
+   remain future work; this completed development panel does not release them.
 2. Carry raw/processor starts, baseline profiles, numerical-sensitivity
    diagnostics and between-level spectra into that comparison. Neither a
    larger cache score nor a baseline gap identifies learning or specifically

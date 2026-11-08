@@ -1226,3 +1226,16 @@ merge the execution authorization, then require a fresh approved preflight and
 the unchanged 135-file implementation before acquisition. First failure stops
 the run without retry/resume; two identical complete file verifications still
 gate descriptive analysis. This release contains no new scientific observations.
+
+[Note 0093](research_notes/0093_stat_matched_source_results.md) completes the
+registered acquisition: 64 sources, 665 processor-only calls, 920 source
+contexts and 2,760 separately counted decoder calls. References seal at 664
+before test-source generation; no retry or replacement. Both complete file
+verifications are byte-identical, and every registered profile matches the
+separate scalar scorer. With all twelve input views matched, encoder/projector
+paired margin changes are -0.095657/-0.095054, available on 16/16 pairs and
+identical across the three fixed floors. Six of eight families decrease and
+two increase. Eleven available baseline changes remain at numerical scale;
+raw global moments stay unavailable. This is a registered descriptive
+separation from fixed views, not an equivalence, learned-specificity,
+semantic, causal-processing-gain or untouched-confirmation result.

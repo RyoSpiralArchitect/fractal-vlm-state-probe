@@ -232,7 +232,7 @@ Token bands are not verified 2D patches.
 - Logprob/trace plots.
 - Strict separation between observed effects and interpretation.
 
-Status: the evidence matrix and Notes 0027-0092 encode the audited claim
+Status: the evidence matrix and Notes 0027-0093 encode the audited claim
 boundary, balanced nine-model direct replication, eight-model prompt
 replication, selected full-vector localization, scalar-locus versus
 vector-direction separation, and the pairing-conditioned direction hierarchy.
@@ -310,6 +310,7 @@ bounded Phase 1 design; Notes 0055-0056 report its completed input measurements.
 | 0090 | Capture and saved-data verification preparation | Reference-first orchestration, full artifact replay and separate-release gates implemented with software fixtures; native path unmeasured, no acquisition authorized |
 | 0091 | Acquisition plan with start withheld | Public 135-file implementation freeze and fixed budget bound; only zero-call preparation approved, no native execution or scientific observation |
 | 0092 | Bounded acquisition execution authorization | Explicit operator start approval, unchanged 135-file implementation and scientific design; public release and fresh approved preflight required; stop at first failure, no retry |
+| 0093 | Matched-input visual correspondence | Complete 64-source / 665-processor-only / 920-context run and identical file replays; twelve matched input views coexist with encoder/projector D -0.095657/-0.095054, six negative and two positive families; bounded descriptive result |
 | Originally planned around 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed; Note 0072 is a development calibration, not confirmation |
 | 0076-0080 | Independent replay, negative-case audit and manuscript | Not started |
 

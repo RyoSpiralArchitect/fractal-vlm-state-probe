@@ -65,6 +65,17 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0093 Matched-Input Encoder/Projector Correspondence](../docs/research_notes/0093_stat_matched_source_results.md):
+[summary](research_notes/0093_stat_matched_source_results/summary.json),
+[all profiles](research_notes/0093_stat_matched_source_results/profiles.jsonl),
+[spectra](research_notes/0093_stat_matched_source_results/spectra.jsonl),
+[two verification receipts](research_notes/0093_stat_matched_source_results/verification_receipts.json).
+Matched twelve-view inputs coexist with encoder/projector margin changes
+-0.095657/-0.095054; six families decrease and two increase. All floors,
+eleven available baselines and the unavailable raw global view are retained.
+Portable aggregates replay without a model; full native-word audits require
+the retained local capture. No learning-specific, semantic or confirmation claim.
+
 [0092 Bounded Execution Release](../docs/research_notes/0092_stat_matched_source_execution_release.md):
 [authorization](../configs/stat_matched_source_acquisition_release_v1.json),
 [unchanged start-withheld snapshot](../configs/stat_matched_source_acquisition_registration_v1.json).
