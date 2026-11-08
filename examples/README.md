@@ -65,8 +65,14 @@ reading the current experiment logic and claim boundaries.
 
 ## Reading Order
 
+[0092 Bounded Execution Release](../docs/research_notes/0092_stat_matched_source_execution_release.md):
+[authorization](../configs/stat_matched_source_acquisition_release_v1.json),
+[unchanged start-withheld snapshot](../configs/stat_matched_source_acquisition_registration_v1.json).
+One fixed acquisition is approved only after public merge and a fresh approved
+preflight. No retry/resume or confirmation is released; planned counts are not observations.
+
 [0091 Acquisition Plan, Start Withheld](../docs/research_notes/0091_stat_matched_source_acquisition_registration.md):
-[registration](../configs/stat_matched_source_acquisition_release_v1.json),
+[registration snapshot](../configs/stat_matched_source_acquisition_registration_v1.json),
 [code-freeze publication receipt](research_notes/0091_stat_matched_source_acquisition_registration/code_freeze_pr11.json).
 All 135 selected implementation files are bound; execution stays disabled.
 Only file/fingerprint preparation is approved, with no new scientific data.

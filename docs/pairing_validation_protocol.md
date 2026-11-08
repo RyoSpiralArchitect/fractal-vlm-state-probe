@@ -1218,3 +1218,11 @@ capture. A `PREPARED_NOT_RELEASED` outcome is not an executable preflight;
 report it before a separate operator start decision. Future acquisition still
 requires committed/public execution authorization, a fresh matching approved
 preflight and all unchanged calibration/reference-seal gates.
+
+[Note 0092](research_notes/0092_stat_matched_source_execution_release.md)
+records the separate explicit operator start approval after zero-call preparation.
+The original registration stays byte-exact in a historical snapshot. Publicly
+merge the execution authorization, then require a fresh approved preflight and
+the unchanged 135-file implementation before acquisition. First failure stops
+the run without retry/resume; two identical complete file verifications still
+gate descriptive analysis. This release contains no new scientific observations.

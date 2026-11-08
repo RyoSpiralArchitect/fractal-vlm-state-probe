@@ -2,12 +2,19 @@
   "schema_version": 1,
   "study_id": "stat_matched_source_acquisition_release_v1",
   "registered_date": "2026-11-08",
-  "status": "registered_plan_start_withheld",
+  "status": "approved_for_one_bounded_acquisition",
   "registration_approved": true,
   "zero_call_preparation_approved": true,
-  "approved_for_execution": false,
-  "operator_start_authorization": "withheld_pending_zero_call_preparation_review",
-  "scope": "register_fixed_acquisition_plan_and_zero_call_preparation_only",
+  "approved_for_execution": true,
+  "operator_start_authorization": "explicit_operator_go_2026_11_08_after_PREPARED_NOT_RELEASED",
+  "scope": "fixed_note_0088_acquisition_verification_and_descriptive_analysis_only",
+  "prior_registration": "configs/stat_matched_source_acquisition_registration_v1.json",
+  "prior_registration_sha256": "d32f360b1bd4dfecd35cd29565cd931956f51976791b4d4e782fd51a9994692c",
+  "preparation_evidence": {
+    "status": "PREPARED_NOT_RELEASED",
+    "preflight_sha256": "f7052314ebebc89cd4295562a689d43bbcc4b3821ac55993c18dd5833c0fcb10",
+    "frozen_sha256": "48adda22d36196d7d04367fe092d3952447ac7f33d2a44ea41a2152c6498ead7"
+  },
   "implementation_commit": "45ad7db162194ebe7cb596526ec1953605af6700",
   "preparation_sha256": "0876dc6745ab37f83c786a2274af601c3f3af47d8e06649b9fbe0a4f485de3df",
   "public_receipt": "examples/research_notes/0091_stat_matched_source_acquisition_registration/code_freeze_pr11.json",
@@ -153,15 +160,18 @@
     "registration",
     "read_only_review",
     "PR_and_main_merge",
-    "zero_call_preparation"
+    "zero_call_preparation",
+    "fresh_approved_preflight",
+    "one_registered_acquisition",
+    "two_independent_file_verifications",
+    "fixed_descriptive_analysis_after_identical_verifications"
   ],
   "forbidden_now": [
-    "registered_source_generation",
-    "native_processor_calls",
-    "model_weights_loading",
-    "model_contexts",
-    "capture",
-    "primary_analysis"
+    "retry_or_resume",
+    "replacement_sources",
+    "changed_scientific_settings_or_frozen_implementation",
+    "confirmation_cohort_acquisition",
+    "primary_analysis_before_two_identical_verifications"
   ],
   "observations_at_registration": {
     "registered_sources_generated": 0,

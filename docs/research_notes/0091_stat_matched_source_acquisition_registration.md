@@ -8,7 +8,7 @@ holding the scientific acquisition for a later decision.
 
 ## Fixed Implementation And Authority
 
-The [registration](../../configs/stat_matched_source_acquisition_release_v1.json)
+The [registration snapshot](../../configs/stat_matched_source_acquisition_registration_v1.json)
 binds all **135 selected files**: the 126 preceding preserved files plus all
 nine Note 0090 implementation/profile/test/note files. Their hashes match the
 tracked tree at `45ad7db162194ebe7cb596526ec1953605af6700`, published by

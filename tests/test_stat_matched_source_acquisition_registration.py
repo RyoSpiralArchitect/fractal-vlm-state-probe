@@ -9,7 +9,7 @@ import pytest
 from fractal_vlm_state_probe.cli import run_stat_matched_source as cli
 
 ROOT = Path(__file__).resolve().parents[1]
-NAME = "configs/stat_matched_source_acquisition_release_v1.json"
+NAME = "configs/stat_matched_source_acquisition_registration_v1.json"
 
 
 def read(name):
