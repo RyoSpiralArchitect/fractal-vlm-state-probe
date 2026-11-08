@@ -123,7 +123,8 @@ offset by increased other agreement. Some negative-D families instead have
 increased other agreement, adding a negative term. No exception is removed.
 
 All 18 profiles, including all original learned floors, remain present.
-The raw global-moment profile remains unavailable on 0/16 test pairs, not zero.
+The raw global-moment profile remains unavailable, with 0/16 available test pairs,
+not zero.
 The 288 pair rows, 144 family rows and 72 shift-summary rows include repeated
 views/floors and are not additional independent samples. The underlying sample
 remains the original sixteen test pairs in eight known families.
