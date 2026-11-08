@@ -55,10 +55,12 @@ would require separate plans; none is launched here.
 
 ## Preparation Checkpoint
 
-At this checkpoint, the plan, score-only implementation, exact-rational oracle
+At preparation commit `d1c79e2`, the plan, score-only implementation, exact-rational oracle
 and 22 analytic-toy/guard tests are prepared. All 45 focused decomposition,
 preceding-publication and example checks pass. The preceding 135 frozen files
 and Note 0093 source tables remain unchanged. No new real-score decomposition,
 verification outputs, source images, processor calls or model contexts have
-been produced. Execution/publication of this new follow-up awaits the separate
-operator scope decision; this checkpoint is not a result or a main merge.
+been produced. At that checkpoint execution/publication awaited the separate
+operator scope decision. The operator subsequently approved the saved-score
+decomposition, independent review and PR/main integration, with all new
+acquisition forbidden. This approval is not an experiment or result itself.

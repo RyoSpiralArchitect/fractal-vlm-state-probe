@@ -57,7 +57,10 @@ def qualify(repo):
     required_sources = {
         PARENT + n
         for n in ("profiles.jsonl", "summary.json", "verification_receipts.json")
-    } | {"configs/stat_matched_source_panel_v1.json"}
+    } | {
+        "configs/stat_matched_source_panel_v1.json",
+        "configs/stat_matched_source_acquisition_release_v1.json",
+    }
     if (
         set(plan["sources"]) != required_sources
         or plan["implementation_files"] != IMPLEMENTATION
@@ -101,6 +104,8 @@ def qualify(repo):
     ):
         raise ValueError("fixed analysis boundary differs")
     release = read(repo / "configs/stat_matched_source_acquisition_release_v1.json")
+    if len(release["code_sha256"]) != 135:
+        raise ValueError("complete preceding 135-file freeze required")
     for name, digest in release["code_sha256"].items():
         if sha(repo / name) != digest:
             raise ValueError("preceding frozen implementation changed")

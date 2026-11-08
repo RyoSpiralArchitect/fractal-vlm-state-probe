@@ -11,7 +11,8 @@
     "examples/research_notes/0093_stat_matched_source_results/profiles.jsonl": "3eb43312c639847ccdea65de29b0e66cc358614e49d6d066459ae8ed5677b375",
     "examples/research_notes/0093_stat_matched_source_results/summary.json": "6059dced30681490724939b32949a794d5f8b4d78e6fa6ead4a48c09cab93ca0",
     "examples/research_notes/0093_stat_matched_source_results/verification_receipts.json": "481bd5d92cb25b98c3829ee6fc18a10072f01d7f41905d7dafdd30bd8c57903f",
-    "configs/stat_matched_source_panel_v1.json": "bb69e12b171afb7853df939da049436a41ca539531b23fddf8b8b63059a87305"
+    "configs/stat_matched_source_panel_v1.json": "bb69e12b171afb7853df939da049436a41ca539531b23fddf8b8b63059a87305",
+    "configs/stat_matched_source_acquisition_release_v1.json": "5e97af976c394a97005e100a01c49121d92be0b8d510fd014c52e0ac4b0a3361"
   },
   "profiles": 18,
   "test_pairs": 16,

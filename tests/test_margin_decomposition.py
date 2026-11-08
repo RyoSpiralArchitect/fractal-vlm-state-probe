@@ -240,19 +240,24 @@ def test_parent_qualification_is_file_only_and_hash_bound():
     assert plan["prior_outcomes_known"]
 
 
-@pytest.mark.parametrize("kind", ["parent", "implementation"])
+@pytest.mark.parametrize("kind", ["parent", "implementation", "release_ledger"])
 def test_qualifier_rejects_omitted_hash_coverage(monkeypatch, kind):
     original = cli.read
 
     def changed(path):
         data = original(path)
-        if path == ROOT / cli.PLAN:
+        if path == ROOT / cli.PLAN and kind != "release_ledger":
             if kind == "parent":
                 data["sources"].pop(next(iter(data["sources"])))
             else:
                 data["implementation_files"].pop()
+        elif (
+            path == ROOT / "configs/stat_matched_source_acquisition_release_v1.json"
+            and kind == "release_ledger"
+        ):
+            data["code_sha256"].pop(next(iter(data["code_sha256"])))
         return data
 
     monkeypatch.setattr(cli, "read", changed)
-    with pytest.raises(ValueError, match="hash coverage"):
+    with pytest.raises(ValueError, match="hash coverage|135-file"):
         cli.qualify(ROOT)
