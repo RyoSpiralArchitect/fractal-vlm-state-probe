@@ -502,13 +502,18 @@ endpoints and exact selected-cache parity at all experimental cells. Notes
    forwards separate; the completed readout does not identify mediation.
    Note 0085 now fixes only the guarded-tile construction/calibration design;
    Notes 0086-0087 implement and pass its native synthetic calibration.
-   Real-source generation and learned comparisons remain unreleased.
+   Those notes did not release real-source generation or learned comparisons.
    Note 0088 allocates the fresh-source split and payload-first design;
    implementation, public freeze and a separate execution release remain gates.
    Note 0089 implements toy-verified construction and scoring components;
    Note 0090 adds capture orchestration and independent complete file replay
-   with software fixtures. Native qualification, public freeze and a separate
-   acquisition release remain required; no new scientific data are added.
+   with software fixtures and did not itself add scientific observations.
+   Notes 0091-0092 subsequently bind the public freeze and explicit execution
+   authorization. Note 0093 completes fresh native qualification and the
+   matched-source panel: all twelve input views match while full visual
+   correspondence margins change, with family exceptions retained. Matched
+   learned/unlearned architectures and causal or semantic identification
+   remain future work; this completed development panel does not release them.
 2. Carry raw/processor starts, baseline profiles, numerical-sensitivity
    diagnostics and between-level spectra into that comparison. Neither a
    larger cache score nor a baseline gap identifies learning or specifically
