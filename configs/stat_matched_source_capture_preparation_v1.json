@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "study_id": "stat_matched_source_capture_preparation_v1",
+  "date": "2026-11-08",
+  "scope": "capture_and_independent_saved_data_verifier_implementation_only",
+  "preceding_merge_commit": "efb7b52455d99d410cebe1028b2a42d76827b0ca",
+  "execution_authorized": false,
+  "registered_sources_generated": 0,
+  "native_processor_calls": 0,
+  "model_contexts": 0,
+  "enumerated_payload_bound_bytes": 15032385536,
+  "operation_headroom_bytes": 33554432,
+  "preparation_root": "runs/stat_matched_source_prepare_v1",
+  "preflight_root": "runs/stat_matched_source_preflight_v1",
+  "capture_root": "runs/stat_matched_source_capture_v1",
+  "preserved_core_sha256": {
+    "configs/stat_matched_source_core_v1.json": "e8e222b1f480aef84e7d3672bafb3f5837bce4c62e399b0b2f6929f5b05e2984",
+    "src/fractal_vlm_state_probe/stat_matched_source.py": "96025eabb3db4cd48572e16de0af0ff2903faeb8890812e5367c5894206a8330",
+    "src/fractal_vlm_state_probe/stat_matched_source_oracle.py": "4cc41d2a2cef11676b055373a6d8fd80db035a507795910e9469a941703609ca",
+    "tests/test_stat_matched_source.py": "973e36c92646aab0c004d59ad3ded42b6acf2b14ccd67aafaeb39ac1bf3dea8c",
+    "docs/research_notes/0089_stat_matched_source_core.md": "0867b9086ff43b3aaee92ccab879a24a4c69fc9144e8cd4649bcf53c0b05a552"
+  },
+  "implementation_files": [
+    "configs/stat_matched_source_capture_preparation_v1.json",
+    "src/fractal_vlm_state_probe/stat_matched_source_storage.py",
+    "src/fractal_vlm_state_probe/stat_matched_source_capture.py",
+    "src/fractal_vlm_state_probe/stat_matched_source_native.py",
+    "src/fractal_vlm_state_probe/stat_matched_source_verify.py",
+    "src/fractal_vlm_state_probe/cli/run_stat_matched_source.py",
+    "scripts/run_stat_matched_source.py",
+    "tests/test_stat_matched_source_capture.py",
+    "docs/research_notes/0090_stat_matched_source_capture_preparation.md"
+  ],
+  "required_separate_release_id": "stat_matched_source_acquisition_release_v1",
+  "release_requirements": [
+    "explicit_approved_for_execution",
+    "committed_file_hashes_cover_all_126_preserved_and_all_new_implementation_files",
+    "public_merged_PR_receipt_bound_to_the_implementation_commit",
+    "canonical_fresh_roots_and_matching_approved_preflight"
+  ],
+  "verification_boundary": "complete_captures_reconstructed_and_audited_failed_captures_inventory_and_call_chain_only_never_promoted",
+  "software_fixtures": "80px_8x8_pools_10px_cells_1px_tiles_seed17_no_registered_generator_or_native_runtime",
+  "confirmation_cohort": "not_generated_not_sealed"
+}

@@ -20,8 +20,11 @@ It asks how encoder/projector directions change under rearrangements matched
 on all twelve baseline views. Low-norm directions remain unavailable;
 source generation and model acquisition await a separate release.
 [Note 0089](docs/research_notes/0089_stat_matched_source_core.md) implements
-the construction/analysis core with separate scalar oracles and toy checks;
-the capture runner and independent capture-file verifier remain unreleased.
+the construction/analysis core with separate scalar oracles and toy checks.
+[Note 0090](docs/research_notes/0090_stat_matched_source_capture_preparation.md)
+adds capture orchestration, artifact-backed reference seals and independent
+saved-data verification. These are software preparations, not new observations:
+native qualification is unmeasured and acquisition still requires a separate release.
 
 **Latest readout measurement:** [Note 0084](docs/research_notes/0084_first_token_prompt_panel.md)
 completes 64 suffix-free ACK/YES conditions after 288 fresh calibration
