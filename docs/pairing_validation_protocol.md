@@ -1176,3 +1176,27 @@ sentinel is correctly rejected. Eight outputs replay byte-for-byte through
 zero-processor verification. This qualifies only the fixed synthetic
 construction; no learned representation, source cohort or confirmation
 panel is released.
+
+### Stage 4W: Fresh-Source Matched-Input Design
+
+[Note 0088](research_notes/0088_stat_matched_source_registration.md) allocates
+new r5/r6 reference and r7/r8 test seeds within the eight known families.
+Sample the guarded payload before palette matching, then embed on a fixed
+gray canvas and reuse the four qualified maps. Reference images and all
+256 reference representation cells must be sealed before test generation.
+
+Retain all twelve baseline views and both full visual sites. Primary
+descriptive endpoints are the paired nonidentity-minus-identity margin
+change at encoder and projector. Fixed low-norm guards, complete missingness,
+shams and a nonmatching sentinel prevent numerical residue or selected
+subsets from becoming substitute endpoints. The planned 665 processor-only
+calls and 920 model contexts are not executed by registration. Implementation,
+independent toy oracles, a public freeze, separate release and explicit
+execution approval remain required. Confirmation is not generated or sealed.
+
+[Note 0089](research_notes/0089_stat_matched_source_core.md) implements the
+payload, inventory and numerical-analysis core with independent scalar toy
+checks. File qualification and reference seals here are metadata-only,
+explicitly not native/runtime or artifact-byte qualification. Capture,
+same-process calibration and independent complete file replay still need
+their own implementation and execution release. No source is generated.
