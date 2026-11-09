@@ -60,3 +60,16 @@ The next bounded task is a separately registered native Qwen input calibration
 for the proposed map rule and all twelve input-feature views. It is not
 authorized here. Untouched FastVLM plus Qwen cohort generation and acquisition
 remain withheld, together with joint precision/storage qualification.
+
+## Review And Integration
+
+The [independent read-only review](../../examples/research_notes/0106_qwen_native_calibration_result/review_receipt.json)
+found no actionable P1/P2 in the preflight/release records or native result.
+It checked the complete file hashes, operation trace, receipt layouts/dtypes,
+unchanged 185-file software freeze and byte-identical verification trees.
+The reviewer did not rerun native execution, tests or the numerical verifier;
+numerical gates are supported by the two canonical saved-data checks above.
+
+The focused software/publication/example subset passes 90 tests. Full-suite
+clean-archive validation is required before merge; no CI workflow is configured.
+The source arrays and first acquisition remain unchanged by publication.
