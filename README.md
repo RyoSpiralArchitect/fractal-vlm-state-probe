@@ -4,6 +4,25 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
+**Confirmation preparation:** [Note 0099](docs/research_notes/0099_confirmation_preparation.md)
+allocates metadata for 16 new reference pairs and 64 test pairs, with
+development-only precision sensitivity. No cohort images or maps are generated;
+the new map rule needs native qualification. [Note 0100](docs/research_notes/0100_two_model_confirmation_scope.md)
+records the decision to retain FastVLM plus Qwen confirmation. Qwen visual/input
+calibration and joint precision/storage budgets remain open; the earlier
+44 GiB estimate is FastVLM-only. This is preparation, not a release.
+
+[Note 0101](docs/research_notes/0101_qwen_observer_preparation.md) records the
+later 51.682 GiB capacity snapshot and a software-only Qwen observation helper.
+The FastVLM-only disk threshold is met; joint storage and native Qwen parity
+remain unqualified. No cohort or native calibration is launched.
+
+[Note 0102](docs/research_notes/0102_qwen_calibration_registration.md) fixes
+34 existing Qwen calibration cases, OFF/ON/OFF parity gates, an 18 GiB
+calibration-only threshold and a 204-decoder-call budget including native
+prefetch. Metadata and byte-bound preparation pass; native capture/verifier
+implementation and separate execution release remain pending.
+
 **Latest reference audit:** [Note 0098](docs/research_notes/0098_reference_crossing_results.md)
 crosses all four reference/test arrangements and adds full raw/native input
 vectors. Matching reference conditions shrinks mean visual margin changes

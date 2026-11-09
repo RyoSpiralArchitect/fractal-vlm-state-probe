@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "qwen_visual_observer_software_preparation",
+  "date": "2026-11-09",
+  "status": "SOFTWARE_PREPARED_NATIVE_CALIBRATION_NOT_RELEASED",
+  "parent_scope": "examples/research_notes/0100_two_model_confirmation_scope/decision.json",
+  "parent_scope_sha256": "4b14e6209869f5a400ee120c01b20a6ce8dd8b44a67056753e714ae0acc11306",
+  "capacity_observation": {
+    "free_bytes": 55492743168,
+    "FastVLM_only_threshold_bytes": 47244640256,
+    "FastVLM_only_threshold_met": true,
+    "joint_two_model_threshold_bytes": null,
+    "joint_threshold_qualified": false,
+    "runtime_launch_preflight": false,
+    "cleanup_or_deletion_performed": false
+  },
+  "observer": {
+    "target_sites": ["merger_positional_input_0", "vision_tower_return_after_window_reordering"],
+    "auxiliary_retained_object": "merger_return_before_window_reordering",
+    "target_vision_call": "two_positional_arguments_and_only_output_hidden_states=False",
+    "target_merger_call": "one_positional_argument_no_keywords",
+    "exactly_one_attempt_and_success_per_target": true,
+    "materialization_cast_copy_or_extra_forward_inside_wrapper": false,
+    "nested_and_mixed_observers_rejected": true,
+    "class_methods_restored_on_success_or_failure": true,
+    "inherited_call_definitions_rejected_without_class_dictionary_change": true,
+    "concurrent_observation_qualified": false
+  },
+  "software_sha256": {
+    "src/fractal_vlm_state_probe/qwen_representation_observation.py": "f150dbaec6bc4bef59f9e4a5ee3de66f2977eb53d70a93dc41d605cc37bdbff3",
+    "tests/test_qwen_representation_observation.py": "6a9f6e624fcdaaca4e85f3e0c9c67a743edb97f26fc4d69411fa49120411b376"
+  },
+  "initial_focused_tests_passed": 77,
+  "lint": "PASS",
+  "native_OFF_ON_OFF_parity_qualified": false,
+  "native_observed_shapes_and_dtypes": null,
+  "Qwen_processor_input_gates_qualified": false,
+  "Qwen_precision_justified": false,
+  "joint_storage_budget_fixed": false,
+  "complete_native_calibration_registration": false,
+  "independent_review": "not_performed",
+  "model_weights_loaded": false,
+  "new_source_images": 0,
+  "new_cohort_maps": 0,
+  "processor_calls": 0,
+  "model_contexts": 0,
+  "confirmation_scores": 0,
+  "cohort_generation_released": false,
+  "native_execution_released": false,
+  "public_push": "not_performed"
+}

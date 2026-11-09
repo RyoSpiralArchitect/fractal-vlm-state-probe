@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "qwen_calibration_preparation_receipt",
+  "date": "2026-11-09",
+  "status": "METADATA_PREPARED_NATIVE_NOT_RELEASED",
+  "summary_sha256": "7d6141d506f29fe962b2f2d1d7fae3cb5062e0d3a3056fb0ede107688af36c85",
+  "plan_sha256": "0b009c3c7496dd995e0de1cf25b75a793a8ae8ea93b2abacbb3516b3e269c189",
+  "preparation_code_sha256": {
+    "src/fractal_vlm_state_probe/qwen_calibration_contract.py": "a1ecb0a10a9b8bde91e8d971c6642ac7d995e5da6ea9d41540648ee77b8b68fc",
+    "scripts/prepare_qwen_calibration.py": "418d7554e9a81c116ecca0cfda62895ef5cbb7615f9f76541580dcb16d40ead6",
+    "tests/test_qwen_calibration_contract.py": "420251138215ff0bdb126a1ac4250d6b0baf3793fb8102965a55630971d12f44"
+  },
+  "raw_files_hash_checked": 34,
+  "model_weights_loaded": false,
+  "processor_calls": 0,
+  "model_contexts": 0,
+  "new_source_images": 0,
+  "new_cohort_maps": 0,
+  "native_execution_released": false,
+  "independent_review": "not_performed"
+}
