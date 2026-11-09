@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "qwen_capture_verifier_software_preparation",
+  "date": "2026-11-10",
+  "status": "SOFTWARE_TESTED_NATIVE_NOT_RELEASED",
+  "plan_sha256": "0b009c3c7496dd995e0de1cf25b75a793a8ae8ea93b2abacbb3516b3e269c189",
+  "software_sha256": {
+    "src/fractal_vlm_state_probe/qwen_calibration_capture.py": "5bffde2648d1660e9c8bd964b2c67487d2a31efbadb5fe4f3e8ffd6ff7a6b43e",
+    "src/fractal_vlm_state_probe/qwen_calibration_native.py": "406e1fd995a2b80c48ccd562e3b7fac8c4bc89be30960d973cedf62bd9ceead5",
+    "src/fractal_vlm_state_probe/qwen_calibration_admission.py": "0d6b432bfd45a99985b129f6ff9842556204e8aa22e5c43e71ac4b657ea4ee86",
+    "src/fractal_vlm_state_probe/qwen_calibration_verify.py": "6c560c001e8d76aac5504215dcfc5371d12dab1b719d1f31e27849216a26a16e",
+    "scripts/run_qwen_observation_calibration.py": "799cba3b441cebeb499e3a8888fc6abcb8f6f47844f486498dbd190eda7c8c21",
+    "tests/test_qwen_calibration_capture_verify.py": "ff48bdf9842d65b1e26d462ae2ecf4e14396813abc1a343876299c91be55f832"
+  },
+  "focused_software_tests_passed": 82,
+  "installed_generator_toy_control_flow": "passed_with_numpy_stand_ins_not_native_arithmetic",
+  "offline_native_preflight_performed": false,
+  "model_weights_loaded": false,
+  "processor_instantiated": false,
+  "native_processor_calls": 0,
+  "native_model_contexts": 0,
+  "new_source_images": 0,
+  "new_cohort_maps": 0,
+  "confirmation_scores": 0,
+  "native_runtime_qualified": false,
+  "native_execution_released": false,
+  "cohort_generation_authorized": false,
+  "joint_cohort_required_launch_free_bytes": null
+}
