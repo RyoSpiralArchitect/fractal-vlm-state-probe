@@ -4,6 +4,14 @@ Deterministic visual controls, audited multimodal protocols, full-vocabulary
 factorial readouts, and full-vector visual and source-cache contrasts for separating what
 a VLM visibly answers from what the measurement actually resolves.
 
+**Manuscript started:** [Methods and existing Results](docs/paper/manuscript.md)
+have a working draft, with a [claim/figure map and proposed saved-data
+diagnostics](docs/research_notes/0095_manuscript_and_reference_audit_preparation.md).
+Reference-condition crossings and full-input-vector comparisons now have a
+[separate post-hoc registration](docs/research_notes/0096_reference_crossing_registration.md)
+and a metadata-only preparation command. Real-array scoring is not released
+or executed. Untouched confirmation remains open.
+
 **Latest score accounting:** [Note 0094](docs/research_notes/0094_margin_decomposition.md)
 splits the existing margin change without new images or model calls. Average
 own-family cosine changes by **-0.104124 / -0.102939** at encoder/projector;

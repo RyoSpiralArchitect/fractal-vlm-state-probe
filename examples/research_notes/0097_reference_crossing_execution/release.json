@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "reference_crossing_execution_release",
+  "date": "2026-11-09",
+  "study_id": "reference_crossing_v1",
+  "operator_authorization": "explicit_implementation_execution_observation_summary_integration_2026_11_09",
+  "approved_for_one_saved_array_run": true,
+  "new_acquisition_authorized": false,
+  "parent_commit": "5321dd901c24802cf8aa473e83be924798d79cd7",
+  "plan_sha256": "37d2e3554c5c43548b8a1598186464ae4f3f46ab8698f8dd8fcd62b2deb54088",
+  "metadata_preparation_summary_sha256": "4ddde8057b66c85520a092d73194933d5d849ea387314d72ab12c0d295352f55",
+  "selected_inventory_sha256": "d3e12b8d8224dd344b899d9debe2ba06085632cd84dd0718a4b8a519405fa180",
+  "implementation_files": [
+    "examples/research_notes/0096_reference_crossing_registration/plan.json",
+    "examples/research_notes/0097_reference_crossing_execution/release.json",
+    "src/fractal_vlm_state_probe/reference_crossing_registration.py",
+    "src/fractal_vlm_state_probe/reference_crossing.py",
+    "src/fractal_vlm_state_probe/reference_crossing_oracle.py",
+    "src/fractal_vlm_state_probe/cli/run_reference_crossing.py",
+    "scripts/run_reference_crossing.py",
+    "tests/test_reference_crossing.py"
+  ],
+  "numeric_policy": "unchanged_note0096_floor_cancellation_and_1e-12_absolute_checks",
+  "independent_reduction": "32768_coordinate_blocks_numpy_products_and_sum_then_math_fsum_no_BLAS_dot",
+  "score_root": "runs/reference_crossing_v1",
+  "verification_roots": ["runs/reference_crossing_verified_v1", "runs/reference_crossing_verified_replay_v1"],
+  "first_failure": "retain_and_stop_no_overwrite_retry_or_replacement",
+  "source_generation": 0,
+  "processor_calls": 0,
+  "model_contexts": 0
+}

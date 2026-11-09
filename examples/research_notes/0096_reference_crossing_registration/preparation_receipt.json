@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "reference_crossing_metadata_preparation_receipt",
+  "status": "METADATA_PREPARED_NOT_SCORE_RELEASED",
+  "date": "2026-11-09",
+  "preparation_root": "runs/reference_crossing_preparation_v1",
+  "preparation_summary_sha256": "4ddde8057b66c85520a092d73194933d5d849ea387314d72ab12c0d295352f55",
+  "plan_sha256": "37d2e3554c5c43548b8a1598186464ae4f3f46ab8698f8dd8fcd62b2deb54088",
+  "selected_inventory_sha256": "d3e12b8d8224dd344b899d9debe2ba06085632cd84dd0718a4b8a519405fa180",
+  "implementation_sha256": {
+    "examples/research_notes/0096_reference_crossing_registration/plan.json": "37d2e3554c5c43548b8a1598186464ae4f3f46ab8698f8dd8fcd62b2deb54088",
+    "scripts/prepare_reference_crossing.py": "b091c7ddc7f8fb14ee89e2ab3b47b6092320c9fb362da29cd814804807f0b7af",
+    "src/fractal_vlm_state_probe/cli/prepare_reference_crossing.py": "0389187179b44750ac7e354c0fd81282d58d3f57c3a7a2d1906f17123fa2f05a",
+    "src/fractal_vlm_state_probe/reference_crossing_registration.py": "45567cc1916b579bb77a81d4198051c7788f118324d597d577865b1837265e6d",
+    "tests/test_reference_crossing_registration.py": "5da74b5a4960cb3e39eb6a3af965da8fb92817ade569d867ab6583bafa5c6002"
+  },
+  "selected_arrays": 2048,
+  "inherited_files_exact": 135,
+  "array_payloads_read": 0,
+  "array_payload_hashes_verified_now": false,
+  "new_scores": 0,
+  "source_generation": 0,
+  "processor_calls": 0,
+  "model_contexts": 0,
+  "score_execution_released": false,
+  "committed_implementation_checked": false,
+  "focused_tests_passed": 91,
+  "lint": "PASS",
+  "independent_review": "not_performed",
+  "scope": "metadata_receipt_binding_not_native_content_reverification_or_scientific_result"
+}
