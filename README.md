@@ -20,8 +20,12 @@ remain unqualified. No cohort or native calibration is launched.
 [Note 0102](docs/research_notes/0102_qwen_calibration_registration.md) fixes
 34 existing Qwen calibration cases, OFF/ON/OFF parity gates, an 18 GiB
 calibration-only threshold and a 204-decoder-call budget including native
-prefetch. Metadata and byte-bound preparation pass; native capture/verifier
-implementation and separate execution release remain pending.
+prefetch. Metadata and byte-bound preparation pass.
+[Note 0103](docs/research_notes/0103_qwen_capture_verifier_preparation.md)
+adds bounded capture, independent saved-data verification and release gates,
+tested with synthetic arrays and the installed generator's toy control flow.
+Native Qwen parity is still unobserved; offline preflight, separate execution
+release and the joint confirmation budget remain open. No cohort is generated.
 
 **Latest reference audit:** [Note 0098](docs/research_notes/0098_reference_crossing_results.md)
 crosses all four reference/test arrangements and adds full raw/native input
