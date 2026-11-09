@@ -8,14 +8,14 @@ a VLM visibly answers from what the measurement actually resolves.
 allocates metadata for 16 new reference pairs and 64 test pairs, with
 development-only precision sensitivity. No cohort images or maps are generated;
 the new map rule needs native qualification. [Note 0100](docs/research_notes/0100_two_model_confirmation_scope.md)
-records the decision to retain FastVLM plus Qwen confirmation. Qwen visual/input
-calibration and joint precision/storage budgets remain open; the earlier
+records the decision to retain FastVLM plus Qwen confirmation. Qwen input
+qualification and joint precision/storage budgets remain open; the earlier
 44 GiB estimate is FastVLM-only. This is preparation, not a release.
 
 [Note 0101](docs/research_notes/0101_qwen_observer_preparation.md) records the
 later 51.682 GiB capacity snapshot and a software-only Qwen observation helper.
-The FastVLM-only disk threshold is met; joint storage and native Qwen parity
-remain unqualified. No cohort or native calibration is launched.
+That checkpoint met the FastVLM-only disk threshold but did not qualify joint
+storage or native Qwen parity, and launched no cohort or native calibration.
 
 [Note 0102](docs/research_notes/0102_qwen_calibration_registration.md) fixes
 34 existing Qwen calibration cases, OFF/ON/OFF parity gates, an 18 GiB
@@ -24,8 +24,18 @@ prefetch. Metadata and byte-bound preparation pass.
 [Note 0103](docs/research_notes/0103_qwen_capture_verifier_preparation.md)
 adds bounded capture, independent saved-data verification and release gates,
 tested with synthetic arrays and the installed generator's toy control flow.
-Native Qwen parity is still unobserved; offline preflight, separate execution
-release and the joint confirmation budget remain open. No cohort is generated.
+That software-only checkpoint did not establish native Qwen parity.
+[Note 0104](docs/research_notes/0104_qwen_offline_preflight.md) records a passing
+offline preflight: 185 committed software files and 11 pinned model files
+checked, with 48.821 GiB free against the 18 GiB calibration-only gate.
+[Note 0105](docs/research_notes/0105_qwen_calibration_execution_release.md)
+records separate approval for the unchanged calibration and ordered file
+verification only. [Note 0106](docs/research_notes/0106_qwen_native_calibration_result.md)
+completes 34 native OFF/ON/OFF cases: 102 contexts / 204 decoder calls /
+136 processor preparations. Both 8,266-file saved-data checks pass with
+byte-identical output trees. This qualifies observation parity only within
+those cases, not the new map rule, twelve Qwen input views or confirmation.
+Cohort generation and the joint confirmation budget remain unreleased.
 
 **Latest reference audit:** [Note 0098](docs/research_notes/0098_reference_crossing_results.md)
 crosses all four reference/test arrangements and adds full raw/native input
