@@ -1,5 +1,6 @@
 {
   "schema_version": 1,
+  "analysis_kind": "qwen_capture_verifier_read_only_review_receipt",
   "date": "2026-11-10",
   "review": "independent_read_only_subagent",
   "reviewer_id": "01a1c19d-6f8d-7443-916b-74e71162b597",
