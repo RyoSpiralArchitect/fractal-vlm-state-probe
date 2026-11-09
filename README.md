@@ -24,8 +24,14 @@ prefetch. Metadata and byte-bound preparation pass.
 [Note 0103](docs/research_notes/0103_qwen_capture_verifier_preparation.md)
 adds bounded capture, independent saved-data verification and release gates,
 tested with synthetic arrays and the installed generator's toy control flow.
-Native Qwen parity is still unobserved; offline preflight, separate execution
-release and the joint confirmation budget remain open. No cohort is generated.
+Native Qwen parity is still unobserved.
+[Note 0104](docs/research_notes/0104_qwen_offline_preflight.md) records a passing
+offline preflight: 185 committed software files and 11 pinned model files
+checked, with 48.821 GiB free against the 18 GiB calibration-only gate.
+[Note 0105](docs/research_notes/0105_qwen_calibration_execution_release.md)
+records separate approval for the unchanged calibration and ordered file
+verification only. Native parity remains to be observed; cohort generation
+and the joint confirmation budget remain unreleased.
 
 **Latest reference audit:** [Note 0098](docs/research_notes/0098_reference_crossing_results.md)
 crosses all four reference/test arrangements and adds full raw/native input
