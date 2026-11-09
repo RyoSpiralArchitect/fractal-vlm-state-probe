@@ -49,6 +49,21 @@ Six of eight family changes are negative at each site; two are positive.
 At the individual test-pair level, changes are negative on 12/16 encoder
 pairs and 11/16 projector pairs. No family or opposite-sign case is omitted.
 
+A post-hoc public-score regrouping on 2026-11-09 makes the broad-class
+heterogeneity explicit. Each class below contains four families and eight
+test pairs, with the original equal weighting:
+
+| Broad class | Encoder D | Projector D |
+| --- | ---: | ---: |
+| Geometry | -0.190754623 | -0.194036969 |
+| Stochastic | -0.000559629 | +0.003928526 |
+
+The overall decline is concentrated in the geometry families; positive and
+negative stochastic changes largely cancel in their class average. This
+regrouping is descriptive, with no new registered endpoint or class-difference
+test. [Note 0094](0094_margin_decomposition.md) separately accounts for the
+own-family and other-family terms of the same saved margins.
+
 Across the 48 test-pair/nonidentity comparisons, the mean identity-versus-
 rearranged **interaction-direction cosine** is 0.182170 at encoder and
 0.179556 at projector. Interaction norm ratios range from 0.947668 to
@@ -81,6 +96,35 @@ direction remains unavailable, with 0/16 available test pairs, and is retained
 as unavailable rather than zero or removed. The full twelve-view profiles,
 including missingness, are published. Numerical matching is not a statistical
 equivalence test or a sufficient-statistics claim about every input feature.
+
+### Descriptive Spectra And Unavailable Patch Units
+
+The four populated raw/native spectral summaries vary across arrangements.
+They were registered as descriptive diagnostics, outside the twelve matched
+feature views. Reaggregating the public spectra on 2026-11-09 gives the
+following test-only changes:
+
+| Spectral diagnostic | Mean paired change | Maximum absolute change |
+| --- | ---: | ---: |
+| Raw spectral centroid | +5.379222e-5 | 1.267243e-3 |
+| Raw high-frequency energy ratio | -5.002672e-5 | 6.061527e-3 |
+| Native spectral centroid | +2.164975e-5 | 3.893547e-4 |
+| Native high-frequency energy ratio | -3.814671e-8 | 2.881396e-5 |
+
+The denominator is 16 test pairs x four cells x three nonidentity shifts:
+192 paired cell/shift comparisons, not 192 independent samples. Every
+populated diagnostic differs from its identity value by more than 1e-12 on
+192/192 comparisons. That descriptive counting threshold is not an input
+gate or a statistical test. These differences show input features that the
+matching construction leaves free; they do not establish that spectra cause
+the correspondence change.
+
+All 512 records retain `null` for `spectral_centroid_cycles_per_patch`,
+`energy_ratio_above_half_cycle_per_patch` and
+`energy_ratio_above_one_cycle_per_patch`. The frozen capture and verifier
+both use `patch_size=None`, so these patch-relative diagnostics are undefined,
+not measured zero energy. Reconstructing the FFT values themselves requires
+the retained raw/native input arrays.
 
 ## Execution And Reference Seal
 
@@ -137,10 +181,34 @@ of the qualified analysis outputs.
 
 Full raw/native inputs, packed bfloat16 visual sites, selected cache tensors,
 source manifests and original sidecars stay local under the registered run
-roots. Portable scores permit independent reconstruction of all published
-aggregates and missingness, **not** native-word reverification without those
-full local artifacts. Receipt/Git checks are auditable provenance, not
-cryptographic proof that inference occurred.
+roots. Portable profiles and spectra permit independent reconstruction of
+published score aggregates, spectral summaries and profile missingness.
+Input qualification residuals, exact native-word matches and execution
+chronology remain supported by the compact local-verification receipts;
+independently rechecking them requires the retained capture artifacts.
+Receipt/Git checks are auditable provenance, not cryptographic proof that
+inference occurred.
+
+### Independent Public-Score Replay
+
+The [standalone public checker](../../scripts/verify_stat_matched_source_publication.py)
+uses Python's standard library and Decimal arithmetic, without importing the
+measurement implementation or relying on the existing tests' expected D.
+It starts from the published scores, reconstructs pair margins, paired changes
+and family means, and checks the fixed denominators, floor consistency and
+retained missingness. It also reaggregates the descriptive spectra.
+
+```bash
+python scripts/verify_stat_matched_source_publication.py --repo .
+```
+
+The JSON result uses `VERIFIED_PUBLIC_SCORE_AGGREGATES` to identify this
+limited replay scope. Numerical comparisons allow final-bit rounding from
+different aggregation orders. Public cosines, norms and spectral values are
+inputs to this replay; deriving them again from native arrays, including the
+reference cancellation check, requires the local payloads. This audit makes
+no model, processor or source-generation call and leaves the four original
+published result files and frozen implementation unchanged.
 
 ## Reading And Claim Ceiling
 
