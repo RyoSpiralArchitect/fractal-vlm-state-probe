@@ -634,6 +634,19 @@ Raw-coordinate accounting extension:
 > explained the cause of post-image cache correspondence. No new statistical
 > test, processor call or model forward was performed.
 
+Matched-input reference-condition extension ([Note 0098](research_notes/0098_reference_crossing_results.md)):
+
+> Crossing all four reference/test arrangements after the original outcomes
+> were known reduced the mean visual-site change from -0.095657/-0.095054
+> under fixed references to -0.011530/-0.008381 under matched references.
+> Full raw/native input vectors also showed negative fixed-reference changes,
+> while their matched-reference changes were numerical-scale. White/blue
+> noise worsened at both visual sites, and two families changed sign. All
+> sixteen test pairs, eight known families and three floors were retained.
+> Two independent native-content verification trees were byte-identical.
+> This is reference-condition-dependent correspondence, not information loss,
+> learning-specific processing, semantic invariance or confirmation.
+
 Avoid:
 
 > The fractal stream creates a persistent hidden state that is causally stored

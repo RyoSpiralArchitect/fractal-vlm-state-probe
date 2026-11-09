@@ -2,7 +2,7 @@
 
 Working manuscript, 2026-11-09. Methods and existing Results draft; not a
 submission-ready paper. Note 0093 is the primary development measurement;
-Note 0094 is separately identified post-hoc accounting. The abstract,
+Notes 0094 and 0098 are separately identified post-hoc follow-ups. The abstract,
 related work, final discussion and untouched confirmation remain open. See
 the [claim and figure map](../research_notes/0095_manuscript_and_reference_audit_preparation.md).
 
@@ -28,6 +28,13 @@ changes. This separates the visual representations from the twelve tested
 views under this construction, not from every possible input feature. It
 does not establish learning-specific effects, semantic steering or
 information loss.
+
+A separately registered post-hoc crossing shows that reference condition
+substantially changes this reading. Matching reference and test arrangements
+reduces the mean visual-site decline, while full-input changes become
+numerical-scale. Family exceptions remain. We therefore distinguish fixed
+reference mismatch from transformation-conditioned correspondence rather
+than interpreting either as a general measure of information loss.
 
 ## Methods
 
@@ -115,6 +122,27 @@ stored binary64 values. This is algebraic accounting, not a new experiment,
 pre-outcome preregistration or causal attribution. The plan and results are
 in [Note 0094](../research_notes/0094_margin_decomposition.md).
 
+### Post-hoc reference crossings and full input comparators
+
+After Notes 0093-0094 were known, a separate plan fixed all 4 x 4 reference
+and test arrangement crossings on the two visual sites and full raw/native
+input vectors. All four views use the same three scale-relative amplitude
+floors, with 1e-6 primary, rather than transferring the twelve feature views'
+matching-error bound to full inputs. Raw uint8 converts directly to float64;
+native float32 converts without reprocessing; visual bfloat16 words are
+expanded before conversion. Coordinate order remains unchanged.
+
+For each reference arrangement a, r[f,a] is the normalized sum of unit r5/r6
+interaction directions. Let m[p,a,b] compare the test direction at b with
+these own and other same-class references. Fixed change averages m[p,0,b]
+over b=1/2/3 minus m[p,0,0]; matched change uses m[p,b,b] instead. Their
+difference averages m[p,b,b]-m[p,0,b]. Both references must be available,
+and the original cancellation and fixed-denominator rules remain in force.
+Every crossing and all families are retained, without alignment fitting.
+The original learned s0 rows must reproduce before accepting new results.
+[Notes 0096-0098](../research_notes/0098_reference_crossing_results.md) retain
+the post-hoc plan, execution release and native-content verification.
+
 ## Results
 
 ### Specified input gates pass
@@ -179,6 +207,36 @@ an average increased-other-agreement pattern. The two positive-D families
 have different signed-component patterns, retained in Note 0094. No
 percentage or mechanistic attribution is inferred from this accounting.
 
+### Matched reference conditions change the comparison
+
+| Full view | Fixed-reference change | Matched-reference change | Reference difference |
+| --- | ---: | ---: | ---: |
+| Encoder | -0.095657 | -0.011530 | +0.084128 |
+| Projector | -0.095054 | -0.008381 | +0.086674 |
+| Raw RGB | -0.076563 | -2.639e-18 | +0.076563 |
+| Processor input | -0.075960 | -6.966e-18 | +0.075960 |
+
+All 16/16 test pairs remain available at every site and floor. Mean changes
+at the visual sites become much smaller with matched references. Full input
+vectors also show negative fixed-reference changes, but matched-reference
+test-pair changes have maximum absolute values 1.1102230246251565e-16 and
+8.326672684688674e-17 at raw/native starts. Numerical-scale input changes
+are not statistical equivalence evidence.
+
+The visual-site average is not uniform family recovery. White/blue noise
+becomes more negative with matched references: -0.067953 at encoder and
+-0.075351 at projector. Square/triangle changes from negative to positive,
+while white-noise/random-dots changes from positive to negative. Both sites
+have six negative and two positive matched family changes, with membership
+different from the fixed-reference case. No exception is removed.
+
+![Reference condition comparison for all families](../../examples/research_notes/0098_reference_crossing_results/family_reference_conditions.png)
+
+Thin lines connect each known family and black diamonds show the equal-family
+mean. The complete score matrices retain every arrangement crossing, not only
+the fixed row and matched diagonal shown here. Repeated sites, arrangements
+and floors are not independent samples.
+
 ## Verification and availability
 
 Two fresh file-only verifications check 27,838 receipted files, including
@@ -196,12 +254,30 @@ retain exact values and provenance. Acquisition used implementation commit
 45ad7db162194ebe7cb596526ec1953605af6700 and capture SHA256
 fd2ac478506f69c1320fed7a26a9af02e2e3bf251b76fb14bacb2334a30e67e9.
 
+The crossing follow-up used committed implementation
+158afa56f8fde01320c23fe867dda7bb8b934da4. Two fresh verifications independently
+load native arrays and reconstruct directions, references and scores with
+different score reductions; norm-library arithmetic is shared. Their complete
+trees are byte-identical. The maximum production/oracle difference is
+3.219646771412954e-15 under the fixed absolute 1e-12 check. The
+[crossed profiles and receipts](../../examples/research_notes/0098_reference_crossing_results/summary.json)
+are portable; full native inputs remain local. New model/processor calls are zero.
+
 ## Interpretation and remaining limits
 
 The separation concerns twelve fixed views, registered guarded-tile support,
 two full visual sites and known-family development data. Fixed-s0 reference
-mismatch is not equivalent to loss of family information. Cross-condition
-references and full raw/native vectors are proposed diagnostics, not results.
+mismatch is not equivalent to loss of family information. The post-hoc
+crossing and full-input comparators show why: fixed-reference change occurs
+already at input starts, and matching references sharply reduces the mean
+visual-site change. Residual family-dependent visual changes remain, unlike
+the numerical-scale matched input changes. These comparisons do not identify
+a common rotation or a training-specific cause.
+
+The twelve matched views do not constrain every input statistic. Descriptive
+raw/native spectra can still vary across arrangements, as retained in
+Note 0093; neither spectral causation nor a frequency-only explanation is
+identified by the present comparison.
 
 No untouched confirmation cohort has been generated or sealed. The study
 does not identify learning specificity, semantic steering, cache-to-answer

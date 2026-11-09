@@ -54,3 +54,9 @@ must leave a retained failure without a successful replay summary.
 Follow-up review also found a source/verification root symlink bypass. All
 canonical roots and ancestors are now checked before reading; source-root
 and first-verification-root symlink fixtures both fail before new output.
+
+The subsequent bounded run and two native-content verifications completed
+without retry at implementation `158afa56f8fde01320c23fe867dda7bb8b934da4`.
+[Note 0098](0098_reference_crossing_results.md) records their byte-identical
+verification trees, all endpoints and family exceptions. The one execution
+authorization is consumed; this historical release does not permit a rerun.
