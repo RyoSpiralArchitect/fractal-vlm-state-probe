@@ -312,8 +312,12 @@ bounded Phase 1 design; Notes 0055-0056 report its completed input measurements.
 | 0092 | Bounded acquisition execution authorization | Explicit operator start approval, unchanged 135-file implementation and scientific design; public release and fresh approved preflight required; stop at first failure, no retry |
 | 0093 | Matched-input visual correspondence | Complete 64-source / 665-processor-only / 920-context run and identical file replays; twelve matched input views coexist with encoder/projector D -0.095657/-0.095054, six negative and two positive families; bounded descriptive result |
 | 0094 | Own/other score accounting | Post-hoc decomposition of unchanged scores: own cosine changes -0.104124/-0.102939, other signed contributions +0.008467/+0.007884; all profiles/families retained, exact-rational replays agree, no new acquisition |
+| [0095](research_notes/0095_manuscript_and_reference_audit_preparation.md) | Manuscript and saved-data diagnostic preparation | [Methods/Results draft](paper/manuscript.md) and claim/figure map started; reference crossings and full-input comparators design only, not frozen or executed |
+| [0096](research_notes/0096_reference_crossing_registration.md) | Reference crossings and full-input comparators | Post-hoc plan fixes four views, three amplitude floors and all 4 x 4 crossings; metadata-only preparation implemented; real-array scorer/verifier and execution release remain open |
+| [0097](research_notes/0097_reference_crossing_execution.md) | Separate saved-array execution release | Implementation fixed at 158afa5 after read-only review; one run and two native verifications completed, no new acquisition |
+| [0098](research_notes/0098_reference_crossing_results.md) | Crossed references and full-input comparators | Verified: matched-reference mean visual changes -0.011530/-0.008381 versus fixed -0.095657/-0.095054; full-input matched changes numerical-scale; all families and exceptions retained |
 | Originally planned around 0072-0075 | Untouched source/map confirmation in FastVLM and Qwen | Cohort not generated or sealed; Note 0072 is a development calibration, not confirmation |
-| 0076-0080 | Independent replay, negative-case audit and manuscript | Not started |
+| Originally planned around 0076-0080 | Independent replay, negative-case audit and manuscript | Prior file replays and negative cases retained; manuscript started in Note 0095, publication-wide packaging remains open |
 
 Ministral is optional. Notes 0056 and 0061 are decision points, not reasons to
 expand sample size until significance. The Note 0056 decision is to retain
