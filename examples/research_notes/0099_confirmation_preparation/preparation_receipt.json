@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "confirmation_preparation_receipt",
+  "date": "2026-11-09",
+  "status": "PREPARED_NOT_CALIBRATED_NOT_RELEASED",
+  "posthoc_development_planning": true,
+  "summary_sha256": "3fc372afeef95db12db9e45934308856f587c795ccafa92861d3d8bdc0d98973",
+  "plan_sha256": "b84172933b87b2e91fa53decde1b34d67f44e535b955fd55749db76925878be2",
+  "preparation_code_sha256": {
+    "src/fractal_vlm_state_probe/confirmation_preparation.py": "0cd360c3b2aca4b61c2d26e58a9723baada1f0e097d9a3f818101649eb19bc15",
+    "scripts/prepare_confirmation_cohort.py": "6c1a39273a2bbcca2dfe89ab421c4331ad96ea742394f63872dbd4910ce3ee20",
+    "tests/test_confirmation_preparation.py": "d3ae81ccc8ac063c025b943acf3a58dcac3ebb1661f9aa3072a1be45bb70b6bb"
+  },
+  "initial_focused_tests_passed": 23,
+  "independent_review": "not_performed",
+  "public_push": "not_performed",
+  "source_images_generated": 0,
+  "coordinate_maps_generated": 0,
+  "processor_calls": 0,
+  "model_contexts": 0,
+  "confirmation_scores": 0
+}

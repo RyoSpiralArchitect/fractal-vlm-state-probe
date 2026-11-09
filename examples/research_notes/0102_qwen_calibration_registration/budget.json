@@ -1,0 +1,1 @@
+{"analysis_kind":"qwen_calibration_byte_bound","cache_bytes_per_context_cap":37822464,"on_stage_site_bytes_per_case_cap":9437184,"payload_allowance_bytes":8589934592,"pixel_bytes_per_preparation_cap":4816896,"qualified_runtime_or_joint_budget":false,"required_launch_free_bytes":19327352832,"schema_version":1,"upper_payload_bytes_from_caps":5139318144}
