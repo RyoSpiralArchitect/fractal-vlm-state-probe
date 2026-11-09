@@ -1,0 +1,185 @@
+{
+  "active_cache_offsets": [
+    262
+  ],
+  "all_layer_cache_source_dtypes": [
+    "mlx.core.float16"
+  ],
+  "analysis_kind": "qwen_native_observation_calibration_result",
+  "capture_root": "runs/qwen_observation_calibration_v1",
+  "capture_sha256": "351bdda6fc9f1db8a0ebf386d3bfc00374cead1d2ed8f77a6367ef339c51e6e6",
+  "capture_status": "COMPLETE_UNVERIFIED",
+  "cases": 34,
+  "cohort_generation_authorized": false,
+  "complete_capture_tree_bytes": 2633447156,
+  "confirmation_scores": 0,
+  "contexts": 102,
+  "date": "2026-11-10",
+  "execution_registration_commit": "f20d590",
+  "frozen_sha256": "eff4fb840217609464996bbfb6590419428623fbdab792669b2f08c12ce1c06b",
+  "grid_thw": [
+    [
+      1,
+      22,
+      22
+    ]
+  ],
+  "joint_cohort_required_launch_free_bytes": null,
+  "metadata_bundle": "capture_metadata.tar.gz",
+  "metadata_bundle_sha256": "4c38115414241d347dc82a7faf33ee5f5968e1398f9e4c5247a2bf77be171603",
+  "native_runtime_qualified": false,
+  "new_cohort_maps": 0,
+  "new_source_images": 0,
+  "observation_parity_verified_registered_cases_only": true,
+  "observed_shapes": {
+    "cache_00_keys": [
+      [
+        1,
+        2,
+        262,
+        128
+      ]
+    ],
+    "cache_00_values": [
+      [
+        1,
+        2,
+        262,
+        128
+      ]
+    ],
+    "grid": [
+      [
+        1,
+        3
+      ]
+    ],
+    "ids": [
+      [
+        1,
+        261
+      ]
+    ],
+    "logits_0": [
+      [
+        151936
+      ]
+    ],
+    "logits_1": [
+      [
+        151936
+      ]
+    ],
+    "mask": [
+      [
+        1,
+        261
+      ]
+    ],
+    "pixels": [
+      [
+        484,
+        1176
+      ]
+    ],
+    "scores": [
+      [
+        151936
+      ]
+    ],
+    "site_auxiliary": [
+      [
+        121,
+        2048
+      ]
+    ],
+    "site_final": [
+      [
+        121,
+        2048
+      ]
+    ],
+    "site_premerger": [
+      [
+        484,
+        1280
+      ]
+    ]
+  },
+  "operation_counts": {
+    "begin": 34,
+    "context_begin": 102,
+    "context_return": 102,
+    "decoder_begin": 204,
+    "decoder_return": 204,
+    "prepare_begin": 102,
+    "prepare_return": 102,
+    "return": 34
+  },
+  "plan_sha256": "0b009c3c7496dd995e0de1cf25b75a793a8ae8ea93b2abacbb3516b3e269c189",
+  "preflight_sha256": "61a69ec3357a61c4f643d737d90c27b057506b8dc79718e30a424834b2b3535a",
+  "publication_scope": "metadata_and_receipts_only_full_arrays_retained_locally",
+  "release_sha256": "882860813b2eca639c0cd57fcb01d51a7f0f0758d04ccbf291f27038d9c9f3c1",
+  "schema_version": 1,
+  "software_fixture": false,
+  "source_dtypes": {
+    "cache_00_keys": [
+      "mlx.core.float16"
+    ],
+    "cache_00_values": [
+      "mlx.core.float16"
+    ],
+    "grid": [
+      "mlx.core.int64"
+    ],
+    "ids": [
+      "mlx.core.int64"
+    ],
+    "logits_0": [
+      "mlx.core.float16"
+    ],
+    "logits_1": [
+      "mlx.core.float16"
+    ],
+    "mask": [
+      "mlx.core.int64"
+    ],
+    "pixels": [
+      "mlx.core.float32"
+    ],
+    "scores": [
+      "mlx.core.float16"
+    ],
+    "site_auxiliary": [
+      "mlx.core.float16"
+    ],
+    "site_final": [
+      "mlx.core.float16"
+    ],
+    "site_premerger": [
+      "mlx.core.float16"
+    ]
+  },
+  "status": "REGISTERED_CASES_NATIVE_SAVED_DATA_VERIFIED",
+  "verification_output": {
+    "capture_sha256": "351bdda6fc9f1db8a0ebf386d3bfc00374cead1d2ed8f77a6367ef339c51e6e6",
+    "cases": 34,
+    "cohort_released": false,
+    "contexts": 102,
+    "decoder_calls": 204,
+    "files_checked": 8266,
+    "frozen_sha256": "eff4fb840217609464996bbfb6590419428623fbdab792669b2f08c12ce1c06b",
+    "native_runtime_qualified": false,
+    "processor_calls": 136,
+    "schema_version": 1,
+    "status": "NATIVE_SAVED_DATA_VERIFIED"
+  },
+  "verification_roots": [
+    "runs/qwen_observation_verified_v1",
+    "runs/qwen_observation_verified_replay_v1"
+  ],
+  "verification_tree_sha256": {
+    "summary.json": "9ed394ad992196426456b464c126d9f0c6f2e522bcb23c4f0751767fe575554c"
+  },
+  "verification_trees_byte_identical": true
+}
